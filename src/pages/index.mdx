@@ -1,0 +1,14 @@
+---
+author: Felix Pojtinger
+date: "2018-12-08"
+title: Home
+---
+
+import { Base } from "../downstream/Base";
+import { home } from "../data/home";
+
+export default () => (
+  <Base head={home.head} background={home.background}>
+    <h1>Hello, world!</h1>
+  </Base>
+);
