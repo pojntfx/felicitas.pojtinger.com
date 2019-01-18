@@ -6,6 +6,7 @@ date: "2019-01-18"
 import { Base } from "../downstream/Base";
 import { imprint } from "../data/imprint";
 import { Divider, Flag } from "semantic-ui-react";
+import { common } from "../data/common";
 
 export default ({ children }) => (
   <Base head={imprint.head} background={imprint.background} segment>
@@ -13,7 +14,7 @@ export default ({ children }) => (
   </Base>
 );
 
-<Divider horizontal>
+<Divider horizontal inverted={common.dark}>
   <Flag name="us" /> English
 </Divider>
 
@@ -62,7 +63,7 @@ See "Media License" and "Code License". The code of this website is licensed AGP
 
 As far as the contents on this site were not created by the operator, the copyrights of third parties are protected. observed. In particular, the contents of third parties are marked as such. If you should nevertheless click on If you become aware of a copyright infringement, we ask you to inform us accordingly. On becoming known we will remove such contents immediately.
 
-<Divider horizontal>
+<Divider horizontal inverted={common.dark}>
   <Flag name="de" /> Deutsch
 </Divider>
 
