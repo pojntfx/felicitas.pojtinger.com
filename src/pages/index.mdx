@@ -8,10 +8,12 @@ import { Base } from "../downstream/Base";
 import { home } from "../data/home";
 import { Header } from "../downstream/Header";
 import { Links } from "../downstream/Links";
+import { Skills } from "../downstream/Skills";
 
 export default () => (
   <Base head={home.head} background={home.background} noBackButton>
     <Header {...home.content.header} />
     <Links links={home.content.links} />
+    <Skills {...home.content.skills} />
   </Base>
 );

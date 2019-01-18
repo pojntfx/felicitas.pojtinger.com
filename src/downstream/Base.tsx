@@ -11,10 +11,15 @@ import { Link } from "../downstream/Link";
 import { MDXProvider } from "@mdx-js/tag";
 import { injectGlobal } from "emotion";
 import { noscript } from "../data/noscript";
-import { Segment, Button } from "semantic-ui-react";
+import {
+  Segment,
+  Menu,
+  Container as ContainerTemplate
+} from "semantic-ui-react";
 import { Footer } from "./Footer";
 import { footer } from "../data/footer";
 import { common } from "../data/common";
+import styled from "@emotion/styled-base";
 
 interface IBaseProps {
   children: JSX.Element | JSX.Element[];
@@ -24,6 +29,10 @@ interface IBaseProps {
   segment?: IShellProps["segment"];
   noBackButton?: boolean;
 }
+
+const MainContainer = styled(Container)`
+  ${props => !props.theme.noBackButton && "margin-top: calc(40px + 1em);"}
+`;
 
 const Base = ({
   children,
@@ -66,9 +75,22 @@ const Base = ({
             transform: scale(1.1);
           }
         }
+        .ui.menu, .ui.segment {
+          background: #ffffffb3;
+          &.inverted {
+            background: #1b1c1db3;
+          }
+        }
       `}
       <NoScript {...noscript} />
       {head && <Head {...head} />}
+      {!noBackButton && (
+        <Menu fixed="top" inverted={common.dark}>
+          <ContainerTemplate>
+            <Menu.Item content="Back" icon="arrow left" as={Link} to="/" />
+          </ContainerTemplate>
+        </Menu>
+      )}
       {noContainer ? (
         <>
           {segment ? (
@@ -76,29 +98,17 @@ const Base = ({
           ) : (
             children
           )}
-          <Container>
-            <Footer {...footer} />
-          </Container>
         </>
       ) : (
-        <Container>
-          {!noBackButton && (
-            <Link to="/">
-              <Button
-                content="Back"
-                icon="arrow left"
-                secondary={common.dark}
-              />
-            </Link>
-          )}
+        <MainContainer theme={{ noBackButton }}>
           {segment ? (
             <Segment inverted={common.dark}>{children}</Segment>
           ) : (
             <>{children}</>
           )}
-          <Footer {...footer} />
-        </Container>
+        </MainContainer>
       )}
+      <Footer {...footer} />
     </>
   </MDXProvider>
 );
