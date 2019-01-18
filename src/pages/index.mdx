@@ -6,9 +6,12 @@ title: Home
 
 import { Base } from "../downstream/Base";
 import { home } from "../data/home";
+import { Header } from "../downstream/Header";
+import { Links } from "../downstream/Links";
 
 export default () => (
   <Base head={home.head} background={home.background} noBackButton>
-    <h1>Hello, world!</h1>
+    <Header {...home.content.header} />
+    <Links links={home.content.links} />
   </Base>
 );

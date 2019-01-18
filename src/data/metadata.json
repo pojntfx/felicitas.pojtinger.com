@@ -4,5 +4,6 @@
   "author": "Felicitas Pojtinger",
   "site": "",
   "language": "en",
-  "color": "#007aff"
+  "color": "#007aff",
+  "colorDark": "#1b1c1d"
 }

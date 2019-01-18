@@ -1,12 +1,13 @@
 import * as React from "react";
-import LinkTemplate, { withPrefix } from "gatsby-link";
+import GatsbyLink from "gatsby-link";
 
-const isExternalLink = (link: string) => /(http|https):\/\/(.*)/.test(link);
+const isExternalLink = (link: string) =>
+  /((http|https):\/\/(.*)|(mailto|tel):(.*))/.test(link);
 const isImageLink = (link: string) => /(.*)(\.jpg|\.png|\.webp)/.test(link);
 
 interface ILinkProps {
   to: string;
-  children?: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[] | string;
   exact?: boolean;
 }
 
@@ -16,14 +17,14 @@ const Link = ({ to, children, exact, ...otherProps }: ILinkProps) =>
       {children ? children : null}
     </a>
   ) : isImageLink(to) ? (
-    <a {...otherProps} href={withPrefix(to)}>
-      {/* Prefix local images */}
+    <a {...otherProps} href={to}>
+      {/* Here we could prefix local images */}
       {children ? children : null}
     </a>
   ) : (
-    <LinkTemplate to={withPrefix(to)} {...otherProps}>
+    <GatsbyLink to={to} {...otherProps}>
       {children ? children : null}
-    </LinkTemplate>
+    </GatsbyLink>
   );
 
 export { Link };
