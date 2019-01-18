@@ -109,10 +109,11 @@ const home = {
         }
       }
     ],
-    description:
-      "<b>Hi!</b> I'm a fullstack developer based in Stuttgart, Germany.",
-    languages: ["Node", "React", "Vue"],
-    tech: ["FLOSS", "GNU/Linux", "Docker", "Kubernetes"],
+    skills: {
+      description: "I'm a fullstack developer based in Stuttgart, Germany.",
+      languages: ["Node", "React", "Vue"],
+      tech: ["FLOSS", "GNU/Linux", "Docker", "Kubernetes"]
+    },
     current: "Standard Framework development for Alpha Horizon.",
     articles: [
       {
