@@ -62,7 +62,7 @@ const Base = ({
             z-index: -9;
             background: url(${background}) no-repeat center center fixed !important;
             background-size: cover !important;
-            filter: blur(5px);
+            filter: blur(10px);
             transform: scale(1.1);
           }
         }

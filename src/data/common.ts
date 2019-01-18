@@ -7,8 +7,11 @@ import {
   author,
   site,
   language,
-  color
+  color,
+  colorDark
 } from "./metadata.json";
+
+const isNight = () => (new Date().getHours() < 16 ? false : true);
 
 const common = {
   title,
@@ -16,10 +19,10 @@ const common = {
   author,
   site,
   language,
-  color,
+  color: isNight() ? colorDark : color,
   favicon,
-  background: new Date().getHours() < 16 ? backgroundLight : backgroundDark,
-  dark: new Date().getHours() < 16 ? false : true
+  background: isNight() ? backgroundDark : backgroundLight,
+  dark: isNight()
 };
 
 export { common };

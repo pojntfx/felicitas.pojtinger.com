@@ -55,6 +55,8 @@
     "prepare": "run-p build"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.6",
+    "@emotion/styled": "^10.0.6",
     "@libresat/frontend-components": "^0.0.1-75",
     "@mdx-js/mdx": "^0.15.0",
     "@mdx-js/tag": "^0.15.0",
@@ -116,7 +118,7 @@
     "url": "https://gitlab.com/pojntfx/projects/issues"
   },
   "keywords": [
-    "chinese"
+    "personal"
   ],
   "publishConfig": {
     "access": "public"
