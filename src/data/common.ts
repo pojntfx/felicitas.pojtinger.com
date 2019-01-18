@@ -1,5 +1,6 @@
 import favicon from "../assets/icon.png";
-import background from "../assets/bg.jpg";
+import backgroundLight from "../assets/bg.jpg";
+import backgroundDark from "../assets/bg-dark.jpg";
 import {
   title,
   shortTitle,
@@ -17,7 +18,8 @@ const common = {
   language,
   color,
   favicon,
-  background
+  background: new Date().getHours() < 16 ? backgroundLight : backgroundDark,
+  dark: new Date().getHours() < 16 ? false : true
 };
 
 export { common };
