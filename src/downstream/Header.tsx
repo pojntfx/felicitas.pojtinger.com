@@ -31,27 +31,29 @@ const HeaderView = ({
   follow,
   ...otherProps
 }: IHeader) => (
-  <Grid stackable columns="equal" {...otherProps}>
-    <Grid.Column textAlign="center" verticalAlign="middle">
-      <HeaderTemplate as="h1" textAlign="center" inverted>
-        <HeaderTemplate.Content>
-          {name}
-          <HeaderTemplate.Subheader>{job}</HeaderTemplate.Subheader>
-        </HeaderTemplate.Content>
-      </HeaderTemplate>
-    </Grid.Column>
-    <Grid.Column textAlign="center" verticalAlign="middle">
-      <Image circular src={image} />
-    </Grid.Column>
-    <Grid.Column textAlign="center" verticalAlign="middle">
-      <Link to={follow}>
-        <Button content="Follow" icon="add" primary />
-      </Link>
-      <Link to={email}>
-        <Button content="Contact" icon="mail" secondary={common.dark} />
-      </Link>
-    </Grid.Column>
-  </Grid>
+  <section id="header">
+    <Grid stackable columns="equal" {...otherProps}>
+      <Grid.Column textAlign="center" verticalAlign="middle">
+        <HeaderTemplate as="h1" textAlign="center" inverted>
+          <HeaderTemplate.Content>
+            {name}
+            <HeaderTemplate.Subheader>{job}</HeaderTemplate.Subheader>
+          </HeaderTemplate.Content>
+        </HeaderTemplate>
+      </Grid.Column>
+      <Grid.Column textAlign="center" verticalAlign="middle">
+        <Image circular src={image} />
+      </Grid.Column>
+      <Grid.Column textAlign="center" verticalAlign="middle">
+        <Link to={follow}>
+          <Button content="Follow" icon="add" primary />
+        </Link>
+        <Link to={email}>
+          <Button content="Contact" icon="mail" secondary={common.dark} />
+        </Link>
+      </Grid.Column>
+    </Grid>
+  </section>
 );
 
 const Header = styled(HeaderView)`

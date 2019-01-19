@@ -62,7 +62,6 @@ const Article = ({
   children,
   pageContext: {
     author,
-    featured,
     date,
     lastEdit,
     imgSrc,
@@ -96,7 +95,7 @@ const Article = ({
         <Author>
           <Image circular src={icon} />
           <div>
-            <span>{featured ? " featured " : null}by</span>
+            <span>by</span>
             <br />
             <b>{author}</b>
           </div>

@@ -21,8 +21,8 @@ createArticles = async (graphql, createPage) => {
                 lastEdit
                 imgSrc
                 imgAlt
-                featured
                 date
+                article
               }
               timeToRead
               headings {
