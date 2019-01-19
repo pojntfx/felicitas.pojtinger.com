@@ -1,12 +1,12 @@
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-mdx"
-      //   options: {
-      //     defaultLayouts: {
-      //       articles: require.resolve("./src/downstream/Article.tsx")
-      //     }
-      //   }
+      resolve: "gatsby-mdx",
+      options: {
+        defaultLayouts: {
+          articles: require.resolve("./src/downstream/Article.tsx")
+        }
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
