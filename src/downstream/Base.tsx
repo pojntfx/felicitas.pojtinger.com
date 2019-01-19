@@ -61,7 +61,7 @@ const Base = ({
       {injectGlobal`
         body {
           height: auto;
-          &:before {
+          &:after {
             top: 0;
             left: 0;
             content: '';
@@ -74,11 +74,22 @@ const Base = ({
             filter: blur(10px);
             transform: scale(1.1);
           }
+          &:before {
+            top: 0;
+            left: 0;
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: -8;
+            background: linear-gradient(to bottom left,${common.color},#fc6d26);
+            opacity: .4;
+          }
         }
-        .ui.menu, .ui.segment {
-          background: #ffffffb3;
+        .ui.menu, .ui.segment:not(.segment--main) {
+          background: #ffffffe6;
           &.inverted {
-            background: #1b1c1db3;
+            background: #1b1c1de6;
           }
         }
       `}
@@ -94,7 +105,9 @@ const Base = ({
       {noContainer ? (
         <>
           {segment ? (
-            <Segment inverted={common.dark}>{children}</Segment>
+            <Segment inverted={common.dark} className="segment--main">
+              {children}
+            </Segment>
           ) : (
             children
           )}
@@ -102,7 +115,9 @@ const Base = ({
       ) : (
         <MainContainer theme={{ noBackButton }}>
           {segment ? (
-            <Segment inverted={common.dark}>{children}</Segment>
+            <Segment inverted={common.dark} className="segment--main">
+              {children}
+            </Segment>
           ) : (
             <>{children}</>
           )}

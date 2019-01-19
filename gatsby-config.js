@@ -27,8 +27,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: `${require("./src/data/metadata.json").title} Site`,
-        short_name: `${require("./src/data/metadata.json").shortTitle} Site`,
+        name: `${require("./src/data/metadata.json").title}`,
+        short_name: `${require("./src/data/metadata.json").shortTitle}`,
         start_url: "/",
         background_color: require("./src/data/metadata.json").color,
         theme_color: require("./src/data/metadata.json").color,

@@ -33,7 +33,7 @@ const HeaderView = ({
 }: IHeader) => (
   <Grid stackable columns="equal" {...otherProps}>
     <Grid.Column textAlign="center" verticalAlign="middle">
-      <HeaderTemplate as="h1" textAlign="center" inverted={common.dark}>
+      <HeaderTemplate as="h1" textAlign="center" inverted>
         <HeaderTemplate.Content>
           {name}
           <HeaderTemplate.Subheader>{job}</HeaderTemplate.Subheader>
