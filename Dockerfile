@@ -21,6 +21,7 @@ RUN npm install
 
 # Add source code
 COPY src src
+COPY static static
 COPY gatsby-config.js .
 COPY gatsby-node.js .
 COPY gatsby-browser.js .

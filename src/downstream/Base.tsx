@@ -34,6 +34,10 @@ const MainContainer = styled(Container)`
   ${props => !props.theme.noBackButton && "margin-top: calc(40px + 1em);"}
 `;
 
+const Pre = styled("pre")`
+  overflow-x: auto;
+`;
+
 const Base = ({
   children,
   head,
@@ -53,7 +57,14 @@ const Base = ({
         <Paper inverted={common.dark} {...otherProps}>
           <i>{children}</i>
         </Paper>
-      )
+      ),
+      pre: ({ children, ...otherProps }: any) => (
+        <Paper inverted={common.dark} {...otherProps}>
+          <i>{children.props.props.className.split("-")[1]}</i>
+          <Pre>{children}</Pre>
+        </Paper>
+      ),
+      code: ({ children }: any) => <code>{children}</code> // Fix "metastring" prop
     }}
     {...otherProps}
   >
