@@ -32,15 +32,17 @@ interface ILinks {
 }
 
 const Links = ({ links, ...otherProps }: ILinks) => (
-  <LinksWrapper {...otherProps}>
-    {links.map((link, index) => (
-      <Link to={link.link} key={index}>
-        <Help {...link.help}>
-          <img src={link.img} alt={link.title} />
-        </Help>
-      </Link>
-    ))}
-  </LinksWrapper>
+  <section id="links">
+    <LinksWrapper {...otherProps}>
+      {links.map((link, index) => (
+        <Link to={link.link} key={index}>
+          <Help {...link.help}>
+            <img src={link.img} alt={link.title} />
+          </Help>
+        </Link>
+      ))}
+    </LinksWrapper>
+  </section>
 );
 
 export { Links };
