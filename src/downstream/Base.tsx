@@ -153,7 +153,28 @@ const Base = ({
           </Menu>
         </>
       )}
-      <PageTransition transitionTime={200}>
+      <PageTransition
+        defaultStyle={{
+          transition: "all 500ms",
+          transform: "scale(1.01)",
+          opacity: "0.5"
+        }}
+        transitionStyles={{
+          entering: {
+            transform: "scale(1)",
+            opacity: "1"
+          },
+          entered: {
+            transform: "",
+            opacity: "1"
+          },
+          exiting: {
+            transform: "",
+            opacity: "1"
+          }
+        }}
+        transitionTime={500}
+      >
         {noContainer ? (
           <>
             {noBackButton && (
