@@ -20,6 +20,7 @@ import { Footer } from "./Footer";
 import { footer } from "../data/footer";
 import { common } from "../data/common";
 import styled from "@emotion/styled-base";
+import PageTransition from "gatsby-v2-plugin-page-transitions";
 
 interface IBaseProps {
   children: JSX.Element | JSX.Element[];
@@ -113,27 +114,29 @@ const Base = ({
           </ContainerTemplate>
         </Menu>
       )}
-      {noContainer ? (
-        <>
-          {segment ? (
-            <Segment inverted={common.dark} className="segment--main">
-              {children}
-            </Segment>
-          ) : (
-            children
-          )}
-        </>
-      ) : (
-        <MainContainer theme={{ noBackButton }}>
-          {segment ? (
-            <Segment inverted={common.dark} className="segment--main">
-              {children}
-            </Segment>
-          ) : (
-            <>{children}</>
-          )}
-        </MainContainer>
-      )}
+      <PageTransition transitionTime={200}>
+        {noContainer ? (
+          <>
+            {segment ? (
+              <Segment inverted={common.dark} className="segment--main">
+                {children}
+              </Segment>
+            ) : (
+              children
+            )}
+          </>
+        ) : (
+          <MainContainer theme={{ noBackButton }}>
+            {segment ? (
+              <Segment inverted={common.dark} className="segment--main">
+                {children}
+              </Segment>
+            ) : (
+              <>{children}</>
+            )}
+          </MainContainer>
+        )}
+      </PageTransition>
       <Footer {...footer} />
     </>
   </MDXProvider>
