@@ -12,6 +12,14 @@ const SearchWrapper = styled("section")`
   & > div:last-of-type {
     margin-bottom: 2.5em !important;
   }
+  & .card {
+    transition: all 0.2s ease-in-out !important;
+    &:hover {
+      transform: scale(1.025) !important;
+      box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.12),
+        0 2px 10px 0 rgba(34, 36, 38, 0.15) !important;
+    }
+  }
 `;
 
 const SearchView = ({
