@@ -1,4 +1,4 @@
-import favicon from "../assets/icon.png";
+import favicon from "../assets/icon-circle.png";
 import backgroundLight from "../assets/bg.jpg";
 import backgroundDark from "../assets/bg-dark.jpg";
 import {
