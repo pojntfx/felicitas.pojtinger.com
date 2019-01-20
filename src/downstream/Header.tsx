@@ -59,6 +59,17 @@ const HeaderView = ({
 const Header = styled(HeaderView)`
   margin-top: 2.5em !important;
   margin-bottom: 2.5em !important;
+  & .button {
+    &:first-child {
+      margin-right: 1em !important;
+    }
+    transition: all 0.2s ease-in-out !important;
+    &:hover {
+      transform: scale(1.05) !important;
+      box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.12),
+        0 2px 10px 0 rgba(34, 36, 38, 0.15) !important;
+    }
+  }
 `;
 
 export { Header };
