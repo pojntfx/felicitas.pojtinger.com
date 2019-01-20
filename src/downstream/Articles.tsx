@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Segment, Container } from "semantic-ui-react";
+import { Segment, Container, Icon } from "semantic-ui-react";
 import { ArticlesList } from "./ArticlesList";
 import styled from "@emotion/styled-base";
 import { common } from "../data/common";
@@ -24,7 +24,7 @@ const Articles = () => (
   <section id="articles">
     <ArticlesWrapper inverted={common.dark}>
       <HeaderWrapper>
-        <b>Latest Articles</b>
+        <Icon name="newspaper" /> <b>Latest Articles</b>
       </HeaderWrapper>
       <ArticlesList />
     </ArticlesWrapper>

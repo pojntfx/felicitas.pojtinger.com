@@ -14,13 +14,15 @@ import { noscript } from "../data/noscript";
 import {
   Segment,
   Menu,
-  Container as ContainerTemplate
+  Container as ContainerTemplate,
+  Modal
 } from "semantic-ui-react";
 import { Footer } from "./Footer";
 import { footer } from "../data/footer";
 import { common } from "../data/common";
 import styled from "@emotion/styled-base";
 import PageTransition from "gatsby-v2-plugin-page-transitions";
+import { Search } from "./Search";
 
 interface IBaseProps {
   children: JSX.Element | JSX.Element[];
@@ -38,6 +40,38 @@ const MainContainer = styled(Container)`
 const Pre = styled("pre")`
   overflow-x: auto;
 `;
+
+const SearchModalWrapper = styled(Modal)`
+  & > .header {
+    border-bottom: 0px solid transparent !important;
+  }
+`;
+
+const NavbarSearch = styled(Search)`
+  min-width: 200px !important;
+  & > div:first-of-type {
+    margin-bottom: 0 !important;
+  }
+  & > div:last-of-type {
+    margin-bottom: 0 !important;
+  }
+`;
+
+const TopSearch = styled(Search)`
+  margin-top: 2.5em;
+`;
+
+const SearchModal = (props: any) => (
+  <SearchModalWrapper
+    trigger={<Menu.Item content="Search" icon="search" />}
+    header="Search"
+    content={<NavbarSearch />}
+    dimmer={!common.dark ? "inverted" : undefined}
+    basic
+    closeIcon
+    {...props}
+  />
+);
 
 const Base = ({
   children,
@@ -108,31 +142,48 @@ const Base = ({
       <NoScript {...noscript} />
       {head && <Head {...head} />}
       {!noBackButton && (
-        <Menu fixed="top" inverted={common.dark}>
-          <ContainerTemplate>
-            <Menu.Item content="Back" icon="arrow left" as={Link} to="/" />
-          </ContainerTemplate>
-        </Menu>
+        <>
+          <Menu fixed="top" inverted={common.dark}>
+            <ContainerTemplate>
+              <Menu.Item content="Back" icon="arrow left" as={Link} to="/" />
+              <Menu.Menu position="right">
+                <SearchModal />
+              </Menu.Menu>
+            </ContainerTemplate>
+          </Menu>
+        </>
       )}
       <PageTransition transitionTime={200}>
         {noContainer ? (
           <>
+            {noBackButton && (
+              <ContainerTemplate>
+                <TopSearch />
+              </ContainerTemplate>
+            )}
             {segment ? (
-              <Segment inverted={common.dark} className="segment--main">
-                {children}
-              </Segment>
+              <>
+                <Segment inverted={common.dark} className="segment--main">
+                  {children}
+                </Segment>
+              </>
             ) : (
               children
             )}
           </>
         ) : (
           <MainContainer theme={{ noBackButton }}>
+            {noBackButton && (
+              <ContainerTemplate>
+                <TopSearch />
+              </ContainerTemplate>
+            )}
             {segment ? (
               <Segment inverted={common.dark} className="segment--main">
                 {children}
               </Segment>
             ) : (
-              <>{children}</>
+              children
             )}
           </MainContainer>
         )}

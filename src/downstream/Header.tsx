@@ -60,7 +60,7 @@ const Header = styled(HeaderView)`
   margin-top: 2.5em !important;
   margin-bottom: 2.5em !important;
   & .button {
-    &:first-child {
+    &:first-of-type {
       margin-right: 1em !important;
     }
     transition: all 0.2s ease-in-out !important;

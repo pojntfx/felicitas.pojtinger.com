@@ -58,7 +58,7 @@ const Projects = ({ projects }: IProjects) => (
     <ProjectsWrapper inverted={common.dark}>
       <Container>
         <HeaderWrapper>
-          <b>Featured Projects</b>
+          <Icon name="database" /> <b>Featured Projects</b>
         </HeaderWrapper>
         <Gallery options={{ gutter: 30 }}>
           {projects.map(
