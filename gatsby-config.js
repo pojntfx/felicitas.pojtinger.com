@@ -33,7 +33,7 @@ module.exports = {
         background_color: require("./src/data/metadata.json").color,
         theme_color: require("./src/data/metadata.json").color,
         display: "standalone",
-        icon: "src/assets/icon-circle.png"
+        icon: "src/assets/icon-circle.webp"
       }
     },
     "gatsby-plugin-offline",

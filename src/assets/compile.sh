@@ -15,3 +15,7 @@ SIZE=512 && let HALFSIZE=${SIZE}/2 && convert icon.png \
 	-alpha Copy \
 	\) -compose CopyOpacity -composite \
 	-trim icon-circle.png &
+mogrify -format webp *.*
+rm *.png
+rm *.jpg
+rm *~

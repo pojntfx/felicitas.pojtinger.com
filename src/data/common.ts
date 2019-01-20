@@ -1,6 +1,6 @@
-import favicon from "../assets/icon-circle.png";
-import backgroundLight from "../assets/bg.jpg";
-import backgroundDark from "../assets/bg-dark.jpg";
+import favicon from "../assets/icon-circle.webp";
+import backgroundLight from "../assets/bg.webp";
+import backgroundDark from "../assets/bg-dark.webp";
 import {
   title,
   shortTitle,

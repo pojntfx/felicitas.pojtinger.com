@@ -1,5 +1,5 @@
 import { common } from "./common";
-import avatar from "../assets/icon.png";
+import avatar from "../assets/icon.webp";
 
 const home = {
   head: {
