@@ -69,7 +69,8 @@ const Skills = styled(SkillsTemplate)`
     transition: all 0.2s ease-in-out !important;
     color: inherit !important;
     &:hover {
-      background: #ffffff;
+      background: ${common.colorLight};
+      ${!common.dark && `color: rgba(255, 255, 255, 0.9)!important;`}
       border-radius: 0.28571429rem;
       transform: scale(1.05) !important;
       box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.12),

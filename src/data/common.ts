@@ -20,6 +20,8 @@ const common = {
   site,
   language,
   color: isNight() ? colorDark : color,
+  colorDark,
+  colorLight: color,
   favicon,
   background: isNight() ? backgroundDark : backgroundLight,
   dark: isNight()
