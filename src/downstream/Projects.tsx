@@ -44,6 +44,12 @@ const Project = styled(Link)`
   margin-bottom: 1em !important;
   & .segment {
     padding: 2.5em !important;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.12),
+        0 2px 10px 0 rgba(34, 36, 38, 0.15);
+    }
   }
 `;
 

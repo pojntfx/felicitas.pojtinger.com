@@ -111,8 +111,12 @@ const home = {
     ],
     skills: {
       description: "I'm a fullstack developer based in Stuttgart, Germany.",
+      descriptionLink:
+        "https://www.openstreetmap.org/way/4443115#map=18/48.74441/9.10021",
       languages: ["Node", "React", "Vue"],
-      tech: ["FLOSS", "GNU/Linux", "Docker", "Kubernetes"]
+      languagesLink: "https://en.wikipedia.org/wiki/Isomorphic_JavaScript",
+      tech: ["FLOSS", "GNU/Linux", "Docker", "Kubernetes"],
+      techLink: "https://en.wikipedia.org/wiki/Kubernetes"
     },
     current: "Standard Framework development for Alpha Horizon.",
     projects: [
