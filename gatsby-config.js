@@ -37,6 +37,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-offline",
-    "gatsby-plugin-typescript"
+    "gatsby-plugin-typescript",
+    "gatsby-v2-plugin-page-transitions"
   ]
 };

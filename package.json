@@ -75,6 +75,7 @@
     "gatsby-plugin-typescript": "^2.0.3",
     "gatsby-source-filesystem": "^2.0.13",
     "gatsby-transformer-yaml": "^2.1.7",
+    "gatsby-v2-plugin-page-transitions": "^1.0.0",
     "html-loader": "^0.5.5",
     "markdown-loader": "^4.0.0",
     "pm2": "^3.2.5",

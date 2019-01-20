@@ -58,7 +58,7 @@ const Projects = ({ projects }: IProjects) => (
           {projects.map(
             ({ title, description, icon, link, ...otherProps }, index) => (
               <Project to={link} key={index}>
-                <Segment {...otherProps} fluid inverted>
+                <Segment {...otherProps} inverted>
                   <Header size="huge" inverted>
                     <Header.Content>
                       <Icon name={icon} /> {title}
