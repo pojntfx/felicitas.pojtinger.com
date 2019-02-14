@@ -118,12 +118,12 @@ const home = {
       tech: ["FLOSS", "GNU/Linux", "Docker", "Kubernetes"],
       techLink: "https://en.wikipedia.org/wiki/Kubernetes"
     },
-    current: "Standard Platform development for Alpha Horizon.",
+    current: "Cluster Platform development for Alpha Horizon.",
     projects: [
       {
-        title: "Standard Platform",
+        title: "Cluster Platform",
         description: "The futurist's approach to system design",
-        link: "https://gitlab.com/standardplatform/standardplatform",
+        link: "https://gitlab.com/clusterplatform/clusterplatform",
         color: "blue",
         icon: "cogs"
       },
@@ -325,7 +325,7 @@ const home = {
       }
     ],
     activity:
-      "https://gateway.activity.demos.standardplatform.io?username=pojntfx"
+      "https://gateway.activity.demos.clusterplatform.io?username=pojntfx"
   },
   background: common.background
 };
