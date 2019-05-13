@@ -4,10 +4,10 @@ const footer = {
   copyright: {
     timeSpan: 2019,
     holder: common.author,
-    link: "https://gitlab.com/pojntfx/projects#licenses"
+    link: "https://gitlab.com/pojntfx/pojntfx#licenses"
   },
   imprint: {
-    link: "imprint"
+    link: "/imprint"
   }
 };
 

@@ -4,7 +4,7 @@
   "description": "Felix Pojtinger's personal site",
   "author": "Felix Pojtinger <felix@pojtinger.com>",
   "license": "AGPL-3.0",
-  "homepage": "https://gitlab.com/pojntfx/projects#README",
+  "homepage": "https://gitlab.com/pojntfx/pojntfx#README",
   "scripts": {
     "dev": "run-p app.dev--watch",
     "build": "run-p app.prod::build web.prod::build",
@@ -113,10 +113,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/pojntfx/projects.git"
+    "url": "git+ssh://git@gitlab.com/pojntfx/pojntfx.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/pojntfx/projects/issues"
+    "url": "https://gitlab.com/pojntfx/pojntfx/issues"
   },
   "keywords": [
     "personal"
