@@ -111,9 +111,9 @@ const home = {
       }
     ],
     skills: {
-      description: "I'm a fullstack developer based in Stuttgart, Germany.",
+      description: "I'm a fullstack developer based in Baiersbronn, Germany.",
       descriptionLink:
-        "https://www.openstreetmap.org/way/4443115#map=18/48.74441/9.10021",
+        "https://www.openstreetmap.org/search?query=Hirschkopfweg%208%20Baiersbronn#map=17/48.50266/8.38205",
       languages: ["Node", "React", "Vue"],
       languagesLink: "https://en.wikipedia.org/wiki/Isomorphic_JavaScript",
       tech: ["FLOSS", "GNU/Linux", "Docker", "Kubernetes"],
