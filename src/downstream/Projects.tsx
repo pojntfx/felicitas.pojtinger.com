@@ -24,17 +24,28 @@ const HeaderWrapper = styled("div")`
   padding-bottom: 0.5em !important;
 `;
 
-interface IProjects {
-  projects: {
-    title: string;
-    description: string;
-    link: string;
-    icon: SemanticICONS;
-    color: SemanticCOLORS;
-  }[];
+interface IProject {
+  title: string;
+  link?: string;
+  repoLink?: string;
+  license: string;
+  date: string;
+  description: string;
+  icon: SemanticICONS;
+  color: SemanticCOLORS;
 }
 
-const Project = styled(Link)`
+interface ICategory {
+  title: string;
+  icon: SemanticICONS;
+  projects: IProject[];
+}
+
+interface IProjectsProps {
+  projects: ICategory[];
+}
+
+const Project = styled("div")`
   width: ${1127 / 3 - (15 + 7.5)}px !important;
   @media (max-width: 1199px) {
     max-width: 100% !important;
@@ -51,31 +62,78 @@ const Project = styled(Link)`
         0 2px 10px 0 rgba(34, 36, 38, 0.15);
     }
   }
+  & a {
+    color: white;
+  }
 `;
 
-const Projects = ({ projects }: IProjects) => (
+const CategoryHeader = styled("h2")`
+  margin-top: 1em !important;
+`;
+
+const Projects = ({ projects }: IProjectsProps) => (
   <section id="projects">
     <ProjectsWrapper inverted={common.dark}>
       <Container>
         <HeaderWrapper>
           <Icon name="database" /> <b>Featured Projects</b>
         </HeaderWrapper>
-        <Gallery options={{ gutter: 30 }}>
-          {projects.map(
-            ({ title, description, icon, link, ...otherProps }, index) => (
-              <Project to={link} key={index}>
-                <Segment {...otherProps} inverted>
-                  <Header size="huge" inverted>
-                    <Header.Content>
-                      <Icon name={icon} /> {title}
-                    </Header.Content>
-                    <Header.Subheader>{description}</Header.Subheader>
-                  </Header>
-                </Segment>
-              </Project>
-            )
-          )}
-        </Gallery>
+        {projects.map(({ title, icon, projects }, index) => (
+          <div key={index}>
+            <CategoryHeader>
+              <Icon name={icon} /> {title}
+            </CategoryHeader>
+            <Gallery options={{ gutter: 30 }}>
+              {projects.map(
+                (
+                  {
+                    title,
+                    link,
+                    repoLink,
+                    license,
+                    date,
+                    description,
+                    icon,
+                    ...otherProps
+                  },
+                  index
+                ) => (
+                  <Project key={index}>
+                    <Segment {...otherProps} inverted>
+                      <Header
+                        as={link || repoLink ? Link : undefined}
+                        to={link || repoLink || undefined}
+                        size="huge"
+                        inverted
+                      >
+                        <Header.Content>
+                          <Icon name={icon} /> {title}
+                        </Header.Content>
+                        <Header.Subheader>{description}</Header.Subheader>
+                      </Header>
+                      <Icon name="calendar" />{" "}
+                      {date.includes("(")
+                        ? date
+                        : new Date(date).toLocaleDateString()}
+                      <br />
+                      <Icon name="legal" /> {license}
+                      {repoLink && (
+                        <>
+                          <br />
+                          <Link to={repoLink}>
+                            <>
+                              <Icon name="git" /> Repository
+                            </>
+                          </Link>
+                        </>
+                      )}
+                    </Segment>
+                  </Project>
+                )
+              )}
+            </Gallery>
+          </div>
+        ))}
       </Container>
     </ProjectsWrapper>
   </section>
