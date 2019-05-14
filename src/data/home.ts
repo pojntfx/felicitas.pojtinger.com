@@ -23,6 +23,19 @@ const home = {
     },
     links: [
       {
+        title: "CV",
+        img:
+          "https://img.shields.io/badge/Curriculum%20vitae-PDF-4c85d0.svg?logo=google&logoColor=ffffff",
+        link:
+          "https://docs.google.com/document/d/1EHisTTIfZj-u1wroThcXz-zHtKwQSPuC79-4W9wPmiI/edit?usp=sharing",
+        help: {
+          title: "Curriculum vitae",
+          text:
+            "A chronological list of all the projects I've worked on (in German).",
+          docsLink: "https://en.wikipedia.org/wiki/Curriculum_vitae"
+        }
+      },
+      {
         title: "GitHub",
         img:
           "https://img.shields.io/badge/GitHub-%40pojntfx-181717.svg?logo=github&logoColor=ffffff",
