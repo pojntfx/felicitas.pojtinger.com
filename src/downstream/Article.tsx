@@ -58,6 +58,10 @@ const HeaderImage = styled("div")`
   }
 `;
 
+const TimeToRead = styled("div")`
+  padding-bottom: 1em;
+`;
+
 const Article = ({
   children,
   pageContext: {
@@ -110,12 +114,12 @@ const Article = ({
       </Metadata>
 
       <Segment className="segment--main" inverted={common.dark}>
-        <div>
+        <TimeToRead>
           <i>
             <Icon name="time" /> Estimated time to read: {timeToRead}{" "}
             {timeToRead === 1 ? "minute" : "minutes"}.
           </i>
-        </div>
+        </TimeToRead>
         {children}
       </Segment>
     </ArticleWrapper>
