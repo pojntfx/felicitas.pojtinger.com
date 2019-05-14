@@ -8,7 +8,7 @@ import {
   Container
 } from "@libresat/frontend-components";
 import { Link } from "../downstream/Link";
-import { MDXProvider } from "@mdx-js/tag";
+import { MDXProvider } from "@mdx-js/react";
 import { injectGlobal } from "emotion";
 import { noscript } from "../data/noscript";
 import {
@@ -95,7 +95,7 @@ const Base = ({
       ),
       pre: ({ children, ...otherProps }: any) => (
         <Paper inverted={common.dark} {...otherProps}>
-          <i>{children.props.props.className.split("-")[1]}</i>
+          <i>{children.props.className.split("-")[1]}</i>
           <Pre>{children}</Pre>
         </Paper>
       ),
