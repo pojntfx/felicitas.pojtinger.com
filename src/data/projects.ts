@@ -16,7 +16,7 @@ const projects = [
       },
       {
         title: "OneFeed",
-        link: "https://family.pojtinger.space",
+        // link: "https://family.pojtinger.space",
         repoLink:
           "https://gitlab.com/pojntfx/incubator/tree/master/packages/social-media-feeds-frontend",
         license: "AGPL-3.0",
@@ -28,7 +28,7 @@ const projects = [
       },
       {
         title: "Gästehaus Gerhard Finkbeiner",
-        link: "https://gaestehaus-gerhard-finkbeiner.pojtinger.space",
+        link: "https://fewo-finkbeiner.pojtinger.space",
         repoLink:
           "https://gitlab.com/pojntfx/gaestehaus-gerhard-finkbeiner-site",
         license: "AGPL-3.0",
@@ -61,7 +61,7 @@ const projects = [
       },
       {
         title: "Neo Richard-von-Weizsäcker-Gymnasium",
-        link: "https://rvwg.pojtinger.space",
+        // link: "https://rvwg.pojtinger.space",
         repoLink: "https://gitlab.com/pojntfx/rvwg-website-neo",
         license: "AGPL-3.0",
         date: "2018-11",
@@ -119,7 +119,7 @@ const projects = [
       },
       {
         title: "DSB Gateway",
-        link: "https://dsb-gateway.pojtinger.space",
+        // link: "https://dsb-gateway.pojtinger.space",
         repoLink:
           "https://gitlab.com/pojntfx/incubator/tree/master/packages/dsb-gateway-frontend",
         license: "AGPL-3.0",
@@ -131,7 +131,7 @@ const projects = [
       },
       {
         title: "PaPaPo",
-        link: "https://papapo.pojtinger.space",
+        // link: "https://papapo.pojtinger.space",
         repoLink: "https://gitlab.com/pojntfx/papapo",
         license: "AGPL-3.0",
         date: "2018-09",
@@ -157,7 +157,7 @@ const projects = [
     projects: [
       {
         title: "Simple Direct Democracy",
-        link: "https://simple-direct-democracy.pojtinger.space",
+        // link: "https://simple-direct-democracy.pojtinger.space",
         repoLink: "https://gitlab.com/simple-direct-democracy/frontend",
         license: "AGPL-3.0",
         date: "2018-05",
@@ -222,7 +222,7 @@ const projects = [
     projects: [
       {
         title: "IraSync",
-        link: "https://irasync.pojtinger.space",
+        // link: "https://irasync.pojtinger.space",
         repoLink: "https://gitlab.com/irasync/frontend",
         license: "AGPL-3.0",
         date: "2018-02",
@@ -472,7 +472,7 @@ const projects = [
       },
       {
         title: "Identity",
-        link: "https://identity.pojtinger.space",
+        // link: "https://identity.pojtinger.space",
         repoLink:
           "https://gitlab.com/libresat/libresat/blob/master/packages/identity-backend",
         license: "AGPL-3.0",
@@ -543,7 +543,7 @@ const projects = [
       },
       {
         title: "Eluseum",
-        link: "https://eluseum.pojtinger.space",
+        link: "https://eluseum.tk",
         repoLink: "https://gitlab.com/eluseum/framework",
         license: "AGPL-3.0",
         date: "2018-02",
@@ -553,7 +553,7 @@ const projects = [
       },
       {
         title: "BeachUX",
-        link: "https://beachux.pojtinger.space",
+        // link: "https://beachux.pojtinger.space",
         repoLink:
           "https://gitlab.com/libresat/archive/tree/master/packages/snet-bridge-client",
         license: "AGPL-3.0",
