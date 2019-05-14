@@ -1,9 +1,9 @@
-exports.createPages = async ({ graphql, actions: { createPage } }) => {
-  createArticles(graphql, createPage);
+exports.createPages = ({ graphql, actions: { createPage } }) => {
+  return createArticles(graphql, createPage);
 };
 
-createArticles = async (graphql, createPage) => {
-  const { data } = await graphql(`
+createArticles = (graphql, createPage) => {
+  return graphql(`
     {
       allMdx {
         edges {
@@ -33,31 +33,30 @@ createArticles = async (graphql, createPage) => {
         }
       }
     }
-  `);
-  return data.allMdx.edges.forEach(
-    async ({
-      node: { parent, timeToRead, frontmatter, headings, excerpt }
-    }) => {
-      await createPage({
-        path: `/articles/${parent.name}`,
-        component: parent.absolutePath,
-        context: {
-          ...frontmatter,
-          title:
-            headings.filter(({ depth }) => depth === 1).length === 0
-              ? frontmatter.title
-              : headings.filter(({ depth }) => depth === 1)[0].value,
-          date: frontmatter.date
-            ? frontmatter.date
-            : parent.name
-                .split("-")
-                .filter((element, index) => (index < 3 ? element : null)) // Get the date from the article's filename, like with Jekyll
-                .join("-"),
-          timeToRead,
-          excerpt
-        }
-      });
-    }
+  `).then(({ data }) =>
+    data.allMdx.edges.forEach(
+      ({ node: { parent, timeToRead, frontmatter, headings, excerpt } }) => {
+        createPage({
+          path: `/articles/${parent.name}`,
+          component: parent.absolutePath,
+          context: {
+            ...frontmatter,
+            title:
+              headings.filter(({ depth }) => depth === 1).length === 0
+                ? frontmatter.title
+                : headings.filter(({ depth }) => depth === 1)[0].value,
+            date: frontmatter.date
+              ? frontmatter.date
+              : parent.name
+                  .split("-")
+                  .filter((element, index) => (index < 3 ? element : null)) // Get the date from the article's filename, like with Jekyll
+                  .join("-"),
+            timeToRead,
+            excerpt
+          }
+        });
+      }
+    )
   );
 };
 
