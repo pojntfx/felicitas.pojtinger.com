@@ -29,7 +29,7 @@ const home = {
         link:
           "https://docs.google.com/document/d/1EHisTTIfZj-u1wroThcXz-zHtKwQSPuC79-4W9wPmiI/edit?usp=sharing",
         help: {
-          title: "Curriculum vitae",
+          title: "Curriculum Vitae",
           text:
             "A chronological list of all the projects I've worked on (in German).",
           docsLink: "https://en.wikipedia.org/wiki/Curriculum_vitae"
