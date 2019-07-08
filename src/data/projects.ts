@@ -248,6 +248,18 @@ const projects = [
     icon: "newspaper outline",
     projects: [
       {
+        title: "Abizeitung 2019",
+        link:
+          "https://drive.google.com/drive/folders/1nq7jsXdSWZfEkC2uBbyncTeg2ShlaTYK?usp=sharing",
+        repoLink: "https://gitlab.com/pojntfx/abizeitung",
+        license: "AGPL-3.0",
+        date: "2019-06",
+        description:
+          "An Art Deco magazine and design system for a local high school",
+        icon: "building",
+        color: "yellow"
+      },
+      {
         title: "Illustrierte",
         link: "https://illustrierte.pojtinger.space",
         repoLink: "https://gitlab.com/die-illustrierte/website",
