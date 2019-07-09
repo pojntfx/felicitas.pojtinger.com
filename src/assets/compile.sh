@@ -1,4 +1,6 @@
 #!/bin/bash
+mogrify -format webp *.jpg
+mogrify -format webp *.png
 SIZE=72 && convert -resize ${SIZE}x${SIZE} icon.webp icon-${SIZE}x${SIZE}.webp &
 SIZE=96 && convert -resize ${SIZE}x${SIZE} icon.webp icon-${SIZE}x${SIZE}.webp &
 SIZE=128 && convert -resize ${SIZE}x${SIZE} icon.webp icon-${SIZE}x${SIZE}.webp &
@@ -16,7 +18,6 @@ SIZE=512 && let HALFSIZE=${SIZE}/2 && convert icon.webp \
 	-alpha Copy \
 	\) -compose CopyOpacity -composite \
 	-trim icon-circle.webp &
-mogrify -format webp *.*
 rm *.png
 rm *.jpg
 rm *~
