@@ -27,7 +27,7 @@ const home = {
         img:
           "https://img.shields.io/badge/Curriculum%20Vitae-PDF-4c85d0.svg?logo=google&logoColor=528ff5&style=popout",
         link:
-          "https://docs.google.com/document/d/1EHisTTIfZj-u1wroThcXz-zHtKwQSPuC79-4W9wPmiI/edit?usp=sharing",
+          "https://docs.google.com/document/d/1rQ_jB4vrzNdB7qMG-JoEZ-uloAAfISxjcQxSKG2XDg8/edit?usp=sharing",
         help: {
           title: "Curriculum Vitae",
           text:
