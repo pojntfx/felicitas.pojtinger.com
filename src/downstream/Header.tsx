@@ -54,7 +54,7 @@ const HeaderView = ({
           <span style={{ display: "none" }} itemProp="email">
             {email}
           </span>
-          <Button content="Contact" icon="mail" secondary={common.dark} />
+          <Button content="Contact" icon="mail" secondary={common.dark()} />
         </Link>
       </Grid.Column>
     </Grid>

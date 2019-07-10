@@ -84,10 +84,10 @@ const Article = ({
   >
     <article itemScope={true} itemType="http://schema.org/BlogPosting">
       <ArticleWrapper
-        inverted={common.dark}
-        itemprop="mainEntityOfPage"
-        itemscope
-        itemtype="http://schema.org/WebPage"
+        inverted={common.dark()}
+        itemProp="mainEntityOfPage"
+        itemScope
+        itemType="http://schema.org/WebPage"
       >
         {imgSrc && imgAlt && (
           <HeaderImage itemProp="sharedContent">
@@ -101,7 +101,7 @@ const Article = ({
             <div>{imgAlt}</div>
           </HeaderImage>
         )}
-        <Header as="h1" inverted={common.dark}>
+        <Header as="h1" inverted={common.dark()}>
           <HeaderTemplate.Content itemProp="headline">
             {title}
             <HeaderTemplate.Subheader itemProp="about">
@@ -131,7 +131,7 @@ const Article = ({
           </div>
         </Metadata>
 
-        <Segment className="segment--main" inverted={common.dark}>
+        <Segment className="segment--main" inverted={common.dark()}>
           <TimeToRead>
             <i>
               <Icon name="time" /> Estimated time to read:{" "}

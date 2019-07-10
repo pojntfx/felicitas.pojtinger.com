@@ -23,11 +23,11 @@ const SkillsTemplate = ({
   ...otherProps
 }: ISkills) => (
   <section id="skills">
-    <Segment inverted={common.dark} {...otherProps}>
+    <Segment inverted={common.dark()} {...otherProps}>
       <Grid columns="equal">
         <Grid.Row columns={2} as={Link} to={descriptionLink}>
           <Grid.Column width={2} textAlign="center" verticalAlign="middle">
-            <Icon inverted={common.dark} name="hand spock" size="big" />
+            <Icon inverted={common.dark()} name="hand spock" size="big" />
           </Grid.Column>
           <Grid.Column verticalAlign="middle">
             <b>Hi! </b> <span itemProp="description">{description}</span>
@@ -35,7 +35,7 @@ const SkillsTemplate = ({
         </Grid.Row>
         <Grid.Row columns={2} as={Link} to={languagesLink}>
           <Grid.Column width={2} textAlign="center" verticalAlign="middle">
-            <Icon inverted={common.dark} name="code" size="big" />
+            <Icon inverted={common.dark()} name="code" size="big" />
           </Grid.Column>
           <Grid.Column verticalAlign="middle">
             I code{" "}
@@ -49,7 +49,7 @@ const SkillsTemplate = ({
         </Grid.Row>
         <Grid.Row columns={2} as={Link} to={techLink}>
           <Grid.Column width={2} textAlign="center" verticalAlign="middle">
-            <Icon inverted={common.dark} name="osi" size="big" />
+            <Icon inverted={common.dark()} name="osi" size="big" />
           </Grid.Column>
           <Grid.Column verticalAlign="middle">
             I love{" "}
@@ -72,7 +72,7 @@ const Skills = styled(SkillsTemplate)`
     color: inherit !important;
     &:hover {
       background: ${common.colorLight};
-      ${!common.dark && `color: rgba(255, 255, 255, 0.9)!important;`}
+      ${!common.dark() && `color: rgba(255, 255, 255, 0.9)!important;`}
       border-radius: 0.28571429rem;
       transform: scale(1.05) !important;
       box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.12),

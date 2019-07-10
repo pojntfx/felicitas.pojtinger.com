@@ -19,12 +19,12 @@ const common = {
   author,
   site,
   language,
-  color: isNight() ? colorDark : color,
+  color: () => (isNight() ? colorDark : color),
   colorDark,
   colorLight: color,
   favicon,
-  background: isNight() ? backgroundDark : backgroundLight,
-  dark: isNight()
+  background: () => (isNight() ? backgroundDark : backgroundLight),
+  dark: () => isNight()
 };
 
 export { common };

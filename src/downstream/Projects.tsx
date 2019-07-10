@@ -73,7 +73,7 @@ const CategoryHeader = styled("h2")`
 
 const Projects = ({ projects }: IProjectsProps) => (
   <section id="projects">
-    <ProjectsWrapper inverted={common.dark}>
+    <ProjectsWrapper inverted={common.dark()}>
       <Container>
         <HeaderWrapper>
           <Icon name="database" /> <b>Featured Projects</b>

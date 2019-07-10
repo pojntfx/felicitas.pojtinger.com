@@ -17,13 +17,13 @@ interface IFooter {
 
 const Menu = styled(MenuTemplate)`
   border-radius: 0 !important;
-  ${common.dark &&
+  ${common.dark() &&
     `& > .container {
       & > .item:first-of-type {
         border-left: 0!important;
       }
     }`}
-  ${!common.dark &&
+  ${!common.dark() &&
     `& > .container {
       & > .right.menu > .item:last-of-type {
         border-right: 1px solid rgba(34, 36, 38, 0.1);
@@ -32,7 +32,7 @@ const Menu = styled(MenuTemplate)`
 `;
 
 const Footer = ({ copyright, imprint, ...otherProps }: IFooter) => (
-  <Menu stackable inverted={common.dark} {...otherProps}>
+  <Menu stackable inverted={common.dark()} {...otherProps}>
     <Container>
       <MenuTemplate.Item
         content={`© ${copyright.timeSpan} ${copyright.holder}`}

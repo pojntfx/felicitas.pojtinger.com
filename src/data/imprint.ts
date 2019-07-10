@@ -8,10 +8,10 @@ const imprint = {
     keywords: ["imprint", "impressum", "legal"],
     favicon: common.favicon,
     siteTitle: common.title,
-    themeColor: common.color,
+    themeColor: common.color(),
     lang: common.language
   },
-  background: common.background
+  background: common.background()
 };
 
 export { imprint };
