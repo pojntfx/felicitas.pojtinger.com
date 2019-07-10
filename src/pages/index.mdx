@@ -15,7 +15,7 @@ import { Projects } from "../downstream/Projects";
 
 export default () => (
   <Base head={home.head} background={home.background} noBackButton noContainer>
-    <Container>
+    <Container itemScope={true} itemType="http://schema.org/Person">
       <Header {...home.content.header} />
       <Links links={home.content.links} />
       <Skills {...home.content.skills} />

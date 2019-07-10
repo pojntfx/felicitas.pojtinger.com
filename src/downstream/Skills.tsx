@@ -30,7 +30,7 @@ const SkillsTemplate = ({
             <Icon inverted={common.dark} name="hand spock" size="big" />
           </Grid.Column>
           <Grid.Column verticalAlign="middle">
-            <b>Hi!</b> {description}
+            <b>Hi! </b> <span itemProp="description">{description}</span>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row columns={2} as={Link} to={languagesLink}>
@@ -39,10 +39,12 @@ const SkillsTemplate = ({
           </Grid.Column>
           <Grid.Column verticalAlign="middle">
             I code{" "}
-            {languages
-              .filter((_, index) => index !== languages.length - 1)
-              .join(", ")}{" "}
-            and {languages[languages.length - 1]}.
+            <span itemProp="knowsAbout">
+              {languages
+                .filter((_, index) => index !== languages.length - 1)
+                .join(", ")}{" "}
+              and {languages[languages.length - 1]}.
+            </span>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row columns={2} as={Link} to={techLink}>

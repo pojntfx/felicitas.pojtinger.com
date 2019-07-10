@@ -36,19 +36,24 @@ const HeaderView = ({
       <Grid.Column textAlign="center" verticalAlign="middle">
         <HeaderTemplate as="h1" textAlign="center" inverted>
           <HeaderTemplate.Content>
-            {name}
-            <HeaderTemplate.Subheader>{job}</HeaderTemplate.Subheader>
+            <span itemProp="name">{name}</span>
+            <HeaderTemplate.Subheader itemProp="jobTitle">
+              {job}
+            </HeaderTemplate.Subheader>
           </HeaderTemplate.Content>
         </HeaderTemplate>
       </Grid.Column>
       <Grid.Column textAlign="center" verticalAlign="middle">
-        <Image circular src={image} />
+        <Image circular src={image} itemProp="image" />
       </Grid.Column>
       <Grid.Column textAlign="center" verticalAlign="middle">
         <Link to={follow}>
           <Button content="Follow" icon="add" primary />
         </Link>
-        <Link to={email}>
+        <Link to={`mailto:${email}`}>
+          <span style={{ display: "none" }} itemProp="email">
+            {email}
+          </span>
           <Button content="Contact" icon="mail" secondary={common.dark} />
         </Link>
       </Grid.Column>
