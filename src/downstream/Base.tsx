@@ -3,7 +3,6 @@ import {
   IShellProps,
   ImageWithCaption,
   Paper,
-  Head,
   NoScript,
   Container
 } from "@libresat/frontend-components";
@@ -23,10 +22,11 @@ import { common } from "../data/common";
 import styled from "@emotion/styled-base";
 import PageTransition from "gatsby-v2-plugin-page-transitions";
 import { Search } from "./Search";
+import { IHead, Head } from "./Head";
 
 interface IBaseProps {
   children: JSX.Element | JSX.Element[];
-  head: IShellProps["head"];
+  head: IHead;
   background: IShellProps["background"];
   noContainer?: IShellProps["noContainer"];
   segment?: IShellProps["segment"];
