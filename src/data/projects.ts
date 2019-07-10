@@ -86,6 +86,16 @@ const projects = [
     icon: "boxes",
     projects: [
       {
+        title: "InfraCTL",
+        repoLink:
+          "https://gitlab.com/pojntfx/pojntfx/blob/master/packages/infractl",
+        license: "AGPL-3.0",
+        date: "2019-07",
+        description: "High-level CLI to manage infrastructure for k3s clusters",
+        icon: "server",
+        color: "grey"
+      },
+      {
         title: "Konfik",
         repoLink:
           "https://gitlab.com/pojntfx/pojntfx/blob/master/packages/konfik",
