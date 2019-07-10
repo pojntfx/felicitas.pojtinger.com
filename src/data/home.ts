@@ -5,7 +5,7 @@ import avatar from "../assets/icon.webp";
 const home = {
   head: {
     title: "Home",
-    description: "General information on me.",
+    description: "Projects, articles and ideas from me.",
     author: common.author,
     keywords: ["home", "overview"],
     favicon: common.favicon,

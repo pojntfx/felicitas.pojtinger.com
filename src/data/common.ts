@@ -11,7 +11,7 @@ import {
   colorDark
 } from "./metadata.json";
 
-const isNight = () => new Date().getHours() >= 17;
+const isNight = () => new Date().getHours() >= 20;
 
 const common = {
   title,
