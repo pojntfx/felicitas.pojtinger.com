@@ -24,7 +24,11 @@ const Head = ({
   ...otherProps
 }: IHead) => (
   <Helmet {...otherProps}>
-    {lang ? <html lang={lang} /> : <html lang="en" />}
+    {lang ? (
+      <html lang={lang} prefix="og: http://ogp.me/ns#" />
+    ) : (
+      <html lang="en" prefix="og: http://ogp.me/ns#" />
+    )}
     <meta charSet="utf-8" />
     <meta httpEquiv="x-ua-compatible" content="ie=edge" />
     <meta
@@ -36,7 +40,8 @@ const Head = ({
     ) : (
       <meta name="theme-color" content="#000000" />
     )}
-    {description && <meta name="description" content={description} />}
+    {description && <meta property="description" content={description} />}
+    {description && <meta property="og:description" content={description} />}
     {keywords && (
       <meta
         name="keywords"
@@ -56,6 +61,11 @@ const Head = ({
     ) : (
       <link rel="icon" href="/favicon.ico" />
     )}
+    {favicon ? (
+      <meta property="og:image" content={favicon} />
+    ) : (
+      <meta property="og:image" content="/favicon.ico" />
+    )}
     <title>
       {title !== "Home"
         ? `${title} | ${siteTitle ? siteTitle : "LibreSat"}`
@@ -63,6 +73,16 @@ const Head = ({
         ? siteTitle
         : "LibreSat"}
     </title>
+    <meta
+      property="og:title"
+      content={
+        title !== "Home"
+          ? `${title} | ${siteTitle ? siteTitle : "LibreSat"}`
+          : siteTitle
+          ? siteTitle
+          : "LibreSat"
+      }
+    />
   </Helmet>
 );
 
