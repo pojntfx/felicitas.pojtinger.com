@@ -76,7 +76,7 @@ const home = {
         help: {
           title: "Twitter",
           text: "Opinions and news by me.",
-          docsLink: "https://https://twitter.com"
+          docsLink: "https://twitter.com"
         }
       },
       {
