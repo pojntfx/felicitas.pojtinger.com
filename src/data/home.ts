@@ -30,8 +30,7 @@ const home = {
           "https://docs.google.com/document/d/1rQ_jB4vrzNdB7qMG-JoEZ-uloAAfISxjcQxSKG2XDg8/edit?usp=sharing",
         help: {
           title: "Curriculum Vitae",
-          text:
-            "A chronological list of all relevant events of my life (in German).",
+          text: "A chronological list of all relevant events of my life.",
           docsLink: "https://en.wikipedia.org/wiki/Curriculum_vitae"
         }
       },
