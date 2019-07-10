@@ -82,66 +82,69 @@ const Article = ({
     }}
     background={articles.background}
   >
-    <ArticleWrapper
-      inverted={common.dark}
-      itemScope={true}
-      itemType="http://schema.org/BlogPosting"
-    >
-      {imgSrc && imgAlt && (
-        <HeaderImage itemProp="sharedContent">
-          <Image
-            as={Link}
-            to={imgSrc}
-            alt={imgAlt}
-            src={imgSrc}
-            itemProp="image"
-          />
-          <div>{imgAlt}</div>
-        </HeaderImage>
-      )}
-      <Header as="h1" inverted={common.dark}>
-        <HeaderTemplate.Content itemProp="headline">
-          {title}
-          <HeaderTemplate.Subheader itemProp="about">
-            {excerpt}
-          </HeaderTemplate.Subheader>
-        </HeaderTemplate.Content>
-      </Header>
-      <Metadata>
-        <Author itemProp="author">
-          <Image circular src={icon} itemProp="image" />
+    <article itemScope={true} itemType="http://schema.org/BlogPosting">
+      <ArticleWrapper
+        inverted={common.dark}
+        itemprop="mainEntityOfPage"
+        itemscope
+        itemtype="http://schema.org/WebPage"
+      >
+        {imgSrc && imgAlt && (
+          <HeaderImage itemProp="sharedContent">
+            <Image
+              as={Link}
+              to={imgSrc}
+              alt={imgAlt}
+              src={imgSrc}
+              itemProp="image"
+            />
+            <div>{imgAlt}</div>
+          </HeaderImage>
+        )}
+        <Header as="h1" inverted={common.dark}>
+          <HeaderTemplate.Content itemProp="headline">
+            {title}
+            <HeaderTemplate.Subheader itemProp="about">
+              {excerpt}
+            </HeaderTemplate.Subheader>
+          </HeaderTemplate.Content>
+        </Header>
+        <Metadata>
+          <Author itemProp="publisher">
+            <Image circular src={icon} itemProp="image" />
+            <div>
+              <span>by</span>
+              <br />
+              <b itemProp="name">{author}</b>
+            </div>
+          </Author>
           <div>
-            <span>by</span>
-            <br />
-            <b itemProp="name">{author}</b>
-          </div>
-        </Author>
-        <div>
-          <Icon name="calendar alternate" /> Published:{" "}
-          <span itemProp="datePublished">
-            {new Date(date).toLocaleDateString()}
-          </span>
-          <br />
-          <Icon name="history" /> Last edit:{" "}
-          <span itemProp="dateModified">
-            {new Date(lastEdit).toLocaleDateString()}
-          </span>
-        </div>
-      </Metadata>
-
-      <Segment className="segment--main" inverted={common.dark}>
-        <TimeToRead>
-          <i>
-            <Icon name="time" /> Estimated time to read:{" "}
-            <span itemProp="timeRequired">
-              {timeToRead} {timeToRead === 1 ? "minute" : "minutes"}
+            <Icon name="calendar alternate" /> Published:{" "}
+            <span itemProp="datePublished">
+              {new Date(date).toLocaleDateString()}
             </span>
-            .
-          </i>
-        </TimeToRead>
-        <span itemProp="articleBody">{children}</span>
-      </Segment>
-    </ArticleWrapper>
+            <br />
+            <Icon name="history" /> Last edit:{" "}
+            <span itemProp="dateModified">
+              {new Date(lastEdit).toLocaleDateString()}
+            </span>
+          </div>
+        </Metadata>
+
+        <Segment className="segment--main" inverted={common.dark}>
+          <TimeToRead>
+            <i>
+              <Icon name="time" /> Estimated time to read:{" "}
+              <span itemProp="timeRequired">
+                {timeToRead} {timeToRead === 1 ? "minute" : "minutes"}
+              </span>
+              .
+            </i>
+          </TimeToRead>
+          <span itemProp="articleBody">{children}</span>
+        </Segment>
+      </ArticleWrapper>
+    </article>
   </Base>
 );
 
