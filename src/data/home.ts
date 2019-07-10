@@ -19,7 +19,7 @@ const home = {
       job: "Developer and Maker",
       image: avatar,
       follow: "https://twitter.com/intent/user?screen_name=pojntfx",
-      email: "mailto:felicitas@pojtinger.com"
+      email: "felicitas@pojtinger.com"
     },
     links: [
       {
