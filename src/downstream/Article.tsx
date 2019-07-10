@@ -83,14 +83,9 @@ const Article = ({
     background={articles.background}
   >
     <article itemScope={true} itemType="http://schema.org/BlogPosting">
-      <ArticleWrapper
-        inverted={common.dark()}
-        itemProp="mainEntityOfPage"
-        itemScope
-        itemType="http://schema.org/WebPage"
-      >
+      <ArticleWrapper inverted={common.dark()}>
         {imgSrc && imgAlt && (
-          <HeaderImage itemProp="sharedContent">
+          <HeaderImage>
             <Image
               as={Link}
               to={imgSrc}
@@ -102,15 +97,19 @@ const Article = ({
           </HeaderImage>
         )}
         <Header as="h1" inverted={common.dark()}>
-          <HeaderTemplate.Content itemProp="headline">
-            {title}
-            <HeaderTemplate.Subheader itemProp="about">
-              {excerpt}
+          <HeaderTemplate.Content>
+            <span itemProp="headline">{title}</span>
+            <HeaderTemplate.Subheader>
+              <span itemProp="about">{excerpt}</span>
             </HeaderTemplate.Subheader>
           </HeaderTemplate.Content>
         </Header>
         <Metadata>
-          <Author itemProp="publisher">
+          <Author
+            itemProp="author"
+            itemScope={true}
+            itemType="http://schema.org/Person"
+          >
             <Image circular src={icon} itemProp="image" />
             <div>
               <span>by</span>
@@ -118,6 +117,21 @@ const Article = ({
               <b itemProp="name">{author}</b>
             </div>
           </Author>
+          <span
+            style={{ display: "none" }}
+            itemProp="publisher"
+            itemScope={true}
+            itemType="http://schema.org/Organization"
+          >
+            <span
+              itemProp="logo"
+              itemScope={true}
+              itemType="http://schema.org/ImageObject"
+            >
+              <img itemProp="url" src={icon} />
+            </span>
+            <span itemProp="name">{author}</span>
+          </span>
           <div>
             <Icon name="calendar alternate" /> Published:{" "}
             <span itemProp="datePublished">
