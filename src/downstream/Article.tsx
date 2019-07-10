@@ -82,45 +82,64 @@ const Article = ({
     }}
     background={articles.background}
   >
-    <ArticleWrapper inverted={common.dark}>
+    <ArticleWrapper
+      inverted={common.dark}
+      itemScope={true}
+      itemType="http://schema.org/BlogPosting"
+    >
       {imgSrc && imgAlt && (
-        <HeaderImage>
-          <Image as={Link} to={imgSrc} alt={imgAlt} src={imgSrc} />
+        <HeaderImage itemProp="sharedContent">
+          <Image
+            as={Link}
+            to={imgSrc}
+            alt={imgAlt}
+            src={imgSrc}
+            itemProp="image"
+          />
           <div>{imgAlt}</div>
         </HeaderImage>
       )}
       <Header as="h1" inverted={common.dark}>
-        <HeaderTemplate.Content>
+        <HeaderTemplate.Content itemProp="headline">
           {title}
-          <HeaderTemplate.Subheader>{excerpt}</HeaderTemplate.Subheader>
+          <HeaderTemplate.Subheader itemProp="about">
+            {excerpt}
+          </HeaderTemplate.Subheader>
         </HeaderTemplate.Content>
       </Header>
       <Metadata>
-        <Author>
-          <Image circular src={icon} />
+        <Author itemProp="author">
+          <Image circular src={icon} itemProp="image" />
           <div>
             <span>by</span>
             <br />
-            <b>{author}</b>
+            <b itemProp="name">{author}</b>
           </div>
         </Author>
         <div>
           <Icon name="calendar alternate" /> Published:{" "}
-          {new Date(date).toLocaleDateString()}
+          <span itemProp="datePublished">
+            {new Date(date).toLocaleDateString()}
+          </span>
           <br />
           <Icon name="history" /> Last edit:{" "}
-          {new Date(lastEdit).toLocaleDateString()}
+          <span itemProp="dateModified">
+            {new Date(lastEdit).toLocaleDateString()}
+          </span>
         </div>
       </Metadata>
 
       <Segment className="segment--main" inverted={common.dark}>
         <TimeToRead>
           <i>
-            <Icon name="time" /> Estimated time to read: {timeToRead}{" "}
-            {timeToRead === 1 ? "minute" : "minutes"}.
+            <Icon name="time" /> Estimated time to read:{" "}
+            <span itemProp="timeRequired">
+              {timeToRead} {timeToRead === 1 ? "minute" : "minutes"}
+            </span>
+            .
           </i>
         </TimeToRead>
-        {children}
+        <span itemProp="articleBody">{children}</span>
       </Segment>
     </ArticleWrapper>
   </Base>
