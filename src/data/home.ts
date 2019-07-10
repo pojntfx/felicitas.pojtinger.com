@@ -10,7 +10,7 @@ const home = {
     keywords: ["home", "overview"],
     favicon: common.favicon,
     siteTitle: common.title,
-    themeColor: common.color,
+    themeColor: common.color(),
     lang: common.language
   },
   content: {
@@ -149,7 +149,7 @@ const home = {
     activity:
       "https://gateway.activity.demos.clusterplatform.io?username=pojntfx"
   },
-  background: common.background
+  background: common.background()
 };
 
 export { home };

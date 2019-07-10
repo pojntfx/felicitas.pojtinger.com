@@ -8,10 +8,10 @@ const pageNotFound = {
     keywords: ["pageNotFound", "404", "rabbit"],
     favicon: common.favicon,
     siteTitle: common.title,
-    themeColor: common.color,
+    themeColor: common.color(),
     lang: common.language
   },
-  background: common.background
+  background: common.background()
 };
 
 export { pageNotFound };

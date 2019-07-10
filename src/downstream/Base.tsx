@@ -66,7 +66,7 @@ const SearchModal = (props: any) => (
     trigger={<Menu.Item content="Search" icon="search" />}
     header="Search"
     content={<NavbarSearch />}
-    dimmer={!common.dark ? "inverted" : undefined}
+    dimmer={!common.dark() ? "inverted" : undefined}
     basic
     closeIcon
     {...props}
@@ -89,12 +89,12 @@ const Base = ({
         <ImageWithCaption as={Link} to={src} src={src} {...otherProps} />
       ),
       blockquote: ({ children, ...otherProps }: any) => (
-        <Paper inverted={common.dark} {...otherProps}>
+        <Paper inverted={common.dark()} {...otherProps}>
           <i>{children}</i>
         </Paper>
       ),
       pre: ({ children, ...otherProps }: any) => (
-        <Paper inverted={common.dark} {...otherProps}>
+        <Paper inverted={common.dark()} {...otherProps}>
           <i>{children.props.className.split("-")[1]}</i>
           <Pre>{children}</Pre>
         </Paper>
@@ -128,7 +128,7 @@ const Base = ({
             width: 100vw;
             height: 100vh;
             z-index: -8;
-            background: linear-gradient(to bottom left,${common.color},#fc6d26);
+            background: linear-gradient(to bottom left,${common.color()},#fc6d26);
             opacity: .4;
           }
         }
@@ -143,7 +143,7 @@ const Base = ({
       {head && <Head {...head} />}
       {!noBackButton && (
         <>
-          <Menu fixed="top" inverted={common.dark}>
+          <Menu fixed="top" inverted={common.dark()}>
             <ContainerTemplate>
               <Menu.Item content="Back" icon="arrow left" as={Link} to="/" />
               <Menu.Menu position="right">
@@ -184,7 +184,7 @@ const Base = ({
             )}
             {segment ? (
               <>
-                <Segment inverted={common.dark} className="segment--main">
+                <Segment inverted={common.dark()} className="segment--main">
                   {children}
                 </Segment>
               </>
@@ -200,7 +200,7 @@ const Base = ({
               </ContainerTemplate>
             )}
             {segment ? (
-              <Segment inverted={common.dark} className="segment--main">
+              <Segment inverted={common.dark()} className="segment--main">
                 {children}
               </Segment>
             ) : (

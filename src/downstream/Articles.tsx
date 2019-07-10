@@ -22,7 +22,7 @@ const HeaderWrapper = styled(Container)``;
 
 const Articles = () => (
   <section id="articles">
-    <ArticlesWrapper inverted={common.dark}>
+    <ArticlesWrapper inverted={common.dark()}>
       <HeaderWrapper>
         <Icon name="newspaper" /> <b>Latest Articles</b>
       </HeaderWrapper>
