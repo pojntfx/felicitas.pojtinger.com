@@ -17,7 +17,6 @@ const ProjectsWrapper = styled(Segment)`
   padding-left: 0 !important;
   padding-right: 0 !important;
   margin-top: 2.5em !important;
-  margin-bottom: 2.5em !important;
 `;
 
 const HeaderWrapper = styled("div")`
