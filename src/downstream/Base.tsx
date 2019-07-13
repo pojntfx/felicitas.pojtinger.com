@@ -23,6 +23,8 @@ import styled from "@emotion/styled-base";
 import PageTransition from "gatsby-v2-plugin-page-transitions";
 import { Search } from "./Search";
 import { IHead, Head } from "./Head";
+import { StaticQuery, graphql } from "gatsby";
+import BackgroundImageTemplate from "gatsby-background-image";
 
 interface IBaseProps {
   children: JSX.Element | JSX.Element[];
@@ -73,6 +75,16 @@ const SearchModal = (props: any) => (
   />
 );
 
+const BackgroundImage = styled(BackgroundImageTemplate)`
+  top: 0;
+  left: 0;
+  content: "";
+  position: fixed !important;
+  width: 100vw;
+  height: 100vh;
+  z-index: -9;
+`;
+
 const Base = ({
   children,
   head,
@@ -105,39 +117,11 @@ const Base = ({
   >
     <>
       {injectGlobal`
-        body {
-          height: auto;
-          &:after {
-            top: 0;
-            left: 0;
-            content: '';
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            z-index: -9;
-            background: url(${background}) no-repeat center center fixed !important;
-            background-size: cover !important;
-            filter: blur(10px);
-            transform: scale(1.1);
-          }
-          &:before {
-            top: 0;
-            left: 0;
-            content: '';
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            z-index: -8;
-            background: linear-gradient(to bottom left,${common.color()},#fc6d26);
-            opacity: .4;
-          }
-        }
         .ui.menu, .ui.segment:not(.segment--main) {
           background: #ffffffe6;
           &.inverted {
             background: #1b1c1de6;
           }
-        }
       `}
       <NoScript {...noscript} />
       {head && <Head {...head} />}
@@ -211,6 +195,41 @@ const Base = ({
       </PageTransition>
       <Footer {...footer} />
     </>
+    <StaticQuery
+      query={graphql`
+        {
+          lightBackground: file(relativePath: { eq: "backgrounds/bg.png" }) {
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 95) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          darkBackground: file(
+            relativePath: { eq: "backgrounds/bg-dark.png" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 95) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+      `}
+      render={({
+        lightBackground: {
+          childImageSharp: { fluid: lightBackground }
+        },
+        darkBackground: {
+          childImageSharp: { fluid: darkBackground }
+        }
+      }) => (
+        <BackgroundImage
+          Tag="span"
+          fluid={common.dark() ? darkBackground : lightBackground}
+        />
+      )}
+    />
   </MDXProvider>
 );
 
