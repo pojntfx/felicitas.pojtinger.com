@@ -18,7 +18,7 @@ const home = {
     header: {
       name: "Felix Pojtinger",
       job: "Developer and Maker",
-      image: avatar,
+      // image: avatar, // This is now hard-coded to use static/img/avatars/avatar.webp
       follow: "https://twitter.com/intent/user?screen_name=pojntfx",
       email: "felix@pojtinger.com"
     },

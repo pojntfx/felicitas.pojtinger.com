@@ -38,6 +38,15 @@ module.exports = {
     },
     "gatsby-plugin-offline",
     "gatsby-plugin-typescript",
-    "gatsby-v2-plugin-page-transitions"
+    "gatsby-v2-plugin-page-transitions",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `static/img/`
+      }
+    }
   ]
 };
