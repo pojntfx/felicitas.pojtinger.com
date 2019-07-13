@@ -1,6 +1,6 @@
 import { common } from "./common";
 import { projects } from "./projects";
-import avatar from "../assets/icon.webp";
+import avatar from "../../static/img/avatars/avatar.webp";
 
 const home = {
   head: {

@@ -8,7 +8,7 @@ import {
   Icon
 } from "semantic-ui-react";
 import styled from "@emotion/styled-base";
-import icon from "../assets/icon.webp";
+import icon from "../../static/img/avatars/avatar.webp";
 import { Link } from "./Link";
 import { common } from "../data/common";
 

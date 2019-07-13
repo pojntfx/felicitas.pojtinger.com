@@ -1,6 +1,6 @@
-import favicon from "../assets/icon-circle.webp";
-import backgroundLight from "../assets/bg.webp";
-import backgroundDark from "../assets/bg-dark.webp";
+import favicon from "../../static/img/avatars/avatar-circular.webp";
+import backgroundLight from "../../static/img/backgrounds/bg.png";
+import backgroundDark from "../../static/img/backgrounds/bg-dark.png";
 import {
   title,
   shortTitle,
@@ -23,6 +23,7 @@ const common = {
   colorDark,
   colorLight: color,
   favicon,
+  // This is now hard-coded to use backgrounds/{bg.webp,bg-dark.webp}
   background: () => (isNight() ? backgroundDark : backgroundLight),
   dark: () => isNight()
 };
