@@ -12,11 +12,18 @@ import { Skills } from "../downstream/Skills";
 import { Container } from "@libresat/frontend-components";
 import { Articles } from "../downstream/Articles";
 import { Projects } from "../downstream/Projects";
+import { graphql } from "gatsby";
 
-export default () => (
+export default ({
+  data: {
+    file: {
+      childImageSharp: { fluid: image }
+    }
+  }
+}) => (
   <Base head={home.head} background={home.background} noBackButton noContainer>
     <Container itemScope={true} itemType="http://schema.org/Person">
-      <Header {...home.content.header} />
+      <Header {...home.content.header} image={image} />
       <Links links={home.content.links} />
       <Skills {...home.content.skills} />
     </Container>
@@ -24,3 +31,17 @@ export default () => (
     <Projects projects={home.content.projects} />
   </Base>
 );
+
+export const query = graphql`
+  {
+    file(relativePath: { eq: "avatars/avatar.webp" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+  }
+`;
+
+;

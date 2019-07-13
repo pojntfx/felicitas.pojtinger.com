@@ -1,18 +1,15 @@
 import * as React from "react";
-import {
-  Grid,
-  Header as HeaderTemplate,
-  Image as ImageTemplate
-} from "semantic-ui-react";
+import { Grid, Header as HeaderTemplate } from "semantic-ui-react";
 import { Button } from "@libresat/frontend-components";
 import { Link } from "./Link";
 import { common } from "../data/common";
 import styled from "@emotion/styled";
+import ImageTemplate from "gatsby-image";
 
 interface IHeader {
   name: string;
   job: string;
-  image: string;
+  image: any;
   email: string;
   follow: string;
 }
@@ -21,6 +18,7 @@ const Image = styled(ImageTemplate)`
   width: 100%;
   max-width: 200px !important;
   margin: 0 auto;
+  border-radius: 50%;
 `;
 
 const HeaderView = ({
@@ -44,7 +42,7 @@ const HeaderView = ({
         </HeaderTemplate>
       </Grid.Column>
       <Grid.Column textAlign="center" verticalAlign="middle">
-        <Image circular src={image} itemProp="image" />
+        <Image fluid={image} />
       </Grid.Column>
       <Grid.Column textAlign="center" verticalAlign="middle">
         <Link to={follow}>
