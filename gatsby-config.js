@@ -33,7 +33,7 @@ module.exports = {
         background_color: require("./src/data/metadata.json").color,
         theme_color: require("./src/data/metadata.json").color,
         display: "standalone",
-        icon: "./static/img/avatars/avatar-circular.webp"
+        icon: "./src/assets/avatars/avatar-circular.webp"
       }
     },
     "gatsby-plugin-offline",
@@ -45,7 +45,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: `static/img/`
+        path: "./src/assets/"
       }
     }
   ]
