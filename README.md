@@ -7,7 +7,7 @@ Felix Pojtinger's personal site.
 ## Features
 
 - [Landing](./src/pages/index.mdx) with general information, articles and projects
-- [Articles](./src/articles/2019-01-17-on-free-software.mdx) with advanced formatting
+- [Articles](./src/articles) with advanced formatting
 - [Imprint](./src/pages/imprint.mdx)
 - [404](./src/pages/404.tsx)
 
