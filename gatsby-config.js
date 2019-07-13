@@ -5,7 +5,18 @@ module.exports = {
       options: {
         defaultLayouts: {
           articles: require.resolve("./src/downstream/Article.tsx")
-        }
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 680,
+              withWebp: true,
+              showCaptions: true,
+              linkImagesToOriginal: true
+            }
+          }
+        ]
       }
     },
     {

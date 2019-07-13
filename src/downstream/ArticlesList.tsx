@@ -16,12 +16,29 @@ const ArticlesList = (props: any) => (
             frontmatter {
               author
               title
-              imgSrc
+              imgSrc {
+                childImageSharp {
+                  fluid(maxWidth: 1920, quality: 95) {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                    originalImg
+                    originalName
+                    presentationWidth
+                    presentationHeight
+                  }
+                }
+              }
             }
             excerpt
           }
         }
       }
+
       query ArticlesQuery {
         allMdx(filter: { frontmatter: { article: { eq: true } } }) {
           ...articles

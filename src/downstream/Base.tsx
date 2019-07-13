@@ -1,7 +1,6 @@
 import * as React from "react";
 import {
   IShellProps,
-  ImageWithCaption,
   Paper,
   NoScript,
   Container
@@ -85,6 +84,10 @@ const BackgroundImage = styled(BackgroundImageTemplate)`
   z-index: -9;
 `;
 
+const Caption = styled("span")`
+  display: block;
+`;
+
 const Base = ({
   children,
   head,
@@ -97,14 +100,14 @@ const Base = ({
   <MDXProvider
     components={{
       a: ({ href, ...otherProps }: any) => <Link to={href} {...otherProps} />,
-      img: ({ src, ...otherProps }: any) => (
-        <ImageWithCaption as={Link} to={src} src={src} {...otherProps} />
-      ),
       blockquote: ({ children, ...otherProps }: any) => (
         <Paper inverted={common.dark()} {...otherProps}>
           <i>{children}</i>
         </Paper>
       ),
+      // Fix DOM violations
+      figure: (props: any) => <span {...props} />,
+      figcaption: (props: any) => <Caption {...props} />,
       pre: ({ children, ...otherProps }: any) => (
         <Paper inverted={common.dark()} {...otherProps}>
           <i>{children.props.className.split("-")[1]}</i>
@@ -122,6 +125,22 @@ const Base = ({
           &.inverted {
             background: #1b1c1de6;
           }
+        }
+        .gatsby-resp-image-figure {
+          margin: 2rem !important;
+          .gatsby-resp-image-image {
+            max-width: 100%;
+            border-radius: 8px;
+          }
+          .gatsby-resp-image-background-image {
+            padding: 0 !important;
+          }
+          .gatsby-resp-image-figcaption {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-style: italic;
+          }
+        }
       `}
       <NoScript {...noscript} />
       {head && <Head {...head} />}

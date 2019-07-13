@@ -18,7 +18,23 @@ createArticles = (graphql, createPage) => {
               title
               author
               lastEdit
-              imgSrc
+              imgSrc {
+                childImageSharp {
+                  fluid(maxWidth: 1920, quality: 95) {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                    originalImg
+                    originalName
+                    presentationWidth
+                    presentationHeight
+                  }
+                }
+              }
               imgAlt
               date
               article
