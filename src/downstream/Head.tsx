@@ -9,6 +9,7 @@ interface IHead {
   favicon?: string;
   siteTitle?: string;
   themeColor?: string;
+  googleSiteVerification?: string;
   lang?: string;
 }
 
@@ -20,6 +21,7 @@ const Head = ({
   favicon,
   siteTitle,
   themeColor,
+  googleSiteVerification,
   lang,
   ...otherProps
 }: IHead) => (
@@ -35,6 +37,9 @@ const Head = ({
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    {googleSiteVerification && (
+      <meta name="google-site-verification" content={googleSiteVerification} />
+    )}
     {themeColor ? (
       <meta name="theme-color" content={themeColor} />
     ) : (

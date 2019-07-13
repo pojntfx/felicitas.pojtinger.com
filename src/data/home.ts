@@ -11,6 +11,7 @@ const home = {
     favicon: common.favicon,
     siteTitle: common.title,
     themeColor: common.color(),
+    googleSiteVerification: "8r_iYyrRDdrnEa65S44-1Wp6WfTlci6okFcPQEkjNAY",
     lang: common.language
   },
   content: {
