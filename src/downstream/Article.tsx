@@ -4,13 +4,14 @@ import { articles } from "../data/articles";
 import {
   Segment,
   Header as HeaderTemplate,
-  Image,
-  Icon
+  Icon,
+  Image as AvatarImage
 } from "semantic-ui-react";
 import styled from "@emotion/styled-base";
 import icon from "../assets/avatars/avatar.webp";
 import { Link } from "./Link";
 import { common } from "../data/common";
+import Image from "gatsby-image";
 
 const ArticleWrapper = styled(Segment)`
   padding: 0 !important;
@@ -47,7 +48,7 @@ const Author = styled("div")`
 `;
 
 const HeaderImage = styled("div")`
-  & > a > img {
+  & img {
     border-top-left-radius: 0.28571429rem;
     border-top-right-radius: 0.28571429rem;
   }
@@ -68,7 +69,9 @@ const Article = ({
     author,
     date,
     lastEdit,
-    imgSrc,
+    imgSrc: {
+      childImageSharp: { fluid: image }
+    },
     imgAlt,
     timeToRead,
     title,
@@ -84,15 +87,11 @@ const Article = ({
   >
     <article itemScope={true} itemType="http://schema.org/BlogPosting">
       <ArticleWrapper inverted={common.dark()}>
-        {imgSrc && imgAlt && (
+        {image && imgAlt && (
           <HeaderImage>
-            <Image
-              as={Link}
-              to={imgSrc}
-              alt={imgAlt}
-              src={imgSrc}
-              itemProp="image"
-            />
+            <Link to={image.originalImg} target="_blank">
+              <Image fluid={image} itemProp="image" />
+            </Link>
             <div>{imgAlt}</div>
           </HeaderImage>
         )}
@@ -110,7 +109,7 @@ const Article = ({
             itemScope={true}
             itemType="http://schema.org/Person"
           >
-            <Image circular src={icon} itemProp="image" />
+            <AvatarImage circular src={icon} itemProp="image" />
             <div>
               <span>by</span>
               <br />

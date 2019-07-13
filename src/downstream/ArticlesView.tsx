@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Coverflow } from "@libresat/frontend-components";
+import { Coverflow } from "./Coverflow";
 import { Link } from "./Link";
 
 const ArticlesView = (
@@ -17,11 +17,17 @@ const ArticlesView = (
         ({
           node: {
             parent,
-            frontmatter: { author, title, imgSrc },
+            frontmatter: {
+              author,
+              title,
+              imgSrc: {
+                childImageSharp: { fluid: image }
+              }
+            },
             excerpt
           }
         }: any) => ({
-          image: imgSrc,
+          image,
           link: `/articles/${parent.name}`,
           header: title,
           meta: `${new Date(

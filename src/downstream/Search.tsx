@@ -38,14 +38,13 @@ const SearchView = ({
         ({
           node: {
             rawBody,
-            frontmatter: { author, title, imgSrc, date },
+            frontmatter: { author, title, date },
             excerpt,
             parent: { name }
           }
         }: any) => {
           return {
             body: rawBody,
-            imgSrc: withPrefix(imgSrc),
             /* FIXME: Nested pages don't get a correct link if they are
             not blog posts! */
             link: /[0-9]+-[0-9]+-[0-9]+(.*)/.test(name)
@@ -95,7 +94,6 @@ const Search = (props: any) => (
               }
               frontmatter {
                 author
-                imgSrc
                 title
                 date
               }
