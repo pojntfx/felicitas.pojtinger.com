@@ -109,7 +109,7 @@
     "typescript": "^3.5.3"
   },
   "main": "public/start.js",
-  "source": "src/start.js",
+  "source": "./src/start.js",
   "bin": "public/start.js",
   "pkg": {
     "assets": [

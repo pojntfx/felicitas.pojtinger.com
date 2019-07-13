@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PageNotFound, Head } from "@libresat/frontend-components";
 import { Link } from "../downstream/Link";
-import pageNotFoundImage from "../../static/img/backgrounds/404-rabbit.webp";
+import pageNotFoundImage from "../assets/backgrounds/404-rabbit.webp";
 import { Base } from "../downstream/Base";
 import { pageNotFound } from "../data/404";
 
