@@ -92,7 +92,7 @@ const projects = [
         license: "AGPL-3.0",
         date: "2019-07",
         description:
-          "CLI to manage supra-cloud SSH keys, nodes and Kubernetes clusters",
+          "CLI to manage supra-cloud SSH keys, nodes, WireGuard overlay networks and Kubernetes clusters",
         icon: "server",
         color: "grey"
       },
