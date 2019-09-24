@@ -62,10 +62,8 @@ const HeaderImage = styled("div")`
     border-top-right-radius: 0.28571429rem;
   }
   & > div:last-child {
-    font-style: italic;
-    text-align: center;
     padding: 1em;
-    margin-top: calc(-1.4285em - 2em);
+    margin-top: calc(-1.4em - 2em); // -1.4 because of WebKit rendering issues
     position: relative;
     background-image: linear-gradient(
       ${common.dark() ? "rgba(27, 28, 29, 0.9)" : "rgba(255, 255, 255, 0.9)"},
@@ -73,6 +71,12 @@ const HeaderImage = styled("div")`
     );
     border-top-left-radius: 0.28571429rem;
     border-top-right-radius: 0.28571429rem;
+    overflow-x: auto;
+    text-align: center;
+    & > span {
+      white-space: nowrap;
+      font-style: italic;
+    }
   }
 `;
 
@@ -110,7 +114,9 @@ const Article = ({
             <Link to={image.originalImg} target="_blank">
               <Image fluid={image} itemProp="image" />
             </Link>
-            <div>{imgAlt}</div>
+            <div>
+              <span>{imgAlt}</span>
+            </div>
           </HeaderImage>
         )}
         <Header as="h1" inverted={common.dark()}>
