@@ -177,7 +177,7 @@ This is perfect for our cluster! We are going to use the `H-1` type. Now to the 
 | H-5924233 | debian-10    |
 ```
 
-InfraCTL currently supports Ubuntu 18.04, Debian 10 and CentOS 7; in case you are using something like a minimal `busybox`-based distro, such a system only works as a compute node and might have networking or storage problems. We are going to use Debian 10 in this case, so the ID `H-5924233` is the one we can use.
+InfraCTL currently supports Ubuntu 18.04 and CentOS 7; in case you are using something like a minimal `busybox`-based distro, such a system only works as a compute node and might have networking or storage problems. We are going to use Ubuntu 18.04 in this case, so the ID `H-168855` is the one we can use.
 
 > The restriction on these OSes is due to the reliance on some RPM/DEB packages. While all base components (private network cluster and workload cluster) are universal ELF binaries, things like the storage cluster are not.
 
@@ -211,7 +211,7 @@ Options:
 Specify the parameters:
 
 ```bash
-[pojntfx@thinkpadx1c3 ~]$ infractl apply node -n node-1 -k H-1040850 -l H-3 -t H-1 -o H-5924233
+[pojntfx@thinkpadx1c3 ~]$ infractl apply node -n node-1 -k H-1040850 -l H-3 -t H-1 -o H-168855
 1569333071691 [DATA] Successfully applied node:
 id: H-3339515
 name: node-1
@@ -219,7 +219,7 @@ ips:
   public: 95.216.215.197
 location: H-3
 type: H-1
-os: H-5924233
+os: H-168855
 
 ...................................................................................... pojntfx@thinkpadx1c3.pojtinger.space
 ```
@@ -227,16 +227,16 @@ os: H-5924233
 And there we go, you've created your first node! Let's create two more:
 
 ```bash
-[pojntfx@thinkpadx1c3 ~]$ infractl apply node -n node-2 -k H-1040850 -l H-3 -t H-1 -o H-5924233
+[pojntfx@thinkpadx1c3 ~]$ infractl apply node -n node-2 -k H-1040850 -l H-3 -t H-1 -o H-168855
 # (...)
-[pojntfx@thinkpadx1c3 ~]$ infractl apply node -n node-3 -k H-1040850 -l H-3 -t H-1 -o H-5924233
+[pojntfx@thinkpadx1c3 ~]$ infractl apply node -n node-3 -k H-1040850 -l H-3 -t H-1 -o H-168855
 # (...)
 [pojntfx@thinkpadx1c3 ~]$ infractl get node
 | ID        | NAME   | PUBLIC-IP      | LOCATION | TYPE | OS        |
 | --------- | ------ | -------------- | -------- | ---- | --------- |
-| H-3339515 | node-1 | 95.216.215.197 | H-3      | H-1  | H-5924233 |
-| H-3339517 | node-2 | 95.217.15.29   | H-3      | H-1  | H-5924233 |
-| H-3339518 | node-3 | 95.217.15.31   | H-3      | H-1  | H-5924233 |
+| H-3339515 | node-1 | 95.216.215.197 | H-3      | H-1  | H-168855 |
+| H-3339517 | node-2 | 95.217.15.29   | H-3      | H-1  | H-168855 |
+| H-3339518 | node-3 | 95.217.15.31   | H-3      | H-1  | H-168855 |
 ```
 
 Those should be all nodes for the cluster. Note the `PUBLIC-IP` column, which shows the IP addresses of the nodes we'll use in the following.
@@ -489,10 +489,10 @@ Once you've set this up, check if the worker nodes have been added successfully:
 
 ```bash
 [pojntfx@thinkpadx1c3 ~]$ kubectl get node -o wide
-NAME     STATUS   ROLES    AGE    VERSION         INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION   CONTAINER-RUNTIME
-node-1   Ready    master   12m    v1.15.3-k3s.1   10.224.183.211   <none>        Debian GNU/Linux 10 (buster)   4.19.0-6-amd64   containerd://1.2.8-k3s.1
-node-3   Ready    worker   108s   v1.15.3-k3s.1   10.224.186.73    <none>        Debian GNU/Linux 10 (buster)   4.19.0-6-amd64   containerd://1.2.8-k3s.1
-node-2   Ready    worker   107s   v1.15.3-k3s.1   10.224.185.14    <none>        Debian GNU/Linux 10 (buster)   4.19.0-6-amd64   containerd://1.2.8-k3s.1
+NAME     STATUS   ROLES    AGE   VERSION         INTERNAL-IP    EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
+node-2   Ready    worker   18m   v1.15.3-k3s.1   192.168.1.10   <none>        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
+node-1   Ready    master   18m   v1.15.3-k3s.1   192.168.1.1    <none>        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
+node-3   Ready    worker   18m   v1.15.3-k3s.1   192.168.1.11   <none>        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
 ```
 
 Take a look the `INTERNAL-IP` column; the type 3 PNC is being used successfully!
