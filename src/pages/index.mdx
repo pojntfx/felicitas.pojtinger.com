@@ -22,7 +22,7 @@ export default ({
   }
 }) => (
   <Base head={home.head} background={home.background} noBackButton noContainer>
-    <Container itemScope={true} itemType="http://schema.org/Person">
+    <Container itemScope itemType="http://schema.org/Person">
       <Header {...home.content.header} image={image} />
       <Links links={home.content.links} />
       <Skills {...home.content.skills} />

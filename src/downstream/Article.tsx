@@ -107,7 +107,7 @@ const Article = ({
     background={articles.background}
     article
   >
-    <article itemScope={true} itemType="http://schema.org/BlogPosting">
+    <article itemScope itemType="http://schema.org/BlogPosting">
       <ArticleWrapper inverted={common.dark()}>
         {image && imgAlt && (
           <HeaderImage>
@@ -130,7 +130,7 @@ const Article = ({
         <Metadata>
           <Author
             itemProp="author"
-            itemScope={true}
+            itemScope
             itemType="http://schema.org/Person"
           >
             <AvatarImage circular src={icon} itemProp="image" />
@@ -143,12 +143,12 @@ const Article = ({
           <span
             style={{ display: "none" }}
             itemProp="publisher"
-            itemScope={true}
+            itemScope
             itemType="http://schema.org/Organization"
           >
             <span
               itemProp="logo"
-              itemScope={true}
+              itemScope
               itemType="http://schema.org/ImageObject"
             >
               <img itemProp="url" src={icon} />
