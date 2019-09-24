@@ -32,6 +32,7 @@ interface IBaseProps {
   noContainer?: IShellProps["noContainer"];
   segment?: IShellProps["segment"];
   noBackButton?: boolean;
+  article?: boolean;
 }
 
 const MainContainer = styled(Container)`
@@ -95,6 +96,7 @@ const Base = ({
   noContainer,
   segment,
   noBackButton,
+  article,
   ...otherProps
 }: IBaseProps) => (
   <MDXProvider
@@ -140,6 +142,13 @@ const Base = ({
             margin-top: 0.5rem;
             font-style: italic;
           }
+        }
+        ${
+          article
+            ? `.ui.container#container--main {
+          max-width: 723px !important;
+        }`
+            : ""
         }
       `}
       <NoScript {...noscript} />
@@ -196,7 +205,7 @@ const Base = ({
             )}
           </>
         ) : (
-          <MainContainer theme={{ noBackButton }}>
+          <MainContainer id="container--main" theme={{ noBackButton }}>
             {noBackButton && (
               <ContainerTemplate>
                 <TopSearch />

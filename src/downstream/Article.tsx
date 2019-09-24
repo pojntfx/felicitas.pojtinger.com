@@ -101,6 +101,7 @@ const Article = ({
       title: `${title} | ${articles.head.title}`
     }}
     background={articles.background}
+    article
   >
     <article itemScope={true} itemType="http://schema.org/BlogPosting">
       <ArticleWrapper inverted={common.dark()}>
