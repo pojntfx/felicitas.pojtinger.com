@@ -1,7 +1,7 @@
 ---
-title: InfraCTL is Ready!
+title: InfraCTL is GA!
 author: Felix Pojtinger
-excerpt: A universal CLI for Hetzner Cloud, WireGuard, N2N and k3s
+excerpt: A supra-cloud CLI for nodes, layer 2/layer 3 overlay networks and Kubernetes clusters
 imgSrc: "../assets/articles/infractl-works-header.jpg"
 imgAlt: '"In the line of fire" by Christopher Burns on Unsplash'
 lastEdit: "2019-09-24"
@@ -9,7 +9,7 @@ date: "2019-09-23"
 article: true
 ---
 
-After many, many hours spend on nightly development sessions and daily architecture debate, I am proud to present a first working version of InfraCTL, the universal cloud, VPN and cluster CLI.
+After many, many hours spend on nightly development sessions, I am proud to present a first working version of InfraCTL, the supra-cloud node, overlay network and Kubernetes cluster CLI!
 
 > Get [InfraCTl on GitLab](https://gitlab.com/pojntfx/pojntfx/tree/master/packages/infractl)!
 
@@ -32,9 +32,15 @@ Commands:
   help [cmd]     display help for [cmd]
 ```
 
-The output above contains a description: As I pointed out before, InfraCTL has the goal of being a universal cloud, VPN and cluster CLI - that means that no client-side tool other than InfraCTL should be necessary to get a working Kubeconfig to a fully-functional Kubernetes cluster.
+The output above contains a description: As I pointed out before, InfraCTL has the goal of being the supra-cloud node, overlay network and Kubernetes cluster CLI - that means that no client-side tool other than InfraCTL should be necessary to go from zero to fully functional Kubernetes cluster.
 
-Let's look at the `apply` commands:
+But first, the terminology:
+
+- `Node`: A node is either a virtual private server/VPS or a bare-metal host.
+- `Private Network Cluster`: A umbrella term for the peer-to-peer VPNs used which create overlay networks.
+- `Workload Cluster`: A umbrella term for the Kubernetes cluster; maybe it will support more distros than `k3s` one day or even another orchestrator.
+
+Let's look at the `apply` sub-commands:
 
 ```bash
 [pojntfx@thinkpadx1c3 ~]$ infractl apply
@@ -54,9 +60,9 @@ Commands:
 
 As you can see, InfraCTL is quite similar to `kubectl` - there are simple, declarative models which you can `apply`, `get` and `delete`. Let's go over these models one by one.
 
-As you can probably think, because InfraCTL connects to Hetzner Cloud, at first a context needs to be set up containing the Hetzner Cloud credentials. If you already have some servers set up, feel free to skip the following steps; everything that uses ID prefixes (like `H-`) is bound to a particular provider. Note: This will allow for the use of the Cluster Platform in the future as well!
+## Manage Nodes
 
-## Create Nodes
+As you can probably think, because InfraCTL connects to Hetzner Cloud, at first a context needs to be set up containing the Hetzner Cloud credentials. If you already have some servers set up, feel free to skip the following steps; everything that uses ID prefixes (like `H-`) is bound to a particular provider. As of today, only Hetzner Cloud is supported, but InfraCTL has been developed in such a way that adding more providers is not much work, so in the future, more providers - such as the Cluster Platform - can be added easily.
 
 ```bash
 [pojntfx@thinkpadx1c3 ~]$ infractl apply context
@@ -66,9 +72,13 @@ Options:
   -h, --hetzner-endpoint <endpoint>  Hetzner's endpoint (i.e. https://api.hetzner.cloud/v1)
   -H, --hetzner-token <token>        Hetzner's token (i.e. jEheVytlAoFl7F8MqUQ7jAo2hOXASztX)
   -h, --help                         output usage information
+[pojntfx@thinkpadx1c3 ~]$ infractl apply context -h https://api.hetzner.cloud/v1 -H jEheVytlAoFl7F8MqUQ7jAo2hOXASztX
+# (...)
 ```
 
-Once you've set up the context, you can upload your SSH key:
+Once you've set up the context, you can upload your public SSH key:
+
+> Don't forget to specify "H-"!
 
 ```bash
 [pojntfx@thinkpadx1c3 ~]$ infractl apply key
@@ -78,6 +88,8 @@ Options:
   -n, --key-name <name>  Key's name (i.e. user@ip-1)
   -f, --key-file [path]  Key's path (i.e. ~/.ssh/id_rsa.pub) (cannot be updated)
   -h, --help             output usage information
+[pojntfx@thinkpadx1c3 ~]$ infractl apply key -n pojntfx@thinkpadx1c3.pojtinger.space -f ~/.ssh/id_rsa.pub H-
+# (...)
 ```
 
 Now, let's create a node. But first, we need to take a look at the location, type and OS we want to use! The `infractl get` commands are useful for that.
@@ -111,7 +123,7 @@ Commands:
 | H-3 | hel1 | 60.169855 | 24.938379 |
 ```
 
-You can get more information on a location by specifying it's ID:
+You can get more information on a location as well as most other models by specifying an ID:
 
 ```bash
 [pojntfx@thinkpadx1c3 ~]$ infractl get location H-3
@@ -132,13 +144,7 @@ Well, let's use the Helsinki datacenter, which has got the ID `H-3`. Next, get a
 | H-1  | cx11  | 0.0048 €     | 2.9631 €      |
 | H-3  | cx21  | 0.0095 €     | 5.831 €       |
 | H-5  | cx31  | 0.0167 €     | 10.591 €      |
-| H-7  | cx41  | 0.0309 €     | 18.921 €      |
-| H-9  | cx51  | 0.0595 €     | 35.581 €      |
-| H-11 | ccx11 | 0.0357 €     | 23.681 €      |
-| H-12 | ccx21 | 0.0714 €     | 41.531 €      |
-| H-13 | ccx31 | 0.1428 €     | 83.181 €      |
-| H-14 | ccx41 | 0.2856 €     | 166.481 €     |
-| H-15 | ccx51 | 0.5712 €     | 321.181 €     |
+# (...)
 ```
 
 As you can see, multiple types with varying prices are available. The cheapest one has the following specs:
@@ -154,7 +160,6 @@ description: CX11
 cores: 1
 memory: 2 GB
 disk: 20 GB
-
 
 ```
 
@@ -174,15 +179,16 @@ This is perfect for our cluster! We are going to use the `H-1` type. Now to the 
 
 InfraCTL currently supports Ubuntu 18.04, Debian 10 and CentOS 7; in case you are using something like a minimal `busybox`-based distro, such a system only works as a compute node and might have networking or storage problems. We are going to use Debian 10 in this case, so the ID `H-5924233` is the one we can use.
 
+> The restriction on these OSes is due to the reliance on some RPM/DEB packages. While all base components (private network cluster and workload cluster) are universal ELF binaries, things like the storage cluster are not.
+
 Before we can get going, let's take a look at the SSH key we uploaded before and note down it's ID:
 
 ```bash
 [pojntfx@thinkpadx1c3 ~]$ infractl get key
 | ID        | NAME                                 | FINGERPRINT                                     |
 | --------- | ------------------------------------ | ----------------------------------------------- |
-| H-1040848 | ubuntu@dev-node-1                    | 92:c8:82:b3:e4:f1:65:9d:aa:c9:8a:53:ef:8a:49:98 |
 | H-1040850 | pojntfx@thinkpadx1c3.pojtinger.space | 33:42:a8:d5:d1:69:63:84:56:4b:e0:92:45:d6:5d:e0 |
-| H-1045282 | vagrant@dev-node-2.pojtinger.space   | 4b:f0:c9:2d:ae:af:61:36:06:db:33:02:e3:06:63:6c |
+# (...)
 ```
 
 In my case, that is `H-1040850`.
@@ -233,7 +239,9 @@ And there we go, you've created your first node! Let's create two more:
 | H-3339518 | node-3 | 95.217.15.31   | H-3      | H-1  | H-5924233 |
 ```
 
-Those should be all nodes for the cluster. Take note of the `PUBLIC-IP` column, which shows the IP addresses of the nodes we'll use in the following. Note: If you already have your own servers and you decided to skip the steps above, continue here!
+Those should be all nodes for the cluster. Note the `PUBLIC-IP` column, which shows the IP addresses of the nodes we'll use in the following.
+
+> If you already have your own servers and you decided to skip the steps above, continue here!
 
 Before we can access the nodes, we first have to start the SSH agent so that InfraCTL can securely access your SSH private key in memory:
 
@@ -242,7 +250,7 @@ Before we can access the nodes, we first have to start the SSH agent so that Inf
 Agent pid 27281
 ```
 
-Now we need to add the SSH key you used above to the agent; you might have to set up a passphrase:
+Now we need to add the corresponding private SSH key of the public SSH key you used above to the agent; you might have to set up a passphrase:
 
 ```bash
 [pojntfx@thinkpadx1c3 ~]$ ssh-add ~/.ssh/id_rsa
@@ -252,11 +260,13 @@ Identity added: /home/pojntfx/.ssh/id_rsa (pojntfx@thinkpadx1c3.pojtinger.space)
 
 And there you go, you can now login to the nodes with `root@${IP}`!
 
-## Create Private Network Clusters (PNCs)
+## Manage Private Network Clusters (PNCs)
 
 There are two types of private network clusters, or PNCs for short, available. We are going to deploy both clusters here on all of the nodes; in the process of doing so, you'll see how the `private-ip/public-ip` syntax works and why it exists. I also recommend you do this; it's another layer of security and comfort if you use both PNCs.
 
-### Type 2
+### Type 2 (N2N)
+
+> This PNC is based on the [N2N VPN](https://github.com/ntop/n2n).
 
 So, let's take a look at how to deploy the first PNC:
 
@@ -272,9 +282,9 @@ Options:
 
 As you can see, this action is quite a bit more complicated to use than the former ones. This is due to the `private-ip/public-ip` syntax - while it is a bit more complex, it allows for the installation of one PNC over another PNC as well as an installation that does not require the local node to be modified, which is very useful in our case.
 
-The two types which are a available are `2` and `3`. The types correspond to the [OSI layer 2](https://en.wikipedia.org/wiki/Data_link_layer)/[OSI layer 3](https://en.wikipedia.org/wiki/Network_layer); type 2 is significantly slower than type 3 but supports Ethernet-level traffic, like for example many old LAN-based games require. Using either of the PNCs allows for the cluster to deployed across everything from one or many public clouds to private cloud behind NAT (they can't ping one another directly) using NAT hole punching. The layer 2 PNC is considerably better at the latter use case, while the layer 3 PNC is much, much faster.
+The two types which are a available are `2` and `3`. The types correspond to the [OSI layer 2](https://en.wikipedia.org/wiki/Data_link_layer)/[OSI layer 3](https://en.wikipedia.org/wiki/Network_layer); type 2 is significantly slower than type 3 but supports Ethernet-level traffic, like for example many old LAN-based games require. Using either of the PNCs allows for the cluster to deployed across everything from one or many public clouds to private cloud behind NAT (they can't ping one another directly) using NAT hole punching. The type 2 PNC is considerably better at the latter use case, while the type 3 PNC is much, much faster.
 
-So, first we'll deploy the layer 2 PNC manager; you may also simply specify the worker nodes as well, but for demonstration purposes we'll not do this:
+So, first we'll deploy the type 2 PNC manager; you may also simply specify the worker nodes as well, but for demonstration purposes we'll not do this:
 
 ```bash
 [pojntfx@thinkpadx1c3 ~]$ infractl apply privatenetworkcluster -t 2 root@95.216.215.197
@@ -345,11 +355,15 @@ PING 192.168.1.10 (192.168.1.10) 56(84) bytes of data.
 
 ```
 
-This is why the `private-ip/public-ip` syntax exists! It will allow us to install the type 3 PNC without modifying the host. In our use case, we will set up the manager and worker nodes in one command; you may however use the step-by-step procedure as shown above as well. A quick note: In the following setup, we let the type 3 worker nodes _connect_ to the type 3 manager node using the type 2 PNC to support a NAT-ed configuration (the nodes can't ping each other without the type 2 PNC), but the _traffic_ between the type 3 nodes themselves _does not go through the type 2 PNC_, which improves the PNC's speed. If you want to route all type 3 PNC traffic over the type 2 PNC, simply specify the private IPs of the worker nodes that you got from above with the `private-ip/public-ip` syntax.
+This is why the `private-ip/public-ip` syntax exists! It will allow us to install the type 3 PNC without modifying the host. In our use case, we will set up the manager and worker nodes in one command; you may however use the step-by-step procedure as shown above as well.
+
+In the following setup, we let the type 3 worker nodes _connect_ to the type 3 manager node using the type 2 PNC to support a NAT-ed configuration (the nodes can't ping each other without the type 2 PNC), but the _traffic_ between the type 3 nodes themselves _does not go through the type 2 PNC_, which improves the PNC's speed. If you want to route all type 3 PNC traffic over the type 2 PNC, simply specify the private IPs of the worker nodes that you got from above with the `private-ip/public-ip` syntax.
 
 If you want to also install the type 2 PNC on the local node, just add `$(whoami)@$(hostname)` or `$(whoami)@$(hostname)/node-private-ip` to the `apply` command above.
 
 ### Type 3
+
+> This PNC is based on the [WireGuard VPN](https://www.wireguard.com/).
 
 So let's deploy the type 3 PNC:
 
@@ -380,7 +394,9 @@ Now, you may take a look at the type 3 PNC nodes (and token, see the commands ab
 
 That works! And again, because no changes have been made to the local node, you can't ping the nodes on their private IPs. If want to do that, follow the instructions from the type 2 PNC above.
 
-## Create Workload Cluster (WLC)
+## Manage Workload Clusters (WLCs)
+
+> The WLC is based on the [k3s Kubernetes distribution](https://k3s.io/).
 
 Now, let's get to deploying the actual workload cluster!
 
@@ -402,10 +418,10 @@ As you can see, there are a lot of options here, and the `private-ip/public-ip` 
 
 There are quite some options for the `apply workloadcluster` option; let's go over them one-by-one.
 
-- `-e`: If selected, this sets up [Let's Encrypt](https://letsencrypt.org/) for _automatic_ HTTPS
-- `-m`: Here you may specify another IP address than the one you set for the master, which is useful for accessing the cluster outside of the PNCs (we'll use this option)
-- `-t`: Here you can set the PNC to use for the workload cluster. We'll use the fast type 3 PNC for this - if you use the type 2 PNC, be sure to use the correct `private-ip` for the manager
-- `-a`: Here you can choose which additional components you want to deploy, such as `monitoring` ([Prometheus](https://prometheus.io/)), `tracing` ([Jaeger](https://www.jaegertracing.io/)) and `error-tracking` ([Sentry](https://sentry.io/))
+- `-e`: If selected, this sets up [Let's Encrypt](https://letsencrypt.org/) for _automatic_ HTTPS.
+- `-m`: Here you may specify another IP address than the one you set for the master, which is useful for accessing the cluster outside of the PNCs (we'll use this option).
+- `-t`: Here you can set the PNC to use for the workload cluster. We'll use the fast type 3 PNC for this - if you use the type 2 PNC, be sure to use the correct `private-ip` for the manager.
+- `-a`: Here you can choose which additional components you want to deploy, such as `monitoring` ([Prometheus](https://prometheus.io/)), `tracing` ([Jaeger](https://www.jaegertracing.io/)) and `error-tracking` ([Sentry](https://sentry.io/)).
 - `-d`: Here you can un-select components installed by default, such as the capability to run [KubeVirt-based](https://kubevirt.io/) virtual machines or the [OpenEBS-based](https://www.openebs.io/) storage cluster.
 
 Now, you can also deploy the manager and workers nodes in one command, but for demonstration purposes we'll deploy them one-by-one; so let's get started with the manager node and add the worker nodes later!
