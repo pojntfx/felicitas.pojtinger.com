@@ -405,13 +405,14 @@ Now, let's get to deploying the actual workload cluster!
 Usage: infractl-apply-workloadclusters [options] <user@manager-node-ip|user@manager-node-public-ip/manager-node-private-ip|manager-node-ip> [user@worker-node-ip] [otherWorkerNodes...] [$(whoami)@$(hostname)]
 
 Options:
-  -e, --lets-encrypt-certificate-issuers-email [email]                                        Let's Encrypt certificate issuers' email for certificates (i.e. user@host.tld) (by default the issuers won't be deployed)
-  -m, --additional-manager-node-ip [ip]                                                       Additional manager node's IP for the workload cluster config (i.e. 192.168.178.141) (by default the target IP will be used, which might only be reachable from within the private network cluster depending on your setup)
-  -t, --private-network-cluster-type [2|3]                                                    Private network clusters' type (OSI layer) (by default 3)
-  -k, --token [token]                                                                         Workload cluster's token (if specified, provide just the manager node's ip without the it's user, but specify the worker nodes' users)
-  -a, --apply [monitoring,tracing,error-tracking]                                             Comma-seperated list of components which are not applied by default to apply
-  -d, --dont-apply [storage,ingress-controller,certificate-manager,virtual-machines,metrics]  Comma-seperated list of components which are applied by default to not apply
-  -h, --help                                                                                  output usage information
+  -e, --lets-encrypt-certificate-issuers-email [email]                                                          Let's Encrypt certificate issuers' email for certificates (i.e. user@host.tld) (by default the issuers won't be deployed)
+  -s, --slow-storage-size [size-in-gb]                                                                          Slow storage's size (by default 10 gigabyte, this can be resized later on) (do not specify unit, it is always gigabyte) (this enables Read-Write-Many PVCs)
+  -m, --additional-manager-node-ip [ip]                                                                         Additional manager node's IP for the workload cluster config (i.e. 192.168.178.141) (by default the target IP will be used, which might only be reachable from within the private network cluster depending on your setup)
+  -t, --private-network-cluster-type [2|3]                                                                      Private network clusters' type (OSI layer) (by default 3)
+  -k, --token [token]                                                                                           Workload cluster's token (if specified, provide just the manager node's ip without the it's user, but specify the worker nodes' users)
+  -a, --apply [monitoring,tracing,error-tracking]                                                               Comma-seperated list of components which are not applied by default to apply
+  -d, --dont-apply [fast-storage,ingress-controller,certificate-manager,slow-storage,virtual-machines,metrics]  Comma-seperated list of components which are applied by default to not apply
+  -h, --help                                                                                                    output usage information
 ```
 
 As you can see, there are a lot of options here, and the `private-ip/public-ip` syntax exists as well, though it is only necessary for the manager node, as the rest will be configured automatically.
@@ -419,6 +420,7 @@ As you can see, there are a lot of options here, and the `private-ip/public-ip` 
 There are quite some options for the `apply workloadcluster` option; let's go over them one-by-one.
 
 - `-e`: If selected, this sets up [Let's Encrypt](https://letsencrypt.org/) for _automatic_ HTTPS.
+- `-s`: This specifies the size for slow storage. Ther are two types of storage available in the workload cluster: fast and slow. Fast storage can only be attached to one node at a time, slow storage can be attached to multiple nodes at once. Think of slow storage as a "partition" on fast storage that can be shared across nodes.
 - `-m`: Here you may specify another IP address than the one you set for the master, which is useful for accessing the cluster outside of the PNCs (we'll use this option).
 - `-t`: Here you can set the PNC to use for the workload cluster. We'll use the fast type 3 PNC for this - if you use the type 2 PNC, be sure to use the correct `private-ip` for the manager.
 - `-a`: Here you can choose which additional components you want to deploy, such as `monitoring` ([Prometheus](https://prometheus.io/)), `tracing` ([Jaeger](https://www.jaegertracing.io/)) and `error-tracking` ([Sentry](https://sentry.io/)).
