@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-mdx",
+      resolve: "gatsby-plugin-mdx",
       options: {
         defaultLayouts: {
           articles: require.resolve("./src/downstream/Article.tsx")
