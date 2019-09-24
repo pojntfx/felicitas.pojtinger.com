@@ -27,10 +27,16 @@ const Metadata = styled("div")`
 `;
 
 const Header = styled(HeaderTemplate)`
-  padding-top: 1.5em !important;
-  padding-bottom: 1.5em !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0.75m !important;
+  padding-bottom: 0.75em !important;
   padding-left: 0.5em !important;
   padding-right: 0.5em !important;
+  background-image: linear-gradient(
+    ${common.dark() ? "rgb(27, 28, 29)" : "rgba(255, 255, 255, 0.9)"},
+    transparent
+  );
 `;
 
 const Author = styled("div")`
@@ -48,14 +54,25 @@ const Author = styled("div")`
 `;
 
 const HeaderImage = styled("div")`
+  & .gatsby-image-wrapper {
+    max-height: 300px;
+  }
   & img {
     border-top-left-radius: 0.28571429rem;
     border-top-right-radius: 0.28571429rem;
   }
-  & > div {
+  & > div:last-child {
     font-style: italic;
     text-align: center;
     padding: 1em;
+    margin-top: calc(-1.4285em - 2em);
+    position: relative;
+    background-image: linear-gradient(
+      ${common.dark() ? "rgba(27, 28, 29, 0.9)" : "rgba(255, 255, 255, 0.9)"},
+      ${common.dark() ? "rgb(27, 28, 29) 60%" : "#ffffff"}
+    );
+    border-top-left-radius: 0.28571429rem;
+    border-top-right-radius: 0.28571429rem;
   }
 `;
 
