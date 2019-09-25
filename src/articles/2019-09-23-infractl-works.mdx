@@ -4,7 +4,7 @@ author: Felix Pojtinger
 excerpt: A supra-cloud CLI for nodes, layer 2/layer 3 overlay networks and Kubernetes clusters
 imgSrc: "../assets/articles/infractl-works-header.jpg"
 imgAlt: '"In the line of fire" by Christopher Burns on Unsplash'
-lastEdit: "2019-09-24"
+lastEdit: "2019-09-25"
 date: "2019-09-23"
 article: true
 ---
@@ -405,14 +405,18 @@ Now, let's get to deploying the actual workload cluster!
 Usage: infractl-apply-workloadclusters [options] <user@manager-node-ip|user@manager-node-public-ip/manager-node-private-ip|manager-node-ip> [user@worker-node-ip] [otherWorkerNodes...] [$(whoami)@$(hostname)]
 
 Options:
-  -e, --lets-encrypt-certificate-issuers-email [email]                                                          Let's Encrypt certificate issuers' email for certificates (i.e. user@host.tld) (by default the issuers won't be deployed)
-  -s, --slow-storage-size [size-in-gb]                                                                          Slow storage's size (by default 10 gigabyte, this can be resized later on) (do not specify unit, it is always gigabyte) (this enables Read-Write-Many PVCs)
-  -m, --additional-manager-node-ip [ip]                                                                         Additional manager node's IP for the workload cluster config (i.e. 192.168.178.141) (by default the target IP will be used, which might only be reachable from within the private network cluster depending on your setup)
-  -t, --private-network-cluster-type [2|3]                                                                      Private network clusters' type (OSI layer) (by default 3)
-  -k, --token [token]                                                                                           Workload cluster's token (if specified, provide just the manager node's ip without the it's user, but specify the worker nodes' users)
-  -a, --apply [monitoring,tracing,error-tracking]                                                               Comma-seperated list of components which are not applied by default to apply
-  -d, --dont-apply [fast-storage,ingress-controller,certificate-manager,slow-storage,virtual-machines,metrics]  Comma-seperated list of components which are applied by default to not apply
-  -h, --help                                                                                                    output usage information
+  -e, --lets-encrypt-certificate-issuers-email [email]                                                                        Let's Encrypt certificate issuers' email for certificates (i.e. user@host.tld) (by default the issuers won't be deployed)
+  -s, --slow-storage-size [size-in-gb]                                                                                        Slow storage's size (by default 10 gigabyte, this can be resized later on) (do not specify unit, it is always gigabyte) (this enables Read-Write-Many PVCs)
+  -b, --backup-s3-endpoint [endpoint]                                                                                         Backup S3-compatible backend's endpoint (i.e. http://95.217.11.207:9000) (by default the backup system configuration won't be deployed)
+  -a, --backup-s3-access-key [access-key]                                                                                     Backup S3-compatible backend's access key (i.e. minio) (by default the backup system configuration won't be deployed)
+  -A, --backup-s3-secret-key [secret-key]                                                                                     Backup S3-compatible backend's secret key (i.e. minio123) (by default the backup system configuration won't be deployed)
+  -B, --backup-encryption-password [password]                                                                                 Backup's encryption password to access and restore backups (by default the backup system configuration won't be deployed)
+  -m, --additional-manager-node-ip [ip]                                                                                       Additional manager node's IP for the workload cluster config (i.e. 192.168.178.141) (by default the target IP will be used, which might only be reachable from within the private network cluster depending on your setup)
+  -t, --private-network-cluster-type [2|3]                                                                                    Private network clusters' type (OSI layer) (by default 3)
+  -k, --token [token]                                                                                                         Workload cluster's token (if specified, provide just the manager node's ip without the it's user, but specify the worker nodes' users)
+  -a, --apply [monitoring,tracing,error-tracking]                                                                             Comma-seperated list of components which are not applied by default to apply
+  -d, --dont-apply [fast-storage,ingress-controller,certificate-manager,slow-storage,backup-system,virtual-machines,metrics]  Comma-seperated list of components which are applied by default to not apply
+  -h, --help                                                                                                                  output usage information
 ```
 
 As you can see, there are a lot of options here, and the `private-ip/public-ip` syntax exists as well, though it is only necessary for the manager node, as the rest will be configured automatically.
@@ -421,6 +425,10 @@ There are quite some options for the `apply workloadcluster` option; let's go ov
 
 - `-e`: If selected, this sets up [Let's Encrypt](https://letsencrypt.org/) for _automatic_ HTTPS.
 - `-s`: This specifies the size for slow storage. Ther are two types of storage available in the workload cluster: fast and slow. Fast storage can only be attached to one node at a time, slow storage can be attached to multiple nodes at once. Think of slow storage as a "partition" on fast storage that can be shared across nodes.
+- `-b`: The S3-compatible endpoint to back PVCs up to.
+- `-a`: The S3-compatible endpoint's access key.
+- `-A`: The S3-compatible endpoint's secret key.
+- `-B`: The backup encryption password; keep this, if you loose it you won't be able to restore your backups.
 - `-m`: Here you may specify another IP address than the one you set for the master, which is useful for accessing the cluster outside of the PNCs (we'll use this option).
 - `-t`: Here you can set the PNC to use for the workload cluster. We'll use the fast type 3 PNC for this - if you use the type 2 PNC, be sure to use the correct `private-ip` for the manager.
 - `-a`: Here you can choose which additional components you want to deploy, such as `monitoring` ([Prometheus](https://prometheus.io/)), `tracing` ([Jaeger](https://www.jaegertracing.io/)) and `error-tracking` ([Sentry](https://sentry.io/)).
@@ -499,7 +507,7 @@ node-3   Ready    worker   18m   v1.15.3-k3s.1   192.168.1.11   <none>        Ub
 
 Take a look the `INTERNAL-IP` column; the type 3 PNC is being used successfully!
 
-Before you can get started, you might have to wait a bit until all the pods for the sub-systems (storage cluster etc.) have started, which can take some time depending on the nodes' internet connection:
+Before you can get started, you might have to wait a bit until all the pods for the sub-systems (storage cluster etc.) have started, which can take some time depending on the nodes' internet connection (and might look different on your system, depending on the components you've installed):
 
 ```bash
 [pojntfx@thinkpadx1c3 ~]$ kubectl get pod -A
@@ -507,32 +515,7 @@ NAMESPACE     NAME                                             READY   STATUS   
 kube-system   coredns-55c55bb5db-8mtgw                         1/1     Running     0          14m
 kubevirt      virt-handler-49kvm                               1/1     Running     0          14m
 kubevirt      virt-controller-564dc766f5-jkmh5                 1/1     Running     0          14m
-kubevirt      virt-api-867d55bf86-9thwj                        1/1     Running     0          14m
-kubevirt      virt-controller-564dc766f5-972l5                 1/1     Running     0          14m
-kubevirt      virt-api-867d55bf86-ms6pg                        1/1     Running     0          14m
-kube-system   helm-install-metrics-server-7cjws                0/1     Completed   0          14m
-kube-system   helm-install-nginx-ingress-fj6t9                 0/1     Completed   0          14m
-default       nginx-ingress-default-backend-576b86996d-pp5jt   1/1     Running     0          12m
-kube-system   helm-install-openebs-gp6pr                       0/1     Completed   0          14m
-kube-system   helm-install-cert-manager-6pgjc                  0/1     Completed   0          14m
-default       metrics-server-77f4b87964-7l49g                  1/1     Running     0          12m
-default       cert-manager-cainjector-5d448d76df-cd84w         1/1     Running     0          12m
-default       openebs-localpv-provisioner-75d89ff558-4hpsc     1/1     Running     0          12m
-default       cert-manager-b74cfcd9d-drqz4                     1/1     Running     0          12m
-default       openebs-snapshot-operator-6f4d4c5656-27sqr       2/2     Running     0          12m
-default       openebs-ndm-7lgff                                1/1     Running     0          12m
-default       openebs-provisioner-65fffd59cc-qgkrr             1/1     Running     0          12m
-default       openebs-admission-server-7b567f9c8c-bfhd4        1/1     Running     0          12m
-default       openebs-apiserver-5d66955bc5-wfzh8               1/1     Running     2          12m
-default       openebs-ndm-operator-5bfb5ff47-xk5mt             1/1     Running     1          12m
-default       cert-manager-webhook-6f75cfcbc8-gxmx6            1/1     Running     0          12m
-default       nginx-ingress-controller-2sh87                   1/1     Running     0          12m
-kubevirt      virt-handler-mwfzn                               1/1     Running     0          3m40s
-default       openebs-ndm-s46nk                                1/1     Running     1          3m40s
-default       nginx-ingress-controller-d9xj9                   1/1     Running     0          3m39s
-default       nginx-ingress-controller-7tx5b                   1/1     Running     0          3m40s
-kubevirt      virt-handler-bzhmv                               1/1     Running     1          3m39s
-default       openebs-ndm-bnvkh                                1/1     Running     1          3m39s
+# (...)
 ```
 
 And there you go! You can now join more nodes into the PNCs and/or the WLCs with the commands shown above - or just enjoy your Kubernetes cluster!
