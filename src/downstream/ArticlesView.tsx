@@ -15,6 +15,27 @@ const ArticlesView = (
       linkComponent={Link}
       items={edges
         .reduce((a, b) => [b, ...a], [])
+        .sort(
+          (a, b) =>
+            new Date(
+              a.node.frontmatter.lastEdit ||
+                a.node.parent.name
+                  .split("-")
+                  .filter((element: any, index: number) =>
+                    index < 3 ? element : null
+                  ) // Get the date from the article's filename, like with Jekyll
+                  .join("-")
+            ).getTime() <
+            new Date(
+              b.node.frontmatter.lastEdit ||
+                b.node.parent.name
+                  .split("-")
+                  .filter((element: any, index: number) =>
+                    index < 3 ? element : null
+                  ) // Get the date from the article's filename, like with Jekyll
+                  .join("-")
+            ).getTime()
+        )
         .map(
           ({
             node: {
