@@ -408,9 +408,10 @@ Options:
   -e, --lets-encrypt-certificate-issuers-email [email]                                                                        Let's Encrypt certificate issuers' email for certificates (i.e. user@host.tld) (by default the issuers won't be deployed)
   -s, --slow-storage-size [size-in-gb]                                                                                        Slow storage's size (by default 10 gigabyte, this can be resized later on) (do not specify unit, it is always gigabyte) (this enables Read-Write-Many PVCs)
   -b, --backup-s3-endpoint [endpoint]                                                                                         Backup S3-compatible backend's endpoint (i.e. http://95.217.11.207:9000) (by default the backup system configuration won't be deployed)
+  -B, --backup-s3-bucket [endpoint]                                                                                           Backup S3-compatible backend's bucket (i.e. backup-1) (by default the backup system configuration won't be deployed)
   -a, --backup-s3-access-key [access-key]                                                                                     Backup S3-compatible backend's access key (i.e. minio) (by default the backup system configuration won't be deployed)
   -A, --backup-s3-secret-key [secret-key]                                                                                     Backup S3-compatible backend's secret key (i.e. minio123) (by default the backup system configuration won't be deployed)
-  -B, --backup-encryption-password [password]                                                                                 Backup's encryption password to access and restore backups (by default the backup system configuration won't be deployed)
+  -p, --backup-encryption-password [password]                                                                                 Backup's encryption password to access and restore backups (by default the backup system configuration won't be deployed)
   -m, --additional-manager-node-ip [ip]                                                                                       Additional manager node's IP for the workload cluster config (i.e. 192.168.178.141) (by default the target IP will be used, which might only be reachable from within the private network cluster depending on your setup)
   -t, --private-network-cluster-type [2|3]                                                                                    Private network clusters' type (OSI layer) (by default 3)
   -k, --token [token]                                                                                                         Workload cluster's token (if specified, provide just the manager node's ip without the it's user, but specify the worker nodes' users)
@@ -426,9 +427,10 @@ There are quite some options for the `apply workloadcluster` option; let's go ov
 - `-e`: If selected, this sets up [Let's Encrypt](https://letsencrypt.org/) for _automatic_ HTTPS.
 - `-s`: This specifies the size for slow storage. Ther are two types of storage available in the workload cluster: fast and slow. Fast storage can only be attached to one node at a time, slow storage can be attached to multiple nodes at once. Think of slow storage as a "partition" on fast storage that can be shared across nodes.
 - `-b`: The S3-compatible endpoint to back PVCs up to.
+- `-B`: The S3-compatible endpoint's bucket.
 - `-a`: The S3-compatible endpoint's access key.
 - `-A`: The S3-compatible endpoint's secret key.
-- `-B`: The backup encryption password; keep this, if you loose it you won't be able to restore your backups.
+- `-p`: The backup encryption password; keep this, if you loose it you won't be able to restore your backups.
 - `-m`: Here you may specify another IP address than the one you set for the master, which is useful for accessing the cluster outside of the PNCs (we'll use this option).
 - `-t`: Here you can set the PNC to use for the workload cluster. We'll use the fast type 3 PNC for this - if you use the type 2 PNC, be sure to use the correct `private-ip` for the manager.
 - `-a`: Here you can choose which additional components you want to deploy, such as `monitoring` ([Prometheus](https://prometheus.io/)), `tracing` ([Jaeger](https://www.jaegertracing.io/)) and `error-tracking` ([Sentry](https://sentry.io/)).
