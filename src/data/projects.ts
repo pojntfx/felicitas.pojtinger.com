@@ -474,7 +474,7 @@ const projects = [
       {
         title: "Legacy Provisioner",
         repoLink:
-          "https://gitlab.com/pojntfx/pojntfx/blob/master/packages/provisioner",
+          "https://gitlab.com/pojntfx/archive/tree/master/packages/provisioner-legacy",
         license: "AGPL-3.0",
         date: "2019-02",
         description:
