@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "dist/",
+    "jsx": "react",
+    "resolveJsonModule": true
+  }
+}
