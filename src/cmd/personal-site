@@ -1,0 +1,29 @@
+#!/usr/bin/node
+
+const express = require("express");
+const path = require("path");
+const {
+  name,
+  description,
+  version,
+  author,
+  license
+} = require("../../package.json");
+
+const start = async port => {
+  const app = express();
+
+  app.use(express.static(path.resolve(`${__dirname}/../../public`)));
+
+  return app.listen(port);
+};
+
+start(process.env.PORT || 8080).then(() =>
+  console.log(`[INFO] Starting app ...
+[DATA] Name: ${name}
+[DATA] Version: ${version}
+[DATA] Description: ${description}
+[DATA] Author: ${author}
+[DATA] License: ${license}
+[DATA] Successfully started app on port: ${process.env.PORT || 8080}`)
+);

@@ -1,0 +1,5 @@
+image: registry.gitlab.com/pojntfx/pojntfx/personal-site:latest
+memory: "128Mi"
+cpu: "500m"
+domain: felicitas.pojtinger.space
+dev: false

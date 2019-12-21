@@ -1,0 +1,92 @@
+{{ if .Values.dev }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: personal-site-dev-cache
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 128Mi
+
+---
+{{ end }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personal-site{{ if .Values.dev }}-dev{{ end }}
+spec:
+  selector:
+    matchLabels:
+      app: personal-site{{ if .Values.dev }}-dev{{ end }}
+  template:
+    metadata:
+      labels:
+        app: personal-site{{ if .Values.dev }}-dev{{ end }}
+    spec:
+      containers:
+        - name: personal-site{{ if .Values.dev }}-dev{{ end }}
+          image: {{ .Values.image }}
+          {{ if .Values.dev }}
+          volumeMounts:
+            - name: personal-site-dev-cache
+              mountPath: /app/.cache
+          {{ else }}
+          resources:
+            limits:
+              memory: {{ .Values.memory }}
+              cpu: {{ .Values.cpu }}
+          {{ end }}
+          ports:
+          {{ if .Values.dev }}
+            - containerPort: 1234
+            - containerPort: 1235
+          {{ else }}
+            - containerPort: 8080
+          {{ end }}
+      {{ if .Values.dev }}
+      volumes:
+        - name: personal-site-dev-cache
+          persistentVolumeClaim:
+            claimName: personal-site-dev-cache
+      {{ end }}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: personal-site{{ if .Values.dev }}-dev{{ end }}
+spec:
+  selector:
+    app: personal-site{{ if .Values.dev }}-dev{{ end }}
+  ports:
+    {{ if .Values.dev }}
+    - port: 1234
+      targetPort: 1234
+      name: http
+    - port: 1235
+      targetPort: 1235
+      name: ws
+    {{ else }}
+    - name: http
+      port: 80
+      targetPort: 8080
+    {{ end }}
+{{ if not .Values.dev }}
+
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: personal-site
+spec:
+  rules:
+    - host: {{ .Values.domain }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: personal-site
+              servicePort: http
+{{ end }}
