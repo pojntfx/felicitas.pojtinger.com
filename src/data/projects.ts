@@ -101,7 +101,7 @@ const projects = [
                 date: "2018-06",
                 description:
                     "Former satellite development and control platform (replaced by LibreSat).",
-                icon: "globe",
+                icon: "th",
                 color: "black"
             },
             {
