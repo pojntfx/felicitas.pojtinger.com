@@ -476,7 +476,7 @@ const projects = [
     projects: [
       {
         title: "CoffeeCodeContribute",
-        link: "https://coffeecodecontribute-website.netlify.com/",
+        link: "https://coffeecodecontribute.org/",
         repoLink: "https://github.com/coffeecodecontribute/website",
         license: "AGPL-3.0",
         date: "2019 (in development)",
