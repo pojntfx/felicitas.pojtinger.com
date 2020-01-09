@@ -9,7 +9,7 @@ const projects = [
           "https://clusterplatform.github.io/clusterplatform/packages/provisioner/",
         repoLink: "https://github.com/clusterplatform/clusterplatform",
         license: "AGPL-3.0",
-        date: "2019 (in development)",
+        date: "2020 (in development)",
         description: "The lean distributed cloud computing system.",
         icon: "users",
         color: "black"
@@ -19,7 +19,7 @@ const projects = [
         link: "https://pojntfx.github.io/charts/",
         repoLink: "https://github.com/pojntfx/charts",
         license: "AGPL-3.0",
-        date: "2019 (in development)",
+        date: "2020 (in development)",
         description: "Helm chart repository for my projects.",
         icon: "pallet",
         color: "blue"
@@ -29,32 +29,43 @@ const projects = [
         link: "https://pojntfx.github.io/image-builder/",
         repoLink: "https://github.com/pojntfx/image-builder",
         license: "AGPL-3.0",
-        date: "2019 (in development)",
+        date: "2020 (in development)",
         description: "A tool to build KubeVirt disk images.",
         icon: "camera",
         color: "red"
+      },
+      {
+        title: "gon2n",
+        link: "https://pojntfx.github.io/gon2n/",
+        repoLink: "https://github.com/pojntfx/gon2n",
+        license: "AGPL-3.0",
+        date: "2020 (in development)",
+        description:
+          "Go bindings, management daemons and CLIs for n2n edges and supernodes.",
+        icon: "globe",
+        color: "pink"
       },
       {
         title: "dibs",
         link: "https://pojntfx.github.io/dibs/",
         repoLink: "https://github.com/pojntfx/dibs",
         license: "AGPL-3.0",
-        date: "2019 (in development)",
+        date: "2020 (in development)",
         description:
           "System for distributed polyglot, multi-module, multi-architecture development and CI/CD.",
         icon: "sort",
-        color: "black"
+        color: "green"
       },
       {
         title: "infractl",
         link: "https://pojntfx.github.io/infractl/",
         repoLink: "https://github.com/pojntfx/infractl",
         license: "AGPL-3.0",
-        date: "2019-10",
+        date: "2020 (in development)",
         description:
           "A supra-cloud CLI for nodes, layer 2/layer 3 overlay networks and Kubernetes clusters.",
         icon: "server",
-        color: "grey"
+        color: "orange"
       },
       {
         title: "konfik",
@@ -64,7 +75,7 @@ const projects = [
         date: "2019-10-05",
         description: "A simple CLI to manage multiple kubeconfigs.",
         icon: "terminal",
-        color: "black"
+        color: "violet"
       }
     ]
   },
