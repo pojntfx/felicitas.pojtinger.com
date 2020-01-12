@@ -25,14 +25,15 @@ const projects = [
         color: "blue"
       },
       {
-        title: "Image Builder",
-        link: "https://pojntfx.github.io/image-builder/",
-        repoLink: "https://github.com/pojntfx/image-builder",
+        title: "go-isc-dhcp",
+        link: "https://pojntfx.github.io/go-isc-dhcp/",
+        repoLink: "https://github.com/pojntfx/go-isc-dhcp",
         license: "AGPL-3.0",
         date: "2020 (in development)",
-        description: "A tool to build KubeVirt disk images.",
-        icon: "camera",
-        color: "red"
+        description:
+          "Management daemons and CLIs for the ISC DHCP server and client.",
+        icon: "list",
+        color: "olive"
       },
       {
         title: "gon2n",
@@ -66,6 +67,16 @@ const projects = [
           "A supra-cloud CLI for nodes, layer 2/layer 3 overlay networks and Kubernetes clusters.",
         icon: "server",
         color: "orange"
+      },
+      {
+        title: "Image Builder",
+        link: "https://pojntfx.github.io/image-builder/",
+        repoLink: "https://github.com/pojntfx/image-builder",
+        license: "AGPL-3.0",
+        date: "2020 (in development)",
+        description: "A tool to build KubeVirt disk images.",
+        icon: "camera",
+        color: "red"
       },
       {
         title: "konfik",
@@ -255,7 +266,7 @@ const projects = [
         link: "/",
         repoLink: "https://github.com/pojntfx/personal-site",
         license: "AGPL-3.0",
-        date: "2019 (in development)",
+        date: "2020 (in development)",
         description: "Central hub for my projects and articles.",
         icon: "home",
         color: "blue"
@@ -421,7 +432,7 @@ const projects = [
         title: "Frontend Components",
         repoLink: "https://github.com/pojntfx/frontend-components/",
         license: "AGPL-3.0",
-        date: "2019 (in development)",
+        date: "2020 (in development)",
         description:
           "A comprehensive high-level React component collection, based on Semantic UI React.",
         icon: "boxes",
@@ -443,7 +454,7 @@ const projects = [
         link: "https://pojntfx.github.io/gomather/",
         repoLink: "https://github.com/pojntfx/gomather",
         license: "AGPL-3.0",
-        date: "2019 (in development)",
+        date: "2020 (in development)",
         description: "Sane conventions for Go gRPC microservices.",
         icon: "cog",
         color: "blue"
@@ -453,7 +464,7 @@ const projects = [
         link: "https://pojntfx.github.io/mather.js/",
         repoLink: "https://github.com/pojntfx/mather.js",
         license: "AGPL-3.0",
-        date: "2019 (in development)",
+        date: "2020 (in development)",
         description: "Sane conventions for JS gRPC microservices.",
         icon: "js",
         color: "yellow"
@@ -463,7 +474,7 @@ const projects = [
         link: "https://pojntfx.github.io/mather-rb/",
         repoLink: "https://github.com/pojntfx/mather-rb",
         license: "AGPL-3.0",
-        date: "2019 (in development)",
+        date: "2020 (in development)",
         description: "Sane conventions for Ruby gRPC microservices.",
         icon: "gem",
         color: "red"
@@ -479,7 +490,7 @@ const projects = [
         link: "https://coffeecodecontribute.org/",
         repoLink: "https://github.com/coffeecodecontribute/website",
         license: "AGPL-3.0",
-        date: "2019 (in development)",
+        date: "2020 (in development)",
         description: "Caffeinated FLOSS Projects.",
         icon: "coffee",
         color: "brown"
