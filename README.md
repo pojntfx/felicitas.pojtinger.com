@@ -1,16 +1,13 @@
-# Felix Pojtinger's Site
+# Personal Site
 
-![Screenshot of the landing page](./assets/screenshot.webp)
+My personal site.
 
-Felix Pojtinger's personal site.
+## Installation
 
-## Features
+A npm package [is available](https://www.npmjs.com/package/@pojntfx/personal-site).
 
-- [Landing](./src/pages/index.mdx) with general information, articles and projects
-- [Articles](./src/articles) with advanced formatting
-- [Imprint](./src/pages/imprint.mdx)
-- [404](./src/pages/404.tsx)
+## License
 
-## Docs
+Personal Site (c) 2020 Felix Pojtinger
 
-See [Platform README](../../README.md).
+SPDX-License-Identifier: AGPL-3.0
