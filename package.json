@@ -1,7 +1,7 @@
 {
   "name": "@pojntfx/personal-site",
   "version": "0.0.1-alpha1",
-  "description": "Felicitas Pojtinger's personal site",
+  "description": "My personal site",
   "main": "src/pages/index.js",
   "scripts": {
     "dev": "gatsby develop",
