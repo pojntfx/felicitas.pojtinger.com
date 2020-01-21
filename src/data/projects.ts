@@ -47,6 +47,16 @@ const projects = [
         color: "pink"
       },
       {
+        title: "k3sd",
+        link: "https://pojntfx.github.io/k3sd/",
+        repoLink: "https://github.com/pojntfx/k3sd",
+        license: "AGPL-3.0",
+        date: "2020 (in development)",
+        description: "Management daemon and CLIs for k3s servers and agents.",
+        icon: "sitemap",
+        color: "grey"
+      },
+      {
         title: "dibs",
         link: "https://pojntfx.github.io/dibs/",
         repoLink: "https://github.com/pojntfx/dibs",
