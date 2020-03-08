@@ -2,9 +2,9 @@ import { common } from "./common";
 
 const footer = {
   copyright: {
-    timeSpan: 2019,
+    timeSpan: 2020,
     holder: common.author,
-    link: "https://gitlab.com/pojntfx/pojntfx#licenses"
+    link: "https://github.com/pojntfx/personal-site/"
   },
   imprint: {
     link: "/imprint"
