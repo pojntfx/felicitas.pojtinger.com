@@ -64,7 +64,7 @@ const HeaderImage = styled("div")`
   }
   & > div:last-child {
     padding: 1em;
-    margin-top: calc(-1.4em - 2em); // -1.4 because of WebKit rendering issues
+    margin-top: calc(-1.4em - 2em + 1px); // +1px because of WebKit rendering issues
     position: relative;
     background-image: linear-gradient(
       ${common.dark() ? "rgba(27, 28, 29, 0.9)" : "rgba(255, 255, 255, 0.9)"},
