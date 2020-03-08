@@ -34,8 +34,9 @@ const Header = styled(HeaderTemplate)`
   padding-left: 0.5em !important;
   padding-right: 0.5em !important;
   background-image: linear-gradient(
+    to bottom,
     ${common.dark() ? "rgb(27, 28, 29)" : "rgba(255, 255, 255, 0.9)"},
-    transparent
+    rgba(255, 255, 255, 0)
   );
 `;
 
