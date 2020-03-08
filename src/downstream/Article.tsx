@@ -8,7 +8,7 @@ import {
   Image as AvatarImage
 } from "semantic-ui-react";
 import styled from "@emotion/styled-base";
-import icon from "../assets/avatars/avatar.webp";
+import icon from "../assets/avatars/avatar.jpg";
 import { Link } from "./Link";
 import { common } from "../data/common";
 import Image from "gatsby-image";
