@@ -124,6 +124,7 @@ const Base = ({
       {injectGlobal`
         .ui.menu, .ui.segment:not(.segment--main) {
           background: #ffffffe6;
+          backdrop-filter: saturate(180%) blur(20px);
           &.inverted {
             background: #1b1c1de6;
           }
