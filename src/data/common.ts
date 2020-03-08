@@ -11,7 +11,9 @@ import {
   colorDark
 } from "./metadata.json";
 
-const isNight = () => new Date().getHours() >= 20;
+const prefersDarkMode = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 const common = {
   title,
@@ -19,13 +21,13 @@ const common = {
   author,
   site,
   language,
-  color: () => (isNight() ? colorDark : color),
+  color: () => (prefersDarkMode() ? colorDark : color),
   colorDark,
   colorLight: color,
   favicon,
   // This is now hard-coded to use backgrounds/{bg.jpg,bg-dark.jpg}
-  background: () => (isNight() ? backgroundDark : backgroundLight),
-  dark: () => isNight()
+  background: () => (prefersDarkMode() ? backgroundDark : backgroundLight),
+  dark: () => prefersDarkMode()
 };
 
 export { common };
