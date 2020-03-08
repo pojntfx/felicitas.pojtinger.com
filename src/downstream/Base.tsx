@@ -44,6 +44,9 @@ const Pre = styled("pre")`
 `;
 
 const SearchModalWrapper = styled(Modal)`
+  & .close {
+    color: ${common.dark() ? "white" : "black"} !important;
+  }
   & > .header {
     border-bottom: 0px solid transparent !important;
   }
@@ -122,12 +125,9 @@ const Base = ({
   >
     <>
       {injectGlobal`
-        .ui.menu, .ui.segment:not(.segment--main) {
-          background: #ffffffe6;
+        .ui.menu, .ui.segment:not(.segment--main), .dimmer {
+          background: ${common.dark() ? "#1b1c1dcc" : "#ffffffcc"} !important;
           backdrop-filter: saturate(180%) blur(20px);
-          &.inverted {
-            background: #1b1c1de6;
-          }
         }
         .gatsby-resp-image-figure {
           margin: 2rem !important;
@@ -147,7 +147,7 @@ const Base = ({
         ${
           article
             ? `.ui.container#container--main {
-          max-width: 723px !important;
+          max-width: 800px !important;
         }`
             : ""
         }
