@@ -68,6 +68,7 @@ const HeaderImage = styled("div")`
       -1.4em - 2em + 1px
     ); // +1px because of WebKit rendering issues
     position: relative;
+    backdrop-filter: saturate(180%) blur(20px);
     background-image: linear-gradient(
       ${common.dark() ? "rgba(27, 28, 29, 0.9)" : "rgba(255, 255, 255, 0.9)"},
       ${common.dark() ? "rgb(27, 28, 29) 60%" : "#ffffff"}
