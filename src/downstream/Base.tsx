@@ -226,7 +226,7 @@ const Base = ({
     <StaticQuery
       query={graphql`
         {
-          lightBackground: file(relativePath: { eq: "backgrounds/bg.png" }) {
+          lightBackground: file(relativePath: { eq: "backgrounds/bg.jpg" }) {
             childImageSharp {
               fluid(maxWidth: 1920, quality: 95) {
                 ...GatsbyImageSharpFluid_withWebp
@@ -234,7 +234,7 @@ const Base = ({
             }
           }
           darkBackground: file(
-            relativePath: { eq: "backgrounds/bg-dark.png" }
+            relativePath: { eq: "backgrounds/bg-dark.jpg" }
           ) {
             childImageSharp {
               fluid(maxWidth: 1920, quality: 95) {

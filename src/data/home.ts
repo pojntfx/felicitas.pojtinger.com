@@ -1,6 +1,6 @@
 import {common} from "./common";
 import {projects} from "./projects";
-// import avatar from "../assets/avatars/avatar.webp";
+// import avatar from "../assets/avatars/avatar.jpg";
 
 const home = {
     head: {
@@ -18,7 +18,7 @@ const home = {
         header: {
             name: "Felicitas Pojtinger",
             job: "Developer and Maker",
-            // image: avatar, // This is now hard-coded to use static/avatars/avatar.webp
+            // image: avatar, // This is now hard-coded to use static/avatars/avatar.jpg
             follow: "https://twitter.com/intent/user?screen_name=pojntfx",
             email: "felicitas@pojtinger.com"
         },

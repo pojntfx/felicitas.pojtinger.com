@@ -44,7 +44,7 @@ module.exports = {
         background_color: require("./src/data/metadata.json").color,
         theme_color: require("./src/data/metadata.json").color,
         display: "standalone",
-        icon: "./src/assets/avatars/avatar-circular.webp"
+        icon: "./src/assets/avatars/avatar-circular.png"
       }
     },
     "gatsby-plugin-offline",
