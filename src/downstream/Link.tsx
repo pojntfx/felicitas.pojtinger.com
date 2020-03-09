@@ -13,11 +13,11 @@ interface ILinkProps {
 
 const Link = ({ to, children, exact, ...otherProps }: ILinkProps) =>
   isExternalLink(to) ? (
-    <a {...otherProps} target="_blank" href={to}>
+    <a {...otherProps} target="_blank" rel="noopener noreferrer" href={to}>
       {children ? children : null}
     </a>
   ) : isImageLink(to) ? (
-    <a {...otherProps} target="_blank" href={to}>
+    <a {...otherProps} target="_blank" rel="noopener noreferrer" href={to}>
       {/* Here we could prefix local images */}
       {children ? children : null}
     </a>

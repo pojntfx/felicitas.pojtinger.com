@@ -155,7 +155,7 @@ const Article = ({
               itemScope
               itemType="http://schema.org/ImageObject"
             >
-              <img itemProp="url" src={icon} />
+              <img alt="logo" itemProp="url" src={icon} />
             </span>
             <span itemProp="name">{author}</span>
           </span>
