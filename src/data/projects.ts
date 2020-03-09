@@ -57,6 +57,16 @@ const projects = [
         color: "grey"
       },
       {
+        title: "ipxebuilderd",
+        link: "https://pojntfx.github.io/ipxebuilderd/",
+        repoLink: "https://github.com/pojntfx/ipxebuilderd",
+        license: "AGPL-3.0",
+        date: "2020 (in development)",
+        description: "Build daemon and CLI for iPXE.",
+        icon: "shipping fast",
+        color: "yellow"
+      },
+      {
         title: "dibs",
         link: "https://pojntfx.github.io/dibs/",
         repoLink: "https://github.com/pojntfx/dibs",
