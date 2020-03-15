@@ -36,6 +36,16 @@ const projects = [
         color: "olive"
       },
       {
+        title: "tftpdd",
+        link: "https://pojntfx.github.io/tftpdd/",
+        repoLink: "https://github.com/pojntfx/tftpdd",
+        license: "AGPL-3.0",
+        date: "2020 (in development)",
+        description: "TFTP server daemon.",
+        icon: "download",
+        color: "teal"
+      },
+      {
         title: "gon2n",
         link: "https://pojntfx.github.io/gon2n/",
         repoLink: "https://github.com/pojntfx/gon2n",
