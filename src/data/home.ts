@@ -73,7 +73,7 @@ const home = {
         skills: {
             description: "I'm a full stack developer based in Stuttgart, Germany.",
             descriptionLink:
-                "https://www.openstreetmap.org/way/124979050#map=19/48.75712/9.27429",
+                "https://www.openstreetmap.org/search?whereami=1&query=48.74553%2C9.10098#map=19/48.74553/9.10098",
             languages: ["Go", "JS (Node/React)", "Ruby"],
             languagesLink: "https://en.wikipedia.org/wiki/Isomorphic_JavaScript",
             tech: ["FLOSS", "GNU/Linux", "Docker", "Kubernetes"],
