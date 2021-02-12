@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Segment, Container, Icon } from "semantic-ui-react";
 import { ArticlesList } from "./ArticlesList";
-import styled from "@emotion/styled-base";
+import styled from "@emotion/styled";
 import { common } from "../data/common";
 
 const ArticlesWrapper = styled(Segment)`

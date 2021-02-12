@@ -8,6 +8,6 @@ A npm package [is available](https://www.npmjs.com/package/@pojntfx/personal-sit
 
 ## License
 
-Personal Site (c) 2020 Felix Pojtinger
+Personal Site (c) 2021 Felix Pojtinger
 
 SPDX-License-Identifier: AGPL-3.0

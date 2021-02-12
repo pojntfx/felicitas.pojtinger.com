@@ -1,8 +1,9 @@
 import * as React from "react";
-import {IHelp} from "@libresat/frontend-components/dist/types";
-import {Link} from "./Link";
-import {Help} from "@libresat/frontend-components";
+import { Link } from "./Link";
 import styled from "@emotion/styled";
+import { Popup } from "semantic-ui-react";
+import { IHelp } from "@libresat/frontend-components/dist/types";
+import { Help } from "@libresat/frontend-components";
 
 const LinksWrapper = styled("div")`
   overflow-x: auto;
@@ -38,34 +39,35 @@ const LinksWrapper = styled("div")`
 `;
 
 interface IBadge {
-    title: string;
-    img: string;
-    link: string;
-    help: IHelp;
+  title: string;
+  img: string;
+  link: string;
+  help: IHelp;
 }
 
 interface ILinks {
-    links: IBadge[];
+  links: IBadge[];
 }
 
 const LinksSection = styled.section`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-const Links = ({links, ...otherProps}: ILinks) => (
-    <LinksSection id="links">
-        <LinksWrapper {...otherProps}>
-            {links.map((link, index) => (
-                <Link to={link.link} key={index}>
-                    <Help {...link.help}>
-                        <img src={link.img} alt={link.title}/>
-                    </Help>
-                </Link>
-            ))}
-        </LinksWrapper>
-    </LinksSection>
+const Links = ({ links, ...otherProps }: ILinks) => (
+  <LinksSection id="links">
+    <LinksWrapper {...otherProps}>
+      {links.map((link, index) => (
+        <Link to={link.link} key={index}>
+          <Popup
+            content={link.help.text}
+            trigger={<img src={link.img} alt={link.title} />}
+          />
+        </Link>
+      ))}
+    </LinksWrapper>
+  </LinksSection>
 );
 
-export {Links};
+export { Links };

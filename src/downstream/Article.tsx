@@ -5,9 +5,9 @@ import {
   Segment,
   Header as HeaderTemplate,
   Icon,
-  Image as AvatarImage
+  Image as AvatarImage,
 } from "semantic-ui-react";
-import styled from "@emotion/styled-base";
+import styled from "@emotion/styled";
 import icon from "../assets/avatars/avatar.jpg";
 import { Link } from "./Link";
 import { common } from "../data/common";
@@ -95,18 +95,18 @@ const Article = ({
     date,
     lastEdit,
     imgSrc: {
-      childImageSharp: { fluid: image }
+      childImageSharp: { fluid: image },
     },
     imgAlt,
     timeToRead,
     title,
-    excerpt
-  }
+    excerpt,
+  },
 }: any) => (
   <Base
     head={{
       ...articles.head,
-      title: `${title} | ${articles.head.title}`
+      title: `${title} | ${articles.head.title}`,
     }}
     background={articles.background}
     article

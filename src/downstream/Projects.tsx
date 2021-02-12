@@ -4,9 +4,9 @@ import {
   Container,
   Header,
   SemanticICONS,
-  Icon
+  Icon,
 } from "semantic-ui-react";
-import styled from "@emotion/styled-base";
+import styled from "@emotion/styled";
 import { common } from "../data/common";
 import { Link } from "./Link";
 import Gallery from "react-masonry-component";
