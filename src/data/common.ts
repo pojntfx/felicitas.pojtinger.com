@@ -8,7 +8,7 @@ import {
   site,
   language,
   color,
-  colorDark
+  colorDark,
 } from "./metadata.json";
 
 const prefersDarkMode = () =>
@@ -27,7 +27,7 @@ const common = {
   favicon,
   // This is now hard-coded to use backgrounds/{bg.jpg,bg-dark.jpg}
   background: () => (prefersDarkMode() ? backgroundDark : backgroundLight),
-  dark: () => prefersDarkMode()
+  dark: () => prefersDarkMode(),
 };
 
 export { common };
