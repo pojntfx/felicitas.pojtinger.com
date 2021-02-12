@@ -3,27 +3,27 @@ import {
   IShellProps,
   Paper,
   NoScript,
-  Container
+  Container,
 } from "@libresat/frontend-components";
 import { Link } from "../downstream/Link";
 import { MDXProvider } from "@mdx-js/react";
-import { injectGlobal } from "emotion";
 import { noscript } from "../data/noscript";
 import {
   Segment,
   Menu,
   Container as ContainerTemplate,
-  Modal
+  Modal,
 } from "semantic-ui-react";
 import { Footer } from "./Footer";
 import { footer } from "../data/footer";
 import { common } from "../data/common";
-import styled from "@emotion/styled-base";
+import styled from "@emotion/styled";
 import PageTransition from "gatsby-v2-plugin-page-transitions";
 import { Search } from "./Search";
 import { IHead, Head } from "./Head";
 import { StaticQuery, graphql } from "gatsby";
 import BackgroundImageTemplate from "gatsby-background-image";
+import { Global, css } from "@emotion/react";
 
 interface IBaseProps {
   children: JSX.Element | JSX.Element[];
@@ -36,7 +36,7 @@ interface IBaseProps {
 }
 
 const MainContainer = styled(Container)`
-  ${props => !props.theme.noBackButton && "margin-top: calc(40px + 1em);"}
+  ${(props) => !props.theme.noBackButton && "margin-top: calc(40px + 1em);"}
 `;
 
 const Pre = styled("pre")`
@@ -119,39 +119,41 @@ const Base = ({
           <Pre>{children}</Pre>
         </Paper>
       ),
-      code: ({ children }: any) => <code>{children}</code> // Fix "metastring" prop
+      code: ({ children }: any) => <code>{children}</code>, // Fix "metastring" prop
     }}
     {...otherProps}
   >
     <>
-      {injectGlobal`
-        .ui.menu, .ui.segment:not(.segment--main), .dimmer {
-          background: ${common.dark() ? "#1b1c1dcc" : "#ffffffcc"} !important;
-          backdrop-filter: saturate(180%) blur(20px);
-        }
-        .gatsby-resp-image-figure {
-          margin: 2rem !important;
-          .gatsby-resp-image-image {
-            max-width: 100%;
-            border-radius: 8px;
+      <Global
+        styles={css`
+          .ui.menu,
+          .ui.segment:not(.segment--main),
+          .dimmer {
+            background: ${common.dark() ? "#1b1c1dcc" : "#ffffffcc"} !important;
+            backdrop-filter: saturate(180%) blur(20px);
           }
-          .gatsby-resp-image-background-image {
-            padding: 0 !important;
+          .gatsby-resp-image-figure {
+            margin: 2rem !important;
+            .gatsby-resp-image-image {
+              max-width: 100%;
+              border-radius: 8px;
+            }
+            .gatsby-resp-image-background-image {
+              padding: 0 !important;
+            }
+            .gatsby-resp-image-figcaption {
+              text-align: center;
+              margin-top: 0.5rem;
+              font-style: italic;
+            }
           }
-          .gatsby-resp-image-figcaption {
-            text-align: center;
-            margin-top: 0.5rem;
-            font-style: italic;
-          }
-        }
-        ${
-          article
+          ${article
             ? `.ui.container#container--main {
           max-width: 800px !important;
         }`
-            : ""
-        }
-      `}
+            : ""}
+        `}
+      />
       <NoScript {...noscript} />
       {head && <Head {...head} />}
       {!noBackButton && (
@@ -170,21 +172,21 @@ const Base = ({
         defaultStyle={{
           transition: "all 500ms",
           transform: "scale(1.01)",
-          opacity: "0.5"
+          opacity: "0.5",
         }}
         transitionStyles={{
           entering: {
             transform: "scale(1)",
-            opacity: "1"
+            opacity: "1",
           },
           entered: {
             transform: "",
-            opacity: "1"
+            opacity: "1",
           },
           exiting: {
             transform: "",
-            opacity: "1"
-          }
+            opacity: "1",
+          },
         }}
         transitionTime={500}
       >
@@ -247,11 +249,11 @@ const Base = ({
       `}
       render={({
         lightBackground: {
-          childImageSharp: { fluid: lightBackground }
+          childImageSharp: { fluid: lightBackground },
         },
         darkBackground: {
-          childImageSharp: { fluid: darkBackground }
-        }
+          childImageSharp: { fluid: darkBackground },
+        },
       }) => (
         <BackgroundImage
           Tag="span"

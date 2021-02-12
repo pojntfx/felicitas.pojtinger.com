@@ -2,7 +2,7 @@ import * as React from "react";
 import { Menu as MenuTemplate, Container } from "semantic-ui-react";
 import { Link } from "./Link";
 import { common } from "../data/common";
-import styled from "@emotion/styled-base";
+import styled from "@emotion/styled";
 
 interface IFooter {
   copyright: {
@@ -18,13 +18,13 @@ interface IFooter {
 const Menu = styled(MenuTemplate)`
   border-radius: 0 !important;
   ${common.dark() &&
-    `& > .container {
+  `& > .container {
       & > .item:first-of-type {
         border-left: 0!important;
       }
     }`}
   ${!common.dark() &&
-    `& > .container {
+  `& > .container {
       & > .right.menu > .item:last-of-type {
         border-right: 1px solid rgba(34, 36, 38, 0.1);
       }
