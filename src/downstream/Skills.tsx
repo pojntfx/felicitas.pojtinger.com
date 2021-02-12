@@ -1,65 +1,65 @@
 import * as React from "react";
-import {Grid, Icon, Segment} from "semantic-ui-react";
-import {common} from "../data/common";
+import { Grid, Icon, Segment } from "semantic-ui-react";
+import { common } from "../data/common";
 import styled from "@emotion/styled";
-import {Link} from "./Link";
+import { Link } from "./Link";
 
 interface ISkills {
-    description: string;
-    descriptionLink: string;
-    languages: string[];
-    languagesLink: string;
-    tech: string[];
-    techLink: string;
+  description: string;
+  descriptionLink: string;
+  languages: string[];
+  languagesLink: string;
+  tech: string[];
+  techLink: string;
 }
 
 const SkillsTemplate = ({
-                            description,
-                            descriptionLink,
-                            languages,
-                            languagesLink,
-                            tech,
-                            techLink,
-                            ...otherProps
-                        }: ISkills) => (
-    <section id="skills">
-        <Segment inverted={common.dark()} {...otherProps}>
-            <Grid columns="equal">
-                <Grid.Row columns={2} as={Link} to={descriptionLink}>
-                    <Grid.Column width={2} textAlign="center" verticalAlign="middle">
-                        <Icon inverted={common.dark()} name="hand spock" size="big"/>
-                    </Grid.Column>
-                    <Grid.Column verticalAlign="middle">
-                        <b>Hi! </b> <span itemProp="description">{description}</span>
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row columns={2} as={Link} to={languagesLink}>
-                    <Grid.Column width={2} textAlign="center" verticalAlign="middle">
-                        <Icon inverted={common.dark()} name="code" size="big"/>
-                    </Grid.Column>
-                    <Grid.Column verticalAlign="middle">
-                        I code in{" "}
-                        <span itemProp="knowsAbout">
+  description,
+  descriptionLink,
+  languages,
+  languagesLink,
+  tech,
+  techLink,
+  ...otherProps
+}: ISkills) => (
+  <section id="skills">
+    <Segment inverted={common.dark()} {...otherProps}>
+      <Grid columns="equal">
+        <Grid.Row columns={2} as={Link} to={descriptionLink}>
+          <Grid.Column width={2} textAlign="center" verticalAlign="middle">
+            <Icon inverted={common.dark()} name="hand spock" size="big" />
+          </Grid.Column>
+          <Grid.Column verticalAlign="middle">
+            <b>Hi! </b> <span itemProp="description">{description}</span>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row columns={2} as={Link} to={languagesLink}>
+          <Grid.Column width={2} textAlign="center" verticalAlign="middle">
+            <Icon inverted={common.dark()} name="code" size="big" />
+          </Grid.Column>
+          <Grid.Column verticalAlign="middle">
+            I code in{" "}
+            <span itemProp="knowsAbout">
               {languages
-                  .filter((_, index) => index !== languages.length - 1)
-                  .join(", ")}{" "}
-                            and {languages[languages.length - 1]}.
+                .filter((_, index) => index !== languages.length - 1)
+                .join(", ")}{" "}
+              and {languages[languages.length - 1]}.
             </span>
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row columns={2} as={Link} to={techLink}>
-                    <Grid.Column width={2} textAlign="center" verticalAlign="middle">
-                        <Icon inverted={common.dark()} name="osi" size="big"/>
-                    </Grid.Column>
-                    <Grid.Column verticalAlign="middle">
-                        I love{" "}
-                        {tech.filter((_, index) => index !== tech.length - 1).join(", ")}{" "}
-                        and {tech[tech.length - 1]}.
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
-        </Segment>
-    </section>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row columns={2} as={Link} to={techLink}>
+          <Grid.Column width={2} textAlign="center" verticalAlign="middle">
+            <Icon inverted={common.dark()} name="osi" size="big" />
+          </Grid.Column>
+          <Grid.Column verticalAlign="middle">
+            I love{" "}
+            {tech.filter((_, index) => index !== tech.length - 1).join(", ")}{" "}
+            and {tech[tech.length - 1]}.
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
+  </section>
 );
 
 const Skills = styled(SkillsTemplate)`
@@ -81,4 +81,4 @@ const Skills = styled(SkillsTemplate)`
   }
 `;
 
-export {Skills};
+export { Skills };
