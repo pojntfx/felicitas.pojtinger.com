@@ -61,6 +61,7 @@ const Links = ({ links, ...otherProps }: ILinks) => (
       {links.map((link, index) => (
         <Link to={link.link} key={index}>
           <Popup
+            header={link.help.title}
             content={link.help.text}
             trigger={<img src={link.img} alt={link.title} />}
           />

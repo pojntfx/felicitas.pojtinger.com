@@ -17,7 +17,7 @@ const home = {
   content: {
     header: {
       name: "Felix Pojtinger",
-      job: "Developer and Maker",
+      job: "Software Engineer",
       // image: avatar, // This is now hard-coded to use static/avatars/avatar.jpg
       follow: "https://twitter.com/intent/user?screen_name=pojntfx",
       email: "felix@pojtinger.com",
