@@ -110,10 +110,7 @@ const Projects = ({ projects }: IProjectsProps) => (
                         </Header.Content>
                         <Header.Subheader>{description}</Header.Subheader>
                       </Header>
-                      <Icon name="calendar" />{" "}
-                      {date.includes("(")
-                        ? date
-                        : new Date(date).toLocaleDateString()}
+                      <Icon name="calendar" /> {date}
                       <br />
                       <Icon name="legal" /> {license}
                       {repoLink && (

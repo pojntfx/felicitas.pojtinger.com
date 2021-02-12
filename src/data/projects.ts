@@ -4,109 +4,151 @@ const projects = [
     icon: "server",
     projects: [
       {
-        title: "Cluster Platform",
-        link:
-          "https://clusterplatform.github.io/clusterplatform/packages/provisioner/",
-        repoLink: "https://github.com/clusterplatform/clusterplatform",
+        title: "Webnetes",
+        link: "https://webnetes.dev/",
+        repoLink: "https://github.com/alphahorizonio/webnetes",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
-        description: "The lean distributed cloud computing system.",
-        icon: "users",
-        color: "black"
+        date: "2021",
+        description:
+          "Peer-to-Peer Computing Platform for the Browser and Node.",
+        icon: "rocket",
+        color: "black",
       },
       {
         title: "Charts",
         link: "https://pojntfx.github.io/charts/",
         repoLink: "https://github.com/pojntfx/charts",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2021",
         description: "Helm chart repository for my projects.",
         icon: "pallet",
-        color: "blue"
+        color: "blue",
+      },
+      {
+        title: "alpimager",
+        link: "https://pojntfx.github.io/alpimager/",
+        repoLink: "https://github.com/pojntfx/alpimager",
+        license: "AGPL-3.0",
+        date: "2020",
+        description: "Build custom Alpine Linux images with Docker.",
+        icon: "disk",
+        color: "teal",
+      },
+      {
+        title: "pojde",
+        link: "https://pojntfx.github.io/pojde/",
+        repoLink: "https://github.com/pojntfx/pojde",
+        license: "AGPL-3.0",
+        date: "2020",
+        description:
+          "Headless Linux distribution for full-stack software development with web access for all components.",
+        icon: "file code",
+        color: "orange",
+      },
+      {
+        title: "liwasc",
+        link: "https://github.com/pojntfx/liwasc",
+        repoLink: "https://github.com/pojntfx/liwasc",
+        license: "AGPL-3.0",
+        date: "2020",
+        description: "List, wake and scan nodes in a network.",
+        icon: "binoculars",
+        color: "red",
+      },
+      {
+        title: "Cluster Platform",
+        link:
+          "https://clusterplatform.github.io/clusterplatform/packages/provisioner/",
+        repoLink: "https://github.com/clusterplatform/clusterplatform",
+        license: "AGPL-3.0",
+        date: "2020",
+        description: "The lean distributed cloud computing system.",
+        icon: "users",
+        color: "black",
       },
       {
         title: "go-isc-dhcp",
         link: "https://pojntfx.github.io/go-isc-dhcp/",
         repoLink: "https://github.com/pojntfx/go-isc-dhcp",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description:
           "Management daemons and CLIs for the ISC DHCP server and client.",
         icon: "list",
-        color: "olive"
+        color: "olive",
       },
       {
         title: "tftpdd",
         link: "https://pojntfx.github.io/tftpdd/",
         repoLink: "https://github.com/pojntfx/tftpdd",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description: "TFTP server daemon.",
         icon: "download",
-        color: "teal"
+        color: "teal",
       },
       {
         title: "gon2n",
         link: "https://pojntfx.github.io/gon2n/",
         repoLink: "https://github.com/pojntfx/gon2n",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description:
           "Go bindings, management daemons and CLIs for n2n edges and supernodes.",
         icon: "globe",
-        color: "pink"
+        color: "pink",
       },
       {
         title: "k3sd",
         link: "https://pojntfx.github.io/k3sd/",
         repoLink: "https://github.com/pojntfx/k3sd",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description: "Management daemon and CLIs for k3s servers and agents.",
         icon: "sitemap",
-        color: "grey"
+        color: "grey",
       },
       {
         title: "ipxebuilderd",
         link: "https://pojntfx.github.io/ipxebuilderd/",
         repoLink: "https://github.com/pojntfx/ipxebuilderd",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description: "Build daemon and CLI for iPXE.",
         icon: "shipping fast",
-        color: "yellow"
+        color: "yellow",
       },
       {
         title: "dibs",
         link: "https://pojntfx.github.io/dibs/",
         repoLink: "https://github.com/pojntfx/dibs",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description:
           "System for distributed polyglot, multi-module, multi-architecture development and CI/CD.",
         icon: "sort",
-        color: "green"
+        color: "green",
       },
       {
         title: "infractl",
         link: "https://pojntfx.github.io/infractl/",
         repoLink: "https://github.com/pojntfx/infractl",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description:
           "A supra-cloud CLI for nodes, layer 2/layer 3 overlay networks and Kubernetes clusters.",
         icon: "server",
-        color: "orange"
+        color: "orange",
       },
       {
         title: "Image Builder",
         link: "https://pojntfx.github.io/image-builder/",
         repoLink: "https://github.com/pojntfx/image-builder",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description: "A tool to build KubeVirt disk images.",
         icon: "camera",
-        color: "red"
+        color: "red",
       },
       {
         title: "konfik",
@@ -116,9 +158,9 @@ const projects = [
         date: "2019-10-05",
         description: "A simple CLI to manage multiple kubeconfigs.",
         icon: "terminal",
-        color: "violet"
-      }
-    ]
+        color: "violet",
+      },
+    ],
   },
   {
     title: "Utilities",
@@ -132,7 +174,7 @@ const projects = [
         date: "2019-10-09",
         description: "App to calculate the amount of time tasks will take.",
         icon: "grid layout",
-        color: "blue"
+        color: "blue",
       },
       {
         title: "Simple Direct Democracy",
@@ -143,7 +185,7 @@ const projects = [
         description:
           "A simple real-time direct democracy's suggestion, voting and analytics system.",
         icon: "hand peace",
-        color: "blue"
+        color: "blue",
       },
       {
         title: "IraSync",
@@ -153,7 +195,7 @@ const projects = [
         date: "2018-02",
         description: "Social network for democratic communities.",
         icon: "globe",
-        color: "teal"
+        color: "teal",
       },
       {
         title: "IraSync Paper",
@@ -164,9 +206,9 @@ const projects = [
         description:
           "A detailed report on both Illustrierte and Irasync (in German).",
         icon: "book",
-        color: "teal"
-      }
-    ]
+        color: "teal",
+      },
+    ],
   },
   {
     title: "Space",
@@ -181,7 +223,7 @@ const projects = [
         description:
           "Full-stack satellite development and control platform (downstream of the Cluster Platform).",
         icon: "globe",
-        color: "black"
+        color: "black",
       },
       {
         title: "OpenSDCP",
@@ -192,7 +234,7 @@ const projects = [
         description:
           "Former satellite development and control platform (replaced by LibreSat).",
         icon: "th",
-        color: "black"
+        color: "black",
       },
       {
         title: "ModSat Standard",
@@ -201,7 +243,7 @@ const projects = [
         date: "2016-10",
         description: "Modular standard for nanosatellites.",
         icon: "box",
-        color: "blue"
+        color: "blue",
       },
       {
         title: "ModSat Modules",
@@ -211,7 +253,7 @@ const projects = [
           "Compute, communication, propulsion, energy and navigation modules for nanosatellites.",
         date: "2016-10",
         icon: "boxes",
-        color: "blue"
+        color: "blue",
       },
       {
         title: "ModSat Engine",
@@ -221,7 +263,7 @@ const projects = [
         description:
           "Modular dual-stage 4-grid 3D-printed ion engine for nanosatellites.",
         icon: "rocket",
-        color: "blue"
+        color: "blue",
       },
       {
         title: "ModSat Presentation",
@@ -232,7 +274,7 @@ const projects = [
         description:
           "Overview of the ModSat nanosatellite project (in German).",
         icon: "slideshare",
-        color: "blue"
+        color: "blue",
       },
       {
         title: "ModSat Paper",
@@ -243,7 +285,7 @@ const projects = [
         description:
           "Detailed report on the ModSat nanosatellite project (in German).",
         icon: "book",
-        color: "blue"
+        color: "blue",
       },
       {
         title: "SIEO",
@@ -253,7 +295,7 @@ const projects = [
         description:
           "Smart Ion Engine Orbiter, an ion-engine powered nanosatellite reference system.",
         icon: "globe",
-        color: "teal"
+        color: "teal",
       },
       {
         title: "SIEO Paper",
@@ -263,7 +305,7 @@ const projects = [
         date: "2016-01",
         description: "A detailed report on the SIEO project (in German).",
         icon: "book",
-        color: "teal"
+        color: "teal",
       },
       {
         title: "Brahma",
@@ -273,7 +315,7 @@ const projects = [
         description:
           "A global surveillance and tracking system based on low-level components and shortwave radio.",
         icon: "eye",
-        color: "black"
+        color: "black",
       },
       {
         title: "Brahma Paper",
@@ -283,9 +325,9 @@ const projects = [
         date: "2017-01",
         description: "A detailed report on the Brahma project (in German).",
         icon: "book",
-        color: "black"
-      }
-    ]
+        color: "black",
+      },
+    ],
   },
   {
     title: "Websites",
@@ -296,10 +338,10 @@ const projects = [
         link: "/",
         repoLink: "https://github.com/pojntfx/personal-site",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description: "Central hub for my projects and articles.",
         icon: "home",
-        color: "blue"
+        color: "blue",
       },
       {
         title: "Family Site",
@@ -309,7 +351,18 @@ const projects = [
         date: "2019-12-29",
         description: "A minimalist site I built for my family.",
         icon: "tree",
-        color: "green"
+        color: "green",
+      },
+      {
+        title: "Physiotherapie Daniela Burkhardt",
+        link: "https://physio-dani.de/",
+        repoLink: "https://github.com/pojntfx/physio-dani.de",
+        license: "AGPL-3.0",
+        date: "2021",
+        description:
+          "JAMStack site for a local therapist's office (in German).",
+        icon: "hospital",
+        color: "red",
       },
       {
         title: "RvWG",
@@ -319,7 +372,7 @@ const projects = [
         date: "2017-06-01",
         description: "Legacy website for my former high school (in German).",
         icon: "university",
-        color: "orange"
+        color: "orange",
       },
       {
         title: "RvWG Neo",
@@ -330,7 +383,7 @@ const projects = [
         description:
           "Partial rewrite of the RvWG site using the JAMStack (in German).",
         icon: "space shuttle",
-        color: "yellow"
+        color: "yellow",
       },
       {
         title: "Pension Café Bäckerei Züfle",
@@ -341,7 +394,7 @@ const projects = [
         date: "2019-02-01",
         description: "JAMStack site for a local business.",
         icon: "food",
-        color: "orange"
+        color: "orange",
       },
       {
         title: "Gästehaus Gerhard Finkbeiner",
@@ -351,7 +404,7 @@ const projects = [
         date: "2019-05-01",
         description: "JAMStack site for a local B&B (in German).",
         icon: "bed",
-        color: "pink"
+        color: "pink",
       },
       {
         title: "Ergotherapie Smeets-Labee",
@@ -361,9 +414,9 @@ const projects = [
         date: "2018-07",
         description: "JAMStack site for a local doctor's office (in German).",
         icon: "doctor",
-        color: "red"
-      }
-    ]
+        color: "red",
+      },
+    ],
   },
   {
     title: "Languages",
@@ -377,7 +430,7 @@ const projects = [
         date: "2018-12",
         description: "A modern and libre way to learn Chinese.",
         icon: "language",
-        color: "red"
+        color: "red",
       },
       {
         title: "ChineseNotes",
@@ -388,7 +441,7 @@ const projects = [
         description:
           "App to share notes from my Chinese learning journey (in German and Chinese).",
         icon: "book",
-        color: "red"
+        color: "red",
       },
       {
         title: "ChineseContext",
@@ -399,9 +452,9 @@ const projects = [
         description:
           "Microservice mesh to provide context, translations, visualizations and more for Chinese characters.",
         icon: "write",
-        color: "red"
-      }
-    ]
+        color: "red",
+      },
+    ],
   },
   {
     title: "Digital Publishing",
@@ -417,7 +470,7 @@ const projects = [
         description:
           "An Art Deco magazine and design system for a local high school.",
         icon: "building",
-        color: "yellow"
+        color: "yellow",
       },
       {
         title: "Scribus CI/CD",
@@ -428,7 +481,7 @@ const projects = [
         description:
           "Cloud-native CI/CD system for digital publishing with Scribus.",
         icon: "plane",
-        color: "blue"
+        color: "blue",
       },
       {
         title: "Illustrierte",
@@ -439,7 +492,7 @@ const projects = [
         description:
           "Modern reinterpretation of traditional media for German literature (in German).",
         icon: "newspaper",
-        color: "black"
+        color: "black",
       },
       {
         title: "Illustrierte Paper",
@@ -450,23 +503,33 @@ const projects = [
         description:
           "A detailed report on both Illustrierte and Irasync (in German).",
         icon: "book",
-        color: "black"
-      }
-    ]
+        color: "black",
+      },
+    ],
   },
   {
-    title: "Frameworks",
+    title: "Libraries",
     icon: "tags",
     projects: [
+      {
+        title: "unisockets",
+        link: "https://alphahorizonio.github.io/unisockets/",
+        repoLink: "https://github.com/alphahorizonio/unisockets",
+        license: "AGPL-3.0",
+        date: "2021",
+        description: "A universal Berkeley sockets implementation.",
+        icon: "plane",
+        color: "red",
+      },
       {
         title: "Frontend Components",
         repoLink: "https://github.com/pojntfx/frontend-components/",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description:
           "A comprehensive high-level React component collection, based on Semantic UI React.",
         icon: "boxes",
-        color: "black"
+        color: "black",
       },
       {
         title: "OpenSNET Bridge Client",
@@ -477,39 +540,39 @@ const projects = [
         description:
           "Highly composable, stateless React UI framework built from scratch for spacecraft control UIs.",
         icon: "sun",
-        color: "blue"
+        color: "blue",
       },
       {
         title: "gomather",
         link: "https://pojntfx.github.io/gomather/",
         repoLink: "https://github.com/pojntfx/gomather",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description: "Sane conventions for Go gRPC microservices.",
         icon: "cog",
-        color: "blue"
+        color: "blue",
       },
       {
         title: "mather.js",
         link: "https://pojntfx.github.io/mather.js/",
         repoLink: "https://github.com/pojntfx/mather.js",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description: "Sane conventions for JS gRPC microservices.",
         icon: "js",
-        color: "yellow"
+        color: "yellow",
       },
       {
         title: "mather-rb",
         link: "https://pojntfx.github.io/mather-rb/",
         repoLink: "https://github.com/pojntfx/mather-rb",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description: "Sane conventions for Ruby gRPC microservices.",
         icon: "gem",
-        color: "red"
-      }
-    ]
+        color: "red",
+      },
+    ],
   },
   {
     title: "Teaching",
@@ -520,13 +583,13 @@ const projects = [
         link: "https://coffeecodecontribute.org/",
         repoLink: "https://github.com/coffeecodecontribute/website",
         license: "AGPL-3.0",
-        date: "2020 (in development)",
+        date: "2020",
         description: "Caffeinated FLOSS Projects.",
         icon: "coffee",
-        color: "brown"
-      }
-    ]
-  }
+        color: "brown",
+      },
+    ],
+  },
 ];
 
 export { projects };
