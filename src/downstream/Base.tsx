@@ -134,13 +134,16 @@ const Base = ({
           }
           .gatsby-resp-image-figure {
             margin: 2rem !important;
+
             .gatsby-resp-image-image {
               max-width: 100%;
-              border-radius: 8px;
             }
+
+            .gatsby-resp-image-image,
             .gatsby-resp-image-background-image {
-              padding: 0 !important;
+              border-radius: 8px !important;
             }
+
             .gatsby-resp-image-figcaption {
               text-align: center;
               margin-top: 0.5rem;

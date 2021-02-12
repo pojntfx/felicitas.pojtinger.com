@@ -12,8 +12,9 @@ import {
 } from "./metadata.json";
 
 const prefersDarkMode = () =>
-  typeof window !== "undefined" &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches;
+  // typeof window !== "undefined" &&
+  // window.matchMedia("(prefers-color-scheme: dark)").matches;
+  false; // Disabled for now; use hook here in the future
 
 const common = {
   title,
