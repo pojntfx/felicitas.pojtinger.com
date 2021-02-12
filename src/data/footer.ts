@@ -2,13 +2,13 @@ import { common } from "./common";
 
 const footer = {
   copyright: {
-    timeSpan: 2020,
+    timeSpan: 2021,
     holder: common.author,
-    link: "https://github.com/pojntfx/personal-site/"
+    link: "https://github.com/pojntfx/personal-site/",
   },
   imprint: {
-    link: "/imprint"
-  }
+    link: "/imprint",
+  },
 };
 
 export { footer };
