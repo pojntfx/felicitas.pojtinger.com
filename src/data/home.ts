@@ -62,7 +62,7 @@ const home = {
         img:
           "https://img.shields.io/badge/Curriculum%20Vitae-PDF-4c85d0.svg?logo=google&logoColor=528ff5&style=popout",
         link:
-          "https://docs.google.com/document/d/1rQ_jB4vrzNdB7qMG-JoEZ-uloAAfISxjcQxSKG2XDg8/edit?usp=sharing",
+          "https://docs.google.com/document/d/1rUE09TCqLs2_W5rBzC2dTvi2mzf7HM4QYhQxhpD5m2w/edit?usp=sharing",
         help: {
           title: "Curriculum Vitae",
           text: "A chronological list of all relevant events of my life.",
