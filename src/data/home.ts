@@ -46,15 +46,14 @@ const home = {
         },
       },
       {
-        title: "Abitur",
+        title: "Marks",
         img:
-          "https://img.shields.io/badge/Abitur-PDF-ffd14e.svg?logo=google-drive&logoColor=ffd14e&style=popout",
-        link:
-          "https://drive.google.com/file/d/1yPa2L8YIZIfkHnsjMBmNX8-e7plTMzCt/view?usp=sharing",
+          "https://img.shields.io/badge/Marks-PDF-16ab39.svg?logo=nextcloud&logoColor=16ab39&style=popout",
+        link: "https://nx904.your-storageshare.de/s/XtiGRek4rn57A7i",
         help: {
-          title: "Abitur",
-          text: "The results of my A-Level exams (in German).",
-          docsLink: "https://en.wikipedia.org/wiki/Abitur",
+          title: "Marks",
+          text: "Recent results of my uni exams.",
+          docsLink: "https://www.hdm-stuttgart.de/",
         },
       },
       {
@@ -71,10 +70,10 @@ const home = {
       },
     ],
     skills: {
-      description: "I'm a full stack developer based in Stuttgart, Germany.",
+      description: "I'm a developer based in Stuttgart, Germany.",
       descriptionLink:
         "https://www.openstreetmap.org/search?whereami=1&query=48.74553%2C9.10098#map=19/48.74553/9.10098",
-      languages: ["C", "Go", "JS (Node/React)"],
+      languages: ["Go", "JS (Node/React)"],
       languagesLink: "https://en.wikipedia.org/wiki/Isomorphic_JavaScript",
       tech: ["FLOSS", "Linux", "Docker", "Kubernetes"],
       techLink: "https://en.wikipedia.org/wiki/Kubernetes",
