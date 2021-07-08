@@ -4,6 +4,36 @@ const projects = [
     icon: "server",
     projects: [
       {
+        title: "bofied",
+        link: "https://github.com/pojntfx/bofied",
+        repoLink: "https://github.com/pojntfx/bofied",
+        license: "AGPL-3.0",
+        date: "2021",
+        description: "Modern network boot server.",
+        icon: "server",
+        color: "orange",
+      },
+      {
+        title: "liwasc",
+        link: "https://github.com/pojntfx/liwasc",
+        repoLink: "https://github.com/pojntfx/liwasc",
+        license: "AGPL-3.0",
+        date: "2021",
+        description: "List, wake and scan nodes in a network.",
+        icon: "binoculars",
+        color: "red",
+      },
+      {
+        title: "pojde",
+        link: "https://pojntfx.github.io/pojde/",
+        repoLink: "https://github.com/pojntfx/pojde",
+        license: "AGPL-3.0",
+        date: "2021",
+        description: "Develop from any device with a browser.",
+        icon: "file code",
+        color: "green",
+      },
+      {
         title: "Webnetes",
         link: "https://webnetes.dev/",
         repoLink: "https://github.com/alphahorizonio/webnetes",
@@ -35,30 +65,8 @@ const projects = [
         color: "teal",
       },
       {
-        title: "pojde",
-        link: "https://pojntfx.github.io/pojde/",
-        repoLink: "https://github.com/pojntfx/pojde",
-        license: "AGPL-3.0",
-        date: "2020",
-        description:
-          "Headless Linux distribution for full-stack software development with web access for all components.",
-        icon: "file code",
-        color: "orange",
-      },
-      {
-        title: "liwasc",
-        link: "https://github.com/pojntfx/liwasc",
-        repoLink: "https://github.com/pojntfx/liwasc",
-        license: "AGPL-3.0",
-        date: "2020",
-        description: "List, wake and scan nodes in a network.",
-        icon: "binoculars",
-        color: "red",
-      },
-      {
         title: "Cluster Platform",
-        link:
-          "https://clusterplatform.github.io/clusterplatform/packages/provisioner/",
+        link: "https://clusterplatform.github.io/clusterplatform/packages/provisioner/",
         repoLink: "https://github.com/clusterplatform/clusterplatform",
         license: "AGPL-3.0",
         date: "2020",
@@ -85,7 +93,7 @@ const projects = [
         date: "2020",
         description: "TFTP server daemon.",
         icon: "download",
-        color: "teal",
+        color: "blue",
       },
       {
         title: "gon2n",
@@ -199,8 +207,7 @@ const projects = [
       },
       {
         title: "IraSync Paper",
-        link:
-          "https://drive.google.com/file/d/1RhvSlPAfOoo7v8rROizyyvqWXioSC4_o/view",
+        link: "https://drive.google.com/file/d/1RhvSlPAfOoo7v8rROizyyvqWXioSC4_o/view",
         license: "CC-BY-SA 4.0",
         date: "2018-03",
         description:
@@ -267,8 +274,7 @@ const projects = [
       },
       {
         title: "ModSat Presentation",
-        link:
-          "https://drive.google.com/file/d/0B7GcA5vEfPYoNWJjRlFoeW9FaEE/view?usp=sharing",
+        link: "https://drive.google.com/file/d/0B7GcA5vEfPYoNWJjRlFoeW9FaEE/view?usp=sharing",
         license: "AGPL-3.0",
         date: "2017-04",
         description:
@@ -278,8 +284,7 @@ const projects = [
       },
       {
         title: "ModSat Paper",
-        link:
-          "https://drive.google.com/file/d/0B7GcA5vEfPYoaFpGMkRxOWI1Unc/view?usp=sharing",
+        link: "https://drive.google.com/file/d/0B7GcA5vEfPYoaFpGMkRxOWI1Unc/view?usp=sharing",
         license: "CC-BY-SA 4.0",
         date: "2016-08",
         description:
@@ -299,8 +304,7 @@ const projects = [
       },
       {
         title: "SIEO Paper",
-        link:
-          "https://drive.google.com/file/d/0B7GcA5vEfPYoXzlPc2pjTlV3NkU/view",
+        link: "https://drive.google.com/file/d/0B7GcA5vEfPYoXzlPc2pjTlV3NkU/view",
         license: "CC-BY-SA 4.0",
         date: "2016-01",
         description: "A detailed report on the SIEO project (in German).",
@@ -319,8 +323,7 @@ const projects = [
       },
       {
         title: "Brahma Paper",
-        link:
-          "https://drive.google.com/file/d/0B7GcA5vEfPYoS0lIRThRcVJ5aEE/view?usp=sharing",
+        link: "https://drive.google.com/file/d/0B7GcA5vEfPYoS0lIRThRcVJ5aEE/view?usp=sharing",
         license: "CC-BY-SA 4.0",
         date: "2017-01",
         description: "A detailed report on the Brahma project (in German).",
@@ -386,27 +389,6 @@ const projects = [
         color: "yellow",
       },
       {
-        title: "Pension Café Bäckerei Züfle",
-        link: "https://cafe-zuefle.alphahorizon.io/",
-        repoLink:
-          "https://github.com/alphahorizonio/pension-cafe-baeckerei-zuefle-site",
-        license: "AGPL-3.0",
-        date: "2019-02-01",
-        description: "JAMStack site for a local business.",
-        icon: "food",
-        color: "orange",
-      },
-      {
-        title: "Gästehaus Gerhard Finkbeiner",
-        link: "https://fewo-finkbeiner.alphahorizon.io/",
-        repoLink: "https://github.com/alphahorizonio/fewo-finkbeiner-website",
-        license: "AGPL-3.0",
-        date: "2019-05-01",
-        description: "JAMStack site for a local B&B (in German).",
-        icon: "bed",
-        color: "pink",
-      },
-      {
         title: "Ergotherapie Smeets-Labee",
         link: "https://ergotherapie-ssl.de/",
         repoLink: "https://github.com/alphahorizonio/ergotherapie-ssl-website",
@@ -462,8 +444,7 @@ const projects = [
     projects: [
       {
         title: "Abizeitung 2019",
-        link:
-          "https://drive.google.com/drive/folders/1nq7jsXdSWZfEkC2uBbyncTeg2ShlaTYK?usp=sharing",
+        link: "https://drive.google.com/drive/folders/1nq7jsXdSWZfEkC2uBbyncTeg2ShlaTYK?usp=sharing",
         repoLink: "https://gitlab.com/pojntfx/abizeitung",
         license: "AGPL-3.0",
         date: "2019-06",
@@ -496,8 +477,7 @@ const projects = [
       },
       {
         title: "Illustrierte Paper",
-        link:
-          "https://drive.google.com/file/d/1RhvSlPAfOoo7v8rROizyyvqWXioSC4_o/view",
+        link: "https://drive.google.com/file/d/1RhvSlPAfOoo7v8rROizyyvqWXioSC4_o/view",
         license: "CC-BY-SA 4.0",
         date: "2018-03",
         description:
@@ -543,34 +523,15 @@ const projects = [
         color: "blue",
       },
       {
-        title: "gomather",
-        link: "https://pojntfx.github.io/gomather/",
-        repoLink: "https://github.com/pojntfx/gomather",
+        title: "grpc-examples",
+        link: "https://github.com/pojntfx/grpc-examples",
+        repoLink: "https://github.com/pojntfx/grpc-examples",
         license: "AGPL-3.0",
-        date: "2020",
-        description: "Sane conventions for Go gRPC microservices.",
+        date: "2021",
+        description:
+          "gRPC microservice conventions in Go, Rust, C#, Python and JavaScript.",
         icon: "cog",
         color: "blue",
-      },
-      {
-        title: "mather.js",
-        link: "https://pojntfx.github.io/mather.js/",
-        repoLink: "https://github.com/pojntfx/mather.js",
-        license: "AGPL-3.0",
-        date: "2020",
-        description: "Sane conventions for JS gRPC microservices.",
-        icon: "js",
-        color: "yellow",
-      },
-      {
-        title: "mather-rb",
-        link: "https://pojntfx.github.io/mather-rb/",
-        repoLink: "https://github.com/pojntfx/mather-rb",
-        license: "AGPL-3.0",
-        date: "2020",
-        description: "Sane conventions for Ruby gRPC microservices.",
-        icon: "gem",
-        color: "red",
       },
     ],
   },
