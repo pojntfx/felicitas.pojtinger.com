@@ -45,7 +45,7 @@ const Head = ({
     ) : (
       <meta name="theme-color" content="#000000" />
     )}
-    {description && <meta property="description" content={description} />}
+    {description && <meta name="description" content={description} />}
     {description && <meta property="og:description" content={description} />}
     {keywords && (
       <meta
