@@ -34,41 +34,44 @@
             {{ .Title }}
           </h1>
         </a>
-      </header>
 
-      <nav>
-        <ul>
-          <li>
-            <a href="{{ .Site.Data.person.cv }}" target="_blank" rel="noopener"
-              >CV</a
-            >
-          </li>
-          <li>
-            <a
-              href="{{ .Site.Data.person.contact.twitter }}"
-              target="_blank"
-              rel="noopener"
-              >Twitter</a
-            >
-          </li>
-          <li>
-            <a
-              href="{{ .Site.Data.person.contact.github }}"
-              target="_blank"
-              rel="noopener"
-              >GitHub</a
-            >
-          </li>
-          <li>
-            <a
-              href="{{ .Site.Data.person.contact.twitch }}"
-              target="_blank"
-              rel="noopener"
-              >Twitch</a
-            >
-          </li>
-        </ul>
-      </nav>
+        <nav>
+          <ul>
+            <li>
+              <a
+                href="{{ .Site.Data.person.cv }}"
+                target="_blank"
+                rel="noopener"
+                >CV</a
+              >
+            </li>
+            <li>
+              <a
+                href="{{ .Site.Data.person.contact.twitter }}"
+                target="_blank"
+                rel="noopener"
+                >Twitter</a
+              >
+            </li>
+            <li>
+              <a
+                href="{{ .Site.Data.person.contact.github }}"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </li>
+            <li>
+              <a
+                href="{{ .Site.Data.person.contact.twitch }}"
+                target="_blank"
+                rel="noopener"
+                >Twitch</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
     {{ end }}
 
     {{ block "main" . }}
