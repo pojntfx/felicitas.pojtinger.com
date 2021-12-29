@@ -1,3 +1,18 @@
-baseURL: "http://example.org/"
-languageCode: "en-us"
-title: "My New Hugo Site"
+baseURL: https://felicitas.pojtinger.com/
+languageCode: en-us
+title: Felicitas Pojtinger
+description: Felicitas Pojtinger is a software engineer focused on Go and the web.
+keywords:
+  - Felicitas
+  - Pojtinger
+  - pojntfx
+  - Go
+  - Web
+  - STFS
+  - bofied
+  - liwasc
+  - Cluster Platform
+  - Open Source
+  - Free Software
+copyright: © 2022 Felicitas Pojtinger
+source: https://github.com/pojntfx/personal-site
