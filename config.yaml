@@ -1,18 +1,21 @@
-baseURL: https://felicitas.pojtinger.com/
+baseURL: /
 languageCode: en-us
 title: Felicitas Pojtinger
-description: Felicitas Pojtinger is a software engineer focused on Go and the web.
-keywords:
-  - Felicitas
-  - Pojtinger
-  - pojntfx
-  - Go
-  - Web
-  - STFS
-  - bofied
-  - liwasc
-  - Cluster Platform
-  - Open Source
-  - Free Software
-copyright: © 2022 Felicitas Pojtinger
-source: https://github.com/pojntfx/personal-site
+relativeURLs: true
+params:
+  author: Felicitas Pojtinger
+  description: Felicitas Pojtinger is a software engineer focused on Go and the web.
+  keywords:
+    - Felicitas
+    - Pojtinger
+    - pojntfx
+    - Go
+    - Web
+    - STFS
+    - bofied
+    - liwasc
+    - Cluster Platform
+    - Open Source
+    - Free Software
+  copyright: © 2022 AGPL-3.0 Felicitas Pojtinger and contributors
+  source: https://github.com/pojntfx/personal-site

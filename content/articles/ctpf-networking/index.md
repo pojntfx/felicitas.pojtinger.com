@@ -2,7 +2,6 @@
 title: A Look at the Cluster Platform Layer 2 Overlay Network System
 date: 2020-01-13T17:01:23+01:00
 updated: 2020-01-13T17:01:23+01:00
-author: Felicitas Pojtinger
 excerpt: Let's bring back networking simplicity!
 header: ./static/header.jpg
 headerAlt: |
