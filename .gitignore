@@ -1,4 +1,3 @@
-.idea
+.hugo_build.lock
 public
-node_modules
-.cache
+resources
