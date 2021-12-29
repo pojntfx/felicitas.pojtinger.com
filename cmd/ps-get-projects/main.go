@@ -34,18 +34,10 @@ type OutputCategory struct {
 	Projects []OutputProject `yaml:"projects"`
 }
 
-type Output struct {
-	Categories []OutputCategory `yaml:"categories"`
-}
-
 // Input
 type InputCategory struct {
 	Title    string   `yaml:"title"`
 	Projects []string `yaml:"projects"`
-}
-
-type Input struct {
-	Categories []InputCategory `yaml:"categories"`
 }
 
 func main() {
@@ -60,7 +52,7 @@ func main() {
 		panic(err)
 	}
 
-	var parsedInput Input
+	var parsedInput []InputCategory
 	if err := yaml.Unmarshal(input, &parsedInput); err != nil {
 		panic(err)
 	}
@@ -83,8 +75,8 @@ func main() {
 		panic(err)
 	}
 
-	outputCategories := []OutputCategory{}
-	for _, inputCategory := range parsedInput.Categories {
+	parsedOutput := []OutputCategory{}
+	for _, inputCategory := range parsedInput {
 		outputCategory := OutputCategory{
 			Title:    inputCategory.Title,
 			Projects: []OutputProject{},
@@ -111,11 +103,7 @@ func main() {
 			})
 		}
 
-		outputCategories = append(outputCategories, outputCategory)
-	}
-
-	parsedOutput := Output{
-		Categories: outputCategories,
+		parsedOutput = append(parsedOutput, outputCategory)
 	}
 
 	output, err := yaml.Marshal(parsedOutput)

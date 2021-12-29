@@ -1,65 +1,64 @@
-categories:
-  - title: Systems Development
-    projects:
-      - pojntfx/stfs
-      - pojntfx/liwasc
-      - pojntfx/bofied
-      - pojntfx/html2goapp
-      - pojntfx/keygaen
-  - title: Development Tooling
-    projects:
-      - pojntfx/bagccgop
-      - pojntfx/bagop
-      - pojntfx/hydrapp
-      - pojntfx/hydrun
-      - pojntfx/alpimager
-      - pojntfx/pojde
-      - pojntfx/grpc-examples
-  - title: Distributed Computing
-    projects:
-      - alphahorizonio/unisockets
-      - alphahorizonio/tinynet
-      - alphahorizonio/nebulark
-      - alphahorizonio/webnetes
-  - title: Management Daemons
-    projects:
-      - pojntfx/go-isc-dhcp
-      - pojntfx/gon2n
-      - pojntfx/ipxebuilderd
-      - pojntfx/dibs
-  - title: Uni Notes
-    projects:
-      - pojntfx/uni-netpractice-notes
-      - pojntfx/uni-webtopics-notes
-      - pojntfx/uni-sciwriting-notes
-      - pojntfx/uni-appsecurity-notes
-      - pojntfx/uni-hci-notes
-      - pojntfx/uni-itsec-notes
-      - pojntfx/uni-db1-notes
-      - pojntfx/uni-sdi-notes
-      - pojntfx/uni-algodat-notes
-      - pojntfx/uni-bwl-notes
-  - title: Digital Publishing
-    projects:
-      - pojntfx/deliverance
-      - pojntfx/minitel
-      - pojntfx/box
-      - pojntfx/abizeitung
-  - title: Websites
-    projects:
-      - pojntfx/personal-site
-      - pojntfx/family-site
-      - pojntfx/illustrierte-website
-  - title: Integrations
-    projects:
-      - pojntfx/simple-direct-democracy-frontend
-      - pojntfx/task-timer
-      - pojntfx/learn-chinese-platform
-      - pojntfx/chinese-notes
-      - pojntfx/nextcloud-talk-bot-framework
-      - alphahorizonio/consumat.io-backend
-  - title: Aeronautical Engineering
-    projects:
-      - clusterplatform/libresat
-      - clusterplatform/clusterplatform
-      - clusterplatform/opensdcp-website
+- title: Systems Development
+  projects:
+    - pojntfx/stfs
+    - pojntfx/liwasc
+    - pojntfx/bofied
+    - pojntfx/html2goapp
+    - pojntfx/keygaen
+- title: Development Tooling
+  projects:
+    - pojntfx/bagccgop
+    - pojntfx/bagop
+    - pojntfx/hydrapp
+    - pojntfx/hydrun
+    - pojntfx/alpimager
+    - pojntfx/pojde
+    - pojntfx/grpc-examples
+- title: Distributed Computing
+  projects:
+    - alphahorizonio/unisockets
+    - alphahorizonio/tinynet
+    - alphahorizonio/nebulark
+    - alphahorizonio/webnetes
+- title: Management Daemons
+  projects:
+    - pojntfx/go-isc-dhcp
+    - pojntfx/gon2n
+    - pojntfx/ipxebuilderd
+    - pojntfx/dibs
+- title: Uni Notes
+  projects:
+    - pojntfx/uni-netpractice-notes
+    - pojntfx/uni-webtopics-notes
+    - pojntfx/uni-sciwriting-notes
+    - pojntfx/uni-appsecurity-notes
+    - pojntfx/uni-hci-notes
+    - pojntfx/uni-itsec-notes
+    - pojntfx/uni-db1-notes
+    - pojntfx/uni-sdi-notes
+    - pojntfx/uni-algodat-notes
+    - pojntfx/uni-bwl-notes
+- title: Digital Publishing
+  projects:
+    - pojntfx/deliverance
+    - pojntfx/minitel
+    - pojntfx/box
+    - pojntfx/abizeitung
+- title: Websites
+  projects:
+    - pojntfx/personal-site
+    - pojntfx/family-site
+    - pojntfx/illustrierte-website
+- title: Integrations
+  projects:
+    - pojntfx/simple-direct-democracy-frontend
+    - pojntfx/task-timer
+    - pojntfx/learn-chinese-platform
+    - pojntfx/chinese-notes
+    - pojntfx/nextcloud-talk-bot-framework
+    - alphahorizonio/consumat.io-backend
+- title: Aeronautical Engineering
+  projects:
+    - clusterplatform/libresat
+    - clusterplatform/clusterplatform
+    - clusterplatform/opensdcp-website
