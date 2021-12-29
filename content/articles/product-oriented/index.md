@@ -2,7 +2,6 @@
 title: The Product Oriented Approach
 date: 2019-02-06T16:55:03+01:00
 updated: 2019-02-06T16:55:03+01:00
-author: Felix Pojtinger
 excerpt: Yet another way of structuring one's projects.
 header: ./static/header.jpg
 headerAlt: |

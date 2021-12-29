@@ -1,0 +1,5 @@
+overrides:
+  - files:
+      - "*.html"
+    options:
+      parser: go-template

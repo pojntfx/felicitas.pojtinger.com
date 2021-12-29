@@ -1,18 +1,21 @@
-baseURL: https://felix.pojtinger.com/
+baseURL: /
 languageCode: en-us
 title: Felix Pojtinger
-description: Felix Pojtinger is a software engineer focused on Go and the web.
-keywords:
-  - Felix
-  - Pojtinger
-  - pojntfx
-  - Go
-  - Web
-  - STFS
-  - bofied
-  - liwasc
-  - Cluster Platform
-  - Open Source
-  - Free Software
-copyright: © 2022 Felix Pojtinger
-source: https://github.com/pojntfx/personal-site
+relativeURLs: true
+params:
+  author: Felix Pojtinger
+  description: Felix Pojtinger is a software engineer focused on Go and the web.
+  keywords:
+    - Felix
+    - Pojtinger
+    - pojntfx
+    - Go
+    - Web
+    - STFS
+    - bofied
+    - liwasc
+    - Cluster Platform
+    - Open Source
+    - Free Software
+  copyright: © 2022 AGPL-3.0 Felix Pojtinger and contributors
+  source: https://github.com/pojntfx/personal-site
