@@ -1,26 +1,103 @@
 {{ define "header" }}
   <header>
-    <h1>{{ .Site.Title }}</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="{{ .Site.Data.person.cv }}" target="_blank" rel="noopener"
+            >CV</a
+          >
+        </li>
+        <li>
+          <a
+            href="{{ .Site.Data.person.contact.twitter }}"
+            target="_blank"
+            rel="noopener"
+            >Twitter</a
+          >
+        </li>
+        <li>
+          <a
+            href="{{ .Site.Data.person.contact.github }}"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+        </li>
+        <li>
+          <a
+            href="{{ .Site.Data.person.contact.twitch }}"
+            target="_blank"
+            rel="noopener"
+            >Twitch</a
+          >
+        </li>
+      </ul>
+    </nav>
   </header>
 {{ end }}
 
 {{ define "main" }}
   <main>
-    {{ .Content }}
+    <h1>{{ .Site.Data.person.name }}</h1>
 
+    <figure>
+      <img
+        width="100px"
+        height="100px"
+        src="{{ .Site.Data.person.img }}"
+        alt="{{ .Site.Data.person.imgAlt }}"
+      />
+
+      <figcaption>{{ .Site.Data.person.pronouns }}</figcaption>
+    </figure>
+
+    <p>{{ .Site.Data.person.description }}</p>
 
     <ul>
-      {{ range .Pages }}
-        {{ if eq .Title "Articles" }}
-          {{ range first 5 .Pages }}
-            <li>
-              <a href="{{ .Permalink }}">{{ .Date }} | {{ .Title }}</a>
-            </li>
-          {{ end }}
-        {{ end }}
-      {{ end }}
+      <li>
+        <a
+          href="{{ .Site.Data.person.contact.twitterFollow }}"
+          target="_blank"
+          rel="noopener"
+          >Follow</a
+        >
+
+        <a
+          href="{{ .Site.Data.person.contact.matrix }}"
+          target="_blank"
+          rel="noopener"
+          >Write via Matrix</a
+        >
+
+        <a
+          href="{{ .Site.Data.person.contact.signal }}"
+          target="_blank"
+          rel="noopener"
+          >Write via Signal</a
+        >
+
+        <a href="{{ .Site.Data.person.contact.mail }}" rel="noopener"
+          >Write via Mail</a
+        >
+      </li>
     </ul>
 
-    <a href="/articles">All articles</a>
+    <section id="articles">
+      <h2>Articles</h2>
+
+      <ul>
+        {{ range .Pages }}
+          {{ if eq .Title "Articles" }}
+            {{ range first 5 .Pages }}
+              <li>
+                <a href="{{ .Permalink }}">{{ .Date }} | {{ .Title }}</a>
+              </li>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </ul>
+
+      <a href="/articles">All articles</a>
+    </section>
   </main>
 {{ end }}
