@@ -32,4 +32,4 @@ clean:
 
 # Dependencies
 depend:
-	go run ./cmd/ps-get-projects/ -src data/projects.yaml -token="${GITHUB_TOKEN}" > data/projects.gen.yaml
+	go run ./cmd/ps-get-projects/ -src data/projects.yaml -token="${GITHUB_TOKEN}" > data/projects_gen.yaml

@@ -59,25 +59,25 @@
           href="{{ .Site.Data.person.contact.twitterFollow }}"
           target="_blank"
           rel="noopener"
-          >Follow</a
+          >Follow on Twitter</a
         >
 
         <a
           href="{{ .Site.Data.person.contact.matrix }}"
           target="_blank"
           rel="noopener"
-          >Write via Matrix</a
+          >Contact via Matrix</a
         >
 
         <a
           href="{{ .Site.Data.person.contact.signal }}"
           target="_blank"
           rel="noopener"
-          >Write via Signal</a
+          >Contact via Signal</a
         >
 
         <a href="{{ .Site.Data.person.contact.mail }}" rel="noopener"
-          >Write via Mail</a
+          >Contact via Mail</a
         >
       </li>
     </ul>
@@ -98,6 +98,71 @@
       </ul>
 
       <a href="/articles">All articles</a>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <ul>
+        {{ range .Site.Data.projects_gen }}
+          <li>
+            <h3>{{ .title }}</h3>
+            <ul>
+              {{ range sort .projects "stars" "desc" }}
+                <li>
+                  <dl>
+                    <dt>Name</dt>
+                    <dd>
+                      <a href="{{ .url }}" target="_blank" rel="noopener"
+                        >{{ .title }}</a
+                      >
+                    </dd>
+
+                    <dt>Description</dt>
+                    <dd>
+                      {{ .description }}
+                    </dd>
+
+                    <dt>Language</dt>
+                    <dd>
+                      {{ .language }}
+                    </dd>
+
+                    <dt>Last update</dt>
+                    <dd>
+                      {{ .date }}
+                    </dd>
+
+                    <dt>Topics</dt>
+                    <dd>
+                      <ul>
+                        {{ range first 5 .topics }}
+                          <li>{{ . }}</li>
+                        {{ end }}
+                      </ul>
+                    </dd>
+
+                    <dt>Stars</dt>
+                    <dd>
+                      {{ .stars }}
+                    </dd>
+
+                    <dt>Forks</dt>
+                    <dd>
+                      {{ .forks }}
+                    </dd>
+
+                    <dt>Issues</dt>
+                    <dd>
+                      {{ .issues }}
+                    </dd>
+                  </dl>
+                </li>
+              {{ end }}
+            </ul>
+          </li>
+        {{ end }}
+      </ul>
     </section>
   </main>
 {{ end }}
