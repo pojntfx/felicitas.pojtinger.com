@@ -21,27 +21,52 @@
   <body>
     {{ block "header" . }}
       <header>
-        {{ if eq .Title .Site.Title }}
-          <h1>{{ .Title }}</h1>
-        {{ else }}
-          <h1>
-            <a href="{{ .Site.BaseURL }}">
-              {{ .Title }} |
-              {{ .Site.Title }}
-            </a>
-          </h1>
-        {{ end }}
-      </header>
-    {{ end }}
+        <a href="{{ .Site.BaseURL }}">
+          <img
+            width="100px"
+            height="100px"
+            src="{{ .Site.Data.person.img }}"
+            alt="{{ .Site.Data.person.imgAlt }}"
+          />
 
-    {{ block "nav" . }}
+          <h1>
+            {{ .Site.Data.person.name }} →
+            {{ .Title }}
+          </h1>
+        </a>
+      </header>
+
       <nav>
         <ul>
-          {{ range .Pages }}
-            <li>
-              <a href="{{ .Permalink }}">{{ .Date }} | {{ .Title }}</a>
-            </li>
-          {{ end }}
+          <li>
+            <a href="{{ .Site.Data.person.cv }}" target="_blank" rel="noopener"
+              >CV</a
+            >
+          </li>
+          <li>
+            <a
+              href="{{ .Site.Data.person.contact.twitter }}"
+              target="_blank"
+              rel="noopener"
+              >Twitter</a
+            >
+          </li>
+          <li>
+            <a
+              href="{{ .Site.Data.person.contact.github }}"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              href="{{ .Site.Data.person.contact.twitch }}"
+              target="_blank"
+              rel="noopener"
+              >Twitch</a
+            >
+          </li>
         </ul>
       </nav>
     {{ end }}

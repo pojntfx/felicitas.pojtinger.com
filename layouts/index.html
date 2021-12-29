@@ -1,0 +1,26 @@
+{{ define "header" }}
+  <header>
+    <h1>{{ .Site.Title }}</h1>
+  </header>
+{{ end }}
+
+{{ define "main" }}
+  <main>
+    {{ .Content }}
+
+
+    <ul>
+      {{ range .Pages }}
+        {{ if eq .Title "Articles" }}
+          {{ range first 5 .Pages }}
+            <li>
+              <a href="{{ .Permalink }}">{{ .Date }} | {{ .Title }}</a>
+            </li>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </ul>
+
+    <a href="/articles">All articles</a>
+  </main>
+{{ end }}
