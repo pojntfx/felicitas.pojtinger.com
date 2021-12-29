@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"os"
 
 	"gopkg.in/yaml.v2"
 )
@@ -127,8 +128,8 @@ const mockResponse = `{
 
 // Output
 type OutputCategory struct {
-	Title    string `yaml:"title"`
-	Projects []Project
+	Title    string    `yaml:"title"`
+	Projects []Project `yaml:"projects"`
 }
 
 type Output struct {
@@ -137,12 +138,12 @@ type Output struct {
 
 // Input
 type InputCategory struct {
-	Title string `json:"title"`
-	Paths []string
+	Title    string   `yaml:"title"`
+	Projects []string `yaml:"projects"`
 }
 
 type Input struct {
-	Categories []InputCategory `json:"categories"`
+	Categories []InputCategory `yaml:"categories"`
 }
 
 // Input/Output
@@ -158,21 +159,19 @@ type Project struct {
 }
 
 func main() {
-	// 	src := flag.String("src", "projects.yaml", "Source YAML file")
-	// 	dst := flag.String("dst", "projects.gen.yaml", "Destination YAML file")
+	src := flag.String("src", "projects.yaml", "Source YAML file")
 	// 	key := flag.String("key", "", "GitHub API Key")
 
 	flag.Parse()
 
-	parsedInput := Input{
-		Categories: []InputCategory{
-			{
-				Title: "Systems Development",
-				Paths: []string{
-					"pojntfx/stfs",
-				},
-			},
-		},
+	input, err := os.ReadFile(*src)
+	if err != nil {
+		panic(err)
+	}
+
+	var parsedInput Input
+	if err := yaml.Unmarshal(input, &parsedInput); err != nil {
+		panic(err)
 	}
 
 	outputCategories := []OutputCategory{}
@@ -182,7 +181,7 @@ func main() {
 			Projects: []Project{},
 		}
 
-		for _, _ = range inputCategory.Paths {
+		for _, _ = range inputCategory.Projects {
 			var project Project
 			if err := json.Unmarshal([]byte(mockResponse), &project); err != nil {
 				panic(err)
@@ -203,5 +202,5 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(string(output))
+	fmt.Print(string(output))
 }
