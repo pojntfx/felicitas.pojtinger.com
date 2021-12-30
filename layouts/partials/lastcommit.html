@@ -1,4 +1,4 @@
-<div id="last-git-commit"></div>
+<a target="_blank" id="last-git-commit"></a>
 <noscript>Please enable JavaScript to view the last commit status.</noscript
 ><script>
   const id = "#last-git-commit";
@@ -7,26 +7,30 @@
   const lastFetch = JSON.parse(window.localStorage.getItem(key) || "{}");
 
   if (
-    !(lastFetch && lastFetch[0]) ||
-    new Date(lastFetch.created_at) - Date.now() > 1000 * 60 * 60
+    !(lastFetch?.payload) ||
+    (Date.now() - new Date(lastFetch.created_at).valueOf()) >1000*60*60
   ) {
-    fetch("{{ .Site.Params.Commits.GithubAPI }}users/{{ .Site.Params.Commits.GithubUser }}/events/public")
+    fetch("{{ .Site.Params.Commits.GithubAPI }}/users/{{ .Site.Params.Commits.GithubUser }}/events/public")
       .then((res) => res.json())
       .then((data) => {
-        document.querySelector(
+        const el = document.querySelector(
           id
-        ).textContent = `Last GitHub commit: "${data[0].payload.commits[0]?.message.replace(
+        )
+        el.textContent = `Last GitHub commit: "${data[0].payload.commits[0]?.message.replace(
           /(.{20})..+/,
           "$1 …"
         )}" at ${new Date(data[0].created_at).toLocaleString()}`;
+        el.href = "{{ .Site.Params.Commits.GithubHTML }}/"+data[0].repo.name+"/commit/" +  data[0].payload.commits[0]?.sha
         window.localStorage.setItem(key, JSON.stringify(data[0]));
       });
   } else {
-    document.querySelector(
+    const el = document.querySelector(
       id
-    ).textContent = `Last GitHub commit: "${lastFetch.payload.commits[0]?.message.replace(
+    )
+    el.textContent = `Last GitHub commit: "${lastFetch.payload.commits[0]?.message.replace(
       /(.{20})..+/,
       "$1 …"
     )}" at ${new Date(lastFetch.created_at).toLocaleString()}`;
+    el.href = "{{ .Site.Params.Commits.GithubHTML }}/"+lastFetch.repo.name+"/commit/" +  lastFetch.payload.commits[0]?.sha
   }
 </script>
