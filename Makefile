@@ -32,4 +32,7 @@ clean:
 
 # Dependencies
 depend:
+	mkdir -p static/css
+	curl -Lo static/css/patternfly.css 'https://unpkg.com/@patternfly/patternfly@4.102.2/patternfly.css'
+	curl -Lo static/css/patternfly-addons.css 'https://unpkg.com/@patternfly/patternfly@4.102.2/patternfly-addons.css'
 	go run ./cmd/ps-get-projects/ -src data/projects.yaml -token="${GITHUB_TOKEN}" > data/projects_gen.yaml
