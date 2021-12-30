@@ -6,6 +6,9 @@ excerpt: Let's bring back networking simplicity!
 header: ./static/header.jpg
 headerAlt: |
   "Unifi 16XG switch in homelab rack" by Thomas Jensen on Unsplash
+keywords:
+  - infra
+  - networking
 draft: false
 ---
 

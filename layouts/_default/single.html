@@ -1,5 +1,57 @@
 {{ define "main" }}
-  <main>
-    {{ .Content }}
-  </main>
+  <article>
+    <header>
+      <figure>
+        <img
+          src="{{ ((index .Resources 0).Resize `1024x`).Permalink }}"
+          alt="{{ .Params.HeaderAlt }}"
+          style="width: 100%; height: 300px; object-fit: cover;"
+        />
+
+        <figcaption>{{ .Params.HeaderAlt }}</figcaption>
+      </figure>
+
+      <p>{{ .Params.Excerpt }}</p>
+      <dl>
+        <dt>Originally published at</dt>
+        <dd>{{ .Date }}</dd>
+
+        <dt>Last updated at</dt>
+        <dd>{{ .Params.Updated }}</dd>
+
+        <dt>Written by</dt>
+        <dd>{{ .Site.Params.Author }}</dd>
+
+        <dt>Estimated time to read</dt>
+        <dd>{{ .ReadingTime }} minutes</dd>
+
+        <dt>Keywords</dt>
+        <dd>
+          <ul>
+            {{ range first 5 .Keywords }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </dd>
+      </dl>
+    </header>
+
+    <main>
+      {{ .Content }}
+    </main>
+
+    {{ $related := .Site.RegularPages.Related . | first 5 }}
+    {{ if gt (len $related) 0 }}
+      <footer>
+        <h2>See also</h2>
+        <ul>
+          {{ range $related }}
+            <li>
+              <a href="{{ .Permalink }}">{{ .Date }} | {{ .Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </footer>
+    {{ end }}
+  </article>
 {{ end }}
