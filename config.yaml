@@ -32,3 +32,5 @@ params:
     githubAPI: https://api.github.com
     githubHTML: https://github.com
     githubUser: pojntfx
+  livestreaming:
+    twitchUser: pojntfx
