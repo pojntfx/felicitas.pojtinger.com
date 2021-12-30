@@ -6,6 +6,11 @@ excerpt: A supra-cloud CLI for nodes, layer 2/layer 3 overlay networks and Kuber
 header: ./static/header.jpg
 headerAlt: |
   "In the line of fire" by Christopher Burns on Unsplash
+keywords:
+  - infra
+  - devops
+  - multi-cloud
+  - tooling
 draft: false
 ---
 

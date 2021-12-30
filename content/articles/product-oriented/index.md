@@ -6,6 +6,10 @@ excerpt: Yet another way of structuring one's projects.
 header: ./static/header.jpg
 headerAlt: |
   "Round open neon" by Finn Hackshaw on Unsplash
+keywords:
+  - construct
+  - infra
+  - model
 draft: false
 ---
 

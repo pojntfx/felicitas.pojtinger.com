@@ -6,6 +6,9 @@ excerpt: Why are these systems so hard to set up?
 header: ./static/header.jpg
 headerAlt: |
   "Cable Network" by Taylor Vick on Unsplash
+keywords:
+  - categorization
+  - clusterplatform
 draft: false
 ---
 
