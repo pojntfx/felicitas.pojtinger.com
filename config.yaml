@@ -28,3 +28,6 @@ params:
     reactionsEnabled: 1
     emitMetadata: 1
     theme: preferred_color_scheme
+  commits:
+    githubAPI: https://api.github.com/
+    githubUser: pojntfx

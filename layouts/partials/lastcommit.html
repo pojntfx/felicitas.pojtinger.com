@@ -1,0 +1,32 @@
+<div id="last-git-commit"></div>
+<noscript>Please enable JavaScript to view the last commit status.</noscript
+><script>
+  const id = "#last-git-commit";
+  const key = "lastGitHubFetch";
+
+  const lastFetch = JSON.parse(window.localStorage.getItem(key) || "{}");
+
+  if (
+    !(lastFetch && lastFetch[0]) ||
+    new Date(lastFetch.created_at) - Date.now() > 1000 * 60 * 60
+  ) {
+    fetch("{{ .Site.Params.Commits.GithubAPI }}users/{{ .Site.Params.Commits.GithubUser }}/events/public")
+      .then((res) => res.json())
+      .then((data) => {
+        document.querySelector(
+          id
+        ).textContent = `Last GitHub commit: "${data[0].payload.commits[0]?.message.replace(
+          /(.{20})..+/,
+          "$1 …"
+        )}" at ${new Date(data[0].created_at).toLocaleString()}`;
+        window.localStorage.setItem(key, JSON.stringify(data[0]));
+      });
+  } else {
+    document.querySelector(
+      id
+    ).textContent = `Last GitHub commit: "${lastFetch.payload.commits[0]?.message.replace(
+      /(.{20})..+/,
+      "$1 …"
+    )}" at ${new Date(lastFetch.created_at).toLocaleString()}`;
+  }
+</script>
