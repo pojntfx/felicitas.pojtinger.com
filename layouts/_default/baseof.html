@@ -58,16 +58,10 @@
                 href="{{ .Site.Data.person.contact.twitter }}"
                 target="_blank"
                 rel="noopener"
-                >Twitter</a
               >
-            </li>
-            <li>
-              <a
-                href="{{ .Site.Data.person.contact.github }}"
-                target="_blank"
-                rel="noopener"
-                >GitHub</a
-              >
+                Twitter:
+                {{ partial "twitter" . }}
+              </a>
             </li>
             <li>
               <a
@@ -75,9 +69,21 @@
                 target="_blank"
                 rel="noopener"
               >
-                {{ partial "twitch" . }} Twitch
+                Twitch:
+                {{ partial "twitch" . }}
               </a>
+            </li>
+            <li>
+              <a
+                href="{{ .Site.Data.person.contact.github }}"
+                target="_blank"
+                rel="noopener"
               >
+                GitHub:
+                {{ partial "github" . }}
+              </a>
+
+              {{ partial "lastcommit" . }}
             </li>
           </ul>
         </nav>

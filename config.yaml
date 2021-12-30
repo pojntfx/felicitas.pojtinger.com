@@ -17,7 +17,7 @@ params:
     - Cluster Platform
     - Open Source
     - Free Software
-  copyright: © 2022 AGPL-3.0 Felicitas Pojtinger and contributors
+  copyright: © 2022 Felicitas Pojtinger
   source: https://github.com/pojntfx/personal-site
   comments:
     repo: pojntfx/personal-site
@@ -32,5 +32,10 @@ params:
     githubAPI: https://api.github.com
     githubHTML: https://github.com
     githubUser: pojntfx
+    githubLabel: "@pojntfx"
   livestreaming:
     twitchUser: pojntfx
+    twitchLabel: "@pojntfx"
+  feeds:
+    twitterUser: pojntfx
+    twitterLabel: "@pojntfx"
