@@ -74,7 +74,9 @@
                 href="{{ .Site.Data.person.contact.twitch }}"
                 target="_blank"
                 rel="noopener"
-                >Twitch</a
+              >
+                {{ partial "twitch" . }} Twitch
+              </a>
               >
             </li>
           </ul>
