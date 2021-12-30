@@ -22,6 +22,7 @@ type OutputProject struct {
 	Title       string   `yaml:"title"`
 	Description string   `yaml:"description"`
 	Language    string   `yaml:"language"`
+	License     string   `yaml:"license"`
 	Date        string   `yaml:"date"`
 	Topics      []string `yaml:"topics"`
 	Stars       int      `yaml:"stars"`
@@ -90,11 +91,17 @@ func main() {
 				panic(err)
 			}
 
+			license := "UNLICENSED"
+			if l := project.GetLicense(); l != nil {
+				license = l.GetSPDXID()
+			}
+
 			outputCategory.Projects = append(outputCategory.Projects, OutputProject{
 				URL:         project.GetHTMLURL(),
 				Title:       project.GetFullName(),
 				Description: project.GetDescription(),
 				Language:    project.GetLanguage(),
+				License:     license,
 				Date:        project.GetPushedAt().Format(time.RFC3339),
 				Topics:      project.Topics,
 				Stars:       project.GetStargazersCount(),
