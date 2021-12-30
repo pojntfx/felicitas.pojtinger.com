@@ -29,5 +29,6 @@ params:
     emitMetadata: 1
     theme: preferred_color_scheme
   commits:
-    githubAPI: https://api.github.com/
+    githubAPI: https://api.github.com
+    githubHTML: https://github.com
     githubUser: pojntfx
