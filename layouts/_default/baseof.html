@@ -85,9 +85,19 @@
 
     {{ block "footer" . }}
       <footer>
-        <a href="{{ .Site.Params.Source }}" target="_blank" rel="noopener"
-          >{{ .Site.Params.Copyright }}</a
-        >
+        <nav>
+          <ul>
+            <li>
+              <a href="{{ .Site.Params.Source }}" target="_blank" rel="noopener"
+                >{{ .Site.Params.Copyright }}</a
+              >
+            </li>
+
+            <li>
+              <a href="/imprint">Imprint</a>
+            </li>
+          </ul>
+        </nav>
       </footer>
     {{ end }}
   </body>
