@@ -18,10 +18,13 @@
     <meta name="keywords" content="{{ delimit .Site.Params.Keywords `, ` }}" />
     <meta name="copyright" content="{{ .Site.Params.Copyright }}" />
 
-    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
+      href="{{ (resources.Get `css/patternfly.css` | resources.Minify | resources.Fingerprint).Permalink }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ (resources.Get `css/patternfly-addons.css` | resources.Minify | resources.Fingerprint).Permalink }}"
     />
   </head>
   <body>
