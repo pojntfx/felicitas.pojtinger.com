@@ -40,9 +40,9 @@
       {{ .Content }}
     </main>
 
-    {{ $related := .Site.RegularPages.Related . | first 5 }}
-    {{ if gt (len $related) 0 }}
-      <footer>
+    <footer>
+      {{ $related := .Site.RegularPages.Related . | first 5 }}
+      {{ if gt (len $related) 0 }}
         <h2>See also</h2>
         <ul>
           {{ range $related }}
@@ -51,7 +51,28 @@
             </li>
           {{ end }}
         </ul>
-      </footer>
-    {{ end }}
+      {{ end }}
+
+
+      <h2>Comments</h2>
+      <script
+        src="https://giscus.app/client.js"
+        data-repo="{{ .Site.Params.Comments.Repo }}"
+        data-repo-id="{{ .Site.Params.Comments.RepoID }}"
+        data-category="{{ .Site.Params.Comments.Category }}"
+        data-category-id="{{ .Site.Params.Comments.CategoryID }}"
+        data-mapping="{{ .Site.Params.Comments.Mapping }}"
+        data-reactions-enabled="{{ .Site.Params.Comments.ReactionsEnabled }}"
+        data-emit-metadata="{{ .Site.Params.Comments.EmitMetadata }}"
+        data-theme="{{ .Site.Params.Comments.Theme }}"
+        data-lang="{{ index (split .Site.LanguageCode `-`) 0 }}"
+        crossorigin="anonymous"
+        async
+      ></script>
+      <noscript
+        >Please enable JavaScript to view the comments powered by
+        giscus.</noscript
+      >
+    </footer>
   </article>
 {{ end }}

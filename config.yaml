@@ -19,3 +19,12 @@ params:
     - Free Software
   copyright: © 2022 AGPL-3.0 Felicitas Pojtinger and contributors
   source: https://github.com/pojntfx/personal-site
+  comments:
+    repo: pojntfx/personal-site
+    repoID: MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE=
+    category: Announcements
+    categoryID: DIC_kwDODa0h2c4CAeR2
+    mapping: pathname
+    reactionsEnabled: 1
+    emitMetadata: 1
+    theme: preferred_color_scheme
