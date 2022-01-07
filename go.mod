@@ -1,6 +1,6 @@
 module github.com/pojntfx/personal-site
 
-go 1.17
+go 1.16
 
 require (
 	github.com/google/go-github/v41 v41.0.0
