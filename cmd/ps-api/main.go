@@ -10,9 +10,9 @@ import (
 )
 
 func main() {
-	clientID := flag.String("clientID", "", "Twitch API client ID")
-	clientSecret := flag.String("clientSecret", "", "Twitch API client secret")
-	username := flag.String("username", "", "Twitch username to get status for")
+	clientID := flag.String("clientID", "", "Twitch API client ID (can also be set using the TWITCH_CLIENT_ID env variable)")
+	clientSecret := flag.String("clientSecret", "", "Twitch API client secret (can also be set using the TWITCH_CLIENT_SECRET env variable)")
+	username := flag.String("username", "", "Twitch username to get status for (can also be set using the TWITCH_USERNAME_SECRET env variable)")
 	laddr := flag.String("laddr", "localhost:1314", "Listen address for the API")
 
 	flag.Parse()

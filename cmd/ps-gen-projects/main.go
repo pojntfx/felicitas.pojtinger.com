@@ -43,10 +43,18 @@ type InputCategory struct {
 
 func main() {
 	src := flag.String("src", "projects.yaml", "Source YAML file")
-	api := flag.String("api", "https://api.github.com/", "API endpoint to use (GitHub/Gitea)")
-	token := flag.String("token", "", "GitHub/Gitea API access token")
+	api := flag.String("api", "https://api.github.com/", "API endpoint to use (GitHub/Gitea) (can also be set using the GITHUB_API env variable)")
+	token := flag.String("token", "", "GitHub/Gitea API access token (can also be set using the GITHUB_TOKEN env variable)")
 
 	flag.Parse()
+
+	if *api == "" {
+		*api = os.Getenv("GITHUB_API")
+	}
+
+	if *token == "" {
+		*token = os.Getenv("GITHUB_TOKEN")
+	}
 
 	input, err := os.ReadFile(*src)
 	if err != nil {

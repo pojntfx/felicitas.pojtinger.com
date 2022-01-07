@@ -58,7 +58,7 @@ run:
 
 # Develop
 dev:
-	go run ./cmd/ps-proxy/ -scmd='hugo server -D --baseUrl=/ --appendPort=false'
+	go run ./cmd/ps-proxy/ -scmd='hugo server -D --baseUrl=/ --appendPort=false' -verbose
 
 # Clean
 clean:
@@ -66,7 +66,7 @@ clean:
 
 # Dependencies
 depend:
-	mkdir -p static/css
-	curl -Lo static/css/patternfly.css 'https://unpkg.com/@patternfly/patternfly@4.102.2/patternfly.css'
-	curl -Lo static/css/patternfly-addons.css 'https://unpkg.com/@patternfly/patternfly@4.102.2/patternfly-addons.css'
-	go run ./cmd/ps-gen-projects/ -src data/projects.yaml -token="${GITHUB_TOKEN}" > data/projects_gen.yaml
+	mkdir -p assets/css
+	curl -Lo assets/css/patternfly.css 'https://unpkg.com/@patternfly/patternfly@4.102.2/patternfly.css'
+	curl -Lo assets/css/patternfly-addons.css 'https://unpkg.com/@patternfly/patternfly@4.102.2/patternfly-addons.css'
+	# go run ./cmd/ps-gen-projects/ -src data/projects.yaml > data/projects_gen.yaml

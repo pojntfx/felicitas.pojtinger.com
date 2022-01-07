@@ -6,8 +6,10 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"net/url"
 	"os"
 	"os/exec"
+	"path"
 	"strings"
 )
 
@@ -18,13 +20,13 @@ const (
 func main() {
 	laddr := flag.String("laddr", "localhost:1312", "Listen address for the proxy")
 
-	saddr := flag.String("saddr", "localhost:1313", "Address to proxy all other requests too")
+	surl := flag.String("surl", "http://localhost:1313/", "URL to proxy all other requests too")
 	scmd := flag.String("scmd", "hugo server -D --baseUrl=/ --appendPort=false", "Command to run before proxying all other requests")
 
-	aaddr := flag.String("aaddr", "localhost:1314", "Address to proxy request on /api too")
+	aurl := flag.String("aurl", "http://localhost:1314/", "URL to proxy request on /api too")
 	acmd := flag.String("acmd", "go run ./cmd/ps-api", "Command to run before proxying to /api")
 
-	https := flag.Bool("https", false, "Use HTTPS to connect to upstreams")
+	verbose := flag.Bool("verbose", false, "Enable verbose logging")
 
 	flag.Parse()
 
@@ -44,21 +46,40 @@ func main() {
 	site.Start()
 	api.Start()
 
-	log.Println("Proxy listening on", *laddr, "proxying to", *saddr, "(site) and", *aaddr, "(API)")
+	log.Println("Proxy listening on", *laddr, "proxying to", *surl, "(site) and", *aurl, "(API)")
 
 	panic(http.ListenAndServe(*laddr, http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
-		r.URL.Scheme = "http"
-		if *https {
-			r.URL.Scheme = "https"
+		var upstream *url.URL
+
+		if strings.HasPrefix(r.URL.Path, "/api/") {
+			up, err := url.Parse(*aurl)
+			if err != nil {
+				log.Println("Could not parse API URL", err)
+			}
+			upstream = up
+
+			if *verbose {
+				log.Println("Proxying request to API", r.URL)
+			}
+		} else {
+			up, err := url.Parse(*surl)
+			if err != nil {
+				log.Println("Could not parse site URL", err)
+			}
+			upstream = up
+
+			if *verbose {
+				log.Println("Proxying request to site", r.URL)
+			}
 		}
 
-		r.URL.Host = *saddr
-		if strings.HasPrefix(r.URL.Path, "/api/") {
-			r.URL.Host = *aaddr
+		r.URL.Scheme = upstream.Scheme
+		r.URL.Host = upstream.Host
 
-			log.Println("Proxying request to API", r.URL)
-		} else {
-			log.Println("Proxying request to site", r.URL)
+		previousPath := r.URL.Path
+		r.URL.Path = path.Join(upstream.Path, r.URL.Path) // path.Join might strip trailing slashes, leading to errors when redirecting
+		if strings.HasSuffix(previousPath, "/") && !strings.HasSuffix(r.URL.Path, "/") {
+			r.URL.Path += "/"
 		}
 
 		res, err := http.DefaultTransport.RoundTrip(r)
