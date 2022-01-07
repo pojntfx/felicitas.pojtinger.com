@@ -10,47 +10,47 @@ DST ?=
 
 # Private variables
 obj = ps-api ps-gen-projects ps-proxy
-sts = ps-frontend
-all: $(addprefix build-bin/,$(obj)) $(addprefix build-frontend/,$(sts))
+sts = ps-pwa
+all: $(addprefix build-cli/,$(obj)) $(addprefix build-pwa/,$(sts))
 
 # Build
-build: $(addprefix build-bin/,$(obj)) $(addprefix build-frontend/,$(sts))
+build: $(addprefix build-cli/,$(obj)) $(addprefix build-pwa/,$(sts))
 
 # Build binary
-$(addprefix build-bin/,$(obj)):
+$(addprefix build-cli/,$(obj)):
 ifdef DST
-	go build -o $(DST) ./cmd/$(subst build-bin/,,$@)
+	go build -o $(DST) ./cmd/$(subst build-cli/,,$@)
 else
-	go build -o $(OUTPUT_DIR)/$(subst build-bin/,,$@) ./cmd/$(subst build-bin/,,$@)
+	go build -o $(OUTPUT_DIR)/$(subst build-cli/,,$@) ./cmd/$(subst build-cli/,,$@)
 endif
 
 # Build frontend
-$(addprefix build-frontend/,$(sts)):
+$(addprefix build-pwa/,$(sts)):
 	mkdir -p $(OUTPUT_DIR)
 	hugo --baseUrl=/
-	tar czvf $(OUTPUT_DIR)/$(subst build-frontend/,,$@).tar.gz -C public .
+	tar czvf $(OUTPUT_DIR)/$(subst build-pwa/,,$@).tar.gz -C public .
 
 # Install
-install: $(addprefix install-bin/,$(obj)) $(addprefix install-frontend/,$(sts))
+install: $(addprefix install-cli/,$(obj)) $(addprefix install-pwa/,$(sts))
 
 # Install binary
-$(addprefix install-bin/,$(obj)):
-	install -D -m 0755 $(OUTPUT_DIR)/$(subst install-bin/,,$@) $(DESTDIR)$(PREFIX)/bin/$(subst install-bin/,,$@)
+$(addprefix install-cli/,$(obj)):
+	install -D -m 0755 $(OUTPUT_DIR)/$(subst install-cli/,,$@) $(DESTDIR)$(PREFIX)/bin/$(subst install-cli/,,$@)
 
 # Install frontend
-$(addprefix install-frontend/,$(sts)):
+$(addprefix install-pwa/,$(sts)):
 	mkdir -p $(DESTDIR)$(WWWROOT)$(WWWPREFIX)
 	cp -rf public/* $(DESTDIR)$(WWWROOT)$(WWWPREFIX)
 
 # Uninstall
-uninstall: $(addprefix uninstall-bin/,$(obj)) $(addprefix uninstall-frontend/,$(sts))
+uninstall: $(addprefix uninstall-cli/,$(obj)) $(addprefix uninstall-pwa/,$(sts))
 
 # Uninstall binary
-$(addprefix uninstall-bin/,$(obj)):
-	rm -f $(DESTDIR)$(PREFIX)/bin/$(subst uninstall-bin/,,$@)
+$(addprefix uninstall-cli/,$(obj)):
+	rm -f $(DESTDIR)$(PREFIX)/bin/$(subst uninstall-cli/,,$@)
 
 # Uninstall frontend
-$(addprefix uninstall-frontend/,$(sts)):
+$(addprefix uninstall-pwa/,$(sts)):
 	rm -rf $(DESTDIR)$(WWWROOT)$(WWWPREFIX)
 
 # Run
