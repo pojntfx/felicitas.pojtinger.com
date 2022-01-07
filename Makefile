@@ -1,31 +1,56 @@
 # Variables
 DESTDIR ?=
+
 WWWROOT ?= /var/www/html
 WWWPREFIX ?= /felix.pojtinger
+
 PREFIX ?= /usr/local
 OUTPUT_DIR ?= out
+DST ?=
 
-all: build
+# Private variables
+obj = ps-api ps-gen-projects ps-proxy
+sts = ps-frontend
+all: $(addprefix build-bin/,$(obj)) $(addprefix build-frontend/,$(sts))
 
 # Build
-build:
-	rm -rf public
+build: $(addprefix build-bin/,$(obj)) $(addprefix build-frontend/,$(sts))
+
+# Build binary
+$(addprefix build-bin/,$(obj)):
+ifdef DST
+	go build -o $(DST) ./cmd/$(subst build-bin/,,$@)
+else
+	go build -o $(OUTPUT_DIR)/$(subst build-bin/,,$@) ./cmd/$(subst build-bin/,,$@)
+endif
+
+# Build frontend
+$(addprefix build-frontend/,$(sts)):
 	hugo --baseUrl=/
-	tar czvf $(OUTPUT_DIR)/ps.tar.gz -C public .
-	go build -o $(OUTPUT_DIR)/ps-api ./cmd/ps-api
-	go build -o $(OUTPUT_DIR)/ps-proxy ./cmd/ps-proxy
-	
+	tar czvf $(OUTPUT_DIR)/$(subst build-frontend/,,$@).tar.gz -C public .
+
 # Install
-install:
+install: $(addprefix install-bin/,$(obj)) $(addprefix install-frontend/,$(sts))
+
+# Install binary
+$(addprefix install-bin/,$(obj)):
+	install -D -m 0755 $(OUTPUT_DIR)/$(subst install-bin/,,$@) $(DESTDIR)$(PREFIX)/bin/$(subst install-bin/,,$@)
+
+# Install frontend
+$(addprefix install-frontend/,$(sts)):
 	mkdir -p $(DESTDIR)$(WWWROOT)$(WWWPREFIX)
 	cp -rf public/* $(DESTDIR)$(WWWROOT)$(WWWPREFIX)
-	install -D -m 0755 $(OUTPUT_DIR)/ps-api $(DESTDIR)$(PREFIX)/bin/ps-api
-	install -D -m 0755 $(OUTPUT_DIR)/ps-proxy $(DESTDIR)$(PREFIX)/bin/ps-proxy
 
 # Uninstall
-uninstall:
+uninstall: $(addprefix uninstall-bin/,$(obj)) $(addprefix uninstall-frontend/,$(sts))
+
+# Uninstall binary
+$(addprefix uninstall-bin/,$(obj)):
+	rm -f $(DESTDIR)$(PREFIX)/bin/$(subst uninstall-bin/,,$@)
+
+# Uninstall frontend
+$(addprefix uninstall-frontend/,$(sts)):
 	rm -rf $(DESTDIR)$(WWWROOT)$(WWWPREFIX)
-	rm $(DESTDIR)$(PREFIX)/bin/ps-api $(DESTDIR)$(PREFIX)/bin/ps-proxy
 
 # Run
 run:
