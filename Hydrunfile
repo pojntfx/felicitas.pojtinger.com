@@ -26,7 +26,7 @@ fi
 # Frontend
 if [ "$1" = "pwa" ]; then
     # Install Hugo
-    apk add hugo make
+    apk add curl make hugo
 
     # Generate dependencies
     make depend
