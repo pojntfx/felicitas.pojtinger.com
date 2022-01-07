@@ -26,6 +26,7 @@ endif
 
 # Build frontend
 $(addprefix build-frontend/,$(sts)):
+	mkdir -p $(OUTPUT_DIR)
 	hugo --baseUrl=/
 	tar czvf $(OUTPUT_DIR)/$(subst build-frontend/,,$@).tar.gz -C public .
 
@@ -69,4 +70,4 @@ depend:
 	mkdir -p assets/css
 	curl -Lo assets/css/patternfly.css 'https://unpkg.com/@patternfly/patternfly@4.102.2/patternfly.css'
 	curl -Lo assets/css/patternfly-addons.css 'https://unpkg.com/@patternfly/patternfly@4.102.2/patternfly-addons.css'
-	# go run ./cmd/ps-gen-projects/ -src data/projects.yaml > data/projects_gen.yaml
+	go run ./cmd/ps-gen-projects/ -src data/projects.yaml > data/projects_gen.yaml

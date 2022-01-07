@@ -1,0 +1,38 @@
+#!/bin/sh
+
+set -e
+
+# Binaries
+if [ "$1" = "binaries" ]; then
+    # Install native dependencies
+    apt update
+    apt install -y curl
+
+    # Install bagop
+    curl -L -o /tmp/bagop "https://github.com/pojntfx/bagop/releases/latest/download/bagop.linux-$(uname -m)"
+    install /tmp/bagop /usr/local/bin
+
+    # Generate dependencies
+    make depend
+
+    # Build
+    CGO_ENABLED=0 bagop -j "$(nproc)" -b ps-api -x '(android/*|ios/*)' -p 'make build-bin/ps-api DST=$DST' -d out
+    CGO_ENABLED=0 bagop -j "$(nproc)" -b ps-gen-projects -x '(android/*|ios/*)' -p 'make build-bin/ps-gen-projects DST=$DST' -d out
+    CGO_ENABLED=0 bagop -j "$(nproc)" -b ps-proxy -x '(android/*|ios/*)' -p 'make build-bin/ps-proxy DST=$DST' -d out
+
+    exit 0
+fi
+
+# Frontend
+if [ "$1" = "frontend" ]; then
+    # Install Hugo
+    apk add hugo make
+
+    # Generate dependencies
+    make depend
+
+    # Build
+    make build-frontend/ps-frontend
+
+    exit 0
+fi
