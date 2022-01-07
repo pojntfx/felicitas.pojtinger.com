@@ -58,7 +58,8 @@ jobs:
       - name: Isolate the repositories
         run: |
           mkdir -p /tmp/github-pages
-          cp -r /tmp/out/pwa/web/* /tmp/github-pages
+          tar xvzf /tmp/out/pwa/*.tar.gz -C /tmp/github-pages
+          touch /tmp/github-pages/.nojekyll
       - name: Publish pre-release to GitHub releases
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: marvinpinto/action-automatic-releases@latest
