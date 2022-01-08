@@ -6,12 +6,13 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"strconv"
 
 	"github.com/dghubble/go-twitter/twitter"
 	"golang.org/x/oauth2/clientcredentials"
 )
 
-func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string, clientSecret string, username string) {
+func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string, clientSecret string, username string, ttl int) {
 	config := &clientcredentials.Config{
 		ClientID:     clientID,
 		ClientSecret: clientSecret,
@@ -34,9 +35,21 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 		panic(err)
 	}
 
+	w.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", ttl))
+
 	fmt.Fprintf(w, "%v", string(j))
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	TwitterFeedHandler(w, r, os.Getenv("TWITTER_CLIENT_ID"), os.Getenv("TWITTER_CLIENT_SECRET"), os.Getenv("TWITTER_USERNAME"))
+	ttl := 900
+	if rawTTL := os.Getenv("TWITTER_TTL"); rawTTL != "" {
+		parsedTTL, err := strconv.Atoi(rawTTL)
+		if err != nil {
+			panic(err)
+		}
+
+		ttl = parsedTTL
+	}
+
+	TwitterFeedHandler(w, r, os.Getenv("TWITTER_CLIENT_ID"), os.Getenv("TWITTER_CLIENT_SECRET"), os.Getenv("TWITTER_USERNAME"), ttl)
 }
