@@ -24,6 +24,7 @@ type Output struct {
 	LastCommitTime    string `json:"lastCommitTime"`
 	LastCommitRepo    string `json:"lastCommitRepo"`
 	LastCommitMessage string `json:"lastCommitMessage"`
+	LastCommitLink    string `json:"lastCommitLink"`
 }
 
 func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token string, username string, ttl int) {
@@ -58,13 +59,13 @@ func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token str
 	}
 
 	output := Output{
-		UserName:      *user.Login,
-		UserFollowers: *user.Followers,
+		UserName:      user.GetLogin(),
+		UserFollowers: user.GetFollowers(),
 	}
 
 	var event *github.Event
 	for _, candidate := range events {
-		if *candidate.Type == typePushEvent {
+		if candidate.GetType() == typePushEvent {
 			event = candidate
 
 			break
@@ -72,11 +73,11 @@ func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token str
 	}
 
 	if event != nil {
-		output.LastCommitTime = event.CreatedAt.Format(time.RFC3339)
+		output.LastCommitTime = event.GetCreatedAt().Format(time.RFC3339)
 
 		repo := event.GetRepo()
 		if repo != nil {
-			output.LastCommitRepo = *repo.Name
+			output.LastCommitRepo = repo.GetName()
 		}
 
 		var pushEvent github.PushEvent
@@ -85,7 +86,8 @@ func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token str
 		}
 
 		if len(pushEvent.Commits) > 0 {
-			output.LastCommitMessage = *pushEvent.Commits[0].Message
+			output.LastCommitMessage = pushEvent.Commits[0].GetMessage()
+			output.LastCommitLink = pushEvent.Commits[0].GetURL()
 		}
 	}
 
