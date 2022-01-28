@@ -1,3 +1,4 @@
+github.com/bradleyfalzon/ghinstallation/v2 v2.0.3/go.mod h1:tlgi+JWCXnKFx/Y4WtnDbZEINo31N5bcvnCoqieefmk=
 github.com/cenkalti/backoff/v4 v4.1.2 h1:6Yo7N8UP2K6LWZnW94DLVSSrbobcWdVzAYOisuDPIFo=
 github.com/cenkalti/backoff/v4 v4.1.2/go.mod h1:scbssz8iZGpm3xbr14ovlUdkxfGXNInqkPWOWmG2CLw=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
@@ -14,8 +15,9 @@ github.com/golang/protobuf v1.3.2/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5y
 github.com/google/go-cmp v0.5.2/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.5.6 h1:BKbKCqvP6I+rmFHt06ZmyQtvB8xAkWdhFyr0ZUNZcxQ=
 github.com/google/go-cmp v0.5.6/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
-github.com/google/go-github/v41 v41.0.0 h1:HseJrM2JFf2vfiZJ8anY2hqBjdfY1Vlj/K27ueww4gg=
-github.com/google/go-github/v41 v41.0.0/go.mod h1:XgmCA5H323A9rtgExdTcnDkcqp6S30AVACCBDOonIxg=
+github.com/google/go-github/v39 v39.0.0/go.mod h1:C1s8C5aCC9L+JXIYpJM5GYytdX52vC1bLvHEF1IhBrE=
+github.com/google/go-github/v42 v42.0.0 h1:YNT0FwjPrEysRkLIiKuEfSvBPCGKphW5aS5PxwaoLec=
+github.com/google/go-github/v42 v42.0.0/go.mod h1:jgg/jvyI0YlDOM1/ps6XYh04HNQ3vKf0CVko62/EhRg=
 github.com/google/go-querystring v1.1.0 h1:AnCroh3fv4ZBgVIf1Iwtovgjaw/GiKJo8M8yD/fhyJ8=
 github.com/google/go-querystring v1.1.0/go.mod h1:Kcdr2DB4koayq7X8pmAG4sNG59So17icRSOU623lUBU=
 github.com/nicklaw5/helix/v2 v2.3.0 h1:smh3HcJJeoPQ+9x2Brp1iQiKbAqvvrue/xXV6p8s2x4=

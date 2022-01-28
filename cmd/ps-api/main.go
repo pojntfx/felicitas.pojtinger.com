@@ -7,6 +7,7 @@ import (
 	"os"
 	"strconv"
 
+	"github.com/pojntfx/personal-site/api/github"
 	"github.com/pojntfx/personal-site/api/twitch"
 	"github.com/pojntfx/personal-site/api/twitter"
 )
@@ -21,6 +22,11 @@ func main() {
 	twitterClientSecret := flag.String("twitter-client-secret", "", "Twitter API client secret (can also be set using the TWITTER_CLIENT_SECRET env variable)")
 	twitterUsername := flag.String("twitter-username", "", "Twitter username to get feed for (can also be set using the TWITTER_USERNAME env variable)")
 	twitterTTL := flag.Int("twitter-ttl", 900, "Time in seconds to cache Twitter API responses for (can also be set using the TWITTER_TTL env variable)")
+
+	githubAPI := flag.String("github-api", "https://api.github.com/", "GitHub/Gitea API endpoint to use (can also be set using the GITHUB_API env variable)")
+	githubToken := flag.String("github-token", "", "GitHub/Gitea API access token (can also be set using the GITHUB_TOKEN env variable)")
+	githubUsername := flag.String("github-username", "", "Github username to get info for (can also be set using the GITHUB_USERNAME env variable)")
+	githubTTL := flag.Int("github-ttl", 900, "Time in seconds to cache Github API responses for (can also be set using the GITHUB_TTL env variable)")
 
 	laddr := flag.String("laddr", "localhost:1314", "Listen address for the API")
 
@@ -68,6 +74,27 @@ func main() {
 		*twitterTTL = ttl
 	}
 
+	if *githubAPI == "" {
+		*githubAPI = os.Getenv("GITHUB_API")
+	}
+
+	if *githubToken == "" {
+		*githubToken = os.Getenv("GITHUB_TOKEN")
+	}
+
+	if *githubUsername == "" {
+		*githubUsername = os.Getenv("GITHUB_USERNAME")
+	}
+
+	if rawTTL := os.Getenv("GITHUB_TTL"); rawTTL != "" {
+		ttl, err := strconv.Atoi(rawTTL)
+		if err != nil {
+			panic(err)
+		}
+
+		*githubTTL = ttl
+	}
+
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/api/twitch", func(rw http.ResponseWriter, r *http.Request) {
@@ -96,6 +123,20 @@ func main() {
 		}()
 
 		twitter.TwitterFeedHandler(rw, r, *twitterClientID, *twitterClientSecret, *twitterUsername, *twitterTTL)
+	})
+
+	mux.HandleFunc("/api/github", func(rw http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error occured in GitHub API:", err)
+
+				http.Error(rw, "Error occured in GitHub API", http.StatusInternalServerError)
+
+				return
+			}
+		}()
+
+		github.GitHubHandler(rw, r, *githubAPI, *githubToken, *githubUsername, *githubTTL)
 	})
 
 	log.Println("API listening on", *laddr)
