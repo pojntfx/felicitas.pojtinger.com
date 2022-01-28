@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/google/go-github/v41/github"
+	"github.com/google/go-github/v42/github"
 	"golang.org/x/oauth2"
 	"gopkg.in/yaml.v2"
 )
@@ -43,7 +43,7 @@ type InputCategory struct {
 
 func main() {
 	src := flag.String("src", "projects.yaml", "Source YAML file")
-	api := flag.String("api", "https://api.github.com/", "API endpoint to use (GitHub/Gitea) (can also be set using the GITHUB_API env variable)")
+	api := flag.String("api", "https://api.github.com/", "GitHub/Gitea API endpoint to use (can also be set using the GITHUB_API env variable)")
 	token := flag.String("token", "", "GitHub/Gitea API access token (can also be set using the GITHUB_TOKEN env variable)")
 
 	flag.Parse()

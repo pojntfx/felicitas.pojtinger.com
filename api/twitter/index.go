@@ -1,7 +1,6 @@
 package twitter
 
 import (
-	"context"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -18,7 +17,7 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 		ClientSecret: clientSecret,
 		TokenURL:     "https://api.twitter.com/oauth2/token",
 	}
-	httpClient := config.Client(context.Background())
+	httpClient := config.Client(r.Context())
 
 	client := twitter.NewClient(httpClient)
 
