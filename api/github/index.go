@@ -6,7 +6,9 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"path"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/google/go-github/v42/github"
@@ -24,7 +26,7 @@ type Output struct {
 	LastCommitTime    string `json:"lastCommitTime"`
 	LastCommitRepo    string `json:"lastCommitRepo"`
 	LastCommitMessage string `json:"lastCommitMessage"`
-	LastCommitLink    string `json:"lastCommitLink"`
+	LastCommitURL     string `json:"lastCommitURL"`
 }
 
 func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token string, username string, ttl int) {
@@ -86,8 +88,18 @@ func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token str
 		}
 
 		if len(pushEvent.Commits) > 0 {
-			output.LastCommitMessage = pushEvent.Commits[0].GetMessage()
-			output.LastCommitLink = pushEvent.Commits[0].GetURL()
+			owner, repo := path.Split(repo.GetName())
+
+			commit, _, err := client.Repositories.GetCommit(r.Context(), strings.TrimSuffix(owner, "/"), repo, pushEvent.Commits[0].GetSHA(), nil)
+			if err != nil {
+				panic(err)
+			}
+
+			output.LastCommitURL = commit.GetHTMLURL()
+
+			if commit.Commit != nil {
+				output.LastCommitMessage = commit.Commit.GetMessage()
+			}
 		}
 	}
 
