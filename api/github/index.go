@@ -20,8 +20,8 @@ const (
 )
 
 type Output struct {
-	UserName      string `json:"username"`
-	UserFollowers int    `json:"userFollowers"`
+	UserName          string `json:"username"`
+	UserFollowerCount int    `json:"userFollowerCount"`
 
 	LastCommitTime    string `json:"lastCommitTime"`
 	LastCommitRepo    string `json:"lastCommitRepo"`
@@ -61,8 +61,8 @@ func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token str
 	}
 
 	output := Output{
-		UserName:      user.GetLogin(),
-		UserFollowers: user.GetFollowers(),
+		UserName:          user.GetLogin(),
+		UserFollowerCount: user.GetFollowers(),
 	}
 
 	var event *github.Event
