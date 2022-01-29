@@ -3,10 +3,10 @@ package twitter
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/dghubble/go-twitter/twitter"
@@ -32,6 +32,8 @@ type Tweet struct {
 	CommentCount int `json:"commentCount"`
 	RetweetCount int `json:"retweetCount"`
 	LikeCount    int `json:"likeCount"`
+
+	URL string `json:"url"`
 }
 
 type Image struct {
@@ -93,8 +95,6 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 		images := []Image{}
 
 		if attachments := sourceTweet.Entities; attachments != nil {
-			log.Printf("%+v", attachments)
-
 			for _, media := range attachments.Media {
 				images = append(images, Image{
 					URL:     media.MediaURLHttps,
@@ -108,6 +108,13 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 		tweet.CommentCount = sourceTweet.ReplyCount
 		tweet.RetweetCount = sourceTweet.RetweetCount
 		tweet.LikeCount = sourceTweet.FavoriteCount
+
+		textParts := strings.Split(sourceTweet.FullText, " ")
+		if len(textParts) > 0 {
+			tweet.URL = textParts[len(textParts)-1]
+		} else {
+			tweet.URL = textParts[0]
+		}
 
 		tweets = append(tweets, tweet)
 	}
