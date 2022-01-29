@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"time"
 
 	"github.com/dghubble/go-twitter/twitter"
 	"golang.org/x/oauth2/clientcredentials"
@@ -23,6 +24,19 @@ type Output struct {
 }
 
 type Tweet struct {
+	Timestamp string `json:"timestamp"`
+	Body      string `json:"body"`
+
+	Images []Image `json:"images"`
+
+	CommentCount int `json:"commentCount"`
+	RetweetCount int `json:"retweetCount"`
+	LikeCount    int `json:"likeCount"`
+}
+
+type Image struct {
+	URL     string `json:"url"`
+	AltText string `json:"altText"`
 }
 
 const (
@@ -57,17 +71,45 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 	tweets := []Tweet{}
 
 	sourceTweets, _, err := client.Timelines.UserTimeline(&twitter.UserTimelineParams{
-		ScreenName:      username,
-		Count:           5,
-		IncludeRetweets: twitter.Bool(false),
-		ExcludeReplies:  twitter.Bool(true),
+		ScreenName:     username,
+		ExcludeReplies: twitter.Bool(true),
+		TweetMode:      "extended",
 	})
 	if err != nil {
 		panic(err)
 	}
 
-	for _, tweet := range sourceTweets {
-		log.Println(tweet)
+	for _, sourceTweet := range sourceTweets {
+		tweet := Tweet{}
+
+		createdAt, err := sourceTweet.CreatedAtTime()
+		if err != nil {
+			panic(err)
+		}
+
+		tweet.Timestamp = createdAt.Format(time.RFC3339)
+		tweet.Body = sourceTweet.FullText
+
+		images := []Image{}
+
+		if attachments := sourceTweet.Entities; attachments != nil {
+			log.Printf("%+v", attachments)
+
+			for _, media := range attachments.Media {
+				images = append(images, Image{
+					URL:     media.MediaURLHttps,
+					AltText: "No alt text available in the Twitter V1 API, please visit the original Tweet URL instead",
+				})
+			}
+		}
+
+		tweet.Images = images
+
+		tweet.CommentCount = sourceTweet.ReplyCount
+		tweet.RetweetCount = sourceTweet.RetweetCount
+		tweet.LikeCount = sourceTweet.FavoriteCount
+
+		tweets = append(tweets, tweet)
 	}
 
 	output.Tweets = tweets
