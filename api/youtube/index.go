@@ -12,7 +12,8 @@ import (
 )
 
 type Output struct {
-	Subscribers int `json:"subscribers"`
+	ChannelName     string `json:"channelName"`
+	SubscriberCount int    `json:"subscriberCount"`
 }
 
 func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channelID string, ttl int) {
@@ -21,7 +22,7 @@ func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channe
 		panic(err)
 	}
 
-	channels, err := client.Channels.List([]string{"statistics"}).Id(channelID).Do()
+	channels, err := client.Channels.List([]string{"statistics", "snippet"}).Id(channelID).Do()
 	if err != nil {
 		panic(err)
 	}
@@ -30,8 +31,16 @@ func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channe
 		panic("no channels found for channel ID")
 	}
 
-	output := Output{
-		Subscribers: int(channels.Items[0].Statistics.SubscriberCount),
+	output := Output{}
+
+	snippet := channels.Items[0].Snippet
+	if snippet != nil {
+		output.ChannelName = snippet.Title
+	}
+
+	statistics := channels.Items[0].Statistics
+	if statistics != nil {
+		output.SubscriberCount = int(statistics.SubscriberCount)
 	}
 
 	j, err := json.Marshal(output)
