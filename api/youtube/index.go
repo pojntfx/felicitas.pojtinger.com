@@ -14,10 +14,17 @@ import (
 type Output struct {
 	ChannelName            string `json:"channelName"`
 	ChannelSubscriberCount int    `json:"channelSubscriberCount"`
+	ChannelURL             string `json:"channelURL"`
 	StreamName             string `json:"streamName"`
 	StreamIsLive           bool   `json:"streamIsLive"`
 	StreamViewerCount      int    `json:"streamViewerCount"`
+	StreamURL              string `json:"streamURL"`
 }
+
+const (
+	channelURLPrefix = "https://www.youtube.com/channel/"
+	videoURLPrefix   = "https://www.youtube.com/watch?v="
+)
 
 func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channelID string, ttl int) {
 	client, err := youtube.NewService(r.Context(), option.WithAPIKey(token))
@@ -39,6 +46,7 @@ func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channe
 	snippet := channels.Items[0].Snippet
 	if snippet != nil {
 		output.ChannelName = snippet.Title
+		output.ChannelURL = channelURLPrefix + channels.Items[0].Id
 	}
 
 	statistics := channels.Items[0].Statistics
@@ -71,6 +79,7 @@ func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channe
 			snippet := details.Items[0].Snippet
 			if snippet != nil {
 				output.StreamName = snippet.Title
+				output.StreamURL = videoURLPrefix + video.Id.VideoId
 			}
 
 			if output.StreamIsLive {
