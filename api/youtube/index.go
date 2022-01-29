@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-	"strconv"
 
 	"google.golang.org/api/option"
 	"google.golang.org/api/youtube/v3"
@@ -26,7 +25,7 @@ const (
 	videoURLPrefix   = "https://www.youtube.com/watch?v="
 )
 
-func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channelID string, ttl int) {
+func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channelID string) {
 	client, err := youtube.NewService(r.Context(), option.WithAPIKey(token))
 	if err != nil {
 		panic(err)
@@ -98,21 +97,9 @@ func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channe
 		panic(err)
 	}
 
-	w.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", ttl))
-
 	fmt.Fprintf(w, "%v", string(j))
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	ttl := 900
-	if rawTTL := os.Getenv("YOUTUBE_TTL"); rawTTL != "" {
-		parsedTTL, err := strconv.Atoi(rawTTL)
-		if err != nil {
-			panic(err)
-		}
-
-		ttl = parsedTTL
-	}
-
-	YouTubeHandler(w, r, os.Getenv("YOUTUBE_TOKEN"), os.Getenv("YOUTUBE_CHANNEL_ID"), ttl)
+	YouTubeHandler(w, r, os.Getenv("YOUTUBE_TOKEN"), os.Getenv("YOUTUBE_CHANNEL_ID"))
 }

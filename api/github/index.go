@@ -7,7 +7,6 @@ import (
 	"net/url"
 	"os"
 	"path"
-	"strconv"
 	"strings"
 	"time"
 
@@ -29,7 +28,7 @@ type Output struct {
 	LastCommitURL     string `json:"lastCommitURL"`
 }
 
-func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token string, username string, ttl int) {
+func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token string, username string) {
 	var httpClient *http.Client
 	if token != "" {
 		httpClient = oauth2.NewClient(
@@ -108,21 +107,9 @@ func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token str
 		panic(err)
 	}
 
-	w.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", ttl))
-
 	fmt.Fprintf(w, "%v", string(j))
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	ttl := 900
-	if rawTTL := os.Getenv("GITHUB_TTL"); rawTTL != "" {
-		parsedTTL, err := strconv.Atoi(rawTTL)
-		if err != nil {
-			panic(err)
-		}
-
-		ttl = parsedTTL
-	}
-
-	GitHubHandler(w, r, os.Getenv("GITHUB_API"), os.Getenv("GITHUB_TOKEN"), os.Getenv("GITHUB_USERNAME"), ttl)
+	GitHubHandler(w, r, os.Getenv("GITHUB_API"), os.Getenv("GITHUB_TOKEN"), os.Getenv("GITHUB_USERNAME"))
 }
