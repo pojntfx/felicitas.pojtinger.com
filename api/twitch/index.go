@@ -23,7 +23,15 @@ const (
 	channelURLPrefix = "https://www.twitch.tv/"
 )
 
-func TwitchStatusHandler(w http.ResponseWriter, r *http.Request, clientID string, clientSecret string, username string) {
+func TwitchStatusHandler(w http.ResponseWriter, r *http.Request, clientID string, clientSecret string) {
+	username := r.URL.Query().Get("username")
+	if username == "" {
+		w.Write([]byte("missing username query parameter: "))
+		w.WriteHeader(400)
+
+		panic("missing username query parameter")
+	}
+
 	client, err := helix.NewClient(&helix.Options{
 		ClientID:     clientID,
 		ClientSecret: clientSecret,
@@ -103,5 +111,5 @@ func TwitchStatusHandler(w http.ResponseWriter, r *http.Request, clientID string
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	TwitchStatusHandler(w, r, os.Getenv("TWITCH_CLIENT_ID"), os.Getenv("TWITCH_CLIENT_SECRET"), os.Getenv("TWITCH_USERNAME"))
+	TwitchStatusHandler(w, r, os.Getenv("TWITCH_CLIENT_ID"), os.Getenv("TWITCH_CLIENT_SECRET"))
 }
