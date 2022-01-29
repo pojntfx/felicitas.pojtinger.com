@@ -3,12 +3,30 @@ package twitter
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"strconv"
 
 	"github.com/dghubble/go-twitter/twitter"
 	"golang.org/x/oauth2/clientcredentials"
+)
+
+type Output struct {
+	UserDisplayName       string `json:"userDisplayName"`
+	UserName              string `json:"username"`
+	UserFollowerCount     int    `json:"userFollowerCount"`
+	UserProfileURL        string `json:"userProfileURL"`
+	UserProfilePictureURL string `json:"userProfilePictureURL"`
+
+	Tweets []Tweet
+}
+
+type Tweet struct {
+}
+
+const (
+	userProfileURLPrefix = "https://twitter.com/"
 )
 
 func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string, clientSecret string, username string, ttl int) {
@@ -21,15 +39,40 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 
 	client := twitter.NewClient(httpClient)
 
-	tweets, _, err := client.Timelines.UserTimeline(&twitter.UserTimelineParams{
+	output := Output{}
+
+	user, _, err := client.Users.Show(&twitter.UserShowParams{
 		ScreenName: username,
-		Count:      5,
 	})
 	if err != nil {
 		panic(err)
 	}
 
-	j, err := json.Marshal(tweets)
+	output.UserDisplayName = user.Name
+	output.UserName = user.ScreenName
+	output.UserFollowerCount = user.FollowersCount
+	output.UserProfileURL = userProfileURLPrefix + user.ScreenName
+	output.UserProfilePictureURL = user.ProfileImageURLHttps
+
+	tweets := []Tweet{}
+
+	sourceTweets, _, err := client.Timelines.UserTimeline(&twitter.UserTimelineParams{
+		ScreenName:      username,
+		Count:           5,
+		IncludeRetweets: twitter.Bool(false),
+		ExcludeReplies:  twitter.Bool(true),
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	for _, tweet := range sourceTweets {
+		log.Println(tweet)
+	}
+
+	output.Tweets = tweets
+
+	j, err := json.Marshal(output)
 	if err != nil {
 		panic(err)
 	}
