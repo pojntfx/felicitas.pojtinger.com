@@ -12,8 +12,11 @@ import (
 )
 
 type Output struct {
-	ChannelName     string `json:"channelName"`
-	SubscriberCount int    `json:"subscriberCount"`
+	ChannelName            string `json:"channelName"`
+	ChannelSubscriberCount int    `json:"channelSubscriberCount"`
+	StreamName             string `json:"streamName"`
+	StreamIsLive           bool   `json:"streamIsLive"`
+	StreamViewerCount      int    `json:"streamViewerCount"`
 }
 
 func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channelID string, ttl int) {
@@ -40,7 +43,45 @@ func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channe
 
 	statistics := channels.Items[0].Statistics
 	if statistics != nil {
-		output.SubscriberCount = int(statistics.SubscriberCount)
+		output.ChannelSubscriberCount = int(statistics.SubscriberCount)
+	}
+
+	videos, err := client.Search.List([]string{"id"}).ChannelId(channelID).Type("video").EventType("live").Order("date").Do()
+	if err != nil {
+		panic(err)
+	}
+
+	output.StreamIsLive = true
+	if len(videos.Items) < 1 {
+		output.StreamIsLive = false
+
+		videos, err = client.Search.List([]string{"id"}).ChannelId(channelID).Type("video").EventType("completed").Order("date").Do()
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	for _, video := range videos.Items {
+		details, err := client.Videos.List([]string{"snippet", "liveStreamingDetails"}).Id(video.Id.VideoId).Do()
+		if err != nil {
+			panic(err)
+		}
+
+		if len(details.Items) > 0 {
+			snippet := details.Items[0].Snippet
+			if snippet != nil {
+				output.StreamName = snippet.Title
+			}
+
+			if output.StreamIsLive {
+				liveStreamingDetails := details.Items[0].LiveStreamingDetails
+				if liveStreamingDetails != nil {
+					output.StreamViewerCount = int(liveStreamingDetails.ConcurrentViewers)
+				}
+			}
+
+			break
+		}
 	}
 
 	j, err := json.Marshal(output)
