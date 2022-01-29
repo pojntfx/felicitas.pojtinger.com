@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-	"strconv"
 
 	"github.com/nicklaw5/helix/v2"
 )
@@ -24,7 +23,7 @@ const (
 	channelURLPrefix = "https://www.twitch.tv/"
 )
 
-func TwitchStatusHandler(w http.ResponseWriter, r *http.Request, clientID string, clientSecret string, username string, ttl int) {
+func TwitchStatusHandler(w http.ResponseWriter, r *http.Request, clientID string, clientSecret string, username string) {
 	client, err := helix.NewClient(&helix.Options{
 		ClientID:     clientID,
 		ClientSecret: clientSecret,
@@ -100,21 +99,9 @@ func TwitchStatusHandler(w http.ResponseWriter, r *http.Request, clientID string
 		panic(err)
 	}
 
-	w.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", ttl))
-
 	fmt.Fprintf(w, "%v", string(j))
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	ttl := 900
-	if rawTTL := os.Getenv("TWITCH_TTL"); rawTTL != "" {
-		parsedTTL, err := strconv.Atoi(rawTTL)
-		if err != nil {
-			panic(err)
-		}
-
-		ttl = parsedTTL
-	}
-
-	TwitchStatusHandler(w, r, os.Getenv("TWITCH_CLIENT_ID"), os.Getenv("TWITCH_CLIENT_SECRET"), os.Getenv("TWITCH_USERNAME"), ttl)
+	TwitchStatusHandler(w, r, os.Getenv("TWITCH_CLIENT_ID"), os.Getenv("TWITCH_CLIENT_SECRET"), os.Getenv("TWITCH_USERNAME"))
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -17,23 +18,21 @@ func main() {
 	twitchClientID := flag.String("twitch-client-id", "", "Twitch API client ID (can also be set using the TWITCH_CLIENT_ID env variable)")
 	twitchClientSecret := flag.String("twitch-client-secret", "", "Twitch API client secret (can also be set using the TWITCH_CLIENT_SECRET env variable)")
 	twitchUsername := flag.String("twitch-username", "", "Twitch username to get status for (can also be set using the TWITCH_USERNAME env variable)")
-	twitchTTL := flag.Int("twitch-ttl", 900, "Time in seconds to cache Twitch API responses for (can also be set using the TWITCH_TTL env variable)")
 
 	twitterClientID := flag.String("twitter-client-id", "", "Twitter API client ID (can also be set using the TWITTER_CLIENT_ID env variable)")
 	twitterClientSecret := flag.String("twitter-client-secret", "", "Twitter API client secret (can also be set using the TWITTER_CLIENT_SECRET env variable)")
 	twitterUsername := flag.String("twitter-username", "", "Twitter username to get feed for (can also be set using the TWITTER_USERNAME env variable)")
-	twitterTTL := flag.Int("twitter-ttl", 900, "Time in seconds to cache Twitter API responses for (can also be set using the TWITTER_TTL env variable)")
 
 	githubAPI := flag.String("github-api", "", "GitHub/Gitea API endpoint to use (can also be set using the GITHUB_API env variable)")
 	githubToken := flag.String("github-token", "", "GitHub/Gitea API access token (can also be set using the GITHUB_TOKEN env variable)")
 	githubUsername := flag.String("github-username", "", "Github username to get info for (can also be set using the GITHUB_USERNAME env variable)")
-	githubTTL := flag.Int("github-ttl", 900, "Time in seconds to cache Github API responses for (can also be set using the GITHUB_TTL env variable)")
 
 	youtubeToken := flag.String("youtube-token", "", "YouTube API access token (can also be set using the YOUTUBE_TOKEN env variable)")
 	youtubeChannelID := flag.String("youtube-channel-id", "", "YouTube channel ID to get info for (can also be set using the YOUTUBE_CHANNEL_ID env variable)")
-	youtubeTTL := flag.Int("youtube-ttl", 900, "Time in seconds to cache YouTube API responses for (can also be set using the YOUTUBE_TTL env variable)")
 
 	laddr := flag.String("laddr", "localhost:1314", "Listen address for the API")
+
+	ttl := flag.Int("ttl", 900, "Time in seconds to cache API responses for (can also be set using the TTL env variable)")
 
 	flag.Parse()
 
@@ -49,15 +48,6 @@ func main() {
 		*twitchUsername = os.Getenv("TWITCH_USERNAME")
 	}
 
-	if rawTTL := os.Getenv("TWITCH_TTL"); rawTTL != "" {
-		ttl, err := strconv.Atoi(rawTTL)
-		if err != nil {
-			panic(err)
-		}
-
-		*twitchTTL = ttl
-	}
-
 	if *twitterClientID == "" {
 		*twitterClientID = os.Getenv("TWITTER_CLIENT_ID")
 	}
@@ -68,15 +58,6 @@ func main() {
 
 	if *twitterUsername == "" {
 		*twitterUsername = os.Getenv("TWITTER_USERNAME")
-	}
-
-	if rawTTL := os.Getenv("TWITTER_TTL"); rawTTL != "" {
-		ttl, err := strconv.Atoi(rawTTL)
-		if err != nil {
-			panic(err)
-		}
-
-		*twitterTTL = ttl
 	}
 
 	if *githubAPI == "" {
@@ -91,15 +72,6 @@ func main() {
 		*githubUsername = os.Getenv("GITHUB_USERNAME")
 	}
 
-	if rawTTL := os.Getenv("GITHUB_TTL"); rawTTL != "" {
-		ttl, err := strconv.Atoi(rawTTL)
-		if err != nil {
-			panic(err)
-		}
-
-		*githubTTL = ttl
-	}
-
 	if *youtubeToken == "" {
 		*youtubeToken = os.Getenv("YOUTUBE_TOKEN")
 	}
@@ -108,13 +80,13 @@ func main() {
 		*youtubeChannelID = os.Getenv("YOUTUBE_CHANNEL_ID")
 	}
 
-	if rawTTL := os.Getenv("YOUTUBE_TTL"); rawTTL != "" {
-		ttl, err := strconv.Atoi(rawTTL)
+	if rawTTL := os.Getenv("TTL"); rawTTL != "" {
+		envTTL, err := strconv.Atoi(rawTTL)
 		if err != nil {
 			panic(err)
 		}
 
-		*youtubeTTL = ttl
+		*ttl = envTTL
 	}
 
 	mux := http.NewServeMux()
@@ -130,7 +102,9 @@ func main() {
 			}
 		}()
 
-		twitch.TwitchStatusHandler(rw, r, *twitchClientID, *twitchClientSecret, *twitchUsername, *twitchTTL)
+		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
+
+		twitch.TwitchStatusHandler(rw, r, *twitchClientID, *twitchClientSecret, *twitchUsername)
 	})
 
 	mux.HandleFunc("/api/twitter", func(rw http.ResponseWriter, r *http.Request) {
@@ -144,7 +118,9 @@ func main() {
 			}
 		}()
 
-		twitter.TwitterFeedHandler(rw, r, *twitterClientID, *twitterClientSecret, *twitterUsername, *twitterTTL)
+		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
+
+		twitter.TwitterFeedHandler(rw, r, *twitterClientID, *twitterClientSecret, *twitterUsername)
 	})
 
 	mux.HandleFunc("/api/github", func(rw http.ResponseWriter, r *http.Request) {
@@ -158,7 +134,9 @@ func main() {
 			}
 		}()
 
-		github.GitHubHandler(rw, r, *githubAPI, *githubToken, *githubUsername, *githubTTL)
+		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
+
+		github.GitHubHandler(rw, r, *githubAPI, *githubToken, *githubUsername)
 	})
 
 	mux.HandleFunc("/api/youtube", func(rw http.ResponseWriter, r *http.Request) {
@@ -172,7 +150,9 @@ func main() {
 			}
 		}()
 
-		youtube.YouTubeHandler(rw, r, *youtubeToken, *youtubeChannelID, *youtubeTTL)
+		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
+
+		youtube.YouTubeHandler(rw, r, *youtubeToken, *youtubeChannelID)
 	})
 
 	log.Println("API listening on", *laddr)
