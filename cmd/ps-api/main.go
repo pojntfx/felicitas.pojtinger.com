@@ -10,6 +10,7 @@ import (
 	"github.com/pojntfx/personal-site/api/github"
 	"github.com/pojntfx/personal-site/api/twitch"
 	"github.com/pojntfx/personal-site/api/twitter"
+	"github.com/pojntfx/personal-site/api/youtube"
 )
 
 func main() {
@@ -27,6 +28,10 @@ func main() {
 	githubToken := flag.String("github-token", "", "GitHub/Gitea API access token (can also be set using the GITHUB_TOKEN env variable)")
 	githubUsername := flag.String("github-username", "", "Github username to get info for (can also be set using the GITHUB_USERNAME env variable)")
 	githubTTL := flag.Int("github-ttl", 900, "Time in seconds to cache Github API responses for (can also be set using the GITHUB_TTL env variable)")
+
+	youtubeToken := flag.String("youtube-token", "", "YouTube API access token (can also be set using the YOUTUBE_TOKEN env variable)")
+	youtubeChannelID := flag.String("youtube-channel-id", "", "YouTube channel ID to get info for (can also be set using the YOUTUBE_CHANNEL_ID env variable)")
+	youtubeTTL := flag.Int("youtube-ttl", 900, "Time in seconds to cache YouTube API responses for (can also be set using the YOUTUBE_TTL env variable)")
 
 	laddr := flag.String("laddr", "localhost:1314", "Listen address for the API")
 
@@ -95,6 +100,23 @@ func main() {
 		*githubTTL = ttl
 	}
 
+	if *youtubeToken == "" {
+		*youtubeToken = os.Getenv("YOUTUBE_TOKEN")
+	}
+
+	if *youtubeChannelID == "" {
+		*youtubeChannelID = os.Getenv("YOUTUBE_CHANNEL_ID")
+	}
+
+	if rawTTL := os.Getenv("YOUTUBE_TTL"); rawTTL != "" {
+		ttl, err := strconv.Atoi(rawTTL)
+		if err != nil {
+			panic(err)
+		}
+
+		*youtubeTTL = ttl
+	}
+
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/api/twitch", func(rw http.ResponseWriter, r *http.Request) {
@@ -137,6 +159,20 @@ func main() {
 		}()
 
 		github.GitHubHandler(rw, r, *githubAPI, *githubToken, *githubUsername, *githubTTL)
+	})
+
+	mux.HandleFunc("/api/youtube", func(rw http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error occured in YouTube API:", err)
+
+				http.Error(rw, "Error occured in YouTube API", http.StatusInternalServerError)
+
+				return
+			}
+		}()
+
+		youtube.YouTubeHandler(rw, r, *youtubeToken, *youtubeChannelID, *youtubeTTL)
 	})
 
 	log.Println("API listening on", *laddr)
