@@ -15,8 +15,8 @@ type Output struct {
 	ChannelName            string `json:"channelName"`
 	ChannelSubscriberCount int    `json:"channelSubscriberCount"`
 	ChannelURL             string `json:"channelURL"`
-	StreamName             string `json:"streamName"`
 	StreamIsLive           bool   `json:"streamIsLive"`
+	StreamName             string `json:"streamName"`
 	StreamViewerCount      int    `json:"streamViewerCount"`
 	StreamURL              string `json:"streamURL"`
 }
