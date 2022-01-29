@@ -44,7 +44,15 @@ const (
 	userProfileURLPrefix = "https://twitter.com/"
 )
 
-func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string, clientSecret string, username string) {
+func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string, clientSecret string) {
+	username := r.URL.Query().Get("username")
+	if username == "" {
+		w.Write([]byte("missing username query parameter: "))
+		w.WriteHeader(400)
+
+		panic("missing username query parameter")
+	}
+
 	config := &clientcredentials.Config{
 		ClientID:     clientID,
 		ClientSecret: clientSecret,
@@ -129,5 +137,5 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	TwitterFeedHandler(w, r, os.Getenv("TWITTER_CLIENT_ID"), os.Getenv("TWITTER_CLIENT_SECRET"), os.Getenv("TWITTER_USERNAME"))
+	TwitterFeedHandler(w, r, os.Getenv("TWITTER_CLIENT_ID"), os.Getenv("TWITTER_CLIENT_SECRET"))
 }

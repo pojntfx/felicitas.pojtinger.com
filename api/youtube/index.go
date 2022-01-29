@@ -25,13 +25,21 @@ const (
 	videoURLPrefix   = "https://www.youtube.com/watch?v="
 )
 
-func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channelID string) {
+func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string) {
+	username := r.URL.Query().Get("username")
+	if username == "" {
+		w.Write([]byte("missing username (which is the channel ID) query parameter: "))
+		w.WriteHeader(400)
+
+		panic("missing username (which is the channel ID) query parameter")
+	}
+
 	client, err := youtube.NewService(r.Context(), option.WithAPIKey(token))
 	if err != nil {
 		panic(err)
 	}
 
-	channels, err := client.Channels.List([]string{"statistics", "snippet"}).Id(channelID).Do()
+	channels, err := client.Channels.List([]string{"statistics", "snippet"}).Id(username).Do()
 	if err != nil {
 		panic(err)
 	}
@@ -53,7 +61,7 @@ func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channe
 		output.ChannelSubscriberCount = int(statistics.SubscriberCount)
 	}
 
-	videos, err := client.Search.List([]string{"id"}).ChannelId(channelID).Type("video").EventType("live").Order("date").Do()
+	videos, err := client.Search.List([]string{"id"}).ChannelId(username).Type("video").EventType("live").Order("date").Do()
 	if err != nil {
 		panic(err)
 	}
@@ -62,7 +70,7 @@ func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channe
 	if len(videos.Items) < 1 {
 		output.StreamIsLive = false
 
-		videos, err = client.Search.List([]string{"id"}).ChannelId(channelID).Type("video").EventType("completed").Order("date").Do()
+		videos, err = client.Search.List([]string{"id"}).ChannelId(username).Type("video").EventType("completed").Order("date").Do()
 		if err != nil {
 			panic(err)
 		}
@@ -101,5 +109,5 @@ func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string, channe
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	YouTubeHandler(w, r, os.Getenv("YOUTUBE_TOKEN"), os.Getenv("YOUTUBE_CHANNEL_ID"))
+	YouTubeHandler(w, r, os.Getenv("YOUTUBE_TOKEN"))
 }

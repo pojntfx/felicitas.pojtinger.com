@@ -28,7 +28,15 @@ type Output struct {
 	LastCommitURL     string `json:"lastCommitURL"`
 }
 
-func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token string, username string) {
+func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token string) {
+	username := r.URL.Query().Get("username")
+	if username == "" {
+		w.Write([]byte("missing username query parameter: "))
+		w.WriteHeader(400)
+
+		panic("missing username query parameter")
+	}
+
 	var httpClient *http.Client
 	if token != "" {
 		httpClient = oauth2.NewClient(
@@ -111,5 +119,5 @@ func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token str
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	GitHubHandler(w, r, os.Getenv("GITHUB_API"), os.Getenv("GITHUB_TOKEN"), os.Getenv("GITHUB_USERNAME"))
+	GitHubHandler(w, r, os.Getenv("GITHUB_API"), os.Getenv("GITHUB_TOKEN"))
 }
