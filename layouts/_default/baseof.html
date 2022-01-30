@@ -20,7 +20,7 @@
 
     <link
       rel="stylesheet"
-      href="{{ (resources.Get `css/main.css` | resources.PostCSS | resources.Minify).Permalink }}"
+      href="{{ (resources.Get `scss/main.scss` | resources.ExecuteAsTemplate `main.scss` . | resources.ToCSS | resources.Minify).Permalink }}"
     />
   </head>
   <body>
@@ -80,6 +80,8 @@
               </a>
 
               {{ partial "lastcommit" . }}
+
+              {{ partial "youtubestatus" (dict "Username" .Site.Params.Livestreaming.YoutubeUser) }}
             </li>
           </ul>
         </nav>

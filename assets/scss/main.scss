@@ -1,0 +1,6 @@
+@import "node_modules/@patternfly/patternfly/sass-utilities/all.scss";
+
+$pf-global--font-path: "./{{ .Site.BaseURL }}/fonts";
+$fa-font-path: $pf-global--font-path + "/webfonts";
+
+@import "node_modules/@patternfly/patternfly/patternfly.scss";
