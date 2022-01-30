@@ -29,7 +29,6 @@ func YouTubeHandler(w http.ResponseWriter, r *http.Request, token string) {
 	username := r.URL.Query().Get("username")
 	if username == "" {
 		w.Write([]byte("missing username (which is the channel ID) query parameter: "))
-		w.WriteHeader(400)
 
 		panic("missing username (which is the channel ID) query parameter")
 	}

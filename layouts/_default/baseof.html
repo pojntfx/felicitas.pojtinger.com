@@ -20,11 +20,7 @@
 
     <link
       rel="stylesheet"
-      href="{{ (resources.Get `css/patternfly.css` | resources.Minify | resources.Fingerprint).Permalink }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ (resources.Get `css/patternfly-addons.css` | resources.Minify | resources.Fingerprint).Permalink }}"
+      href="{{ (resources.Get `css/main.css` | resources.PostCSS | resources.Minify).Permalink }}"
     />
   </head>
   <body>

@@ -27,7 +27,6 @@ func TwitchStatusHandler(w http.ResponseWriter, r *http.Request, clientID string
 	username := r.URL.Query().Get("username")
 	if username == "" {
 		w.Write([]byte("missing username query parameter: "))
-		w.WriteHeader(400)
 
 		panic("missing username query parameter")
 	}
