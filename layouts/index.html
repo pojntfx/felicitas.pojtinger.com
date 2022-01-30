@@ -38,6 +38,8 @@
           </a>
 
           {{ partial "lastcommit" . }}
+
+          {{ partial "youtubestatus" (dict "Username" .Site.Params.Livestreaming.YoutubeUser) }}
         </li>
       </ul>
     </nav>

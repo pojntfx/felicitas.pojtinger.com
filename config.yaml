@@ -36,6 +36,7 @@ params:
   livestreaming:
     twitchUser: pojntfx
     twitchLabel: "@pojntfx"
+    youtubeUser: UC0-pwQXvswpwjMVV_jdFLzg
   feeds:
     twitterUser: pojntfx
     twitterLabel: "@pojntfx"
