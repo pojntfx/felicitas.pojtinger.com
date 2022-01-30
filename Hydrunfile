@@ -6,7 +6,7 @@ set -e
 if [ "$1" = "cli" ]; then
     # Install native dependencies
     apt update
-    apt install -y curl
+    apt install -y curl npm
 
     # Install bagop
     curl -L -o /tmp/bagop "https://github.com/pojntfx/bagop/releases/latest/download/bagop.linux-$(uname -m)"
@@ -26,7 +26,7 @@ fi
 # Frontend
 if [ "$1" = "pwa" ]; then
     # Install Hugo
-    apk add curl make hugo
+    apk add curl make hugo npm
 
     # Generate dependencies
     make depend
