@@ -68,4 +68,8 @@ clean:
 # Dependencies
 depend:
 	npm i
+	find node_modules/@patternfly/patternfly/ -name "*.css" -type f -delete
+	rm -rf static/fonts
+	mkdir -p static
+	cp -r node_modules/@patternfly/patternfly/assets/fonts static
 	go run ./cmd/ps-gen-projects/ -src data/projects.yaml > data/projects_gen.yaml

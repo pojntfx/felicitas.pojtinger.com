@@ -4,3 +4,4 @@ resources
 *_gen.yaml
 node_modules
 out
+static/fonts

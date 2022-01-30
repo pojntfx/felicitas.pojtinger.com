@@ -1,22 +1,28 @@
-<div id="youtubestatus">
-  <a id="youtubestatus__channel__url" target="_blank">
-    <div>YouTube</div>
-    <div>
-      <span id="youtubestatus__channel__name"></span>
-      <span>
-        <span id="youtubestatus__channel__subscribercount"></span> Subscribers
-      </span>
+<div class="pf-c-card">
+  <div class="pf-c-card__body">
+    <div id="youtubestatus">
+      <a id="youtubestatus__channel__url" target="_blank">
+        <div><i class="fas fa-play"></i> YouTube</div>
+        <div>
+          <span id="youtubestatus__channel__name"></span>
+          <span>
+            <span id="youtubestatus__channel__subscribercount"></span>
+            Subscribers
+          </span>
+        </div>
+      </a>
+      <a id="youtubestatus__stream_url" target="_blank">
+        <div>
+          <span id="youtubestatus__stream__islive"></span>
+          <span id="youtubestatus__stream__viewercount">0</span>
+          <span>Viewers</span>
+        </div>
+        <div id="youtubestatus__stream__name"></div>
+      </a>
     </div>
-  </a>
-  <a id="youtubestatus__stream_url" target="_blank">
-    <div>
-      <span id="youtubestatus__stream__islive"></span>
-      <span id="youtubestatus__stream__viewercount">0</span>
-      <span>Viewers</span>
-    </div>
-    <div id="youtubestatus__stream__name"></div>
-  </a>
+  </div>
 </div>
+
 <noscript>Please enable JavaScript to view the YouTube status.</noscript
 ><script type="module">
   const username = "{{ .Username }}";
