@@ -1,0 +1,25 @@
+{
+  "name": "@pojntfx/personal-site",
+  "version": "0.0.1",
+  "description": "My personal site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pojntfx/personal-site.git"
+  },
+  "author": "Felix Pojtinger <felix@pojtinger.com>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/pojntfx/personal-site/issues"
+  },
+  "homepage": "https://github.com/pojntfx/personal-site#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "tailwindcss": "^3.0.18"
+  }
+}

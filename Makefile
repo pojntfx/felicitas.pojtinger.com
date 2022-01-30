@@ -67,7 +67,5 @@ clean:
 
 # Dependencies
 depend:
-	mkdir -p assets/css
-	curl -Lo assets/css/patternfly.css 'https://unpkg.com/@patternfly/patternfly@4.102.2/patternfly.css'
-	curl -Lo assets/css/patternfly-addons.css 'https://unpkg.com/@patternfly/patternfly@4.102.2/patternfly-addons.css'
+	npm i
 	go run ./cmd/ps-gen-projects/ -src data/projects.yaml > data/projects_gen.yaml
