@@ -39,7 +39,9 @@
 
           {{ partial "lastcommit" . }}
 
-          {{ partial "youtubestatus" (dict "Username" .Site.Params.Livestreaming.YoutubeUser) }}
+          {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Params.Livestreaming.YoutubeUser) }}
+
+          {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Params.Livestreaming.TwitchUser) }}
         </li>
       </ul>
     </nav>
