@@ -81,9 +81,9 @@
 
               {{ partial "lastcommit" . }}
 
-              {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Params.Livestreaming.YoutubeUser) }}
+              {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Params.Livestreaming.YoutubeUser "BaseURL" .Site.BaseURL ) }}
 
-              {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Params.Livestreaming.TwitchUser) }}
+              {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Params.Livestreaming.TwitchUser "BaseURL" .Site.BaseURL ) }}
             </li>
           </ul>
         </nav>

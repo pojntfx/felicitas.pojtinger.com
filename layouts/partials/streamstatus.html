@@ -38,12 +38,12 @@
   {{ if eq .Platform "youtube" }}YouTube{{ else }}Twitch{{ end }}
   status.</noscript
 ><script type="module">
-  const base = ""
+  const base = "{{ .BaseURL }}"
   const platform = "{{ .Platform }}"
   const username = "{{ .Username }}";
 
   const streamStatus = await (
-    await fetch(`${base}/api/${platform}?username=${username}`)
+    await fetch(`${base}api/${platform}?username=${username}`)
   ).json();
 
   // Channel
