@@ -50,16 +50,6 @@
               >
             </li>
             <li>
-              <a
-                href="{{ .Site.Data.person.contact.twitter }}"
-                target="_blank"
-                rel="noopener"
-              >
-                Twitter:
-                {{ partial "twitter" . }}
-              </a>
-            </li>
-            <li>
               {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Params.Livestreaming.YoutubeUser "BaseURL" .Site.BaseURL ) }}
             </li>
             <li>
@@ -67,6 +57,9 @@
             </li>
             <li>
               {{ partial "lastcommit" (dict "ID" "lastcommit" "Username" .Site.Params.Commits.GithubUser "BaseURL" .Site.BaseURL ) }}
+            </li>
+            <li>
+              {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Params.Feeds.TwitterUser "BaseURL" .Site.BaseURL ) }}
             </li>
           </ul>
         </nav>
