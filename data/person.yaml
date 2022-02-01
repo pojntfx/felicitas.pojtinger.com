@@ -1,14 +1,12 @@
 name: Felix Pojtinger 🌈 ✨
-img: https://github.com/pojntfx.png
-imgAlt: Profile picture of Felix Pojtinger
 pronouns: they/she
 description: Go & Web Developer
+img: https://github.com/pojntfx.png
 cv: https://docs.google.com/document/d/1rUE09TCqLs2_W5rBzC2dTvi2mzf7HM4QYhQxhpD5m2w/edit?usp=sharing
-contact:
-  twitter: https://twitter.com/pojntfx
-  twitterFollow: https://twitter.com/intent/user?screen_name=pojntfx
-  github: https://github.com/pojntfx
-  twitch: https://www.twitch.tv/pojntfx
-  matrix: https://matrix.to/#/@pojntfx:matrix.org
-  signal: https://signal.me/#p/+4915233842326
-  mail: mailto:felix@pojtinger.com
+matrix: "@pojntfx:matrix.org"
+signal: "+4915233842326"
+mail: "felix@pojtinger.com"
+youtube: "UC0-pwQXvswpwjMVV_jdFLzg"
+twitch: pojntfx
+github: pojntfx
+twitter: pojntfx
