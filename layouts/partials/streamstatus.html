@@ -2,7 +2,14 @@
   <div class="pf-c-card__body">
     <div class="streamstatus">
       <div>
-        <span>Stream status for</span>
+        <span>
+          {{ if eq .Platform "youtube" }}
+            YouTube
+          {{ else }}
+            Twitch
+          {{ end }}
+          stream status for</span
+        >
         <a class="streamstatus__channel__url" target="_blank">
           <span class="streamstatus__channel__name"></span>
           <sup>
@@ -11,17 +18,9 @@
               Subscribers
             {{ else }}
               Followers
-            {{ end }}
-          </sup>
+            {{ end }} </sup
+          >:
         </a>
-        <span>
-          on
-          {{ if eq .Platform "youtube" }}
-            YouTube:
-          {{ else }}
-            Twitch:
-          {{ end }}
-        </span>
       </div>
       <a class="streamstatus__stream_url" target="_blank">
         <div>
