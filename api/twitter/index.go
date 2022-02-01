@@ -16,7 +16,7 @@ type Output struct {
 	UserDisplayName       string `json:"userDisplayName"`
 	UserName              string `json:"username"`
 	UserFollowerCount     int    `json:"userFollowerCount"`
-	UserProfileURL        string `json:"userProfileURL"`
+	UserURL               string `json:"userURL"`
 	UserProfilePictureURL string `json:"userProfilePictureURL"`
 
 	Tweets []Tweet `json:"tweets"`
@@ -73,7 +73,7 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 	output.UserDisplayName = user.Name
 	output.UserName = user.ScreenName
 	output.UserFollowerCount = user.FollowersCount
-	output.UserProfileURL = userProfileURLPrefix + user.ScreenName
+	output.UserURL = userProfileURLPrefix + user.ScreenName
 	output.UserProfilePictureURL = user.ProfileImageURLHttps
 
 	tweets := []Tweet{}
