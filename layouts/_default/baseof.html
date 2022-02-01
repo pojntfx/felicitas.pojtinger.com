@@ -60,30 +60,13 @@
               </a>
             </li>
             <li>
-              <a
-                href="{{ .Site.Data.person.contact.twitch }}"
-                target="_blank"
-                rel="noopener"
-              >
-                Twitch:
-                {{ partial "twitch" . }}
-              </a>
+              {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Params.Livestreaming.YoutubeUser "BaseURL" .Site.BaseURL ) }}
             </li>
             <li>
-              <a
-                href="{{ .Site.Data.person.contact.github }}"
-                target="_blank"
-                rel="noopener"
-              >
-                GitHub:
-                {{ partial "github" . }}
-              </a>
-
-              {{ partial "lastcommit" . }}
-
-              {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Params.Livestreaming.YoutubeUser "BaseURL" .Site.BaseURL ) }}
-
               {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Params.Livestreaming.TwitchUser "BaseURL" .Site.BaseURL ) }}
+            </li>
+            <li>
+              {{ partial "lastcommit" (dict "ID" "lastcommit" "Username" .Site.Params.Commits.GithubUser "BaseURL" .Site.BaseURL ) }}
             </li>
           </ul>
         </nav>

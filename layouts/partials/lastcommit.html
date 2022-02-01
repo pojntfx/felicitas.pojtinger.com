@@ -1,36 +1,63 @@
-<a target="_blank" id="last-git-commit"></a>
-<noscript>Please enable JavaScript to view the last commit status.</noscript
-><script>
-  const id = "#last-git-commit";
-  const key = "lastGitHubFetch";
+<div class="pf-c-card" id="{{ .ID }}">
+  <div class="pf-c-card__body">
+    <div class="lastcommit">
+      <div>
+        <span>Last GitHub commit by</span>
+        <a class="lastcommit__user__url" target="_blank">
+          <span class="lastcommit__user__name"></span>
+          <sup class="lastcommit__user__followercount"></sup>
+        </a>
+        <span> (on</span>
+        <a class="lastcommit__commit__url" target="_blank">
+          <span class="lastcommit__commit__time"></span>
+        </a>
+        <span>in</span>
+        <a class="lastcommit__repo__url" target="_blank">
+          <code class="lastcommit__repo__name"></code></a
+        >):
+      </div>
 
-  const lastFetch = JSON.parse(window.localStorage.getItem(key) || "{}");
+      <a class="lastcommit__commit__url" target="_blank">
+        <code class="lastcommit__commit__message"></code>
+      </a>
+    </div>
+  </div>
+</div>
 
-  if (
-    !(lastFetch?.payload) ||
-    (Date.now() - new Date(lastFetch.created_at).valueOf()) >1000*60*60
-  ) {
-    fetch("{{ .Site.Params.Commits.GithubAPI }}/users/{{ .Site.Params.Commits.GithubUser }}/events/public")
-      .then((res) => res.json())
-      .then((data) => {
-        const el = document.querySelector(
-          id
-        )
-        el.textContent = `Last FOSS commit: "${data[0].payload.commits[0]?.message.replace(
-          /(.{20})..+/,
-          "$1 …"
-        )}" at ${new Date(data[0].created_at).toLocaleString()}`;
-        el.href = "{{ .Site.Params.Commits.GithubHTML }}/"+data[0].repo.name+"/commit/" +  data[0].payload.commits[0]?.sha
-        window.localStorage.setItem(key, JSON.stringify(data[0]));
-      });
-  } else {
-    const el = document.querySelector(
-      id
-    )
-    el.textContent = `Last FOSS commit: "${lastFetch.payload.commits[0]?.message.replace(
-      /(.{20})..+/,
-      "$1 …"
-    )}" at ${new Date(lastFetch.created_at).toLocaleString()}`;
-    el.href = "{{ .Site.Params.Commits.GithubHTML }}/"+lastFetch.repo.name+"/commit/" +  lastFetch.payload.commits[0]?.sha
-  }
+<noscript>Please enable JavaScript to view the last GitHub commit.</noscript
+><script type="module">
+  const base = "{{ .BaseURL }}"
+  const username = "{{ .Username }}";
+
+  const lastCommit = await (
+    await fetch(`${base}api/github?username=${username}`)
+  ).json();
+
+  // User
+  document.querySelector("#{{ .ID }} .lastcommit__user__url").href =
+    lastCommit.userURL;
+
+  document.querySelector("#{{ .ID }} .lastcommit__user__name").innerText =
+    "@"+lastCommit.username;
+
+  document.querySelector("#{{ .ID }} .lastcommit__user__followercount").innerText =
+    lastCommit.userFollowerCount+" Followers";
+
+  // Commit
+  document.querySelectorAll("#{{ .ID }} .lastcommit__commit__url").forEach(c => {
+    c.href = lastCommit.lastCommitURL
+  });
+
+  document.querySelector("#{{ .ID }} .lastcommit__commit__time").innerText =
+    new Date(lastCommit.lastCommitTime).toLocaleString();
+
+  document.querySelector("#{{ .ID }} .lastcommit__commit__message").innerText =
+    lastCommit.lastCommitMessage;
+
+  // Repo
+  document.querySelector("#{{ .ID }} .lastcommit__repo__url").href =
+    lastCommit.lastCommitRepoURL;
+
+  document.querySelector("#{{ .ID }} .lastcommit__repo__name").innerText =
+    lastCommit.lastCommitRepoName;
 </script>
