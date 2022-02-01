@@ -14,12 +14,14 @@
             {{ end }}
           </sup>
         </a>
-        <span> on </span>
-        <i class="fas fa-play"></i> {{ if eq .Platform "youtube" }}
-          YouTube:
-        {{ else }}
-          Twitch:
-        {{ end }}
+        <span>
+          on
+          {{ if eq .Platform "youtube" }}
+            YouTube:
+          {{ else }}
+            Twitch:
+          {{ end }}
+        </span>
       </div>
       <a class="streamstatus__stream_url" target="_blank">
         <div>

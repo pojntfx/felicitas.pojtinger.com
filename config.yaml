@@ -3,22 +3,23 @@ languageCode: en-us
 title: Felicitas Pojtinger
 relativeURLs: true
 params:
-  author: Felicitas Pojtinger
-  description: Felicitas Pojtinger is a software engineer focused on Go and the web.
-  keywords:
-    - Felicitas
-    - Pojtinger
-    - pojntfx
-    - Go
-    - Web
-    - STFS
-    - bofied
-    - liwasc
-    - Cluster Platform
-    - Open Source
-    - Free Software
-  copyright: © 2022 Felicitas Pojtinger
-  source: https://github.com/pojntfx/personal-site
+  meta:
+    author: Felicitas Pojtinger
+    description: Felicitas Pojtinger is a software engineer focused on Go and the web.
+    keywords:
+      - Felicitas
+      - Pojtinger
+      - Felicitas Pojtinger
+      - pojntfx
+      - Go
+      - Web
+      - STFS
+      - bofied
+      - liwasc
+      - Cluster Platform
+      - Open Source
+      - Free Software
+    source: https://github.com/pojntfx/personal-site
   comments:
     repo: pojntfx/personal-site
     repoID: MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE=
@@ -28,15 +29,3 @@ params:
     reactionsEnabled: 1
     emitMetadata: 1
     theme: preferred_color_scheme
-  commits:
-    githubAPI: https://api.github.com
-    githubHTML: https://github.com
-    githubUser: pojntfx
-    githubLabel: "@pojntfx"
-  livestreaming:
-    twitchUser: pojntfx
-    twitchLabel: "@pojntfx"
-    youtubeUser: UC0-pwQXvswpwjMVV_jdFLzg
-  feeds:
-    twitterUser: pojntfx
-    twitterLabel: "@pojntfx"

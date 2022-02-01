@@ -46,7 +46,7 @@
 
     const userPic = document.createElement("img");
     userPic.src = twitterFeed.userProfilePictureURL;
-    userPic.alt = `${twitterFeed.username}'s profile picture`;
+    userPic.alt = `Profile picture of ${twitterFeed.userDisplayName}`;
     avatar.append(userPic);
 
     const userDisplayName = document.createElement("span");

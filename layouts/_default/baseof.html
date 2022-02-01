@@ -13,10 +13,16 @@
       {{ end }}
     </title>
 
-    <meta name="author" content="{{ .Site.Params.Author }}" />
-    <meta name="description" content="{{ .Site.Params.Description }}" />
-    <meta name="keywords" content="{{ delimit .Site.Params.Keywords `, ` }}" />
-    <meta name="copyright" content="{{ .Site.Params.Copyright }}" />
+    <meta name="author" content="{{ .Site.Params.Meta.Author }}" />
+    <meta name="description" content="{{ .Site.Params.Meta.Description }}" />
+    <meta
+      name="keywords"
+      content="{{ delimit .Site.Params.Meta.Keywords `, ` }}"
+    />
+    <meta
+      name="copyright"
+      content="© {{ now.Year }} {{ .Site.Params.Meta.Author }}"
+    />
 
     <link
       rel="stylesheet"
@@ -29,7 +35,7 @@
         <a href="{{ .Site.BaseURL }}">
           <img
             src="{{ .Site.Data.person.img }}"
-            alt="{{ .Site.Data.person.imgAlt }}"
+            alt="Profile picture of {{ .Site.Data.person.name }}"
             style="width: 100px; height: 100px; object-fit: cover;"
           />
 
@@ -50,16 +56,10 @@
               >
             </li>
             <li>
-              {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Params.Livestreaming.YoutubeUser "BaseURL" .Site.BaseURL ) }}
+              {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
             </li>
             <li>
-              {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Params.Livestreaming.TwitchUser "BaseURL" .Site.BaseURL ) }}
-            </li>
-            <li>
-              {{ partial "lastcommit" (dict "ID" "lastcommit" "Username" .Site.Params.Commits.GithubUser "BaseURL" .Site.BaseURL ) }}
-            </li>
-            <li>
-              {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Params.Feeds.TwitterUser "BaseURL" .Site.BaseURL ) }}
+              {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
             </li>
           </ul>
         </nav>
@@ -75,8 +75,11 @@
         <nav>
           <ul>
             <li>
-              <a href="{{ .Site.Params.Source }}" target="_blank" rel="noopener"
-                >{{ .Site.Params.Copyright }}</a
+              <a
+                href="{{ .Site.Params.Meta.Source }}"
+                target="_blank"
+                rel="noopener"
+                >© {{ now.Year }} {{ .Site.Params.Meta.Author }}</a
               >
             </li>
 

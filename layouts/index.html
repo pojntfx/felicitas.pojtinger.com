@@ -8,16 +8,10 @@
           >
         </li>
         <li>
-          {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Params.Livestreaming.YoutubeUser "BaseURL" .Site.BaseURL ) }}
+          {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
         </li>
         <li>
-          {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Params.Livestreaming.TwitchUser "BaseURL" .Site.BaseURL ) }}
-        </li>
-        <li>
-          {{ partial "lastcommit" (dict "ID" "lastcommit" "Username" .Site.Params.Commits.GithubUser "BaseURL" .Site.BaseURL ) }}
-        </li>
-        <li>
-          {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Params.Feeds.TwitterUser "BaseURL" .Site.BaseURL ) }}
+          {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
         </li>
       </ul>
     </nav>
@@ -31,7 +25,7 @@
     <figure>
       <img
         src="{{ .Site.Data.person.img }}"
-        alt="{{ .Site.Data.person.imgAlt }}"
+        alt="Profile picture of {{ .Site.Data.person.name }}"
         style="width: 100px; height: 100px; object-fit: cover;"
       />
 
@@ -43,31 +37,39 @@
     <ul>
       <li>
         <a
-          href="{{ .Site.Data.person.contact.twitterFollow }}"
+          href="https://twitter.com/pojntfx/{{ .Site.Data.person.twitter }}"
           target="_blank"
           rel="noopener"
           >Follow on Twitter</a
         >
 
         <a
-          href="{{ .Site.Data.person.contact.matrix }}"
+          href="https://matrix.to/#/{{ .Site.Data.person.matrix }}"
           target="_blank"
           rel="noopener"
           >Contact via Matrix</a
         >
 
         <a
-          href="{{ .Site.Data.person.contact.signal }}"
+          href="https://signal.me/#p/{{ .Site.Data.person.signal }}"
           target="_blank"
           rel="noopener"
           >Contact via Signal</a
         >
 
-        <a href="{{ .Site.Data.person.contact.mail }}" rel="noopener"
+        <a href="mailto:{{ .Site.Data.person.contact.mail }}" rel="noopener"
           >Contact via Mail</a
         >
       </li>
     </ul>
+
+    <section id="commit">
+      {{ partial "lastcommit" (dict "ID" "lastcommit" "Username" .Site.Data.person.github "BaseURL" .Site.BaseURL ) }}
+    </section>
+
+    <section id="tweets">
+      {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
+    </section>
 
     <section id="articles">
       <h2>Articles</h2>
