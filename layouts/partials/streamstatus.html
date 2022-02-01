@@ -1,26 +1,26 @@
 <div class="pf-c-card" id="{{ .ID }}">
   <div class="pf-c-card__body">
     <div class="streamstatus">
-      <a class="streamstatus__channel__url" target="_blank">
-        <div>
-          <i class="fas fa-play"></i> {{ if eq .Platform "youtube" }}
-            YouTube
-          {{ else }}
-            Twitch
-          {{ end }}
-        </div>
-        <div>
+      <div>
+        <span>Stream status for</span>
+        <a class="streamstatus__channel__url" target="_blank">
           <span class="streamstatus__channel__name"></span>
-          <span>
+          <sup>
             <span class="streamstatus__channel__subscribercount"></span>
             {{ if eq .Platform "youtube" }}
               Subscribers
             {{ else }}
               Followers
             {{ end }}
-          </span>
-        </div>
-      </a>
+          </sup>
+        </a>
+        <span> on </span>
+        <i class="fas fa-play"></i> {{ if eq .Platform "youtube" }}
+          YouTube:
+        {{ else }}
+          Twitch:
+        {{ end }}
+      </div>
       <a class="streamstatus__stream_url" target="_blank">
         <div>
           <span class="streamstatus__stream__islive"></span>

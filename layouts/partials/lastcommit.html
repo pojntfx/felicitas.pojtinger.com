@@ -38,7 +38,7 @@
     lastCommit.userURL;
 
   document.querySelector("#{{ .ID }} .lastcommit__user__name").innerText =
-    "@"+lastCommit.username;
+    lastCommit.username;
 
   document.querySelector("#{{ .ID }} .lastcommit__user__followercount").innerText =
     lastCommit.userFollowerCount+" Followers";
