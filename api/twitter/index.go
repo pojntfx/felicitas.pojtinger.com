@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-	"strings"
+	"path"
 	"time"
 
 	"github.com/dghubble/go-twitter/twitter"
@@ -80,7 +80,8 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 
 	sourceTweets, _, err := client.Timelines.UserTimeline(&twitter.UserTimelineParams{
 		ScreenName:     username,
-		ExcludeReplies: twitter.Bool(true),
+		Count:          5,
+		ExcludeReplies: twitter.Bool(false),
 		TweetMode:      "extended",
 	})
 	if err != nil {
@@ -115,12 +116,7 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 		tweet.RetweetCount = sourceTweet.RetweetCount
 		tweet.LikeCount = sourceTweet.FavoriteCount
 
-		textParts := strings.Split(sourceTweet.FullText, " ")
-		if len(textParts) > 0 {
-			tweet.URL = textParts[len(textParts)-1]
-		} else {
-			tweet.URL = textParts[0]
-		}
+		tweet.URL = userProfileURLPrefix + path.Join(user.ScreenName, "status", sourceTweet.IDStr)
 
 		tweets = append(tweets, tweet)
 	}
