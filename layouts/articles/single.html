@@ -14,10 +14,10 @@
       <p>{{ .Params.Excerpt }}</p>
       <dl>
         <dt>Originally published at</dt>
-        <dd>{{ .Date }}</dd>
+        <dd>{{ .Date | time.Format ":date_long" }}</dd>
 
         <dt>Last updated at</dt>
-        <dd>{{ .Params.Updated }}</dd>
+        <dd>{{ .Params.Updated | time.Format ":date_long" }}</dd>
 
         <dt>Written by</dt>
         <dd>{{ .Site.Params.Meta.Author }}</dd>

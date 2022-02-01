@@ -88,7 +88,10 @@
 
                   <h3>{{ .Title }}</h3>
                   <p>{{ .Params.Excerpt }}</p>
-                  <div>Published at {{ .Date }}</div>
+                  <div>
+                    Published at
+                    {{ .Date | time.Format ":date_long" }}
+                  </div>
                 </a>
               </li>
             {{ end }}
@@ -134,7 +137,7 @@
 
                     <dt>Last update</dt>
                     <dd>
-                      {{ .date }}
+                      {{ .date | time.Format ":date_long" }}
                     </dd>
 
                     <dt>Topics</dt>
