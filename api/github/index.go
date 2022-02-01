@@ -21,11 +21,13 @@ const (
 type Output struct {
 	UserName          string `json:"username"`
 	UserFollowerCount int    `json:"userFollowerCount"`
+	UserURL           string `json:"userURL"`
 
-	LastCommitTime    string `json:"lastCommitTime"`
-	LastCommitRepo    string `json:"lastCommitRepo"`
-	LastCommitMessage string `json:"lastCommitMessage"`
-	LastCommitURL     string `json:"lastCommitURL"`
+	LastCommitTime     string `json:"lastCommitTime"`
+	LastCommitRepoName string `json:"lastCommitRepoName"`
+	LastCommitRepoURL  string `json:"lastCommitRepoURL"`
+	LastCommitMessage  string `json:"lastCommitMessage"`
+	LastCommitURL      string `json:"lastCommitURL"`
 }
 
 func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token string) {
@@ -69,6 +71,7 @@ func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token str
 	output := Output{
 		UserName:          user.GetLogin(),
 		UserFollowerCount: user.GetFollowers(),
+		UserURL:           user.GetHTMLURL(),
 	}
 
 	var event *github.Event
@@ -83,9 +86,17 @@ func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token str
 	if event != nil {
 		output.LastCommitTime = event.GetCreatedAt().Format(time.RFC3339)
 
-		repo := event.GetRepo()
+		owner, repoName := path.Split(event.GetRepo().GetName())
+		owner = strings.TrimSuffix(owner, "/")
+
+		repo, _, err := client.Repositories.Get(r.Context(), owner, repoName)
+		if err != nil {
+			panic(err)
+		}
+
 		if repo != nil {
-			output.LastCommitRepo = repo.GetName()
+			output.LastCommitRepoName = repo.GetFullName()
+			output.LastCommitRepoURL = repo.GetHTMLURL()
 		}
 
 		var pushEvent github.PushEvent
@@ -94,9 +105,7 @@ func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token str
 		}
 
 		if len(pushEvent.Commits) > 0 {
-			owner, repo := path.Split(repo.GetName())
-
-			commit, _, err := client.Repositories.GetCommit(r.Context(), strings.TrimSuffix(owner, "/"), repo, pushEvent.Commits[0].GetSHA(), nil)
+			commit, _, err := client.Repositories.GetCommit(r.Context(), owner, repoName, pushEvent.Commits[0].GetSHA(), nil)
 			if err != nil {
 				panic(err)
 			}
