@@ -10,8 +10,22 @@ My personal site.
 
 🚧 This project is a work-in-progress! Instructions will be added as soon as it is usable. 🚧
 
+## Contributing
+
+To contribute, please use the [GitHub flow](https://guides.github.com/introduction/flow/) and follow our [Code of Conduct](./CODE_OF_CONDUCT.md).
+
+To build the site locally, run:
+
+```shell
+$ git clone https://github.com/pojntfx/personal-site.git
+$ cd personal-site
+$ make depend
+$ export GITHUB_API=https://api.github.com/ GITHUB_TOKEN=your-github-api-token YOUTUBE_TOKEN=your-youtube-api-token TWITCH_CLIENT_ID=your-twitch-client-id TWITCH_CLIENT_SECRET=your-twitch-client-secret TWITTER_CLIENT_SECRET=your-twitter-client-secret TWITTER_CLIENT_ID=your-twitter-client-id
+$ make dev
+```
+
 ## License
 
-Personal Site (c) 2021 Felix Pojtinger and contributors
+Personal Site (c) 2022 Felix Pojtinger and contributors
 
 SPDX-License-Identifier: AGPL-3.0
