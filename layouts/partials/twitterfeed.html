@@ -9,7 +9,9 @@
         >:
       </div>
 
-      <ul class="twitterfeed__tweets"></ul>
+      <ul
+        class="twitterfeed__tweets pf-l-flex pf-m-column pf-m-space-items-sm"
+      ></ul>
     </div>
   </div>
 </div>
@@ -37,36 +39,55 @@
   // Tweets
   twitterFeed.tweets.map((tweet) => {
     const root = document.createElement("li");
+    root.classList.add("pf-c-card", "pf-m-hoverable-raised")
 
     const link = document.createElement("a");
     link.target = "_blank";
     link.href = tweet.url;
-
-    const avatar = document.createElement("div");
+    link.classList.add("pf-u-color-100", "pf-l-flex", "pf-m-space-items-sm", "pf-m-align-items-flex-start", "pf-c-card__body", "pf-u-p-md", "pf-x-m-no-decoration")
 
     const userPic = document.createElement("img");
     userPic.src = twitterFeed.userProfilePictureURL;
     userPic.alt = `Profile picture of ${twitterFeed.userDisplayName}`;
-    avatar.append(userPic);
+    userPic.classList.add("pf-c-avatar")
+    link.append(userPic);
+
+    const content = document.createElement("div")
+    content.classList.add("pf-m-flex-1")
+
+    const avatar = document.createElement("div");
+    avatar.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm", "pf-x-c-avatar-line")
+
+    const usernames = document.createElement("span")
 
     const userDisplayName = document.createElement("span");
     userDisplayName.innerText = twitterFeed.userDisplayName;
-    avatar.append(userDisplayName);
+    usernames.append(userDisplayName);
 
     const userName = document.createElement("span");
-    userName.innerText = twitterFeed.username;
-    avatar.append(userName);
+    userName.innerText = " @"+twitterFeed.username;
+    userName.classList.add("pf-u-color-200")
+    usernames.append(userName);
+
+    avatar.append(usernames);
+
+    const interpunct = document.createElement("span")
+    interpunct.innerText = "·"
+    interpunct.ariaHidden = true
+    interpunct.classList.add("pf-u-color-200")
+    avatar.append(interpunct);
 
     const tweetTimestamp = document.createElement("span");
     tweetTimestamp.innerText = new Date(tweet.timestamp).toLocaleString();
+    tweetTimestamp.classList.add("pf-u-color-200")
     avatar.append(tweetTimestamp);
 
-    link.appendChild(avatar);
+    content.appendChild(avatar);
 
     const tweetBody = document.createElement("div");
     tweetBody.innerText = tweet.body;
 
-    link.appendChild(tweetBody);
+    content.appendChild(tweetBody);
 
     const images = document.createElement("ul");
 
@@ -83,23 +104,59 @@
       images.appendChild(li);
     });
 
-    link.appendChild(images);
+    content.appendChild(images);
 
     const statistics = document.createElement("div");
+    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200", "pf-x-c-avatar-line")
 
     const comments = document.createElement("span");
-    comments.textContent = tweet.commentCount + " comments";
+    comments.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const commentIcon = document.createElement("i");
+    commentIcon.classList.add("fas", "fa-comments")
+    commentIcon.ariaLabel = "Comments"
+
+    const commentCount = document.createElement("span");
+    commentCount.textContent = tweet.commentCount;
+
+    comments.append(commentIcon)
+    comments.append(commentCount)
+
     statistics.appendChild(comments);
 
     const retweets = document.createElement("span");
-    retweets.textContent = tweet.retweetCount + " retweets";
+    retweets.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const retweetIcon = document.createElement("i");
+    retweetIcon.classList.add("fas", "fa-retweet")
+    retweetIcon.ariaLabel = "Retweets"
+
+    const retweetCount = document.createElement("span");
+    retweetCount.textContent = tweet.retweetCount;
+
+    retweets.append(retweetIcon)
+    retweets.append(retweetCount)
+
     statistics.appendChild(retweets);
 
     const likes = document.createElement("span");
-    likes.textContent = tweet.likeCount + " likes";
+    likes.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const likeIcon = document.createElement("i");
+    likeIcon.classList.add("fas", "fa-heart")
+    likeIcon.ariaLabel = "Likes"
+
+    const likeCount = document.createElement("span");
+    likeCount.textContent = tweet.likeCount;
+
+    likes.append(likeIcon)
+    likes.append(likeCount)
+
     statistics.appendChild(likes);
 
-    link.appendChild(statistics);
+    content.appendChild(statistics);
+
+    link.append(content)
 
     root.appendChild(link);
 
