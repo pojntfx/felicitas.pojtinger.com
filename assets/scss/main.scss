@@ -17,3 +17,13 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 .pf-x-u-text-center {
   text-align: center;
 }
+
+.highlight {
+  @extend .pf-u-my-md, .pf-c-card, .pf-m-flat;
+
+  > pre {
+    @extend .pf-u-p-md;
+
+    overflow-x: auto;
+  }
+}
