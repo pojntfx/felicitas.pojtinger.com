@@ -28,4 +28,4 @@ params:
     mapping: pathname
     reactionsEnabled: 1
     emitMetadata: 1
-    theme: preferred_color_scheme
+    theme: light
