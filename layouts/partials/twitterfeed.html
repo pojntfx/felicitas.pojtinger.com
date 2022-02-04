@@ -87,22 +87,27 @@
 
     content.appendChild(tweetBody);
 
-    const images = document.createElement("ul");
+    if (tweet.images.length > 0) {
+      const images = document.createElement("div");
+      images.classList.add("pf-l-gallery", "pf-u-mt-sm")
 
-    tweet.images.forEach((image) => {
-      const li = document.createElement("li");
+      tweet.images.forEach((image) => {
+        const el = document.createElement("div");
+        el.classList.add("pf-l-gallery__item")
 
-      const attachment = document.createElement("img");
-      attachment.src = image.url;
-      attachment.alt = image.altText;
-      attachment.style = "max-width: 200px;";
+        const attachment = document.createElement("img");
+        attachment.src = image.url;
+        attachment.alt = image.altText;
+        attachment.classList.add("pf-u-w-100")
 
-      li.appendChild(attachment);
+        el.appendChild(attachment);
 
-      images.appendChild(li);
-    });
+        images.appendChild(el);
+      });
 
-    content.appendChild(images);
+      content.appendChild(images);
+    }
+
 
     const statistics = document.createElement("div");
     statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200", "pf-x-c-avatar-line")
