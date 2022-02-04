@@ -1,60 +1,74 @@
 {{ define "main" }}
-  <article>
-    <header>
-      <figure>
-        <img
-          src="{{ ((index .Resources 0).Resize `1024x`).Permalink }}"
-          alt="{{ .Params.HeaderAlt }}"
-          style="width: 100%; height: 300px; object-fit: cover;"
-        />
+  {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
 
-        <figcaption>{{ .Params.HeaderAlt }}</figcaption>
-      </figure>
-
-      <p>{{ .Params.Excerpt }}</p>
-      <dl>
-        <dt>Originally published at</dt>
-        <dd>{{ .Date | time.Format ":date_long" }}</dd>
-
-        <dt>Last updated at</dt>
-        <dd>{{ .Params.Updated | time.Format ":date_long" }}</dd>
-
-        <dt>Written by</dt>
-        <dd>{{ .Site.Params.Meta.Author }}</dd>
-
-        <dt>Estimated time to read</dt>
-        <dd>{{ .ReadingTime }} minutes</dd>
-
-        <dt>Keywords</dt>
-        <dd>
-          <ul>
-            {{ range first 5 .Keywords }}
-              <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-        </dd>
-      </dl>
-    </header>
-
-    <main>
-      {{ .Content }}
-    </main>
-
-    <footer>
-      {{ $related := .Site.RegularPages.Related . | first 5 }}
-      {{ if gt (len $related) 0 }}
-        <h2>See also</h2>
+  {{ $related := .Site.RegularPages.Related . | first 5 }}
+  {{ if gt (len $related) 0 }}
+    <div class="pf-c-card">
+      <div class="pf-c-card__title">See also</div>
+      <div class="pf-c-card__body">
         <ul>
           {{ range $related }}
             <li>
-              <a href="{{ .Permalink }}">{{ .Date }} | {{ .Title }}</a>
+              <a href="{{ .Permalink }}">{{ .Date | time.Format ":date_long" }} | {{ .Title }}</a>
             </li>
           {{ end }}
         </ul>
-      {{ end }}
+      </div>
+    </div>
+  {{ end }}
 
+  <div class="pf-c-card">
+    <div class="pf-c-card__header pf-u-px-0 pf-u-pt-0 pf-u-pb-sm">
+      <div class="pf-c-card__header-main pf-u-w-100">
+        <img
+          src="{{ ((index .Resources 0).Resize `1024x`).Permalink }}"
+          alt="{{ .Params.HeaderAlt }}"
+          class="pf-u-w-100 pf-u-h-100"
+          style="object-fit: cover;"
+        />
+      </div>
+    </div>
+    <div class="pf-c-card__title">
+      <h1 class="pf-u-font-size-4xl pf-u-pb-sm">{{ .Title }}</h1>
+      <p>{{ .Params.Excerpt }}</p>
+    </div>
+    <div class="pf-c-card__body">
+      <article>
+        <header
+          class="pf-l-flex pf-m-justify-content-space-between pf-m-space-items-sm pf-u-pb-md"
+        >
+          <div class="pf-l-flex pf-m-space-items-sm pf-u-color-200">
+            <span>{{ .Date | time.Format ":date_long" }}</span>
+            <span aria-hidden="true" class="pf-u-color-200">·</span>
+            <span>{{ .Params.Updated | time.Format ":date_long" }}</span>
+          </div>
+          <div>
+            <div class="pf-c-chip-group">
+              <div class="pf-c-chip-group__main">
+                <ul
+                  class="pf-c-chip-group__list"
+                  role="list"
+                  aria-label="Keywords"
+                >
+                  {{ range first 3 .Keywords }}
+                    <li class="pf-c-chip-group__list-item">
+                      <div class="pf-c-chip">
+                        <span class="pf-c-chip__text">{{ . }}</span>
+                      </div>
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
 
-      <h2>Comments</h2>
+        <main>
+          {{ .Content }}
+        </main>
+      </article>
+    </div>
+    <div class="pf-c-card__footer">
       <script
         src="https://giscus.app/client.js"
         data-repo="{{ .Site.Params.Comments.Repo }}"
@@ -73,6 +87,6 @@
         >Please enable JavaScript to view the comments powered by
         giscus.</noscript
       >
-    </footer>
-  </article>
+    </div>
+  </div>
 {{ end }}

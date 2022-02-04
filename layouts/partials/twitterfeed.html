@@ -1,18 +1,15 @@
 <div class="pf-c-card" id="{{ .ID }}">
-  <div class="pf-c-card__body">
-    <div class="twitterfeed">
-      <div>
-        <span>Latest tweets by</span>
-        <a target="_blank" class="twitterfeed__user__url">
-          <span class="twitterfeed__user__name"></span>
-          <sup class="twitterfeed__user__followercount"></sup> </a
-        >:
-      </div>
-
-      <ul
-        class="twitterfeed__tweets pf-l-flex pf-m-column pf-m-space-items-sm"
-      ></ul>
-    </div>
+  <div class="pf-c-card__title">
+    <span>Latest tweets by</span>
+    <a target="_blank" class="twitterfeed__user__url">
+      <span class="twitterfeed__user__name"></span>
+      <sup class="twitterfeed__user__followercount"></sup> </a
+    >:
+  </div>
+  <div class="pf-c-card__body twitterfeed">
+    <ul
+      class="twitterfeed__tweets pf-l-flex pf-m-column pf-m-space-items-sm"
+    ></ul>
   </div>
 </div>
 
@@ -39,7 +36,7 @@
   // Tweets
   twitterFeed.tweets.map((tweet) => {
     const root = document.createElement("li");
-    root.classList.add("pf-c-card", "pf-m-hoverable-raised")
+    root.classList.add("pf-c-card", "pf-m-plain", "pf-m-hoverable-raised")
 
     const link = document.createElement("a");
     link.target = "_blank";
