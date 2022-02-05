@@ -30,65 +30,56 @@
     />
   </head>
   <body>
-    {{ block "header" . }}
-      <header>
-        <a href="{{ .Site.BaseURL }}">
-          <img
-            src="{{ .Site.Data.person.img }}"
-            alt="Profile picture of {{ .Site.Data.person.name }}"
-            style="width: 100px; height: 100px; object-fit: cover;"
-          />
+    <div class="pf-c-page">
+      <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main"
+        >Skip to content</a
+      >
 
-          <h1>
-            {{ .Site.Data.person.name }} →
-            {{ .Title }}
-          </h1>
-        </a>
+      {{ block "header" . }}
+        <header class="pf-c-page__header">
+          <div class="pf-c-page__header-brand">
+            <a class="pf-c-page__header-brand-link" href="{{ .Site.BaseURL }}"
+              ><img
+                src="{{ .Site.Data.person.img }}"
+                alt="Profile picture of {{ .Site.Data.person.name }}"
+                class="pf-c-avatar"
+              />
 
-        <nav>
-          <ul>
-            <li>
-              <a
-                href="{{ .Site.Data.person.cv }}"
-                target="_blank"
-                rel="noopener"
-                >CV</a
-              >
-            </li>
-            <li>
-              {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
-            </li>
-            <li>
-              {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
-            </li>
-          </ul>
-        </nav>
-      </header>
-    {{ end }}
+              <h1>
+                {{ .Site.Data.person.name }} →
+                {{ .Title }}
+              </h1></a
+            >
+          </div>
 
-    {{ block "main" . }}
-      <main>{{ .Content }}</main>
-    {{ end }}
+          <div class="pf-c-page__header-tools">
+            <div class="pf-c-page__header-tools-group">
+              <div class="pf-c-page__header-tools-item">
+                <a
+                  href="{{ .Site.Data.person.cv }}"
+                  target="_blank"
+                  rel="noopener"
+                  >CV</a
+                >
+              </div>
 
-    {{ block "footer" . }}
-      <footer>
-        <nav>
-          <ul>
-            <li>
-              <a
-                href="{{ .Site.Params.Meta.Source }}"
-                target="_blank"
-                rel="noopener"
-                >© {{ now.Year }} {{ .Site.Params.Meta.Author }}</a
-              >
-            </li>
+              <div class="pf-c-page__header-tools-item">
+                {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
+              </div>
 
-            <li>
-              <a href="/imprint">Imprint</a>
-            </li>
-          </ul>
-        </nav>
-      </footer>
-    {{ end }}
+              <div class="pf-c-page__header-tools-item">
+                {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
+              </div>
+            </div>
+          </div>
+        </header>
+      {{ end }}
+
+      {{ block "main" . }}
+        <main class="pf-c-page__main" tabindex="-1" id="main">
+          {{ .Content }}
+        </main>
+      {{ end }}
+    </div>
   </body>
 </html>

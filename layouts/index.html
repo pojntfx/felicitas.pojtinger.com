@@ -1,25 +1,27 @@
 {{ define "header" }}
-  <header>
-    <nav>
-      <ul>
-        <li>
+  <header class="pf-c-page__header">
+    <div class="pf-c-page__header-tools">
+      <div class="pf-c-page__header-tools-group">
+        <div class="pf-c-page__header-tools-item">
           <a href="{{ .Site.Data.person.cv }}" target="_blank" rel="noopener"
             >CV</a
           >
-        </li>
-        <li>
+        </div>
+
+        <div class="pf-c-page__header-tools-item">
           {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
-        </li>
-        <li>
+        </div>
+
+        <div class="pf-c-page__header-tools-item">
           {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
-        </li>
-      </ul>
-    </nav>
+        </div>
+      </div>
+    </div>
   </header>
 {{ end }}
 
 {{ define "main" }}
-  <main>
+  <main class="pf-c-page__main" tabindex="-1" id="main">
     <h1>{{ .Site.Data.person.name }}</h1>
 
     <figure>
@@ -171,5 +173,7 @@
         {{ end }}
       </ul>
     </section>
+
+    {{ partial "footer" . }}
   </main>
 {{ end }}
