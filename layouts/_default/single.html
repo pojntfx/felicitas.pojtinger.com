@@ -1,5 +1,15 @@
 {{ define "main" }}
-  <main>
-    {{ .Content }}
+  <main class="pf-c-page__main" tabindex="-1" id="main">
+    <section class="pf-c-page__main-section pf-m-fill">
+      <div class="pf-c-page__main pf-c-content">
+        <div class="pf-c-card">
+          <div class="pf-c-card__body">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{ partial "footer" . }}
   </main>
 {{ end }}

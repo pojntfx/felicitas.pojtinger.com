@@ -27,3 +27,8 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
     overflow-x: auto;
   }
 }
+
+.pf-x-c-article__header {
+  max-height: 35rem;
+  object-fit: cover;
+}

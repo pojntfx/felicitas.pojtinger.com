@@ -1,24 +1,28 @@
 {{ define "main" }}
-  <main>
+  <main class="pf-c-page__main" tabindex="-1" id="main">
     {{ .Content }}
 
 
-    <ul>
-      {{ range .Pages }}
-        <li>
-          <a href="{{ .Permalink }}">
-            <img
-              src="{{ ((index .Resources 0).Resize `300x`).Permalink }}"
-              alt="{{ .Params.HeaderAlt }}"
-              style="width: 100%; height: 300px; object-fit: cover;"
-            />
+    <section class="pf-c-page__main-section pf-m-fill">
+      <div class="pf-c-page__main">
+        <ul>
+          {{ range .Pages }}
+            <li>
+              <a href="{{ .Permalink }}">
+                <img
+                  src="{{ ((index .Resources 0).Resize `300x`).Permalink }}"
+                  alt="{{ .Params.HeaderAlt }}"
+                  style="width: 100%; height: 300px; object-fit: cover;"
+                />
 
-            <h3>{{ .Title }}</h3>
-            <p>{{ .Params.Excerpt }}</p>
-            <div>Published at {{ .Date | time.Format ":date_long" }}</div>
-          </a>
-        </li>
-      {{ end }}
-    </ul>
+                <h3>{{ .Title }}</h3>
+                <p>{{ .Params.Excerpt }}</p>
+                <div>Published at {{ .Date | time.Format ":date_long" }}</div>
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    </section>
   </main>
 {{ end }}
