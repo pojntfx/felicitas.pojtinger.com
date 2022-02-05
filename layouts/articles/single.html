@@ -1,21 +1,6 @@
 {{ define "main" }}
   {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
 
-  {{ $related := .Site.RegularPages.Related . | first 5 }}
-  {{ if gt (len $related) 0 }}
-    <div class="pf-c-card">
-      <div class="pf-c-card__title">See also</div>
-      <div class="pf-c-card__body">
-        <ul>
-          {{ range $related }}
-            <li>
-              <a href="{{ .Permalink }}">{{ .Date | time.Format ":date_long" }} | {{ .Title }}</a>
-            </li>
-          {{ end }}
-        </ul>
-      </div>
-    </div>
-  {{ end }}
 
   <div class="pf-c-card">
     <div class="pf-c-card__header pf-u-px-0 pf-u-pt-0 pf-u-pb-sm">
@@ -89,4 +74,33 @@
       >
     </div>
   </div>
+
+  {{ $related := .Site.RegularPages.Related . | first 5 }}
+  {{ if gt (len $related) 0 }}
+    <div class="pf-c-card">
+      <div class="pf-c-card__title">See also</div>
+      <div class="pf-c-card__body">
+        <div class="pf-l-gallery pf-m-gutter">
+          {{ range $related }}
+            <div class="pf-l-gallery__item">
+              <a
+                href="{{ .Permalink }}"
+                class="pf-u-color-100 pf-x-m-no-decoration"
+              >
+                <div class="pf-c-card pf-m-compact pf-m-hoverable-raised">
+                  <div class="pf-c-card__title">{{ .Title }}</div>
+                  <div class="pf-c-card__body pf-u-pb-sm">
+                    {{ .Params.Excerpt }}
+                  </div>
+                  <div class="pf-c-card__footer pf-u-color-200">
+                    {{ .Date | time.Format ":date_long" }}
+                  </div>
+                </div>
+              </a>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  {{ end }}
 {{ end }}
