@@ -1,59 +1,64 @@
 {{ define "main" }}
-  {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
-
-
-  <div class="pf-c-card">
-    <div class="pf-c-card__header pf-u-px-0 pf-u-pt-0 pf-u-pb-sm">
-      <div class="pf-c-card__header-main pf-u-w-100">
-        <img
-          src="{{ ((index .Resources 0).Resize `1024x`).Permalink }}"
-          alt="{{ .Params.HeaderAlt }}"
-          class="pf-u-w-100 pf-u-h-100"
-          style="object-fit: cover;"
-        />
-      </div>
-    </div>
-    <div class="pf-c-card__title">
-      <h1 class="pf-u-font-size-4xl pf-u-pb-sm">{{ .Title }}</h1>
-      <p>{{ .Params.Excerpt }}</p>
-    </div>
-    <div class="pf-c-card__body">
-      <article>
-        <header
-          class="pf-l-flex pf-m-justify-content-space-between pf-m-space-items-sm pf-u-pb-md"
-        >
-          <div class="pf-l-flex pf-m-space-items-sm pf-u-color-200">
-            <span>{{ .Date | time.Format ":date_long" }}</span>
-            <span aria-hidden="true" class="pf-u-color-200">·</span>
-            <span>{{ .Params.Updated | time.Format ":date_long" }}</span>
+  <div class="pf-l-grid pf-m-gutter">
+    <div class="pf-l-grid__item pf-m-8-col">
+      <div class="pf-c-card">
+        <div class="pf-c-card__header pf-u-px-0 pf-u-pt-0 pf-u-pb-sm">
+          <div class="pf-c-card__header-main pf-u-w-100">
+            <img
+              src="{{ ((index .Resources 0).Resize `1024x`).Permalink }}"
+              alt="{{ .Params.HeaderAlt }}"
+              class="pf-u-w-100 pf-u-h-100"
+              style="object-fit: cover;"
+            />
           </div>
-          <div>
-            <div class="pf-c-chip-group">
-              <div class="pf-c-chip-group__main">
-                <ul
-                  class="pf-c-chip-group__list"
-                  role="list"
-                  aria-label="Keywords"
+        </div>
+        <div class="pf-c-card__title">
+          <h1 class="pf-u-font-size-4xl pf-u-pb-sm">{{ .Title }}</h1>
+          <p>{{ .Params.Excerpt }}</p>
+        </div>
+        <div class="pf-c-card__body">
+          <article>
+            <header
+              class="pf-l-flex pf-m-justify-content-space-between pf-m-space-items-sm pf-u-pb-md"
+            >
+              <div class="pf-l-flex pf-m-space-items-sm pf-u-color-200">
+                <span
+                  >Originally published on
+                  {{ .Date | time.Format ":date_long" }}</span
                 >
-                  {{ range first 3 .Keywords }}
-                    <li class="pf-c-chip-group__list-item">
-                      <div class="pf-c-chip">
-                        <span class="pf-c-chip__text">{{ . }}</span>
-                      </div>
-                    </li>
-                  {{ end }}
-                </ul>
+                <span aria-hidden="true" class="pf-u-color-200">·</span>
+                <span
+                  >Last updated on
+                  {{ .Params.Updated | time.Format ":date_long" }}</span
+                >
               </div>
-            </div>
-          </div>
-        </header>
+              <div>
+                <div class="pf-c-chip-group">
+                  <div class="pf-c-chip-group__main">
+                    <ul
+                      class="pf-c-chip-group__list"
+                      role="list"
+                      aria-label="Keywords"
+                    >
+                      {{ range first 3 .Keywords }}
+                        <li class="pf-c-chip-group__list-item">
+                          <div class="pf-c-chip">
+                            <span class="pf-c-chip__text">{{ . }}</span>
+                          </div>
+                        </li>
+                      {{ end }}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </header>
 
-        <main>
-          {{ .Content }}
-        </main>
-      </article>
-    </div>
-    <div class="pf-c-card__footer">
+            <main class="pf-c-content">
+              {{ .Content }}
+            </main>
+          </article>
+        </div>
+        <div class="pf-c-card__footer">
       <script
         src="https://giscus.app/client.js"
         data-repo="{{ .Site.Params.Comments.Repo }}"
@@ -68,39 +73,44 @@
         crossorigin="anonymous"
         async
       ></script>
-      <noscript
-        >Please enable JavaScript to view the comments powered by
-        giscus.</noscript
-      >
-    </div>
-  </div>
-
-  {{ $related := .Site.RegularPages.Related . | first 5 }}
-  {{ if gt (len $related) 0 }}
-    <div class="pf-c-card">
-      <div class="pf-c-card__title">See also</div>
-      <div class="pf-c-card__body">
-        <div class="pf-l-gallery pf-m-gutter">
-          {{ range $related }}
-            <div class="pf-l-gallery__item">
-              <a
-                href="{{ .Permalink }}"
-                class="pf-u-color-100 pf-x-m-no-decoration"
-              >
-                <div class="pf-c-card pf-m-compact pf-m-hoverable-raised">
-                  <div class="pf-c-card__title">{{ .Title }}</div>
-                  <div class="pf-c-card__body pf-u-pb-sm">
-                    {{ .Params.Excerpt }}
-                  </div>
-                  <div class="pf-c-card__footer pf-u-color-200">
-                    {{ .Date | time.Format ":date_long" }}
-                  </div>
-                </div>
-              </a>
-            </div>
-          {{ end }}
+          <noscript
+            >Please enable JavaScript to view the comments powered by
+            giscus.</noscript
+          >
         </div>
       </div>
     </div>
-  {{ end }}
+    <div class="pf-l-grid__item pf-m-4-col">
+      {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
+
+      {{ $related := .Site.RegularPages.Related . | first 5 }}
+      {{ if gt (len $related) 0 }}
+        <div class="pf-c-card pf-u-mt-md">
+          <div class="pf-c-card__title">See also</div>
+          <div class="pf-c-card__body">
+            <div class="pf-l-gallery pf-m-gutter">
+              {{ range $related }}
+                <div class="pf-l-gallery__item">
+                  <a
+                    href="{{ .Permalink }}"
+                    class="pf-u-color-100 pf-x-m-no-decoration"
+                  >
+                    <div class="pf-c-card pf-m-compact pf-m-hoverable-raised">
+                      <div class="pf-c-card__title">{{ .Title }}</div>
+                      <div class="pf-c-card__body pf-u-pb-sm">
+                        {{ .Params.Excerpt }}
+                      </div>
+                      <div class="pf-c-card__footer pf-u-color-200">
+                        {{ .Date | time.Format ":date_long" }}
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
 {{ end }}
