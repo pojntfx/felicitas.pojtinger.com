@@ -1,37 +1,25 @@
-<div class="pf-c-card" id="{{ .ID }}">
-  <div class="pf-c-card__body">
-    <div class="streamstatus">
-      <div>
-        <span>
-          {{ if eq .Platform "youtube" }}
-            YouTube
-          {{ else }}
-            Twitch
-          {{ end }}
-          stream status for</span
-        >
-        <a class="streamstatus__channel__url" target="_blank">
-          <span class="streamstatus__channel__name"></span>
-          <sup>
-            <span class="streamstatus__channel__subscribercount"></span>
-            {{ if eq .Platform "youtube" }}
-              Subscribers
-            {{ else }}
-              Followers
-            {{ end }} </sup
-          >:
-        </a>
-      </div>
-      <a class="streamstatus__stream_url" target="_blank">
-        <div>
-          <span class="streamstatus__stream__islive"></span>
-          <span class="streamstatus__stream__viewercount">0</span>
-          <span>Viewers</span>
-        </div>
-        <div class="streamstatus__stream__name"></div>
-      </a>
-    </div>
+<div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="{{ .ID }}"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="{{ if eq .Platform `youtube` }}
+          YouTube
+        {{ else }}
+          Twitch
+        {{ end }} follower count"
+        class="streamstatus__channel__badge"
+      /> </a
+    ><span><small>is streaming</small></span>
   </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
 </div>
 
 <noscript
@@ -51,21 +39,17 @@
   document.querySelector("#{{ .ID }} .streamstatus__channel__url").href =
     streamStatus.channelURL;
 
-  document.querySelector("#{{ .ID }} .streamstatus__channel__name").innerText =
-    streamStatus.channelName;
-
-  document.querySelector("#{{ .ID }} .streamstatus__channel__subscribercount").innerText =
-    streamStatus.channelSubscriberCount;
+  document.querySelector("#{{ .ID }} .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
 
   // Stream
   document.querySelector("#{{ .ID }} .streamstatus__stream_url").href =
     streamStatus.streamURL;
 
   document.querySelector("#{{ .ID }} .streamstatus__stream__islive").innerText =
-    streamStatus.streamIsLive ? "Live" : "Offline";
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline (" + streamStatus.streamViewerCount + " viewers)";
 
-  document.querySelector("#{{ .ID }} .streamstatus__stream__viewercount").innerText =
-    streamStatus.streamViewerCount;
+  document.querySelector("#{{ .ID }} .streamstatus__stream__islive").classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
 
   document.querySelector("#{{ .ID }} .streamstatus__stream__name").innerText =
     streamStatus.streamName;
