@@ -1,15 +1,15 @@
 baseURL: /
 languageCode: en-us
-title: Felix Pojtinger
+title: Felicitas Pojtinger
 relativeURLs: true
 params:
   meta:
-    author: Felix Pojtinger
-    description: Felix Pojtinger is a software engineer focused on Go and the web.
+    author: Felicitas Pojtinger
+    description: Felicitas Pojtinger is a software engineer focused on Go and the web.
     keywords:
-      - Felix
+      - Felicitas
       - Pojtinger
-      - Felix Pojtinger
+      - Felicitas Pojtinger
       - pojntfx
       - Go
       - Web

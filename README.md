@@ -26,6 +26,6 @@ $ make dev
 
 ## License
 
-Personal Site (c) 2022 Felix Pojtinger and contributors
+Personal Site (c) 2022 Felicitas Pojtinger and contributors
 
 SPDX-License-Identifier: AGPL-3.0

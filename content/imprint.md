@@ -8,15 +8,15 @@ draft: false
 
 ### Data according to § 5 TMG
 
-Felix Pojtinger Personal Site Hirschkopfweg 8 72270 Baiersbronn
+Felicitas Pojtinger Personal Site Hirschkopfweg 8 72270 Baiersbronn
 
 ### Contact
 
-Phone: 07442/50938 E-Mail: <felix@pojtinger.com>
+Phone: 07442/50938 E-Mail: <felicitas@pojtinger.com>
 
 ### Responsible for the content according to § 55 Section 2 RStV
 
-Felix Pojtinger Hirschkopfweg 8 72270 Baiersbronn
+Felicitas Pojtinger Hirschkopfweg 8 72270 Baiersbronn
 
 ### Mediation/Dispute Resolution
 
@@ -72,15 +72,15 @@ such contents immediately.
 
 ### Angaben gemäß § 5 TMG
 
-Felix Pojtinger Personal Site Hirschkopfweg 8 72270 Baiersbronn
+Felicitas Pojtinger Personal Site Hirschkopfweg 8 72270 Baiersbronn
 
 ### Kontakt
 
-Telefon: 07442/50938 E-Mail: <felix@pojtinger.com>
+Telefon: 07442/50938 E-Mail: <felicitas@pojtinger.com>
 
 ### Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
 
-Felix Pojtinger Hirschkopfweg 8 72270 Baiersbronn
+Felicitas Pojtinger Hirschkopfweg 8 72270 Baiersbronn
 
 ### Streitschlichtung
 

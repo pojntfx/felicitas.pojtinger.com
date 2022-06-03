@@ -102,7 +102,7 @@ Cluster Platform        Devices  Modules  Infrastructure  Operations  Developmen
 
 
 
-(c) 2019 Felix Pojtinger                                                                    Imprint
+(c) 2019 Felicitas Pojtinger                                                                    Imprint
 ```
 
 A simple mockup has been created to visualize this idea:
