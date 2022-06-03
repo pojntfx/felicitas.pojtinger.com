@@ -22,48 +22,56 @@
 
 {{ define "main" }}
   <main class="pf-c-page__main" tabindex="-1" id="main">
-    <h1>{{ .Site.Data.person.name }}</h1>
+    <div class="pf-l-grid pf-m-gutter pf-u-p-xl pf-x-person__header">
+      <div class="pf-l-grid__item pf-m-5-col pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center">
+        <h1>{{ .Site.Data.person.name }}</h1>
+        <p>{{ .Site.Data.person.description }}</p>
+      </div>
 
-    <figure>
-      <img
-        src="{{ .Site.Data.person.img }}"
-        alt="Profile picture of {{ .Site.Data.person.name }}"
-        style="width: 100px; height: 100px; object-fit: cover;"
-      />
+      <figure class="pf-l-grid__item pf-m-2-col pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center">
+        <img
+          src="{{ .Site.Data.person.img }}"
+          alt="Profile picture of {{ .Site.Data.person.name }}"
+          class="pf-c-avatar pf-m-xl pf-c-avatar--main"
+        />
 
-      <figcaption>{{ .Site.Data.person.pronouns }}</figcaption>
-    </figure>
+        <figcaption>{{ .Site.Data.person.pronouns }}</figcaption>
+      </figure>
 
-    <p>{{ .Site.Data.person.description }}</p>
+      <ul class="pf-l-grid__item pf-m-5-col pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center">
+        <li>
+          <a
+            href="https://twitter.com/{{ .Site.Data.person.twitter }}"
+            target="_blank"
+            class="pf-c-button pf-m-primary"
+          >
+          <span class="pf-c-button__icon pf-m-start">
+            <i class="fas fa-plus-circle" aria-hidden="true"></i>
+          </span>
 
-    <ul>
-      <li>
-        <a
-          href="https://twitter.com/{{ .Site.Data.person.twitter }}"
-          target="_blank"
-          rel="noopener"
-          >Follow on Twitter</a
-        >
+          Follow on Twitter
+        </a>
 
-        <a
-          href="https://matrix.to/#/{{ .Site.Data.person.matrix }}"
-          target="_blank"
-          rel="noopener"
-          >Contact via Matrix</a
-        >
+          <a
+            href="https://matrix.to/#/{{ .Site.Data.person.matrix }}"
+            target="_blank"
+            rel="noopener"
+            >Contact via Matrix</a
+          >
 
-        <a
-          href="https://signal.me/#p/{{ .Site.Data.person.signal }}"
-          target="_blank"
-          rel="noopener"
-          >Contact via Signal</a
-        >
+          <a
+            href="https://signal.me/#p/{{ .Site.Data.person.signal }}"
+            target="_blank"
+            rel="noopener"
+            >Contact via Signal</a
+          >
 
-        <a href="mailto:{{ .Site.Data.person.mail }}" rel="noopener"
-          >Contact via Mail</a
-        >
-      </li>
-    </ul>
+          <a href="mailto:{{ .Site.Data.person.mail }}" rel="noopener"
+            >Contact via Mail</a
+          >
+        </li>
+      </ul>
+    </div> 
 
     <section id="commit">
       {{ partial "lastcommit" (dict "ID" "lastcommit" "Username" .Site.Data.person.github "BaseURL" .Site.BaseURL ) }}

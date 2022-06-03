@@ -32,3 +32,13 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   max-height: 35rem;
   object-fit: cover;
 }
+
+.pf-c-avatar--main {
+  width: 100%;
+  height: 100%;
+}
+
+.pf-x-person__header {
+  max-width: 1024px;
+  margin: 3rem auto;
+}
