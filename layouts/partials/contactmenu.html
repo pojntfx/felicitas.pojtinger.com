@@ -1,0 +1,64 @@
+<div class="pf-c-dropdown pf-m-expanded">
+  <button
+    class="pf-c-dropdown__toggle"
+    id="{{ .ID }}-expanded-button"
+    aria-expanded="false"
+    type="button"
+  >
+    <span class="pf-c-dropdown__toggle-text">
+      <i class="fas fa-envelope pf-u-mr-xs" aria-hidden="true"></i>
+      Contact
+    </span>
+    <span class="pf-c-dropdown__toggle-icon">
+      <i class="fas fa-caret-down" aria-hidden="true"></i>
+    </span>
+  </button>
+
+  <ul class="pf-c-dropdown__menu" id="{{ .ID }}-dropdown-menu" aria-labelledby="{{ .ID }}-expanded-button" hidden>
+    <li>
+      <a
+        class="pf-c-dropdown__menu-item"
+        href="https://matrix.to/#/{{ .Matrix }}"
+        target="_blank"
+        rel="noopener"
+      >Matrix</a>
+    </li>
+  
+    <li>
+      <a
+        class="pf-c-dropdown__menu-item"
+        href="https://signal.me/#p/{{ .Signal }}"
+        target="_blank"
+        rel="noopener"
+      >Signal</a>
+    </li>
+  
+    <li>
+      <a class="pf-c-dropdown__menu-item" href="mailto:{{ .Mail }}" rel="noopener">Mail</a>
+    </li>
+  </ul>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the contact menu.</noscript
+><script type="module">
+const expandedButton = document.getElementById("{{ .ID }}-expanded-button");
+const dropdownMenu = document.getElementById("{{ .ID }}-dropdown-menu");
+
+window.addEventListener("click", () => {
+  expandedButton.ariaExpanded = "false";
+  dropdownMenu.hidden = true;
+});
+
+expandedButton.addEventListener("click", (e) => {
+  e.stopPropagation();
+
+  if (expandedButton.ariaExpanded === "false") {
+    expandedButton.ariaExpanded = "true";
+  } else {
+    expandedButton.ariaExpanded = "false";
+  }
+
+  dropdownMenu.hidden = !dropdownMenu.hidden;
+});
+</script>
