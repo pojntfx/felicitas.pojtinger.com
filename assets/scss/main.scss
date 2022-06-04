@@ -34,11 +34,17 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 }
 
 .pf-c-avatar--main {
-  width: 100%;
+  width: 250px;
   height: 100%;
+  object-fit: cover;
 }
 
 .pf-x-person__header {
   max-width: 1024px;
   margin: 3rem auto;
+}
+
+.pf-x-c-avatar__figcaption {
+  margin-left: auto;
+  transform: translateY(50%);
 }
