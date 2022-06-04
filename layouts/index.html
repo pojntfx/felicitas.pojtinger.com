@@ -38,12 +38,11 @@
         <figcaption>{{ .Site.Data.person.pronouns }}</figcaption>
       </figure>
 
-      <ul class="pf-l-grid__item pf-m-5-col pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center">
-        <li>
+      <div class="pf-l-grid__item pf-m-5-col pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center">
           <a
             href="https://twitter.com/{{ .Site.Data.person.twitter }}"
             target="_blank"
-            class="pf-c-button pf-m-primary"
+            class="pf-c-button pf-m-primary pf-u-mr-md"
           >
           <span class="pf-c-button__icon pf-m-start">
             <i class="fas fa-plus-circle" aria-hidden="true"></i>
@@ -52,25 +51,8 @@
           Follow on Twitter
         </a>
 
-          <a
-            href="https://matrix.to/#/{{ .Site.Data.person.matrix }}"
-            target="_blank"
-            rel="noopener"
-            >Contact via Matrix</a
-          >
-
-          <a
-            href="https://signal.me/#p/{{ .Site.Data.person.signal }}"
-            target="_blank"
-            rel="noopener"
-            >Contact via Signal</a
-          >
-
-          <a href="mailto:{{ .Site.Data.person.mail }}" rel="noopener"
-            >Contact via Mail</a
-          >
-        </li>
-      </ul>
+        {{ partial "contactmenu" (dict "ID" "contact" "Matrix" .Site.Data.person.matrix "Signal" .Site.Data.person.signal "Mail" .Site.Data.person.mail ) }}
+      </div>
     </div> 
 
     <section id="commit">
