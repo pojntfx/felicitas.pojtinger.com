@@ -4,8 +4,7 @@
       <div>
         <span>Latest GitHub commit by</span>
         <a class="lastcommit__user__url" target="_blank">
-          <span class="lastcommit__user__name"></span>
-          <sup class="lastcommit__user__followercount"></sup>
+          <img id="lastcommit__user__url__img">
         </a>
         <span> (on</span>
         <a class="lastcommit__commit__url" target="_blank">
@@ -26,38 +25,40 @@
 
 <noscript>Please enable JavaScript to view the latest GitHub commit.</noscript
 ><script type="module">
-  const base = "{{ .BaseURL }}"
-  const username = "{{ .Username }}";
+const base = "{{ .BaseURL }}";
+const username = "{{ .Username }}";
 
-  const lastCommit = await (
-    await fetch(`${base}api/github?username=${username}`)
-  ).json();
+const lastCommit = await (
+  await fetch(`${base}api/github?username=${username}`)
+).json();
 
-  // User
-  document.querySelector("#{{ .ID }} .lastcommit__user__url").href =
-    lastCommit.userURL;
+// User
+document.querySelector("#{{ .ID }} .lastcommit__user__url").href =
+  lastCommit.userURL;
 
-  document.querySelector("#{{ .ID }} .lastcommit__user__name").innerText =
-    lastCommit.username;
+const img = document.querySelector("#{{ .ID }} #lastcommit__user__url__img");
 
-  document.querySelector("#{{ .ID }} .lastcommit__user__followercount").innerText =
-    lastCommit.userFollowerCount+" Followers";
+img.alt = lastCommit.username+" with "+lastCommit.userFollowerCount+" followers";
+img.src = "https://img.shields.io/badge/%40"+lastCommit.username+"-"+lastCommit.userFollowerCount+"%20followers-brightgreen?logo=github&style=social";
 
-  // Commit
-  document.querySelectorAll("#{{ .ID }} .lastcommit__commit__url").forEach(c => {
-    c.href = lastCommit.lastCommitURL
+// Commit
+document
+  .querySelectorAll("#{{ .ID }} .lastcommit__commit__url")
+  .forEach((c) => {
+    c.href = lastCommit.lastCommitURL;
   });
 
-  document.querySelector("#{{ .ID }} .lastcommit__commit__time").innerText =
-    new Date(lastCommit.lastCommitTime).toLocaleString();
+document.querySelector("#{{ .ID }} .lastcommit__commit__time").innerText =
+  new Date(lastCommit.lastCommitTime).toLocaleString();
 
-  document.querySelector("#{{ .ID }} .lastcommit__commit__message").innerText =
-    lastCommit.lastCommitMessage;
+document.querySelector("#{{ .ID }} .lastcommit__commit__message").innerText =
+  lastCommit.lastCommitMessage;
 
-  // Repo
-  document.querySelector("#{{ .ID }} .lastcommit__repo__url").href =
-    lastCommit.lastCommitRepoURL;
+// Repo
+document.querySelector("#{{ .ID }} .lastcommit__repo__url").href =
+  lastCommit.lastCommitRepoURL;
 
-  document.querySelector("#{{ .ID }} .lastcommit__repo__name").innerText =
-    lastCommit.lastCommitRepoName;
+document.querySelector("#{{ .ID }} .lastcommit__repo__name").innerText =
+  lastCommit.lastCommitRepoName;
+
 </script>
