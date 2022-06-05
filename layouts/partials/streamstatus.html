@@ -35,6 +35,9 @@
     await fetch(`${base}api/${platform}?username=${username}`)
   ).json();
 
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
   // Channel
   document.querySelector("#{{ .ID }} .streamstatus__channel__url").href =
     streamStatus.channelURL;
@@ -47,10 +50,10 @@
     streamStatus.streamURL;
 
   document.querySelector("#{{ .ID }} .streamstatus__stream__islive").innerText =
-    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline (" + streamStatus.streamViewerCount + " viewers)";
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
 
   document.querySelector("#{{ .ID }} .streamstatus__stream__islive").classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
 
   document.querySelector("#{{ .ID }} .streamstatus__stream__name").innerText =
-    streamStatus.streamName;
+    truncate(streamStatus.streamName);
 </script>

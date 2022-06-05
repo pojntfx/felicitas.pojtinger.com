@@ -1,24 +1,36 @@
 {{ define "header" }}
   <header class="pf-c-page__header">
-    <div class="pf-c-page__header-tools">
-      <div class="pf-c-page__header-tools-group">
-        <div class="pf-c-page__header-tools-item">
-          <a aria-label="Help" href="{{ .Site.Data.person.cv }}" target="_blank" rel="noopener" class="pf-c-button pf-m-plain">
-            <span class="pf-c-button__icon pf-m-start">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>CV</a>
-        </div>
-
-        <div class="pf-c-page__header-tools-item">
-          {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
-        </div>
-
-        <div class="pf-c-page__header-tools-item">
-          {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
-        </div>
+  <div class="pf-c-page__header-tools">
+    <div class="pf-c-page__header-tools-group">
+      <div class="pf-c-page__header-tools-item">
+        <a
+          aria-label="Help"
+          href="{{ .Site.Data.person.cv }}"
+          target="_blank"
+          rel="noopener"
+          class="pf-c-button pf-m-plain"
+        >
+          <span class="pf-c-button__icon pf-m-start">
+            <i class="fas fa-book" aria-hidden="true"></i> </span
+          >CV</a
+        >
       </div>
     </div>
-  </header>
+    <div class="pf-c-page__header-tools-group">
+      <div class="pf-c-page__header-tools-item pf-u-p-md pf-u-pl-0">
+        {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform"
+        "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL )
+        }}
+      </div>
+
+      <div class="pf-c-page__header-tools-item pf-u-p-md pf-u-pr-0">
+        {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch"
+        "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
+      </div>
+    </div>
+  </div>
+</header>
+
 {{ end }}
 
 {{ define "main" }}
