@@ -42,9 +42,50 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 .pf-x-person__header {
   max-width: 1024px;
   margin: 3rem auto;
+  margin-bottom: 1.5rem !important;
+
+  &,
+  .pf-c-dropdown__toggle {
+    color: var(--pf-global--Color--light-100);
+  }
 }
 
 .pf-x-c-avatar__figcaption {
   margin-left: auto;
   transform: translateY(50%);
+}
+
+.pf-c-card--overlay {
+  transform: translateY(50%);
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.lastcommit__user__url > img {
+  margin-bottom: -0.4rem;
+}
+
+.pf-c-code-block__actions--info {
+  margin-left: 0;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.pf-c-code-block--transparent {
+  background: transparent;
+}
+
+.pf-x-octocat {
+  width: 100px;
+}
+
+.pf-c-page__main {
+  backdrop-filter: blur(7.5px) brightness(0.5);
+}
+
+.pf-c-page--background {
+  background: url(https://source.unsplash.com/featured?space);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
