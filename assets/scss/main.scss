@@ -6,10 +6,6 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 @import "node_modules/@patternfly/patternfly/patternfly.scss";
 @import "node_modules/@patternfly/patternfly/patternfly-addons.scss";
 
-.pf-x-c-avatar-line {
-  height: 2.25rem;
-}
-
 .pf-x-m-no-decoration {
   text-decoration: none !important;
 }
@@ -79,7 +75,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   width: 100px;
 }
 
-.pf-c-page__main {
+.pf-c-page__main--blur {
   backdrop-filter: blur(7.5px) brightness(0.5);
 }
 

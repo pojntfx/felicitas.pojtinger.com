@@ -1,9 +1,7 @@
 <div class="pf-c-card" id="{{ .ID }}">
   <div
-    class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center"
+    class="pf-c-card__title pf-l-flex pf-m-justify-content-flex-end pf-m-align-items-center"
   >
-    <span>Latest tweets</span>
-
     <a
       target="_blank"
       class="twitterfeed__user__url pf-l-flex pf-m-align-items-center"
@@ -51,10 +49,9 @@
     link.append(userPic);
 
     const content = document.createElement("div")
-    content.classList.add("pf-m-flex-1")
 
     const avatar = document.createElement("div");
-    avatar.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm", "pf-x-c-avatar-line")
+    avatar.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
 
     const usernames = document.createElement("span")
 
@@ -83,13 +80,14 @@
     content.appendChild(avatar);
 
     const tweetBody = document.createElement("div");
-    tweetBody.innerText = tweet.body;
+    tweetBody.innerHTML = tweet.body;
+    tweetBody.classList.add("pf-u-py-sm")
 
     content.appendChild(tweetBody);
 
     if (tweet.images.length > 0) {
       const images = document.createElement("div");
-      images.classList.add("pf-l-gallery", "pf-m-gutter", "pf-u-mt-sm")
+      images.classList.add("pf-l-gallery", "pf-m-gutter", "pf-u-my-sm")
 
       tweet.images.forEach((image) => {
         const el = document.createElement("div");
@@ -110,7 +108,7 @@
 
 
     const statistics = document.createElement("div");
-    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200", "pf-x-c-avatar-line")
+    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200")
 
     const comments = document.createElement("span");
     comments.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")

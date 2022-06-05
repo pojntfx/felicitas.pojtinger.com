@@ -34,7 +34,7 @@
 {{ end }}
 
 {{ define "main" }}
-  <main class="pf-c-page__main" tabindex="-1" id="main">
+  <main class="pf-c-page__main pf-c-page__main--blur" tabindex="-1" id="main">
     <div class="pf-l-grid pf-m-gutter pf-u-p-xl pf-u-pb-md pf-x-person__header">
       <div class="pf-l-grid__item pf-m-5-col pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center">
         <h1 class="pf-u-font-size-xl pf-u-font-weight-bold pf-u-mb-xs">{{ .Site.Data.person.name }}</h1>
@@ -76,40 +76,45 @@
       {{ partial "lastcommit" (dict "ID" "lastcommit" "Username" .Site.Data.person.github "BaseURL" .Site.BaseURL ) }}
     </section>
 
-    <section id="tweets">
-      {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
-    </section>
+    <div class="pf-l-grid pf-m-gutter">
+      <div class="pf-l-grid__item pf-m-7-col">
+        <section id="articles">
+          <h2>Articles</h2>
 
-    <section id="articles">
-      <h2>Articles</h2>
+          <ul>
+            {{ range .Pages }}
+              {{ if eq .Title "Articles" }}
+                {{ range first 5 .Pages }}
+                  <li>
+                    <a href="{{ .Permalink }}">
+                      <img
+                        src="{{ ((index .Resources 0).Resize `300x`).Permalink }}"
+                        alt="{{ .Params.HeaderAlt }}"
+                        style="width: 100%; height: 300px; object-fit: cover;"
+                      />
 
-      <ul>
-        {{ range .Pages }}
-          {{ if eq .Title "Articles" }}
-            {{ range first 5 .Pages }}
-              <li>
-                <a href="{{ .Permalink }}">
-                  <img
-                    src="{{ ((index .Resources 0).Resize `300x`).Permalink }}"
-                    alt="{{ .Params.HeaderAlt }}"
-                    style="width: 100%; height: 300px; object-fit: cover;"
-                  />
-
-                  <h3>{{ .Title }}</h3>
-                  <p>{{ .Params.Excerpt }}</p>
-                  <div>
-                    Published at
-                    {{ .Date | time.Format ":date_long" }}
-                  </div>
-                </a>
-              </li>
+                      <h3>{{ .Title }}</h3>
+                      <p>{{ .Params.Excerpt }}</p>
+                      <div>
+                        Published at
+                        {{ .Date | time.Format ":date_long" }}
+                      </div>
+                    </a>
+                  </li>
+                {{ end }}
+              {{ end }}
             {{ end }}
-          {{ end }}
-        {{ end }}
-      </ul>
+          </ul>
 
-      <a href="/articles">All articles</a>
-    </section>
+          <a href="/articles">All articles</a>
+        </section>
+      </div>
+      <div class="pf-l-grid__item pf-m-5-col">
+        <section id="tweets">
+          {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
+        </section>
+      </div>
+    </div>
 
     <section id="projects">
       <h2>Projects</h2>
