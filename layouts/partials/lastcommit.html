@@ -50,8 +50,14 @@ document.querySelector("#{{ .ID }} .lastcommit__user__url").href =
 
 const img = document.querySelector("#{{ .ID }} #lastcommit__user__url__img");
 
-img.alt = lastCommit.username+" with "+lastCommit.userFollowerCount+" followers";
-img.src = "https://img.shields.io/badge/%40"+lastCommit.username+"-"+lastCommit.userFollowerCount+"%20followers-brightgreen?logo=github&style=social";
+img.alt =
+  lastCommit.username + " with " + lastCommit.userFollowerCount + " followers";
+img.src =
+  "https://img.shields.io/badge/%40" +
+  lastCommit.username +
+  "-" +
+  lastCommit.userFollowerCount +
+  "%20followers-brightgreen?logo=github&style=social";
 
 // Commit
 document
@@ -60,10 +66,12 @@ document
     c.href = lastCommit.lastCommitURL;
   });
 
-const diff = Math.ceil((new Date() - new Date(lastCommit.lastCommitTime))/36e5);
+const diff = Math.ceil(
+  (new Date() - new Date(lastCommit.lastCommitTime)) / 36e5
+);
 
 document.querySelector("#{{ .ID }} .lastcommit__commit__time").innerText =
-  diff >= 0 ? diff + " hours ago" : "just now";
+  diff >= 0 ? diff + " hour" + (diff == 1 ? "" : "s") + " ago" : "just now";
 
 document.querySelector("#{{ .ID }} .lastcommit__commit__message").innerText =
   lastCommit.lastCommitMessage;
