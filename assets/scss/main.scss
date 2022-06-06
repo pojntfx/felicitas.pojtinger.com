@@ -75,7 +75,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   width: 100px;
 }
 
-.pf-c-page__main--blur {
+.pf-x-u-blur {
   backdrop-filter: blur(7.5px) brightness(0.5);
 }
 
@@ -119,4 +119,16 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   display: flex;
   align-items: center;
   justify-content: end;
+}
+
+.pf-c-page__header--overlay {
+  background: transparent;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 100px;
+}
+
+.pf-c-page__main--with-overlay {
+  padding-top: 100px;
 }
