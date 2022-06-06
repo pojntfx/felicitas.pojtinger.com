@@ -4,7 +4,6 @@
     <div class="pf-c-page__header-tools-group">
       <div class="pf-c-page__header-tools-item">
         <a
-          aria-label="Help"
           href="{{ .Site.Data.person.cv }}"
           target="_blank"
           rel="noopener"
@@ -72,41 +71,66 @@
       </div>
     </div> 
 
-    <section id="commit">
+    <section class="pf-x-commitwrapper" id="commit">
       {{ partial "lastcommit" (dict "ID" "lastcommit" "Username" .Site.Data.person.github "BaseURL" .Site.BaseURL ) }}
-    </section>
+    </section> 
 
-    <div class="pf-l-grid pf-m-gutter">
+    <div class="pf-l-grid pf-m-gutter pf-l-grid--max-width">
       <div class="pf-l-grid__item pf-m-7-col">
         <section id="articles">
-          <h2>Articles</h2>
-
-          <ul>
-            {{ range .Pages }}
-              {{ if eq .Title "Articles" }}
-                {{ range first 5 .Pages }}
-                  <li>
-                    <a href="{{ .Permalink }}">
-                      <img
-                        src="{{ ((index .Resources 0).Resize `300x`).Permalink }}"
-                        alt="{{ .Params.HeaderAlt }}"
-                        style="width: 100%; height: 300px; object-fit: cover;"
-                      />
-
-                      <h3>{{ .Title }}</h3>
-                      <p>{{ .Params.Excerpt }}</p>
-                      <div>
-                        Published at
-                        {{ .Date | time.Format ":date_long" }}
-                      </div>
-                    </a>
-                  </li>
-                {{ end }}
-              {{ end }}
-            {{ end }}
-          </ul>
-
-          <a href="/articles">All articles</a>
+          <div class="pf-c-card">
+            <div
+              class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center"
+            >
+              <span>Articles</span>
+            </div>
+            <div class="pf-c-card__body twitterfeed">
+              <ul class="pf-c-list pf-m-plain">
+                  {{ range .Pages }}
+                    {{ if eq .Title "Articles" }}
+                      {{ range first 5 .Pages }}
+                        <li>
+                          <a
+                            href="{{ .Permalink }}"
+                            class="pf-u-color-100 pf-x-m-no-decoration"
+                          >
+                            <div
+                              class="pf-c-card pf-m-compact pf-m-hoverable-raised"
+                            >
+                              <div class="pf-c-card__header pf-u-p-0">
+                                <div class="pf-c-card__header-main pf-c-card__header-main--fluid">
+                                  <img
+                                    src="{{ ((index .Resources 0).Resize `500x`).Permalink }}"
+                                    alt="{{ .Params.HeaderAlt }}"
+                                    class="pf-c-card__header-main__img"
+                                  />
+                                </div>
+                              </div>
+                              <div class="pf-c-card__title">{{ .Title }}</div>
+                              <div class="pf-c-card__body pf-u-pb-sm">
+                                {{ .Params.Excerpt }}
+                              </div>
+                              <div class="pf-c-card__footer pf-u-color-200">
+                                {{ .Date | time.Format ":date_long" }}
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                </ul>
+              
+                <a
+                  href="/articles"
+                  class="pf-c-button pf-m-link pf-u-mt-lg"
+                >
+                  <span class="pf-c-button__icon pf-m-start">
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
+                  >All articles</a
+                >
+            </div>
+          </div>
         </section>
       </div>
       <div class="pf-l-grid__item pf-m-5-col">
