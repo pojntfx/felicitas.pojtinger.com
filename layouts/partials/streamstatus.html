@@ -12,7 +12,7 @@
         {{ end }} follower count"
         class="streamstatus__channel__badge"
       /> </a
-    ><span><small>is streaming</small></span>
+    >
   </div>
 
   <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
@@ -54,6 +54,6 @@
 
   document.querySelector("#{{ .ID }} .streamstatus__stream__islive").classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
 
-  document.querySelector("#{{ .ID }} .streamstatus__stream__name").innerText =
-    truncate(streamStatus.streamName);
+  document.querySelector("#{{ .ID }} .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
 </script>

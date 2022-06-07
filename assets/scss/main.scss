@@ -53,7 +53,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 
 .pf-c-card--overlay {
   transform: translateY(50%);
-  max-width: 768px;
+  max-width: 825px;
   margin: 0 auto;
 }
 
@@ -76,7 +76,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 }
 
 .pf-x-u-blur {
-  backdrop-filter: blur(7.5px) brightness(0.5);
+  backdrop-filter: blur(7.5px) brightness(0.4);
 }
 
 .pf-c-page--background {
@@ -131,4 +131,9 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 
 .pf-c-page__main--with-overlay {
   padding-top: 100px;
+}
+
+.pf-x-u-nowrap {
+  white-space: nowrap;
+  overflow-x: auto;
 }
