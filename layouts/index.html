@@ -80,22 +80,22 @@
         <section id="articles">
           <div class="pf-c-card">
             <div
-              class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center"
+              class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-py-xl"
             >
               <span>Articles</span>
             </div>
             <div class="pf-c-card__body twitterfeed">
-              <ul class="pf-c-list pf-m-plain">
+              <ul class="pf-l-flex pf-m-column pf-m-space-items-sm">
                   {{ range .Pages }}
                     {{ if eq .Title "Articles" }}
-                      {{ range first 5 .Pages }}
+                      {{ range first 3 .Pages }}
                         <li>
                           <a
                             href="{{ .Permalink }}"
                             class="pf-u-color-100 pf-x-m-no-decoration"
                           >
                             <div
-                              class="pf-c-card pf-m-compact pf-m-hoverable-raised"
+                              class="pf-c-card pf-m-hoverable-raised"
                             >
                               <div class="pf-c-card__header pf-u-p-0">
                                 <div class="pf-c-card__header-main pf-c-card__header-main--fluid">
