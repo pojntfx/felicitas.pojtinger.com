@@ -137,3 +137,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   white-space: nowrap;
   overflow-x: auto;
 }
+
+.lastcommit {
+  width: calc(100% - 100px);
+}
