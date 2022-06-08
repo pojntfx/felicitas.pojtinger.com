@@ -49,10 +49,13 @@
   document.querySelector("#{{ .ID }} .streamstatus__stream_url").href =
     streamStatus.streamURL;
 
-  document.querySelector("#{{ .ID }} .streamstatus__stream__islive").innerText =
+  const indicator = document.querySelector("#{{ .ID }} .streamstatus__stream__islive");
+
+  indicator.innerText =
     streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
 
-  document.querySelector("#{{ .ID }} .streamstatus__stream__islive").classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
 
   document.querySelector("#{{ .ID }} .streamstatus__stream__name").innerHTML =
     truncate(streamStatus.streamName, 14);

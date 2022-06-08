@@ -141,3 +141,13 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 .lastcommit {
   width: calc(100% - 100px);
 }
+
+.pf-x-u-live {
+  background: var(--pf-global--success-color--100);
+  color: var(--pf-global--Color--light-100);
+}
+
+.pf-x-u-offline {
+  background: var(--pf-global--danger-color--100);
+  color: var(--pf-global--Color--light-100);
+}
