@@ -100,7 +100,8 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   z-index: 10;
 }
 
-.pf-l-grid--max-width {
+.pf-l-grid--max-width,
+.pf-c-page__main-section--max-width {
   width: 1128px;
   max-width: 100%;
   margin: 0 auto;
@@ -150,4 +151,8 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 .pf-x-u-offline {
   background: var(--pf-global--danger-color--100);
   color: var(--pf-global--Color--light-100);
+}
+
+.pf-x-u-transparent {
+  background: transparent;
 }

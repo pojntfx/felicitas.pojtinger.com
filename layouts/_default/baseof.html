@@ -36,39 +36,47 @@
       >
 
       {{ block "header" . }}
-        <header class="pf-c-page__header">
-          <div class="pf-c-page__header-brand">
-            <a class="pf-c-page__header-brand-link" href="{{ .Site.BaseURL }}"
-              ><img
-                src="{{ .Site.Data.person.img }}"
-                alt="Profile picture of {{ .Site.Data.person.name }}"
-                class="pf-c-avatar"
-              />
+        <header class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom">
+          <div class="pf-c-page__header-tools--max-width">
+            <div class="pf-c-page__header-brand pf-u-pl-0">
+              <a class="pf-c-page__header-brand-link" href="{{ .Site.BaseURL }}"
+                ><img
+                  src="{{ .Site.Data.person.img }}"
+                  alt="Profile picture of {{ .Site.Data.person.name }}"
+                  class="pf-c-avatar"
+                />
 
-              <h1>
-                {{ .Site.Data.person.name }} →
-                {{ .Title }}
-              </h1></a
-            >
-          </div>
+                <h1>
+                  {{ .Site.Data.person.name }} →
+                  {{ .Title }}
+                </h1></a
+              >
+            </div>
 
-          <div class="pf-c-page__header-tools">
-            <div class="pf-c-page__header-tools-group">
-              <div class="pf-c-page__header-tools-item">
-                <a
-                  href="{{ .Site.Data.person.cv }}"
-                  target="_blank"
-                  rel="noopener"
-                  >CV</a
-                >
+            <div class="pf-c-page__header-tools pf-c-page__header-tools--max-width">
+              <div class="pf-c-page__header-tools-group">
+                <div class="pf-c-page__header-tools-item">
+                  <a
+                    href="{{ .Site.Data.person.cv }}"
+                    target="_blank"
+                    rel="noopener"
+                    class="pf-c-button pf-m-plain"
+                  >
+                    <span class="pf-c-button__icon pf-m-start">
+                      <i class="fas fa-book" aria-hidden="true"></i> </span
+                    >CV</a
+                  >
+                </div>
               </div>
 
-              <div class="pf-c-page__header-tools-item">
-                {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
-              </div>
+              <div class="pf-c-page__header-tools-group">
+                <div class="pf-c-page__header-tools-item">
+                  {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
+                </div>
 
-              <div class="pf-c-page__header-tools-item">
-                {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
+                <div class="pf-c-page__header-tools-item">
+                  {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
+                </div>
               </div>
             </div>
           </div>
@@ -76,7 +84,7 @@
       {{ end }}
 
       {{ block "main" . }}
-        <main class="pf-c-page__main" tabindex="-1" id="main">
+        <main class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur" tabindex="-1" id="main">
           {{ .Content }}
         </main>
       {{ end }}
