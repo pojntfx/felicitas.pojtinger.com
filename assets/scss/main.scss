@@ -120,6 +120,11 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   display: flex;
   align-items: center;
   justify-content: end;
+
+  & .pf-c-page__header-tools--max-width {
+    width: auto;
+    flex: 1;
+  }
 }
 
 .pf-c-page__header--overlay {
@@ -155,4 +160,27 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 
 .pf-x-u-transparent {
   background: transparent;
+}
+
+.pf-c-page__header-brand-link--no-decoration {
+  color: white;
+  text-decoration: none;
+}
+
+.pf-c-avatar--navbar {
+  width: 60px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pf-c-page__header-brand {
+  .pf-c-avatar--navbar {
+    transition: transform 0.7s ease-in-out;
+  }
+
+  &:hover {
+    .pf-c-avatar--navbar {
+      transform: rotate(-25deg) scale(1.1);
+    }
+  }
 }

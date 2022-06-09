@@ -36,21 +36,24 @@
       >
 
       {{ block "header" . }}
-        <header class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom">
-          <div class="pf-c-page__header-tools--max-width">
+        <header class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-u-pr-md">
+          <div class="pf-c-page__header-tools pf-c-page__header-tools--max-width">
             <div class="pf-c-page__header-brand pf-u-pl-0">
-              <a class="pf-c-page__header-brand-link" href="{{ .Site.BaseURL }}"
+              <a
+                class="pf-c-page__header-brand-link pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-c-page__header-brand-link--no-decoration"
+                href="{{ .Site.BaseURL }}"
                 ><img
                   src="{{ .Site.Data.person.img }}"
                   alt="Profile picture of {{ .Site.Data.person.name }}"
-                  class="pf-c-avatar"
+                  class="pf-c-avatar pf-u-mr-md pf-c-avatar--navbar"
                 />
-
-                <h1>
-                  {{ .Site.Data.person.name }} →
-                  {{ .Title }}
-                </h1></a
-              >
+                <div>
+                  <h2 class="pf-u-font-size-sm">{{ .Site.Data.person.name }}</h2>
+                  <h1 class="pf-u-font-size-md pf-u-font-weight-bold">
+                    {{ .Title }}
+                  </h1>
+                </div>
+              </a>
             </div>
 
             <div class="pf-c-page__header-tools pf-c-page__header-tools--max-width">
@@ -70,11 +73,11 @@
               </div>
 
               <div class="pf-c-page__header-tools-group">
-                <div class="pf-c-page__header-tools-item">
+                <div class="pf-c-page__header-tools-item pf-u-p-md pf-u-pl-0">
                   {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
                 </div>
 
-                <div class="pf-c-page__header-tools-item">
+                <div class="pf-c-page__header-tools-item pf-u-p-md pf-u-pr-0">
                   {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
                 </div>
               </div>
