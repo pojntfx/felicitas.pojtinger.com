@@ -101,7 +101,8 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 }
 
 .pf-l-grid--max-width,
-.pf-c-page__main-section--max-width {
+.pf-c-page__main-section--max-width,
+.pf-x-c-footer--max-width {
   width: 1128px;
   max-width: 100%;
   margin: 0 auto;
@@ -163,7 +164,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 }
 
 .pf-c-page__header-brand-link--no-decoration {
-  color: white;
+  color: var(--pf-global--Color--light-100);
   text-decoration: none;
 }
 
@@ -183,4 +184,14 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
       transform: rotate(-25deg) scale(1.1);
     }
   }
+}
+
+.pf-x-c-footer--fixed {
+  background: transparent;
+  position: fixed;
+  width: 100%;
+}
+
+.pf-x-c-footer__link {
+  color: var(--pf-global--Color--light-100);
 }
