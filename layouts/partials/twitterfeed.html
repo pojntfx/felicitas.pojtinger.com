@@ -54,42 +54,37 @@
     link.href = tweet.url;
     link.classList.add("pf-u-color-100", "pf-l-flex", "pf-m-space-items-sm", "pf-m-align-items-flex-start", "pf-c-card__body", "pf-u-p-md", "pf-x-m-no-decoration")
 
+    const header = document.createElement("div")
+    header.classList.add("pf-u-mb-sm", "pf-l-flex", "pf-m-align-items-center")
+
     const userPic = document.createElement("img");
     userPic.src = twitterFeed.userProfilePictureURL;
     userPic.alt = `Profile picture of ${twitterFeed.userDisplayName}`;
-    userPic.classList.add("pf-c-avatar")
-    link.append(userPic);
+    userPic.classList.add("pf-c-avatar", "pf-u-mr-sm")
+    header.appendChild(userPic);
 
-    const content = document.createElement("div")
-
-    const avatar = document.createElement("div");
-    avatar.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
-
-    const usernames = document.createElement("span")
+    const usernames = document.createElement("div")
+    usernames.classList.add("pf-l-flex", "pf-m-justify-content-center", "pf-m-align-items-start", "pf-m-space-items-sm", "pf-u-flex-direction-column")
 
     const userDisplayName = document.createElement("span");
     userDisplayName.innerText = twitterFeed.userDisplayName;
-    usernames.append(userDisplayName);
+    usernames.appendChild(userDisplayName);
 
     const userName = document.createElement("span");
     userName.innerText = " @"+twitterFeed.username;
     userName.classList.add("pf-u-color-200")
-    usernames.append(userName);
+    usernames.appendChild(userName);
 
-    avatar.append(usernames);
+    header.appendChild(usernames);
 
-    const interpunct = document.createElement("span")
-    interpunct.innerText = "·"
-    interpunct.ariaHidden = true
-    interpunct.classList.add("pf-u-color-200")
-    avatar.append(interpunct);
+    link.appendChild(header)
+
+    const content = document.createElement("div")
 
     const tweetTimestamp = document.createElement("span");
     tweetTimestamp.innerText = new Date(tweet.timestamp).toLocaleString();
     tweetTimestamp.classList.add("pf-u-color-200")
-    avatar.append(tweetTimestamp);
-
-    content.appendChild(avatar);
+    content.appendChild(tweetTimestamp);
 
     const tweetBody = document.createElement("div");
     tweetBody.innerHTML = tweet.body;
