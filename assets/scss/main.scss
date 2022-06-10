@@ -190,6 +190,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   background: transparent;
   position: fixed;
   width: 100%;
+  max-width: 100% !important;
 }
 
 .pf-x-c-footer__link {
