@@ -196,11 +196,6 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   color: var(--pf-global--Color--light-100);
 }
 
-.pf-m-hoverable-raised {
-  transition: transform 0.7s ease-in-out;
-
-  &:hover {
-    transform: rotate(-2deg) scale(1.05);
-    z-index: 1000;
-  }
+.pf-l-gallery--max-3 {
+  --pf-l-gallery--GridTemplateColumns--min: 350px;
 }

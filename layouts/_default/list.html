@@ -5,23 +5,37 @@
 
     <section class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0">
       <div class="pf-c-page__main">
-        <ul>
+        <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-3">
           {{ range .Pages }}
-            <li>
-              <a href="{{ .Permalink }}">
-                <img
-                  src="{{ ((index .Resources 0).Resize `300x`).Permalink }}"
-                  alt="{{ .Params.HeaderAlt }}"
-                  style="width: 100%; height: 300px; object-fit: cover;"
-                />
-
-                <h3>{{ .Title }}</h3>
-                <p>{{ .Params.Excerpt }}</p>
-                <div>Published at {{ .Date | time.Format ":date_long" }}</div>
+            <div class="pf-l-gallery__item">
+              <a
+                href="{{ .Permalink }}"
+                class="pf-u-color-100 pf-x-m-no-decoration"
+              >
+                <div
+                  class="pf-c-card pf-m-compact pf-m-hoverable-raised"
+                >
+                  <div class="pf-c-card__header pf-u-p-0">
+                    <div class="pf-c-card__header-main pf-c-card__header-main--fluid">
+                      <img
+                        src="{{ ((index .Resources 0).Resize `500x`).Permalink }}"
+                        alt="{{ .Params.HeaderAlt }}"
+                        class="pf-c-card__header-main__img"
+                      />
+                    </div>
+                  </div>
+                  <div class="pf-c-card__title pf-u-pt-md pf-u-pb-sm">{{ .Title }}</div>
+                  <div class="pf-c-card__body pf-u-pb-sm">
+                    {{ .Params.Excerpt }}
+                  </div>
+                  <div class="pf-c-card__footer pf-u-color-200">
+                    {{ .Date | time.Format ":date_long" }}
+                  </div>
+                </div>
               </a>
-            </li>
-          {{ end }}
-        </ul>
+            </div>
+          {{ end }} 
+        </div>
       </div>
     </section>
   </main>
