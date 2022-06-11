@@ -193,10 +193,14 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   max-width: 100% !important;
 }
 
-.pf-x-c-footer__link {
+.pf-x-m-no-highlight--dark {
   color: var(--pf-global--Color--light-100);
 }
 
-.pf-l-gallery--max-3 {
+.pf-l-gallery--max-350 {
   --pf-l-gallery--GridTemplateColumns--min: 350px;
+}
+
+.pf-l-gallery--max-500 {
+  --pf-l-gallery--GridTemplateColumns--min: 500px;
 }
