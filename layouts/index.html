@@ -148,64 +148,68 @@
         {{ range .Site.Data.projects_gen }}
           <li>
             <h3>{{ .title }}</h3>
-            <ul>
+            <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
               {{ range sort .projects "stars" "desc" }}
-                <li>
-                  <dl>
-                    <dt>Name</dt>
-                    <dd>
-                      <a href="{{ .url }}" target="_blank" rel="noopener"
-                        >{{ .title }}</a
-                      >
-                    </dd>
+                <div class="pf-l-gallery__item">
+                  <a href="{{ .url }}" target="_blank" rel="noopener" class="pf-x-m-no-decoration pf-u-color-100">
+                    <div class="pf-c-card pf-m-hoverable-raised pf-u-h-100">
+                      <div class="pf-c-card__header">
+                        <div class="pf-c-card__header-main pf-u-w-100 pf-u-display-flex pf-u-align-items-center pf-u-justify-content-space-between">
+                          <div class="pf-c-card__title pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center">
+                            <span class="pf-u-mr-sm">{{ .title }}</span>
+                          </div><div class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center">
+                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                            <span class="pf-u-ml-sm">{{ .date | time.Format ":date_long" }}</span>
+                          </div>
+                        </div>
 
-                    <dt>Description</dt>
-                    <dd>
-                      {{ .description }}
-                    </dd>
-
-                    <dt>Language</dt>
-                    <dd>
-                      {{ .language }}
-                    </dd>
-
-                    <dt>License</dt>
-                    <dd>
-                      {{ .license }}
-                    </dd>
-
-                    <dt>Last update</dt>
-                    <dd>
-                      {{ .date | time.Format ":date_long" }}
-                    </dd>
-
-                    <dt>Topics</dt>
-                    <dd>
-                      <ul>
-                        {{ range first 5 .topics }}
-                          <li>{{ . }}</li>
-                        {{ end }}
-                      </ul>
-                    </dd>
-
-                    <dt>Stars</dt>
-                    <dd>
-                      {{ .stars }}
-                    </dd>
-
-                    <dt>Forks</dt>
-                    <dd>
-                      {{ .forks }}
-                    </dd>
-
-                    <dt>Issues</dt>
-                    <dd>
-                      {{ .issues }}
-                    </dd>
-                  </dl>
-                </li>
+                      </div>
+                  
+                      <div class="pf-c-card__body">
+                        <p class="pf-u-mb-md">{{ .description }}</p>
+                      
+                        <div class="pf-c-chip-group">
+                          <div class="pf-c-chip-group__main">
+                            <ul class="pf-c-chip-group__list" role="list" aria-label="Topic list">
+                              {{ range first 3 .topics }}
+                              <li class="pf-c-chip-group__list-item">
+                                <div class="pf-c-chip">
+                                  <span class="pf-c-chip__text">{{ . }}</span>
+                                </div>
+                              </li>
+                              {{ end }}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pf-c-card__footer pf-u-display-flex pf-u-align-items-center pf-u-justify-content-space-between pf-u-flex-direction-column pf-u-flex-direction-row-on-sm pf-u-color-200">
+                        <div class="pf-u-display-flex pf-u-align-items-center pf-u-mb-md pf-u-mb-0-on-sm"><div class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-md">
+                          <i class="fas fa-language" aria-hidden="true"></i>
+                          <span class="pf-u-ml-sm">{{ .language }}</span>
+                        </div>
+                        <div class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center">
+                          <i class="fas fa-balance-scale" aria-hidden="true"></i>
+                          <span class="pf-u-ml-sm">{{ .license }}</span>
+                        </div></div><div class="pf-u-display-flex pf-u-align-items-center">
+                        <div class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-md">
+                          <i class="fas fa-star" aria-hidden="true"></i>
+                          <span class="pf-u-ml-sm">{{ .stars }} Stars</span>
+                        </div>
+                        <div class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-md">
+                          <i class="fas fa-code-branch" aria-hidden="true"></i>
+                          <span class="pf-u-ml-sm">{{ .forks }} Forks</span>
+                        </div>
+                        <div class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center">
+                          <i class="fas fa-dot-circle" aria-hidden="true"></i>
+                          <span class="pf-u-ml-sm">{{ .issues }} Issues</span>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
               {{ end }}
-            </ul>
+            </div>
           </li>
         {{ end }}
       </ul>
