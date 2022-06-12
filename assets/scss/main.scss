@@ -67,7 +67,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   justify-content: space-between;
 }
 
-.pf-c-code-block--transparent {
+.pf-x-u-transparent {
   background: transparent;
 }
 
@@ -76,14 +76,21 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 }
 
 .pf-x-u-blur {
-  backdrop-filter: blur(7.5px) brightness(0.4);
+  backdrop-filter: blur(7.5px);
+  background: rgba(0, 0, 0, 0.8) !important;
 }
 
-.pf-c-page--background {
-  background: url(https://source.unsplash.com/featured?space);
-  background-position: center;
+.pf-c-page--background::before {
+  content: "";
+  background: url(https://source.unsplash.com/featured?sunset);
+  background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: blur(7.5px);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  transform: scale(1.1);
 }
 
 .pf-c-card__header-main__img {
@@ -187,13 +194,6 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   }
 }
 
-.pf-x-c-footer--fixed {
-  background: transparent;
-  position: fixed;
-  width: 100%;
-  max-width: 100% !important;
-}
-
 .pf-x-m-no-highlight--dark {
   color: var(--pf-global--Color--light-100);
 }
@@ -216,4 +216,8 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 
 .pf-c-chip--transparent {
   background: #fffffff5;
+}
+
+.pf-x-u-no-shadow {
+  box-shadow: none;
 }
