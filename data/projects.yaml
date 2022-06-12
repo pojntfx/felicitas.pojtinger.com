@@ -1,66 +1,116 @@
 - title: Systems Development
   projects:
-    - pojntfx/weron
-    - pojntfx/stfs
-    - pojntfx/liwasc
-    - pojntfx/bofied
-    - pojntfx/html2goapp
-    - pojntfx/keygaen
+    - slug: pojntfx/weron
+      background: var(--pf-global--palette--black-850)
+    - slug: pojntfx/stfs
+      background: var(--pf-global--palette--blue-400)
+    - slug: pojntfx/liwasc
+      background: var(--pf-global--palette--cyan-500)
+    - slug: pojntfx/bofied
+      background: var(--pf-global--palette--light-blue-600)
+    - slug: pojntfx/html2goapp
+      background: var(--pf-global--palette--cyan-400)
+    - slug: pojntfx/keygaen
+      background: var(--pf-global--palette--blue-500)
 - title: Development Tooling
   projects:
-    - pojntfx/bagccgop
-    - pojntfx/bagop
-    - pojntfx/hydrapp
-    - pojntfx/hydrun
-    - pojntfx/alpimager
-    - pojntfx/pojde
-    - pojntfx/grpc-examples
+    - slug: pojntfx/bagccgop
+      background: var(--pf-global--palette--green-600)
+    - slug: pojntfx/bagop
+      background: var(--pf-global--palette--light-green-600)
+    - slug: pojntfx/hydrapp
+      background: var(--pf-global--palette--green-700)
+    - slug: pojntfx/hydrun
+      background: var(--pf-global--palette--purple-600)
+    - slug: pojntfx/alpimager
+      background: var(--pf-global--palette--black-850)
+    - slug: pojntfx/pojde
+      background: var(--pf-global--palette--light-green-700)
+    - slug: pojntfx/grpc-examples
+      background: var(--pf-global--palette--green-600)
 - title: Distributed Computing
   projects:
-    - alphahorizonio/unisockets
-    - alphahorizonio/tinynet
-    - alphahorizonio/nebulark
-    - alphahorizonio/webnetes
+    - slug: alphahorizonio/unisockets
+      background: var(--pf-global--palette--gold-600)
+    - slug: alphahorizonio/tinynet
+      background: var(--pf-global--palette--orange-400)
+    - slug: alphahorizonio/nebulark
+      background: var(--pf-global--palette--orange-600)
+    - slug: alphahorizonio/webnetes
+      background: var(--pf-global--palette--red-400)
 - title: Management Daemons
   projects:
-    - pojntfx/go-isc-dhcp
-    - pojntfx/gon2n
-    - pojntfx/ipxebuilderd
-    - pojntfx/dibs
+    - slug: pojntfx/go-isc-dhcp
+      background: var(--pf-global--palette--black-850)
+    - slug: pojntfx/gon2n
+      background: var(--pf-global--palette--blue-400)
+    - slug: pojntfx/ipxebuilderd
+      background: var(--pf-global--palette--cyan-500)
+    - slug: pojntfx/dibs
+      background: var(--pf-global--palette--light-blue-600)
 - title: Uni Notes
   projects:
-    - pojntfx/uni-supply-chain-paper
-    - pojntfx/uni-netpractice-notes
-    - pojntfx/uni-webtopics-notes
-    - pojntfx/uni-sciwriting-notes
-    - pojntfx/uni-appsecurity-notes
-    - pojntfx/uni-hci-notes
-    - pojntfx/uni-itsec-notes
-    - pojntfx/uni-db1-notes
-    - pojntfx/uni-sdi-notes
-    - pojntfx/uni-algodat-notes
-    - pojntfx/uni-bwl-notes
+    - slug: pojntfx/uni-supply-chain-paper
+      background: var(--pf-global--palette--red-400)
+    - slug: pojntfx/uni-netpractice-notes
+      background: var(--pf-global--palette--orange-600)
+    - slug: pojntfx/uni-webtopics-notes
+      background: var(--pf-global--palette--orange-400)
+    - slug: pojntfx/uni-sciwriting-notes
+      background: var(--pf-global--palette--gold-600)
+    - slug: pojntfx/uni-appsecurity-notes
+      background: var(--pf-global--palette--green-600)
+    - slug: pojntfx/uni-hci-notes
+      background: var(--pf-global--palette--black-850)
+    - slug: pojntfx/uni-itsec-notes
+      background: var(--pf-global--palette--green-700)
+    - slug: pojntfx/uni-db1-notes
+      background: var(--pf-global--palette--light-green-600)
+    - slug: pojntfx/uni-sdi-notes
+      background: var(--pf-global--palette--light-green-700)
+    - slug: pojntfx/uni-algodat-notes
+      background: var(--pf-global--palette--purple-600)
+    - slug: pojntfx/uni-bwl-notes
+      background: var(--pf-global--palette--black-850)
 - title: Digital Publishing
   projects:
-    - pojntfx/deliverance
-    - pojntfx/minitel
-    - pojntfx/box
-    - pojntfx/abizeitung
+    - slug: pojntfx/deliverance
+      background: var(--pf-global--palette--black-850)
+    - slug: pojntfx/minitel
+      background: var(--pf-global--palette--blue-400)
+    - slug: pojntfx/box
+      background: var(--pf-global--palette--cyan-500)
+    - slug: pojntfx/abizeitung
+      background: var(--pf-global--palette--light-blue-600)
 - title: Websites
   projects:
-    - pojntfx/personal-site
-    - pojntfx/family-site
-    - pojntfx/illustrierte-website
+    - slug: pojntfx/personal-site
+      background: var(--pf-global--palette--gold-600)
+    - slug: pojntfx/family-site
+      background: var(--pf-global--palette--orange-400)
+    - slug: pojntfx/illustrierte-website
+      background: var(--pf-global--palette--orange-600)
+    - slug: pojntfx/physio-dani.de
+      background: var(--pf-global--palette--red-400)
 - title: Integrations
   projects:
-    - pojntfx/simple-direct-democracy-frontend
-    - pojntfx/task-timer
-    - pojntfx/learn-chinese-platform
-    - pojntfx/chinese-notes
-    - pojntfx/nextcloud-talk-bot-framework
-    - alphahorizonio/consumat.io-backend
+    - slug: pojntfx/simple-direct-democracy-frontend
+      background: var(--pf-global--palette--green-600)
+    - slug: pojntfx/task-timer
+      background: var(--pf-global--palette--green-700)
+    - slug: pojntfx/learn-chinese-platform
+      background: var(--pf-global--palette--light-green-600)
+    - slug: pojntfx/chinese-notes
+      background: var(--pf-global--palette--light-green-700)
+    - slug: pojntfx/nextcloud-talk-bot-framework
+      background: var(--pf-global--palette--purple-600)
+    - slug: alphahorizonio/consumat.io-backend
+      background: var(--pf-global--palette--black-850)
 - title: Aeronautical Engineering
   projects:
-    - clusterplatform/libresat
-    - clusterplatform/clusterplatform
-    - clusterplatform/opensdcp-website
+    - slug: clusterplatform/libresat
+      background: var(--pf-global--palette--black-850)
+    - slug: clusterplatform/clusterplatform
+      background: var(--pf-global--palette--blue-400)
+    - slug: clusterplatform/opensdcp-website
+      background: var(--pf-global--palette--cyan-500)
