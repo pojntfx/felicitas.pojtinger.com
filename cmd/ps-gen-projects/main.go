@@ -28,6 +28,7 @@ type OutputProject struct {
 	Stars       int      `yaml:"stars"`
 	Forks       int      `yaml:"forks"`
 	Issues      int      `yaml:"issues"`
+	Background  string   `yaml:"background"`
 }
 
 type OutputCategory struct {
@@ -37,8 +38,13 @@ type OutputCategory struct {
 
 // Input
 type InputCategory struct {
-	Title    string   `yaml:"title"`
-	Projects []string `yaml:"projects"`
+	Title    string         `yaml:"title"`
+	Projects []InputProject `yaml:"projects"`
+}
+
+type InputProject struct {
+	Slug       string `yaml:"slug"`
+	Background string `yaml:"background"`
 }
 
 func main() {
@@ -91,8 +97,8 @@ func main() {
 			Projects: []OutputProject{},
 		}
 
-		for _, slug := range inputCategory.Projects {
-			owner, repo := path.Split(slug)
+		for _, inputProject := range inputCategory.Projects {
+			owner, repo := path.Split(inputProject.Slug)
 
 			project, _, err := client.Repositories.Get(context.Background(), strings.TrimSuffix(owner, "/"), repo)
 			if err != nil {
@@ -115,6 +121,7 @@ func main() {
 				Stars:       project.GetStargazersCount(),
 				Forks:       project.GetForksCount(),
 				Issues:      project.GetOpenIssuesCount(),
+				Background:  inputProject.Background,
 			})
 		}
 

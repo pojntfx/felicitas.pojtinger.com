@@ -203,5 +203,17 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 }
 
 .pf-l-gallery--max-500 {
-  --pf-l-gallery--GridTemplateColumns--min: 500px;
+  --pf-l-gallery--GridTemplateColumns--min: 365px;
+}
+
+.pf-x-u-color-light-100 {
+  color: var(--pf-global--BackgroundColor--100);
+}
+
+.pf-x-u-color-light-200 {
+  color: var(--pf-global--BackgroundColor--200);
+}
+
+.pf-c-chip--transparent {
+  background: #fffffff5;
 }
