@@ -6,8 +6,8 @@
     type="button"
   >
     <span class="pf-c-dropdown__toggle-text">
-      <i class="fas fa-envelope pf-u-mr-xs" aria-hidden="true"></i>
-      Contact
+      <i class="fas fa-users pf-u-mr-xs" aria-hidden="true"></i>
+      Socials
     </span>
     <span class="pf-c-dropdown__toggle-icon">
       <i class="fas fa-caret-down" aria-hidden="true"></i>
@@ -15,6 +15,26 @@
   </button>
 
   <ul class="pf-c-dropdown__menu" id="{{ .ID }}-dropdown-menu" aria-labelledby="{{ .ID }}-expanded-button" hidden>
+    <li>
+      <a
+        class="pf-c-dropdown__menu-item"
+        href="{{ .Mastodon }}"
+        target="_blank"
+        rel="noopener"
+      >Mastodon</a>
+    </li>
+  
+    <li>
+      <a
+        class="pf-c-dropdown__menu-item"
+        href="https://instagram.com/{{ .Instagram }}"
+        target="_blank"
+        rel="noopener"
+      >Instagram</a>
+    </li>
+
+    <li class="pf-c-divider" role="separator"></li>
+
     <li>
       <a
         class="pf-c-dropdown__menu-item"
@@ -31,8 +51,14 @@
         target="_blank"
         rel="noopener"
       >Signal</a>
-    </li>
+    </li> 
   
+    <li class="pf-c-divider" role="separator"></li>
+
+    <li>
+      <a class="pf-c-dropdown__menu-item" href="tel:{{ .Phone }}" rel="noopener">Phone</a>
+    </li>
+
     <li>
       <a class="pf-c-dropdown__menu-item" href="mailto:{{ .Mail }}" rel="noopener">Mail</a>
     </li>
