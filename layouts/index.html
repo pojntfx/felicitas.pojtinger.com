@@ -36,12 +36,12 @@
 {{ define "main" }}
   <main class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur" tabindex="-1" id="main">
     <div class="pf-l-grid pf-m-gutter pf-u-p-xl pf-u-pb-md pf-x-person__header">
-      <div class="pf-l-grid__item pf-m-5-col pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center">
+      <div class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center">
         <h1 class="pf-u-font-size-xl pf-u-font-weight-bold pf-u-mb-xs">{{ .Site.Data.person.name }}</h1>
         <p>{{ .Site.Data.person.description }}</p>
       </div>
 
-      <figure class="pf-l-grid__item pf-m-2-col pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center">
+      <figure class="pf-l-grid__item pf-m-12-col pf-m-2-col-on-lg pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center">
         <figcaption class="pf-x-c-avatar__figcaption">
           <div class="pf-c-chip">
             <span class="pf-c-chip__text">{{ .Site.Data.person.pronouns }}</span>
@@ -55,7 +55,7 @@
         />
       </figure>
 
-      <div class="pf-l-grid__item pf-m-5-col pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center">
+      <div class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg pf-u-mt-lg pf-u-mt-0-on-lg pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center">
           <a
             href="https://twitter.com/{{ .Site.Data.person.twitter }}"
             target="_blank"
@@ -72,7 +72,7 @@
       </div>
     </div> 
 
-    <section class="pf-x-commitwrapper" id="commit">
+    <section class="pf-x-commitwrapper pf-u-mb-md" id="commit">
       {{ partial "lastcommit" (dict "ID" "lastcommit" "Username" .Site.Data.person.github "BaseURL" .Site.BaseURL ) }}
     </section> 
 
@@ -142,7 +142,7 @@
     </div>
 
     <section id="projects">
-      <div class="pf-c-card pf-u-px-md pf-u-px-0-on-xl pf-u-mt-xl pf-x-u-transparent pf-x-u-color-light-100 pf-x-u-no-shadow">
+      <div class="pf-c-card pf-u-px-lg pf-u-px-0-on-xl pf-u-mt-xl pf-x-u-transparent pf-x-u-color-light-100 pf-x-u-no-shadow">
         <div class="pf-x-c-projects--max-width">
         <div
           class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-pt-0 pf-u-pb-0 pf-u-px-0"
