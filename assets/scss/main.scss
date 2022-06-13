@@ -38,7 +38,10 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 .pf-x-person__header {
   max-width: 1024px;
   margin: 3rem auto;
-  margin-bottom: 1.5rem !important;
+
+  @media screen and (min-width: 1146px) {
+    margin-bottom: 0 !important;
+  }
 
   &,
   .pf-c-dropdown__toggle {
@@ -55,6 +58,16 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   transform: translateY(50%);
   max-width: 825px;
   margin: 0 auto;
+
+  @media screen and (max-width: 1145px) {
+    transform: translateY(0);
+  }
+}
+
+.pf-x-commitwrapper {
+  @media screen and (min-width: 1146px) {
+    margin-bottom: 0 !important;
+  }
 }
 
 .lastcommit__user__url > img {
