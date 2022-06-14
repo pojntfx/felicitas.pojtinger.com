@@ -77,7 +77,7 @@
     </section> 
 
     <div class="pf-l-grid pf-m-gutter pf-l-grid--max-width">
-      <div class="pf-l-grid__item pf-m-7-col">
+      <div class="pf-l-grid__item pf-m-12-col pf-m-7-col-on-lg">
         <section id="articles">
           <div class="pf-c-card">
             <div
@@ -134,7 +134,7 @@
           </div>
         </section>
       </div>
-      <div class="pf-l-grid__item pf-m-5-col">
+      <div class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg">
         <section id="tweets">
           {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
         </section>

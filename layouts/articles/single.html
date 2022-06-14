@@ -1,8 +1,8 @@
 {{ define "main" }}
   <main class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent" tabindex="-1" id="main">
-    <section class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0">
+    <section class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-lg">
       <div class="pf-l-grid pf-m-gutter">
-        <div class="pf-l-grid__item pf-m-8-col">
+        <div class="pf-l-grid__item pf-m-12-col pf-m-8-col-on-lg">
           <div class="pf-c-card">
             <div class="pf-c-card__header pf-u-px-0 pf-u-pt-0 pf-u-pb-sm">
               <div class="pf-c-card__header-main pf-u-w-100">
@@ -33,23 +33,21 @@
                       {{ .Params.Updated | time.Format ":date_long" }}</span
                     >
                   </div>
-                  <div>
-                    <div class="pf-c-chip-group">
-                      <div class="pf-c-chip-group__main">
-                        <ul
-                          class="pf-c-chip-group__list"
-                          role="list"
-                          aria-label="Keywords"
-                        >
-                          {{ range first 3 .Keywords }}
-                            <li class="pf-c-chip-group__list-item">
-                              <div class="pf-c-chip">
-                                <span class="pf-c-chip__text">{{ . }}</span>
-                              </div>
-                            </li>
-                          {{ end }}
-                        </ul>
-                      </div>
+                  <div class="pf-c-chip-group pf-u-mt-md">
+                    <div class="pf-c-chip-group__main">
+                      <ul
+                        class="pf-c-chip-group__list"
+                        role="list"
+                        aria-label="Keywords"
+                      >
+                        {{ range first 3 .Keywords }}
+                          <li class="pf-c-chip-group__list-item">
+                            <div class="pf-c-chip">
+                              <span class="pf-c-chip__text">{{ . }}</span>
+                            </div>
+                          </li>
+                        {{ end }}
+                      </ul>
                     </div>
                   </div>
                 </header>
@@ -81,7 +79,7 @@
             </div>
           </div>
         </div>
-        <div class="pf-l-grid__item pf-m-4-col">
+        <div class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg">
           {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
 
           {{ $related := .Site.RegularPages.Related . | first 5 }}
@@ -97,7 +95,7 @@
                         class="pf-u-color-100 pf-x-m-no-decoration"
                       >
                         <div
-                          class="pf-c-card pf-m-compact pf-m-hoverable-raised"
+                          class="pf-c-card pf-m-compact pf-m-hoverable-raised pf-u-h-100"
                         >
                           <div class="pf-c-card__title">{{ .Title }}</div>
                           <div class="pf-c-card__body pf-u-pb-sm">
