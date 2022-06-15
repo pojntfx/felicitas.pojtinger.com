@@ -1,5 +1,5 @@
 ---
-title: A Look at the Cluster Platform Layer 2 Overlay Network System
+title: The Cluster Platform L2 Overlay Network
 date: 2020-01-13T17:01:23+01:00
 updated: 2020-01-13T17:01:23+01:00
 excerpt: Let's bring back networking simplicity!

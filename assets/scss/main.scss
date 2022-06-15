@@ -123,10 +123,17 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 .pf-l-grid--max-width,
 .pf-c-page__main-section--max-width,
 .pf-x-c-footer--max-width,
-.pf-x-c-projects--max-width {
+.pf-x-c-projects--max-width,
+.pf-c-page__header__content--max-width {
   width: 1128px;
   max-width: 100%;
   margin: 0 auto;
+}
+
+.pf-c-page__header__content--max-width {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .pf-c-page__header--max-width {
@@ -199,7 +206,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   object-fit: cover;
 }
 
-.pf-c-page__header-brand {
+.pf-c-avatar--hover {
   .pf-c-avatar--navbar {
     transition: transform 0.7s ease-in-out;
   }
@@ -237,4 +244,27 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 
 .pf-x-u-no-shadow {
   box-shadow: none;
+}
+
+.pf-x-u-overflow-x-auto {
+  overflow-x: auto;
+}
+
+.pf-x-u-white-space-nowrap {
+  white-space: nowrap;
+}
+
+.streamstatus__channel__badge {
+  height: 1.25rem;
+  min-width: 10rem;
+  object-fit: scale-down;
+}
+
+.pf-x-u-navbar__title {
+  @media screen and (max-width: 767px) {
+    text-overflow: ellipsis;
+    max-width: 12rem;
+    white-space: nowrap;
+    overflow-x: hidden;
+  }
 }
