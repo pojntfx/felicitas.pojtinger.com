@@ -52,7 +52,7 @@
     const link = document.createElement("a");
     link.target = "_blank";
     link.href = tweet.url;
-    link.classList.add("pf-u-color-100", "pf-l-flex", "pf-m-space-items-sm", "pf-m-align-items-flex-start", "pf-c-card__body", "pf-u-p-md", "pf-x-m-no-decoration")
+    link.classList.add("pf-u-color-100", "pf-l-flex", "pf-u-flex-direction-column", "pf-m-space-items-sm", "pf-m-align-items-flex-start", "pf-c-card__body", "pf-u-p-md", "pf-x-m-no-decoration")
 
     const header = document.createElement("div")
     header.classList.add("pf-u-mb-sm", "pf-l-flex", "pf-m-align-items-center")
@@ -80,6 +80,7 @@
     link.appendChild(header)
 
     const content = document.createElement("div")
+    content.classList.add("pf-u-w-100")
 
     const tweetTimestamp = document.createElement("span");
     tweetTimestamp.innerText = new Date(tweet.timestamp).toLocaleString();

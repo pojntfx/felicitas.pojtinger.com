@@ -1,36 +1,26 @@
 {{ define "header" }}
-<header class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-u-pr-md">
-  <div class="pf-c-page__header-tools pf-c-page__header-tools--max-width">
-    <div class="pf-c-page__header-tools-group">
-      <div class="pf-c-page__header-tools-item">
-        <a
-          href="{{ .Site.Data.person.cv }}"
-          target="_blank"
-          rel="noopener"
-          class="pf-c-button pf-m-plain"
-        >
-          <span class="pf-c-button__icon pf-m-start">
-            <i class="fas fa-book" aria-hidden="true"></i> </span
-          >CV</a
-        >
-      </div>
-    </div>
+<header class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto">
+  <div class="pf-c-page__header__content--max-width pf-c-page__header__content--max-width--home">
+    <div class="pf-u-display-flex pf-u-align-items-center pf-u-pr-sm pf-u-pr-0-on-xl">
+      <a
+        href="{{ .Site.Data.person.cv }}"
+        target="_blank"
+        rel="noopener"
+        class="pf-c-button pf-m-plain pf-u-ml-sm pf-u-mr-md"
+      >
+        <span class="pf-c-button__icon pf-m-start">
+          <i class="fas fa-book" aria-hidden="true"></i> </span
+        >CV</a
+      >
 
-    <div class="pf-c-page__header-tools-group">
-      <div class="pf-c-page__header-tools-item pf-u-p-md pf-u-pl-0">
-        {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform"
-        "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL )
-        }}
+      <div class="pf-u-mr-md">
+        {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
       </div>
 
-      <div class="pf-c-page__header-tools-item pf-u-p-md pf-u-pr-0">
-        {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch"
-        "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
-      </div>
+      {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
     </div>
   </div>
 </header>
-
 {{ end }}
 
 {{ define "main" }}
