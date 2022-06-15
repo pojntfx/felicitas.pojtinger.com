@@ -268,3 +268,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
     overflow-x: hidden;
   }
 }
+
+.pf-c-page__header__content--max-width--home > * {
+  margin-left: auto;
+}
