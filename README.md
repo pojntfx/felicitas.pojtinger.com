@@ -43,10 +43,6 @@ Click on an image to see a larger version.
 <img src="./docs/webkit.png" width="45%" alt="Screenshot of the site on WebKit" title="Screenshot of the site on WebKit">
 </a>
 
-<a display="inline" href="./docs/mobile.png?raw=true">
-<img src="./docs/mobile.png" width="45%" alt="Screenshot of the site on a phone" title="Screenshot of the site on a phone">
-</a>
-
 <a display="inline" href="./docs/project-list.png?raw=true">
 <img src="./docs/project-list.png" width="45%" alt="Screenshot of the project list" title="Screenshot of the project list">
 </a>
