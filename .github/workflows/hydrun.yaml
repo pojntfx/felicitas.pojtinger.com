@@ -10,11 +10,23 @@ jobs:
     strategy:
       matrix:
         target:
-          - id: cli
+          - id: go-ps-api
             src: .
             os: golang:bullseye
             flags: ""
-            cmd: ./Hydrunfile cli
+            cmd: ./Hydrunfile go ps-api
+            dst: out/*
+          - id: go-ps-gen-projects
+            src: .
+            os: golang:bullseye
+            flags: ""
+            cmd: ./Hydrunfile go ps-gen-projects
+            dst: out/*
+          - id: go-ps-proxy
+            src: .
+            os: golang:bullseye
+            flags: ""
+            cmd: ./Hydrunfile go ps-proxy
             dst: out/*
           - id: pwa
             src: .
