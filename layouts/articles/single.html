@@ -1,6 +1,12 @@
 {{ define "main" }}
-  <main class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent" tabindex="-1" id="main">
-    <section class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-lg">
+  <main
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent"
+    tabindex="-1"
+    id="main"
+  >
+    <section
+      class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-lg"
+    >
       <div class="pf-l-grid pf-m-gutter">
         <div class="pf-l-grid__item pf-m-12-col pf-m-8-col-on-lg">
           <div class="pf-c-card">
@@ -58,20 +64,20 @@
               </article>
             </div>
             <div class="pf-c-card__footer">
-      <script
-        src="https://giscus.app/client.js"
-        data-repo="{{ .Site.Params.Comments.Repo }}"
-        data-repo-id="{{ .Site.Params.Comments.RepoID }}"
-        data-category="{{ .Site.Params.Comments.Category }}"
-        data-category-id="{{ .Site.Params.Comments.CategoryID }}"
-        data-mapping="{{ .Site.Params.Comments.Mapping }}"
-        data-reactions-enabled="{{ .Site.Params.Comments.ReactionsEnabled }}"
-        data-emit-metadata="{{ .Site.Params.Comments.EmitMetadata }}"
-        data-theme="{{ .Site.Params.Comments.Theme }}"
-        data-lang="{{ index (split .Site.LanguageCode `-`) 0 }}"
-        crossorigin="anonymous"
-        async
-      ></script>
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="{{ .Site.Params.Comments.Repo }}"
+                data-repo-id="{{ .Site.Params.Comments.RepoID }}"
+                data-category="{{ .Site.Params.Comments.Category }}"
+                data-category-id="{{ .Site.Params.Comments.CategoryID }}"
+                data-mapping="{{ .Site.Params.Comments.Mapping }}"
+                data-reactions-enabled="{{ .Site.Params.Comments.ReactionsEnabled }}"
+                data-emit-metadata="{{ .Site.Params.Comments.EmitMetadata }}"
+                data-theme="{{ .Site.Params.Comments.Theme }}"
+                data-lang="{{ index (split .Site.LanguageCode `-`) 0 }}"
+                crossorigin="anonymous"
+                async
+              ></script>
               <noscript
                 >Please enable JavaScript to view the comments powered by
                 giscus.</noscript
@@ -107,13 +113,10 @@
                         </div>
                       </a>
                     </div>
-                  {{ end }} 
+                  {{ end }}
                 </div>
 
-                <a
-                  href="/articles"
-                  class="pf-c-button pf-m-link pf-u-mt-lg"
-                >
+                <a href="/articles" class="pf-c-button pf-m-link pf-u-mt-lg">
                   <span class="pf-c-button__icon pf-m-start">
                     <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
                   >All articles</a

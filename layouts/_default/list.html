@@ -1,8 +1,15 @@
 {{ define "main" }}
-  <main class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur" tabindex="-1" id="main">
+  <main
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur"
+    tabindex="-1"
+    id="main"
+  >
     {{ .Content }}
 
-    <section class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-xl">
+
+    <section
+      class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-xl"
+    >
       <div class="pf-c-page__main">
         <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-350">
           {{ range .Pages }}
@@ -15,7 +22,9 @@
                   class="pf-c-card pf-m-compact pf-m-hoverable-raised pf-u-h-100"
                 >
                   <div class="pf-c-card__header pf-u-p-0">
-                    <div class="pf-c-card__header-main pf-c-card__header-main--fluid">
+                    <div
+                      class="pf-c-card__header-main pf-c-card__header-main--fluid"
+                    >
                       <img
                         src="{{ ((index .Resources 0).Resize `500x`).Permalink }}"
                         alt="{{ .Params.HeaderAlt }}"
@@ -23,7 +32,9 @@
                       />
                     </div>
                   </div>
-                  <div class="pf-c-card__title pf-u-pt-md pf-u-pb-sm">{{ .Title }}</div>
+                  <div class="pf-c-card__title pf-u-pt-md pf-u-pb-sm">
+                    {{ .Title }}
+                  </div>
                   <div class="pf-c-card__body pf-u-pb-sm">
                     {{ .Params.Excerpt }}
                   </div>
@@ -33,7 +44,7 @@
                 </div>
               </a>
             </div>
-          {{ end }} 
+          {{ end }}
         </div>
       </div>
     </section>

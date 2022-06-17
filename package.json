@@ -4,6 +4,7 @@
   "description": "My personal site.",
   "main": "index.js",
   "scripts": {
+    "fmt": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,9 @@
   "homepage": "https://github.com/pojntfx/personal-site#readme",
   "dependencies": {
     "@patternfly/patternfly": "^4.171.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-go-template": "^0.0.13"
   }
 }

@@ -13,7 +13,7 @@
       {{ end }}
     </title>
 
-    <link rel="icon" href="{{ .Site.Data.person.img }}">
+    <link rel="icon" href="{{ .Site.Data.person.img }}" />
 
     <meta name="author" content="{{ .Site.Params.Meta.Author }}" />
     <meta name="description" content="{{ .Site.Params.Meta.Description }}" />
@@ -38,7 +38,9 @@
       >
 
       {{ block "header" . }}
-        <header class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto">
+        <header
+          class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+        >
           <div class="pf-c-page__header__content--max-width">
             <a
               class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-c-page__header-brand-link--no-decoration pf-c-avatar--hover pf-u-pl-2xl pf-u-pl-sm-on-xl"
@@ -51,13 +53,17 @@
               />
               <div>
                 <h2 class="pf-u-font-size-sm">{{ .Site.Data.person.name }}</h2>
-                <h1 class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title">
+                <h1
+                  class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title"
+                >
                   {{ .Title }}
                 </h1>
               </div>
             </a>
 
-            <div class="pf-u-display-flex pf-u-align-items-center pf-u-pr-2xl pf-u-pr-0-on-xl">
+            <div
+              class="pf-u-display-flex pf-u-align-items-center pf-u-pr-2xl pf-u-pr-0-on-xl"
+            >
               <a
                 href="{{ .Site.Data.person.cv }}"
                 target="_blank"
@@ -80,7 +86,11 @@
       {{ end }}
 
       {{ block "main" . }}
-        <main class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur" tabindex="-1" id="main">
+        <main
+          class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur"
+          tabindex="-1"
+          id="main"
+        >
           {{ .Content }}
         </main>
       {{ end }}
