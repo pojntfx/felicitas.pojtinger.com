@@ -90,6 +90,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 
 .pf-x-u-blur {
   backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
   background: rgba(0, 0, 0, 0.8) !important;
 }
 
@@ -224,10 +225,18 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 
 .pf-l-gallery--max-350 {
   --pf-l-gallery--GridTemplateColumns--min: 350px;
+
+  @media screen and (max-width: 412px) {
+    --pf-l-gallery--GridTemplateColumns--min: calc(100vw-48px);
+  }
 }
 
 .pf-l-gallery--max-500 {
   --pf-l-gallery--GridTemplateColumns--min: 365px;
+
+  @media screen and (max-width: 412px) {
+    --pf-l-gallery--GridTemplateColumns--min: calc(100vw-48px);
+  }
 }
 
 .pf-x-u-color-light-100 {
