@@ -2,11 +2,11 @@
 
 set -e
 
-# Binaries
-if [ "$1" = "cli" ]; then
+# Go
+if [ "$1" = "go" ]; then
     # Install native dependencies
     apt update
-    apt install -y curl npm
+    apt install -y curl make npm
 
     # Install bagop
     curl -L -o /tmp/bagop "https://github.com/pojntfx/bagop/releases/latest/download/bagop.linux-$(uname -m)"
@@ -16,9 +16,7 @@ if [ "$1" = "cli" ]; then
     make depend
 
     # Build
-    CGO_ENABLED=0 bagop -j "$(nproc)" -b ps-api -x '(android/*|ios/*)' -p 'make build-cli/ps-api DST=$DST' -d out
-    CGO_ENABLED=0 bagop -j "$(nproc)" -b ps-gen-projects -x '(android/*|ios/*)' -p 'make build-cli/ps-gen-projects DST=$DST' -d out
-    CGO_ENABLED=0 bagop -j "$(nproc)" -b ps-proxy -x '(android/*|ios/*)' -p 'make build-cli/ps-proxy DST=$DST' -d out
+    CGO_ENABLED=0 bagop -j "$(nproc)" -b "$2" -x '(android/*|ios/*)' -p "make build-cli/$2 DST=\$DST" -d out
 
     exit 0
 fi
