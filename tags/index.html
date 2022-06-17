@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      
+        Tags |
+        Felicitas Pojtinger
+      
+    </title>
+
+    <link rel="icon" href="https://github.com/pojntfx.png" />
+
+    <meta name="author" content="Felicitas Pojtinger" />
+    <meta name="description" content="Felicitas Pojtinger is a software engineer focused on Go and the web." />
+    <meta
+      name="keywords"
+      content="Felicitas, Pojtinger, Felicitas Pojtinger, pojntfx, Go, Web, STFS, bofied, liwasc, Cluster Platform, Open Source, Free Software"
+    />
+    <meta
+      name="copyright"
+      content="© 2022 Felicitas Pojtinger"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../main.min.css"
+    />
+  </head>
+  <body>
+    <div class="pf-c-page pf-c-page--background">
+      <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main"
+        >Skip to content</a
+      >
+
+      
+        <header
+          class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+        >
+          <div class="pf-c-page__header__content--max-width">
+            <a
+              class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-c-page__header-brand-link--no-decoration pf-c-avatar--hover pf-u-pl-2xl pf-u-pl-sm-on-xl"
+              href="../"
+            >
+              <img
+                src="https://github.com/pojntfx.png"
+                alt="Profile picture of Felicitas Pojtinger 🏳️‍🌈 💙💛"
+                class="pf-c-avatar pf-u-mr-md pf-c-avatar--navbar"
+              />
+              <div>
+                <h2 class="pf-u-font-size-sm">Felicitas Pojtinger 🏳️‍🌈 💙💛</h2>
+                <h1
+                  class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title"
+                >
+                  Tags
+                </h1>
+              </div>
+            </a>
+
+            <div
+              class="pf-u-display-flex pf-u-align-items-center pf-u-pr-2xl pf-u-pr-0-on-xl"
+            >
+              <a
+                href="https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing"
+                target="_blank"
+                rel="noopener"
+                class="pf-c-button pf-m-plain pf-u-ml-2xl pf-u-mr-md"
+              >
+                <span class="pf-c-button__icon pf-m-start">
+                  <i class="fas fa-book" aria-hidden="true"></i> </span
+                >CV</a
+              >
+
+              <div class="pf-u-mr-md">
+                <div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="youtubestatus"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="
+          YouTube
+         follower count"
+        class="streamstatus__channel__badge"
+      />
+    </a>
+  </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the
+  YouTube
+  status.</noscript
+><script type="module">
+  const base = "\/"
+  const platform = "youtube"
+  const username = "UC0-pwQXvswpwjMVV_jdFLzg";
+
+  const streamStatus = await (
+    await fetch(`${base}api/${platform}?username=${username}`)
+  ).json();
+
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
+  
+  document.querySelector("#youtubestatus .streamstatus__channel__url").href =
+    streamStatus.channelURL;
+
+  document.querySelector("#youtubestatus .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
+
+  
+  document.querySelector("#youtubestatus .streamstatus__stream_url").href =
+    streamStatus.streamURL;
+
+  const indicator = document.querySelector("#youtubestatus .streamstatus__stream__islive");
+
+  indicator.innerText =
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
+
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+
+  document.querySelector("#youtubestatus .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
+</script>
+
+              </div>
+
+              <div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="twitchstatus"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="
+          Twitch
+         follower count"
+        class="streamstatus__channel__badge"
+      />
+    </a>
+  </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the
+  Twitch
+  status.</noscript
+><script type="module">
+  const base = "\/"
+  const platform = "twitch"
+  const username = "pojntfx";
+
+  const streamStatus = await (
+    await fetch(`${base}api/${platform}?username=${username}`)
+  ).json();
+
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
+  
+  document.querySelector("#twitchstatus .streamstatus__channel__url").href =
+    streamStatus.channelURL;
+
+  document.querySelector("#twitchstatus .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
+
+  
+  document.querySelector("#twitchstatus .streamstatus__stream_url").href =
+    streamStatus.streamURL;
+
+  const indicator = document.querySelector("#twitchstatus .streamstatus__stream__islive");
+
+  indicator.innerText =
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
+
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+
+  document.querySelector("#twitchstatus .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
+</script>
+
+            </div>
+          </div>
+        </header>
+      
+
+      
+  <main
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur"
+    tabindex="-1"
+    id="main"
+  >
+    
+
+
+    <section
+      class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-xl"
+    >
+      <div class="pf-c-page__main">
+        <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-350">
+          
+        </div>
+      </div>
+    </section>
+
+    <div class="pf-c-page__main-body pf-u-px-lg pf-u-px-0-on-xl pf-u-py-lg">
+  <div
+    class="pf-l-flex pf-m-justify-content-space-between pf-x-c-footer--max-width"
+  >
+    <div class="pf-l-flex__item">
+      <a
+        href="https://github.com/pojntfx/personal-site"
+        target="_blank"
+        rel="noopener"
+        class="pf-x-m-no-highlight--dark"
+        >© 2022 Felicitas Pojtinger</a
+      >
+    </div>
+    <div class="pf-l-flex__item">
+      <a href="../imprint" class="pf-x-m-no-highlight--dark">Imprint</a>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+    </div>
+  </body>
+</html>

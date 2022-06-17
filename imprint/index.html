@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      
+        Imprint/Impressum |
+        Felicitas Pojtinger
+      
+    </title>
+
+    <link rel="icon" href="https://github.com/pojntfx.png" />
+
+    <meta name="author" content="Felicitas Pojtinger" />
+    <meta name="description" content="Felicitas Pojtinger is a software engineer focused on Go and the web." />
+    <meta
+      name="keywords"
+      content="Felicitas, Pojtinger, Felicitas Pojtinger, pojntfx, Go, Web, STFS, bofied, liwasc, Cluster Platform, Open Source, Free Software"
+    />
+    <meta
+      name="copyright"
+      content="© 2022 Felicitas Pojtinger"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../main.min.css"
+    />
+  </head>
+  <body>
+    <div class="pf-c-page pf-c-page--background">
+      <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main"
+        >Skip to content</a
+      >
+
+      
+        <header
+          class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+        >
+          <div class="pf-c-page__header__content--max-width">
+            <a
+              class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-c-page__header-brand-link--no-decoration pf-c-avatar--hover pf-u-pl-2xl pf-u-pl-sm-on-xl"
+              href="../"
+            >
+              <img
+                src="https://github.com/pojntfx.png"
+                alt="Profile picture of Felicitas Pojtinger 🏳️‍🌈 💙💛"
+                class="pf-c-avatar pf-u-mr-md pf-c-avatar--navbar"
+              />
+              <div>
+                <h2 class="pf-u-font-size-sm">Felicitas Pojtinger 🏳️‍🌈 💙💛</h2>
+                <h1
+                  class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title"
+                >
+                  Imprint/Impressum
+                </h1>
+              </div>
+            </a>
+
+            <div
+              class="pf-u-display-flex pf-u-align-items-center pf-u-pr-2xl pf-u-pr-0-on-xl"
+            >
+              <a
+                href="https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing"
+                target="_blank"
+                rel="noopener"
+                class="pf-c-button pf-m-plain pf-u-ml-2xl pf-u-mr-md"
+              >
+                <span class="pf-c-button__icon pf-m-start">
+                  <i class="fas fa-book" aria-hidden="true"></i> </span
+                >CV</a
+              >
+
+              <div class="pf-u-mr-md">
+                <div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="youtubestatus"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="
+          YouTube
+         follower count"
+        class="streamstatus__channel__badge"
+      />
+    </a>
+  </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the
+  YouTube
+  status.</noscript
+><script type="module">
+  const base = "\/"
+  const platform = "youtube"
+  const username = "UC0-pwQXvswpwjMVV_jdFLzg";
+
+  const streamStatus = await (
+    await fetch(`${base}api/${platform}?username=${username}`)
+  ).json();
+
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
+  
+  document.querySelector("#youtubestatus .streamstatus__channel__url").href =
+    streamStatus.channelURL;
+
+  document.querySelector("#youtubestatus .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
+
+  
+  document.querySelector("#youtubestatus .streamstatus__stream_url").href =
+    streamStatus.streamURL;
+
+  const indicator = document.querySelector("#youtubestatus .streamstatus__stream__islive");
+
+  indicator.innerText =
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
+
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+
+  document.querySelector("#youtubestatus .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
+</script>
+
+              </div>
+
+              <div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="twitchstatus"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="
+          Twitch
+         follower count"
+        class="streamstatus__channel__badge"
+      />
+    </a>
+  </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the
+  Twitch
+  status.</noscript
+><script type="module">
+  const base = "\/"
+  const platform = "twitch"
+  const username = "pojntfx";
+
+  const streamStatus = await (
+    await fetch(`${base}api/${platform}?username=${username}`)
+  ).json();
+
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
+  
+  document.querySelector("#twitchstatus .streamstatus__channel__url").href =
+    streamStatus.channelURL;
+
+  document.querySelector("#twitchstatus .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
+
+  
+  document.querySelector("#twitchstatus .streamstatus__stream_url").href =
+    streamStatus.streamURL;
+
+  const indicator = document.querySelector("#twitchstatus .streamstatus__stream__islive");
+
+  indicator.innerText =
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
+
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+
+  document.querySelector("#twitchstatus .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
+</script>
+
+            </div>
+          </div>
+        </header>
+      
+
+      
+  <main
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur"
+    tabindex="-1"
+    id="main"
+  >
+    <section
+      class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-xl"
+    >
+      <div class="pf-c-page__main pf-c-content">
+        <div class="pf-c-card">
+          <div class="pf-c-card__body">
+            <h2 id="english">English</h2>
+<h3 id="data-according-to--5-tmg">Data according to § 5 TMG</h3>
+<p>Felicitas Pojtinger Personal Site Hirschkopfweg 8 72270 Baiersbronn</p>
+<h3 id="contact">Contact</h3>
+<p>Phone: 07442/50938 E-Mail: <a href="mailto:felicitas@pojtinger.com">felicitas@pojtinger.com</a></p>
+<h3 id="responsible-for-the-content-according-to--55-section-2-rstv">Responsible for the content according to § 55 Section 2 RStV</h3>
+<p>Felicitas Pojtinger Hirschkopfweg 8 72270 Baiersbronn</p>
+<h3 id="mediationdispute-resolution">Mediation/Dispute Resolution</h3>
+<p>The European Commission is providing a platform for online dispute
+resolution (OS): <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a> You can find our
+e-mail address at the top of the imprint.</p>
+<p>We are not prepared or obliged to participate in dispute resolution
+proceedings before a consumer arbitration body to participate.</p>
+<h3 id="liability-for-contents">Liability for Contents</h3>
+<p>As a service provider we are in accordance with § 7 Section 1 TMG for
+our own content on these pages according to the general laws. According
+to §§ 8 to 10 TMG we are a service provider not obliged, however, to
+monitor third party information transmitted or stored on our website, or
+to search for circumstances that indicate an illegal activity.</p>
+<p>Obligations to remove or block the use of information in accordance with
+general laws remain unaffected by this. However, any liability in this
+respect shall not become effective until the knowledge of a concrete
+violation of the law. On becoming aware of corresponding We will
+immediately remove any violations of the law.</p>
+<h3 id="liability-for-links">Liability for Links</h3>
+<p>Our website contains links to external third-party websites over whose
+content we have no control. Therefore, we cannot accept any liability
+for these external contents. The respective provider or operator of the
+linked pages is always responsible for the content of the linked pages.
+The linked pages were at the time of linking to possible legal
+violations of the law checked. Illegal contents were not recognizable at
+the time of linking.</p>
+<p>However, a permanent control of the contents of the linked pages is not
+possible without concrete indications of a Violation of rights
+unreasonable. If we become aware of any infringements of the law, we
+will delete such links.</p>
+<h3 id="copyright">Copyright</h3>
+<p>See &ldquo;Media License&rdquo; and &ldquo;Code License&rdquo;. The code of this website is
+licensed AGPL-3.0, the media is licensed CC-BY-SA-4.0.</p>
+<p>As far as the contents on this site were not created by the operator,
+the copyrights of third parties are protected. observed. In particular,
+the contents of third parties are marked as such. If you should
+nevertheless click on If you become aware of a copyright infringement,
+we ask you to inform us accordingly. On becoming known we will remove
+such contents immediately.</p>
+<h2 id="deutsch">Deutsch</h2>
+<h3 id="angaben-gemäß--5-tmg">Angaben gemäß § 5 TMG</h3>
+<p>Felicitas Pojtinger Personal Site Hirschkopfweg 8 72270 Baiersbronn</p>
+<h3 id="kontakt">Kontakt</h3>
+<p>Telefon: 07442/50938 E-Mail: <a href="mailto:felicitas@pojtinger.com">felicitas@pojtinger.com</a></p>
+<h3 id="verantwortlich-für-den-inhalt-nach--55-abs-2-rstv">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+<p>Felicitas Pojtinger Hirschkopfweg 8 72270 Baiersbronn</p>
+<h3 id="streitschlichtung">Streitschlichtung</h3>
+<p>Die Europäische Kommission stellt eine Plattform zur
+Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>
+Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+<p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
+vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+<h3 id="haftung-für-inhalte">Haftung für Inhalte</h3>
+<p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf
+diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8
+bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet,
+übermittelte oder gespeicherte fremde Informationen zu überwachen oder
+nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit
+hinweisen.</p>
+<p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
+Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
+Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der
+Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von
+entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend
+entfernen.</p>
+<h3 id="haftung-für-links">Haftung für Links</h3>
+<p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren
+Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden
+Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten
+Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten
+verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der
+Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte
+waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+<p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch
+ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
+Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend
+entfernen.</p>
+<h3 id="urheberrecht">Urheberrecht</h3>
+<p>Siehe &ldquo;Media License&rdquo; und &ldquo;Code License&rdquo;. Der Code ist AGPL-3.0, die
+Medien sind sind CC-BY-SA-4.0 lizenziert.</p>
+<p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden,
+werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte
+Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine
+Urheberrechtsverletzung aufmerksam werden, bitten wir um einen
+entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden
+wir derartige Inhalte umgehend entfernen.</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="pf-c-page__main-body pf-u-px-lg pf-u-px-0-on-xl pf-u-py-lg">
+  <div
+    class="pf-l-flex pf-m-justify-content-space-between pf-x-c-footer--max-width"
+  >
+    <div class="pf-l-flex__item">
+      <a
+        href="https://github.com/pojntfx/personal-site"
+        target="_blank"
+        rel="noopener"
+        class="pf-x-m-no-highlight--dark"
+        >© 2022 Felicitas Pojtinger</a
+      >
+    </div>
+    <div class="pf-l-flex__item">
+      <a href="../imprint" class="pf-x-m-no-highlight--dark">Imprint</a>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+    </div>
+  </body>
+</html>

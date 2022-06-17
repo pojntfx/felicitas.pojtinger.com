@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles on Felicitas Pojtinger</title>
+    <link>/articles/</link>
+    <description>Recent content in Articles on Felicitas Pojtinger</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Jan 2020 17:01:23 +0100</lastBuildDate><atom:link href="/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Cluster Platform L2 Overlay Network</title>
+      <link>/articles/ctpf-networking/</link>
+      <pubDate>Mon, 13 Jan 2020 17:01:23 +0100</pubDate>
+      
+      <guid>/articles/ctpf-networking/</guid>
+      <description>Introduction In the ongoing effort to write Cluster Platform, the lean distributed computing system, I hit a challenge: networking.
+The Cluster Platform has some really unique networking requirements. As a distributed system it has to be able to work both completely off-grid, accross globally distributed datacenters and low-power IoT devices. Ultimately, the Cluster Platform should be able to serve as a replacement for the internet, while at the same time being able to run on it.</description>
+    </item>
+    
+    <item>
+      <title>InfraCTL is Generally Available!</title>
+      <link>/articles/infractl-works/</link>
+      <pubDate>Wed, 25 Sep 2019 16:59:36 +0100</pubDate>
+      
+      <guid>/articles/infractl-works/</guid>
+      <description>After many, many hours spend on nightly development sessions, I am proud to present a first working version of InfraCTL, the supra-cloud node, overlay network and Kubernetes cluster CLI!
+ Get InfraCTl on GitHub!
+ Now, what does InfraCTL do exactly?
+[pojntfx@thinkpadx1c3 ~]$ infractl Usage: infractl [options] [command]  A CLI to manage supra-cloud SSH keys, nodes, WireGuard (OSI Layer 3)/N2N (OSI Layer 2) overlay networks and Kubernetes clusters.  Options:  -V, --version output the version number  -h, --help output usage information  Commands:  apply|a Create or update resources  get|g Get resources  delete|d Delete resources  help [cmd] display help for [cmd] The output above contains a description: As I pointed out before, InfraCTL has the goal of being the supra-cloud node, overlay network and Kubernetes cluster CLI - that means that no client-side tool other than InfraCTL should be necessary to go from zero to fully functional Kubernetes cluster.</description>
+    </item>
+    
+    <item>
+      <title>Sane Categories for Software Distribution Systems</title>
+      <link>/articles/sane-categories/</link>
+      <pubDate>Sat, 14 Sep 2019 16:57:26 +0100</pubDate>
+      
+      <guid>/articles/sane-categories/</guid>
+      <description>So I tried to set up a homelab. This has been a thing that I wanted to do for a long time now; I&amp;rsquo;ve got some older VT-d capable x86_64 laptops and desktops laying around at home gathering dust. This even includes my trusty and quite powerful former gaming PC which could serve as a useful compute node. In addition to that, my cloud computing costs have skyrocketed over the last few months, rising ~10 € per month up to nearly 40 € last month.</description>
+    </item>
+    
+    <item>
+      <title>The Product Oriented Approach</title>
+      <link>/articles/product-oriented/</link>
+      <pubDate>Wed, 06 Feb 2019 16:55:03 +0100</pubDate>
+      
+      <guid>/articles/product-oriented/</guid>
+      <description>This gives the foundation a UNIXy feel but still makes it possible to refer to it as a &amp;ldquo;platform&amp;rdquo; - thus, Standard Framework should be called Cluster Platform from now on. If we focus on the services (Forum, Chat, Code etc.) as much as before discoverability suffers greatly. The Cluster Platform should be product-oriented, which makes the following categories more appropriate both on the site and also in other sectors (naming schemes are just ideas):</description>
+    </item>
+    
+  </channel>
+</rss>

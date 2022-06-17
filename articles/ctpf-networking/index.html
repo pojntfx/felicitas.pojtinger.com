@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      
+        The Cluster Platform L2 Overlay Network |
+        Felicitas Pojtinger
+      
+    </title>
+
+    <link rel="icon" href="https://github.com/pojntfx.png" />
+
+    <meta name="author" content="Felicitas Pojtinger" />
+    <meta name="description" content="Felicitas Pojtinger is a software engineer focused on Go and the web." />
+    <meta
+      name="keywords"
+      content="Felicitas, Pojtinger, Felicitas Pojtinger, pojntfx, Go, Web, STFS, bofied, liwasc, Cluster Platform, Open Source, Free Software"
+    />
+    <meta
+      name="copyright"
+      content="© 2022 Felicitas Pojtinger"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../../main.min.css"
+    />
+  </head>
+  <body>
+    <div class="pf-c-page pf-c-page--background">
+      <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main"
+        >Skip to content</a
+      >
+
+      
+        <header
+          class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+        >
+          <div class="pf-c-page__header__content--max-width">
+            <a
+              class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-c-page__header-brand-link--no-decoration pf-c-avatar--hover pf-u-pl-2xl pf-u-pl-sm-on-xl"
+              href="../../"
+            >
+              <img
+                src="https://github.com/pojntfx.png"
+                alt="Profile picture of Felicitas Pojtinger 🏳️‍🌈 💙💛"
+                class="pf-c-avatar pf-u-mr-md pf-c-avatar--navbar"
+              />
+              <div>
+                <h2 class="pf-u-font-size-sm">Felicitas Pojtinger 🏳️‍🌈 💙💛</h2>
+                <h1
+                  class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title"
+                >
+                  The Cluster Platform L2 Overlay Network
+                </h1>
+              </div>
+            </a>
+
+            <div
+              class="pf-u-display-flex pf-u-align-items-center pf-u-pr-2xl pf-u-pr-0-on-xl"
+            >
+              <a
+                href="https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing"
+                target="_blank"
+                rel="noopener"
+                class="pf-c-button pf-m-plain pf-u-ml-2xl pf-u-mr-md"
+              >
+                <span class="pf-c-button__icon pf-m-start">
+                  <i class="fas fa-book" aria-hidden="true"></i> </span
+                >CV</a
+              >
+
+              <div class="pf-u-mr-md">
+                <div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="youtubestatus"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="
+          YouTube
+         follower count"
+        class="streamstatus__channel__badge"
+      />
+    </a>
+  </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the
+  YouTube
+  status.</noscript
+><script type="module">
+  const base = "\/"
+  const platform = "youtube"
+  const username = "UC0-pwQXvswpwjMVV_jdFLzg";
+
+  const streamStatus = await (
+    await fetch(`${base}api/${platform}?username=${username}`)
+  ).json();
+
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
+  
+  document.querySelector("#youtubestatus .streamstatus__channel__url").href =
+    streamStatus.channelURL;
+
+  document.querySelector("#youtubestatus .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
+
+  
+  document.querySelector("#youtubestatus .streamstatus__stream_url").href =
+    streamStatus.streamURL;
+
+  const indicator = document.querySelector("#youtubestatus .streamstatus__stream__islive");
+
+  indicator.innerText =
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
+
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+
+  document.querySelector("#youtubestatus .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
+</script>
+
+              </div>
+
+              <div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="twitchstatus"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="
+          Twitch
+         follower count"
+        class="streamstatus__channel__badge"
+      />
+    </a>
+  </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the
+  Twitch
+  status.</noscript
+><script type="module">
+  const base = "\/"
+  const platform = "twitch"
+  const username = "pojntfx";
+
+  const streamStatus = await (
+    await fetch(`${base}api/${platform}?username=${username}`)
+  ).json();
+
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
+  
+  document.querySelector("#twitchstatus .streamstatus__channel__url").href =
+    streamStatus.channelURL;
+
+  document.querySelector("#twitchstatus .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
+
+  
+  document.querySelector("#twitchstatus .streamstatus__stream_url").href =
+    streamStatus.streamURL;
+
+  const indicator = document.querySelector("#twitchstatus .streamstatus__stream__islive");
+
+  indicator.innerText =
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
+
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+
+  document.querySelector("#twitchstatus .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
+</script>
+
+            </div>
+          </div>
+        </header>
+      
+
+      
+  <main
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent"
+    tabindex="-1"
+    id="main"
+  >
+    <section
+      class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-lg"
+    >
+      <div class="pf-l-grid pf-m-gutter">
+        <div class="pf-l-grid__item pf-m-12-col pf-m-8-col-on-lg">
+          <div class="pf-c-card">
+            <div class="pf-c-card__header pf-u-px-0 pf-u-pt-0 pf-u-pb-sm">
+              <div class="pf-c-card__header-main pf-u-w-100">
+                <img
+                  src="../../articles/ctpf-networking/static/header_hu3d03a01dcc18bc5be0e67db3d8d209a6_2845483_1024x0_resize_q75_box.jpg"
+                  alt="&#34;Unifi 16XG switch in homelab rack&#34; by Thomas Jensen on Unsplash
+"
+                  class="pf-u-w-100 pf-u-h-100 pf-x-c-article__header"
+                />
+              </div>
+            </div>
+            <div class="pf-c-card__title">
+              <h1 class="pf-u-font-size-4xl pf-u-pb-sm">The Cluster Platform L2 Overlay Network</h1>
+              <p>Let&#39;s bring back networking simplicity!</p>
+            </div>
+            <div class="pf-c-card__body">
+              <article>
+                <header
+                  class="pf-l-flex pf-m-justify-content-space-between pf-m-space-items-sm pf-u-pb-md"
+                >
+                  <div class="pf-l-flex pf-m-space-items-sm pf-u-color-200">
+                    <span
+                      >Originally published on
+                      January 13, 2020</span
+                    >
+                    <span aria-hidden="true" class="pf-u-color-200">·</span>
+                    <span
+                      >Last updated on
+                      January 13, 2020</span
+                    >
+                  </div>
+                  <div class="pf-c-chip-group pf-u-mt-md">
+                    <div class="pf-c-chip-group__main">
+                      <ul
+                        class="pf-c-chip-group__list"
+                        role="list"
+                        aria-label="Keywords"
+                      >
+                        
+                          <li class="pf-c-chip-group__list-item">
+                            <div class="pf-c-chip">
+                              <span class="pf-c-chip__text">infra</span>
+                            </div>
+                          </li>
+                        
+                          <li class="pf-c-chip-group__list-item">
+                            <div class="pf-c-chip">
+                              <span class="pf-c-chip__text">networking</span>
+                            </div>
+                          </li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </header>
+
+                <main class="pf-c-page__main pf-c-content">
+                  <h2 id="introduction">Introduction</h2>
+<p>In the ongoing effort to write Cluster Platform, the lean distributed computing system, I hit a challenge: networking.</p>
+<p>The Cluster Platform has some really unique networking requirements. As a distributed system it has to be able to work both completely off-grid, accross globally distributed datacenters and low-power IoT devices. Ultimately, the Cluster Platform should be able to serve as a replacement for the internet, while at the same time being able to run on it.</p>
+<p>Furthermore, as it is the case with the internet itself, decentralization is necessary for both speed and security. One datacenter of a Cluster Platform cluster might be connected to another datacenter over a low-bandwidth OpenSNET link but has a 10G link internally; it would be awesome if the high internal speed could be leveraged while not breaking inter-datacenter networking, which is only possible with a decentral system.</p>
+<p>Additionally, the networking stack must be implemented as a &ldquo;cloud-native&rdquo; microservice system. This is the case, amongst many other reasons, due to the fact that datacenters must be able to be administered remotely. Off-grid parts of a Cluster Platform cluster could be lights off for multiple months; there must be no single point of failure, neither for the cluster as a collective, nor for the node as an individual.</p>
+<p>Alright, so how have I solved this problem? Let&rsquo;s take a look at <a href="https://pojntfx.github.io/gon2n/"><code>gon2n</code></a> and <a href="https://pojntfx.github.io/go-isc-dhcp/"><code>go-isc-dhcp</code></a>, two systems based on the n2n VPN and the ISC DHCP server and client!</p>
+<p>Using these two services, it is possible to create decentralized high-speed P2P OSI layer 2 overlay networks, spanning everything from multiple cloud hosts in multiple datacenters around the globe to your home network. Furthermore it is possible for a node (called &ldquo;edge&rdquo; from now on) to join many different overlay networks; for example, if you want to run a Minecraft server on one of your cloud hosts and play a game with some of your friends, you can simply add another network just for you and your peers <em>without</em> giving them access to your production CI/CD system.</p>
+<p>Within each overlay network (called &ldquo;community&rdquo; from now on), all edges talk in a peer-to-peer fashion with strong AES256 encryption. Each community can be thought of as an ethernet switch; there is full DHCP and broad/multicast support. A central &ldquo;supernode&rdquo; allows for the edges which can&rsquo;t talk P2P (if for example NAT hole punching doesn&rsquo;t work) to still communicate with the other edges; however, due to the fact that the edges can route traffic through the network like relays, such cases due rarely occur.</p>
+<h2 id="architecture">Architecture</h2>
+<p>As I&rsquo;ve lined out before, this entire system is architected in such a way that there are remote management capabilities. This is achieved by splitting each subsystem into a client-server architecture; this way, one has to only deploy the gRPC server (daemon) to the host which should have the subsystem&rsquo;s capabilities, but can manage it remotely from a management machine using the client CLIs. PWA management UIs are also planned for the future.</p>
+<h2 id="infrastructure">Infrastructure</h2>
+<p>For the following, I will use three cloud which I&rsquo;ll be administering them from my laptop. The first cloud host is the only one that technically needs to be publically reachable; it will host the supernode daemon. For the sake of simplicity, I will also deploy a DHCP server daemon and a corresponding edge daemon on it, but the latter could technically run on any edge. The other two hosts will both run an edge and a DHCP client daemon.</p>
+<h2 id="building-the-binaries">Building the Binaries</h2>
+<p>Because there is currently no CI/CD system set up, you will have to build the binaries yourself for now. But no worries; everything is written in Go, so this process should be simple enough.</p>
+<p>Let&rsquo;s start with <code>gon2n</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>% git clone https://github.com/pojntfx/gon2n.git
+</span></span><span style="display:flex;"><span>% cd gon2n
+</span></span><span style="display:flex;"><span>% go generate ./...
+</span></span><span style="display:flex;"><span>% go build -o supernoded cmd/supernoded/main.go
+</span></span><span style="display:flex;"><span>% go build -o edged cmd/edged/main.go
+</span></span><span style="display:flex;"><span>% go build -o supernodectl cmd/supernodectl/main.go
+</span></span><span style="display:flex;"><span>% go build -o edgectl cmd/edgectl/main.go
+</span></span></code></pre></div><p>Now, let&rsquo;s do the same for <code>go-isc-dhcp</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>% git clone https://github.com/pojntfx/go-isc-dhcp.git
+</span></span><span style="display:flex;"><span>% cd go-isc-dhcp
+</span></span><span style="display:flex;"><span>% go generate ./...
+</span></span><span style="display:flex;"><span>% go build -o dhcpdd cmd/dhcpdd/main.go
+</span></span><span style="display:flex;"><span>% go build -o dhclientd cmd/dhclientd/main.go
+</span></span><span style="display:flex;"><span>% go build -o dhcpdctl cmd/dhcpdctl/main.go
+</span></span><span style="display:flex;"><span>% go build -o dhclientctl cmd/dhclientctl/main.go
+</span></span></code></pre></div><h2 id="distributing-the-daemons">Distributing the Daemons</h2>
+<p>Let&rsquo;s distribute the daemons you&rsquo;ve just built. To do so, let&rsquo;s utilize <code>scp</code>; be sure to use your own hostnames:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># For the first host</span>
+</span></span><span style="display:flex;"><span>% scp gon2n/supernoded gon2n/edged go-isc-dhcp/dhcpd root@host-1:/usr/local/sbin
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Repeat the following for the remaining hosts</span>
+</span></span><span style="display:flex;"><span>% scp gon2n/edged go-isc-dhcp/dhclientd root@host-1:/usr/local/sbin
+</span></span></code></pre></div><p>That&rsquo;s it!</p>
+<h2 id="installing-the-clients">Installing the Clients</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>% sudo install gon2n/supernodectl gon2n/edgectl go-isc-dhcp/dhcpdctl go-isc-dhcp/dhclientctl /usr/local/bin
+</span></span></code></pre></div><blockquote>
+<p>Editors note: Single binaries are awesome.</p>
+</blockquote>
+<h2 id="daemon-setup-for-the-first-host">Daemon Setup for the First Host</h2>
+<p>All daemons (and clients) can be configured via either environment variables, command line flags, configuration files or a combination of the three. For this demonstration, I&rsquo;ll be using the third option; configuration files.</p>
+<p>First, let&rsquo;s save the following configuration files on the first host; be sure to use your own hostnames and open up the ports on the firewall:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># /etc/supernoded.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">supernoded</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listenHostPort</span>: <span style="color:#ae81ff">host-1:1236</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># /etc/edged.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">edged</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listenHostPort</span>: <span style="color:#ae81ff">host-1:1235</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># /etc/dhcpdd.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dhcpdd</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listenHostPort</span>: <span style="color:#ae81ff">host-1:1240</span>
+</span></span></code></pre></div><p>That&rsquo;s all the server-side setup you need; all of the rest will be done client-side.</p>
+<p>Let&rsquo;s start the daemons (on the first host):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>% supernoded -f /etc/supernoded.yaml
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># In another terminal</span>
+</span></span><span style="display:flex;"><span>% sudo edged -f /etc/edged.yaml <span style="color:#75715e"># This needs to manage TUN/TAP interfaces, so CAP_NET_ADMIN is required</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># In another terminal</span>
+</span></span><span style="display:flex;"><span>% sudo dhcpdd -f /etc/dhcpdd.yaml <span style="color:#75715e"># This needs to bind to port 67, so root priviledges are required</span>
+</span></span></code></pre></div><h2 id="daemon-setup-for-the-remaining-hosts">Daemon Setup for the Remaining Hosts</h2>
+<p>First, let&rsquo;s save the following configuration files on the remaining hosts; be sure to use your own hostnames and open up the ports on the firewall:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># /etc/edged.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">edged</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listenHostPort</span>: <span style="color:#ae81ff">host-n:1235</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># /etc/dhclientd.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dhclientd</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listenHostPort</span>: <span style="color:#ae81ff">host-n:1241</span>
+</span></span></code></pre></div><p>That&rsquo;s all the server-side setup you need; all of the rest will be done client-side.</p>
+<p>Let&rsquo;s start the daemons (on the remaining hosts):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>% sudo edged -f /etc/edged.yaml <span style="color:#75715e"># This needs to manage TUN/TAP interfaces, so CAP_NET_ADMIN is required</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># In another terminal</span>
+</span></span><span style="display:flex;"><span>% sudo dhclientd -f /etc/dhclientd.yaml <span style="color:#75715e"># This needs to manage network interfaces, so CAP_NET_ADMIN is required</span>
+</span></span></code></pre></div><h2 id="configuring-the-daemons">Configuring the Daemons</h2>
+<p>As I&rsquo;ve outlined before, almost all configuration is done with the client CLIs, so now that the clients are installed and the daemons are running, let&rsquo;s go ahead!</p>
+<p>First, create the following configuration files (be sure to use your own hostnames, unique MAC addresses and open up the ports on the firewall):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># supernode.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">supernode</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">listenPort</span>: <span style="color:#ae81ff">1234</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">managementPort</span>: <span style="color:#ae81ff">5645</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># edge-host-1.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">edge</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">allowP2P</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">allowRouting</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">communityName</span>: <span style="color:#ae81ff">mynetwork</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">disablePMTUDiscovery</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">disableMulticast</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dynamicIPMode</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">encryptionKey</span>: <span style="color:#ae81ff">mysecretkey</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">localPort</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">managementPort</span>: <span style="color:#ae81ff">5644</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">registerInterval</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">registerTTL</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">supernodeHostPort</span>: <span style="color:#ae81ff">host-1:1234</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">typeOfService</span>: <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">encryptionMethod</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deviceName</span>: <span style="color:#ae81ff">edge0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">addressMode</span>: <span style="color:#ae81ff">static</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deviceIP</span>: <span style="color:#ae81ff">192.168.1.1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deviceNetmask</span>: <span style="color:#ae81ff">255.255.255.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deviceMACAddress</span>: <span style="color:#ae81ff">DE:AD:BE:EF:01:10</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">MTU</span>: <span style="color:#ae81ff">1500</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># edge-host-n.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">edge</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">allowP2P</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">allowRouting</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">communityName</span>: <span style="color:#ae81ff">mynetwork</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">disablePMTUDiscovery</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">disableMulticast</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dynamicIPMode</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">encryptionKey</span>: <span style="color:#ae81ff">mysecretkey</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">localPort</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">managementPort</span>: <span style="color:#ae81ff">5645</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">registerInterval</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">registerTTL</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">supernodeHostPort</span>: <span style="color:#ae81ff">host-1:1234</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">typeOfService</span>: <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">encryptionMethod</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deviceName</span>: <span style="color:#ae81ff">edge0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">addressMode</span>: <span style="color:#ae81ff">dhcp</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deviceIP</span>: <span style="color:#ae81ff">0.0.0.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deviceNetmask</span>: <span style="color:#ae81ff">255.255.255.0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deviceMACAddress</span>: <span style="color:#ae81ff">DE:AD:BE:EF:01:11</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">MTU</span>: <span style="color:#ae81ff">1500</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># dhcpd.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dhcpd</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">device</span>: <span style="color:#ae81ff">edge0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">subnets</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">netmask</span>: <span style="color:#ae81ff">255.255.255.0</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">network</span>: <span style="color:#ae81ff">192.168.1.0</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">range</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">start</span>: <span style="color:#ae81ff">192.168.1.10</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">end</span>: <span style="color:#ae81ff">192.168.1.100</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># dhclient.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">dhclient</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">device</span>: <span style="color:#ae81ff">edge0</span>
+</span></span></code></pre></div><p>Pretty simple, right? These configuration files can be thought of as &ldquo;Kubernetes objects&rdquo;; in the next step we&rsquo;ll <code>apply</code> them:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span><span style="color:#75715e"># For the first host</span>
+</span></span><span style="display:flex;"><span>% supernodectl -s host-1:1236 -f supernode.yaml
+</span></span><span style="display:flex;"><span>% edgectlctl -s host-1:1235 -f edge-host-1.yaml
+</span></span><span style="display:flex;"><span>% dhcpdctl -s host-1:1240 -f dhcpd.yaml
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Repeat the following for the remaining hosts</span>
+</span></span><span style="display:flex;"><span>% edgectlctl -s host-n:1235 -f edge-host-n.yaml
+</span></span><span style="display:flex;"><span>% dhclientctl -s host-n:1241 -f dhclient.yaml
+</span></span></code></pre></div><p>You may now <code>get</code> and <code>delete</code> them as well, please see the <code>gon2n</code> and <code>go-isc-dhcp</code> documentation for usage instructions or just try it out:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>% supernodectl get -s host-1:1236
+</span></span><span style="display:flex;"><span>ID                                      LISTEN PORT
+</span></span><span style="display:flex;"><span>915adb75-73f0-41e3-81ae-caa238c329ef    <span style="color:#ae81ff">1234</span>
+</span></span></code></pre></div><p>That&rsquo;s it! You&rsquo;ve got a fully functional peer-to-peer OSI layer 2 overlay network with speed of up to 500 megabytes/second (or more; this is limited only by the encryption speed).</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Both the <code>gon2n</code> and <code>go-isc-dhcp</code> projects will serve as a fundamental part of the future Cluster Platform. But even right now they are useful, and if you want a really fast layer 2 VPN, feel free to use these components; they are free/libre and open source software!</p>
+
+                </main>
+              </article>
+            </div>
+            <div class="pf-c-card__footer">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="pojntfx/personal-site"
+                data-repo-id="MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE="
+                data-category="Announcements"
+                data-category-id="DIC_kwDODa0h2c4CAeR2"
+                data-mapping="pathname"
+                data-reactions-enabled="1"
+                data-emit-metadata="1"
+                data-theme="light"
+                data-lang="en"
+                crossorigin="anonymous"
+                async
+              ></script>
+              <noscript
+                >Please enable JavaScript to view the comments powered by
+                giscus.</noscript
+              >
+            </div>
+          </div>
+        </div>
+        <div class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg">
+          <div class="pf-c-card" id="twitterfeed">
+  <div
+    class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-py-xl"
+  >
+    <span>Latest tweets</span>
+
+    <a
+      target="_blank"
+      class="twitterfeed__user__url pf-l-flex pf-m-align-items-center"
+    >
+      <img
+        src="https://img.shields.io/twitter/follow/pojntfx?label=%40pojntfx&style=social"
+        alt="Twitter follower count"
+      />
+    </a>
+  </div>
+  <div class="pf-c-card__body twitterfeed">
+    <ul
+      class="twitterfeed__tweets pf-l-flex pf-m-column pf-m-space-items-sm"
+    ></ul>
+
+    <a
+      target="_blank"
+      class="twitterfeed__user__url pf-c-button pf-m-link pf-u-mt-lg"
+    >
+      <span class="pf-c-button__icon pf-m-start">
+        <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
+      >All tweets</a
+    >
+  </div>
+</div>
+
+<noscript>Please enable JavaScript to view the Twitter feed.</noscript
+><script type="module">
+  const base = "\/";
+  const username = "pojntfx";
+
+  const twitterFeed = await(
+    await fetch(`${base}api/twitter?username=${username}`)
+  ).json();
+
+  
+  document.querySelectorAll("#twitterfeed .twitterfeed__user__url").forEach(el => {
+    el.href = twitterFeed.userURL;
+  })
+
+  
+  twitterFeed.tweets.map((tweet) => {
+    const root = document.createElement("li");
+    root.classList.add("pf-c-card", "pf-m-plain", "pf-m-hoverable-raised")
+
+    const link = document.createElement("a");
+    link.target = "_blank";
+    link.href = tweet.url;
+    link.classList.add("pf-u-color-100", "pf-l-flex", "pf-u-flex-direction-column", "pf-m-space-items-sm", "pf-m-align-items-flex-start", "pf-c-card__body", "pf-u-p-md", "pf-x-m-no-decoration")
+
+    const header = document.createElement("div")
+    header.classList.add("pf-u-mb-sm", "pf-l-flex", "pf-m-align-items-center")
+
+    const userPic = document.createElement("img");
+    userPic.src = twitterFeed.userProfilePictureURL;
+    userPic.alt = `Profile picture of ${twitterFeed.userDisplayName}`;
+    userPic.classList.add("pf-c-avatar", "pf-u-mr-sm")
+    header.appendChild(userPic);
+
+    const usernames = document.createElement("div")
+    usernames.classList.add("pf-l-flex", "pf-m-justify-content-center", "pf-m-align-items-start", "pf-m-space-items-sm", "pf-u-flex-direction-column")
+
+    const userDisplayName = document.createElement("span");
+    userDisplayName.innerText = twitterFeed.userDisplayName;
+    usernames.appendChild(userDisplayName);
+
+    const userName = document.createElement("span");
+    userName.innerText = " @"+twitterFeed.username;
+    userName.classList.add("pf-u-color-200")
+    usernames.appendChild(userName);
+
+    header.appendChild(usernames);
+
+    link.appendChild(header)
+
+    const content = document.createElement("div")
+    content.classList.add("pf-u-w-100")
+
+    const tweetTimestamp = document.createElement("span");
+    tweetTimestamp.innerText = new Date(tweet.timestamp).toLocaleString();
+    tweetTimestamp.classList.add("pf-u-color-200")
+    content.appendChild(tweetTimestamp);
+
+    const tweetBody = document.createElement("div");
+    tweetBody.innerHTML = tweet.body;
+    tweetBody.classList.add("pf-u-py-sm")
+
+    content.appendChild(tweetBody);
+
+    if (tweet.images.length > 0) {
+      const images = document.createElement("div");
+      images.classList.add("pf-l-gallery", "pf-m-gutter", "pf-u-my-sm")
+
+      tweet.images.forEach((image) => {
+        const el = document.createElement("div");
+        el.classList.add("pf-l-gallery__item")
+
+        const attachment = document.createElement("img");
+        attachment.src = image.url;
+        attachment.alt = image.altText;
+        attachment.classList.add("pf-u-w-100")
+
+        el.appendChild(attachment);
+
+        images.appendChild(el);
+      });
+
+      content.appendChild(images);
+    }
+
+
+    const statistics = document.createElement("div");
+    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200")
+
+    const comments = document.createElement("span");
+    comments.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const commentIcon = document.createElement("i");
+    commentIcon.classList.add("fas", "fa-comments")
+    commentIcon.ariaLabel = "Comments"
+
+    const commentCount = document.createElement("span");
+    commentCount.textContent = tweet.commentCount;
+
+    comments.append(commentIcon)
+    comments.append(commentCount)
+
+    statistics.appendChild(comments);
+
+    const retweets = document.createElement("span");
+    retweets.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const retweetIcon = document.createElement("i");
+    retweetIcon.classList.add("fas", "fa-retweet")
+    retweetIcon.ariaLabel = "Retweets"
+
+    const retweetCount = document.createElement("span");
+    retweetCount.textContent = tweet.retweetCount;
+
+    retweets.append(retweetIcon)
+    retweets.append(retweetCount)
+
+    statistics.appendChild(retweets);
+
+    const likes = document.createElement("span");
+    likes.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const likeIcon = document.createElement("i");
+    likeIcon.classList.add("fas", "fa-heart")
+    likeIcon.ariaLabel = "Likes"
+
+    const likeCount = document.createElement("span");
+    likeCount.textContent = tweet.likeCount;
+
+    likes.append(likeIcon)
+    likes.append(likeCount)
+
+    statistics.appendChild(likes);
+
+    content.appendChild(statistics);
+
+    link.append(content)
+
+    root.appendChild(link);
+
+    document.querySelector("#twitterfeed .twitterfeed__tweets").appendChild(root);
+  });
+</script>
+
+
+          
+          
+            <div class="pf-c-card pf-u-mt-md">
+              <div class="pf-c-card__title">See also</div>
+              <div class="pf-c-card__body">
+                <div class="pf-l-gallery pf-m-gutter">
+                  
+                    <div class="pf-l-gallery__item">
+                      <a
+                        href="../../articles/infractl-works/"
+                        class="pf-u-color-100 pf-x-m-no-decoration"
+                      >
+                        <div
+                          class="pf-c-card pf-m-compact pf-m-hoverable-raised pf-u-h-100"
+                        >
+                          <div class="pf-c-card__title">InfraCTL is Generally Available!</div>
+                          <div class="pf-c-card__body pf-u-pb-sm">
+                            A supra-cloud CLI for nodes, layer 2/layer 3 overlay networks and Kubernetes clusters
+                          </div>
+                          <div class="pf-c-card__footer pf-u-color-200">
+                            September 25, 2019
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  
+                    <div class="pf-l-gallery__item">
+                      <a
+                        href="../../articles/product-oriented/"
+                        class="pf-u-color-100 pf-x-m-no-decoration"
+                      >
+                        <div
+                          class="pf-c-card pf-m-compact pf-m-hoverable-raised pf-u-h-100"
+                        >
+                          <div class="pf-c-card__title">The Product Oriented Approach</div>
+                          <div class="pf-c-card__body pf-u-pb-sm">
+                            Yet another way of structuring one&#39;s projects.
+                          </div>
+                          <div class="pf-c-card__footer pf-u-color-200">
+                            February 6, 2019
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  
+                </div>
+
+                <a href="../../articles" class="pf-c-button pf-m-link pf-u-mt-lg">
+                  <span class="pf-c-button__icon pf-m-start">
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
+                  >All articles</a
+                >
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <div class="pf-c-page__main-body pf-u-px-lg pf-u-px-0-on-xl pf-u-py-lg">
+  <div
+    class="pf-l-flex pf-m-justify-content-space-between pf-x-c-footer--max-width"
+  >
+    <div class="pf-l-flex__item">
+      <a
+        href="https://github.com/pojntfx/personal-site"
+        target="_blank"
+        rel="noopener"
+        class="pf-x-m-no-highlight--dark"
+        >© 2022 Felicitas Pojtinger</a
+      >
+    </div>
+    <div class="pf-l-flex__item">
+      <a href="../../imprint" class="pf-x-m-no-highlight--dark">Imprint</a>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+    </div>
+  </body>
+</html>

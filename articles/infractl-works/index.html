@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      
+        InfraCTL is Generally Available! |
+        Felicitas Pojtinger
+      
+    </title>
+
+    <link rel="icon" href="https://github.com/pojntfx.png" />
+
+    <meta name="author" content="Felicitas Pojtinger" />
+    <meta name="description" content="Felicitas Pojtinger is a software engineer focused on Go and the web." />
+    <meta
+      name="keywords"
+      content="Felicitas, Pojtinger, Felicitas Pojtinger, pojntfx, Go, Web, STFS, bofied, liwasc, Cluster Platform, Open Source, Free Software"
+    />
+    <meta
+      name="copyright"
+      content="© 2022 Felicitas Pojtinger"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../../main.min.css"
+    />
+  </head>
+  <body>
+    <div class="pf-c-page pf-c-page--background">
+      <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main"
+        >Skip to content</a
+      >
+
+      
+        <header
+          class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+        >
+          <div class="pf-c-page__header__content--max-width">
+            <a
+              class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-c-page__header-brand-link--no-decoration pf-c-avatar--hover pf-u-pl-2xl pf-u-pl-sm-on-xl"
+              href="../../"
+            >
+              <img
+                src="https://github.com/pojntfx.png"
+                alt="Profile picture of Felicitas Pojtinger 🏳️‍🌈 💙💛"
+                class="pf-c-avatar pf-u-mr-md pf-c-avatar--navbar"
+              />
+              <div>
+                <h2 class="pf-u-font-size-sm">Felicitas Pojtinger 🏳️‍🌈 💙💛</h2>
+                <h1
+                  class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title"
+                >
+                  InfraCTL is Generally Available!
+                </h1>
+              </div>
+            </a>
+
+            <div
+              class="pf-u-display-flex pf-u-align-items-center pf-u-pr-2xl pf-u-pr-0-on-xl"
+            >
+              <a
+                href="https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing"
+                target="_blank"
+                rel="noopener"
+                class="pf-c-button pf-m-plain pf-u-ml-2xl pf-u-mr-md"
+              >
+                <span class="pf-c-button__icon pf-m-start">
+                  <i class="fas fa-book" aria-hidden="true"></i> </span
+                >CV</a
+              >
+
+              <div class="pf-u-mr-md">
+                <div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="youtubestatus"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="
+          YouTube
+         follower count"
+        class="streamstatus__channel__badge"
+      />
+    </a>
+  </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the
+  YouTube
+  status.</noscript
+><script type="module">
+  const base = "\/"
+  const platform = "youtube"
+  const username = "UC0-pwQXvswpwjMVV_jdFLzg";
+
+  const streamStatus = await (
+    await fetch(`${base}api/${platform}?username=${username}`)
+  ).json();
+
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
+  
+  document.querySelector("#youtubestatus .streamstatus__channel__url").href =
+    streamStatus.channelURL;
+
+  document.querySelector("#youtubestatus .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
+
+  
+  document.querySelector("#youtubestatus .streamstatus__stream_url").href =
+    streamStatus.streamURL;
+
+  const indicator = document.querySelector("#youtubestatus .streamstatus__stream__islive");
+
+  indicator.innerText =
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
+
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+
+  document.querySelector("#youtubestatus .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
+</script>
+
+              </div>
+
+              <div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="twitchstatus"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="
+          Twitch
+         follower count"
+        class="streamstatus__channel__badge"
+      />
+    </a>
+  </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the
+  Twitch
+  status.</noscript
+><script type="module">
+  const base = "\/"
+  const platform = "twitch"
+  const username = "pojntfx";
+
+  const streamStatus = await (
+    await fetch(`${base}api/${platform}?username=${username}`)
+  ).json();
+
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
+  
+  document.querySelector("#twitchstatus .streamstatus__channel__url").href =
+    streamStatus.channelURL;
+
+  document.querySelector("#twitchstatus .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
+
+  
+  document.querySelector("#twitchstatus .streamstatus__stream_url").href =
+    streamStatus.streamURL;
+
+  const indicator = document.querySelector("#twitchstatus .streamstatus__stream__islive");
+
+  indicator.innerText =
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
+
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+
+  document.querySelector("#twitchstatus .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
+</script>
+
+            </div>
+          </div>
+        </header>
+      
+
+      
+  <main
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent"
+    tabindex="-1"
+    id="main"
+  >
+    <section
+      class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-lg"
+    >
+      <div class="pf-l-grid pf-m-gutter">
+        <div class="pf-l-grid__item pf-m-12-col pf-m-8-col-on-lg">
+          <div class="pf-c-card">
+            <div class="pf-c-card__header pf-u-px-0 pf-u-pt-0 pf-u-pb-sm">
+              <div class="pf-c-card__header-main pf-u-w-100">
+                <img
+                  src="../../articles/infractl-works/static/header_hu3d03a01dcc18bc5be0e67db3d8d209a6_2866145_1024x0_resize_q75_box.jpg"
+                  alt="&#34;In the line of fire&#34; by Christopher Burns on Unsplash
+"
+                  class="pf-u-w-100 pf-u-h-100 pf-x-c-article__header"
+                />
+              </div>
+            </div>
+            <div class="pf-c-card__title">
+              <h1 class="pf-u-font-size-4xl pf-u-pb-sm">InfraCTL is Generally Available!</h1>
+              <p>A supra-cloud CLI for nodes, layer 2/layer 3 overlay networks and Kubernetes clusters</p>
+            </div>
+            <div class="pf-c-card__body">
+              <article>
+                <header
+                  class="pf-l-flex pf-m-justify-content-space-between pf-m-space-items-sm pf-u-pb-md"
+                >
+                  <div class="pf-l-flex pf-m-space-items-sm pf-u-color-200">
+                    <span
+                      >Originally published on
+                      September 25, 2019</span
+                    >
+                    <span aria-hidden="true" class="pf-u-color-200">·</span>
+                    <span
+                      >Last updated on
+                      September 25, 2019</span
+                    >
+                  </div>
+                  <div class="pf-c-chip-group pf-u-mt-md">
+                    <div class="pf-c-chip-group__main">
+                      <ul
+                        class="pf-c-chip-group__list"
+                        role="list"
+                        aria-label="Keywords"
+                      >
+                        
+                          <li class="pf-c-chip-group__list-item">
+                            <div class="pf-c-chip">
+                              <span class="pf-c-chip__text">infra</span>
+                            </div>
+                          </li>
+                        
+                          <li class="pf-c-chip-group__list-item">
+                            <div class="pf-c-chip">
+                              <span class="pf-c-chip__text">devops</span>
+                            </div>
+                          </li>
+                        
+                          <li class="pf-c-chip-group__list-item">
+                            <div class="pf-c-chip">
+                              <span class="pf-c-chip__text">multi-cloud</span>
+                            </div>
+                          </li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </header>
+
+                <main class="pf-c-page__main pf-c-content">
+                  <p>After many, many hours spend on nightly development sessions, I am proud to present a first working version of InfraCTL, the supra-cloud node, overlay network and Kubernetes cluster CLI!</p>
+<blockquote>
+<p>Get <a href="https://pojntfx.github.io/infractl/">InfraCTl on GitHub</a>!</p>
+</blockquote>
+<p>Now, what does InfraCTL do exactly?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl
+</span></span><span style="display:flex;"><span>Usage: infractl <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>command<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>A CLI to manage supra-cloud SSH keys, nodes, WireGuard <span style="color:#f92672">(</span>OSI Layer 3<span style="color:#f92672">)</span>/N2N <span style="color:#f92672">(</span>OSI Layer 2<span style="color:#f92672">)</span> overlay networks and Kubernetes clusters.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Options:
+</span></span><span style="display:flex;"><span>  -V, --version  output the version number
+</span></span><span style="display:flex;"><span>  -h, --help     output usage information
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Commands:
+</span></span><span style="display:flex;"><span>  apply|a        Create or update resources
+</span></span><span style="display:flex;"><span>  get|g          Get resources
+</span></span><span style="display:flex;"><span>  delete|d       Delete resources
+</span></span><span style="display:flex;"><span>  help <span style="color:#f92672">[</span>cmd<span style="color:#f92672">]</span>     display help <span style="color:#66d9ef">for</span> <span style="color:#f92672">[</span>cmd<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>The output above contains a description: As I pointed out before, InfraCTL has the goal of being the supra-cloud node, overlay network and Kubernetes cluster CLI - that means that no client-side tool other than InfraCTL should be necessary to go from zero to fully functional Kubernetes cluster.</p>
+<p>But first, the terminology:</p>
+<ul>
+<li><code>Node</code>: A node is either a virtual private server/VPS or a bare-metal host.</li>
+<li><code>Private Network Cluster</code>: A umbrella term for the peer-to-peer VPNs used which create overlay networks.</li>
+<li><code>Workload Cluster</code>: A umbrella term for the Kubernetes cluster; maybe it will support more distros than <code>k3s</code> one day or even another orchestrator.</li>
+</ul>
+<p>Let&rsquo;s look at the <code>apply</code> sub-commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply
+</span></span><span style="display:flex;"><span>Usage: infractl-apply <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>command<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Options:
+</span></span><span style="display:flex;"><span>  -h, --help                                    output usage information
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Commands:
+</span></span><span style="display:flex;"><span>  contexts|context                              Create or update context<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  keys|key                                      Create or update key<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  nodes|node                                    Create or update node<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  privatenetworkclusters|privatenetworkcluster  Create or update private network cluster<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  workloadclusters|workloadcluster              Create or update workload cluster<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  help <span style="color:#f92672">[</span>cmd<span style="color:#f92672">]</span>                                    display help <span style="color:#66d9ef">for</span> <span style="color:#f92672">[</span>cmd<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>As you can see, InfraCTL is quite similar to <code>kubectl</code> - there are simple, declarative models which you can <code>apply</code>, <code>get</code> and <code>delete</code>. Let&rsquo;s go over these models one by one.</p>
+<h2 id="manage-nodes">Manage Nodes</h2>
+<p>As you can probably think, because InfraCTL connects to Hetzner Cloud, at first a context needs to be set up containing the Hetzner Cloud credentials. If you already have some servers set up, feel free to skip the following steps; everything that uses ID prefixes (like <code>H-</code>) is bound to a particular provider. As of today, only Hetzner Cloud is supported, but InfraCTL has been developed in such a way that adding more providers is not much work, so in the future, more providers - such as the Cluster Platform - can be added easily.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply context
+</span></span><span style="display:flex;"><span>Usage: infractl-apply-contexts <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Options:
+</span></span><span style="display:flex;"><span>  -h, --hetzner-endpoint &lt;endpoint&gt;  Hetzner<span style="color:#e6db74">&#39;s endpoint (i.e. https://api.hetzner.cloud/v1)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  -H, --hetzner-token &lt;token&gt;        Hetzner&#39;</span>s token <span style="color:#f92672">(</span>i.e. jEheVytlAoFl7F8MqUQ7jAo2hOXASztX<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -h, --help                         output usage information
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply context -h https://api.hetzner.cloud/v1 -H jEheVytlAoFl7F8MqUQ7jAo2hOXASztX
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span></code></pre></div><p>Once you&rsquo;ve set up the context, you can upload your public SSH key:</p>
+<blockquote>
+<p>Don&rsquo;t forget to specify &ldquo;H-&rdquo;!</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply key
+</span></span><span style="display:flex;"><span>Usage: infractl-apply-keys <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> &lt;id|<span style="color:#e6db74">&#34;H-&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Options:
+</span></span><span style="display:flex;"><span>  -n, --key-name &lt;name&gt;  Key<span style="color:#e6db74">&#39;s name (i.e. user@ip-1)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  -f, --key-file [path]  Key&#39;</span>s path <span style="color:#f92672">(</span>i.e. ~/.ssh/id_rsa.pub<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>cannot be updated<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -h, --help             output usage information
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply key -n pojntfx@thinkpadx1c3.pojtinger.space -f ~/.ssh/id_rsa.pub H-
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span></code></pre></div><p>Now, let&rsquo;s create a node. But first, we need to take a look at the location, type and OS we want to use! The <code>infractl get</code> commands are useful for that.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get
+</span></span><span style="display:flex;"><span>Usage: infractl-get <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>command<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Options:
+</span></span><span style="display:flex;"><span>  -h, --help                                              output usage information
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Commands:
+</span></span><span style="display:flex;"><span>  keys|key                                                Get key<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  locations|location                                      Get location<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  types|type                                              Get types<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  oses|os                                                 Get OS<span style="color:#f92672">(</span>es<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  nodes|node                                              Get node<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  privatenetworkclustertokens|privatenetworkclustertoken  Get private network cluster token
+</span></span><span style="display:flex;"><span>  privatenetworkclusternodes|privatenetworkclusternode    Get private network cluster nodes<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  workloadclustertokens|workloadclustertoken              Get workload cluster token
+</span></span><span style="display:flex;"><span>  workloadclusterconfigs|workloadclusterconfig            Get workload cluster config
+</span></span><span style="display:flex;"><span>  help <span style="color:#f92672">[</span>cmd<span style="color:#f92672">]</span>                                              display help <span style="color:#66d9ef">for</span> <span style="color:#f92672">[</span>cmd<span style="color:#f92672">]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get location
+</span></span><span style="display:flex;"><span>| ID  | NAME | LATITUDE  | LONGITUDE |
+</span></span><span style="display:flex;"><span>| --- | ---- | --------- | --------- |
+</span></span><span style="display:flex;"><span>| H-1 | fsn1 | 50.47612  | 12.370071 |
+</span></span><span style="display:flex;"><span>| H-2 | nbg1 | 49.452102 | 11.076665 |
+</span></span><span style="display:flex;"><span>| H-3 | hel1 | 60.169855 | 24.938379 |
+</span></span></code></pre></div><p>You can get more information on a location as well as most other models by specifying an ID:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get location H-3
+</span></span><span style="display:flex;"><span>id: H-3
+</span></span><span style="display:flex;"><span>name: hel1
+</span></span><span style="display:flex;"><span>latitude: 60.169855
+</span></span><span style="display:flex;"><span>longitude: 24.938379
+</span></span><span style="display:flex;"><span>description: Helsinki DC Park 1, Helsinki, FI
+</span></span></code></pre></div><p>Well, let&rsquo;s use the Helsinki datacenter, which has got the ID <code>H-3</code>. Next, get a list of all types:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get type
+</span></span><span style="display:flex;"><span>| ID   | NAME  | HOURLY-PRICE | MONTHLY-PRICE |
+</span></span><span style="display:flex;"><span>| ---- | ----- | ------------ | ------------- |
+</span></span><span style="display:flex;"><span>| H-1  | cx11  | 0.0048 €     | 2.9631 €      |
+</span></span><span style="display:flex;"><span>| H-3  | cx21  | 0.0095 €     | 5.831 €       |
+</span></span><span style="display:flex;"><span>| H-5  | cx31  | 0.0167 €     | 10.591 €      |
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span></code></pre></div><p>As you can see, multiple types with varying prices are available. The cheapest one has the following specs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get type H-1
+</span></span><span style="display:flex;"><span>id: H-1
+</span></span><span style="display:flex;"><span>name: cx11
+</span></span><span style="display:flex;"><span>prices:
+</span></span><span style="display:flex;"><span>  hourly: 0.0048 €
+</span></span><span style="display:flex;"><span>  monthly: 2.9631 €
+</span></span><span style="display:flex;"><span>description: CX11
+</span></span><span style="display:flex;"><span>cores: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>memory: <span style="color:#ae81ff">2</span> GB
+</span></span><span style="display:flex;"><span>disk: <span style="color:#ae81ff">20</span> GB
+</span></span></code></pre></div><p>This is perfect for our cluster! We are going to use the <code>H-1</code> type. Now to the last parameter: the OS. There are multiple OSes available to choose from:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get os
+</span></span><span style="display:flex;"><span>| ID        | NAME         |
+</span></span><span style="display:flex;"><span>| --------- | ------------ |
+</span></span><span style="display:flex;"><span>| H-1       | ubuntu-16.04 |
+</span></span><span style="display:flex;"><span>| H-2       | debian-9     |
+</span></span><span style="display:flex;"><span>| H-3       | centos-7     |
+</span></span><span style="display:flex;"><span>| H-168855  | ubuntu-18.04 |
+</span></span><span style="display:flex;"><span>| H-5594052 | fedora-30    |
+</span></span><span style="display:flex;"><span>| H-5924233 | debian-10    |
+</span></span></code></pre></div><p>InfraCTL currently supports Ubuntu 18.04 and CentOS 7; in case you are using something like a minimal <code>busybox</code>-based distro, such a system only works as a compute node and might have networking or storage problems. We are going to use Ubuntu 18.04 in this case, so the ID <code>H-168855</code> is the one we can use.</p>
+<blockquote>
+<p>The restriction on these OSes is due to the reliance on some RPM/DEB packages. While all base components (private network cluster and workload cluster) are universal ELF binaries, things like the storage cluster are not.</p>
+</blockquote>
+<p>Before we can get going, let&rsquo;s take a look at the SSH key we uploaded before and note down it&rsquo;s ID:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get key
+</span></span><span style="display:flex;"><span>| ID        | NAME                                 | FINGERPRINT                                     |
+</span></span><span style="display:flex;"><span>| --------- | ------------------------------------ | ----------------------------------------------- |
+</span></span><span style="display:flex;"><span>| H-1040850 | pojntfx@thinkpadx1c3.pojtinger.space | 33:42:a8:d5:d1:69:63:84:56:4b:e0:92:45:d6:5d:e0 |
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span></code></pre></div><p>In my case, that is <code>H-1040850</code>.</p>
+<p>Now that we&rsquo;ve gathered all information, we can continue with the node creation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply node
+</span></span><span style="display:flex;"><span>Usage: infractl-apply-nodes <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>id<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Options:
+</span></span><span style="display:flex;"><span>  -n, --node-name &lt;name&gt;    Node<span style="color:#e6db74">&#39;s name (i.e. node-1)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  -k, --node-key [id]       Node&#39;</span>s key <span style="color:#f92672">(</span>cannot be updated<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -l, --node-location <span style="color:#f92672">[</span>id<span style="color:#f92672">]</span>  Node<span style="color:#e6db74">&#39;s location (cannot be updated)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  -t, --node-type [id]      Node&#39;</span>s type <span style="color:#f92672">(</span>cannot be updated<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -o, --node-os <span style="color:#f92672">[</span>id<span style="color:#f92672">]</span>        Node<span style="color:#960050;background-color:#1e0010">&#39;</span>s OS <span style="color:#f92672">(</span>cannot be updated<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -h, --help                output usage information
+</span></span></code></pre></div><p>Specify the parameters:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply node -n node-1 -k H-1040850 -l H-3 -t H-1 -o H-168855
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1569333071691</span> <span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> Successfully applied node:
+</span></span><span style="display:flex;"><span>id: H-3339515
+</span></span><span style="display:flex;"><span>name: node-1
+</span></span><span style="display:flex;"><span>ips:
+</span></span><span style="display:flex;"><span>  public: 95.216.215.197
+</span></span><span style="display:flex;"><span>location: H-3
+</span></span><span style="display:flex;"><span>type: H-1
+</span></span><span style="display:flex;"><span>os: H-168855
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...................................................................................... pojntfx@thinkpadx1c3.pojtinger.space
+</span></span></code></pre></div><p>And there we go, you&rsquo;ve created your first node! Let&rsquo;s create two more:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply node -n node-2 -k H-1040850 -l H-3 -t H-1 -o H-168855
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply node -n node-3 -k H-1040850 -l H-3 -t H-1 -o H-168855
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get node
+</span></span><span style="display:flex;"><span>| ID        | NAME   | PUBLIC-IP      | LOCATION | TYPE | OS        |
+</span></span><span style="display:flex;"><span>| --------- | ------ | -------------- | -------- | ---- | --------- |
+</span></span><span style="display:flex;"><span>| H-3339515 | node-1 | 95.216.215.197 | H-3      | H-1  | H-168855 |
+</span></span><span style="display:flex;"><span>| H-3339517 | node-2 | 95.217.15.29   | H-3      | H-1  | H-168855 |
+</span></span><span style="display:flex;"><span>| H-3339518 | node-3 | 95.217.15.31   | H-3      | H-1  | H-168855 |
+</span></span></code></pre></div><p>Those should be all nodes for the cluster. Note the <code>PUBLIC-IP</code> column, which shows the IP addresses of the nodes we&rsquo;ll use in the following.</p>
+<blockquote>
+<p>If you already have your own servers and you decided to skip the steps above, continue here!</p>
+</blockquote>
+<p>Before we can access the nodes, we first have to start the SSH agent so that InfraCTL can securely access your SSH private key in memory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ eval <span style="color:#66d9ef">$(</span>ssh-agent<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>Agent pid <span style="color:#ae81ff">27281</span>
+</span></span></code></pre></div><p>Now we need to add the corresponding private SSH key of the public SSH key you used above to the agent; you might have to set up a passphrase:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ ssh-add ~/.ssh/id_rsa
+</span></span><span style="display:flex;"><span>Enter passphrase <span style="color:#66d9ef">for</span> /home/pojntfx/.ssh/id_rsa:
+</span></span><span style="display:flex;"><span>Identity added: /home/pojntfx/.ssh/id_rsa <span style="color:#f92672">(</span>pojntfx@thinkpadx1c3.pojtinger.space<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>And there you go, you can now login to the nodes with <code>root@${IP}</code>!</p>
+<h2 id="manage-private-network-clusters-pncs">Manage Private Network Clusters (PNCs)</h2>
+<p>There are two types of private network clusters, or PNCs for short, available. We are going to deploy both clusters here on all of the nodes; in the process of doing so, you&rsquo;ll see how the <code>private-ip/public-ip</code> syntax works and why it exists. I also recommend you do this; it&rsquo;s another layer of security and comfort if you use both PNCs.</p>
+<h3 id="type-2-n2n">Type 2 (N2N)</h3>
+<blockquote>
+<p>This PNC is based on the <a href="https://github.com/ntop/n2n">N2N VPN</a>.</p>
+</blockquote>
+<p>So, let&rsquo;s take a look at how to deploy the first PNC:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply privatenetworkcluster
+</span></span><span style="display:flex;"><span>Usage: infractl-apply-privatenetworkclusters <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> &lt;user@manager-node-ip|user@manager-node-public-ip/manager-node-private-ip|manager-node-ip&gt; <span style="color:#f92672">[</span>user@worker-node-ip|user@worker-node-public-ip/worker-node-private-ip<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>otherWorkerNodes...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span><span style="color:#66d9ef">$(</span>whoami<span style="color:#66d9ef">)</span>@<span style="color:#66d9ef">$(</span>hostname<span style="color:#66d9ef">)</span>|<span style="color:#66d9ef">$(</span>whoami<span style="color:#66d9ef">)</span>@<span style="color:#66d9ef">$(</span>hostname<span style="color:#66d9ef">)</span>/node-private-ip<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Options:
+</span></span><span style="display:flex;"><span>  -t, --private-network-cluster-type <span style="color:#f92672">[</span>2|3<span style="color:#f92672">]</span>  Private network clusters<span style="color:#e6db74">&#39; type (OSI layer) (by default 3)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  -k, --token [token]                       Private network cluster&#39;</span>s token <span style="color:#f92672">(</span><span style="color:#66d9ef">if</span> specified, provide just the manager node<span style="color:#e6db74">&#39;s ip without the it&#39;</span>s user, but specify the worker nodes<span style="color:#960050;background-color:#1e0010">&#39;</span> users<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -h, --help                                output usage information
+</span></span></code></pre></div><p>As you can see, this action is quite a bit more complicated to use than the former ones. This is due to the <code>private-ip/public-ip</code> syntax - while it is a bit more complex, it allows for the installation of one PNC over another PNC as well as an installation that does not require the local node to be modified, which is very useful in our case.</p>
+<p>The two types which are a available are <code>2</code> and <code>3</code>. The types correspond to the <a href="https://en.wikipedia.org/wiki/Data_link_layer">OSI layer 2</a>/<a href="https://en.wikipedia.org/wiki/Network_layer">OSI layer 3</a>; type 2 is significantly slower than type 3 but supports Ethernet-level traffic, like for example many old LAN-based games require. Using either of the PNCs allows for the cluster to deployed across everything from one or many public clouds to private cloud behind NAT (they can&rsquo;t ping one another directly) using NAT hole punching. The type 2 PNC is considerably better at the latter use case, while the type 3 PNC is much, much faster.</p>
+<p>So, first we&rsquo;ll deploy the type 2 PNC manager; you may also simply specify the worker nodes as well, but for demonstration purposes we&rsquo;ll not do this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply privatenetworkcluster -t <span style="color:#ae81ff">2</span> root@95.216.215.197
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1569335003254</span> <span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> Creating provided public network cluster node data model ........ pojntfx@thinkpadx1c3.pojtinger.space
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1569335034276</span> <span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> Successfully applied private network clusters<span style="color:#960050;background-color:#1e0010">&#39;</span> variables:
+</span></span><span style="display:flex;"><span>managerNode:
+</span></span><span style="display:flex;"><span>  access:
+</span></span><span style="display:flex;"><span>    public: root@95.216.215.197
+</span></span><span style="display:flex;"><span>    private: root@192.168.1.1
+</span></span><span style="display:flex;"><span>token: 5Ll8MrdkpElxAp6ExcFIHHyxnj30w2xYVm0IxBloykQ<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...................................................................................... pojntfx@thinkpadx1c3.pojtinger.space
+</span></span></code></pre></div><p>Note that you can get the token for the worker nodes later on as well with the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get privatenetworkclustertoken -t <span style="color:#ae81ff">2</span> root@95.216.215.197
+</span></span><span style="display:flex;"><span>5Ll8MrdkpElxAp6ExcFIHHyxnj30w2xYVm0IxBloykQ<span style="color:#f92672">=</span>
+</span></span></code></pre></div><p>If we take a look at the nodes in the PNC, not much can be found right now:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get privatenetworkclusternodes -t <span style="color:#ae81ff">2</span> root@95.216.215.197
+</span></span><span style="display:flex;"><span>| ID                                | NAME   | PRIVATE-IP  |
+</span></span><span style="display:flex;"><span>| --------------------------------- | ------ | ----------- |
+</span></span><span style="display:flex;"><span>| not_available_manually_configured | node-1 | 192.168.1.1 |
+</span></span></code></pre></div><p>So let&rsquo;s add the other nodes as worker nodes to the PNC, which may take some time:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply privatenetworkcluster -t <span style="color:#ae81ff">2</span> -k 5Ll8MrdkpElxAp6ExcFIHHyxnj30w2xYVm0IxBloykQ<span style="color:#f92672">=</span> 95.216.215.197 root@95.217.15.29 root@95.217.15.31
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1569335183645</span> <span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> Creating provided public network cluster node data model ........ pojntfx@thinkpadx1c3.pojtinger.space
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1569335229530</span> <span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> Successfully applied private network clusters<span style="color:#960050;background-color:#1e0010">&#39;</span> variables:
+</span></span><span style="display:flex;"><span>managerNode:
+</span></span><span style="display:flex;"><span>  ips:
+</span></span><span style="display:flex;"><span>    public: 95.216.215.197
+</span></span><span style="display:flex;"><span>token: 5Ll8MrdkpElxAp6ExcFIHHyxnj30w2xYVm0IxBloykQ<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...................................................................................... pojntfx@thinkpadx1c3.pojtinger.space
+</span></span></code></pre></div><p>You may re-run this command at any time to add more nodes to the PNC.</p>
+<p>Let&rsquo;s take another look at the nodes in it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get privatenetworkclusternodes -t <span style="color:#ae81ff">2</span> root@95.216.215.197
+</span></span><span style="display:flex;"><span>| ID                                | NAME   | PRIVATE-IP   |
+</span></span><span style="display:flex;"><span>| --------------------------------- | ------ | ------------ |
+</span></span><span style="display:flex;"><span>| not_available_manually_configured | node-1 | 192.168.1.1  |
+</span></span><span style="display:flex;"><span>| 02:f8:7f:19:53:f5                 | node-2 | 192.168.1.10 |
+</span></span><span style="display:flex;"><span>| 02:bd:22:72:bb:0e                 | node-3 | 192.168.1.11 |
+</span></span></code></pre></div><p>As you can see, the nodes have been added to the PNC. The local node has not been modified; you can&rsquo;t ping the nodes from it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ ping -c <span style="color:#ae81ff">1</span> 192.168.1.10
+</span></span><span style="display:flex;"><span>PING 192.168.1.10 <span style="color:#f92672">(</span>192.168.1.10<span style="color:#f92672">)</span> 56<span style="color:#f92672">(</span>84<span style="color:#f92672">)</span> bytes of data.
+</span></span><span style="display:flex;"><span>^C
+</span></span><span style="display:flex;"><span>--- 192.168.1.10 ping statistics ---
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> packets transmitted, <span style="color:#ae81ff">0</span> received, 100% packet loss, time 0ms
+</span></span></code></pre></div><p>This is why the <code>private-ip/public-ip</code> syntax exists! It will allow us to install the type 3 PNC without modifying the host. In our use case, we will set up the manager and worker nodes in one command; you may however use the step-by-step procedure as shown above as well.</p>
+<p>In the following setup, we let the type 3 worker nodes <em>connect</em> to the type 3 manager node using the type 2 PNC to support a NAT-ed configuration (the nodes can&rsquo;t ping each other without the type 2 PNC), but the <em>traffic</em> between the type 3 nodes themselves <em>does not go through the type 2 PNC</em>, which improves the PNC&rsquo;s speed. If you want to route all type 3 PNC traffic over the type 2 PNC, simply specify the private IPs of the worker nodes that you got from above with the <code>private-ip/public-ip</code> syntax.</p>
+<p>If you want to also install the type 2 PNC on the local node, just add <code>$(whoami)@$(hostname)</code> or <code>$(whoami)@$(hostname)/node-private-ip</code> to the <code>apply</code> command above.</p>
+<h3 id="type-3">Type 3</h3>
+<blockquote>
+<p>This PNC is based on the <a href="https://www.wireguard.com/">WireGuard VPN</a>.</p>
+</blockquote>
+<p>So let&rsquo;s deploy the type 3 PNC:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply privatenetworkcluster -t <span style="color:#ae81ff">3</span> root@95.216.215.197/192.168.1.1 root@95.217.15.29 root@95.217.15.31
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1569335765321</span> <span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> Creating provided public network cluster node data model ........ pojntfx@thinkpadx1c3.pojtinger.space
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1569335879278</span> <span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> Successfully applied private network clusters<span style="color:#960050;background-color:#1e0010">&#39;</span> variables:
+</span></span><span style="display:flex;"><span>managerNode:
+</span></span><span style="display:flex;"><span>  access:
+</span></span><span style="display:flex;"><span>    public: root@95.216.215.197
+</span></span><span style="display:flex;"><span>    private: root@10.224.183.211
+</span></span><span style="display:flex;"><span>token: uCPxiqIfcOuwmWuHfhYMz/EalX2PBSR2jYHwEEEd20E<span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...................................................................................... pojntfx@thinkpadx1c3.pojtinger.space
+</span></span></code></pre></div><p>Now, you may take a look at the type 3 PNC nodes (and token, see the commands above, but don&rsquo;t forget to change <code>-t 2</code> to <code>-t 3</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get privatenetworkclusternodes -t <span style="color:#ae81ff">3</span> root@95.216.215.197
+</span></span><span style="display:flex;"><span>| ID                                           | NAME   | PRIVATE-IP     | PUBLIC-IP      |
+</span></span><span style="display:flex;"><span>| -------------------------------------------- | ------ | -------------- | -------------- |
+</span></span><span style="display:flex;"><span>| not_available_this_is_the_query_node         | node-1 | 10.224.183.211 | 95.216.215.197 |
+</span></span><span style="display:flex;"><span>| mJabtIp6AVRjP2Z9ZDxtACRhIp4PQxueZi+7NNZOjWw<span style="color:#f92672">=</span> | node-3 | 10.224.186.73  | 95.217.15.31   |
+</span></span><span style="display:flex;"><span>| 0WSF78kJy64do0T0W93eNVb8Mtt96kPlnh6w2HL/2TM<span style="color:#f92672">=</span> | node-2 | 10.224.185.14  | 95.217.15.29   |
+</span></span></code></pre></div><p>That works! And again, because no changes have been made to the local node, you can&rsquo;t ping the nodes on their private IPs. If want to do that, follow the instructions from the type 2 PNC above.</p>
+<h2 id="manage-workload-clusters-wlcs">Manage Workload Clusters (WLCs)</h2>
+<blockquote>
+<p>The WLC is based on the <a href="https://k3s.io/">k3s Kubernetes distribution</a>.</p>
+</blockquote>
+<p>Now, let&rsquo;s get to deploying the actual workload cluster!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply workloadcluster
+</span></span><span style="display:flex;"><span>Usage: infractl-apply-workloadclusters <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> &lt;user@manager-node-ip|user@manager-node-public-ip/manager-node-private-ip|manager-node-ip&gt; <span style="color:#f92672">[</span>user@worker-node-ip<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>otherWorkerNodes...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span><span style="color:#66d9ef">$(</span>whoami<span style="color:#66d9ef">)</span>@<span style="color:#66d9ef">$(</span>hostname<span style="color:#66d9ef">)</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Options:
+</span></span><span style="display:flex;"><span>  -e, --lets-encrypt-certificate-issuers-email <span style="color:#f92672">[</span>email<span style="color:#f92672">]</span>                                                                        Let<span style="color:#e6db74">&#39;s Encrypt certificate issuers&#39;</span> email <span style="color:#66d9ef">for</span> certificates <span style="color:#f92672">(</span>i.e. user@host.tld<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>by default the issuers won<span style="color:#e6db74">&#39;t be deployed)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  -s, --slow-storage-size [size-in-gb]                                                                                        Slow storage&#39;</span>s size <span style="color:#f92672">(</span>by default <span style="color:#ae81ff">10</span> gigabyte, this can be resized later on<span style="color:#f92672">)</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">do</span> not specify unit, it is always gigabyte<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>this enables Read-Write-Many PVCs<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -b, --backup-s3-endpoint <span style="color:#f92672">[</span>endpoint<span style="color:#f92672">]</span>                                                                                         Backup S3-compatible backend<span style="color:#e6db74">&#39;s endpoint (i.e. http://95.217.11.207:9000) (by default the backup system configuration won&#39;</span>t be deployed<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -B, --backup-s3-bucket <span style="color:#f92672">[</span>endpoint<span style="color:#f92672">]</span>                                                                                           Backup S3-compatible backend<span style="color:#e6db74">&#39;s bucket (i.e. backup-1) (by default the backup system configuration won&#39;</span>t be deployed<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -a, --backup-s3-access-key <span style="color:#f92672">[</span>access-key<span style="color:#f92672">]</span>                                                                                     Backup S3-compatible backend<span style="color:#e6db74">&#39;s access key (i.e. minio) (by default the backup system configuration won&#39;</span>t be deployed<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -A, --backup-s3-secret-key <span style="color:#f92672">[</span>secret-key<span style="color:#f92672">]</span>                                                                                     Backup S3-compatible backend<span style="color:#e6db74">&#39;s secret key (i.e. minio123) (by default the backup system configuration won&#39;</span>t be deployed<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -p, --backup-encryption-password <span style="color:#f92672">[</span>password<span style="color:#f92672">]</span>                                                                                 Backup<span style="color:#e6db74">&#39;s encryption password to access and restore backups (by default the backup system configuration won&#39;</span>t be deployed<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -m, --additional-manager-node-ip <span style="color:#f92672">[</span>ip<span style="color:#f92672">]</span>                                                                                       Additional manager node<span style="color:#e6db74">&#39;s IP for the workload cluster config (i.e. 192.168.178.141) (by default the target IP will be used, which might only be reachable from within the private network cluster depending on your setup)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  -t, --private-network-cluster-type [2|3]                                                                                    Private network clusters&#39;</span> type <span style="color:#f92672">(</span>OSI layer<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>by default 3<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -k, --token <span style="color:#f92672">[</span>token<span style="color:#f92672">]</span>                                                                                                         Workload cluster<span style="color:#e6db74">&#39;s token (if specified, provide just the manager node&#39;</span>s ip without the it<span style="color:#e6db74">&#39;s user, but specify the worker nodes&#39;</span> users<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  -a, --apply <span style="color:#f92672">[</span>monitoring,tracing,error-tracking<span style="color:#f92672">]</span>                                                                             Comma-seperated list of components which are not applied by default to apply
+</span></span><span style="display:flex;"><span>  -d, --dont-apply <span style="color:#f92672">[</span>fast-storage,ingress-controller,certificate-manager,slow-storage,backup-system,virtual-machines,metrics<span style="color:#f92672">]</span>  Comma-seperated list of components which are applied by default to not apply
+</span></span><span style="display:flex;"><span>  -h, --help                                                                                                                  output usage information
+</span></span></code></pre></div><p>As you can see, there are a lot of options here, and the <code>private-ip/public-ip</code> syntax exists as well, though it is only necessary for the manager node, as the rest will be configured automatically.</p>
+<p>There are quite some options for the <code>apply workloadcluster</code> option; let&rsquo;s go over them one-by-one.</p>
+<ul>
+<li><code>-e</code>: If selected, this sets up <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> for <em>automatic</em> HTTPS.</li>
+<li><code>-s</code>: This specifies the size for slow storage. Ther are two types of storage available in the workload cluster: fast and slow. Fast storage can only be attached to one node at a time, slow storage can be attached to multiple nodes at once. Think of slow storage as a &ldquo;partition&rdquo; on fast storage that can be shared across nodes.</li>
+<li><code>-b</code>: The S3-compatible endpoint to back PVCs up to.</li>
+<li><code>-B</code>: The S3-compatible endpoint&rsquo;s bucket.</li>
+<li><code>-a</code>: The S3-compatible endpoint&rsquo;s access key.</li>
+<li><code>-A</code>: The S3-compatible endpoint&rsquo;s secret key.</li>
+<li><code>-p</code>: The backup encryption password; keep this, if you loose it you won&rsquo;t be able to restore your backups.</li>
+<li><code>-m</code>: Here you may specify another IP address than the one you set for the master, which is useful for accessing the cluster outside of the PNCs (we&rsquo;ll use this option).</li>
+<li><code>-t</code>: Here you can set the PNC to use for the workload cluster. We&rsquo;ll use the fast type 3 PNC for this - if you use the type 2 PNC, be sure to use the correct <code>private-ip</code> for the manager.</li>
+<li><code>-a</code>: Here you can choose which additional components you want to deploy, such as <code>monitoring</code> (<a href="https://prometheus.io/">Prometheus</a>), <code>tracing</code> (<a href="https://www.jaegertracing.io/">Jaeger</a>) and <code>error-tracking</code> (<a href="https://sentry.io/">Sentry</a>).</li>
+<li><code>-d</code>: Here you can un-select components installed by default, such as the capability to run <a href="https://kubevirt.io/">KubeVirt-based</a> virtual machines or the <a href="https://www.openebs.io/">OpenEBS-based</a> storage cluster.</li>
+</ul>
+<p>Now, you can also deploy the manager and workers nodes in one command, but for demonstration purposes we&rsquo;ll deploy them one-by-one; so let&rsquo;s get started with the manager node and add the worker nodes later!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply workloadcluster root@95.216.215.197/10.224.183.211 -m 95.216.215.197 -t <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1569336943917</span> <span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> Creating provided network cluster node data model ............... pojntfx@thinkpadx1c3.pojtinger.space
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1569337138926</span> <span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> Successfully applied workload clusters<span style="color:#e6db74">&#39; variables:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">managerNode:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  access:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    public: root@95.216.215.197
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    private: 10.224.183.211
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">token: K10c1f320e840235610f896259b4448ea2d5b61ac1ea5fd8193e5b4a10141cb3619::node:6060bd88c1901bdf2d73a15e58985205
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">...................................................................................... pojntfx@thinkpadx1c3.pojtinger.space
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">1569337138932 [DATA] Successfully applied workload cluster&#39;</span>s config:
+</span></span><span style="display:flex;"><span>apiVersion: v1
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...................................................................................... pojntfx@thinkpadx1c3.pojtinger.space
+</span></span></code></pre></div><p>If you want to, you can now copy and paste the contents of the workload cluster config (kubeconfig) file from above into <code>~/.kube/config</code> (you might need to create the <code>~/.kube</code> directory first), but this is not necessary to join the remaining worker nodes. If you want to to that right now however, your Kubernetes nodes should look like this (from <code>kubectl get nodes</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ kubectl get node
+</span></span><span style="display:flex;"><span>NAME     STATUS   ROLES    AGE    VERSION
+</span></span><span style="display:flex;"><span>node-1   Ready    master   119s   v1.15.3-k3s.1
+</span></span></code></pre></div><p>If you don&rsquo;t plan on adding any more nodes to the workload cluster, feel free to skip the following section.</p>
+<p>In order to join the worker nodes into the workload cluster, you can either copy and paste the token from above, or get it at any time with the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get workloadclustertoken root@95.216.215.197
+</span></span><span style="display:flex;"><span>K10c1f320e840235610f896259b4448ea2d5b61ac1ea5fd8193e5b4a10141cb3619::node:6060bd88c1901bdf2d73a15e58985205
+</span></span></code></pre></div><p>Now, join the rest of the nodes as worker nodes into the cluster (depending on the PNC you chose the manager&rsquo;s IP might be different):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl apply workloadcluster -t <span style="color:#ae81ff">3</span> -k K10c1f320e840235610f896259b4448ea2d5b61ac1ea5fd8193e5b4a10141cb3619::node:6060bd88c1901bdf2d73a15e58985205 10.224.183.211 root@95.217.15.29 root@95.217.15.31
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1569337601368</span> <span style="color:#f92672">[</span>INFO<span style="color:#f92672">]</span> Creating provided network cluster node data model ............... pojntfx@thinkpadx1c3.pojtinger.space
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1569337797818</span> <span style="color:#f92672">[</span>DATA<span style="color:#f92672">]</span> Successfully applied workload clusters<span style="color:#960050;background-color:#1e0010">&#39;</span> variables:
+</span></span><span style="display:flex;"><span>managerNode:
+</span></span><span style="display:flex;"><span>  ips:
+</span></span><span style="display:flex;"><span>    public: 10.224.183.211
+</span></span><span style="display:flex;"><span>token: K10c1f320e840235610f896259b4448ea2d5b61ac1ea5fd8193e5b4a10141cb3619::node:6060bd88c1901bdf2d73a15e58985205
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...................................................................................... pojntfx@thinkpadx1c3.pojtinger.space
+</span></span></code></pre></div><p>And there we go! Now you can copy and paste the workload cluster config (kubeconfig) as described above or get it again with the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ infractl get workloadclusterconfig root@95.216.215.197
+</span></span><span style="display:flex;"><span>apiVersion: v1
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span></code></pre></div><p>Once you&rsquo;ve set this up, check if the worker nodes have been added successfully:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ kubectl get node -o wide
+</span></span><span style="display:flex;"><span>NAME     STATUS   ROLES    AGE   VERSION         INTERNAL-IP    EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
+</span></span><span style="display:flex;"><span>node-2   Ready    worker   18m   v1.15.3-k3s.1   192.168.1.10   &lt;none&gt;        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
+</span></span><span style="display:flex;"><span>node-1   Ready    master   18m   v1.15.3-k3s.1   192.168.1.1    &lt;none&gt;        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
+</span></span><span style="display:flex;"><span>node-3   Ready    worker   18m   v1.15.3-k3s.1   192.168.1.11   &lt;none&gt;        Ubuntu 18.04.3 LTS   4.15.0-64-generic   containerd://1.2.8-k3s.1
+</span></span></code></pre></div><p>Take a look the <code>INTERNAL-IP</code> column; the type 3 PNC is being used successfully!</p>
+<p>Before you can get started, you might have to wait a bit until all the pods for the sub-systems (storage cluster etc.) have started, which can take some time depending on the nodes&rsquo; internet connection (and might look different on your system, depending on the components you&rsquo;ve installed):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>pojntfx@thinkpadx1c3 ~<span style="color:#f92672">]</span>$ kubectl get pod -A
+</span></span><span style="display:flex;"><span>NAMESPACE     NAME                                             READY   STATUS      RESTARTS   AGE
+</span></span><span style="display:flex;"><span>kube-system   coredns-55c55bb5db-8mtgw                         1/1     Running     <span style="color:#ae81ff">0</span>          14m
+</span></span><span style="display:flex;"><span>kubevirt      virt-handler-49kvm                               1/1     Running     <span style="color:#ae81ff">0</span>          14m
+</span></span><span style="display:flex;"><span>kubevirt      virt-controller-564dc766f5-jkmh5                 1/1     Running     <span style="color:#ae81ff">0</span>          14m
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (...)</span>
+</span></span></code></pre></div><p>And there you go! You can now join more nodes into the PNCs and/or the WLCs with the commands shown above - or just enjoy your Kubernetes cluster!</p>
+<p>And in case you find any problems, feel free to add an issue and/or contribute: <a href="https://pojntfx.github.io/infractl/">InfraCTl is free/libre and open source software on GitHub</a>!</p>
+
+                </main>
+              </article>
+            </div>
+            <div class="pf-c-card__footer">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="pojntfx/personal-site"
+                data-repo-id="MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE="
+                data-category="Announcements"
+                data-category-id="DIC_kwDODa0h2c4CAeR2"
+                data-mapping="pathname"
+                data-reactions-enabled="1"
+                data-emit-metadata="1"
+                data-theme="light"
+                data-lang="en"
+                crossorigin="anonymous"
+                async
+              ></script>
+              <noscript
+                >Please enable JavaScript to view the comments powered by
+                giscus.</noscript
+              >
+            </div>
+          </div>
+        </div>
+        <div class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg">
+          <div class="pf-c-card" id="twitterfeed">
+  <div
+    class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-py-xl"
+  >
+    <span>Latest tweets</span>
+
+    <a
+      target="_blank"
+      class="twitterfeed__user__url pf-l-flex pf-m-align-items-center"
+    >
+      <img
+        src="https://img.shields.io/twitter/follow/pojntfx?label=%40pojntfx&style=social"
+        alt="Twitter follower count"
+      />
+    </a>
+  </div>
+  <div class="pf-c-card__body twitterfeed">
+    <ul
+      class="twitterfeed__tweets pf-l-flex pf-m-column pf-m-space-items-sm"
+    ></ul>
+
+    <a
+      target="_blank"
+      class="twitterfeed__user__url pf-c-button pf-m-link pf-u-mt-lg"
+    >
+      <span class="pf-c-button__icon pf-m-start">
+        <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
+      >All tweets</a
+    >
+  </div>
+</div>
+
+<noscript>Please enable JavaScript to view the Twitter feed.</noscript
+><script type="module">
+  const base = "\/";
+  const username = "pojntfx";
+
+  const twitterFeed = await(
+    await fetch(`${base}api/twitter?username=${username}`)
+  ).json();
+
+  
+  document.querySelectorAll("#twitterfeed .twitterfeed__user__url").forEach(el => {
+    el.href = twitterFeed.userURL;
+  })
+
+  
+  twitterFeed.tweets.map((tweet) => {
+    const root = document.createElement("li");
+    root.classList.add("pf-c-card", "pf-m-plain", "pf-m-hoverable-raised")
+
+    const link = document.createElement("a");
+    link.target = "_blank";
+    link.href = tweet.url;
+    link.classList.add("pf-u-color-100", "pf-l-flex", "pf-u-flex-direction-column", "pf-m-space-items-sm", "pf-m-align-items-flex-start", "pf-c-card__body", "pf-u-p-md", "pf-x-m-no-decoration")
+
+    const header = document.createElement("div")
+    header.classList.add("pf-u-mb-sm", "pf-l-flex", "pf-m-align-items-center")
+
+    const userPic = document.createElement("img");
+    userPic.src = twitterFeed.userProfilePictureURL;
+    userPic.alt = `Profile picture of ${twitterFeed.userDisplayName}`;
+    userPic.classList.add("pf-c-avatar", "pf-u-mr-sm")
+    header.appendChild(userPic);
+
+    const usernames = document.createElement("div")
+    usernames.classList.add("pf-l-flex", "pf-m-justify-content-center", "pf-m-align-items-start", "pf-m-space-items-sm", "pf-u-flex-direction-column")
+
+    const userDisplayName = document.createElement("span");
+    userDisplayName.innerText = twitterFeed.userDisplayName;
+    usernames.appendChild(userDisplayName);
+
+    const userName = document.createElement("span");
+    userName.innerText = " @"+twitterFeed.username;
+    userName.classList.add("pf-u-color-200")
+    usernames.appendChild(userName);
+
+    header.appendChild(usernames);
+
+    link.appendChild(header)
+
+    const content = document.createElement("div")
+    content.classList.add("pf-u-w-100")
+
+    const tweetTimestamp = document.createElement("span");
+    tweetTimestamp.innerText = new Date(tweet.timestamp).toLocaleString();
+    tweetTimestamp.classList.add("pf-u-color-200")
+    content.appendChild(tweetTimestamp);
+
+    const tweetBody = document.createElement("div");
+    tweetBody.innerHTML = tweet.body;
+    tweetBody.classList.add("pf-u-py-sm")
+
+    content.appendChild(tweetBody);
+
+    if (tweet.images.length > 0) {
+      const images = document.createElement("div");
+      images.classList.add("pf-l-gallery", "pf-m-gutter", "pf-u-my-sm")
+
+      tweet.images.forEach((image) => {
+        const el = document.createElement("div");
+        el.classList.add("pf-l-gallery__item")
+
+        const attachment = document.createElement("img");
+        attachment.src = image.url;
+        attachment.alt = image.altText;
+        attachment.classList.add("pf-u-w-100")
+
+        el.appendChild(attachment);
+
+        images.appendChild(el);
+      });
+
+      content.appendChild(images);
+    }
+
+
+    const statistics = document.createElement("div");
+    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200")
+
+    const comments = document.createElement("span");
+    comments.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const commentIcon = document.createElement("i");
+    commentIcon.classList.add("fas", "fa-comments")
+    commentIcon.ariaLabel = "Comments"
+
+    const commentCount = document.createElement("span");
+    commentCount.textContent = tweet.commentCount;
+
+    comments.append(commentIcon)
+    comments.append(commentCount)
+
+    statistics.appendChild(comments);
+
+    const retweets = document.createElement("span");
+    retweets.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const retweetIcon = document.createElement("i");
+    retweetIcon.classList.add("fas", "fa-retweet")
+    retweetIcon.ariaLabel = "Retweets"
+
+    const retweetCount = document.createElement("span");
+    retweetCount.textContent = tweet.retweetCount;
+
+    retweets.append(retweetIcon)
+    retweets.append(retweetCount)
+
+    statistics.appendChild(retweets);
+
+    const likes = document.createElement("span");
+    likes.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const likeIcon = document.createElement("i");
+    likeIcon.classList.add("fas", "fa-heart")
+    likeIcon.ariaLabel = "Likes"
+
+    const likeCount = document.createElement("span");
+    likeCount.textContent = tweet.likeCount;
+
+    likes.append(likeIcon)
+    likes.append(likeCount)
+
+    statistics.appendChild(likes);
+
+    content.appendChild(statistics);
+
+    link.append(content)
+
+    root.appendChild(link);
+
+    document.querySelector("#twitterfeed .twitterfeed__tweets").appendChild(root);
+  });
+</script>
+
+
+          
+          
+            <div class="pf-c-card pf-u-mt-md">
+              <div class="pf-c-card__title">See also</div>
+              <div class="pf-c-card__body">
+                <div class="pf-l-gallery pf-m-gutter">
+                  
+                    <div class="pf-l-gallery__item">
+                      <a
+                        href="../../articles/product-oriented/"
+                        class="pf-u-color-100 pf-x-m-no-decoration"
+                      >
+                        <div
+                          class="pf-c-card pf-m-compact pf-m-hoverable-raised pf-u-h-100"
+                        >
+                          <div class="pf-c-card__title">The Product Oriented Approach</div>
+                          <div class="pf-c-card__body pf-u-pb-sm">
+                            Yet another way of structuring one&#39;s projects.
+                          </div>
+                          <div class="pf-c-card__footer pf-u-color-200">
+                            February 6, 2019
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  
+                </div>
+
+                <a href="../../articles" class="pf-c-button pf-m-link pf-u-mt-lg">
+                  <span class="pf-c-button__icon pf-m-start">
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
+                  >All articles</a
+                >
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <div class="pf-c-page__main-body pf-u-px-lg pf-u-px-0-on-xl pf-u-py-lg">
+  <div
+    class="pf-l-flex pf-m-justify-content-space-between pf-x-c-footer--max-width"
+  >
+    <div class="pf-l-flex__item">
+      <a
+        href="https://github.com/pojntfx/personal-site"
+        target="_blank"
+        rel="noopener"
+        class="pf-x-m-no-highlight--dark"
+        >© 2022 Felicitas Pojtinger</a
+      >
+    </div>
+    <div class="pf-l-flex__item">
+      <a href="../../imprint" class="pf-x-m-no-highlight--dark">Imprint</a>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+    </div>
+  </body>
+</html>

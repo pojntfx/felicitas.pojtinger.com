@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>/imprint/</loc>
+    <lastmod>2021-12-30T01:38:56+01:00</lastmod>
+  </url><url>
+    <loc>/articles/</loc>
+    <lastmod>2020-01-13T17:01:23+01:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2020-01-13T17:01:23+01:00</lastmod>
+  </url><url>
+    <loc>/articles/ctpf-networking/</loc>
+    <lastmod>2020-01-13T17:01:23+01:00</lastmod>
+  </url><url>
+    <loc>/articles/infractl-works/</loc>
+    <lastmod>2019-09-25T16:59:36+01:00</lastmod>
+  </url><url>
+    <loc>/articles/sane-categories/</loc>
+    <lastmod>2019-09-14T16:57:26+01:00</lastmod>
+  </url><url>
+    <loc>/articles/product-oriented/</loc>
+    <lastmod>2019-02-06T16:55:03+01:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+  </url><url>
+    <loc>/tags/</loc>
+  </url>
+</urlset>

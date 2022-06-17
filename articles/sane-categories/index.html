@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      
+        Sane Categories for Software Distribution Systems |
+        Felicitas Pojtinger
+      
+    </title>
+
+    <link rel="icon" href="https://github.com/pojntfx.png" />
+
+    <meta name="author" content="Felicitas Pojtinger" />
+    <meta name="description" content="Felicitas Pojtinger is a software engineer focused on Go and the web." />
+    <meta
+      name="keywords"
+      content="Felicitas, Pojtinger, Felicitas Pojtinger, pojntfx, Go, Web, STFS, bofied, liwasc, Cluster Platform, Open Source, Free Software"
+    />
+    <meta
+      name="copyright"
+      content="© 2022 Felicitas Pojtinger"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../../main.min.css"
+    />
+  </head>
+  <body>
+    <div class="pf-c-page pf-c-page--background">
+      <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main"
+        >Skip to content</a
+      >
+
+      
+        <header
+          class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+        >
+          <div class="pf-c-page__header__content--max-width">
+            <a
+              class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-c-page__header-brand-link--no-decoration pf-c-avatar--hover pf-u-pl-2xl pf-u-pl-sm-on-xl"
+              href="../../"
+            >
+              <img
+                src="https://github.com/pojntfx.png"
+                alt="Profile picture of Felicitas Pojtinger 🏳️‍🌈 💙💛"
+                class="pf-c-avatar pf-u-mr-md pf-c-avatar--navbar"
+              />
+              <div>
+                <h2 class="pf-u-font-size-sm">Felicitas Pojtinger 🏳️‍🌈 💙💛</h2>
+                <h1
+                  class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title"
+                >
+                  Sane Categories for Software Distribution Systems
+                </h1>
+              </div>
+            </a>
+
+            <div
+              class="pf-u-display-flex pf-u-align-items-center pf-u-pr-2xl pf-u-pr-0-on-xl"
+            >
+              <a
+                href="https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing"
+                target="_blank"
+                rel="noopener"
+                class="pf-c-button pf-m-plain pf-u-ml-2xl pf-u-mr-md"
+              >
+                <span class="pf-c-button__icon pf-m-start">
+                  <i class="fas fa-book" aria-hidden="true"></i> </span
+                >CV</a
+              >
+
+              <div class="pf-u-mr-md">
+                <div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="youtubestatus"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="
+          YouTube
+         follower count"
+        class="streamstatus__channel__badge"
+      />
+    </a>
+  </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the
+  YouTube
+  status.</noscript
+><script type="module">
+  const base = "\/"
+  const platform = "youtube"
+  const username = "UC0-pwQXvswpwjMVV_jdFLzg";
+
+  const streamStatus = await (
+    await fetch(`${base}api/${platform}?username=${username}`)
+  ).json();
+
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
+  
+  document.querySelector("#youtubestatus .streamstatus__channel__url").href =
+    streamStatus.channelURL;
+
+  document.querySelector("#youtubestatus .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
+
+  
+  document.querySelector("#youtubestatus .streamstatus__stream_url").href =
+    streamStatus.streamURL;
+
+  const indicator = document.querySelector("#youtubestatus .streamstatus__stream__islive");
+
+  indicator.innerText =
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
+
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+
+  document.querySelector("#youtubestatus .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
+</script>
+
+              </div>
+
+              <div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="twitchstatus"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="
+          Twitch
+         follower count"
+        class="streamstatus__channel__badge"
+      />
+    </a>
+  </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the
+  Twitch
+  status.</noscript
+><script type="module">
+  const base = "\/"
+  const platform = "twitch"
+  const username = "pojntfx";
+
+  const streamStatus = await (
+    await fetch(`${base}api/${platform}?username=${username}`)
+  ).json();
+
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
+  
+  document.querySelector("#twitchstatus .streamstatus__channel__url").href =
+    streamStatus.channelURL;
+
+  document.querySelector("#twitchstatus .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
+
+  
+  document.querySelector("#twitchstatus .streamstatus__stream_url").href =
+    streamStatus.streamURL;
+
+  const indicator = document.querySelector("#twitchstatus .streamstatus__stream__islive");
+
+  indicator.innerText =
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
+
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+
+  document.querySelector("#twitchstatus .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
+</script>
+
+            </div>
+          </div>
+        </header>
+      
+
+      
+  <main
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent"
+    tabindex="-1"
+    id="main"
+  >
+    <section
+      class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-lg"
+    >
+      <div class="pf-l-grid pf-m-gutter">
+        <div class="pf-l-grid__item pf-m-12-col pf-m-8-col-on-lg">
+          <div class="pf-c-card">
+            <div class="pf-c-card__header pf-u-px-0 pf-u-pt-0 pf-u-pb-sm">
+              <div class="pf-c-card__header-main pf-u-w-100">
+                <img
+                  src="../../articles/sane-categories/static/header_hu3d03a01dcc18bc5be0e67db3d8d209a6_1701435_1024x0_resize_q75_box.jpg"
+                  alt="&#34;Cable Network&#34; by Taylor Vick on Unsplash
+"
+                  class="pf-u-w-100 pf-u-h-100 pf-x-c-article__header"
+                />
+              </div>
+            </div>
+            <div class="pf-c-card__title">
+              <h1 class="pf-u-font-size-4xl pf-u-pb-sm">Sane Categories for Software Distribution Systems</h1>
+              <p>Why are these systems so hard to set up?</p>
+            </div>
+            <div class="pf-c-card__body">
+              <article>
+                <header
+                  class="pf-l-flex pf-m-justify-content-space-between pf-m-space-items-sm pf-u-pb-md"
+                >
+                  <div class="pf-l-flex pf-m-space-items-sm pf-u-color-200">
+                    <span
+                      >Originally published on
+                      September 14, 2019</span
+                    >
+                    <span aria-hidden="true" class="pf-u-color-200">·</span>
+                    <span
+                      >Last updated on
+                      September 14, 2019</span
+                    >
+                  </div>
+                  <div class="pf-c-chip-group pf-u-mt-md">
+                    <div class="pf-c-chip-group__main">
+                      <ul
+                        class="pf-c-chip-group__list"
+                        role="list"
+                        aria-label="Keywords"
+                      >
+                        
+                          <li class="pf-c-chip-group__list-item">
+                            <div class="pf-c-chip">
+                              <span class="pf-c-chip__text">categorization</span>
+                            </div>
+                          </li>
+                        
+                          <li class="pf-c-chip-group__list-item">
+                            <div class="pf-c-chip">
+                              <span class="pf-c-chip__text">clusterplatform</span>
+                            </div>
+                          </li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </header>
+
+                <main class="pf-c-page__main pf-c-content">
+                  <p>So I tried to set up a homelab. This has been a thing that I wanted to do for a long time now; I&rsquo;ve got some older <code>VT-d</code> capable <code>x86_64</code> laptops and desktops laying around at home gathering dust. This even includes my trusty and quite powerful former gaming PC which could serve as a useful compute node. In addition to that, my cloud computing costs have skyrocketed over the last few months, rising ~10 € per month up to nearly 40 € last month. As a student, I simply couldn&rsquo;t afford using this system from that point onwards.</p>
+<p>So, a homelab needed to be built then. But how - and how did I get it on to the public internet? This is not actually what this post is going to be about, although I&rsquo;ll be sure to write about in the future. This post is going to about <em>how</em> such a homelab or any modern cloud should be deployed in a sane system - such as the <a href="https://clusterplatform.github.io/clusterplatform/packages/provisioner/">Cluster Platform (CTPF)</a>.</p>
+<p>Currently, the CTPF is incredibly complicated to set up; in order to develop for the CTPF or to deploy it, and then create a cloud with it, an actual cloud is necessary beforehand. This makes for an interesting paradox, as the very reason for me to deploy a homelab is to get rid of that cloud, yet the only way for me to work on the software to develop it is to use one. How does one solve this? Categories of course!</p>
+<p>Categorical thinking is of course not without it&rsquo;s problems, mostly when the categories don&rsquo;t really serve any purpose anymore but rather are an unnecessary construct that hold us back (gender, for example). In this context however, categories can really serve as a simple way of knowing which parts of the CTPF need to be deployed in what way and, more importantly, where.</p>
+<p>The first category of the CTPF, and also the most resource-intensive, is the builders category. It consists of specialized microservices that have the sole purpose of serving as an advanced frontend for GNU <code>make</code> and builds things such as GNU GRUB, <a href="https://ipxe.org/">iPXE</a>, SYSLINUX and other pre-boot environments. This is necessary to create the artifacts that make it possible to execute, among other things, iPXE scripts, which define what OS should be installed afterwards.</p>
+<p>Secondly, a packagers category exists. This one takes the artifacts from the builders category from it&rsquo;s S3 bucket (using <a href="https://min.io/">Minio</a>) and creates the actual boot media, which can take the form of either a specialized <code>.img</code> file to use on non-UEFI boards (like the Raspberry Pi for example), an <code>.iso</code> file to use on UEFI and BIOS boards (<code>x86_64</code> or <code>arm64</code>) and lastly multiple artifacts for the PXE distributable distributors, which are part of the next category, the distributors.</p>
+<p>The distributors are part of a completely seperate service mesh or none at all; the only interface between the two categories from before is the packager&rsquo;s S3 bucket. This makes it possible to deploy the latter in a completely seperate cluster, removing the need for powerful machines in each datacenter. Each datacenter now only needs the following basic services, or more precisely speaking, their <code>worker</code> variants:</p>
+<ul>
+<li>DHCP server</li>
+<li>DNS server</li>
+<li>PXE distributable distributor</li>
+<li>SSH distributable distributor</li>
+<li>Private network cluster distributor</li>
+<li>Workload cluster distributor</li>
+</ul>
+<p>I will not get into more detail on what does services do exactly (that is something for another post), but simply speaking, those services allow for OS and hypervisor/Kubernetes deployment over an encrypted global layer 3 overlay network to federate datacenters.</p>
+<p>These worker services connect to manager services over Redis, which is the only thing that needs to be set up on them. These manager services in turn serve as an API frontend that can control either one or multiple datacenters using a tagging system; that is, one could for example create a datacenter in Nuremberg as well as one in Singapore and manage them using a centralized manager service mesh with a tagging system to differentiate the worker services, or they could deploy a manager service mesh for each datacenter. The manager services allow, for example, to distribute the boot media from the distributors categories using the PXE distributable distributor. In addition to that, it is also possible to deploy them using either USB sticks or SD cards, depending on the boot media you want to use and the boards you want to support.</p>
+<p>Once a host has booted from the boot media, it runs an iPXE script from the next category the scripts. Here one can specify which <code>initrd</code> or kernel they want to deploy on the host, as well as parameters for the latter. It is also possible to select different setups for different architectures automatically so that you don&rsquo;t have to create multiple boot media embedded scripts (this is the initial script that specifies this categories&rsquo; API server&rsquo;s endpoint to chainload the script from) for different boards. Most of the time the scripts are also being used to save kickstart or preseed files that allow for automatic installation and setup of Debian/Ubuntu/CentOS/Fedora and pre-/post-install bash scripts. This category can be deployed either per datacenter or in another service mesh, which is possible due to the very low requirements of this simple category.</p>
+<p>Another such &ldquo;simple&rdquo; category is the registries. These are responsible for keeping track of the SSH keys to deploy to the hosts as specified in the kickstart file or one of the bash scripts and to save the local IP addresses in use by the newly deployed hosts in their respective datacenter, which is specified by using the before-mentioned tagging system. Similarly to the scripts category, as long as these services are reachable from the hosts, can be deployed in whatever service mesh you want and can use either a central manager service mesh or one per datacenter. It is also possible to use an &ldquo;external registry&rdquo; such as Hetzner Cloud, which allows for the use of &ldquo;virtual remote datacenter&rdquo; that can join the federation. During installation, they can also add a &ldquo;general authorized SSH key&rdquo; for the datacenter to <code>authorized_keys</code>, which allows for further setup after OS deployment and maintenance.</p>
+<p>This further setup is taken care of by the remaining distributors services from above. These can now, using the &ldquo;general authorized SSH key&rdquo;, deploy either generic bash scripts, the before-mentioned federated layer 3 overlay network (&ldquo;private network clusters&rdquo;) or as <code>k3s</code>-based Kubernetes clusters (&ldquo;workload clusters&rdquo;), which&rsquo;s variables and configs in turn can be registered in another registry service. This is similar to <a href="https://pojntfx.github.io/infractl/">InfraCTL</a>, a CLI that I&rsquo;ve been working on which will be the basis for these distributors.</p>
+<p>Using these categories, I&rsquo;ve made a few scenarios possible that were (more or less) impossible to use before:</p>
+<ul>
+<li>Federated datacenters with an encrypted layer 3 overlay network to allow federation behind, for example, NAT</li>
+<li>The inclusion of &ldquo;remote datacenters&rdquo; such as Hetzner Cloud (or AWS, Google Cloud, DigitalOcean etc.) as either on-demand private network/workload cluster nodes to enable something like a public &ldquo;exit node&rdquo;/private network relay or simply to manage remote nodes through a single interface</li>
+<li>The usage of a seperate builders and packagers cluster/service mesh, which drops the need for lots of compute power in each datacenter.</li>
+</ul>
+<p>Now well, as I&rsquo;ve mentioned above, this approach is probably not without it&rsquo;s shortcomings. It does look very promising to me, especially as I&rsquo;ll be able to go back to CTPF development after I&rsquo;ve solved the I-need-a-cloud-to-develop-a-cloud-deployer-paradox from above with <code>InfraCTL</code>.</p>
+<p>Stay tuned for more updates on the CTPF&rsquo;s development!</p>
+
+                </main>
+              </article>
+            </div>
+            <div class="pf-c-card__footer">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="pojntfx/personal-site"
+                data-repo-id="MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE="
+                data-category="Announcements"
+                data-category-id="DIC_kwDODa0h2c4CAeR2"
+                data-mapping="pathname"
+                data-reactions-enabled="1"
+                data-emit-metadata="1"
+                data-theme="light"
+                data-lang="en"
+                crossorigin="anonymous"
+                async
+              ></script>
+              <noscript
+                >Please enable JavaScript to view the comments powered by
+                giscus.</noscript
+              >
+            </div>
+          </div>
+        </div>
+        <div class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg">
+          <div class="pf-c-card" id="twitterfeed">
+  <div
+    class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-py-xl"
+  >
+    <span>Latest tweets</span>
+
+    <a
+      target="_blank"
+      class="twitterfeed__user__url pf-l-flex pf-m-align-items-center"
+    >
+      <img
+        src="https://img.shields.io/twitter/follow/pojntfx?label=%40pojntfx&style=social"
+        alt="Twitter follower count"
+      />
+    </a>
+  </div>
+  <div class="pf-c-card__body twitterfeed">
+    <ul
+      class="twitterfeed__tweets pf-l-flex pf-m-column pf-m-space-items-sm"
+    ></ul>
+
+    <a
+      target="_blank"
+      class="twitterfeed__user__url pf-c-button pf-m-link pf-u-mt-lg"
+    >
+      <span class="pf-c-button__icon pf-m-start">
+        <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
+      >All tweets</a
+    >
+  </div>
+</div>
+
+<noscript>Please enable JavaScript to view the Twitter feed.</noscript
+><script type="module">
+  const base = "\/";
+  const username = "pojntfx";
+
+  const twitterFeed = await(
+    await fetch(`${base}api/twitter?username=${username}`)
+  ).json();
+
+  
+  document.querySelectorAll("#twitterfeed .twitterfeed__user__url").forEach(el => {
+    el.href = twitterFeed.userURL;
+  })
+
+  
+  twitterFeed.tweets.map((tweet) => {
+    const root = document.createElement("li");
+    root.classList.add("pf-c-card", "pf-m-plain", "pf-m-hoverable-raised")
+
+    const link = document.createElement("a");
+    link.target = "_blank";
+    link.href = tweet.url;
+    link.classList.add("pf-u-color-100", "pf-l-flex", "pf-u-flex-direction-column", "pf-m-space-items-sm", "pf-m-align-items-flex-start", "pf-c-card__body", "pf-u-p-md", "pf-x-m-no-decoration")
+
+    const header = document.createElement("div")
+    header.classList.add("pf-u-mb-sm", "pf-l-flex", "pf-m-align-items-center")
+
+    const userPic = document.createElement("img");
+    userPic.src = twitterFeed.userProfilePictureURL;
+    userPic.alt = `Profile picture of ${twitterFeed.userDisplayName}`;
+    userPic.classList.add("pf-c-avatar", "pf-u-mr-sm")
+    header.appendChild(userPic);
+
+    const usernames = document.createElement("div")
+    usernames.classList.add("pf-l-flex", "pf-m-justify-content-center", "pf-m-align-items-start", "pf-m-space-items-sm", "pf-u-flex-direction-column")
+
+    const userDisplayName = document.createElement("span");
+    userDisplayName.innerText = twitterFeed.userDisplayName;
+    usernames.appendChild(userDisplayName);
+
+    const userName = document.createElement("span");
+    userName.innerText = " @"+twitterFeed.username;
+    userName.classList.add("pf-u-color-200")
+    usernames.appendChild(userName);
+
+    header.appendChild(usernames);
+
+    link.appendChild(header)
+
+    const content = document.createElement("div")
+    content.classList.add("pf-u-w-100")
+
+    const tweetTimestamp = document.createElement("span");
+    tweetTimestamp.innerText = new Date(tweet.timestamp).toLocaleString();
+    tweetTimestamp.classList.add("pf-u-color-200")
+    content.appendChild(tweetTimestamp);
+
+    const tweetBody = document.createElement("div");
+    tweetBody.innerHTML = tweet.body;
+    tweetBody.classList.add("pf-u-py-sm")
+
+    content.appendChild(tweetBody);
+
+    if (tweet.images.length > 0) {
+      const images = document.createElement("div");
+      images.classList.add("pf-l-gallery", "pf-m-gutter", "pf-u-my-sm")
+
+      tweet.images.forEach((image) => {
+        const el = document.createElement("div");
+        el.classList.add("pf-l-gallery__item")
+
+        const attachment = document.createElement("img");
+        attachment.src = image.url;
+        attachment.alt = image.altText;
+        attachment.classList.add("pf-u-w-100")
+
+        el.appendChild(attachment);
+
+        images.appendChild(el);
+      });
+
+      content.appendChild(images);
+    }
+
+
+    const statistics = document.createElement("div");
+    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200")
+
+    const comments = document.createElement("span");
+    comments.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const commentIcon = document.createElement("i");
+    commentIcon.classList.add("fas", "fa-comments")
+    commentIcon.ariaLabel = "Comments"
+
+    const commentCount = document.createElement("span");
+    commentCount.textContent = tweet.commentCount;
+
+    comments.append(commentIcon)
+    comments.append(commentCount)
+
+    statistics.appendChild(comments);
+
+    const retweets = document.createElement("span");
+    retweets.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const retweetIcon = document.createElement("i");
+    retweetIcon.classList.add("fas", "fa-retweet")
+    retweetIcon.ariaLabel = "Retweets"
+
+    const retweetCount = document.createElement("span");
+    retweetCount.textContent = tweet.retweetCount;
+
+    retweets.append(retweetIcon)
+    retweets.append(retweetCount)
+
+    statistics.appendChild(retweets);
+
+    const likes = document.createElement("span");
+    likes.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const likeIcon = document.createElement("i");
+    likeIcon.classList.add("fas", "fa-heart")
+    likeIcon.ariaLabel = "Likes"
+
+    const likeCount = document.createElement("span");
+    likeCount.textContent = tweet.likeCount;
+
+    likes.append(likeIcon)
+    likes.append(likeCount)
+
+    statistics.appendChild(likes);
+
+    content.appendChild(statistics);
+
+    link.append(content)
+
+    root.appendChild(link);
+
+    document.querySelector("#twitterfeed .twitterfeed__tweets").appendChild(root);
+  });
+</script>
+
+
+          
+          
+        </div>
+      </div>
+    </section>
+
+    <div class="pf-c-page__main-body pf-u-px-lg pf-u-px-0-on-xl pf-u-py-lg">
+  <div
+    class="pf-l-flex pf-m-justify-content-space-between pf-x-c-footer--max-width"
+  >
+    <div class="pf-l-flex__item">
+      <a
+        href="https://github.com/pojntfx/personal-site"
+        target="_blank"
+        rel="noopener"
+        class="pf-x-m-no-highlight--dark"
+        >© 2022 Felicitas Pojtinger</a
+      >
+    </div>
+    <div class="pf-l-flex__item">
+      <a href="../../imprint" class="pf-x-m-no-highlight--dark">Imprint</a>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+    </div>
+  </body>
+</html>

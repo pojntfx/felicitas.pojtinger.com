@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      
+        The Product Oriented Approach |
+        Felicitas Pojtinger
+      
+    </title>
+
+    <link rel="icon" href="https://github.com/pojntfx.png" />
+
+    <meta name="author" content="Felicitas Pojtinger" />
+    <meta name="description" content="Felicitas Pojtinger is a software engineer focused on Go and the web." />
+    <meta
+      name="keywords"
+      content="Felicitas, Pojtinger, Felicitas Pojtinger, pojntfx, Go, Web, STFS, bofied, liwasc, Cluster Platform, Open Source, Free Software"
+    />
+    <meta
+      name="copyright"
+      content="© 2022 Felicitas Pojtinger"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../../main.min.css"
+    />
+  </head>
+  <body>
+    <div class="pf-c-page pf-c-page--background">
+      <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main"
+        >Skip to content</a
+      >
+
+      
+        <header
+          class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+        >
+          <div class="pf-c-page__header__content--max-width">
+            <a
+              class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-c-page__header-brand-link--no-decoration pf-c-avatar--hover pf-u-pl-2xl pf-u-pl-sm-on-xl"
+              href="../../"
+            >
+              <img
+                src="https://github.com/pojntfx.png"
+                alt="Profile picture of Felicitas Pojtinger 🏳️‍🌈 💙💛"
+                class="pf-c-avatar pf-u-mr-md pf-c-avatar--navbar"
+              />
+              <div>
+                <h2 class="pf-u-font-size-sm">Felicitas Pojtinger 🏳️‍🌈 💙💛</h2>
+                <h1
+                  class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title"
+                >
+                  The Product Oriented Approach
+                </h1>
+              </div>
+            </a>
+
+            <div
+              class="pf-u-display-flex pf-u-align-items-center pf-u-pr-2xl pf-u-pr-0-on-xl"
+            >
+              <a
+                href="https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing"
+                target="_blank"
+                rel="noopener"
+                class="pf-c-button pf-m-plain pf-u-ml-2xl pf-u-mr-md"
+              >
+                <span class="pf-c-button__icon pf-m-start">
+                  <i class="fas fa-book" aria-hidden="true"></i> </span
+                >CV</a
+              >
+
+              <div class="pf-u-mr-md">
+                <div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="youtubestatus"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="
+          YouTube
+         follower count"
+        class="streamstatus__channel__badge"
+      />
+    </a>
+  </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the
+  YouTube
+  status.</noscript
+><script type="module">
+  const base = "\/"
+  const platform = "youtube"
+  const username = "UC0-pwQXvswpwjMVV_jdFLzg";
+
+  const streamStatus = await (
+    await fetch(`${base}api/${platform}?username=${username}`)
+  ).json();
+
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
+  
+  document.querySelector("#youtubestatus .streamstatus__channel__url").href =
+    streamStatus.channelURL;
+
+  document.querySelector("#youtubestatus .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
+
+  
+  document.querySelector("#youtubestatus .streamstatus__stream_url").href =
+    streamStatus.streamURL;
+
+  const indicator = document.querySelector("#youtubestatus .streamstatus__stream__islive");
+
+  indicator.innerText =
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
+
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+
+  document.querySelector("#youtubestatus .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
+</script>
+
+              </div>
+
+              <div
+  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  id="twitchstatus"
+>
+  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+      <img
+        alt="
+          Twitch
+         follower count"
+        class="streamstatus__channel__badge"
+      />
+    </a>
+  </div>
+
+  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+    ><strong class="streamstatus__stream__name"></strong
+  ></a>
+  <span class="pf-c-badge streamstatus__stream__islive"></span>
+</div>
+
+<noscript
+  >Please enable JavaScript to view the
+  Twitch
+  status.</noscript
+><script type="module">
+  const base = "\/"
+  const platform = "twitch"
+  const username = "pojntfx";
+
+  const streamStatus = await (
+    await fetch(`${base}api/${platform}?username=${username}`)
+  ).json();
+
+  const truncate = (str, n) =>
+    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
+
+  
+  document.querySelector("#twitchstatus .streamstatus__channel__url").href =
+    streamStatus.channelURL;
+
+  document.querySelector("#twitchstatus .streamstatus__channel__badge").src =
+    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
+
+  
+  document.querySelector("#twitchstatus .streamstatus__stream_url").href =
+    streamStatus.streamURL;
+
+  const indicator = document.querySelector("#twitchstatus .streamstatus__stream__islive");
+
+  indicator.innerText =
+    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
+
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+
+  document.querySelector("#twitchstatus .streamstatus__stream__name").innerHTML =
+    truncate(streamStatus.streamName, 14);
+</script>
+
+            </div>
+          </div>
+        </header>
+      
+
+      
+  <main
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent"
+    tabindex="-1"
+    id="main"
+  >
+    <section
+      class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-lg"
+    >
+      <div class="pf-l-grid pf-m-gutter">
+        <div class="pf-l-grid__item pf-m-12-col pf-m-8-col-on-lg">
+          <div class="pf-c-card">
+            <div class="pf-c-card__header pf-u-px-0 pf-u-pt-0 pf-u-pb-sm">
+              <div class="pf-c-card__header-main pf-u-w-100">
+                <img
+                  src="../../articles/product-oriented/static/alphahorizon-landing_hu0f71268dd7f0a521fbaf0b36b23e5320_181582_1024x0_resize_q75_box.jpg"
+                  alt="&#34;Round open neon&#34; by Finn Hackshaw on Unsplash
+"
+                  class="pf-u-w-100 pf-u-h-100 pf-x-c-article__header"
+                />
+              </div>
+            </div>
+            <div class="pf-c-card__title">
+              <h1 class="pf-u-font-size-4xl pf-u-pb-sm">The Product Oriented Approach</h1>
+              <p>Yet another way of structuring one&#39;s projects.</p>
+            </div>
+            <div class="pf-c-card__body">
+              <article>
+                <header
+                  class="pf-l-flex pf-m-justify-content-space-between pf-m-space-items-sm pf-u-pb-md"
+                >
+                  <div class="pf-l-flex pf-m-space-items-sm pf-u-color-200">
+                    <span
+                      >Originally published on
+                      February 6, 2019</span
+                    >
+                    <span aria-hidden="true" class="pf-u-color-200">·</span>
+                    <span
+                      >Last updated on
+                      February 6, 2019</span
+                    >
+                  </div>
+                  <div class="pf-c-chip-group pf-u-mt-md">
+                    <div class="pf-c-chip-group__main">
+                      <ul
+                        class="pf-c-chip-group__list"
+                        role="list"
+                        aria-label="Keywords"
+                      >
+                        
+                          <li class="pf-c-chip-group__list-item">
+                            <div class="pf-c-chip">
+                              <span class="pf-c-chip__text">construct</span>
+                            </div>
+                          </li>
+                        
+                          <li class="pf-c-chip-group__list-item">
+                            <div class="pf-c-chip">
+                              <span class="pf-c-chip__text">infra</span>
+                            </div>
+                          </li>
+                        
+                          <li class="pf-c-chip-group__list-item">
+                            <div class="pf-c-chip">
+                              <span class="pf-c-chip__text">model</span>
+                            </div>
+                          </li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </header>
+
+                <main class="pf-c-page__main pf-c-content">
+                  <p>This gives the foundation a UNIXy feel but still makes it possible to refer to it as a &ldquo;platform&rdquo; - thus, Standard Framework should be called Cluster Platform from now on. If we focus on the services (Forum, Chat, Code etc.) as much as before discoverability suffers greatly. The Cluster Platform should be product-oriented, which makes the following categories more appropriate both on the site and also in other sectors (naming schemes are just ideas):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Cluster Platform/
+</span></span><span style="display:flex;"><span>    Landing
+</span></span><span style="display:flex;"><span>    Devices/
+</span></span><span style="display:flex;"><span>        Satellite
+</span></span><span style="display:flex;"><span>        Center
+</span></span><span style="display:flex;"><span>        Station
+</span></span><span style="display:flex;"><span>    Modules/
+</span></span><span style="display:flex;"><span>        Compute
+</span></span><span style="display:flex;"><span>        Communications
+</span></span><span style="display:flex;"><span>        Propulsion
+</span></span><span style="display:flex;"><span>        Rotation
+</span></span><span style="display:flex;"><span>        Navigation
+</span></span><span style="display:flex;"><span>        Energy
+</span></span><span style="display:flex;"><span>    Infrastructure/
+</span></span><span style="display:flex;"><span>        Provisioner
+</span></span><span style="display:flex;"><span>        Runtime
+</span></span><span style="display:flex;"><span>        Undercloud
+</span></span><span style="display:flex;"><span>        Overcloud
+</span></span><span style="display:flex;"><span>        Network
+</span></span><span style="display:flex;"><span>    Operations/
+</span></span><span style="display:flex;"><span>        Identity
+</span></span><span style="display:flex;"><span>        Workflow
+</span></span><span style="display:flex;"><span>        Workspace
+</span></span><span style="display:flex;"><span>        Activity
+</span></span><span style="display:flex;"><span>        Configuration
+</span></span><span style="display:flex;"><span>        Dashboard
+</span></span><span style="display:flex;"><span>        Infrastructure
+</span></span><span style="display:flex;"><span>        Metrics
+</span></span><span style="display:flex;"><span>        Demos
+</span></span><span style="display:flex;"><span>    Development/
+</span></span><span style="display:flex;"><span>        Editor
+</span></span><span style="display:flex;"><span>        Terminal
+</span></span><span style="display:flex;"><span>        Debugging
+</span></span><span style="display:flex;"><span>        Tracer
+</span></span><span style="display:flex;"><span>        Shell
+</span></span><span style="display:flex;"><span>    Forum (highlighted)
+</span></span><span style="display:flex;"><span>    Chat (highlighted)
+</span></span></code></pre></div><p>Using this approach, each &ldquo;Product&rdquo; such as the Provisioner could have it&rsquo;s own channels/tags/packages/docs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Infrastructure/ (#infrastructure, t/infrastructure, packages/infrastructure, docs/infrastructure)
+</span></span><span style="display:flex;"><span>    Provisioner (#provisioner, t/provisioner, packages/provisioner, docs/provisioner)
+</span></span></code></pre></div><p>AppsCode does <a href="https://appscode.com/products/searchlight/">exactly this</a>:</p>
+<p><div class="pf-c-card pf-u-my-md">
+  <div class="pf-c-card__header">
+    <div class="pf-c-card__header-main pf-u-w-100">
+      <img
+        src="./static/appscode-searchlight.jpg"
+        class="pf-u-w-100"
+        alt="Screenshot of AppsCode product page"
+      />
+    </div>
+  </div>
+  <div class="pf-c-card__footer pf-x-u-text-center" aria-hidden="true">
+    Screenshot of AppsCode product page
+  </div>
+</div>
+</p>
+<p><a href="https://microk8s.io/">MicroK8s</a> also links to their code, forum and chat, all in a lightweight &ldquo;multi-tenant&rdquo; fashion, just like we should do it; MicroK8s even has it&rsquo;s own site:</p>
+<p><div class="pf-c-card pf-u-my-md">
+  <div class="pf-c-card__header">
+    <div class="pf-c-card__header-main pf-u-w-100">
+      <img
+        src="./static/microk8s-landing.jpg"
+        class="pf-u-w-100"
+        alt="MicroK8s landing page"
+      />
+    </div>
+  </div>
+  <div class="pf-c-card__footer pf-x-u-text-center" aria-hidden="true">
+    MicroK8s landing page
+  </div>
+</div>
+</p>
+<p><div class="pf-c-card pf-u-my-md">
+  <div class="pf-c-card__header">
+    <div class="pf-c-card__header-main pf-u-w-100">
+      <img
+        src="./static/microk8s-forum.jpg"
+        class="pf-u-w-100"
+        alt="MicroK8s forum"
+      />
+    </div>
+  </div>
+  <div class="pf-c-card__footer pf-x-u-text-center" aria-hidden="true">
+    MicroK8s forum
+  </div>
+</div>
+</p>
+<p><div class="pf-c-card pf-u-my-md">
+  <div class="pf-c-card__header">
+    <div class="pf-c-card__header-main pf-u-w-100">
+      <img
+        src="./static/microk8s-chat-link.jpg"
+        class="pf-u-w-100"
+        alt="MicroK8s chat link"
+      />
+    </div>
+  </div>
+  <div class="pf-c-card__footer pf-x-u-text-center" aria-hidden="true">
+    MicroK8s chat link
+  </div>
+</div>
+</p>
+<p><div class="pf-c-card pf-u-my-md">
+  <div class="pf-c-card__header">
+    <div class="pf-c-card__header-main pf-u-w-100">
+      <img
+        src="./static/microk8s-chat.jpg"
+        class="pf-u-w-100"
+        alt="MicroK8s chat"
+      />
+    </div>
+  </div>
+  <div class="pf-c-card__footer pf-x-u-text-center" aria-hidden="true">
+    MicroK8s chat
+  </div>
+</div>
+</p>
+<p>It is however very important that the forum and chat are highlighted; this makes the end-user much more likely to &ldquo;join the community&rdquo;. See the <a href="https://appscode.com/">AppsCode landing page</a>:</p>
+<p><div class="pf-c-card pf-u-my-md">
+  <div class="pf-c-card__header">
+    <div class="pf-c-card__header-main pf-u-w-100">
+      <img
+        src="./static/appscode-landing.jpg"
+        class="pf-u-w-100"
+        alt="Screenshot of the AppsCode landing page"
+      />
+    </div>
+  </div>
+  <div class="pf-c-card__footer pf-x-u-text-center" aria-hidden="true">
+    Screenshot of the AppsCode landing page
+  </div>
+</div>
+</p>
+<p>In addition to that, the chat, forum and GitLab should integrate tightly. Because the projects are managed using the site, no direct link to the GitLab organization should be provided. There must not be a &ldquo;blog&rdquo;, but there should rather be an &ldquo;Announcements&rdquo; tag in the forum. From personal experience, that is how I got interested in contributing to projects (in particular, the <code>Communitheme</code> for Ubuntu, although I feel different about that nowadays).</p>
+<p>The landing page might not be as clean as before, but it is much more usable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Cluster Platform        Devices  Modules  Infrastructure  Operations  Development  [Forum]  [Chat]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                            The Futurist&#39;s Approach to System Design.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(c) 2019 Felicitas Pojtinger                                                                    Imprint
+</span></span></code></pre></div><p>A simple mockup has been created to visualize this idea:</p>
+<p><div class="pf-c-card pf-u-my-md">
+  <div class="pf-c-card__header">
+    <div class="pf-c-card__header-main pf-u-w-100">
+      <img
+        src="./static/alphahorizon-landing.jpg"
+        class="pf-u-w-100"
+        alt="Mockup"
+      />
+    </div>
+  </div>
+  <div class="pf-c-card__footer pf-x-u-text-center" aria-hidden="true">
+    Mockup
+  </div>
+</div>
+</p>
+<p>This way also makes it possible to do things such as full-fledged sub pages for each product. Even though we are referring to the whole as a &ldquo;platform&rdquo;, the UNIXy-approach is still implemented, but it is much easier for beginners to go through the whole onboarding process.</p>
+
+                </main>
+              </article>
+            </div>
+            <div class="pf-c-card__footer">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="pojntfx/personal-site"
+                data-repo-id="MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE="
+                data-category="Announcements"
+                data-category-id="DIC_kwDODa0h2c4CAeR2"
+                data-mapping="pathname"
+                data-reactions-enabled="1"
+                data-emit-metadata="1"
+                data-theme="light"
+                data-lang="en"
+                crossorigin="anonymous"
+                async
+              ></script>
+              <noscript
+                >Please enable JavaScript to view the comments powered by
+                giscus.</noscript
+              >
+            </div>
+          </div>
+        </div>
+        <div class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg">
+          <div class="pf-c-card" id="twitterfeed">
+  <div
+    class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-py-xl"
+  >
+    <span>Latest tweets</span>
+
+    <a
+      target="_blank"
+      class="twitterfeed__user__url pf-l-flex pf-m-align-items-center"
+    >
+      <img
+        src="https://img.shields.io/twitter/follow/pojntfx?label=%40pojntfx&style=social"
+        alt="Twitter follower count"
+      />
+    </a>
+  </div>
+  <div class="pf-c-card__body twitterfeed">
+    <ul
+      class="twitterfeed__tweets pf-l-flex pf-m-column pf-m-space-items-sm"
+    ></ul>
+
+    <a
+      target="_blank"
+      class="twitterfeed__user__url pf-c-button pf-m-link pf-u-mt-lg"
+    >
+      <span class="pf-c-button__icon pf-m-start">
+        <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
+      >All tweets</a
+    >
+  </div>
+</div>
+
+<noscript>Please enable JavaScript to view the Twitter feed.</noscript
+><script type="module">
+  const base = "\/";
+  const username = "pojntfx";
+
+  const twitterFeed = await(
+    await fetch(`${base}api/twitter?username=${username}`)
+  ).json();
+
+  
+  document.querySelectorAll("#twitterfeed .twitterfeed__user__url").forEach(el => {
+    el.href = twitterFeed.userURL;
+  })
+
+  
+  twitterFeed.tweets.map((tweet) => {
+    const root = document.createElement("li");
+    root.classList.add("pf-c-card", "pf-m-plain", "pf-m-hoverable-raised")
+
+    const link = document.createElement("a");
+    link.target = "_blank";
+    link.href = tweet.url;
+    link.classList.add("pf-u-color-100", "pf-l-flex", "pf-u-flex-direction-column", "pf-m-space-items-sm", "pf-m-align-items-flex-start", "pf-c-card__body", "pf-u-p-md", "pf-x-m-no-decoration")
+
+    const header = document.createElement("div")
+    header.classList.add("pf-u-mb-sm", "pf-l-flex", "pf-m-align-items-center")
+
+    const userPic = document.createElement("img");
+    userPic.src = twitterFeed.userProfilePictureURL;
+    userPic.alt = `Profile picture of ${twitterFeed.userDisplayName}`;
+    userPic.classList.add("pf-c-avatar", "pf-u-mr-sm")
+    header.appendChild(userPic);
+
+    const usernames = document.createElement("div")
+    usernames.classList.add("pf-l-flex", "pf-m-justify-content-center", "pf-m-align-items-start", "pf-m-space-items-sm", "pf-u-flex-direction-column")
+
+    const userDisplayName = document.createElement("span");
+    userDisplayName.innerText = twitterFeed.userDisplayName;
+    usernames.appendChild(userDisplayName);
+
+    const userName = document.createElement("span");
+    userName.innerText = " @"+twitterFeed.username;
+    userName.classList.add("pf-u-color-200")
+    usernames.appendChild(userName);
+
+    header.appendChild(usernames);
+
+    link.appendChild(header)
+
+    const content = document.createElement("div")
+    content.classList.add("pf-u-w-100")
+
+    const tweetTimestamp = document.createElement("span");
+    tweetTimestamp.innerText = new Date(tweet.timestamp).toLocaleString();
+    tweetTimestamp.classList.add("pf-u-color-200")
+    content.appendChild(tweetTimestamp);
+
+    const tweetBody = document.createElement("div");
+    tweetBody.innerHTML = tweet.body;
+    tweetBody.classList.add("pf-u-py-sm")
+
+    content.appendChild(tweetBody);
+
+    if (tweet.images.length > 0) {
+      const images = document.createElement("div");
+      images.classList.add("pf-l-gallery", "pf-m-gutter", "pf-u-my-sm")
+
+      tweet.images.forEach((image) => {
+        const el = document.createElement("div");
+        el.classList.add("pf-l-gallery__item")
+
+        const attachment = document.createElement("img");
+        attachment.src = image.url;
+        attachment.alt = image.altText;
+        attachment.classList.add("pf-u-w-100")
+
+        el.appendChild(attachment);
+
+        images.appendChild(el);
+      });
+
+      content.appendChild(images);
+    }
+
+
+    const statistics = document.createElement("div");
+    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200")
+
+    const comments = document.createElement("span");
+    comments.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const commentIcon = document.createElement("i");
+    commentIcon.classList.add("fas", "fa-comments")
+    commentIcon.ariaLabel = "Comments"
+
+    const commentCount = document.createElement("span");
+    commentCount.textContent = tweet.commentCount;
+
+    comments.append(commentIcon)
+    comments.append(commentCount)
+
+    statistics.appendChild(comments);
+
+    const retweets = document.createElement("span");
+    retweets.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const retweetIcon = document.createElement("i");
+    retweetIcon.classList.add("fas", "fa-retweet")
+    retweetIcon.ariaLabel = "Retweets"
+
+    const retweetCount = document.createElement("span");
+    retweetCount.textContent = tweet.retweetCount;
+
+    retweets.append(retweetIcon)
+    retweets.append(retweetCount)
+
+    statistics.appendChild(retweets);
+
+    const likes = document.createElement("span");
+    likes.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+
+    const likeIcon = document.createElement("i");
+    likeIcon.classList.add("fas", "fa-heart")
+    likeIcon.ariaLabel = "Likes"
+
+    const likeCount = document.createElement("span");
+    likeCount.textContent = tweet.likeCount;
+
+    likes.append(likeIcon)
+    likes.append(likeCount)
+
+    statistics.appendChild(likes);
+
+    content.appendChild(statistics);
+
+    link.append(content)
+
+    root.appendChild(link);
+
+    document.querySelector("#twitterfeed .twitterfeed__tweets").appendChild(root);
+  });
+</script>
+
+
+          
+          
+        </div>
+      </div>
+    </section>
+
+    <div class="pf-c-page__main-body pf-u-px-lg pf-u-px-0-on-xl pf-u-py-lg">
+  <div
+    class="pf-l-flex pf-m-justify-content-space-between pf-x-c-footer--max-width"
+  >
+    <div class="pf-l-flex__item">
+      <a
+        href="https://github.com/pojntfx/personal-site"
+        target="_blank"
+        rel="noopener"
+        class="pf-x-m-no-highlight--dark"
+        >© 2022 Felicitas Pojtinger</a
+      >
+    </div>
+    <div class="pf-l-flex__item">
+      <a href="../../imprint" class="pf-x-m-no-highlight--dark">Imprint</a>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+    </div>
+  </body>
+</html>
