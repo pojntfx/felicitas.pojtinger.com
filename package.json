@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/pojntfx/personal-site#readme",
   "dependencies": {
+    "@fontsource/lato": "^4.5.1",
     "@patternfly/patternfly": "^4.171.1"
   },
   "devDependencies": {

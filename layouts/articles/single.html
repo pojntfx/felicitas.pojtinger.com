@@ -9,7 +9,7 @@
     >
       <div class="pf-l-grid pf-m-gutter">
         <div class="pf-l-grid__item pf-m-12-col pf-m-8-col-on-lg">
-          <div class="pf-c-card">
+          <div class="pf-c-card pf-c-card--full-width">
             <div class="pf-c-card__header pf-u-px-0 pf-u-pt-0 pf-u-pb-sm">
               <div class="pf-c-card__header-main pf-u-w-100">
                 <img
@@ -85,12 +85,16 @@
             </div>
           </div>
         </div>
-        <div class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg">
+        <div
+          class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg pf-c-grid--tweets"
+        >
           {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
 
           {{ $related := .Site.RegularPages.Related . | first 5 }}
           {{ if gt (len $related) 0 }}
-            <div class="pf-c-card pf-u-mt-md">
+            <div
+              class="pf-c-card pf-c-card--full-width pf-u-mt-md pf-c-card--see-also pf-c-card--transparent"
+            >
               <div class="pf-c-card__title">See also</div>
               <div class="pf-c-card__body">
                 <div class="pf-l-gallery pf-m-gutter">

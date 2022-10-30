@@ -39,7 +39,7 @@
 
       {{ block "header" . }}
         <header
-          class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+          class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
         >
           <div class="pf-c-page__header__content--max-width">
             <a
@@ -52,9 +52,11 @@
                 class="pf-c-avatar pf-u-mr-md pf-c-avatar--navbar"
               />
               <div>
-                <h2 class="pf-u-font-size-sm">{{ .Site.Data.person.name }}</h2>
+                <h2 class="pf-u-font-size-sm pf-x-u-text-shadow-sm">
+                  {{ .Site.Data.person.name }}
+                </h2>
                 <h1
-                  class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title"
+                  class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title pf-x-u-text-shadow-sm"
                 >
                   {{ .Title }}
                 </h1>
@@ -68,18 +70,22 @@
                 href="{{ .Site.Data.person.cv }}"
                 target="_blank"
                 rel="noopener"
-                class="pf-c-button pf-m-plain pf-u-ml-2xl pf-u-mr-md"
+                class="pf-c-button pf-c-button--header pf-x-u-text-shadow-sm pf-m-plain pf-u-ml-2xl {{ if .Site.Params.meta.streaming }}
+                  pf-u-mr-md
+                {{ end }}"
               >
                 <span class="pf-c-button__icon pf-m-start">
                   <i class="fas fa-book" aria-hidden="true"></i> </span
                 >CV</a
               >
 
-              <div class="pf-u-mr-md">
-                {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
-              </div>
+              {{ if .Site.Params.meta.streaming }}
+                <div class="pf-u-mr-md">
+                  {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
+                </div>
 
-              {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
+                {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
+              {{ end }}
             </div>
           </div>
         </header>
