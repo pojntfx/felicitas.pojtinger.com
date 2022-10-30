@@ -68,7 +68,6 @@ clean:
 # Dependencies
 depend:
 	npm i
-	npm run fmt
 	find node_modules/@patternfly/patternfly/ -name "*.css" -type f -delete
 	rm -rf static/fonts
 	mkdir -p static
