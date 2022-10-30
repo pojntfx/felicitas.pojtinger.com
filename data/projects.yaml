@@ -33,7 +33,7 @@
     - slug: alphahorizonio/unisockets
       background: var(--pf-global--palette--gold-600)
     - slug: alphahorizonio/tinynet
-      background: var(--pf-global--palette--orange-400)
+      background: var(--pf-global--palette--cyan-600)
     - slug: alphahorizonio/nebulark
       background: var(--pf-global--palette--orange-600)
     - slug: alphahorizonio/webnetes
@@ -55,7 +55,7 @@
     - slug: pojntfx/uni-netpractice-notes
       background: var(--pf-global--palette--orange-600)
     - slug: pojntfx/uni-webtopics-notes
-      background: var(--pf-global--palette--orange-400)
+      background: var(--pf-global--palette--cyan-600)
     - slug: pojntfx/uni-sciwriting-notes
       background: var(--pf-global--palette--gold-600)
     - slug: pojntfx/uni-appsecurity-notes
@@ -87,7 +87,7 @@
     - slug: pojntfx/personal-site
       background: var(--pf-global--palette--gold-600)
     - slug: pojntfx/family-site
-      background: var(--pf-global--palette--orange-400)
+      background: var(--pf-global--palette--cyan-600)
     - slug: pojntfx/illustrierte-website
       background: var(--pf-global--palette--orange-600)
     - slug: pojntfx/physio-dani.de

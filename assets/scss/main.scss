@@ -138,7 +138,7 @@ $pf-global--BorderRadius--sm: 8px;
 
 .pf-c-page--background::before {
   content: "";
-  background: url(/img/bg.jpg);
+  background: url(/img/bg.webp);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -411,4 +411,8 @@ $pf-global--BorderRadius--sm: 8px;
 .pf-c-page__main--index {
   position: absolute;
   width: 100%;
+}
+
+.pf-c-card__title > h2 {
+  font-weight: var(--pf-c-card__title--FontWeight) !important;
 }

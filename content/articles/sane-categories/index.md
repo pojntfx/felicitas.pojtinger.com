@@ -3,7 +3,7 @@ title: Sane Categories for Software Distribution Systems
 date: 2019-09-14T16:57:26+01:00
 updated: 2019-09-14T16:57:26+01:00
 excerpt: Why are these systems so hard to set up?
-header: ./static/header.jpg
+header: ./static/header.webp
 headerAlt: |
   "Cable Network" by Taylor Vick on Unsplash
 keywords:
