@@ -3,7 +3,7 @@ title: InfraCTL is Generally Available!
 date: 2019-09-25T16:59:36+01:00
 updated: 2019-09-25T16:59:36+01:00
 excerpt: A supra-cloud CLI for nodes, layer 2/layer 3 overlay networks and Kubernetes clusters
-header: ./static/header.jpg
+header: ./static/header.webp
 headerAlt: |
   "In the line of fire" by Christopher Burns on Unsplash
 keywords:
