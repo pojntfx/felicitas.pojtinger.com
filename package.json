@@ -4,7 +4,7 @@
   "description": "My personal site.",
   "main": "index.js",
   "scripts": {
-    "fmt": "prettier --write .",
+    "fmt": "prettier --write . --ignore-path=.vercel",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
