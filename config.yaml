@@ -20,6 +20,7 @@ params:
       - Open Source
       - Free Software
     source: https://github.com/pojntfx/personal-site
+    streaming: false
   comments:
     repo: pojntfx/personal-site
     repoID: MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE=

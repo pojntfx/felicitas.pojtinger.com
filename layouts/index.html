@@ -1,6 +1,6 @@
 {{ define "header" }}
   <header
-    class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+    class="pf-c-page__header pf-c-page__header--max-width pf-c-page__header--overlay pf-c-page__header--overlay--index pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
   >
     <div
       class="pf-c-page__header__content--max-width pf-c-page__header__content--max-width--home"
@@ -12,18 +12,22 @@
           href="{{ .Site.Data.person.cv }}"
           target="_blank"
           rel="noopener"
-          class="pf-c-button pf-m-plain pf-u-ml-sm pf-u-mr-md"
+          class="pf-c-button pf-c-button--header pf-x-u-text-shadow-sm pf-m-plain pf-u-ml-sm {{ if .Site.Params.meta.streaming }}
+            pf-u-mr-md
+          {{ end }}"
         >
           <span class="pf-c-button__icon pf-m-start">
             <i class="fas fa-book" aria-hidden="true"></i> </span
           >CV</a
         >
 
-        <div class="pf-u-mr-md">
-          {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
-        </div>
+        {{ if .Site.Params.meta.streaming }}
+          <div class="pf-u-mr-md">
+            {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
+          </div>
 
-        {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
+          {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
+        {{ end }}
       </div>
     </div>
   </header>
@@ -31,18 +35,20 @@
 
 {{ define "main" }}
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur"
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-c-page__main--index pf-x-u-blur"
     tabindex="-1"
     id="main"
   >
-    <div class="pf-l-grid pf-m-gutter pf-u-p-xl pf-u-pb-md pf-x-person__header">
+    <div class="pf-l-grid pf-m-gutter pf-u-p-xl pf-x-person__header">
       <div
         class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center"
       >
-        <h1 class="pf-u-font-size-xl pf-u-font-weight-bold pf-u-mb-xs">
+        <h1
+          class="pf-u-font-size-xl pf-u-font-weight-bold pf-u-mb-xs pf-x-u-text-shadow-sm"
+        >
           {{ .Site.Data.person.name }}
         </h1>
-        <p>{{ .Site.Data.person.description }}</p>
+        <p class="pf-x-u-text-shadow-sm">{{ .Site.Data.person.description }}</p>
       </div>
 
       <figure
@@ -89,7 +95,9 @@
     <div class="pf-l-grid pf-m-gutter pf-l-grid--max-width">
       <div class="pf-l-grid__item pf-m-12-col pf-m-7-col-on-lg">
         <section id="articles">
-          <div class="pf-c-card">
+          <div
+            class="pf-c-card pf-c-card--full-width pf-c-card--articles pf-c-card--transparent"
+          >
             <div
               class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-py-xl"
             >
@@ -144,7 +152,7 @@
         </section>
       </div>
       <div class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg">
-        <section id="tweets">
+        <section id="tweets" class="pf-c-section--articles">
           {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
         </section>
       </div>
@@ -152,19 +160,23 @@
 
     <section id="projects">
       <div
-        class="pf-c-card pf-u-px-lg pf-u-px-0-on-xl pf-u-mt-xl pf-x-u-transparent pf-x-u-color-light-100 pf-x-u-no-shadow"
+        class="pf-c-card pf-u-px-lg pf-u-px-0-on-xl pf-u-mt-xl pf-x-u-transparent pf-x-u-no-shadow"
       >
         <div class="pf-x-c-projects--max-width">
           <div
             class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-pt-0 pf-u-pb-0 pf-u-px-0"
           >
-            <span>Projects</span>
+            <span class="pf-x-u-text-shadow-sm">Projects</span>
           </div>
           <div class="pf-c-card__body pf-u-px-0 pf-u-pb-0">
             <ul>
               {{ range .Site.Data.projects_gen }}
                 <li>
-                  <h3 class="pf-u-font-size-xl pf-u-my-md">{{ .title }}</h3>
+                  <h3
+                    class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm"
+                  >
+                    {{ .title }}
+                  </h3>
                   <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
                     {{ range sort .projects "stars" "desc" }}
                       <div class="pf-l-gallery__item">

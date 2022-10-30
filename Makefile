@@ -72,4 +72,5 @@ depend:
 	rm -rf static/fonts
 	mkdir -p static
 	cp -r node_modules/@patternfly/patternfly/assets/fonts static
+	cp -r node_modules/@fontsource/lato/files static/fonts/lato
 	go run ./cmd/ps-gen-projects/ -src data/projects.yaml > data/projects_gen.yaml

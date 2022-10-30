@@ -3,8 +3,43 @@
 $pf-global--font-path: "./{{ .Site.BaseURL }}/fonts";
 $fa-font-path: $pf-global--font-path + "/webfonts";
 
+$pf-global--BorderRadius--sm: 8px;
+
 @import "node_modules/@patternfly/patternfly/patternfly.scss";
 @import "node_modules/@patternfly/patternfly/patternfly-addons.scss";
+
+@import "node_modules/@fontsource/lato/scss/mixins.scss";
+@include fontFace($weight: 400, $display: fallback, $fontDir: "fonts/lato");
+
+:root {
+  --pf-global--FontFamily--sans-serif: "Lato", "RedHatText", "Overpass",
+    overpass, helvetica, arial, sans-serif;
+  --pf-global--FontFamily--heading--sans-serif: "Lato", "RedHatDisplay",
+    "Overpass", overpass, helvetica, arial, sans-serif;
+  --pf-global--FontFamily--monospace: "Liberation Mono", consolas,
+    "SFMono-Regular", menlo, monaco, "Courier New", monospace;
+  --pf-global--FontFamily--redhat-updated--sans-serif: "Lato",
+    "RedHatTextUpdated", "Overpass", overpass, helvetica, arial, sans-serif;
+  --pf-global--FontFamily--redhat-updated--heading--sans-serif: "Lato",
+    "RedHatDisplayUpdated", "Overpass", overpass, helvetica, arial, sans-serif;
+  --pf-global--FontFamily--redhat--monospace: "RedHatMono", "Liberation Mono",
+    consolas, "SFMono-Regular", menlo, monaco, "Courier New", monospace;
+  --pf-global--FontFamily--redhatVF--sans-serif: "Lato", "RedHatTextVF",
+    "RedHatText", "Overpass", overpass, helvetica, arial, sans-serif;
+  --pf-global--FontFamily--redhatVF--heading--sans-serif: "Lato",
+    "RedHatDisplayVF", "RedHatDisplay", "Overpass", overpass, helvetica, arial,
+    sans-serif;
+  --pf-global--FontFamily--redhatVF--monospace: "RedHatMonoVF", "RedHatMono",
+    "Liberation Mono", consolas, "SFMono-Regular", menlo, monaco, "Courier New",
+    monospace;
+  --pf-global--FontFamily--overpass--sans-serif: "Lato", "overpass", overpass,
+    "open sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+    "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --pf-global--FontFamily--overpass--monospace: "overpass-mono", overpass-mono,
+    "SFMono-Regular", menlo, monaco, consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
 
 .pf-x-m-no-decoration {
   text-decoration: none !important;
@@ -21,6 +56,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
     @extend .pf-u-p-md;
 
     overflow-x: auto;
+    border-radius: $pf-global--BorderRadius--sm;
   }
 }
 
@@ -33,6 +69,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   width: 250px;
   height: 100%;
   object-fit: cover;
+  box-shadow: 0 0 14px var(--pf-global--Color--light-100);
 }
 
 .pf-x-person__header {
@@ -40,12 +77,12 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   margin: 3rem auto;
 
   @media screen and (min-width: 1146px) {
-    margin-bottom: 0 !important;
+    margin-bottom: 2rem !important;
   }
 
   &,
   .pf-c-dropdown__toggle {
-    color: var(--pf-global--Color--light-100);
+    color: var(--pf-global--Color--dark-100);
   }
 }
 
@@ -91,12 +128,17 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 .pf-x-u-blur {
   backdrop-filter: blur(7.5px);
   -webkit-backdrop-filter: blur(7.5px);
-  background: rgba(0, 0, 0, 0.8) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+.pf-c-page__main--with-overlay {
+  padding-top: 100px;
+  background: rgba(255, 255, 255, 0.5) !important;
 }
 
 .pf-c-page--background::before {
   content: "";
-  background: url(https://source.unsplash.com/featured?sunset);
+  background: url(/img/bg.jpg);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -163,10 +205,10 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
   left: 0;
   right: 0;
   height: 100px;
-}
 
-.pf-c-page__main--with-overlay {
-  padding-top: 100px;
+  &.pf-c-page__header--overlay--index {
+    position: relative;
+  }
 }
 
 .pf-x-u-nowrap {
@@ -197,7 +239,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 }
 
 .pf-c-page__header-brand-link--no-decoration {
-  color: var(--pf-global--Color--light-100);
+  color: var(--pf-global--Color--dark-100);
   text-decoration: none;
 }
 
@@ -220,7 +262,7 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 }
 
 .pf-x-m-no-highlight--dark {
-  color: var(--pf-global--Color--light-100);
+  color: var(--pf-global--Color--dark-100);
 }
 
 .pf-l-gallery--max-350 {
@@ -280,4 +322,93 @@ $fa-font-path: $pf-global--font-path + "/webfonts";
 
 .pf-c-page__header__content--max-width--home > * {
   margin-left: auto;
+}
+
+.pf-c-button--header {
+  color: var(--pf-global--Color--dark-100) !important;
+}
+
+.pf-m-expanded > .pf-c-dropdown__toggle::before,
+.pf-m-expanded
+  > .pf-c-dropdown__toggle.pf-m-action
+  .pf-c-dropdown__toggle-button::before {
+  border-color: var(--pf-global--Color--dark-100);
+  border-radius: $pf-global--BorderRadius--sm;
+  border-bottom-width: 1px !important;
+}
+
+.pf-x-u-text-shadow-sm {
+  text-shadow: 0 0 4px var(--pf-global--Color--light-100);
+}
+
+.pf-c-card {
+  border-radius: $pf-global--BorderRadius--sm;
+}
+
+.pf-c-card__header-main__img {
+  border-top-left-radius: $pf-global--BorderRadius--sm;
+  border-top-right-radius: $pf-global--BorderRadius--sm;
+}
+
+.pf-x-c-article__header {
+  @media screen and (min-width: 992px) {
+    border-top-right-radius: $pf-global--BorderRadius--sm;
+  }
+
+  @media screen and (min-width: 1129px) {
+    border-top-left-radius: $pf-global--BorderRadius--sm;
+  }
+}
+
+.pf-c-card--full-width {
+  @media screen and (max-width: 991px) {
+    border-radius: 0;
+  }
+}
+
+.pf-c-card--full-width-lg {
+  @media screen and (max-width: 1199px) {
+    border-radius: 0;
+  }
+}
+
+.pf-c-card--articles {
+  @media screen and (max-width: 1128px) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.pf-c-section--articles > .pf-c-card,
+.pf-c-card--see-also,
+.pf-c-grid--tweets > .pf-c-card {
+  @media screen and (max-width: 1128px) {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.pf-c-card--lastcommit {
+  @media screen and (max-width: 825px) {
+    border-radius: 0;
+  }
+}
+
+.pf-c-dropdown__menu {
+  border-radius: $pf-global--BorderRadius--sm;
+}
+
+.pf-c-card--transparent {
+  @extend .pf-x-u-blur;
+
+  background: rgba(255, 255, 255, 0.5) !important;
+
+  > .pf-c-card__title {
+    @extend .pf-x-u-text-shadow-sm;
+  }
+}
+
+.pf-c-page__main--index {
+  position: absolute;
+  width: 100%;
 }
