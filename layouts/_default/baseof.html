@@ -13,7 +13,10 @@
       {{ end }}
     </title>
 
-    <link rel="me" value="{{ .Site.Data.person.mastodon }}" />
+    <link
+      rel="me"
+      href="https://{{ index (split .Site.Data.person.mastodon "@") 2 }}/@{{ index (split .Site.Data.person.mastodon "@") 1 }}"
+    />
 
     <link rel="icon" href="{{ .Site.Data.person.img }}" />
 
