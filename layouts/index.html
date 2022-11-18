@@ -153,7 +153,7 @@
       </div>
       <div class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg">
         <section id="tweets" class="pf-c-section--articles">
-          {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
+          {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Data.person.mastodon "BaseURL" .Site.BaseURL ) }}
         </section>
       </div>
     </div>

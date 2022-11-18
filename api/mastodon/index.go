@@ -16,8 +16,9 @@ type Output struct {
 	UserFollowerCount     int    `json:"userFollowerCount"`
 	UserURL               string `json:"userURL"`
 	UserProfilePictureURL string `json:"userProfilePictureURL"`
+	UserID                string `json:"userID"`
 
-	Toots []Toot `json:"toos"`
+	Toots []Toot `json:"toots"`
 }
 
 type Toot struct {
@@ -76,6 +77,7 @@ func MastodonFeedHandler(w http.ResponseWriter, r *http.Request, server string, 
 	output.UserFollowerCount = int(account.FollowersCount)
 	output.UserURL = account.URL
 	output.UserProfilePictureURL = account.AvatarStatic
+	output.UserID = string(account.ID)
 
 	toots := []Toot{}
 

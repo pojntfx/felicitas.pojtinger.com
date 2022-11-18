@@ -88,7 +88,7 @@
         <div
           class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg pf-c-grid--tweets"
         >
-          {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.person.twitter "BaseURL" .Site.BaseURL ) }}
+          {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Data.person.mastodon "BaseURL" .Site.BaseURL ) }}
 
           {{ $related := .Site.RegularPages.Related . | first 5 }}
           {{ if gt (len $related) 0 }}
