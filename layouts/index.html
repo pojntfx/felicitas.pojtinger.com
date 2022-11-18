@@ -73,7 +73,7 @@
         class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg pf-u-mt-lg pf-u-mt-0-on-lg pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
       >
         <a
-          href="{{ .Site.Data.person.mastodon }}"
+          href="https://{{ index (split .Site.Data.person.mastodon "@") 2 }}/@{{ index (split .Site.Data.person.mastodon "@") 1 }}"
           target="_blank"
           class="pf-c-button pf-m-primary pf-u-mr-md"
         >
