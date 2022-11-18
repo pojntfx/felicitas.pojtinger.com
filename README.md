@@ -14,11 +14,11 @@ This is my personal website, which is also intended to be a more or less generic
 It provides the following information:
 
 - Personal details (name, profession, pronouns)
-- Social media details (Twitter/Mastodon/Instagram, Matrix/Signal, phone/mail)
+- Social media details (Mastodon/Twitter/Instagram, Matrix/Signal, phone/mail)
 - Latest GitHub commit
 - Livestream (Twitch & YouTube) status
 - Articles with comments
-- Latest tweets
+- Latest toots & tweets
 - Project list (fetched from GitHub)
 
 ## Installation
@@ -81,7 +81,7 @@ To build the site locally, run:
 $ git clone https://github.com/pojntfx/personal-site.git
 $ cd personal-site
 $ make depend
-$ export GITHUB_API=https://api.github.com/ GITHUB_TOKEN=your-github-api-token YOUTUBE_TOKEN=your-youtube-api-token TWITCH_CLIENT_ID=your-twitch-client-id TWITCH_CLIENT_SECRET=your-twitch-client-secret TWITTER_CLIENT_SECRET=your-twitter-client-secret TWITTER_CLIENT_ID=your-twitter-client-id
+$ export GITHUB_API=https://api.github.com/ GITHUB_TOKEN=your-github-api-token YOUTUBE_TOKEN=your-youtube-api-token TWITCH_CLIENT_ID=your-twitch-client-id TWITCH_CLIENT_SECRET=your-twitch-client-secret TWITTER_CLIENT_SECRET=your-twitter-client-secret TWITTER_CLIENT_ID=your-twitter-client-id MASTODON_SERVER=https://mastodon.social MASTODON_CLIENT_ID=your-mastodon-client-id MASTODON_CLIENT_SECRET=your-mastodon-client-secret MASTODON_ACCESS_TOKEN=your-mastodon-access-token
 $ make dev
 ```
 

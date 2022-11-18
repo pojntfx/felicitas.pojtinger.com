@@ -9,6 +9,7 @@ import (
 	"strconv"
 
 	"github.com/pojntfx/personal-site/api/github"
+	"github.com/pojntfx/personal-site/api/mastodon"
 	"github.com/pojntfx/personal-site/api/twitch"
 	"github.com/pojntfx/personal-site/api/twitter"
 	"github.com/pojntfx/personal-site/api/youtube"
@@ -20,6 +21,11 @@ func main() {
 
 	twitterClientID := flag.String("twitter-client-id", "", "Twitter API client ID (can also be set using the TWITTER_CLIENT_ID env variable)")
 	twitterClientSecret := flag.String("twitter-client-secret", "", "Twitter API client secret (can also be set using the TWITTER_CLIENT_SECRET env variable)")
+
+	mastodonServer := flag.String("mastodon-server", "", "Mastodon API server (can also be set using the MASTODON_SERVER env variable)")
+	mastodonClientID := flag.String("mastodon-client-id", "", "Mastodon API client ID (can also be set using the MASTODON_CLIENT_ID env variable)")
+	mastodonClientSecret := flag.String("mastodon-client-secret", "", "Mastodon API client secret (can also be set using the MASTODON_CLIENT_SECRET env variable)")
+	mastodonAccessToken := flag.String("mastodon-access-token", "", "Mastodon API access token (can also be set using the MASTODON_ACCESS_TOKEN env variable)")
 
 	githubAPI := flag.String("github-api", "", "GitHub/Gitea API endpoint to use (can also be set using the GITHUB_API env variable)")
 	githubToken := flag.String("github-token", "", "GitHub/Gitea API access token (can also be set using the GITHUB_TOKEN env variable)")
@@ -46,6 +52,22 @@ func main() {
 
 	if *twitterClientSecret == "" {
 		*twitterClientSecret = os.Getenv("TWITTER_CLIENT_SECRET")
+	}
+
+	if *mastodonServer == "" {
+		*mastodonServer = os.Getenv("MASTODON_SERVER")
+	}
+
+	if *mastodonClientID == "" {
+		*mastodonClientID = os.Getenv("MASTODON_CLIENT_ID")
+	}
+
+	if *mastodonClientSecret == "" {
+		*mastodonClientSecret = os.Getenv("MASTODON_CLIENT_SECRET")
+	}
+
+	if *mastodonAccessToken == "" {
+		*mastodonAccessToken = os.Getenv("MASTODON_ACCESS_TOKEN")
 	}
 
 	if *githubAPI == "" {
@@ -101,6 +123,22 @@ func main() {
 		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
 
 		twitter.TwitterFeedHandler(rw, r, *twitterClientID, *twitterClientSecret)
+	})
+
+	mux.HandleFunc("/api/mastodon", func(rw http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error occured in Mastodon API:", err)
+
+				http.Error(rw, "Error occured in Mastodon API", http.StatusInternalServerError)
+
+				return
+			}
+		}()
+
+		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
+
+		mastodon.MastodonFeedHandler(rw, r, *mastodonServer, *mastodonClientID, *mastodonClientSecret, *mastodonAccessToken)
 	})
 
 	mux.HandleFunc("/api/github", func(rw http.ResponseWriter, r *http.Request) {
