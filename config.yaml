@@ -21,6 +21,7 @@ params:
       - Free Software
     source: https://github.com/pojntfx/personal-site
     streaming: false
+    snowfall: true
   comments:
     repo: pojntfx/personal-site
     repoID: MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE=
