@@ -70,11 +70,20 @@ $pf-global--BorderRadius--sm: 8px;
   height: 100%;
   object-fit: cover;
   box-shadow: 0 0 14px var(--pf-global--Color--light-100);
+
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 0 14px var(--pf-global--Color--dark-100);
+  }
 }
 
 .pf-x-person__header {
   max-width: 1024px;
   margin: 3rem auto;
+  margin-bottom: 5rem;
+
+  @media screen and (min-width: 826px) {
+    margin-bottom: 3rem !important;
+  }
 
   @media screen and (min-width: 1146px) {
     margin-bottom: 2rem !important;
@@ -129,11 +138,19 @@ $pf-global--BorderRadius--sm: 8px;
   backdrop-filter: blur(7.5px);
   -webkit-backdrop-filter: blur(7.5px);
   background: rgba(255, 255, 255, 0.7) !important;
+
+  @media (prefers-color-scheme: dark) {
+    background: rgba(255, 255, 255, 0.88) !important;
+  }
 }
 
 .pf-c-page__main--with-overlay {
   padding-top: 100px;
   background: rgba(255, 255, 255, 0.5) !important;
+
+  @media (prefers-color-scheme: dark) {
+    background: rgba(0, 0, 0, 0.8) !important;
+  }
 }
 
 .pf-c-page--background::before {
@@ -333,12 +350,24 @@ $pf-global--BorderRadius--sm: 8px;
   > .pf-c-dropdown__toggle.pf-m-action
   .pf-c-dropdown__toggle-button::before {
   border-color: var(--pf-global--Color--dark-100);
+
+  @media (prefers-color-scheme: dark) {
+    border-color: var(--pf-global--Color--light-100);
+  }
+
   border-radius: $pf-global--BorderRadius--sm;
   border-bottom-width: 1px !important;
 }
 
 .pf-x-u-text-shadow-sm {
   text-shadow: 0 0 4px var(--pf-global--Color--light-100);
+}
+
+@media (prefers-color-scheme: dark) {
+  .pf-x-u-text--freestanding {
+    text-shadow: 0 0 4px var(--pf-global--Color--dark-100);
+    color: var(--pf-global--Color--light-100) !important;
+  }
 }
 
 .pf-c-card {
@@ -403,6 +432,10 @@ $pf-global--BorderRadius--sm: 8px;
 
   background: rgba(255, 255, 255, 0.5) !important;
 
+  @media (prefers-color-scheme: dark) {
+    background: rgba(255, 255, 255, 0.88) !important;
+  }
+
   > .pf-c-card__title {
     @extend .pf-x-u-text-shadow-sm;
   }
@@ -415,4 +448,10 @@ $pf-global--BorderRadius--sm: 8px;
 
 .pf-c-card__title > h2 {
   font-weight: var(--pf-c-card__title--FontWeight) !important;
+}
+
+.pf-u-color-200 {
+  @media (prefers-color-scheme: dark) {
+    color: var(--pf-global--Color--300) !important;
+  }
 }
