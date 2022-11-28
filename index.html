@@ -11,6 +11,11 @@
       
     </title>
 
+    <link
+      rel="me"
+      href="https://mastodon.social/@pojntfx"
+    />
+
     <link rel="icon" href="https://github.com/pojntfx.png" />
 
     <meta name="author" content="Felicitas Pojtinger" />
@@ -30,6 +35,12 @@
     />
   </head>
   <body>
+    
+      
+      <script src="./js/snowflakes.e18a131ae736a978da7ea738028d2df6a4f2bd0c37abcdbdaae01bf6f6732544.js"></script>
+    
+
+
     <div class="pf-c-page pf-c-page--background">
       <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main"
         >Skip to content</a
@@ -37,7 +48,7 @@
 
       
   <header
-    class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+    class="pf-c-page__header pf-c-page__header--max-width pf-c-page__header--overlay pf-c-page__header--overlay--index pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
   >
     <div
       class="pf-c-page__header__content--max-width pf-c-page__header__content--max-width--home"
@@ -49,138 +60,14 @@
           href="https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing"
           target="_blank"
           rel="noopener"
-          class="pf-c-button pf-m-plain pf-u-ml-sm pf-u-mr-md"
+          class="pf-c-button pf-c-button--header pf-x-u-text-shadow-sm pf-x-u-text--freestanding pf-m-plain pf-u-ml-sm "
         >
           <span class="pf-c-button__icon pf-m-start">
             <i class="fas fa-book" aria-hidden="true"></i> </span
           >CV</a
         >
 
-        <div class="pf-u-mr-md">
-          <div
-  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
-  id="youtubestatus"
->
-  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
-    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
-      <img
-        alt="
-          YouTube
-         follower count"
-        class="streamstatus__channel__badge"
-      />
-    </a>
-  </div>
-
-  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
-    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
-    ><strong class="streamstatus__stream__name"></strong
-  ></a>
-  <span class="pf-c-badge streamstatus__stream__islive"></span>
-</div>
-
-<noscript
-  >Please enable JavaScript to view the
-  YouTube
-  status.</noscript
-><script type="module">
-  const base = "\/"
-  const platform = "youtube"
-  const username = "UC0-pwQXvswpwjMVV_jdFLzg";
-
-  const streamStatus = await (
-    await fetch(`${base}api/${platform}?username=${username}`)
-  ).json();
-
-  const truncate = (str, n) =>
-    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
-
-  
-  document.querySelector("#youtubestatus .streamstatus__channel__url").href =
-    streamStatus.channelURL;
-
-  document.querySelector("#youtubestatus .streamstatus__channel__badge").src =
-    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
-
-  
-  document.querySelector("#youtubestatus .streamstatus__stream_url").href =
-    streamStatus.streamURL;
-
-  const indicator = document.querySelector("#youtubestatus .streamstatus__stream__islive");
-
-  indicator.innerText =
-    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
-
-  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
-  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
-
-  document.querySelector("#youtubestatus .streamstatus__stream__name").innerHTML =
-    truncate(streamStatus.streamName, 14);
-</script>
-
-        </div>
-
-        <div
-  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
-  id="twitchstatus"
->
-  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
-    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
-      <img
-        alt="
-          Twitch
-         follower count"
-        class="streamstatus__channel__badge"
-      />
-    </a>
-  </div>
-
-  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
-    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
-    ><strong class="streamstatus__stream__name"></strong
-  ></a>
-  <span class="pf-c-badge streamstatus__stream__islive"></span>
-</div>
-
-<noscript
-  >Please enable JavaScript to view the
-  Twitch
-  status.</noscript
-><script type="module">
-  const base = "\/"
-  const platform = "twitch"
-  const username = "pojntfx";
-
-  const streamStatus = await (
-    await fetch(`${base}api/${platform}?username=${username}`)
-  ).json();
-
-  const truncate = (str, n) =>
-    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
-
-  
-  document.querySelector("#twitchstatus .streamstatus__channel__url").href =
-    streamStatus.channelURL;
-
-  document.querySelector("#twitchstatus .streamstatus__channel__badge").src =
-    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
-
-  
-  document.querySelector("#twitchstatus .streamstatus__stream_url").href =
-    streamStatus.streamURL;
-
-  const indicator = document.querySelector("#twitchstatus .streamstatus__stream__islive");
-
-  indicator.innerText =
-    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
-
-  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
-  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
-
-  document.querySelector("#twitchstatus .streamstatus__stream__name").innerHTML =
-    truncate(streamStatus.streamName, 14);
-</script>
-
+        
       </div>
     </div>
   </header>
@@ -188,22 +75,26 @@
 
       
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur"
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-c-page__main--index pf-x-u-blur"
     tabindex="-1"
     id="main"
   >
-    <div class="pf-l-grid pf-m-gutter pf-u-p-xl pf-u-pb-md pf-x-person__header">
+    <div class="pf-l-grid pf-m-gutter pf-u-p-xl pf-u-pt-0 pf-u-pt-xl-on-xl pf-x-person__header">
       <div
         class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center"
       >
-        <h1 class="pf-u-font-size-xl pf-u-font-weight-bold pf-u-mb-xs">
-          Felicitas Pojtinger 🏳️‍🌈 💙💛
+        <h1
+          class="pf-u-font-size-xl pf-u-font-weight-bold pf-u-mb-xs pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+        >
+          Felicitas Pojtinger 🌨️
         </h1>
-        <p>Go &amp; Web Developer</p>
+        <p class="pf-x-u-text-shadow-sm pf-x-u-text--freestanding">
+          👩‍💻 Go &amp; JS Developer
+        </p>
       </div>
 
       <figure
-        class="pf-l-grid__item pf-m-12-col pf-m-2-col-on-lg pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center"
+        class="pf-l-grid__item pf-m-12-col pf-m-2-col-on-lg pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center pf-u-p-lg pf-u-p-0-on-lg"
       >
         <figcaption class="pf-x-c-avatar__figcaption">
           <div class="pf-c-chip">
@@ -215,7 +106,7 @@
 
         <img
           src="https://github.com/pojntfx.png"
-          alt="Profile picture of Felicitas Pojtinger 🏳️‍🌈 💙💛"
+          alt="Profile picture of Felicitas Pojtinger 🌨️"
           class="pf-c-avatar pf-m-xl pf-c-avatar--main"
         />
       </figure>
@@ -224,7 +115,7 @@
         class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg pf-u-mt-lg pf-u-mt-0-on-lg pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
       >
         <a
-          href="https://twitter.com/pojntfx"
+          href="https://mastodon.social/@pojntfx"
           target="_blank"
           class="pf-c-button pf-m-primary pf-u-mr-md"
         >
@@ -232,12 +123,12 @@
             <i class="fas fa-plus-circle" aria-hidden="true"></i>
           </span>
 
-          Follow on Twitter
+          Follow on Mastodon
         </a>
 
         <div class="pf-c-dropdown pf-m-expanded">
   <button
-    class="pf-c-dropdown__toggle"
+    class="pf-c-dropdown__toggle pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
     id="contact-expanded-button"
     aria-expanded="false"
     type="button"
@@ -260,10 +151,10 @@
     <li>
       <a
         class="pf-c-dropdown__menu-item"
-        href="https://mastodon.social/@pojntfx"
+        href="https://twitter.com/pojntfx"
         target="_blank"
         rel="noopener"
-        >Mastodon</a
+        >Twitter</a
       >
     </li>
 
@@ -345,7 +236,7 @@ expandedButton.addEventListener("click", (e) => {
     </div>
 
     <section class="pf-x-commitwrapper pf-u-mb-md" id="commit">
-      <div class="pf-c-card pf-c-card--overlay" id="lastcommit">
+      <div class="pf-c-card pf-c-card--overlay pf-c-card--lastcommit" id="lastcommit">
   <div class="pf-c-card__body pf-u-p-0 pf-u-display-flex">
     <img
       src="./img/octocat.svg"
@@ -443,7 +334,9 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
     <div class="pf-l-grid pf-m-gutter pf-l-grid--max-width">
       <div class="pf-l-grid__item pf-m-12-col pf-m-7-col-on-lg">
         <section id="articles">
-          <div class="pf-c-card">
+          <div
+            class="pf-c-card pf-c-card--full-width pf-c-card--articles pf-c-card--transparent"
+          >
             <div
               class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-py-xl"
             >
@@ -467,7 +360,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                 class="pf-c-card__header-main pf-c-card__header-main--fluid"
                               >
                                 <img
-                                  src="./articles/ctpf-networking/static/header_hu3d03a01dcc18bc5be0e67db3d8d209a6_2845483_500x0_resize_q75_box.jpg"
+                                  src="./articles/ctpf-networking/static/header_hu227b75906c90f22fc3aa6ad3bddc6700_643876_500x0_resize_q75_h2_box_2.webp"
                                   alt="&#34;Unifi 16XG switch in homelab rack&#34; by Thomas Jensen on Unsplash
 "
                                   class="pf-c-card__header-main__img"
@@ -498,7 +391,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                 class="pf-c-card__header-main pf-c-card__header-main--fluid"
                               >
                                 <img
-                                  src="./articles/infractl-works/static/header_hu3d03a01dcc18bc5be0e67db3d8d209a6_2866145_500x0_resize_q75_box.jpg"
+                                  src="./articles/infractl-works/static/header_huf598b011126d553718869fa372b5257d_884306_500x0_resize_q75_h2_box_2.webp"
                                   alt="&#34;In the line of fire&#34; by Christopher Burns on Unsplash
 "
                                   class="pf-c-card__header-main__img"
@@ -529,7 +422,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                 class="pf-c-card__header-main pf-c-card__header-main--fluid"
                               >
                                 <img
-                                  src="./articles/sane-categories/static/header_hu3d03a01dcc18bc5be0e67db3d8d209a6_1701435_500x0_resize_q75_box.jpg"
+                                  src="./articles/sane-categories/static/header_hu664bd3c16daf13b1d47d18e2388aea5a_870738_500x0_resize_q75_h2_box_2.webp"
                                   alt="&#34;Cable Network&#34; by Taylor Vick on Unsplash
 "
                                   class="pf-c-card__header-main__img"
@@ -563,20 +456,23 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
         </section>
       </div>
       <div class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg">
-        <section id="tweets">
-          <div class="pf-c-card" id="twitterfeed">
+        <section id="tweets" class="pf-c-section--articles">
+          <div
+  class="pf-c-card pf-c-card--full-width pf-c-card--transparent"
+  id="mastodonfeed"
+>
   <div
     class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-py-xl"
   >
-    <span>Latest tweets</span>
+    <span>Latest toots</span>
 
     <a
       target="_blank"
       class="twitterfeed__user__url pf-l-flex pf-m-align-items-center"
     >
       <img
-        src="https://img.shields.io/twitter/follow/pojntfx?label=%40pojntfx&style=social"
-        alt="Twitter follower count"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+        alt="Mastodon follower count"
       />
     </a>
   </div>
@@ -591,27 +487,30 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
     >
       <span class="pf-c-button__icon pf-m-start">
         <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
-      >All tweets</a
+      >All toots</a
     >
   </div>
 </div>
 
-<noscript>Please enable JavaScript to view the Twitter feed.</noscript
+<noscript>Please enable JavaScript to view the Mastodon feed.</noscript
 ><script type="module">
   const base = "\/";
-  const username = "pojntfx";
+  const username = "@pojntfx@mastodon.social";
 
-  const twitterFeed = await(
-    await fetch(`${base}api/twitter?username=${username}`)
+  const mastodonFeed = await(
+    await fetch(`${base}api/mastodon?username=${username}`)
   ).json();
 
   
-  document.querySelectorAll("#twitterfeed .twitterfeed__user__url").forEach(el => {
-    el.href = twitterFeed.userURL;
+  document.querySelector("#mastodonfeed .twitterfeed__user__url > img").src = "https://img.shields.io/mastodon/follow/"+mastodonFeed.userID+"?label=@"+mastodonFeed.username+"&style=social"
+
+  
+  document.querySelectorAll("#mastodonfeed .twitterfeed__user__url").forEach(el => {
+    el.href = mastodonFeed.userURL;
   })
 
   
-  twitterFeed.tweets.map((tweet) => {
+  mastodonFeed.toots.map((tweet) => {
     const root = document.createElement("li");
     root.classList.add("pf-c-card", "pf-m-plain", "pf-m-hoverable-raised")
 
@@ -624,8 +523,8 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
     header.classList.add("pf-u-mb-sm", "pf-l-flex", "pf-m-align-items-center")
 
     const userPic = document.createElement("img");
-    userPic.src = twitterFeed.userProfilePictureURL;
-    userPic.alt = `Profile picture of ${twitterFeed.userDisplayName}`;
+    userPic.src = mastodonFeed.userProfilePictureURL;
+    userPic.alt = `Profile picture of ${mastodonFeed.userDisplayName}`;
     userPic.classList.add("pf-c-avatar", "pf-u-mr-sm")
     header.appendChild(userPic);
 
@@ -633,11 +532,11 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
     usernames.classList.add("pf-l-flex", "pf-m-justify-content-center", "pf-m-align-items-start", "pf-m-space-items-sm", "pf-u-flex-direction-column")
 
     const userDisplayName = document.createElement("span");
-    userDisplayName.innerText = twitterFeed.userDisplayName;
+    userDisplayName.innerText = mastodonFeed.userDisplayName;
     usernames.appendChild(userDisplayName);
 
     const userName = document.createElement("span");
-    userName.innerText = " @"+twitterFeed.username;
+    userName.innerText = " @"+mastodonFeed.username;
     userName.classList.add("pf-u-color-200")
     usernames.appendChild(userName);
 
@@ -655,21 +554,28 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
 
     const tweetBody = document.createElement("div");
     tweetBody.innerHTML = tweet.body;
-    tweetBody.classList.add("pf-u-py-sm")
+    tweetBody.classList.add("pf-u-py-sm", "pf-x-u-overflow-x-auto")
 
     content.appendChild(tweetBody);
 
-    if (tweet.images.length > 0) {
+    if (tweet.media.length > 0) {
       const images = document.createElement("div");
       images.classList.add("pf-l-gallery", "pf-m-gutter", "pf-u-my-sm")
 
-      tweet.images.forEach((image) => {
+      tweet.media.forEach((media) => {
         const el = document.createElement("div");
         el.classList.add("pf-l-gallery__item")
 
-        const attachment = document.createElement("img");
-        attachment.src = image.url;
-        attachment.alt = image.altText;
+        let attachment;
+        if (media.isVideo) {
+          attachment = document.createElement("video");
+          attachment.controls = true;
+        } else {
+          attachment = document.createElement("img");
+          attachment.alt = media.altText;
+        }
+
+        attachment.src = media.url;
         attachment.classList.add("pf-u-w-100")
 
         el.appendChild(attachment);
@@ -684,50 +590,47 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
     const statistics = document.createElement("div");
     statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200")
 
-    const comments = document.createElement("span");
-    comments.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+    const repliess = document.createElement("span");
+    repliess.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
 
-    const commentIcon = document.createElement("i");
-    commentIcon.classList.add("fas", "fa-comments")
-    commentIcon.ariaLabel = "Comments"
+    const repliesIcon = document.createElement("i");
+    repliesIcon.classList.add("fas", "fa-comments")
 
-    const commentCount = document.createElement("span");
-    commentCount.textContent = tweet.commentCount;
+    const repliesCount = document.createElement("span");
+    repliesCount.textContent = tweet.repliesCount;
 
-    comments.append(commentIcon)
-    comments.append(commentCount)
+    repliess.append(repliesIcon)
+    repliess.append(repliesCount)
 
-    statistics.appendChild(comments);
+    statistics.appendChild(repliess);
 
-    const retweets = document.createElement("span");
-    retweets.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+    const reblogs = document.createElement("span");
+    reblogs.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
 
-    const retweetIcon = document.createElement("i");
-    retweetIcon.classList.add("fas", "fa-retweet")
-    retweetIcon.ariaLabel = "Retweets"
+    const reblogIcon = document.createElement("i");
+    reblogIcon.classList.add("fas", "fa-retweet")
 
-    const retweetCount = document.createElement("span");
-    retweetCount.textContent = tweet.retweetCount;
+    const reblogCount = document.createElement("span");
+    reblogCount.textContent = tweet.reblogCount;
 
-    retweets.append(retweetIcon)
-    retweets.append(retweetCount)
+    reblogs.append(reblogIcon)
+    reblogs.append(reblogCount)
 
-    statistics.appendChild(retweets);
+    statistics.appendChild(reblogs);
 
-    const likes = document.createElement("span");
-    likes.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+    const favorites = document.createElement("span");
+    favorites.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
 
-    const likeIcon = document.createElement("i");
-    likeIcon.classList.add("fas", "fa-heart")
-    likeIcon.ariaLabel = "Likes"
+    const favoritesIcon = document.createElement("i");
+    favoritesIcon.classList.add("fas", "fa-heart")
 
-    const likeCount = document.createElement("span");
-    likeCount.textContent = tweet.likeCount;
+    const favoritesCount = document.createElement("span");
+    favoritesCount.textContent = tweet.favoritesCount;
 
-    likes.append(likeIcon)
-    likes.append(likeCount)
+    favorites.append(favoritesIcon)
+    favorites.append(favoritesCount)
 
-    statistics.appendChild(likes);
+    statistics.appendChild(favorites);
 
     content.appendChild(statistics);
 
@@ -735,7 +638,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
 
     root.appendChild(link);
 
-    document.querySelector("#twitterfeed .twitterfeed__tweets").appendChild(root);
+    document.querySelector("#mastodonfeed .twitterfeed__tweets").appendChild(root);
   });
 </script>
 
@@ -745,19 +648,23 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
 
     <section id="projects">
       <div
-        class="pf-c-card pf-u-px-lg pf-u-px-0-on-xl pf-u-mt-xl pf-x-u-transparent pf-x-u-color-light-100 pf-x-u-no-shadow"
+        class="pf-c-card pf-u-px-lg pf-u-px-0-on-xl pf-u-mt-xl pf-x-u-transparent pf-x-u-no-shadow"
       >
         <div class="pf-x-c-projects--max-width">
           <div
             class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-pt-0 pf-u-pb-0 pf-u-px-0"
           >
-            <span>Projects</span>
+            <h2 class="pf-x-u-text-shadow-sm pf-x-u-text--freestanding">Projects</h2>
           </div>
           <div class="pf-c-card__body pf-u-px-0 pf-u-pb-0">
             <ul>
               
                 <li>
-                  <h3 class="pf-u-font-size-xl pf-u-my-md">Systems Development</h3>
+                  <h3
+                    class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+                  >
+                    Systems Development
+                  </h3>
                   <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
                     
                       <div class="pf-l-gallery__item">
@@ -788,7 +695,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >June 12, 2022</span
+                                    >November 27, 2022</span
                                   >
                                 </div>
                               </div>
@@ -873,7 +780,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">1121</span>
+                                  <span class="pf-u-ml-sm">1199</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -882,7 +789,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     class="fas fa-code-branch"
                                     aria-hidden="true"
                                   ></i>
-                                  <span class="pf-u-ml-sm">29</span>
+                                  <span class="pf-u-ml-sm">33</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
@@ -891,7 +798,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     class="fas fa-dot-circle"
                                     aria-hidden="true"
                                   ></i>
-                                  <span class="pf-u-ml-sm">1</span>
+                                  <span class="pf-u-ml-sm">4</span>
                                 </div>
                               </div>
                             </div>
@@ -1012,7 +919,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">125</span>
+                                  <span class="pf-u-ml-sm">139</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -1021,7 +928,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     class="fas fa-code-branch"
                                     aria-hidden="true"
                                   ></i>
-                                  <span class="pf-u-ml-sm">5</span>
+                                  <span class="pf-u-ml-sm">6</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
@@ -1151,7 +1058,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">123</span>
+                                  <span class="pf-u-ml-sm">136</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -1160,7 +1067,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     class="fas fa-code-branch"
                                     aria-hidden="true"
                                   ></i>
-                                  <span class="pf-u-ml-sm">9</span>
+                                  <span class="pf-u-ml-sm">10</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
@@ -1205,14 +1112,14 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >November 10, 2021</span
+                                    >November 6, 2022</span
                                   >
                                 </div>
                               </div>
                             </div>
 
                             <div class="pf-c-card__body">
-                              <p class="pf-u-mb-md">Sign, verify, encrypt and decrypt data with GPG in your browser.</p>
+                              <p class="pf-u-mb-md">Sign, verify, encrypt and decrypt data with PGP in your browser.</p>
 
                               <div class="pf-c-chip-group">
                                 <div class="pf-c-chip-group__main">
@@ -1290,7 +1197,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">72</span>
+                                  <span class="pf-u-ml-sm">78</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -1344,7 +1251,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >June 12, 2022</span
+                                    >October 30, 2022</span
                                   >
                                 </div>
                               </div>
@@ -1429,7 +1336,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">14</span>
+                                  <span class="pf-u-ml-sm">17</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -1568,7 +1475,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">8</span>
+                                  <span class="pf-u-ml-sm">11</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -1598,7 +1505,11 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                 </li>
               
                 <li>
-                  <h3 class="pf-u-font-size-xl pf-u-my-md">Development Tooling</h3>
+                  <h3
+                    class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+                  >
+                    Development Tooling
+                  </h3>
                   <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
                     
                       <div class="pf-l-gallery__item">
@@ -1714,7 +1625,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">52</span>
+                                  <span class="pf-u-ml-sm">60</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -1723,7 +1634,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     class="fas fa-code-branch"
                                     aria-hidden="true"
                                   ></i>
-                                  <span class="pf-u-ml-sm">3</span>
+                                  <span class="pf-u-ml-sm">4</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
@@ -1853,7 +1764,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">27</span>
+                                  <span class="pf-u-ml-sm">26</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -1871,7 +1782,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     class="fas fa-dot-circle"
                                     aria-hidden="true"
                                   ></i>
-                                  <span class="pf-u-ml-sm">0</span>
+                                  <span class="pf-u-ml-sm">1</span>
                                 </div>
                               </div>
                             </div>
@@ -1907,7 +1818,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >September 27, 2021</span
+                                    >November 27, 2022</span
                                   >
                                 </div>
                               </div>
@@ -1962,7 +1873,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">7</span>
+                                  <span class="pf-u-ml-sm">12</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -1972,6 +1883,145 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm">0</span>
+                                </div>
+                                <div
+                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
+                                >
+                                  <i
+                                    class="fas fa-dot-circle"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <span class="pf-u-ml-sm">0</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    
+                      <div class="pf-l-gallery__item">
+                        <a
+                          href="https://github.com/pojntfx/bagop"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-x-m-no-decoration pf-x-u-color-light-100"
+                        >
+                          <div
+                            class="pf-c-card pf-m-hoverable-raised pf-u-h-100"
+                            style="background: var(--pf-global--palette--light-green-600)"
+                          >
+                            <div class="pf-c-card__header">
+                              <div
+                                class="pf-c-card__header-main pf-u-w-100 pf-u-display-flex pf-u-align-items-center pf-u-justify-content-space-between pf-u-flex-direction-column pf-u-flex-direction-row-on-sm"
+                              >
+                                <div
+                                  class="pf-c-card__title pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
+                                >
+                                  <span class="pf-u-mr-sm">pojntfx/bagop</span>
+                                </div>
+                                <div
+                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-font-size-sm"
+                                >
+                                  <i
+                                    class="fas fa-calendar-alt"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <span class="pf-u-ml-sm"
+                                    >February 23, 2022</span
+                                  >
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="pf-c-card__body">
+                              <p class="pf-u-mb-md">Build for all Go-supported platforms by default, disable those which you don&#39;t want.</p>
+
+                              <div class="pf-c-chip-group">
+                                <div class="pf-c-chip-group__main">
+                                  <ul
+                                    class="pf-c-chip-group__list"
+                                    role="list"
+                                    aria-label="Topic list"
+                                  >
+                                    
+                                      <li class="pf-c-chip-group__list-item">
+                                        <div
+                                          class="pf-c-chip pf-c-chip--transparent"
+                                        >
+                                          <span class="pf-c-chip__text"
+                                            >cross-compilation</span
+                                          >
+                                        </div>
+                                      </li>
+                                    
+                                      <li class="pf-c-chip-group__list-item">
+                                        <div
+                                          class="pf-c-chip pf-c-chip--transparent"
+                                        >
+                                          <span class="pf-c-chip__text"
+                                            >goarch</span
+                                          >
+                                        </div>
+                                      </li>
+                                    
+                                      <li class="pf-c-chip-group__list-item">
+                                        <div
+                                          class="pf-c-chip pf-c-chip--transparent"
+                                        >
+                                          <span class="pf-c-chip__text"
+                                            >golang</span
+                                          >
+                                        </div>
+                                      </li>
+                                    
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="pf-c-card__footer pf-u-display-flex pf-u-align-items-center pf-u-justify-content-space-between pf-u-flex-direction-column pf-u-flex-direction-row-on-sm pf-x-u-color-light-200 pf-u-font-size-sm"
+                            >
+                              <div
+                                class="pf-u-display-flex pf-u-align-items-center pf-u-mb-md pf-u-mb-0-on-sm"
+                              >
+                                <div
+                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
+                                >
+                                  <i
+                                    class="fas fa-language"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <span class="pf-u-ml-sm"
+                                    >Go</span
+                                  >
+                                </div>
+                                <div
+                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
+                                >
+                                  <i
+                                    class="fas fa-balance-scale"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <span class="pf-u-ml-sm">AGPL-3.0</span>
+                                </div>
+                              </div>
+                              <div
+                                class="pf-u-display-flex pf-u-align-items-center"
+                              >
+                                <div
+                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
+                                >
+                                  <i class="fas fa-star" aria-hidden="true"></i>
+                                  <span class="pf-u-ml-sm">7</span>
+                                </div>
+                                <div
+                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
+                                >
+                                  <i
+                                    class="fas fa-code-branch"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <span class="pf-u-ml-sm">1</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
@@ -2129,145 +2179,6 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                     
                       <div class="pf-l-gallery__item">
                         <a
-                          href="https://github.com/pojntfx/bagop"
-                          target="_blank"
-                          rel="noopener"
-                          class="pf-x-m-no-decoration pf-x-u-color-light-100"
-                        >
-                          <div
-                            class="pf-c-card pf-m-hoverable-raised pf-u-h-100"
-                            style="background: var(--pf-global--palette--light-green-600)"
-                          >
-                            <div class="pf-c-card__header">
-                              <div
-                                class="pf-c-card__header-main pf-u-w-100 pf-u-display-flex pf-u-align-items-center pf-u-justify-content-space-between pf-u-flex-direction-column pf-u-flex-direction-row-on-sm"
-                              >
-                                <div
-                                  class="pf-c-card__title pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
-                                >
-                                  <span class="pf-u-mr-sm">pojntfx/bagop</span>
-                                </div>
-                                <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-font-size-sm"
-                                >
-                                  <i
-                                    class="fas fa-calendar-alt"
-                                    aria-hidden="true"
-                                  ></i>
-                                  <span class="pf-u-ml-sm"
-                                    >February 23, 2022</span
-                                  >
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="pf-c-card__body">
-                              <p class="pf-u-mb-md">Build for all Go-supported platforms by default, disable those which you don&#39;t want.</p>
-
-                              <div class="pf-c-chip-group">
-                                <div class="pf-c-chip-group__main">
-                                  <ul
-                                    class="pf-c-chip-group__list"
-                                    role="list"
-                                    aria-label="Topic list"
-                                  >
-                                    
-                                      <li class="pf-c-chip-group__list-item">
-                                        <div
-                                          class="pf-c-chip pf-c-chip--transparent"
-                                        >
-                                          <span class="pf-c-chip__text"
-                                            >cross-compilation</span
-                                          >
-                                        </div>
-                                      </li>
-                                    
-                                      <li class="pf-c-chip-group__list-item">
-                                        <div
-                                          class="pf-c-chip pf-c-chip--transparent"
-                                        >
-                                          <span class="pf-c-chip__text"
-                                            >goarch</span
-                                          >
-                                        </div>
-                                      </li>
-                                    
-                                      <li class="pf-c-chip-group__list-item">
-                                        <div
-                                          class="pf-c-chip pf-c-chip--transparent"
-                                        >
-                                          <span class="pf-c-chip__text"
-                                            >golang</span
-                                          >
-                                        </div>
-                                      </li>
-                                    
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              class="pf-c-card__footer pf-u-display-flex pf-u-align-items-center pf-u-justify-content-space-between pf-u-flex-direction-column pf-u-flex-direction-row-on-sm pf-x-u-color-light-200 pf-u-font-size-sm"
-                            >
-                              <div
-                                class="pf-u-display-flex pf-u-align-items-center pf-u-mb-md pf-u-mb-0-on-sm"
-                              >
-                                <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
-                                >
-                                  <i
-                                    class="fas fa-language"
-                                    aria-hidden="true"
-                                  ></i>
-                                  <span class="pf-u-ml-sm"
-                                    >Go</span
-                                  >
-                                </div>
-                                <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
-                                >
-                                  <i
-                                    class="fas fa-balance-scale"
-                                    aria-hidden="true"
-                                  ></i>
-                                  <span class="pf-u-ml-sm">AGPL-3.0</span>
-                                </div>
-                              </div>
-                              <div
-                                class="pf-u-display-flex pf-u-align-items-center"
-                              >
-                                <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
-                                >
-                                  <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">6</span>
-                                </div>
-                                <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
-                                >
-                                  <i
-                                    class="fas fa-code-branch"
-                                    aria-hidden="true"
-                                  ></i>
-                                  <span class="pf-u-ml-sm">1</span>
-                                </div>
-                                <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
-                                >
-                                  <i
-                                    class="fas fa-dot-circle"
-                                    aria-hidden="true"
-                                  ></i>
-                                  <span class="pf-u-ml-sm">0</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    
-                      <div class="pf-l-gallery__item">
-                        <a
                           href="https://github.com/pojntfx/bagccgop"
                           target="_blank"
                           rel="noopener"
@@ -2294,7 +2205,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >June 12, 2022</span
+                                    >July 31, 2022</span
                                   >
                                 </div>
                               </div>
@@ -2379,7 +2290,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">3</span>
+                                  <span class="pf-u-ml-sm">2</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -2488,7 +2399,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">1</span>
+                                  <span class="pf-u-ml-sm">2</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -2518,7 +2429,11 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                 </li>
               
                 <li>
-                  <h3 class="pf-u-font-size-xl pf-u-my-md">Distributed Computing</h3>
+                  <h3
+                    class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+                  >
+                    Distributed Computing
+                  </h3>
                   <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
                     
                       <div class="pf-l-gallery__item">
@@ -2530,7 +2445,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                         >
                           <div
                             class="pf-c-card pf-m-hoverable-raised pf-u-h-100"
-                            style="background: var(--pf-global--palette--orange-400)"
+                            style="background: var(--pf-global--palette--cyan-600)"
                           >
                             <div class="pf-c-card__header">
                               <div
@@ -2634,7 +2549,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">37</span>
+                                  <span class="pf-u-ml-sm">41</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -2773,7 +2688,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">27</span>
+                                  <span class="pf-u-ml-sm">28</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -3060,7 +2975,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     class="fas fa-code-branch"
                                     aria-hidden="true"
                                   ></i>
-                                  <span class="pf-u-ml-sm">1</span>
+                                  <span class="pf-u-ml-sm">2</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
@@ -3081,7 +2996,11 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                 </li>
               
                 <li>
-                  <h3 class="pf-u-font-size-xl pf-u-my-md">Management Daemons</h3>
+                  <h3
+                    class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+                  >
+                    Management Daemons
+                  </h3>
                   <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
                     
                       <div class="pf-l-gallery__item">
@@ -3197,7 +3116,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">61</span>
+                                  <span class="pf-u-ml-sm">69</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -3206,7 +3125,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     class="fas fa-code-branch"
                                     aria-hidden="true"
                                   ></i>
-                                  <span class="pf-u-ml-sm">15</span>
+                                  <span class="pf-u-ml-sm">17</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
@@ -3484,7 +3403,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     class="fas fa-code-branch"
                                     aria-hidden="true"
                                   ></i>
-                                  <span class="pf-u-ml-sm">0</span>
+                                  <span class="pf-u-ml-sm">1</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
@@ -3644,7 +3563,11 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                 </li>
               
                 <li>
-                  <h3 class="pf-u-font-size-xl pf-u-my-md">Uni Notes</h3>
+                  <h3
+                    class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+                  >
+                    Uni Notes
+                  </h3>
                   <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
                     
                       <div class="pf-l-gallery__item">
@@ -3675,7 +3598,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >June 12, 2022</span
+                                    >November 13, 2022</span
                                   >
                                 </div>
                               </div>
@@ -3814,7 +3737,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >July 19, 2021</span
+                                    >November 13, 2022</span
                                   >
                                 </div>
                               </div>
@@ -3953,7 +3876,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >July 4, 2021</span
+                                    >November 13, 2022</span
                                   >
                                 </div>
                               </div>
@@ -4092,7 +4015,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >June 29, 2021</span
+                                    >November 13, 2022</span
                                   >
                                 </div>
                               </div>
@@ -4231,7 +4154,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >June 12, 2022</span
+                                    >November 13, 2022</span
                                   >
                                 </div>
                               </div>
@@ -4370,7 +4293,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >July 21, 2021</span
+                                    >November 13, 2022</span
                                   >
                                 </div>
                               </div>
@@ -4509,7 +4432,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >June 12, 2022</span
+                                    >November 13, 2022</span
                                   >
                                 </div>
                               </div>
@@ -4629,7 +4552,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                         >
                           <div
                             class="pf-c-card pf-m-hoverable-raised pf-u-h-100"
-                            style="background: var(--pf-global--palette--orange-400)"
+                            style="background: var(--pf-global--palette--cyan-600)"
                           >
                             <div class="pf-c-card__header">
                               <div
@@ -4648,7 +4571,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >January 23, 2022</span
+                                    >June 24, 2022</span
                                   >
                                 </div>
                               </div>
@@ -4787,7 +4710,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >June 12, 2022</span
+                                    >November 13, 2022</span
                                   >
                                 </div>
                               </div>
@@ -4926,7 +4849,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >July 6, 2021</span
+                                    >November 13, 2022</span
                                   >
                                 </div>
                               </div>
@@ -4991,7 +4914,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >Makefile</span
+                                    >HTML</span
                                   >
                                 </div>
                                 <div
@@ -5065,7 +4988,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >February 19, 2022</span
+                                    >June 24, 2022</span
                                   >
                                 </div>
                               </div>
@@ -5180,7 +5103,11 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                 </li>
               
                 <li>
-                  <h3 class="pf-u-font-size-xl pf-u-my-md">Digital Publishing</h3>
+                  <h3
+                    class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+                  >
+                    Digital Publishing
+                  </h3>
                   <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
                     
                       <div class="pf-l-gallery__item">
@@ -5211,7 +5138,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >February 6, 2022</span
+                                    >June 24, 2022</span
                                   >
                                 </div>
                               </div>
@@ -5320,7 +5247,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >June 12, 2022</span
+                                    >November 13, 2022</span
                                   >
                                 </div>
                               </div>
@@ -5459,7 +5386,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >May 18, 2022</span
+                                    >July 25, 2022</span
                                   >
                                 </div>
                               </div>
@@ -5683,7 +5610,11 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                 </li>
               
                 <li>
-                  <h3 class="pf-u-font-size-xl pf-u-my-md">Websites</h3>
+                  <h3
+                    class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+                  >
+                    Websites
+                  </h3>
                   <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
                     
                       <div class="pf-l-gallery__item">
@@ -5714,7 +5645,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >June 17, 2022</span
+                                    >November 28, 2022</span
                                   >
                                 </div>
                               </div>
@@ -5799,7 +5730,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
                                 >
                                   <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">1</span>
+                                  <span class="pf-u-ml-sm">2</span>
                                 </div>
                                 <div
                                   class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
@@ -5834,7 +5765,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                         >
                           <div
                             class="pf-c-card pf-m-hoverable-raised pf-u-h-100"
-                            style="background: var(--pf-global--palette--orange-400)"
+                            style="background: var(--pf-global--palette--cyan-600)"
                           >
                             <div class="pf-c-card__header">
                               <div
@@ -6186,7 +6117,11 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                 </li>
               
                 <li>
-                  <h3 class="pf-u-font-size-xl pf-u-my-md">Integrations</h3>
+                  <h3
+                    class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+                  >
+                    Integrations
+                  </h3>
                   <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
                     
                       <div class="pf-l-gallery__item">
@@ -6877,7 +6812,11 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                 </li>
               
                 <li>
-                  <h3 class="pf-u-font-size-xl pf-u-my-md">Aeronautical Engineering</h3>
+                  <h3
+                    class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+                  >
+                    Aeronautical Engineering
+                  </h3>
                   <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
                     
                       <div class="pf-l-gallery__item">
@@ -6908,7 +6847,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >April 9, 2022</span
+                                    >August 30, 2022</span
                                   >
                                 </div>
                               </div>
@@ -6981,7 +6920,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     class="fas fa-dot-circle"
                                     aria-hidden="true"
                                   ></i>
-                                  <span class="pf-u-ml-sm">8</span>
+                                  <span class="pf-u-ml-sm">10</span>
                                 </div>
                               </div>
                             </div>
@@ -7017,7 +6956,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     aria-hidden="true"
                                   ></i>
                                   <span class="pf-u-ml-sm"
-                                    >April 29, 2022</span
+                                    >October 21, 2022</span
                                   >
                                 </div>
                               </div>
@@ -7090,7 +7029,7 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
                                     class="fas fa-dot-circle"
                                     aria-hidden="true"
                                   ></i>
-                                  <span class="pf-u-ml-sm">77</span>
+                                  <span class="pf-u-ml-sm">89</span>
                                 </div>
                               </div>
                             </div>
@@ -7255,12 +7194,16 @@ document.querySelector("#lastcommit .lastcommit__repo__name").innerText =
         href="https://github.com/pojntfx/personal-site"
         target="_blank"
         rel="noopener"
-        class="pf-x-m-no-highlight--dark"
+        class="pf-x-m-no-highlight--dark pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
         >© 2022 Felicitas Pojtinger</a
       >
     </div>
     <div class="pf-l-flex__item">
-      <a href="./imprint" class="pf-x-m-no-highlight--dark">Imprint</a>
+      <a
+        href="./imprint"
+        class="pf-x-m-no-highlight--dark pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+        >Imprint</a
+      >
     </div>
   </div>
 </div>

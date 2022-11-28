@@ -11,6 +11,11 @@
       
     </title>
 
+    <link
+      rel="me"
+      href="https://mastodon.social/@pojntfx"
+    />
+
     <link rel="icon" href="https://github.com/pojntfx.png" />
 
     <meta name="author" content="Felicitas Pojtinger" />
@@ -30,6 +35,12 @@
     />
   </head>
   <body>
+    
+      
+      <script src="../../js/snowflakes.e18a131ae736a978da7ea738028d2df6a4f2bd0c37abcdbdaae01bf6f6732544.js"></script>
+    
+
+
     <div class="pf-c-page pf-c-page--background">
       <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main"
         >Skip to content</a
@@ -37,7 +48,7 @@
 
       
         <header
-          class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm-bottom pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+          class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
         >
           <div class="pf-c-page__header__content--max-width">
             <a
@@ -46,13 +57,15 @@
             >
               <img
                 src="https://github.com/pojntfx.png"
-                alt="Profile picture of Felicitas Pojtinger 🏳️‍🌈 💙💛"
+                alt="Profile picture of Felicitas Pojtinger 🌨️"
                 class="pf-c-avatar pf-u-mr-md pf-c-avatar--navbar"
               />
               <div>
-                <h2 class="pf-u-font-size-sm">Felicitas Pojtinger 🏳️‍🌈 💙💛</h2>
+                <h2 class="pf-u-font-size-sm pf-x-u-text-shadow-sm">
+                  Felicitas Pojtinger 🌨️
+                </h2>
                 <h1
-                  class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title"
+                  class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title pf-x-u-text-shadow-sm"
                 >
                   The Cluster Platform L2 Overlay Network
                 </h1>
@@ -66,138 +79,14 @@
                 href="https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing"
                 target="_blank"
                 rel="noopener"
-                class="pf-c-button pf-m-plain pf-u-ml-2xl pf-u-mr-md"
+                class="pf-c-button pf-c-button--header pf-x-u-text-shadow-sm pf-m-plain pf-u-ml-2xl "
               >
                 <span class="pf-c-button__icon pf-m-start">
                   <i class="fas fa-book" aria-hidden="true"></i> </span
                 >CV</a
               >
 
-              <div class="pf-u-mr-md">
-                <div
-  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
-  id="youtubestatus"
->
-  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
-    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
-      <img
-        alt="
-          YouTube
-         follower count"
-        class="streamstatus__channel__badge"
-      />
-    </a>
-  </div>
-
-  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
-    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
-    ><strong class="streamstatus__stream__name"></strong
-  ></a>
-  <span class="pf-c-badge streamstatus__stream__islive"></span>
-</div>
-
-<noscript
-  >Please enable JavaScript to view the
-  YouTube
-  status.</noscript
-><script type="module">
-  const base = "\/"
-  const platform = "youtube"
-  const username = "UC0-pwQXvswpwjMVV_jdFLzg";
-
-  const streamStatus = await (
-    await fetch(`${base}api/${platform}?username=${username}`)
-  ).json();
-
-  const truncate = (str, n) =>
-    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
-
-  
-  document.querySelector("#youtubestatus .streamstatus__channel__url").href =
-    streamStatus.channelURL;
-
-  document.querySelector("#youtubestatus .streamstatus__channel__badge").src =
-    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
-
-  
-  document.querySelector("#youtubestatus .streamstatus__stream_url").href =
-    streamStatus.streamURL;
-
-  const indicator = document.querySelector("#youtubestatus .streamstatus__stream__islive");
-
-  indicator.innerText =
-    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
-
-  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
-  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
-
-  document.querySelector("#youtubestatus .streamstatus__stream__name").innerHTML =
-    truncate(streamStatus.streamName, 14);
-</script>
-
-              </div>
-
-              <div
-  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
-  id="twitchstatus"
->
-  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
-    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
-      <img
-        alt="
-          Twitch
-         follower count"
-        class="streamstatus__channel__badge"
-      />
-    </a>
-  </div>
-
-  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
-    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
-    ><strong class="streamstatus__stream__name"></strong
-  ></a>
-  <span class="pf-c-badge streamstatus__stream__islive"></span>
-</div>
-
-<noscript
-  >Please enable JavaScript to view the
-  Twitch
-  status.</noscript
-><script type="module">
-  const base = "\/"
-  const platform = "twitch"
-  const username = "pojntfx";
-
-  const streamStatus = await (
-    await fetch(`${base}api/${platform}?username=${username}`)
-  ).json();
-
-  const truncate = (str, n) =>
-    str.length > n ? str.substr(0, n - 1) + "&hellip;" : str;
-
-  
-  document.querySelector("#twitchstatus .streamstatus__channel__url").href =
-    streamStatus.channelURL;
-
-  document.querySelector("#twitchstatus .streamstatus__channel__badge").src =
-    "https://img.shields.io/badge/%40"+streamStatus.channelName+"-"+streamStatus.channelSubscriberCount+"%20"+(platform == "youtube" ? "subscribers" : "followers")+"-brightgreen?logo="+platform+"&style=social";
-
-  
-  document.querySelector("#twitchstatus .streamstatus__stream_url").href =
-    streamStatus.streamURL;
-
-  const indicator = document.querySelector("#twitchstatus .streamstatus__stream__islive");
-
-  indicator.innerText =
-    streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
-
-  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
-  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
-
-  document.querySelector("#twitchstatus .streamstatus__stream__name").innerHTML =
-    truncate(streamStatus.streamName, 14);
-</script>
-
+              
             </div>
           </div>
         </header>
@@ -214,11 +103,11 @@
     >
       <div class="pf-l-grid pf-m-gutter">
         <div class="pf-l-grid__item pf-m-12-col pf-m-8-col-on-lg">
-          <div class="pf-c-card">
+          <div class="pf-c-card pf-c-card--full-width">
             <div class="pf-c-card__header pf-u-px-0 pf-u-pt-0 pf-u-pb-sm">
               <div class="pf-c-card__header-main pf-u-w-100">
                 <img
-                  src="../../articles/ctpf-networking/static/header_hu3d03a01dcc18bc5be0e67db3d8d209a6_2845483_1024x0_resize_q75_box.jpg"
+                  src="../../articles/ctpf-networking/static/header_hu227b75906c90f22fc3aa6ad3bddc6700_643876_1024x0_resize_q75_h2_box_2.webp"
                   alt="&#34;Unifi 16XG switch in homelab rack&#34; by Thomas Jensen on Unsplash
 "
                   class="pf-u-w-100 pf-u-h-100 pf-x-c-article__header"
@@ -449,20 +338,25 @@
             </div>
           </div>
         </div>
-        <div class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg">
-          <div class="pf-c-card" id="twitterfeed">
+        <div
+          class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg pf-c-grid--tweets"
+        >
+          <div
+  class="pf-c-card pf-c-card--full-width pf-c-card--transparent"
+  id="mastodonfeed"
+>
   <div
     class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-py-xl"
   >
-    <span>Latest tweets</span>
+    <span>Latest toots</span>
 
     <a
       target="_blank"
       class="twitterfeed__user__url pf-l-flex pf-m-align-items-center"
     >
       <img
-        src="https://img.shields.io/twitter/follow/pojntfx?label=%40pojntfx&style=social"
-        alt="Twitter follower count"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+        alt="Mastodon follower count"
       />
     </a>
   </div>
@@ -477,27 +371,30 @@
     >
       <span class="pf-c-button__icon pf-m-start">
         <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
-      >All tweets</a
+      >All toots</a
     >
   </div>
 </div>
 
-<noscript>Please enable JavaScript to view the Twitter feed.</noscript
+<noscript>Please enable JavaScript to view the Mastodon feed.</noscript
 ><script type="module">
   const base = "\/";
-  const username = "pojntfx";
+  const username = "@pojntfx@mastodon.social";
 
-  const twitterFeed = await(
-    await fetch(`${base}api/twitter?username=${username}`)
+  const mastodonFeed = await(
+    await fetch(`${base}api/mastodon?username=${username}`)
   ).json();
 
   
-  document.querySelectorAll("#twitterfeed .twitterfeed__user__url").forEach(el => {
-    el.href = twitterFeed.userURL;
+  document.querySelector("#mastodonfeed .twitterfeed__user__url > img").src = "https://img.shields.io/mastodon/follow/"+mastodonFeed.userID+"?label=@"+mastodonFeed.username+"&style=social"
+
+  
+  document.querySelectorAll("#mastodonfeed .twitterfeed__user__url").forEach(el => {
+    el.href = mastodonFeed.userURL;
   })
 
   
-  twitterFeed.tweets.map((tweet) => {
+  mastodonFeed.toots.map((tweet) => {
     const root = document.createElement("li");
     root.classList.add("pf-c-card", "pf-m-plain", "pf-m-hoverable-raised")
 
@@ -510,8 +407,8 @@
     header.classList.add("pf-u-mb-sm", "pf-l-flex", "pf-m-align-items-center")
 
     const userPic = document.createElement("img");
-    userPic.src = twitterFeed.userProfilePictureURL;
-    userPic.alt = `Profile picture of ${twitterFeed.userDisplayName}`;
+    userPic.src = mastodonFeed.userProfilePictureURL;
+    userPic.alt = `Profile picture of ${mastodonFeed.userDisplayName}`;
     userPic.classList.add("pf-c-avatar", "pf-u-mr-sm")
     header.appendChild(userPic);
 
@@ -519,11 +416,11 @@
     usernames.classList.add("pf-l-flex", "pf-m-justify-content-center", "pf-m-align-items-start", "pf-m-space-items-sm", "pf-u-flex-direction-column")
 
     const userDisplayName = document.createElement("span");
-    userDisplayName.innerText = twitterFeed.userDisplayName;
+    userDisplayName.innerText = mastodonFeed.userDisplayName;
     usernames.appendChild(userDisplayName);
 
     const userName = document.createElement("span");
-    userName.innerText = " @"+twitterFeed.username;
+    userName.innerText = " @"+mastodonFeed.username;
     userName.classList.add("pf-u-color-200")
     usernames.appendChild(userName);
 
@@ -541,21 +438,28 @@
 
     const tweetBody = document.createElement("div");
     tweetBody.innerHTML = tweet.body;
-    tweetBody.classList.add("pf-u-py-sm")
+    tweetBody.classList.add("pf-u-py-sm", "pf-x-u-overflow-x-auto")
 
     content.appendChild(tweetBody);
 
-    if (tweet.images.length > 0) {
+    if (tweet.media.length > 0) {
       const images = document.createElement("div");
       images.classList.add("pf-l-gallery", "pf-m-gutter", "pf-u-my-sm")
 
-      tweet.images.forEach((image) => {
+      tweet.media.forEach((media) => {
         const el = document.createElement("div");
         el.classList.add("pf-l-gallery__item")
 
-        const attachment = document.createElement("img");
-        attachment.src = image.url;
-        attachment.alt = image.altText;
+        let attachment;
+        if (media.isVideo) {
+          attachment = document.createElement("video");
+          attachment.controls = true;
+        } else {
+          attachment = document.createElement("img");
+          attachment.alt = media.altText;
+        }
+
+        attachment.src = media.url;
         attachment.classList.add("pf-u-w-100")
 
         el.appendChild(attachment);
@@ -570,50 +474,47 @@
     const statistics = document.createElement("div");
     statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200")
 
-    const comments = document.createElement("span");
-    comments.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+    const repliess = document.createElement("span");
+    repliess.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
 
-    const commentIcon = document.createElement("i");
-    commentIcon.classList.add("fas", "fa-comments")
-    commentIcon.ariaLabel = "Comments"
+    const repliesIcon = document.createElement("i");
+    repliesIcon.classList.add("fas", "fa-comments")
 
-    const commentCount = document.createElement("span");
-    commentCount.textContent = tweet.commentCount;
+    const repliesCount = document.createElement("span");
+    repliesCount.textContent = tweet.repliesCount;
 
-    comments.append(commentIcon)
-    comments.append(commentCount)
+    repliess.append(repliesIcon)
+    repliess.append(repliesCount)
 
-    statistics.appendChild(comments);
+    statistics.appendChild(repliess);
 
-    const retweets = document.createElement("span");
-    retweets.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+    const reblogs = document.createElement("span");
+    reblogs.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
 
-    const retweetIcon = document.createElement("i");
-    retweetIcon.classList.add("fas", "fa-retweet")
-    retweetIcon.ariaLabel = "Retweets"
+    const reblogIcon = document.createElement("i");
+    reblogIcon.classList.add("fas", "fa-retweet")
 
-    const retweetCount = document.createElement("span");
-    retweetCount.textContent = tweet.retweetCount;
+    const reblogCount = document.createElement("span");
+    reblogCount.textContent = tweet.reblogCount;
 
-    retweets.append(retweetIcon)
-    retweets.append(retweetCount)
+    reblogs.append(reblogIcon)
+    reblogs.append(reblogCount)
 
-    statistics.appendChild(retweets);
+    statistics.appendChild(reblogs);
 
-    const likes = document.createElement("span");
-    likes.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+    const favorites = document.createElement("span");
+    favorites.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
 
-    const likeIcon = document.createElement("i");
-    likeIcon.classList.add("fas", "fa-heart")
-    likeIcon.ariaLabel = "Likes"
+    const favoritesIcon = document.createElement("i");
+    favoritesIcon.classList.add("fas", "fa-heart")
 
-    const likeCount = document.createElement("span");
-    likeCount.textContent = tweet.likeCount;
+    const favoritesCount = document.createElement("span");
+    favoritesCount.textContent = tweet.favoritesCount;
 
-    likes.append(likeIcon)
-    likes.append(likeCount)
+    favorites.append(favoritesIcon)
+    favorites.append(favoritesCount)
 
-    statistics.appendChild(likes);
+    statistics.appendChild(favorites);
 
     content.appendChild(statistics);
 
@@ -621,14 +522,16 @@
 
     root.appendChild(link);
 
-    document.querySelector("#twitterfeed .twitterfeed__tweets").appendChild(root);
+    document.querySelector("#mastodonfeed .twitterfeed__tweets").appendChild(root);
   });
 </script>
 
 
           
           
-            <div class="pf-c-card pf-u-mt-md">
+            <div
+              class="pf-c-card pf-c-card--full-width pf-u-mt-md pf-c-card--see-also pf-c-card--transparent"
+            >
               <div class="pf-c-card__title">See also</div>
               <div class="pf-c-card__body">
                 <div class="pf-l-gallery pf-m-gutter">
@@ -694,12 +597,16 @@
         href="https://github.com/pojntfx/personal-site"
         target="_blank"
         rel="noopener"
-        class="pf-x-m-no-highlight--dark"
+        class="pf-x-m-no-highlight--dark pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
         >© 2022 Felicitas Pojtinger</a
       >
     </div>
     <div class="pf-l-flex__item">
-      <a href="../../imprint" class="pf-x-m-no-highlight--dark">Imprint</a>
+      <a
+        href="../../imprint"
+        class="pf-x-m-no-highlight--dark pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+        >Imprint</a
+      >
     </div>
   </div>
 </div>
