@@ -25,7 +25,7 @@ type Toot struct {
 	Timestamp string `json:"timestamp"`
 	Body      string `json:"body"`
 
-	Images []Image `json:"images"`
+	Media []Media `json:"media"`
 
 	RepliesCount   int `json:"repliesCount"`
 	ReblogsCount   int `json:"reblogsCount"`
@@ -34,9 +34,10 @@ type Toot struct {
 	URL string `json:"url"`
 }
 
-type Image struct {
+type Media struct {
 	URL     string `json:"url"`
 	AltText string `json:"altText"`
+	IsVideo bool   `json:"isVideo"`
 }
 
 func MastodonFeedHandler(w http.ResponseWriter, r *http.Request, server string, clientID string, clientSecret string, accessToken string) {
@@ -94,16 +95,17 @@ func MastodonFeedHandler(w http.ResponseWriter, r *http.Request, server string, 
 		toot.Timestamp = sourceToot.CreatedAt.Format(time.RFC3339)
 		toot.Body = sourceToot.Content
 
-		images := []Image{}
+		images := []Media{}
 
 		for _, attachment := range sourceToot.MediaAttachments {
-			images = append(images, Image{
+			images = append(images, Media{
 				URL:     attachment.URL,
 				AltText: attachment.Description,
+				IsVideo: attachment.Type == "video",
 			})
 		}
 
-		toot.Images = images
+		toot.Media = images
 
 		toot.RepliesCount = int(sourceToot.RepliesCount)
 		toot.ReblogsCount = int(sourceToot.ReblogsCount)
