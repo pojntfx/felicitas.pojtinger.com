@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/mattn/go-mastodon"
@@ -83,13 +84,18 @@ func MastodonFeedHandler(w http.ResponseWriter, r *http.Request, server string, 
 	toots := []Toot{}
 
 	sourceToots, err := client.GetAccountStatuses(r.Context(), account.ID, &mastodon.Pagination{
-		Limit: 5,
+		Limit: 4,
 	})
 	if err != nil {
 		panic(err)
 	}
 
 	for _, sourceToot := range sourceToots {
+		// Skip toots are empty, i.e. reblogs
+		if strings.TrimSpace(sourceToot.Content) == "" && len(sourceToot.MediaAttachments) <= 0 {
+			continue
+		}
+
 		toot := Toot{}
 
 		toot.Timestamp = sourceToot.CreatedAt.Format(time.RFC3339)
