@@ -455,3 +455,21 @@ $pf-global--BorderRadius--sm: 8px;
     color: var(--pf-global--Color--300) !important;
   }
 }
+
+.fireworks,
+.snowflakes {
+  @extend .pf-c-page__main--with-overlay;
+
+  height: 100% !important;
+  padding-top: 0 !important;
+  z-index: 100 !important;
+}
+
+.snowflakes ~ .fireworks {
+  background: transparent !important;
+}
+
+.pf-c-page__main--with-effects {
+  background: transparent !important;
+  backdrop-filter: none !important;
+}

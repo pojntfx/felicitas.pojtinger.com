@@ -22,6 +22,7 @@ params:
     source: https://github.com/pojntfx/personal-site
     streaming: false
     snowfall: true
+    fireworks: false
   comments:
     repo: pojntfx/personal-site
     repoID: MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE=
