@@ -460,7 +460,9 @@ $pf-global--BorderRadius--sm: 8px;
 .snowflakes {
   @extend .pf-c-page__main--with-overlay;
 
+  width: 100% !important;
   height: 100% !important;
+  position: fixed !important;
   padding-top: 0 !important;
   z-index: 100 !important;
 }
