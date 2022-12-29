@@ -1,6 +1,8 @@
 {{ define "main" }}
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur"
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur  {{ if or .Site.Params.Meta.Fireworks .Site.Params.Meta.Snowfall }}
+      pf-c-page__main--with-effects
+    {{ end }}"
     tabindex="-1"
     id="main"
   >

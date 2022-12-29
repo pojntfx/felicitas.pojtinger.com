@@ -42,6 +42,16 @@
       <script src="{{ $built.Permalink }}"></script>
     {{ end }}
 
+    {{ if .Site.Params.Meta.Fireworks }}
+      {{ $built := resources.Get "js/fireworks.js" | js.Build (dict "minify" true "target" "es2015") | fingerprint }}
+      <script src="{{ $built.Permalink }}"></script>
+
+      <fireworks-js
+        style="width: 100%; height: 100%; position: fixed;"
+        class="fireworks"
+      ></fireworks-js>
+    {{ end }}
+
 
     <div class="pf-c-page pf-c-page--background">
       <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main"
@@ -104,7 +114,9 @@
 
       {{ block "main" . }}
         <main
-          class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur"
+          class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur {{ if or .Site.Params.Meta.Fireworks .Site.Params.Meta.Snowfall }}
+            pf-c-page__main--with-effects
+          {{ end }}"
           tabindex="-1"
           id="main"
         >
