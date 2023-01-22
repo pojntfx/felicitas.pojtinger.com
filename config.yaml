@@ -57,3 +57,19 @@ params:
         unsafe: true
       - title: Mail
         link: mailto:felicitas@pojtinger.com
+  integrations:
+    # youtube:
+    #   enabled: true
+    #   username: UC0-pwQXvswpwjMVV_jdFLzg
+    # twitch:
+    #   enabled: true
+    #   username: pojntfx
+    github:
+      enabled: true
+      username: pojntfx
+    # twitter:
+    #   enabled: false
+    #   username: pojntfx
+    # mastodon:
+    #   enabled: true
+    #   username: "@pojntfx@mastodon.social"

@@ -93,6 +93,10 @@ $pf-global--BorderRadius--sm: 8px;
   .pf-c-dropdown__toggle {
     color: var(--pf-global--Color--dark-100);
   }
+
+  &--standalone {
+    margin-bottom: 7rem !important;
+  }
 }
 
 .pf-x-c-avatar__figcaption {
