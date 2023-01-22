@@ -41,3 +41,19 @@ params:
       title: Follow on Mastodon
       icon: fas fa-plus-circle
       link: https://mastodon.social/@pojntfx
+    socials:
+      - title: Twitter
+        link: https://twitter.com/pojntfx
+      - title: Instagram
+        link: https://www.instagram.com/pojntfx/
+      - separator: true
+      - title: Matrix
+        link: https://matrix.to/#/@pojntfx:matrix.org
+      - title: Signal
+        link: https://signal.me/#p/+4915233842326
+      - separator: true
+      - title: Phone
+        link: tel:+4915233842326
+        unsafe: true
+      - title: Mail
+        link: mailto:felicitas@pojtinger.com
