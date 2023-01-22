@@ -37,3 +37,7 @@ params:
       - title: CV
         icon: fas fa-book
         link: https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing
+    cta:
+      title: Follow on Mastodon
+      icon: fas fa-plus-circle
+      link: https://mastodon.social/@pojntfx
