@@ -84,13 +84,16 @@
           class="pf-c-button pf-m-primary pf-u-mr-md"
         >
           <span class="pf-c-button__icon pf-m-start">
-            <i class="{{ .Site.Params.navigation.cta.icon }}" aria-hidden="true"></i>
+            <i
+              class="{{ .Site.Params.navigation.cta.icon }}"
+              aria-hidden="true"
+            ></i>
           </span>
 
           {{ .Site.Params.navigation.cta.title }}
         </a>
 
-        {{ partial "contactmenu" (dict "ID" "contact" "Instagram" .Site.Data.person.instagram "Twitter" .Site.Data.person.twitter "Matrix" .Site.Data.person.matrix "Signal" .Site.Data.person.signal "Phone" .Site.Data.person.phone "Mail" .Site.Data.person.mail ) }}
+        {{ partial "contactmenu" (dict "ID" "contact" "Socials" .Site.Params.navigation.socials ) }}
       </div>
     </div>
 

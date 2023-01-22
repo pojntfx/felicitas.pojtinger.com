@@ -20,64 +20,26 @@
     aria-labelledby="{{ .ID }}-expanded-button"
     hidden
   >
-    <li>
-      <a
-        class="pf-c-dropdown__menu-item"
-        href="https://twitter.com/{{ .Twitter }}"
-        target="_blank"
-        rel="noopener"
-        >Twitter</a
-      >
-    </li>
-
-    <li>
-      <a
-        class="pf-c-dropdown__menu-item"
-        href="https://instagram.com/{{ .Instagram }}"
-        target="_blank"
-        rel="noopener"
-        >Instagram</a
-      >
-    </li>
-
-    <li class="pf-c-divider" role="separator"></li>
-
-    <li>
-      <a
-        class="pf-c-dropdown__menu-item"
-        href="https://matrix.to/#/{{ .Matrix }}"
-        target="_blank"
-        rel="noopener"
-        >Matrix</a
-      >
-    </li>
-
-    <li>
-      <a
-        class="pf-c-dropdown__menu-item"
-        href="https://signal.me/#p/{{ .Signal }}"
-        target="_blank"
-        rel="noopener"
-        >Signal</a
-      >
-    </li>
-
-    <li class="pf-c-divider" role="separator"></li>
-
-    <li>
-      <a class="pf-c-dropdown__menu-item" href="tel:{{ .Phone }}" rel="noopener"
-        >Phone</a
-      >
-    </li>
-
-    <li>
-      <a
-        class="pf-c-dropdown__menu-item"
-        href="mailto:{{ .Mail }}"
-        rel="noopener"
-        >Mail</a
-      >
-    </li>
+    {{ range .Socials }}
+      {{ if .separator }}
+        <li class="pf-c-divider" role="separator"></li>
+      {{ else }}
+        <li>
+          <a
+            class="pf-c-dropdown__menu-item"
+            href="{{ if .unsafe }}
+              {{ safeURL .link }}
+            {{ else }}
+              {{ .link }}
+            {{ end }}"
+            target="_blank"
+            rel="noopener"
+          >
+            {{ .title }}
+          </a>
+        </li>
+      {{ end }}
+    {{ end }}
   </ul>
 </div>
 
