@@ -8,21 +8,21 @@
       <div
         class="pf-u-display-flex pf-u-align-items-center pf-u-pr-sm pf-u-pr-0-on-xl"
       >
-        <a
-          href="{{ .Site.Data.person.cv }}"
-          target="_blank"
-          rel="noopener"
-          class="pf-c-button pf-c-button--header pf-x-u-text-shadow-sm pf-x-u-text--freestanding pf-m-plain pf-u-ml-sm {{ if .Site.Params.meta.streaming }}
-            pf-u-mr-md
-          {{ end }}"
-        >
-          <span class="pf-c-button__icon pf-m-start">
-            <i class="fas fa-book" aria-hidden="true"></i> </span
-          >CV</a
-        >
+        {{ range .Site.Params.navigation.navbar }}
+          <a
+            href="{{ .link }}"
+            target="_blank"
+            rel="noopener"
+            class="pf-c-button pf-c-button--header pf-x-u-text-shadow-sm pf-x-u-text--freestanding pf-m-plain pf-u-ml-sm"
+          >
+            <span class="pf-c-button__icon pf-m-start">
+              <i class="{{ .icon }}" aria-hidden="true"></i> </span
+            >{{ .title }}</a
+          >
+        {{ end }}
 
         {{ if .Site.Params.meta.streaming }}
-          <div class="pf-u-mr-md">
+          <div class="pf-u-mx-md">
             {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
           </div>
 

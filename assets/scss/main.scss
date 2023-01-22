@@ -475,3 +475,9 @@ $pf-global--BorderRadius--sm: 8px;
   background: transparent !important;
   backdrop-filter: none !important;
 }
+
+.pf-u-ml-2xl--first-child {
+  &:first-child {
+    @extend .pf-u-ml-2xl;
+  }
+}
