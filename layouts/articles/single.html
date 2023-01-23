@@ -1,6 +1,6 @@
 {{ define "main" }}
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent {{ if or .Site.Params.Meta.Fireworks .Site.Params.Meta.Snowfall }}
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent {{ if or .Site.Params.integrations.fireworks.enabled .Site.Params.integrations.snowfall.enabled }}
       pf-c-page__main--with-effects
     {{ end }}"
     tabindex="-1"
@@ -68,14 +68,14 @@
             <div class="pf-c-card__footer">
               <script
                 src="https://giscus.app/client.js"
-                data-repo="{{ .Site.Params.Comments.Repo }}"
-                data-repo-id="{{ .Site.Params.Comments.RepoID }}"
-                data-category="{{ .Site.Params.Comments.Category }}"
-                data-category-id="{{ .Site.Params.Comments.CategoryID }}"
-                data-mapping="{{ .Site.Params.Comments.Mapping }}"
-                data-reactions-enabled="{{ .Site.Params.Comments.ReactionsEnabled }}"
-                data-emit-metadata="{{ .Site.Params.Comments.EmitMetadata }}"
-                data-theme="{{ .Site.Params.Comments.Theme }}"
+                data-repo="{{ .Site.Params.integrations.giscus.repo }}"
+                data-repo-id="{{ .Site.Params.integrations.giscus.repoID }}"
+                data-category="{{ .Site.Params.integrations.giscus.category }}"
+                data-category-id="{{ .Site.Params.integrations.giscus.categoryID }}"
+                data-mapping="{{ .Site.Params.integrations.giscus.mapping }}"
+                data-reactions-enabled="{{ .Site.Params.integrations.giscus.reactionsEnabled }}"
+                data-emit-metadata="{{ .Site.Params.integrations.giscus.emitMetadata }}"
+                data-theme="{{ .Site.Params.integrations.giscus.theme }}"
                 data-lang="{{ index (split .Site.LanguageCode `-`) 0 }}"
                 crossorigin="anonymous"
                 async
