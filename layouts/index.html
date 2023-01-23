@@ -8,7 +8,7 @@
       <div
         class="pf-u-display-flex pf-u-align-items-center pf-u-pr-sm pf-u-pr-0-on-xl"
       >
-        {{ range .Site.Params.navigation.navbar }}
+        {{ range .Site.Params.links.navbar }}
           <a
             href="{{ .link }}"
             target="_blank"
@@ -81,21 +81,18 @@
         class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg pf-u-mt-lg pf-u-mt-0-on-lg pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
       >
         <a
-          href="{{ .Site.Params.navigation.cta.link }}"
+          href="{{ .Site.Params.links.cta.link }}"
           target="_blank"
           class="pf-c-button pf-m-primary pf-u-mr-md"
         >
           <span class="pf-c-button__icon pf-m-start">
-            <i
-              class="{{ .Site.Params.navigation.cta.icon }}"
-              aria-hidden="true"
-            ></i>
+            <i class="{{ .Site.Params.links.cta.icon }}" aria-hidden="true"></i>
           </span>
 
-          {{ .Site.Params.navigation.cta.title }}
+          {{ .Site.Params.links.cta.title }}
         </a>
 
-        {{ partial "contactmenu" (dict "ID" "contact" "Socials" .Site.Params.navigation.socials ) }}
+        {{ partial "contactmenu" (dict "ID" "contact" "Socials" .Site.Params.links.socials ) }}
       </div>
     </div>
 
@@ -167,7 +164,11 @@
       </div>
       <div class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg">
         <section id="tweets" class="pf-c-section--articles">
-          {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Data.person.mastodon "BaseURL" .Site.BaseURL ) }}
+          {{ if .Site.Params.integrations.twitter.enabled }}
+            {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Params.integrations.twitter.username "Warning" .Site.Params.integrations.twitter.warning "BaseURL" .Site.BaseURL ) }}
+          {{ else }}
+            {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Params.integrations.mastodon.username "BaseURL" .Site.BaseURL ) }}
+          {{ end }}
         </section>
       </div>
     </div>

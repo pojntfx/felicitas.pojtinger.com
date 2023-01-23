@@ -32,7 +32,9 @@ params:
     reactionsEnabled: 1
     emitMetadata: 1
     theme: light
-  navigation:
+  links:
+    me:
+      - https://mastodon.social/@pojntfx
     navbar:
       - title: CV
         icon: fas fa-book
@@ -67,9 +69,10 @@ params:
     github:
       enabled: true
       username: pojntfx
-    # twitter:
-    #   enabled: false
-    #   username: pojntfx
-    # mastodon:
-    #   enabled: true
-    #   username: "@pojntfx@mastodon.social"
+    twitter:
+      enabled: false
+      username: pojntfx
+      warning: true
+    mastodon:
+      enabled: true
+      username: "@pojntfx@mastodon.social"
