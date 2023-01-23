@@ -48,10 +48,6 @@ params:
       - title: Mail
         link: mailto:felicitas@pojtinger.com
   integrations:
-    snowfall:
-      enabled: true
-    fireworks:
-      enabled: false
     giscus:
       repo: pojntfx/personal-site
       repoID: MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE=
@@ -77,3 +73,7 @@ params:
     mastodon:
       enabled: true
       username: "@pojntfx@mastodon.social"
+  effects:
+    snowfall: true
+    fireworks: false
+    blur: true
