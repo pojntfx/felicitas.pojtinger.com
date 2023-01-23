@@ -39,7 +39,7 @@
 
 {{ define "main" }}
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay pf-c-page__main--index pf-x-u-blur  {{ if or .Site.Params.Meta.Fireworks .Site.Params.Meta.Snowfall }}
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-c-page__main--index pf-x-u-blur  {{ if or .Site.Params.integrations.fireworks.enabled .Site.Params.integrations.snowfall.enabled }}
       pf-c-page__main--with-effects
     {{ end }}"
     tabindex="-1"

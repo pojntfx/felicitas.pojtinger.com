@@ -20,17 +20,6 @@ params:
       - Open Source
       - Free Software
     source: https://github.com/pojntfx/personal-site
-    snowfall: true
-    fireworks: false
-  comments:
-    repo: pojntfx/personal-site
-    repoID: MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE=
-    category: Announcements
-    categoryID: DIC_kwDODa0h2c4CAeR2
-    mapping: pathname
-    reactionsEnabled: 1
-    emitMetadata: 1
-    theme: light
   links:
     me:
       - https://mastodon.social/@pojntfx
@@ -59,6 +48,19 @@ params:
       - title: Mail
         link: mailto:felicitas@pojtinger.com
   integrations:
+    snowfall:
+      enabled: true
+    fireworks:
+      enabled: false
+    giscus:
+      repo: pojntfx/personal-site
+      repoID: MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE=
+      category: Announcements
+      categoryID: DIC_kwDODa0h2c4CAeR2
+      mapping: pathname
+      reactionsEnabled: 1
+      emitMetadata: 1
+      theme: light
     youtube:
       enabled: false
       username: UC0-pwQXvswpwjMVV_jdFLzg
