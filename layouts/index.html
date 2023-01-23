@@ -40,7 +40,9 @@
 {{ define "main" }}
   <main
     class="pf-c-page__main pf-c-page__main--with-overlay pf-c-page__main--index pf-x-u-blur  {{ if or .Site.Params.effects.fireworks .Site.Params.effects.snowfall }}
-      pf-c-page__main--with-effects{{ if not .Site.Params.effects.blur }} pf-c-page__main--with-effects--without-blur{{ end }}
+      pf-c-page__main--with-effects{{ if not .Site.Params.effects.blur }}
+        pf-c-page__main--with-effects--without-blur
+      {{ end }}
     {{ end }}"
     tabindex="-1"
     id="main"
@@ -177,156 +179,165 @@
       </div>
     </div>
 
-    <section id="projects">
-      <div
-        class="pf-c-card pf-u-px-lg pf-u-px-0-on-xl pf-u-mt-xl pf-x-u-transparent pf-x-u-no-shadow"
-      >
-        <div class="pf-x-c-projects--max-width">
-          <div
-            class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-pt-0 pf-u-pb-0 pf-u-px-0"
-          >
-            <h2 class="pf-x-u-text-shadow-sm pf-x-u-text--freestanding">
-              Projects
-            </h2>
-          </div>
-          <div class="pf-c-card__body pf-u-px-0 pf-u-pb-0">
-            <ul>
-              {{ range .Site.Data.projects_gen }}
-                <li>
-                  <h3
-                    class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
-                  >
-                    {{ .title }}
-                  </h3>
-                  <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
-                    {{ range sort .projects "stars" "desc" }}
-                      <div class="pf-l-gallery__item">
-                        <a
-                          href="{{ .url }}"
-                          target="_blank"
-                          rel="noopener"
-                          class="pf-x-m-no-decoration pf-x-u-color-light-100"
-                        >
-                          <div
-                            class="pf-c-card pf-m-hoverable-raised pf-u-h-100"
-                            style="background: {{ safeCSS .background }}"
+    {{ if .Site.Params.integrations.github.projects }}
+      <section id="projects">
+        <div
+          class="pf-c-card pf-u-px-lg pf-u-px-0-on-xl pf-u-mt-xl pf-x-u-transparent pf-x-u-no-shadow"
+        >
+          <div class="pf-x-c-projects--max-width">
+            <div
+              class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-pt-0 pf-u-pb-0 pf-u-px-0"
+            >
+              <h2 class="pf-x-u-text-shadow-sm pf-x-u-text--freestanding">
+                Projects
+              </h2>
+            </div>
+            <div class="pf-c-card__body pf-u-px-0 pf-u-pb-0">
+              <ul>
+                {{ range .Site.Data.projects_gen }}
+                  <li>
+                    <h3
+                      class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+                    >
+                      {{ .title }}
+                    </h3>
+                    <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
+                      {{ range sort .projects "stars" "desc" }}
+                        <div class="pf-l-gallery__item">
+                          <a
+                            href="{{ .url }}"
+                            target="_blank"
+                            rel="noopener"
+                            class="pf-x-m-no-decoration pf-x-u-color-light-100"
                           >
-                            <div class="pf-c-card__header">
-                              <div
-                                class="pf-c-card__header-main pf-u-w-100 pf-u-display-flex pf-u-align-items-center pf-u-justify-content-space-between pf-u-flex-direction-column pf-u-flex-direction-row-on-sm"
-                              >
-                                <div
-                                  class="pf-c-card__title pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
-                                >
-                                  <span class="pf-u-mr-sm">{{ .title }}</span>
-                                </div>
-                                <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-font-size-sm"
-                                >
-                                  <i
-                                    class="fas fa-calendar-alt"
-                                    aria-hidden="true"
-                                  ></i>
-                                  <span class="pf-u-ml-sm"
-                                    >{{ .date | time.Format ":date_long" }}</span
-                                  >
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="pf-c-card__body">
-                              <p class="pf-u-mb-md">{{ .description }}</p>
-
-                              <div class="pf-c-chip-group">
-                                <div class="pf-c-chip-group__main">
-                                  <ul
-                                    class="pf-c-chip-group__list"
-                                    role="list"
-                                    aria-label="Topic list"
-                                  >
-                                    {{ range first 3 .topics }}
-                                      <li class="pf-c-chip-group__list-item">
-                                        <div
-                                          class="pf-c-chip pf-c-chip--transparent"
-                                        >
-                                          <span class="pf-c-chip__text"
-                                            >{{ . }}</span
-                                          >
-                                        </div>
-                                      </li>
-                                    {{ end }}
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
                             <div
-                              class="pf-c-card__footer pf-u-display-flex pf-u-align-items-center pf-u-justify-content-space-between pf-u-flex-direction-column pf-u-flex-direction-row-on-sm pf-x-u-color-light-200 pf-u-font-size-sm"
+                              class="pf-c-card pf-m-hoverable-raised pf-u-h-100"
+                              style="background: {{ safeCSS .background }}"
                             >
-                              <div
-                                class="pf-u-display-flex pf-u-align-items-center pf-u-mb-md pf-u-mb-0-on-sm"
-                              >
+                              <div class="pf-c-card__header">
                                 <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
+                                  class="pf-c-card__header-main pf-u-w-100 pf-u-display-flex pf-u-align-items-center pf-u-justify-content-space-between pf-u-flex-direction-column pf-u-flex-direction-row-on-sm"
                                 >
-                                  <i
-                                    class="fas fa-language"
-                                    aria-hidden="true"
-                                  ></i>
-                                  <span class="pf-u-ml-sm"
-                                    >{{ .language }}</span
+                                  <div
+                                    class="pf-c-card__title pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
                                   >
+                                    <span class="pf-u-mr-sm">{{ .title }}</span>
+                                  </div>
+                                  <div
+                                    class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-font-size-sm"
+                                  >
+                                    <i
+                                      class="fas fa-calendar-alt"
+                                      aria-hidden="true"
+                                    ></i>
+                                    <span class="pf-u-ml-sm"
+                                      >{{ .date | time.Format ":date_long" }}</span
+                                    >
+                                  </div>
                                 </div>
-                                <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
-                                >
-                                  <i
-                                    class="fas fa-balance-scale"
-                                    aria-hidden="true"
-                                  ></i>
-                                  <span class="pf-u-ml-sm">{{ .license }}</span>
+                              </div>
+
+                              <div class="pf-c-card__body">
+                                <p class="pf-u-mb-md">{{ .description }}</p>
+
+                                <div class="pf-c-chip-group">
+                                  <div class="pf-c-chip-group__main">
+                                    <ul
+                                      class="pf-c-chip-group__list"
+                                      role="list"
+                                      aria-label="Topic list"
+                                    >
+                                      {{ range first 3 .topics }}
+                                        <li class="pf-c-chip-group__list-item">
+                                          <div
+                                            class="pf-c-chip pf-c-chip--transparent"
+                                          >
+                                            <span class="pf-c-chip__text"
+                                              >{{ . }}</span
+                                            >
+                                          </div>
+                                        </li>
+                                      {{ end }}
+                                    </ul>
+                                  </div>
                                 </div>
                               </div>
                               <div
-                                class="pf-u-display-flex pf-u-align-items-center"
+                                class="pf-c-card__footer pf-u-display-flex pf-u-align-items-center pf-u-justify-content-space-between pf-u-flex-direction-column pf-u-flex-direction-row-on-sm pf-x-u-color-light-200 pf-u-font-size-sm"
                               >
                                 <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
+                                  class="pf-u-display-flex pf-u-align-items-center pf-u-mb-md pf-u-mb-0-on-sm"
                                 >
-                                  <i class="fas fa-star" aria-hidden="true"></i>
-                                  <span class="pf-u-ml-sm">{{ .stars }}</span>
+                                  <div
+                                    class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
+                                  >
+                                    <i
+                                      class="fas fa-language"
+                                      aria-hidden="true"
+                                    ></i>
+                                    <span class="pf-u-ml-sm"
+                                      >{{ .language }}</span
+                                    >
+                                  </div>
+                                  <div
+                                    class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
+                                  >
+                                    <i
+                                      class="fas fa-balance-scale"
+                                      aria-hidden="true"
+                                    ></i>
+                                    <span class="pf-u-ml-sm"
+                                      >{{ .license }}</span
+                                    >
+                                  </div>
                                 </div>
                                 <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
+                                  class="pf-u-display-flex pf-u-align-items-center"
                                 >
-                                  <i
-                                    class="fas fa-code-branch"
-                                    aria-hidden="true"
-                                  ></i>
-                                  <span class="pf-u-ml-sm">{{ .forks }}</span>
-                                </div>
-                                <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
-                                >
-                                  <i
-                                    class="fas fa-dot-circle"
-                                    aria-hidden="true"
-                                  ></i>
-                                  <span class="pf-u-ml-sm">{{ .issues }}</span>
+                                  <div
+                                    class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
+                                  >
+                                    <i
+                                      class="fas fa-star"
+                                      aria-hidden="true"
+                                    ></i>
+                                    <span class="pf-u-ml-sm">{{ .stars }}</span>
+                                  </div>
+                                  <div
+                                    class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
+                                  >
+                                    <i
+                                      class="fas fa-code-branch"
+                                      aria-hidden="true"
+                                    ></i>
+                                    <span class="pf-u-ml-sm">{{ .forks }}</span>
+                                  </div>
+                                  <div
+                                    class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
+                                  >
+                                    <i
+                                      class="fas fa-dot-circle"
+                                      aria-hidden="true"
+                                    ></i>
+                                    <span class="pf-u-ml-sm"
+                                      >{{ .issues }}</span
+                                    >
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </a>
-                      </div>
-                    {{ end }}
-                  </div>
-                </li>
-              {{ end }}
-            </ul>
+                          </a>
+                        </div>
+                      {{ end }}
+                    </div>
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    {{ end }}
 
     {{ partial "footer" . }}
   </main>
