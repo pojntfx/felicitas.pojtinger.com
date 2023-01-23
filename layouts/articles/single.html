@@ -90,7 +90,11 @@
         <div
           class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg pf-c-grid--tweets"
         >
-          {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Data.person.mastodon "BaseURL" .Site.BaseURL ) }}
+          {{ if .Site.Params.integrations.twitter.enabled }}
+            {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Params.integrations.twitter.username "Warning" .Site.Params.integrations.twitter.warning "BaseURL" .Site.BaseURL ) }}
+          {{ else }}
+            {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Params.integrations.mastodon.username "BaseURL" .Site.BaseURL ) }}
+          {{ end }}
 
           {{ $related := .Site.RegularPages.Related . | first 5 }}
           {{ if gt (len $related) 0 }}

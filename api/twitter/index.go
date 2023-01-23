@@ -80,7 +80,7 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 
 	sourceTweets, _, err := client.Timelines.UserTimeline(&twitter.UserTimelineParams{
 		ScreenName:     username,
-		Count:          5,
+		Count:          4,
 		ExcludeReplies: twitter.Bool(false),
 		TweetMode:      "extended",
 	})

@@ -18,32 +18,38 @@
     </a>
   </div>
   <div class="pf-c-card__body twitterfeed">
-    <div class="pf-c-alert pf-m-warning pf-m-inline" aria-label="Warning alert">
-      <div class="pf-c-alert__icon">
-        <i class="fas fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
-      </div>
-      <p class="pf-c-alert__title">
-        <span class="pf-screen-reader">Warning alert:</span>
-        This feed originates from non-free social media.
-      </p>
-      <div class="pf-c-alert__description">
-        <p>
-          Digital civil rights and sovereignty are important to a free society.
-          Twitter and Musk's conservatism are a threat to the very core of the
-          institutions that keep humanity functioning, and that threat should be
-          taken seriously.
-          <a
-            href="https://en.wikipedia.org/wiki/Network_sovereignty"
-            target="_blank"
-            rel="noopener"
-            >Learn more.</a
-          >
+    {{ if .Warning }}
+      <div
+        class="pf-c-alert pf-m-warning pf-m-inline pf-u-mb-md"
+        aria-label="Warning alert"
+      >
+        <div class="pf-c-alert__icon">
+          <i class="fas fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
+        </div>
+        <p class="pf-c-alert__title">
+          <span class="pf-screen-reader">Warning alert:</span>
+          This feed originates from non-free social media.
         </p>
+        <div class="pf-c-alert__description">
+          <p>
+            Digital civil rights and sovereignty are important to a free
+            society. Twitter and Musk's conservatism are a threat to the very
+            core of the institutions that keep humanity functioning, and that
+            threat should be taken seriously.
+            <a
+              href="https://en.wikipedia.org/wiki/Network_sovereignty"
+              target="_blank"
+              rel="noopener"
+              >Learn more.</a
+            >
+          </p>
+        </div>
       </div>
-    </div>
+    {{ end }}
+
 
     <ul
-      class="twitterfeed__tweets pf-l-flex pf-m-column pf-m-space-items-sm pf-u-mt-lg"
+      class="twitterfeed__tweets pf-l-flex pf-m-column pf-m-space-items-sm"
     ></ul>
 
     <a
@@ -143,7 +149,7 @@
 
 
     const statistics = document.createElement("div");
-    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200")
+    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200", "pf-u-mt-xs")
 
     const comments = document.createElement("span");
     comments.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")

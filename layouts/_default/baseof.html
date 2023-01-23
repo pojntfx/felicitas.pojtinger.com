@@ -13,10 +13,9 @@
       {{ end }}
     </title>
 
-    <link
-      rel="me"
-      href="https://{{ index (split .Site.Data.person.mastodon "@") 2 }}/@{{ index (split .Site.Data.person.mastodon "@") 1 }}"
-    />
+    {{ range .Site.Params.links.me }}
+      <link rel="me" href="{{ . }}" />
+    {{ end }}
 
     <link rel="icon" href="{{ .Site.Data.person.img }}" />
 
@@ -89,7 +88,7 @@
             <div
               class="pf-u-display-flex pf-u-align-items-center pf-u-pr-2xl pf-u-pr-0-on-xl"
             >
-              {{ range .Site.Params.navigation.navbar }}
+              {{ range .Site.Params.links.navbar }}
                 <a
                   href="{{ .link }}"
                   target="_blank"
