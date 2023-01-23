@@ -477,7 +477,9 @@ $pf-global--BorderRadius--sm: 8px;
 
 .pf-c-page__main--with-effects {
   background: transparent !important;
-  backdrop-filter: none !important;
+  &--without-blur {
+    backdrop-filter: none !important;
+  }
 }
 
 .pf-u-ml-2xl--first-child {

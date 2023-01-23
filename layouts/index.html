@@ -39,8 +39,8 @@
 
 {{ define "main" }}
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay pf-c-page__main--index pf-x-u-blur  {{ if or .Site.Params.integrations.fireworks.enabled .Site.Params.integrations.snowfall.enabled }}
-      pf-c-page__main--with-effects
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-c-page__main--index pf-x-u-blur  {{ if or .Site.Params.effects.fireworks .Site.Params.effects.snowfall }}
+      pf-c-page__main--with-effects{{ if not .Site.Params.effects.blur }} pf-c-page__main--with-effects--without-blur{{ end }}
     {{ end }}"
     tabindex="-1"
     id="main"
