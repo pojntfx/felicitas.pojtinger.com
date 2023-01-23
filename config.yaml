@@ -20,7 +20,6 @@ params:
       - Open Source
       - Free Software
     source: https://github.com/pojntfx/personal-site
-    streaming: false
     snowfall: true
     fireworks: false
   comments:
@@ -60,12 +59,12 @@ params:
       - title: Mail
         link: mailto:felicitas@pojtinger.com
   integrations:
-    # youtube:
-    #   enabled: true
-    #   username: UC0-pwQXvswpwjMVV_jdFLzg
-    # twitch:
-    #   enabled: true
-    #   username: pojntfx
+    youtube:
+      enabled: false
+      username: UC0-pwQXvswpwjMVV_jdFLzg
+    twitch:
+      enabled: false
+      username: pojntfx
     github:
       enabled: true
       username: pojntfx

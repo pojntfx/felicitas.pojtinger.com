@@ -17,6 +17,7 @@
       <link rel="me" href="{{ . }}" />
     {{ end }}
 
+
     <link rel="icon" href="{{ .Site.Data.person.img }}" />
 
     <meta name="author" content="{{ .Site.Params.Meta.Author }}" />
@@ -101,12 +102,16 @@
                 >
               {{ end }}
 
-              {{ if .Site.Params.meta.streaming }}
-                <div class="pf-u-mx-md">
-                  {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.person.youtube "BaseURL" .Site.BaseURL ) }}
+              {{ if .Site.Params.integrations.youtube.enabled }}
+                <div class="pf-u-ml-md">
+                  {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Params.integrations.youtube.username "BaseURL" .Site.BaseURL ) }}
                 </div>
+              {{ end }}
 
-                {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.person.twitch "BaseURL" .Site.BaseURL ) }}
+              {{ if .Site.Params.integrations.twitch.enabled }}
+                <div class="pf-u-ml-md">
+                  {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Params.integrations.twitch.username "BaseURL" .Site.BaseURL ) }}
+                </div>
               {{ end }}
             </div>
           </div>
