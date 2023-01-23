@@ -66,6 +66,7 @@ params:
     github:
       enabled: true
       username: pojntfx
+      projects: true
     twitter:
       enabled: false
       username: pojntfx
