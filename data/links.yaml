@@ -1,0 +1,26 @@
+me:
+  - https://mastodon.social/@pojntfx
+navbar:
+  - title: CV
+    icon: fas fa-book
+    link: https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing
+cta:
+  title: Follow on Mastodon
+  icon: fas fa-plus-circle
+  link: https://mastodon.social/@pojntfx
+socials:
+  - title: Twitter
+    link: https://twitter.com/pojntfx
+  - title: Instagram
+    link: https://www.instagram.com/pojntfx/
+  - separator: true
+  - title: Matrix
+    link: https://matrix.to/#/@pojntfx:matrix.org
+  - title: Signal
+    link: https://signal.me/#p/+4915233842326
+  - separator: true
+  - title: Phone
+    link: tel:+4915233842326
+    unsafe: true
+  - title: Mail
+    link: mailto:felicitas@pojtinger.com

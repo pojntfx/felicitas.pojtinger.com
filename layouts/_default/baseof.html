@@ -13,22 +13,22 @@
       {{ end }}
     </title>
 
-    {{ range .Site.Params.links.me }}
+    {{ range .Site.Data.links.me }}
       <link rel="me" href="{{ . }}" />
     {{ end }}
 
 
     <link rel="icon" href="{{ .Site.Data.person.img }}" />
 
-    <meta name="author" content="{{ .Site.Params.Meta.Author }}" />
-    <meta name="description" content="{{ .Site.Params.Meta.Description }}" />
+    <meta name="author" content="{{ .Site.Data.site.author }}" />
+    <meta name="description" content="{{ .Site.Data.site.description }}" />
     <meta
       name="keywords"
-      content="{{ delimit .Site.Params.Meta.Keywords `, ` }}"
+      content="{{ delimit .Site.Data.site.keywords `, ` }}"
     />
     <meta
       name="copyright"
-      content="© {{ now.Year }} {{ .Site.Params.Meta.Author }}"
+      content="© {{ now.Year }} {{ .Site.Data.site.author }}"
     />
 
     <link
@@ -37,7 +37,7 @@
     />
   </head>
   <body>
-    {{ if .Site.Params.effects.fireworks }}
+    {{ if .Site.Data.effects.fireworks }}
       {{ $built := resources.Get "js/fireworks.js" | js.Build (dict "minify" true "target" "es2015") | fingerprint }}
       <script src="{{ $built.Permalink }}"></script>
 
@@ -45,16 +45,16 @@
         style="width: 100%; height: 100%; position: fixed;"
         class="fireworks"
       ></fireworks-js>
-    {{ else if .Site.Params.effects.snowfall }}
+    {{ else if .Site.Data.effects.snowfall }}
       <div class="fireworks"></div>
     {{ end }}
 
-    {{ if .Site.Params.effects.snowfall }}
+    {{ if .Site.Data.effects.snowfall }}
       {{ $built := resources.Get "js/snowflakes.js" | js.Build (dict "minify" true "target" "es2015") | fingerprint }}
       <script src="{{ $built.Permalink }}"></script>
     {{ end }}
 
-    {{ if .Site.Params.effects.rainfall }}
+    {{ if .Site.Data.effects.rainfall }}
       <div class="rainfall">
         <div class="rainfall__borders">
           {{ range (seq 100) }}
@@ -105,7 +105,7 @@
             <div
               class="pf-u-display-flex pf-u-align-items-center pf-u-pr-2xl pf-u-pr-0-on-xl"
             >
-              {{ range .Site.Params.links.navbar }}
+              {{ range .Site.Data.links.navbar }}
                 <a
                   href="{{ .link }}"
                   target="_blank"
@@ -118,15 +118,15 @@
                 >
               {{ end }}
 
-              {{ if .Site.Params.integrations.youtube.enabled }}
+              {{ if .Site.Data.integrations.youtube.enabled }}
                 <div class="pf-u-ml-md">
-                  {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Params.integrations.youtube.username "BaseURL" .Site.BaseURL ) }}
+                  {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.integrations.youtube.username "BaseURL" .Site.BaseURL ) }}
                 </div>
               {{ end }}
 
-              {{ if .Site.Params.integrations.twitch.enabled }}
+              {{ if .Site.Data.integrations.twitch.enabled }}
                 <div class="pf-u-ml-md">
-                  {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Params.integrations.twitch.username "BaseURL" .Site.BaseURL ) }}
+                  {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.integrations.twitch.username "BaseURL" .Site.BaseURL ) }}
                 </div>
               {{ end }}
             </div>
@@ -136,8 +136,8 @@
 
       {{ block "main" . }}
         <main
-          class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur {{ if or .Site.Params.effects.fireworks .Site.Params.effects.snowfall .Site.Params.effects.rainfall }}
-            pf-c-page__main--with-effects{{ if not .Site.Params.effects.blur }}
+          class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
+            pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
               pf-c-page__main--with-effects--without-blur
             {{ end }}
           {{ end }}"

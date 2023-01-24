@@ -1,0 +1,26 @@
+giscus:
+  repo: pojntfx/personal-site
+  repoID: MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE=
+  category: Announcements
+  categoryID: DIC_kwDODa0h2c4CAeR2
+  mapping: pathname
+  reactionsEnabled: 1
+  emitMetadata: 1
+  theme: light
+youtube:
+  enabled: false
+  username: UC0-pwQXvswpwjMVV_jdFLzg
+twitch:
+  enabled: false
+  username: pojntfx
+github:
+  enabled: true
+  username: pojntfx
+  projects: true
+twitter:
+  enabled: false
+  username: pojntfx
+  warning: true
+mastodon:
+  enabled: true
+  username: "@pojntfx@mastodon.social"
