@@ -1,7 +1,7 @@
 {{ define "main" }}
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent {{ if or .Site.Params.effects.fireworks .Site.Params.effects.snowfall .Site.Params.effects.rainfall }}
-      pf-c-page__main--with-effects{{ if not .Site.Params.effects.blur }} pf-c-page__main--with-effects--without-blur{{ end }}
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
+      pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }} pf-c-page__main--with-effects--without-blur{{ end }}
     {{ end }}"
     tabindex="-1"
     id="main"
@@ -68,14 +68,14 @@
             <div class="pf-c-card__footer">
               <script
                 src="https://giscus.app/client.js"
-                data-repo="{{ .Site.Params.integrations.giscus.repo }}"
-                data-repo-id="{{ .Site.Params.integrations.giscus.repoID }}"
-                data-category="{{ .Site.Params.integrations.giscus.category }}"
-                data-category-id="{{ .Site.Params.integrations.giscus.categoryID }}"
-                data-mapping="{{ .Site.Params.integrations.giscus.mapping }}"
-                data-reactions-enabled="{{ .Site.Params.integrations.giscus.reactionsEnabled }}"
-                data-emit-metadata="{{ .Site.Params.integrations.giscus.emitMetadata }}"
-                data-theme="{{ .Site.Params.integrations.giscus.theme }}"
+                data-repo="{{ .Site.Data.integrations.giscus.repo }}"
+                data-repo-id="{{ .Site.Data.integrations.giscus.repoID }}"
+                data-category="{{ .Site.Data.integrations.giscus.category }}"
+                data-category-id="{{ .Site.Data.integrations.giscus.categoryID }}"
+                data-mapping="{{ .Site.Data.integrations.giscus.mapping }}"
+                data-reactions-enabled="{{ .Site.Data.integrations.giscus.reactionsEnabled }}"
+                data-emit-metadata="{{ .Site.Data.integrations.giscus.emitMetadata }}"
+                data-theme="{{ .Site.Data.integrations.giscus.theme }}"
                 data-lang="{{ index (split .Site.LanguageCode `-`) 0 }}"
                 crossorigin="anonymous"
                 async
@@ -90,10 +90,10 @@
         <div
           class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg pf-c-grid--tweets"
         >
-          {{ if .Site.Params.integrations.twitter.enabled }}
-            {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Params.integrations.twitter.username "Warning" .Site.Params.integrations.twitter.warning "BaseURL" .Site.BaseURL ) }}
+          {{ if .Site.Data.integrations.twitter.enabled }}
+            {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.integrations.twitter.username "Warning" .Site.Data.integrations.twitter.warning "BaseURL" .Site.BaseURL ) }}
           {{ else }}
-            {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Params.integrations.mastodon.username "BaseURL" .Site.BaseURL ) }}
+            {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Data.integrations.mastodon.username "BaseURL" .Site.BaseURL ) }}
           {{ end }}
 
           {{ $related := .Site.RegularPages.Related . | first 5 }}

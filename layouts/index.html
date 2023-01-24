@@ -8,7 +8,7 @@
       <div
         class="pf-u-display-flex pf-u-align-items-center pf-u-pr-sm pf-u-pr-0-on-xl"
       >
-        {{ range .Site.Params.links.navbar }}
+        {{ range .Site.Data.links.navbar }}
           <a
             href="{{ .link }}"
             target="_blank"
@@ -21,15 +21,15 @@
           >
         {{ end }}
 
-        {{ if .Site.Params.integrations.youtube.enabled }}
+        {{ if .Site.Data.integrations.youtube.enabled }}
           <div class="pf-u-ml-md">
-            {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Params.integrations.youtube.username "BaseURL" .Site.BaseURL ) }}
+            {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.integrations.youtube.username "BaseURL" .Site.BaseURL ) }}
           </div>
         {{ end }}
 
-        {{ if .Site.Params.integrations.twitch.enabled }}
+        {{ if .Site.Data.integrations.twitch.enabled }}
           <div class="pf-u-ml-md">
-            {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Params.integrations.twitch.username "BaseURL" .Site.BaseURL ) }}
+            {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.integrations.twitch.username "BaseURL" .Site.BaseURL ) }}
           </div>
         {{ end }}
       </div>
@@ -39,8 +39,8 @@
 
 {{ define "main" }}
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay pf-c-page__main--index pf-x-u-blur  {{ if or .Site.Params.effects.fireworks .Site.Params.effects.snowfall .Site.Params.effects.rainfall }}
-      pf-c-page__main--with-effects{{ if not .Site.Params.effects.blur }}
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-c-page__main--index pf-x-u-blur  {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
+      pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
         pf-c-page__main--with-effects--without-blur
       {{ end }}
     {{ end }}"
@@ -48,7 +48,7 @@
     id="main"
   >
     <div
-      class="pf-l-grid pf-m-gutter pf-u-p-xl pf-u-pt-0 pf-u-pt-xl-on-xl pf-x-person__header {{ if not .Site.Params.integrations.github.enabled }}
+      class="pf-l-grid pf-m-gutter pf-u-p-xl pf-u-pt-0 pf-u-pt-xl-on-xl pf-x-person__header {{ if not .Site.Data.integrations.github.enabled }}
         pf-x-person__header--standalone
       {{ end }}"
     >
@@ -87,24 +87,24 @@
         class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg pf-u-mt-lg pf-u-mt-0-on-lg pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
       >
         <a
-          href="{{ .Site.Params.links.cta.link }}"
+          href="{{ .Site.Data.links.cta.link }}"
           target="_blank"
           class="pf-c-button pf-m-primary pf-u-mr-md"
         >
           <span class="pf-c-button__icon pf-m-start">
-            <i class="{{ .Site.Params.links.cta.icon }}" aria-hidden="true"></i>
+            <i class="{{ .Site.Data.links.cta.icon }}" aria-hidden="true"></i>
           </span>
 
-          {{ .Site.Params.links.cta.title }}
+          {{ .Site.Data.links.cta.title }}
         </a>
 
-        {{ partial "contactmenu" (dict "ID" "contact" "Socials" .Site.Params.links.socials ) }}
+        {{ partial "contactmenu" (dict "ID" "contact" "Socials" .Site.Data.links.socials ) }}
       </div>
     </div>
 
-    {{ if .Site.Params.integrations.github.enabled }}
+    {{ if .Site.Data.integrations.github.enabled }}
       <section class="pf-x-commitwrapper pf-u-mb-md" id="commit">
-        {{ partial "lastcommit" (dict "ID" "lastcommit" "Username" .Site.Params.integrations.github.username "BaseURL" .Site.BaseURL ) }}
+        {{ partial "lastcommit" (dict "ID" "lastcommit" "Username" .Site.Data.integrations.github.username "BaseURL" .Site.BaseURL ) }}
       </section>
     {{ end }}
 
@@ -170,16 +170,16 @@
       </div>
       <div class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg">
         <section id="tweets" class="pf-c-section--articles">
-          {{ if .Site.Params.integrations.twitter.enabled }}
-            {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Params.integrations.twitter.username "Warning" .Site.Params.integrations.twitter.warning "BaseURL" .Site.BaseURL ) }}
+          {{ if .Site.Data.integrations.twitter.enabled }}
+            {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.integrations.twitter.username "Warning" .Site.Data.integrations.twitter.warning "BaseURL" .Site.BaseURL ) }}
           {{ else }}
-            {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Params.integrations.mastodon.username "BaseURL" .Site.BaseURL ) }}
+            {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Data.integrations.mastodon.username "BaseURL" .Site.BaseURL ) }}
           {{ end }}
         </section>
       </div>
     </div>
 
-    {{ if .Site.Params.integrations.github.projects }}
+    {{ if .Site.Data.integrations.github.projects }}
       <section id="projects">
         <div
           class="pf-c-card pf-u-px-lg pf-u-px-0-on-xl pf-u-mt-xl pf-x-u-transparent pf-x-u-no-shadow"

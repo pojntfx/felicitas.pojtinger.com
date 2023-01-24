@@ -4,11 +4,11 @@
   >
     <div class="pf-l-flex__item">
       <a
-        href="{{ .Site.Params.Meta.Source }}"
+        href="{{ .Site.Data.site.source }}"
         target="_blank"
         rel="noopener"
         class="pf-x-m-no-highlight--dark pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
-        >© {{ now.Year }} {{ .Site.Params.Meta.Author }}</a
+        >© {{ now.Year }} {{ .Site.Data.site.author }}</a
       >
     </div>
     <div class="pf-l-flex__item">
