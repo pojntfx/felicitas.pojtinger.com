@@ -54,6 +54,22 @@
       <script src="{{ $built.Permalink }}"></script>
     {{ end }}
 
+    {{ if .Site.Params.effects.rainfall }}
+      <div class="rainfall">
+        <div class="rainfall__borders">
+          {{ range (seq 100) }}
+            <div class="rainfall__border"></div>
+          {{ end }}
+        </div>
+
+        <div class="rainfall__drops">
+          {{ range (seq 100) }}
+            <div class="rainfall__raindrop"></div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
 
     <div class="pf-c-page pf-c-page--background">
       <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main"
@@ -120,8 +136,10 @@
 
       {{ block "main" . }}
         <main
-          class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur {{ if or .Site.Params.effects.fireworks .Site.Params.effects.snowfall }}
-            pf-c-page__main--with-effects{{ if not .Site.Params.effects.blur }} pf-c-page__main--with-effects--without-blur{{ end }}
+          class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur {{ if or .Site.Params.effects.fireworks .Site.Params.effects.snowfall .Site.Params.effects.rainfall }}
+            pf-c-page__main--with-effects{{ if not .Site.Params.effects.blur }}
+              pf-c-page__main--with-effects--without-blur
+            {{ end }}
           {{ end }}"
           tabindex="-1"
           id="main"
