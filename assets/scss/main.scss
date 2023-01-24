@@ -11,6 +11,8 @@ $pf-global--BorderRadius--sm: 8px;
 @import "node_modules/@fontsource/lato/scss/mixins.scss";
 @include fontFace($weight: 400, $display: fallback, $fontDir: "fonts/lato");
 
+$bg: "/img/bg.webp";
+
 :root {
   --pf-global--FontFamily--sans-serif: "Lato", "RedHatText", "Overpass",
     overpass, helvetica, arial, sans-serif;
@@ -159,7 +161,7 @@ $pf-global--BorderRadius--sm: 8px;
 
 .pf-c-page--background::before {
   content: "";
-  background: url(/img/bg.webp);
+  background: url($bg);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -461,7 +463,8 @@ $pf-global--BorderRadius--sm: 8px;
 }
 
 .fireworks,
-.snowflakes {
+.snowflakes,
+.rainfall {
   @extend .pf-c-page__main--with-overlay;
 
   width: 100% !important;
@@ -471,7 +474,9 @@ $pf-global--BorderRadius--sm: 8px;
   z-index: 100 !important;
 }
 
-.fireworks ~ .snowflakes {
+.fireworks ~ .snowflakes,
+.fireworks ~ .rainfall,
+.snowflakes ~ .rainfall {
   background: transparent !important;
 }
 
@@ -485,5 +490,85 @@ $pf-global--BorderRadius--sm: 8px;
 .pf-u-ml-2xl--first-child {
   &:first-child {
     @extend .pf-u-ml-2xl;
+  }
+}
+
+// Rainfall; see https://codepen.io/tiger2380/pen/doNxQX
+.rainfall__borders,
+.rainfall__drops {
+  position: fixed;
+}
+
+.rainfall__drops {
+  @media (prefers-color-scheme: dark) {
+    filter: brightness(0.2);
+  }
+
+  @media (prefers-color-scheme: light) {
+    filter: brightness(1.2);
+  }
+}
+
+.rainfall__raindrop {
+  position: fixed;
+  border-radius: 100%;
+  background-image: url($bg);
+  background-size: 100vw * 0.05 100vh * 0.05;
+  background-position: 50%;
+  transform: rotate(180deg) rotateY(0);
+  z-index: 100 !important;
+}
+
+.rainfall__border {
+  position: fixed;
+  margin-left: 2px;
+  margin-top: 1px;
+  border-radius: 100%;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+  transform: rotateY(0);
+  z-index: 100 !important;
+}
+
+@for $i from 1 through 100 {
+  $x: random();
+  $y: random();
+
+  $drop-width: 5px + random(11);
+  $drop-stretch: 0.7+ (random() * 0.5);
+  $drop-delay: (random() * 2.5) + 1;
+  $drop-height: $drop-width * $drop-stretch;
+
+  .rainfall__raindrop:nth-child(#{$i}) {
+    left: $x * 100vw;
+    top: $y * 100vh;
+
+    width: $drop-width;
+    height: $drop-height;
+    background-position: percentage($x) percentage($y);
+    animation: #{$drop-delay}s rainfall__falling 0.3s ease-in infinite;
+  }
+
+  .rainfall__border:nth-child(#{$i}) {
+    left: $x * 100vw;
+    top: $y * 100vh;
+
+    width: $drop-width - 4;
+    height: $drop-height;
+    animation: #{$drop-delay}s rainfall__falling 0.3s ease-in infinite;
+  }
+}
+
+@keyframes rainfall__falling {
+  from {
+  }
+  to {
+    transform: translateY(500px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .borders,
+  .drops {
+    display: none;
   }
 }
