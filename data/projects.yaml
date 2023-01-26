@@ -7,11 +7,17 @@
     - slug: pojntfx/liwasc
       background: var(--pf-global--palette--cyan-500)
     - slug: pojntfx/bofied
-      background: var(--pf-global--palette--light-blue-600)
-    - slug: pojntfx/html2goapp
-      background: var(--pf-global--palette--cyan-400)
+      background: var(--pf-global--palette--light-blue-600) 
+- title: Apps
+  projects:
+    - slug: pojntfx/connmapper
+      background: var(--pf-global--palette--light-green-600)
     - slug: pojntfx/keygaen
       background: var(--pf-global--palette--blue-500)
+    - slug: pojntfx/keystoregaen
+      background: var(--pf-global--palette--black-850)
+    - slug: pojntfx/html2goapp
+      background: var(--pf-global--palette--cyan-400)
 - title: Development Tooling
   projects:
     - slug: pojntfx/bagccgop
@@ -30,6 +36,8 @@
       background: var(--pf-global--palette--green-600)
 - title: Distributed Computing
   projects:
+    - slug: pojntfx/saltpanelo
+      background: var(--pf-global--palette--blue-400)
     - slug: alphahorizonio/unisockets
       background: var(--pf-global--palette--gold-600)
     - slug: alphahorizonio/tinynet
