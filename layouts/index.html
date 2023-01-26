@@ -11,7 +11,7 @@
         {{ range .Site.Data.links.navbar }}
           <a
             href="{{ .link }}"
-            target="_blank"
+            {{ if .newTab }}target="_blank"{{ end }}
             rel="noopener"
             class="pf-c-button pf-c-button--header pf-x-u-text-shadow-sm pf-x-u-text--freestanding pf-m-plain pf-u-ml-sm"
           >
