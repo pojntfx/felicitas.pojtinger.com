@@ -57,6 +57,6 @@
   indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
   indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
 
-  document.querySelector("#{{ .ID }} .streamstatus__stream__name").innerHTML =
-    truncate(streamStatus.streamName, 14);
+  document.querySelector("#{{ .ID }} .streamstatus__stream__name").innerText =
+    truncate(streamStatus.streamName, 14) || "Stream";
 </script>
