@@ -1,7 +1,9 @@
 {{ define "main" }}
   <main
     class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
-      pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }} pf-c-page__main--with-effects--without-blur{{ end }}
+      pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
+        pf-c-page__main--with-effects--without-blur
+      {{ end }}
     {{ end }}"
     tabindex="-1"
     id="main"
@@ -91,9 +93,9 @@
           class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg pf-c-grid--tweets"
         >
           {{ if .Site.Data.integrations.twitter.enabled }}
-            {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.integrations.twitter.username "Warning" .Site.Data.integrations.twitter.warning "BaseURL" .Site.BaseURL ) }}
+            {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.integrations.twitter.username "Warning" .Site.Data.integrations.twitter.warning "Construction" .Site.Data.integrations.twitter.construction "BaseURL" .Site.BaseURL ) }}
           {{ else }}
-            {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Data.integrations.mastodon.username "BaseURL" .Site.BaseURL ) }}
+            {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Data.integrations.mastodon.username "Construction" .Site.Data.integrations.mastodon.construction "BaseURL" .Site.BaseURL ) }}
           {{ end }}
 
           {{ $related := .Site.RegularPages.Related . | first 5 }}
