@@ -37,9 +37,9 @@ The Cluster Platform has some really unique networking requirements. As a distri
       
       <guid>/articles/infractl-works/</guid>
       <description>After many, many hours spend on nightly development sessions, I am proud to present a first working version of InfraCTL, the supra-cloud node, overlay network and Kubernetes cluster CLI!
- Get InfraCTl on GitHub!
- Now, what does InfraCTL do exactly?
-[pojntfx@thinkpadx1c3 ~]$ infractl Usage: infractl [options] [command]  A CLI to manage supra-cloud SSH keys, nodes, WireGuard (OSI Layer 3)/N2N (OSI Layer 2) overlay networks and Kubernetes clusters.  Options:  -V, --version output the version number  -h, --help output usage information  Commands:  apply|a Create or update resources  get|g Get resources  delete|d Delete resources  help [cmd] display help for [cmd] The output above contains a description: As I pointed out before, InfraCTL has the goal of being the supra-cloud node, overlay network and Kubernetes cluster CLI - that means that no client-side tool other than InfraCTL should be necessary to go from zero to fully functional Kubernetes cluster.</description>
+Get InfraCTl on GitHub!
+Now, what does InfraCTL do exactly?
+[pojntfx@thinkpadx1c3 ~]$ infractl Usage: infractl [options] [command] A CLI to manage supra-cloud SSH keys, nodes, WireGuard (OSI Layer 3)/N2N (OSI Layer 2) overlay networks and Kubernetes clusters. Options: -V, --version output the version number -h, --help output usage information Commands: apply|a Create or update resources get|g Get resources delete|d Delete resources help [cmd] display help for [cmd] The output above contains a description: As I pointed out before, InfraCTL has the goal of being the supra-cloud node, overlay network and Kubernetes cluster CLI - that means that no client-side tool other than InfraCTL should be necessary to go from zero to fully functional Kubernetes cluster.</description>
     </item>
     
     <item>

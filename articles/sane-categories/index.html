@@ -11,10 +11,10 @@
       
     </title>
 
-    <link
-      rel="me"
-      href="https://mastodon.social/@pojntfx"
-    />
+    
+      <link rel="me" href="https://mastodon.social/@pojntfx" />
+    
+
 
     <link rel="icon" href="https://github.com/pojntfx.png" />
 
@@ -26,7 +26,7 @@
     />
     <meta
       name="copyright"
-      content="© 2022 Felicitas Pojtinger"
+      content="© 2023 Felicitas Pojtinger"
     />
 
     <link
@@ -36,8 +36,14 @@
   </head>
   <body>
     
+      <div class="fireworks"></div>
+    
+
+    
       
       <script src="../../js/snowflakes.e18a131ae736a978da7ea738028d2df6a4f2bd0c37abcdbdaae01bf6f6732544.js"></script>
+    
+
     
 
 
@@ -57,12 +63,12 @@
             >
               <img
                 src="https://github.com/pojntfx.png"
-                alt="Profile picture of Felicitas Pojtinger 🌨️"
+                alt="Profile picture of Felicitas Pojtinger 🇪🇺"
                 class="pf-c-avatar pf-u-mr-md pf-c-avatar--navbar"
               />
               <div>
                 <h2 class="pf-u-font-size-sm pf-x-u-text-shadow-sm">
-                  Felicitas Pojtinger 🌨️
+                  Felicitas Pojtinger 🇪🇺
                 </h2>
                 <h1
                   class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title pf-x-u-text-shadow-sm"
@@ -75,16 +81,20 @@
             <div
               class="pf-u-display-flex pf-u-align-items-center pf-u-pr-2xl pf-u-pr-0-on-xl"
             >
-              <a
-                href="https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing"
-                target="_blank"
-                rel="noopener"
-                class="pf-c-button pf-c-button--header pf-x-u-text-shadow-sm pf-m-plain pf-u-ml-2xl "
-              >
-                <span class="pf-c-button__icon pf-m-start">
-                  <i class="fas fa-book" aria-hidden="true"></i> </span
-                >CV</a
-              >
+              
+                <a
+                  href="https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener"
+                  class="pf-c-button pf-c-button--header pf-x-u-text-shadow-sm pf-m-plain pf-u-ml-2xl--first-child"
+                >
+                  <span class="pf-c-button__icon pf-m-start">
+                    <i class="fas fa-book" aria-hidden="true"></i> </span
+                  >CV</a
+                >
+              
+
+              
 
               
             </div>
@@ -94,7 +104,9 @@
 
       
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent"
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent 
+      pf-c-page__main--with-effects
+    "
     tabindex="-1"
     id="main"
   >
@@ -116,7 +128,10 @@
             </div>
             <div class="pf-c-card__title">
               <h1 class="pf-u-font-size-4xl pf-u-pb-sm">Sane Categories for Software Distribution Systems</h1>
-              <p>Why are these systems so hard to set up?</p>
+
+              
+                <p>Why are these systems so hard to set up?</p>
+              
             </div>
             <div class="pf-c-card__body">
               <article>
@@ -217,7 +232,8 @@
         <div
           class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg pf-c-grid--tweets"
         >
-          <div
+          
+            <div
   class="pf-c-card pf-c-card--full-width pf-c-card--transparent"
   id="mastodonfeed"
 >
@@ -226,29 +242,30 @@
   >
     <span>Latest toots</span>
 
-    <a
-      target="_blank"
-      class="twitterfeed__user__url pf-l-flex pf-m-align-items-center"
-    >
-      <img
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-        alt="Mastodon follower count"
-      />
-    </a>
+    
+      <a
+        target="_blank"
+        class="twitterfeed__user__url pf-l-flex pf-m-align-items-center"
+      >
+        <img
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+          alt="Mastodon follower count"
+        />
+      </a>
+    
   </div>
   <div class="pf-c-card__body twitterfeed">
-    <ul
-      class="twitterfeed__tweets pf-l-flex pf-m-column pf-m-space-items-sm"
-    ></ul>
+    
+      <ul
+        class="twitterfeed__tweets pf-l-flex pf-m-column pf-m-space-items-sm"
+      ></ul>
 
-    <a
-      target="_blank"
-      class="twitterfeed__user__url pf-c-button pf-m-link pf-u-mt-lg"
-    >
-      <span class="pf-c-button__icon pf-m-start">
-        <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
-      >All toots</a
-    >
+      <a target="_blank" class="twitterfeed__user__url pf-c-button pf-m-link">
+        <span class="pf-c-button__icon pf-m-start">
+          <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
+        >All toots</a
+      >
+    
   </div>
 </div>
 
@@ -348,7 +365,7 @@
 
 
     const statistics = document.createElement("div");
-    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200")
+    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200", "pf-u-mt-sm")
 
     const repliess = document.createElement("span");
     repliess.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
@@ -402,6 +419,7 @@
   });
 </script>
 
+          
 
           
           
@@ -419,7 +437,7 @@
         target="_blank"
         rel="noopener"
         class="pf-x-m-no-highlight--dark pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
-        >© 2022 Felicitas Pojtinger</a
+        >© 2023 Felicitas Pojtinger</a
       >
     </div>
     <div class="pf-l-flex__item">
