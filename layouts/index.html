@@ -147,9 +147,11 @@
                             <div class="pf-c-card__title pf-u-pt-md pf-u-pb-sm">
                               {{ .Title }}
                             </div>
-                            <div class="pf-c-card__body pf-u-pb-sm">
-                              {{ .Params.Excerpt }}
-                            </div>
+                            {{ if .Params.Excerpt }}
+                              <div class="pf-c-card__body pf-u-pb-sm">
+                                {{ .Params.Excerpt }}
+                              </div>
+                            {{ end }}
                             <div class="pf-c-card__footer pf-u-color-200">
                               {{ .Date | time.Format ":date_long" }}
                             </div>
