@@ -1,7 +1,9 @@
 {{ define "main" }}
   <main
     class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur  {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
-      pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }} pf-c-page__main--with-effects--without-blur{{ end }}
+      pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
+        pf-c-page__main--with-effects--without-blur
+      {{ end }}
     {{ end }}"
     tabindex="-1"
     id="main"
@@ -37,9 +39,11 @@
                   <div class="pf-c-card__title pf-u-pt-md pf-u-pb-sm">
                     {{ .Title }}
                   </div>
-                  <div class="pf-c-card__body pf-u-pb-sm">
-                    {{ .Params.Excerpt }}
-                  </div>
+                  {{ if .Params.Excerpt }}
+                    <div class="pf-c-card__body pf-u-pb-sm">
+                      {{ .Params.Excerpt }}
+                    </div>
+                  {{ end }}
                   <div class="pf-c-card__footer pf-u-color-200">
                     {{ .Date | time.Format ":date_long" }}
                   </div>

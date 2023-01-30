@@ -25,7 +25,10 @@
             </div>
             <div class="pf-c-card__title">
               <h1 class="pf-u-font-size-4xl pf-u-pb-sm">{{ .Title }}</h1>
-              <p>{{ .Params.Excerpt }}</p>
+
+              {{ if .Params.Excerpt }}
+                <p>{{ .Params.Excerpt }}</p>
+              {{ end }}
             </div>
             <div class="pf-c-card__body">
               <article>
@@ -116,9 +119,11 @@
                           class="pf-c-card pf-m-compact pf-m-hoverable-raised pf-u-h-100"
                         >
                           <div class="pf-c-card__title">{{ .Title }}</div>
-                          <div class="pf-c-card__body pf-u-pb-sm">
-                            {{ .Params.Excerpt }}
-                          </div>
+                          {{ if .Params.Excerpt }}
+                            <div class="pf-c-card__body pf-u-pb-sm">
+                              {{ .Params.Excerpt }}
+                            </div>
+                          {{ end }}
                           <div class="pf-c-card__footer pf-u-color-200">
                             {{ .Date | time.Format ":date_long" }}
                           </div>
