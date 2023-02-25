@@ -8,6 +8,9 @@ if [ "$1" = "go" ]; then
     apt update
     apt install -y curl make npm
 
+    # Configure Git
+    git config --global --add safe.directory '*'
+
     # Install bagop
     curl -L -o /tmp/bagop "https://github.com/pojntfx/bagop/releases/latest/download/bagop.linux-$(uname -m)"
     install /tmp/bagop /usr/local/bin
@@ -25,6 +28,9 @@ fi
 if [ "$1" = "pwa" ]; then
     # Install Hugo
     apk add curl make hugo npm
+
+    # Configure Git
+    git config --global --add safe.directory '*'
 
     # Generate dependencies
     make depend
