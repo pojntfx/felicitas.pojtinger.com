@@ -25,7 +25,7 @@ It provides the following information:
 
 The web app is available on [GitHub releases](https://github.com/pojntfx/personal-site/releases) in the form of a static `.tar.gz` archive; to deploy it, simply upload it to a CDN or copy it to a web server. The release also includes the project list generation tool, API server and proxy. For most users, this shouldn't be necessary though; simply visit the [public deployment](https://felicitas.pojtinger.com/) to access it:
 
-[<img src="https://github.com/alphahorizonio/webnetesctl/raw/main/img/launch.png" width="240">](https://felicitas.pojtinger.com/)
+[<img src="https://github.com/pojntfx/webnetesctl/raw/main/img/launch.png" width="240">](https://felicitas.pojtinger.com/)
 
 ## Screenshots
 

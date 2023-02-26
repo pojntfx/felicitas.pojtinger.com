@@ -38,13 +38,13 @@
   projects:
     - slug: pojntfx/saltpanelo
       background: var(--pf-global--palette--blue-400)
-    - slug: alphahorizonio/unisockets
+    - slug: pojntfx/unisockets
       background: var(--pf-global--palette--gold-600)
-    - slug: alphahorizonio/tinynet
+    - slug: pojntfx/tinynet
       background: var(--pf-global--palette--cyan-600)
-    - slug: alphahorizonio/nebulark
+    - slug: pojntfx/nebulark
       background: var(--pf-global--palette--orange-600)
-    - slug: alphahorizonio/webnetes
+    - slug: pojntfx/webnetes
       background: var(--pf-global--palette--red-400)
 - title: Management Daemons
   projects:
@@ -112,13 +112,13 @@
       background: var(--pf-global--palette--light-green-700)
     - slug: pojntfx/nextcloud-talk-bot-framework
       background: var(--pf-global--palette--purple-600)
-    - slug: alphahorizonio/consumat.io-backend
+    - slug: pojntfx/consumat.io-backend
       background: var(--pf-global--palette--black-850)
 - title: Aeronautical Engineering
   projects:
-    - slug: clusterplatform/libresat
+    - slug: pojntfx/libresat
       background: var(--pf-global--palette--black-850)
-    - slug: clusterplatform/clusterplatform
+    - slug: pojntfx/pojntfx
       background: var(--pf-global--palette--blue-400)
-    - slug: clusterplatform/opensdcp-website
+    - slug: pojntfx/opensdcp-website
       background: var(--pf-global--palette--cyan-500)
