@@ -7,11 +7,13 @@
     - slug: pojntfx/liwasc
       background: var(--pf-global--palette--cyan-500)
     - slug: pojntfx/bofied
-      background: var(--pf-global--palette--light-blue-600) 
+      background: var(--pf-global--palette--light-blue-600)
 - title: Apps
   projects:
     - slug: pojntfx/connmapper
       background: var(--pf-global--palette--light-green-600)
+    - slug: pojntfx/vintangle
+      background: var(--pf-global--palette--black-850)
     - slug: pojntfx/keygaen
       background: var(--pf-global--palette--blue-500)
     - slug: pojntfx/keystoregaen
@@ -30,6 +32,8 @@
       background: var(--pf-global--palette--purple-600)
     - slug: pojntfx/alpimager
       background: var(--pf-global--palette--black-850)
+    - slug: pojntfx/octarchive
+      background: var(--pf-global--palette--gold-600)
     - slug: pojntfx/pojde
       background: var(--pf-global--palette--light-green-700)
     - slug: pojntfx/grpc-examples
@@ -38,6 +42,8 @@
   projects:
     - slug: pojntfx/saltpanelo
       background: var(--pf-global--palette--blue-400)
+    - slug: pojntfx/dudirekta
+      background: var(--pf-global--palette--light-blue-600)
     - slug: pojntfx/unisockets
       background: var(--pf-global--palette--gold-600)
     - slug: pojntfx/tinynet
