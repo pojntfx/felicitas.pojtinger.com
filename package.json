@@ -1,5 +1,5 @@
 {
-  "name": "@pojntfx/personal-site",
+  "name": "@pojntfx/felicitas.pojtinger.com",
   "version": "0.0.1",
   "description": "My personal site.",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pojntfx/personal-site.git"
+    "url": "git+https://github.com/pojntfx/felicitas.pojtinger.com.git"
   },
   "author": "Felicitas Pojtinger <felicitas@pojtinger.com>",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/pojntfx/personal-site/issues"
+    "url": "https://github.com/pojntfx/felicitas.pojtinger.com/issues"
   },
-  "homepage": "https://github.com/pojntfx/personal-site#readme",
+  "homepage": "https://github.com/pojntfx/felicitas.pojtinger.com#readme",
   "dependencies": {
     "@fireworks-js/web": "^2.10.0",
     "@fontsource/lato": "^4.5.1",

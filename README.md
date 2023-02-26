@@ -2,10 +2,10 @@
 
 My personal site.
 
-[![hydrun CI](https://github.com/pojntfx/personal-site/actions/workflows/hydrun.yaml/badge.svg)](https://github.com/pojntfx/personal-site/actions/workflows/hydrun.yaml)
+[![hydrun CI](https://github.com/pojntfx/felicitas.pojtinger.com/actions/workflows/hydrun.yaml/badge.svg)](https://github.com/pojntfx/felicitas.pojtinger.com/actions/workflows/hydrun.yaml)
 ![Go Version](https://img.shields.io/badge/go%20version-%3E=1.16-61CFDD.svg)
-[![Go Reference](https://pkg.go.dev/badge/github.com/pojntfx/personal-site.svg)](https://pkg.go.dev/github.com/pojntfx/personal-site)
-[![Binary Downloads](https://img.shields.io/github/downloads/pojntfx/personal-site/total?label=binary%20downloads)](https://github.com/pojntfx/personal-site/releases)
+[![Go Reference](https://pkg.go.dev/badge/github.com/pojntfx/felicitas.pojtinger.com.svg)](https://pkg.go.dev/github.com/pojntfx/felicitas.pojtinger.com)
+[![Binary Downloads](https://img.shields.io/github/downloads/pojntfx/felicitas.pojtinger.com/total?label=binary%20downloads)](https://github.com/pojntfx/felicitas.pojtinger.com/releases)
 
 ## Overview
 
@@ -23,7 +23,7 @@ It provides the following information:
 
 ## Installation
 
-The web app is available on [GitHub releases](https://github.com/pojntfx/personal-site/releases) in the form of a static `.tar.gz` archive; to deploy it, simply upload it to a CDN or copy it to a web server. The release also includes the project list generation tool, API server and proxy. For most users, this shouldn't be necessary though; simply visit the [public deployment](https://felicitas.pojtinger.com/) to access it:
+The web app is available on [GitHub releases](https://github.com/pojntfx/felicitas.pojtinger.com/releases) in the form of a static `.tar.gz` archive; to deploy it, simply upload it to a CDN or copy it to a web server. The release also includes the project list generation tool, API server and proxy. For most users, this shouldn't be necessary though; simply visit the [public deployment](https://felicitas.pojtinger.com/) to access it:
 
 [<img src="https://github.com/pojntfx/webnetesctl/raw/main/img/launch.png" width="240">](https://felicitas.pojtinger.com/)
 
@@ -78,8 +78,8 @@ To contribute, please use the [GitHub flow](https://guides.github.com/introducti
 To build the site locally, run:
 
 ```shell
-$ git clone https://github.com/pojntfx/personal-site.git
-$ cd personal-site
+$ git clone https://github.com/pojntfx/felicitas.pojtinger.com.git
+$ cd felicitas.pojtinger.com
 $ make depend
 $ export GITHUB_API=https://api.github.com/ GITHUB_TOKEN=your-github-api-token YOUTUBE_TOKEN=your-youtube-api-token TWITCH_CLIENT_ID=your-twitch-client-id TWITCH_CLIENT_SECRET=your-twitch-client-secret TWITTER_CLIENT_SECRET=your-twitter-client-secret TWITTER_CLIENT_ID=your-twitter-client-id MASTODON_SERVER=https://mastodon.social MASTODON_CLIENT_ID=your-mastodon-client-id MASTODON_CLIENT_SECRET=your-mastodon-client-secret MASTODON_ACCESS_TOKEN=your-mastodon-access-token
 $ make dev

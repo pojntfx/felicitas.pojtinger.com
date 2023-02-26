@@ -8,11 +8,11 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/pojntfx/personal-site/api/github"
-	"github.com/pojntfx/personal-site/api/mastodon"
-	"github.com/pojntfx/personal-site/api/twitch"
-	"github.com/pojntfx/personal-site/api/twitter"
-	"github.com/pojntfx/personal-site/api/youtube"
+	"github.com/pojntfx/felicitas.pojtinger.com/api/github"
+	"github.com/pojntfx/felicitas.pojtinger.com/api/mastodon"
+	"github.com/pojntfx/felicitas.pojtinger.com/api/twitch"
+	"github.com/pojntfx/felicitas.pojtinger.com/api/twitter"
+	"github.com/pojntfx/felicitas.pojtinger.com/api/youtube"
 )
 
 func main() {

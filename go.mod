@@ -1,4 +1,4 @@
-module github.com/pojntfx/personal-site
+module github.com/pojntfx/felicitas.pojtinger.com
 
 go 1.20
 
