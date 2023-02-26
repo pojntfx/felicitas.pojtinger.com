@@ -29,9 +29,6 @@ if [ "$1" = "pwa" ]; then
     # Install Hugo
     apk add curl make hugo npm
 
-    # Configure Git
-    git config --global --add safe.directory '*'
-
     # Generate dependencies
     make depend
 
