@@ -110,13 +110,23 @@ func main() {
 				license = l.GetSPDXID()
 			}
 
+			commits, _, err := client.Repositories.ListCommits(context.Background(), strings.TrimSuffix(owner, "/"), repo, &github.CommitsListOptions{})
+			if err != nil {
+				panic(err)
+			}
+
+			latestCommitDate := project.GetPushedAt().Time
+			if len(commits) > 0 {
+				latestCommitDate = *commits[0].Commit.Author.Date
+			}
+
 			outputCategory.Projects = append(outputCategory.Projects, OutputProject{
 				URL:         project.GetHTMLURL(),
 				Title:       project.GetFullName(),
 				Description: project.GetDescription(),
 				Language:    project.GetLanguage(),
 				License:     license,
-				Date:        project.GetPushedAt().Format(time.RFC3339),
+				Date:        latestCommitDate.Format(time.RFC3339),
 				Topics:      project.Topics,
 				Stars:       project.GetStargazersCount(),
 				Forks:       project.GetForksCount(),
