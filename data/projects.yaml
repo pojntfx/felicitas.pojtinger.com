@@ -118,7 +118,7 @@
   projects:
     - slug: pojntfx/libresat
       background: var(--pf-global--palette--black-850)
-    - slug: pojntfx/pojntfx
+    - slug: pojntfx/clusterplatform
       background: var(--pf-global--palette--blue-400)
     - slug: pojntfx/opensdcp-website
       background: var(--pf-global--palette--cyan-500)
