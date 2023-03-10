@@ -14,7 +14,7 @@ This is my personal website, which is also intended to be a more or less generic
 It provides the following information:
 
 - Personal details (name, profession, pronouns)
-- Social media details (Mastodon/Twitter/Instagram, Matrix/Signal, phone/mail)
+- Social media details (Mastodon/Twitter (through [nitter](https://nitter.net/))/Instagram, Matrix/Signal, phone/mail)
 - Latest GitHub commit
 - Livestream (Twitch & YouTube) status
 - Articles with comments
@@ -62,7 +62,8 @@ Click on an image to see a larger version.
 ## Acknowledgements
 
 - [gohugoio/hugo](https://github.com/gohugoio/hugo) provides the static site generator.
-- [dghubble/go-twitter](https://github.com/dghubble/go-twitter) provides the Twitter API library.
+- [zedeus/nitter](https://github.com/zedeus/nitter) provides the Twitter API.
+- [mmcdole/gofeed](https://github.com/mmcdole/gofeed) provides the RSS library for nitter.
 - [google/go-github](https://github.com/google/go-github) provides the GitHub API library.
 - [nicklaw5/helix](https://github.com/nicklaw5/helix) provides the Twitch API library.
 - [googleapis/google-api-go-client](https://github.com/googleapis/google-api-go-client) provides the YouTube API library.
@@ -81,7 +82,7 @@ To build the site locally, run:
 $ git clone https://github.com/pojntfx/felicitas.pojtinger.com.git
 $ cd felicitas.pojtinger.com
 $ make depend
-$ export GITHUB_API=https://api.github.com/ GITHUB_TOKEN=your-github-api-token YOUTUBE_TOKEN=your-youtube-api-token TWITCH_CLIENT_ID=your-twitch-client-id TWITCH_CLIENT_SECRET=your-twitch-client-secret TWITTER_CLIENT_SECRET=your-twitter-client-secret TWITTER_CLIENT_ID=your-twitter-client-id MASTODON_SERVER=https://mastodon.social MASTODON_CLIENT_ID=your-mastodon-client-id MASTODON_CLIENT_SECRET=your-mastodon-client-secret MASTODON_ACCESS_TOKEN=your-mastodon-access-token
+$ export GITHUB_API=https://api.github.com/ GITHUB_TOKEN=your-github-api-token YOUTUBE_TOKEN=your-youtube-api-token TWITCH_CLIENT_ID=your-twitch-client-id TWITCH_CLIENT_SECRET=your-twitch-client-secret MASTODON_SERVER=https://mastodon.social MASTODON_CLIENT_ID=your-mastodon-client-id MASTODON_CLIENT_SECRET=your-mastodon-client-secret MASTODON_ACCESS_TOKEN=your-mastodon-access-token
 $ make dev
 ```
 

@@ -4,18 +4,17 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"os"
+	"net/url"
 	"path"
+	"strings"
 	"time"
 
-	"github.com/dghubble/go-twitter/twitter"
-	"golang.org/x/oauth2/clientcredentials"
+	"github.com/mmcdole/gofeed"
 )
 
 type Output struct {
 	UserDisplayName       string `json:"userDisplayName"`
 	UserName              string `json:"username"`
-	UserFollowerCount     int    `json:"userFollowerCount"`
 	UserURL               string `json:"userURL"`
 	UserProfilePictureURL string `json:"userProfilePictureURL"`
 
@@ -26,25 +25,14 @@ type Tweet struct {
 	Timestamp string `json:"timestamp"`
 	Body      string `json:"body"`
 
-	Images []Image `json:"images"`
-
-	CommentCount int `json:"commentCount"`
-	RetweetCount int `json:"retweetCount"`
-	LikeCount    int `json:"likeCount"`
-
 	URL string `json:"url"`
 }
 
-type Image struct {
-	URL     string `json:"url"`
-	AltText string `json:"altText"`
-}
-
 const (
-	userProfileURLPrefix = "https://twitter.com/"
+	userProfileURLPrefix = "https://nitter.net/"
 )
 
-func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string, clientSecret string) {
+func TwitterFeedHandler(w http.ResponseWriter, r *http.Request) {
 	username := r.URL.Query().Get("username")
 	if username == "" {
 		w.Write([]byte("missing username query parameter: "))
@@ -52,71 +40,53 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 		panic("missing username query parameter")
 	}
 
-	config := &clientcredentials.Config{
-		ClientID:     clientID,
-		ClientSecret: clientSecret,
-		TokenURL:     "https://api.twitter.com/oauth2/token",
-	}
-	httpClient := config.Client(r.Context())
+	parser := gofeed.NewParser()
 
-	client := twitter.NewClient(httpClient)
+	u, err := url.Parse("https://nitter.net/")
+	if err != nil {
+		panic(err)
+	}
+	u.Path = path.Join(u.Path, username, "rss")
+
+	feed, err := parser.ParseURL(u.String())
+	if err != nil {
+		panic(err)
+	}
+
+	names := strings.Split(feed.Title, " / ")
 
 	output := Output{}
 
-	user, _, err := client.Users.Show(&twitter.UserShowParams{
-		ScreenName: username,
-	})
-	if err != nil {
-		panic(err)
-	}
-
-	output.UserDisplayName = user.Name
-	output.UserName = user.ScreenName
-	output.UserFollowerCount = user.FollowersCount
-	output.UserURL = userProfileURLPrefix + user.ScreenName
-	output.UserProfilePictureURL = user.ProfileImageURLHttps
+	output.UserDisplayName = names[0]
+	output.UserName = strings.TrimPrefix(names[1], "@")
+	output.UserURL = feed.Link
+	output.UserProfilePictureURL = feed.Image.URL
 
 	tweets := []Tweet{}
 
-	sourceTweets, _, err := client.Timelines.UserTimeline(&twitter.UserTimelineParams{
-		ScreenName:     username,
-		Count:          4,
-		ExcludeReplies: twitter.Bool(false),
-		TweetMode:      "extended",
-	})
-	if err != nil {
-		panic(err)
-	}
+	count := 0
+	for _, sourceTweet := range feed.Items {
+		if strings.HasPrefix(sourceTweet.Title, "R to "+names[1]) || strings.HasPrefix(sourceTweet.Title, "QT by") || strings.HasPrefix(sourceTweet.Title, "RT by") {
+			continue
+		}
 
-	for _, sourceTweet := range sourceTweets {
+		if count >= 4 {
+			break
+		}
+
+		count++
+
 		tweet := Tweet{}
 
-		createdAt, err := sourceTweet.CreatedAtTime()
+		createdAt, err := time.Parse(time.RFC1123, sourceTweet.Published)
 		if err != nil {
 			panic(err)
 		}
 
 		tweet.Timestamp = createdAt.Format(time.RFC3339)
-		tweet.Body = sourceTweet.FullText
+		tweet.Body = sourceTweet.Description
 
-		images := []Image{}
-
-		if attachments := sourceTweet.Entities; attachments != nil {
-			for _, media := range attachments.Media {
-				images = append(images, Image{
-					URL:     media.MediaURLHttps,
-					AltText: "No alt text available in the Twitter V1 API, please visit the original Tweet URL instead",
-				})
-			}
-		}
-
-		tweet.Images = images
-
-		tweet.CommentCount = sourceTweet.ReplyCount
-		tweet.RetweetCount = sourceTweet.RetweetCount
-		tweet.LikeCount = sourceTweet.FavoriteCount
-
-		tweet.URL = userProfileURLPrefix + path.Join(user.ScreenName, "status", sourceTweet.IDStr)
+		tweet.URL = sourceTweet.Link
 
 		tweets = append(tweets, tweet)
 	}
@@ -132,5 +102,5 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request, clientID string,
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	TwitterFeedHandler(w, r, os.Getenv("TWITTER_CLIENT_ID"), os.Getenv("TWITTER_CLIENT_SECRET"))
+	TwitterFeedHandler(w, r)
 }

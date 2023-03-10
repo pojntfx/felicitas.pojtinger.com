@@ -14,7 +14,7 @@
       >
         <img
           src="https://img.shields.io/twitter/follow/{{ .Username }}?label={{ printf `%s%s` `@` .Username }}&style=social"
-          alt="Twitter follower count"
+          alt="Twitter badge"
         />
       </a>
     {{ end }}
@@ -145,78 +145,9 @@
 
     const tweetBody = document.createElement("div");
     tweetBody.innerHTML = tweet.body;
-    tweetBody.classList.add("pf-u-py-sm", "pf-x-u-overflow-x-auto")
+    tweetBody.classList.add("pf-u-py-sm", "pf-x-u-overflow-x-auto", "twitterfeed__tweets__content")
 
     content.appendChild(tweetBody);
-
-    if (tweet.images.length > 0) {
-      const images = document.createElement("div");
-      images.classList.add("pf-l-gallery", "pf-m-gutter", "pf-u-my-sm")
-
-      tweet.images.forEach((image) => {
-        const el = document.createElement("div");
-        el.classList.add("pf-l-gallery__item")
-
-        const attachment = document.createElement("img");
-        attachment.src = image.url;
-        attachment.alt = image.altText;
-        attachment.classList.add("pf-u-w-100")
-
-        el.appendChild(attachment);
-
-        images.appendChild(el);
-      });
-
-      content.appendChild(images);
-    }
-
-
-    const statistics = document.createElement("div");
-    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200", "pf-u-mt-xs")
-
-    const comments = document.createElement("span");
-    comments.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
-
-    const commentIcon = document.createElement("i");
-    commentIcon.classList.add("fas", "fa-comments")
-
-    const commentCount = document.createElement("span");
-    commentCount.textContent = tweet.commentCount;
-
-    comments.append(commentIcon)
-    comments.append(commentCount)
-
-    statistics.appendChild(comments);
-
-    const retweets = document.createElement("span");
-    retweets.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
-
-    const retweetIcon = document.createElement("i");
-    retweetIcon.classList.add("fas", "fa-retweet")
-
-    const retweetCount = document.createElement("span");
-    retweetCount.textContent = tweet.retweetCount;
-
-    retweets.append(retweetIcon)
-    retweets.append(retweetCount)
-
-    statistics.appendChild(retweets);
-
-    const likes = document.createElement("span");
-    likes.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
-
-    const likeIcon = document.createElement("i");
-    likeIcon.classList.add("fas", "fa-heart")
-
-    const likeCount = document.createElement("span");
-    likeCount.textContent = tweet.likeCount;
-
-    likes.append(likeIcon)
-    likes.append(likeCount)
-
-    statistics.appendChild(likes);
-
-    content.appendChild(statistics);
 
     link.append(content)
 

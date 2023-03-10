@@ -576,3 +576,7 @@ $bg: "/img/bg.webp";
 .pf-x-u-text--center {
   text-align: center;
 }
+
+.twitterfeed__tweets__content img {
+  @extend .pf-u-mt-md;
+}

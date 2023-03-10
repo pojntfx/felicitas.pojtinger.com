@@ -19,9 +19,6 @@ func main() {
 	twitchClientID := flag.String("twitch-client-id", "", "Twitch API client ID (can also be set using the TWITCH_CLIENT_ID env variable)")
 	twitchClientSecret := flag.String("twitch-client-secret", "", "Twitch API client secret (can also be set using the TWITCH_CLIENT_SECRET env variable)")
 
-	twitterClientID := flag.String("twitter-client-id", "", "Twitter API client ID (can also be set using the TWITTER_CLIENT_ID env variable)")
-	twitterClientSecret := flag.String("twitter-client-secret", "", "Twitter API client secret (can also be set using the TWITTER_CLIENT_SECRET env variable)")
-
 	mastodonServer := flag.String("mastodon-server", "", "Mastodon API server (can also be set using the MASTODON_SERVER env variable)")
 	mastodonClientID := flag.String("mastodon-client-id", "", "Mastodon API client ID (can also be set using the MASTODON_CLIENT_ID env variable)")
 	mastodonClientSecret := flag.String("mastodon-client-secret", "", "Mastodon API client secret (can also be set using the MASTODON_CLIENT_SECRET env variable)")
@@ -44,14 +41,6 @@ func main() {
 
 	if *twitchClientSecret == "" {
 		*twitchClientSecret = os.Getenv("TWITCH_CLIENT_SECRET")
-	}
-
-	if *twitterClientID == "" {
-		*twitterClientID = os.Getenv("TWITTER_CLIENT_ID")
-	}
-
-	if *twitterClientSecret == "" {
-		*twitterClientSecret = os.Getenv("TWITTER_CLIENT_SECRET")
 	}
 
 	if *mastodonServer == "" {
@@ -122,7 +111,7 @@ func main() {
 
 		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
 
-		twitter.TwitterFeedHandler(rw, r, *twitterClientID, *twitterClientSecret)
+		twitter.TwitterFeedHandler(rw, r)
 	})
 
 	mux.HandleFunc("/api/mastodon", func(rw http.ResponseWriter, r *http.Request) {
