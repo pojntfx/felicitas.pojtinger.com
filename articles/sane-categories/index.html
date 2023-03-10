@@ -36,12 +36,7 @@
   </head>
   <body>
     
-      <div class="fireworks"></div>
-    
 
-    
-      
-      <script src="../../js/snowflakes.e18a131ae736a978da7ea738028d2df6a4f2bd0c37abcdbdaae01bf6f6732544.js"></script>
     
 
     
@@ -104,9 +99,7 @@
 
       
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent 
-      pf-c-page__main--with-effects
-    "
+    class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur pf-x-u-transparent "
     tabindex="-1"
     id="main"
   >
@@ -176,7 +169,7 @@
 
                 <main class="pf-c-page__main pf-c-content">
                   <p>So I tried to set up a homelab. This has been a thing that I wanted to do for a long time now; I&rsquo;ve got some older <code>VT-d</code> capable <code>x86_64</code> laptops and desktops laying around at home gathering dust. This even includes my trusty and quite powerful former gaming PC which could serve as a useful compute node. In addition to that, my cloud computing costs have skyrocketed over the last few months, rising ~10 € per month up to nearly 40 € last month. As a student, I simply couldn&rsquo;t afford using this system from that point onwards.</p>
-<p>So, a homelab needed to be built then. But how - and how did I get it on to the public internet? This is not actually what this post is going to be about, although I&rsquo;ll be sure to write about in the future. This post is going to about <em>how</em> such a homelab or any modern cloud should be deployed in a sane system - such as the <a href="https://clusterplatform.github.io/clusterplatform/packages/provisioner/">Cluster Platform (CTPF)</a>.</p>
+<p>So, a homelab needed to be built then. But how - and how did I get it on to the public internet? This is not actually what this post is going to be about, although I&rsquo;ll be sure to write about in the future. This post is going to about <em>how</em> such a homelab or any modern cloud should be deployed in a sane system - such as the <a href="https://pojntfx.github.io/pojntfx/packages/provisioner/">Cluster Platform (CTPF)</a>.</p>
 <p>Currently, the CTPF is incredibly complicated to set up; in order to develop for the CTPF or to deploy it, and then create a cloud with it, an actual cloud is necessary beforehand. This makes for an interesting paradox, as the very reason for me to deploy a homelab is to get rid of that cloud, yet the only way for me to work on the software to develop it is to use one. How does one solve this? Categories of course!</p>
 <p>Categorical thinking is of course not without it&rsquo;s problems, mostly when the categories don&rsquo;t really serve any purpose anymore but rather are an unnecessary construct that hold us back (gender, for example). In this context however, categories can really serve as a simple way of knowing which parts of the CTPF need to be deployed in what way and, more importantly, where.</p>
 <p>The first category of the CTPF, and also the most resource-intensive, is the builders category. It consists of specialized microservices that have the sole purpose of serving as an advanced frontend for GNU <code>make</code> and builds things such as GNU GRUB, <a href="https://ipxe.org/">iPXE</a>, SYSLINUX and other pre-boot environments. This is necessary to create the artifacts that make it possible to execute, among other things, iPXE scripts, which define what OS should be installed afterwards.</p>
@@ -210,7 +203,7 @@
             <div class="pf-c-card__footer">
               <script
                 src="https://giscus.app/client.js"
-                data-repo="pojntfx/personal-site"
+                data-repo="pojntfx/felicitas.pojtinger.com"
                 data-repo-id="MDEwOlJlcG9zaXRvcnkyMjk0NTAyMDE="
                 data-category="Announcements"
                 data-category-id="DIC_kwDODa0h2c4CAeR2"
@@ -433,7 +426,7 @@
   >
     <div class="pf-l-flex__item">
       <a
-        href="https://github.com/pojntfx/personal-site"
+        href="https://github.com/pojntfx/felicitas.pojtinger.com"
         target="_blank"
         rel="noopener"
         class="pf-x-m-no-highlight--dark pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
