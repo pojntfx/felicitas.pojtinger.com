@@ -32,7 +32,7 @@ const (
 	userProfileURLPrefix = "https://nitter.net/"
 )
 
-func TwitterFeedHandler(w http.ResponseWriter, r *http.Request) {
+func TwitterFeedHandler2(w http.ResponseWriter, r *http.Request) {
 	username := r.URL.Query().Get("username")
 	if username == "" {
 		w.Write([]byte("missing username query parameter: "))
@@ -102,5 +102,5 @@ func TwitterFeedHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	TwitterFeedHandler(w, r)
+	TwitterFeedHandler2(w, r)
 }
