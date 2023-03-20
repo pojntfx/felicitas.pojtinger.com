@@ -28,7 +28,7 @@ type Tweet struct {
 	URL string `json:"url"`
 }
 
-func TwitterFeedHandler(w http.ResponseWriter, r *http.Request) {
+func Handler(w http.ResponseWriter, r *http.Request) {
 	username := r.URL.Query().Get("username")
 	if username == "" {
 		w.Write([]byte("missing username query parameter: "))
