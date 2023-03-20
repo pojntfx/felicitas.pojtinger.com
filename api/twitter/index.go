@@ -97,6 +97,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "%v", string(j))
 }
 
-func TwitterFeedHandler(w http.ResponseWriter, r *http.Request) {
+func TwitterFeed(w http.ResponseWriter, r *http.Request) {
 	Handler(w, r)
 }
