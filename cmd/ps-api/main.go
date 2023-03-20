@@ -111,7 +111,7 @@ func main() {
 
 		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
 
-		twitter.TwitterFeed(rw, r)
+		twitter.Handler(rw, r)
 	})
 
 	mux.HandleFunc("/api/mastodon", func(rw http.ResponseWriter, r *http.Request) {
