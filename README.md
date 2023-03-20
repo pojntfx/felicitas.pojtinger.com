@@ -70,8 +70,6 @@ Click on an image to see a larger version.
 - [giscus/giscus](https://github.com/giscus/giscus) provides the comment system.
 - The open source [PatternFly design system](https://www.patternfly.org/v4/) provides the components for the project.
 
-To all the rest of the authors who worked on the dependencies used: **Thanks a lot!**
-
 ## Contributing
 
 To contribute, please use the [GitHub flow](https://guides.github.com/introduction/flow/) and follow our [Code of Conduct](./CODE_OF_CONDUCT.md).
@@ -88,6 +86,6 @@ $ make dev
 
 ## License
 
-Personal Site (c) 2022 Felicitas Pojtinger and contributors
+Personal Site (c) 2023 Felicitas Pojtinger and contributors
 
 SPDX-License-Identifier: AGPL-3.0
