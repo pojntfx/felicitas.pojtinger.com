@@ -28,11 +28,7 @@ type Tweet struct {
 	URL string `json:"url"`
 }
 
-const (
-	userProfileURLPrefix = "https://nitter.net/"
-)
-
-func TwitterFeedHandler2(w http.ResponseWriter, r *http.Request) {
+func Handler(w http.ResponseWriter, r *http.Request) {
 	username := r.URL.Query().Get("username")
 	if username == "" {
 		w.Write([]byte("missing username query parameter: "))
@@ -101,6 +97,6 @@ func TwitterFeedHandler2(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "%v", string(j))
 }
 
-func Handler(w http.ResponseWriter, r *http.Request) {
-	TwitterFeedHandler2(w, r)
+func TwitterFeedHandler(w http.ResponseWriter, r *http.Request) {
+	Handler(w, r)
 }
