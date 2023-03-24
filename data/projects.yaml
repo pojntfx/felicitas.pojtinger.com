@@ -104,6 +104,8 @@
       background: var(--pf-global--palette--cyan-600)
     - slug: morniteaque/yaraamendiares.eu
       background: var(--pf-global--palette--purple-600)
+    - slug: morniteaque/morniteaque.org
+      background: var(--pf-global--palette--black-850)
     - slug: pojntfx/illustrierte-website
       background: var(--pf-global--palette--orange-600)
     - slug: pojntfx/physio-dani.de
