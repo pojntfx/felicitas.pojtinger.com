@@ -2,6 +2,10 @@
   projects:
     - slug: pojntfx/weron
       background: var(--pf-global--palette--black-850)
+      icon: true
+    - slug: pojntfx/go-nbd
+      background: var(--pf-global--palette--gold-600)
+      icon: true
     - slug: pojntfx/stfs
       background: var(--pf-global--palette--blue-400)
     - slug: pojntfx/liwasc
@@ -12,8 +16,10 @@
   projects:
     - slug: pojntfx/connmapper
       background: var(--pf-global--palette--light-green-600)
+      icon: true
     - slug: pojntfx/vintangle
       background: var(--pf-global--palette--black-850)
+      icon: true
     - slug: pojntfx/keygaen
       background: var(--pf-global--palette--blue-500)
     - slug: pojntfx/keystoregaen
@@ -28,6 +34,7 @@
       background: var(--pf-global--palette--light-green-600)
     - slug: pojntfx/hydrapp
       background: var(--pf-global--palette--green-700)
+      icon: true
     - slug: pojntfx/hydrun
       background: var(--pf-global--palette--purple-600)
     - slug: pojntfx/alpimager
@@ -44,6 +51,7 @@
       background: var(--pf-global--palette--blue-400)
     - slug: pojntfx/dudirekta
       background: var(--pf-global--palette--light-blue-600)
+      icon: true
     - slug: pojntfx/unisockets
       background: var(--pf-global--palette--gold-600)
     - slug: pojntfx/tinynet
@@ -64,6 +72,12 @@
       background: var(--pf-global--palette--light-blue-600)
 - title: Uni Notes
   projects:
+    - slug: pojntfx/uni-webdev-backend-notes
+      background: var(--pf-global--palette--black-850)
+    - slug: pojntfx/uni-distributedsystems-notes
+      background: var(--pf-global--palette--orange-600)
+    - slug: pojntfx/uni-programminglanguages-notes
+      background: var(--pf-global--palette--cyan-600)
     - slug: pojntfx/uni-supply-chain-paper
       background: var(--pf-global--palette--red-400)
     - slug: pojntfx/uni-netpractice-notes

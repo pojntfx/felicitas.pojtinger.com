@@ -29,6 +29,7 @@ type OutputProject struct {
 	Forks       int      `yaml:"forks"`
 	Issues      int      `yaml:"issues"`
 	Background  string   `yaml:"background"`
+	Icon        string   `yaml:"icon"`
 }
 
 type OutputCategory struct {
@@ -45,17 +46,23 @@ type InputCategory struct {
 type InputProject struct {
 	Slug       string `yaml:"slug"`
 	Background string `yaml:"background"`
+	Icon       bool   `yaml:"icon"`
 }
 
 func main() {
 	src := flag.String("src", "projects.yaml", "Source YAML file")
 	api := flag.String("api", "https://api.github.com/", "GitHub/Gitea API endpoint to use (can also be set using the GITHUB_API env variable)")
+	cdn := flag.String("cdn", "https://raw.githubusercontent.com/", "GitHub/Gitea CDN endpoint to use (can also be set using the GITHUB_CDN env variable)")
 	token := flag.String("token", "", "GitHub/Gitea API access token (can also be set using the GITHUB_TOKEN env variable)")
 
 	flag.Parse()
 
 	if *api == "" {
 		*api = os.Getenv("GITHUB_API")
+	}
+
+	if *cdn == "" {
+		*cdn = os.Getenv("GITHUB_CDN")
 	}
 
 	if *token == "" {
@@ -120,6 +127,11 @@ func main() {
 				latestCommitDate = *commits[0].Commit.Author.Date
 			}
 
+			icon := ""
+			if inputProject.Icon {
+				icon = *cdn + owner + repo + "/" + project.GetDefaultBranch() + "/docs/icon-light.png"
+			}
+
 			outputCategory.Projects = append(outputCategory.Projects, OutputProject{
 				URL:         project.GetHTMLURL(),
 				Title:       project.GetFullName(),
@@ -132,6 +144,7 @@ func main() {
 				Forks:       project.GetForksCount(),
 				Issues:      project.GetOpenIssuesCount(),
 				Background:  inputProject.Background,
+				Icon:        icon,
 			})
 		}
 
