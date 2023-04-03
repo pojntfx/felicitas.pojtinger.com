@@ -87,6 +87,6 @@ document.querySelector("#{{ .ID }} .lastcommit__repo__url").href =
   lastCommit.lastCommitURL;
 
 document.querySelector("#{{ .ID }} .lastcommit__repo__name").innerText =
-  lastCommit.lastCommitRepoName.length > 24 ? `${lastCommit.lastCommitRepoName.substring(0, 20)}…` : lastCommit.lastCommitRepoName;
+  lastCommit.lastCommitRepoName.length > 24 ? `${lastCommit.lastCommitRepoName.substring(0, 19)} …` : lastCommit.lastCommitRepoName;
 
 </script>

@@ -580,3 +580,8 @@ $bg: "/img/bg.webp";
 .twitterfeed__tweets__content img {
   @extend .pf-u-mt-md;
 }
+
+.pf-x-c-project__icon {
+  @extend .pf-u-mr-sm;
+  max-width: 2rem;
+}

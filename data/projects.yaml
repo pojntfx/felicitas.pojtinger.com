@@ -18,7 +18,7 @@
       background: var(--pf-global--palette--light-green-600)
       icon: true
     - slug: pojntfx/vintangle
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-global--palette--gold-600)
       icon: true
     - slug: pojntfx/keygaen
       background: var(--pf-global--palette--blue-500)
@@ -49,6 +49,7 @@
   projects:
     - slug: pojntfx/saltpanelo
       background: var(--pf-global--palette--blue-400)
+      icon: true
     - slug: pojntfx/dudirekta
       background: var(--pf-global--palette--light-blue-600)
       icon: true
@@ -77,7 +78,7 @@
     - slug: pojntfx/uni-distributedsystems-notes
       background: var(--pf-global--palette--orange-600)
     - slug: pojntfx/uni-programminglanguages-notes
-      background: var(--pf-global--palette--cyan-600)
+      background: var(--pf-global--palette--blue-400)
     - slug: pojntfx/uni-supply-chain-paper
       background: var(--pf-global--palette--red-400)
     - slug: pojntfx/uni-netpractice-notes

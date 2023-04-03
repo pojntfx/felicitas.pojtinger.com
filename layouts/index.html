@@ -225,7 +225,16 @@
                                   <div
                                     class="pf-c-card__title pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
                                   >
-                                    <span class="pf-u-mr-sm">{{ .title }}</span>
+                                    {{ with .icon }}
+                                      <img
+                                        alt="Logo"
+                                        src="{{ . }}"
+                                        class="pf-x-c-project__icon"
+                                      />
+                                    {{ end }}
+                                    <span class="pf-u-mr-sm"
+                                      >{{ .title | truncate 18 }}</span
+                                    >
                                   </div>
                                   <div
                                     class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-font-size-sm pf-u-ml-sm"
