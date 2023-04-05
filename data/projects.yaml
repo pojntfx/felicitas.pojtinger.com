@@ -22,6 +22,7 @@
       icon: true
     - slug: pojntfx/keygaen
       background: var(--pf-global--palette--blue-500)
+      icon: true
     - slug: pojntfx/keystoregaen
       background: var(--pf-global--palette--black-850)
     - slug: pojntfx/html2goapp
@@ -41,6 +42,7 @@
       background: var(--pf-global--palette--black-850)
     - slug: pojntfx/octarchive
       background: var(--pf-global--palette--gold-600)
+      icon: true
     - slug: pojntfx/pojde
       background: var(--pf-global--palette--light-green-700)
     - slug: pojntfx/grpc-examples
