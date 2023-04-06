@@ -585,3 +585,8 @@ $bg: "/img/bg.webp";
   @extend .pf-u-mr-sm;
   max-width: 2rem;
 }
+
+.pf-x-c-name {
+  text-align: center;
+  word-break: keep-all;
+}
