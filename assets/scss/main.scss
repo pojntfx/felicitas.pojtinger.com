@@ -138,8 +138,6 @@ $bg: "/img/bg.webp";
 
 .pf-x-octocat {
   width: 90px;
-  margin-left: 0.25rem;
-  margin-bottom: 0.25rem;
 }
 
 .pf-x-u-blur {
@@ -242,10 +240,20 @@ $bg: "/img/bg.webp";
 }
 
 .lastcommit {
+  flex: 1;
   width: calc(100%);
 
   @media screen and (min-width: 768px) {
     width: calc(100% - 100px);
+  }
+
+  .pf-c-code-block__actions-item {
+    padding-left: 0 !important;
+  }
+
+  .pf-c-code-block__content {
+    padding: var(--pf-global--spacer--sm);
+    padding-left: 0;
   }
 }
 

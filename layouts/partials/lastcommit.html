@@ -1,23 +1,26 @@
-<div class="pf-c-card pf-c-card--overlay pf-c-card--lastcommit" id="{{ .ID }}">
+<div
+  class="pf-c-card pf-c-card--overlay pf-c-card--lastcommit pf-u-py-xs pf-u-px-lg pf-u-px-xs-on-md"
+  id="{{ .ID }}"
+>
   <div class="pf-c-card__body pf-u-p-0 pf-u-display-flex">
     <img
       src="/img/octocat.svg"
-      class="pf-u-p-md pf-u-pr-sm pf-x-octocat pf-u-display-none pf-u-display-flex-on-md"
+      class="pf-u-p-md pf-x-octocat pf-u-display-none pf-u-display-flex-on-md pf-u-px-md"
     />
     <div class="lastcommit">
-      <div class="pf-c-code-block pf-x-u-transparent pf-u-p-md pf-u-pl-sm">
+      <div class="pf-c-code-block pf-x-u-transparent pf-u-p-sm pf-u-pl-xs">
         <div class="pf-c-code-block__header">
           <div
             class="pf-c-code-block__actions pf-c-code-block__actions--info pf-u-flex-direction-column pf-u-flex-direction-row-on-lg"
           >
             <div class="pf-c-code-block__actions-item pf-u-py-sm pf-u-px-md">
               <span>Last GitHub commit by</span>
-              <a class="lastcommit__user__url" target="_blank">
+              <a class="lastcommit__user__url pf-u-ml-xs" target="_blank">
                 <img id="lastcommit__user__url__img" />
               </a>
             </div>
 
-            <div class="pf-c-code-block__actions-item pf-u-py-sm pf-u-px-md">
+            <div class="pf-c-code-block__actions-item pf-u-pb-sm pf-u-pt-sm-on-lg pf-u-pr-md">
               <a class="lastcommit__repo__url" target="_blank">
                 <i class="fas fa-code-branch" aria-hidden="true"></i>
                 <span class="lastcommit__repo__name"></span> (<span
