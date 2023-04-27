@@ -97,7 +97,13 @@ func BlueskyFeedHandler(w http.ResponseWriter, r *http.Request, server string, a
 
 		images := []Media{}
 
-		// TODO: Add support for attachments
+		for _, attachment := range sourcePost.Images {
+			images = append(images, Media{
+				URL:     attachment.URL,
+				AltText: attachment.AltText,
+				IsVideo: false,
+			})
+		}
 
 		post.Media = images
 
