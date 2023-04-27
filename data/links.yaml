@@ -6,12 +6,12 @@ navbar:
     link: https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing
     newTab: true
 cta:
-  title: Follow on Mastodon
+  title: Follow on Bluesky
   icon: fas fa-plus-circle
-  link: https://mastodon.social/@pojntfx
+  link: https://bsky.app/profile/felicitas.pojtinger.com
 socials:
-  - title: Bluesky
-    link: https://bsky.app/profile/felicitas.pojtinger.com
+  - title: Mastodon
+    link: https://mastodon.social/@pojntfx
   - title: Twitter
     link: https://twitter.com/pojntfx
   - title: Instagram
