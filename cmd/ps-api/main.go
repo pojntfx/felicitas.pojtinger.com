@@ -8,6 +8,7 @@ import (
 	"os"
 	"strconv"
 
+	"github.com/pojntfx/felicitas.pojtinger.com/api/bluesky"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/github"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/mastodon"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/twitch"
@@ -23,6 +24,9 @@ func main() {
 	mastodonClientID := flag.String("mastodon-client-id", "", "Mastodon API client ID (can also be set using the MASTODON_CLIENT_ID env variable)")
 	mastodonClientSecret := flag.String("mastodon-client-secret", "", "Mastodon API client secret (can also be set using the MASTODON_CLIENT_SECRET env variable)")
 	mastodonAccessToken := flag.String("mastodon-access-token", "", "Mastodon API access token (can also be set using the MASTODON_ACCESS_TOKEN env variable)")
+
+	blueskyServer := flag.String("bluesky-server", "", "Bluesky API server (can also be set using the BLUESKY_SERVER env variable)")
+	blueskyPassword := flag.String("bluesky-password", "", "Bluesky password (can also be set using the BLUESKY_PASSWORD env variable)")
 
 	githubAPI := flag.String("github-api", "", "GitHub/Gitea API endpoint to use (can also be set using the GITHUB_API env variable)")
 	githubToken := flag.String("github-token", "", "GitHub/Gitea API access token (can also be set using the GITHUB_TOKEN env variable)")
@@ -57,6 +61,14 @@ func main() {
 
 	if *mastodonAccessToken == "" {
 		*mastodonAccessToken = os.Getenv("MASTODON_ACCESS_TOKEN")
+	}
+
+	if *blueskyServer == "" {
+		*blueskyServer = os.Getenv("BLUESKY_SERVER")
+	}
+
+	if *blueskyPassword == "" {
+		*blueskyPassword = os.Getenv("BLUESKY_PASSWORD")
 	}
 
 	if *githubAPI == "" {
@@ -128,6 +140,22 @@ func main() {
 		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
 
 		mastodon.MastodonFeedHandler(rw, r, *mastodonServer, *mastodonClientID, *mastodonClientSecret, *mastodonAccessToken)
+	})
+
+	mux.HandleFunc("/api/bluesky", func(rw http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error occured in Bluesky API:", err)
+
+				http.Error(rw, "Error occured in Bluesky API", http.StatusInternalServerError)
+
+				return
+			}
+		}()
+
+		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
+
+		bluesky.BlueskyFeedHandler(rw, r, *blueskyServer, *blueskyPassword)
 	})
 
 	mux.HandleFunc("/api/github", func(rw http.ResponseWriter, r *http.Request) {

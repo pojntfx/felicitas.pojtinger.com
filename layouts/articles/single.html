@@ -95,7 +95,9 @@
         <div
           class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg pf-c-grid--tweets"
         >
-          {{ if .Site.Data.integrations.twitter.enabled }}
+          {{ if .Site.Data.integrations.bluesky.enabled }}
+            {{ partial "blueskyfeed" (dict "ID" "blueskyfeed" "Username" .Site.Data.integrations.bluesky.username "Construction" .Site.Data.integrations.bluesky.construction "BaseURL" .Site.BaseURL ) }}
+          {{ else if .Site.Data.integrations.twitter.enabled }}
             {{ partial "twitterfeed" (dict "ID" "twitterfeed" "Username" .Site.Data.integrations.twitter.username "Warning" .Site.Data.integrations.twitter.warning "Construction" .Site.Data.integrations.twitter.construction "BaseURL" .Site.BaseURL ) }}
           {{ else }}
             {{ partial "mastodonfeed" (dict "ID" "mastodonfeed" "Username" .Site.Data.integrations.mastodon.username "Construction" .Site.Data.integrations.mastodon.construction "BaseURL" .Site.BaseURL ) }}
@@ -106,7 +108,7 @@
             <div
               class="pf-c-card pf-c-card--full-width pf-u-mt-md pf-c-card--see-also pf-c-card--transparent"
             >
-              <div class="pf-c-card__title">See also</div>
+              <div class="pf-c-card__title">See Also</div>
               <div class="pf-c-card__body">
                 <div class="pf-l-gallery pf-m-gutter">
                   {{ range $related }}

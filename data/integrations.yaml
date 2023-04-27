@@ -17,10 +17,13 @@ github:
   enabled: true
   username: pojntfx
   projects: true
+bluesky:
+  enabled: true
+  username: "felicitas.pojtinger.com"
 twitter:
   enabled: false
   username: pojntfx
   warning: true
 mastodon:
-  enabled: true
+  enabled: false
   username: "@pojntfx@mastodon.social"

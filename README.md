@@ -14,7 +14,7 @@ This is my personal website, which is also intended to be a more or less generic
 It provides the following information:
 
 - Personal details (name, profession, pronouns)
-- Social media details (Mastodon/Twitter (through [nitter](https://nitter.net/))/Instagram, Matrix/Signal, phone/mail)
+- Social media details (Bluesky/Twitter (through [nitter](https://nitter.net/))/Instagram/Mastodon, Discord/Matrix/Signal, phone/mail)
 - Latest GitHub commit
 - Livestream (Twitch & YouTube) status
 - Articles with comments
@@ -80,7 +80,7 @@ To build the site locally, run:
 $ git clone https://github.com/pojntfx/felicitas.pojtinger.com.git
 $ cd felicitas.pojtinger.com
 $ make depend
-$ export GITHUB_API=https://api.github.com/ GITHUB_TOKEN=your-github-api-token YOUTUBE_TOKEN=your-youtube-api-token TWITCH_CLIENT_ID=your-twitch-client-id TWITCH_CLIENT_SECRET=your-twitch-client-secret MASTODON_SERVER=https://mastodon.social MASTODON_CLIENT_ID=your-mastodon-client-id MASTODON_CLIENT_SECRET=your-mastodon-client-secret MASTODON_ACCESS_TOKEN=your-mastodon-access-token
+$ export GITHUB_API=https://api.github.com/ GITHUB_TOKEN=your-github-api-token YOUTUBE_TOKEN=your-youtube-api-token TWITCH_CLIENT_ID=your-twitch-client-id TWITCH_CLIENT_SECRET=your-twitch-client-secret MASTODON_SERVER=https://mastodon.social MASTODON_CLIENT_ID=your-mastodon-client-id MASTODON_CLIENT_SECRET=your-mastodon-client-secret MASTODON_ACCESS_TOKEN=your-mastodon-access-token BLUESKY_SERVER=https://bsky.social/ BLUESKY_PASSWORD=your-bluesky-app-password
 $ make dev
 ```
 
