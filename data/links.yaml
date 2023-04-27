@@ -9,15 +9,15 @@ cta:
   title: Follow on Bluesky
   icon: fas fa-plus-circle
   link: https://bsky.app/profile/felicitas.pojtinger.com
-socials:
-  - title: Mastodon
-    link: https://mastodon.social/@pojntfx
+socials: 
   - title: Twitter
     link: https://twitter.com/pojntfx
   - title: Instagram
     link: https://www.instagram.com/pojntfx/
   - title: LinkedIn
     link: https://www.linkedin.com/in/pojntfx/
+  - title: Mastodon
+    link: https://mastodon.social/@pojntfx
   - separator: true
   - title: Matrix
     link: https://matrix.to/#/@pojntfx:matrix.org
