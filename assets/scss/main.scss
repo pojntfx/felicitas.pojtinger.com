@@ -122,7 +122,7 @@ $bg: "/img/bg.webp";
   }
 }
 
-.lastcommit__user__url > img {
+.lastcommit__user__url > #lastcommit__user__url__img {
   margin-bottom: -0.4rem;
 }
 
@@ -280,18 +280,6 @@ $bg: "/img/bg.webp";
   width: 60px;
   height: 100%;
   object-fit: cover;
-}
-
-.pf-c-avatar--hover {
-  .pf-c-avatar--navbar {
-    transition: transform 0.7s ease-in-out;
-  }
-
-  &:hover {
-    .pf-c-avatar--navbar {
-      transform: rotate(-5deg) scale(1.1);
-    }
-  }
 }
 
 .pf-x-m-no-highlight--dark {
@@ -603,4 +591,34 @@ $bg: "/img/bg.webp";
 
 .twitterfeed {
   margin-top: -1rem;
+}
+
+a.pf-c-button.pf-m-primary,
+.pf-x-u-hoverable {
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.035);
+  }
+
+  &--rotate {
+    &:hover,
+    &:focus {
+      transform: rotate(-5deg) scale(1.1);
+    }
+  }
+}
+
+.pf-x-u-hoverable-parent--rotate {
+  > img {
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover,
+  &:focus {
+    > img {
+      transform: rotate(-5deg) scale(1.1);
+    }
+  }
 }
