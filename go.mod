@@ -8,6 +8,7 @@ require (
 	github.com/mmcdole/gofeed v1.2.1
 	github.com/nicklaw5/helix/v2 v2.22.0
 	github.com/pojntfx/skytheon v0.0.0-20230427185454-3bd7fbf1799f
+	github.com/zmb3/spotify/v2 v2.3.1
 	golang.org/x/oauth2 v0.6.0
 	google.golang.org/api v0.114.0
 	gopkg.in/yaml.v2 v2.4.0
