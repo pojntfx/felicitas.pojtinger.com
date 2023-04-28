@@ -154,8 +154,25 @@ $bg: "/img/bg.webp";
   padding-top: 100px;
   background: rgba(255, 255, 255, 0.5) !important;
 
+  &--grid {
+    background-size: 40px 40px !important;
+    background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.2) 1px,
+      rgba(0, 0, 0, 0) 1px
+    ) !important;
+  }
+
   @media (prefers-color-scheme: dark) {
-    background: rgba(0, 0, 0, 0.8) !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+
+    &--grid {
+      background-image: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.15) 1px,
+        rgba(0, 0, 0, 0) 1px
+      ) !important;
+    }
   }
 }
 

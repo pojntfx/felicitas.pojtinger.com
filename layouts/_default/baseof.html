@@ -136,7 +136,9 @@
 
       {{ block "main" . }}
         <main
-          class="pf-c-page__main pf-c-page__main--with-overlay pf-x-u-blur {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
+          class="pf-c-page__main pf-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
+            pf-c-page__main--with-overlay--grid
+          {{ end }} pf-x-u-blur {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
             pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
               pf-c-page__main--with-effects--without-blur
             {{ end }}

@@ -2,3 +2,4 @@ snowfall: false
 fireworks: false
 blur: true
 rainfall: false
+grid: true
