@@ -637,7 +637,11 @@ a.pf-c-button.pf-m-primary,
 }
 
 .spotifystatus {
-  border: 1px solid var(--pf-global--Color--light-100);
+  border: 1px solid var(--pf-global--Color--dark-100);
+  @media (prefers-color-scheme: dark) {
+    border-color: var(--pf-global--Color--light-100);
+  }
+
   border-radius: $pf-global--BorderRadius--sm;
 
   .pf-x-spotify {
