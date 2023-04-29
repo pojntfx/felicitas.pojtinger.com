@@ -10,7 +10,9 @@
   />
 
   <div>
-    <div class="pf-u-font-size-xs pf-x-u-text--freestanding">
+    <div
+      class="pf-u-font-size-xs pf-x-u-text--freestanding spotifystatus__preamble"
+    >
       I'm currently listening to ...
     </div>
 
@@ -23,14 +25,21 @@
 <noscript>Please enable JavaScript to view the Spotify status.</noscript
 ><script type="module">
   const base = "{{ .BaseURL }}"
+  const username = "{{ .Username }}";
 
   const spotifyStatus = await (
     await fetch(`${base}api/spotify`)
   ).json();
 
-  document.querySelector("#{{ .ID }}").href =
+  if (spotifyStatus.song == "") {
+   document.querySelector("#{{ .ID }} .spotifystatus__preamble").innerText = "I'm not currently listening to anything ...";
+   document.querySelector("#{{ .ID }} .spotifystatus__name").innerText = "Spotify";
+    document.querySelector("#{{ .ID }}").href =
+    "https://open.spotify.com/user/" + username;
+  } else {
+   document.querySelector("#{{ .ID }} .spotifystatus__name").innerText =
+     spotifyStatus.song + " - " + spotifyStatus.artist;
+   document.querySelector("#{{ .ID }}").href =
     spotifyStatus.link;
-
-  document.querySelector("#{{ .ID }} .spotifystatus__name").innerText =
-    spotifyStatus.song + " - " + spotifyStatus.artist;
+  }
 </script>

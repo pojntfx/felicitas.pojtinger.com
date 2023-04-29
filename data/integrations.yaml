@@ -19,7 +19,7 @@ github:
   projects: true
 bluesky:
   enabled: true
-  username: "felicitas.pojtinger.com"
+  username: felicitas.pojtinger.com
 twitter:
   enabled: false
   username: pojntfx
@@ -29,3 +29,4 @@ mastodon:
   username: "@pojntfx@mastodon.social"
 spotify:
   enabled: true
+  username: qnorz69jqim5g87rt460krbr1

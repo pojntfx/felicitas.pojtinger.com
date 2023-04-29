@@ -4,7 +4,7 @@
   >
     <div class="pf-c-page__header__content--max-width">
       {{ if .Site.Data.integrations.spotify.enabled }}
-        {{ partial "spotifystatus" (dict "ID" "spotifystatus" "BaseURL" .Site.BaseURL ) }}
+        {{ partial "spotifystatus" (dict "ID" "spotifystatus" "Username" .Site.Data.integrations.spotify.username "BaseURL" .Site.BaseURL ) }}
       {{ end }}
 
 
