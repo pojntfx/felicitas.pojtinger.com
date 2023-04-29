@@ -5,7 +5,7 @@
   <div
     class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-py-xl"
   >
-    <span>Latest Bluesky posts</span>
+    <span>My Skyline</span>
 
     {{ if not .Construction }}
       <a
@@ -47,7 +47,7 @@
       <a target="_blank" class="twitterfeed__user__url pf-c-button pf-m-link">
         <span class="pf-c-button__icon pf-m-start">
           <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
-        >All Bluesky posts</a
+        >All skeets</a
       >
     {{ end }}
   </div>
@@ -123,7 +123,7 @@
       const images = document.createElement("div");
       images.classList.add("pf-l-gallery", "pf-m-gutter", "pf-u-my-sm")
 
-      tweet.media.forEach((media) => {
+      tweet.media.slice(0, 2).forEach((media) => {
         const el = document.createElement("div");
         el.classList.add("pf-l-gallery__item")
 

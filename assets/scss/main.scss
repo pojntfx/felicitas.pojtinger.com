@@ -652,3 +652,8 @@ a.pf-c-button.pf-m-primary,
     object-fit: cover;
   }
 }
+
+.twitterfeed .pf-l-gallery__item img {
+  aspect-ratio: 2;
+  object-fit: cover;
+}

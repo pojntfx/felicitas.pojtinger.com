@@ -123,7 +123,7 @@
       const images = document.createElement("div");
       images.classList.add("pf-l-gallery", "pf-m-gutter", "pf-u-my-sm")
 
-      tweet.media.forEach((media) => {
+      tweet.media.slice(0, 2).forEach((media) => {
         const el = document.createElement("div");
         el.classList.add("pf-l-gallery__item")
 
