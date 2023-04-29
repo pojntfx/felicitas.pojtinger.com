@@ -628,6 +628,13 @@ a.pf-c-button.pf-m-primary,
     transition: all 0.2s ease-in-out;
   }
 
+  &:hover,
+  &:focus {
+    > img {
+      transform: scale(1.05);
+    }
+  }
+
   &--rotate {
     &:hover,
     &:focus {
