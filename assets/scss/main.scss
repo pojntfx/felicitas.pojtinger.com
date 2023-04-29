@@ -623,27 +623,22 @@ a.pf-c-button.pf-m-primary,
   }
 }
 
-.pf-x-u-hoverable-parent--rotate {
+.pf-x-u-hoverable-parent {
   > img {
     transition: all 0.2s ease-in-out;
   }
 
-  &:hover,
-  &:focus {
-    > img {
-      transform: rotate(-5deg) scale(1.1);
+  &--rotate {
+    &:hover,
+    &:focus {
+      > img {
+        transform: rotate(-5deg) scale(1.1);
+      }
     }
   }
 }
 
 .spotifystatus {
-  border: 1px solid var(--pf-global--Color--dark-100);
-  @media (prefers-color-scheme: dark) {
-    border-color: var(--pf-global--Color--light-100);
-  }
-
-  border-radius: $pf-global--BorderRadius--sm;
-
   .pf-x-spotify {
     max-width: 40px;
     height: 100%;

@@ -1,18 +1,21 @@
 <a
   id="{{ .ID }}"
   target="_blank"
-  class="pf-u-display-flex pf-u-align-items-center pf-c-page__header-brand-link--no-decoration pf-u-ml-lg pf-u-ml-0-on-xl pf-u-p-sm spotifystatus pf-x-u-text--freestanding"
+  class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-c-page__header-brand-link--no-decoration pf-x-u-hoverable-parent pf-x-u-hoverable-parent--rotate spotifystatus pf-u-p-sm pf-u-ml-lg pf-u-ml-0-on-xl"
 >
   <img
     src="/img/spotify.svg"
     alt="Spotify logo"
-    class="pf-x-spotify pf-u-ml-0 pf-u-mr-sm"
+    class="pf-c-avatar pf-u-mr-sm pf-c-avatar--navbar pf-x-spotify"
   />
 
   <div>
-    <div class="pf-u-font-size-xs">I'm currently listening to ...</div>
+    <div class="pf-u-font-size-xs pf-x-u-text--freestanding">
+      I'm currently listening to ...
+    </div>
+
     <div
-      class="pf-u-font-size-sm pf-u-font-weight-bold pf-x-u-navbar__title spotifystatus__name"
+      class="pf-u-font-size-sm pf-u-font-weight-bold pf-x-u-navbar__title pf-x-u-text--freestanding spotifystatus__name"
     ></div>
   </div>
 </a>
@@ -30,6 +33,4 @@
 
   document.querySelector("#{{ .ID }} .spotifystatus__name").innerText =
     spotifyStatus.song + " - " + spotifyStatus.artist;
-
-  console.log(spotifyStatus);
 </script>
