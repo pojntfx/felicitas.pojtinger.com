@@ -9,7 +9,7 @@ OUTPUT_DIR ?= out
 DST ?=
 
 # Private variables
-obj = ps-api ps-gen-projects ps-proxy
+obj = ps-api ps-gen-projects ps-proxy ps-spotify-get-refresh-token
 sts = ps-pwa
 all: $(addprefix build-cli/,$(obj)) $(addprefix build-pwa/,$(sts))
 
