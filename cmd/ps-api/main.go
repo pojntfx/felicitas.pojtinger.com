@@ -11,6 +11,7 @@ import (
 	"github.com/pojntfx/felicitas.pojtinger.com/api/bluesky"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/github"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/mastodon"
+	"github.com/pojntfx/felicitas.pojtinger.com/api/spotify"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/twitch"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/twitter"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/youtube"
@@ -32,6 +33,10 @@ func main() {
 	githubToken := flag.String("github-token", "", "GitHub/Gitea API access token (can also be set using the GITHUB_TOKEN env variable)")
 
 	youtubeToken := flag.String("youtube-token", "", "YouTube API access token (can also be set using the YOUTUBE_TOKEN env variable)")
+
+	spotifyClientID := flag.String("spotify-client-id", "", "Spotify API client ID (can also be set using the SPOTIFY_CLIENT_ID env variable)")
+	spotifyClientSecret := flag.String("spotify-client-secret", "", "Spotify API client secret (can also be set using the SPOTIFY_CLIENT_SECRET env variable)")
+	spotifyRefreshToken := flag.String("spotify-refresh-token", "", "Spotify API refresh token (can also be set using the SPOTIFY_REFRESH_TOKEN env variable)")
 
 	laddr := flag.String("laddr", "localhost:1314", "Listen address for the API")
 
@@ -81,6 +86,18 @@ func main() {
 
 	if *youtubeToken == "" {
 		*youtubeToken = os.Getenv("YOUTUBE_TOKEN")
+	}
+
+	if *spotifyClientID == "" {
+		*spotifyClientID = os.Getenv("SPOTIFY_CLIENT_ID")
+	}
+
+	if *spotifyClientSecret == "" {
+		*spotifyClientSecret = os.Getenv("SPOTIFY_CLIENT_SECRET")
+	}
+
+	if *spotifyRefreshToken == "" {
+		*spotifyRefreshToken = os.Getenv("SPOTIFY_REFRESH_TOKEN")
 	}
 
 	if rawTTL := os.Getenv("TTL"); rawTTL != "" {
@@ -188,6 +205,22 @@ func main() {
 		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
 
 		youtube.YouTubeHandler(rw, r, *youtubeToken)
+	})
+
+	mux.HandleFunc("/api/spotify", func(rw http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error occured in Spotify API:", err)
+
+				http.Error(rw, "Error occured in Spotify API", http.StatusInternalServerError)
+
+				return
+			}
+		}()
+
+		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
+
+		spotify.SpotifyStatusHandler(rw, r, *spotifyClientID, *spotifyClientSecret, *spotifyRefreshToken)
 	})
 
 	log.Println("API listening on", *laddr)

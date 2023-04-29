@@ -1,25 +1,25 @@
-package main
+package spotify
 
 import (
 	"context"
 	"encoding/json"
 	"errors"
-	"flag"
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"strings"
 
 	"golang.org/x/oauth2"
 )
 
-var (
-	errClientIDEmpty     = errors.New("missing client ID")
-	errClientSecretEmpty = errors.New("missing client secret")
-	errRefreshTokenEmpty = errors.New("missing refresh token")
-)
+type Output struct {
+	Song   string `json:"Song"`
+	Artist string `json:"Artist"`
+	Link   string `json:"Link"`
+}
 
-type SpotifyCurrentlyPlaying struct {
+type spotifyCurrentlyPlaying struct {
 	Name    string `json:"name"`
 	Artists []struct {
 		Name string `json:"name"`
@@ -29,28 +29,28 @@ type SpotifyCurrentlyPlaying struct {
 	} `json:"external_urls"`
 }
 
-func main() {
-	clientID := flag.String("client-id", "", "Client ID to use")
-	clientSecret := flag.String("client-secret", "", "Client secret to use")
-	refreshToken := flag.String("refresh-token", "", "Refresh token to use")
+var (
+	errClientIDEmpty     = errors.New("missing client ID")
+	errClientSecretEmpty = errors.New("missing client secret")
+	errRefreshTokenEmpty = errors.New("missing refresh token")
+)
 
-	flag.Parse()
-
-	if strings.TrimSpace(*clientID) == "" {
+func SpotifyStatusHandler(w http.ResponseWriter, r *http.Request, clientID string, clientSecret string, refreshToken string) {
+	if strings.TrimSpace(clientID) == "" {
 		panic(errClientIDEmpty)
 	}
 
-	if strings.TrimSpace(*clientSecret) == "" {
+	if strings.TrimSpace(clientSecret) == "" {
 		panic(errClientSecretEmpty)
 	}
 
-	if strings.TrimSpace(*refreshToken) == "" {
+	if strings.TrimSpace(refreshToken) == "" {
 		panic(errRefreshTokenEmpty)
 	}
 
 	conf := &oauth2.Config{
-		ClientID:     *clientID,
-		ClientSecret: *clientSecret,
+		ClientID:     clientID,
+		ClientSecret: clientSecret,
 		Endpoint: oauth2.Endpoint{
 			TokenURL: "https://accounts.spotify.com/api/token",
 		},
@@ -58,7 +58,7 @@ func main() {
 	}
 
 	token, err := conf.TokenSource(context.Background(), &oauth2.Token{
-		RefreshToken: *refreshToken,
+		RefreshToken: refreshToken,
 	}).Token()
 	if err != nil {
 		panic("Error obtaining access token from refresh token: " + err.Error())
@@ -89,18 +89,29 @@ func main() {
 
 	var playing struct {
 		IsPlaying bool                    `json:"is_playing"`
-		Item      SpotifyCurrentlyPlaying `json:"item"`
+		Item      spotifyCurrentlyPlaying `json:"item"`
 	}
-	err = json.Unmarshal(body, &playing)
+	if err := json.Unmarshal(body, &playing); err != nil {
+		panic(err)
+	}
+
+	output := Output{}
+	if playing.IsPlaying {
+		output.Song = playing.Item.Name
+		if len(playing.Item.Artists) > 0 {
+			output.Artist = playing.Item.Artists[0].Name
+		}
+		output.Link = playing.Item.ExternalUrls.Spotify
+	}
+
+	j, err := json.Marshal(output)
 	if err != nil {
 		panic(err)
 	}
 
-	if playing.IsPlaying {
-		fmt.Printf("Song: %s\n", playing.Item.Name)
-		fmt.Printf("Artist: %s\n", playing.Item.Artists[0].Name)
-		fmt.Printf("Link: %s\n", playing.Item.ExternalUrls.Spotify)
-	} else {
-		fmt.Println("Not currently playing any song.")
-	}
+	fmt.Fprintf(w, "%v", string(j))
+}
+
+func Handler(w http.ResponseWriter, r *http.Request) {
+	SpotifyStatusHandler(w, r, os.Getenv("SPOTIFY_CLIENT_ID"), os.Getenv("SPOTIFY_CLIENT_SECRET"), os.Getenv("SPOTIFY_REFRESH_TOKEN"))
 }
