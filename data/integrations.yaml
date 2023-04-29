@@ -27,3 +27,5 @@ twitter:
 mastodon:
   enabled: false
   username: "@pojntfx@mastodon.social"
+spotify:
+  enabled: true

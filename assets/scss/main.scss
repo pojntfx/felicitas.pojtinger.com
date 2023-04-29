@@ -358,10 +358,6 @@ $bg: "/img/bg.webp";
   }
 }
 
-.pf-c-page__header__content--max-width--home > * {
-  margin-left: auto;
-}
-
 .pf-c-button--header {
   color: var(--pf-global--Color--dark-100) !important;
 }
@@ -637,5 +633,16 @@ a.pf-c-button.pf-m-primary,
     > img {
       transform: rotate(-5deg) scale(1.1);
     }
+  }
+}
+
+.spotifystatus {
+  border: 1px solid var(--pf-global--Color--light-100);
+  border-radius: $pf-global--BorderRadius--sm;
+
+  .pf-x-spotify {
+    max-width: 40px;
+    height: 100%;
+    object-fit: cover;
   }
 }

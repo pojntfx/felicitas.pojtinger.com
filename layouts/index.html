@@ -2,11 +2,16 @@
   <header
     class="pf-c-page__header pf-c-page__header--max-width pf-c-page__header--overlay pf-c-page__header--overlay--index pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
   >
-    <div
-      class="pf-c-page__header__content--max-width pf-c-page__header__content--max-width--home"
-    >
+    <div class="pf-c-page__header__content--max-width">
+      {{ if .Site.Data.integrations.spotify.enabled }}
+        {{ partial "spotifystatus" (dict "ID" "spotifystatus" "BaseURL" .Site.BaseURL ) }}
+      {{ end }}
+
+
       <div
-        class="pf-u-display-flex pf-u-align-items-center pf-u-pr-sm pf-u-pr-0-on-xl"
+        class="pf-u-display-flex pf-u-align-items-center pf-u-pr-sm pf-u-pr-0-on-xl {{ if not .Site.Data.integrations.spotify.enabled }}
+          pf-u-ml-auto
+        {{ end }}"
       >
         {{ range .Site.Data.links.navbar }}
           <a

@@ -14,9 +14,9 @@ import (
 )
 
 type Output struct {
-	Song   string `json:"Song"`
-	Artist string `json:"Artist"`
-	Link   string `json:"Link"`
+	Song   string `json:"song"`
+	Artist string `json:"artist"`
+	Link   string `json:"link"`
 }
 
 type spotifyCurrentlyPlaying struct {
