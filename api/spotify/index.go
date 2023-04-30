@@ -78,30 +78,33 @@ func SpotifyStatusHandler(w http.ResponseWriter, r *http.Request, clientID strin
 	}
 	defer resp.Body.Close()
 
-	if resp.StatusCode != http.StatusOK {
-		panic("Couldn't get current playing song: status code " + fmt.Sprintf("%d", resp.StatusCode))
-	}
-
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		panic(err)
-	}
-
-	var playing struct {
-		IsPlaying bool                    `json:"is_playing"`
-		Item      spotifyCurrentlyPlaying `json:"item"`
-	}
-	if err := json.Unmarshal(body, &playing); err != nil {
-		panic(err)
-	}
-
 	output := Output{}
-	if playing.IsPlaying {
-		output.Song = playing.Item.Name
-		if len(playing.Item.Artists) > 0 {
-			output.Artist = playing.Item.Artists[0].Name
+	if resp.StatusCode != http.StatusOK {
+		// Happens after multiple requests without a playing song; equivalent to `is_playing=false`
+		if resp.StatusCode != http.StatusNoContent {
+			panic("Couldn't get current playing song: status code " + fmt.Sprintf("%d", resp.StatusCode))
 		}
-		output.Link = playing.Item.ExternalUrls.Spotify
+	} else {
+		body, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			panic(err)
+		}
+
+		var playing struct {
+			IsPlaying bool                    `json:"is_playing"`
+			Item      spotifyCurrentlyPlaying `json:"item"`
+		}
+		if err := json.Unmarshal(body, &playing); err != nil {
+			panic(err)
+		}
+
+		if playing.IsPlaying {
+			output.Song = playing.Item.Name
+			if len(playing.Item.Artists) > 0 {
+				output.Artist = playing.Item.Artists[0].Name
+			}
+			output.Link = playing.Item.ExternalUrls.Spotify
+		}
 	}
 
 	j, err := json.Marshal(output)
