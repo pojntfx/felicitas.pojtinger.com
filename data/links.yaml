@@ -8,7 +8,7 @@ navbar:
 cta:
   title: Follow on Bluesky
   icon: fas fa-plus-circle
-  link: https://staging.bsky.app/profile/felicitas.pojtinger.com
+  link: https://bsky.app/profile/felicitas.pojtinger.com
 socials:
   - title: Twitter
     link: https://twitter.com/pojntfx

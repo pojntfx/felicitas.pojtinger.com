@@ -41,7 +41,7 @@ type Media struct {
 }
 
 var (
-	blueskyBaseURL = "https://staging.bsky.app/"
+	blueskyBaseURL = "https://bsky.app/"
 )
 
 func BlueskyFeedHandler(w http.ResponseWriter, r *http.Request, server string, appPassword string) {
