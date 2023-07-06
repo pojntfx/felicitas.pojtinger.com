@@ -6,12 +6,14 @@ navbar:
     link: https://docs.google.com/document/d/1pT-rogZHC3DVQ41mTFAqCOAcMhh4PDolzqSgqNN2JWk/edit?usp=sharing
     newTab: true
 cta:
-  title: Follow on Bluesky
+  title: Follow on Threads
   icon: fas fa-plus-circle
-  link: https://bsky.app/profile/felicitas.pojtinger.com
+  link: https://www.threads.net/@pojntfx
 socials:
   - title: Twitter
     link: https://twitter.com/pojntfx
+  - title: Bluesky
+    link: https://bsky.app/profile/felicitas.pojtinger.com
   - title: Instagram
     link: https://www.instagram.com/pojntfx/
   - title: LinkedIn
