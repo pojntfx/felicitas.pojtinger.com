@@ -123,6 +123,8 @@
       background: var(--pf-global--palette--cyan-500)
     - slug: pojntfx/abizeitung
       background: var(--pf-global--palette--light-blue-600)
+    - slug: pojntfx/networked-linux-memsync
+      background: var(--pf-global--palette--red-400)
 - title: Websites
   projects:
     - slug: pojntfx/felicitas.pojtinger.com
