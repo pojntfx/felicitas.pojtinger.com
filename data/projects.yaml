@@ -15,6 +15,12 @@
       background: var(--pf-global--palette--cyan-500)
     - slug: pojntfx/bofied
       background: var(--pf-global--palette--light-blue-600)
+    - slug: pojntfx/r3map
+      icon: true
+      background: var(--pf-global--palette--gold-600)
+    - slug: pojntfx/ram-dl
+      icon: true
+      background: var(--pf-global--palette--black-850)
 - title: Apps
   projects:
     - slug: pojntfx/connmapper
