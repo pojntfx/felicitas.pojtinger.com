@@ -1,5 +1,5 @@
-snowfall: false
+snowfall: true
 fireworks: false
-blur: true
+blur: false
 rainfall: false
-grid: true
+grid: false
