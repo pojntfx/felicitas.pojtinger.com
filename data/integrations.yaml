@@ -18,14 +18,14 @@ github:
   username: pojntfx
   projects: true
 bluesky:
-  enabled: true
+  enabled: false
   username: felicitas.pojtinger.com
 twitter:
   enabled: false
   username: pojntfx
   warning: true
 mastodon:
-  enabled: false
+  enabled: true
   username: "@pojntfx@mastodon.social"
 spotify:
   enabled: true
