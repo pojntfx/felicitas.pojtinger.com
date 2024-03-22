@@ -2,36 +2,39 @@
   projects:
     - slug: pojntfx/weron
       background: var(--pf-global--palette--black-850)
-      icon: true
+      icon: docs/icon-light.png
     - slug: pojntfx/go-nbd
       background: var(--pf-global--palette--gold-600)
-      icon: true
+      icon: docs/icon-light.png
     - slug: pojntfx/stfs
       background: var(--pf-global--palette--blue-400)
     - slug: pojntfx/tapisk
       background: var(--pf-global--palette--light-green-700)
-      icon: true
+      icon: docs/icon-light.png
     - slug: pojntfx/liwasc
       background: var(--pf-global--palette--cyan-500)
     - slug: pojntfx/bofied
       background: var(--pf-global--palette--light-blue-600)
     - slug: pojntfx/r3map
-      icon: true
+      icon: docs/icon-light.png
       background: var(--pf-global--palette--gold-600)
     - slug: pojntfx/ram-dl
-      icon: true
+      icon: docs/icon-light.png
       background: var(--pf-global--palette--black-850)
+    - slug: pojntfx/htorrent
+      icon: docs/icon.svg
+      background: var(--pf-global--palette--cyan-500)
 - title: Apps
   projects:
     - slug: pojntfx/connmapper
       background: var(--pf-global--palette--light-green-600)
-      icon: true
+      icon: docs/icon-light.png
     - slug: pojntfx/multiplex
       background: var(--pf-global--palette--gold-600)
-      icon: true
+      icon: docs/icon.svg
     - slug: pojntfx/keygaen
       background: var(--pf-global--palette--blue-500)
-      icon: true
+      icon: docs/icon-light.png
     - slug: pojntfx/keystoregaen
       background: var(--pf-global--palette--black-850)
     - slug: pojntfx/html2goapp
@@ -44,14 +47,14 @@
       background: var(--pf-global--palette--light-green-600)
     - slug: pojntfx/hydrapp
       background: var(--pf-global--palette--green-700)
-      icon: true
+      icon: docs/icon.svg
     - slug: pojntfx/hydrun
       background: var(--pf-global--palette--purple-600)
     - slug: pojntfx/alpimager
       background: var(--pf-global--palette--black-850)
     - slug: pojntfx/octarchive
       background: var(--pf-global--palette--gold-600)
-      icon: true
+      icon: docs/icon-light.png
     - slug: pojntfx/pojde
       background: var(--pf-global--palette--light-green-700)
     - slug: pojntfx/grpc-examples
@@ -60,10 +63,10 @@
   projects:
     - slug: pojntfx/saltpanelo
       background: var(--pf-global--palette--blue-400)
-      icon: true
-    - slug: pojntfx/dudirekta
+      icon: docs/icon-light.png
+    - slug: pojntfx/panrpc
       background: var(--pf-global--palette--light-blue-600)
-      icon: true
+      icon: docs/icon.svg
     - slug: pojntfx/unisockets
       background: var(--pf-global--palette--gold-600)
     - slug: pojntfx/tinynet
@@ -116,7 +119,7 @@
   projects:
     - slug: pojntfx/deliverance
       background: var(--pf-global--palette--black-850)
-      icon: true
+      icon: docs/icon-light.png
     - slug: pojntfx/minitel
       background: var(--pf-global--palette--blue-400)
     - slug: pojntfx/box

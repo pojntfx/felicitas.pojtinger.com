@@ -46,7 +46,7 @@ type InputCategory struct {
 type InputProject struct {
 	Slug       string `yaml:"slug"`
 	Background string `yaml:"background"`
-	Icon       bool   `yaml:"icon"`
+	Icon       string   `yaml:"icon"`
 }
 
 func main() {
@@ -128,8 +128,8 @@ func main() {
 			}
 
 			icon := ""
-			if inputProject.Icon {
-				icon = *cdn + owner + repo + "/" + project.GetDefaultBranch() + "/docs/icon-light.png"
+			if inputProject.Icon != "" {
+				icon = *cdn + owner + repo + "/" + project.GetDefaultBranch() + "/" + inputProject.Icon
 			}
 
 			outputCategory.Projects = append(outputCategory.Projects, OutputProject{
