@@ -26,8 +26,11 @@ fi
 
 # Frontend
 if [ "$1" = "pwa" ]; then
+    # Setup repositories
+    echo 'https://dl-cdn.alpinelinux.org/alpine/edge/testing' >>/etc/apk/repositories
+
     # Install Hugo
-    apk add curl make hugo npm
+    apk add curl make hugo dart-sass npm
 
     # Generate dependencies
     make depend

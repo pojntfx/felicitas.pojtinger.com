@@ -1,14 +1,14 @@
-@import "node_modules/@patternfly/patternfly/sass-utilities/all.scss";
+@import "@patternfly/patternfly/sass-utilities/all.scss";
 
-$pf-global--font-path: "./{{ .Site.BaseURL }}/fonts";
-$fa-font-path: $pf-global--font-path + "/webfonts";
+$pf-global--font-path: "./{{ .Site.BaseURL }}/assets/fonts";
+$fa-font-path: "./{{ .Site.BaseURL }}/assets/fonts/webfonts";
 
 $pf-global--BorderRadius--sm: 8px;
 
-@import "node_modules/@patternfly/patternfly/patternfly.scss";
-@import "node_modules/@patternfly/patternfly/patternfly-addons.scss";
+@import "@patternfly/patternfly/patternfly.scss";
+@import "@patternfly/patternfly/patternfly-addons.scss";
 
-@import "node_modules/@fontsource/lato/scss/mixins.scss";
+@import "@fontsource/lato/scss/mixins.scss";
 @include fontFace($weight: 400, $display: fallback, $fontDir: "fonts/lato");
 
 $bg: "/img/bg.webp";

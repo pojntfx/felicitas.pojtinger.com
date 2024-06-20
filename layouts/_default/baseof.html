@@ -31,10 +31,13 @@
       content="© {{ now.Year }} {{ .Site.Data.site.author }}"
     />
 
-    <link
-      rel="stylesheet"
-      href="{{ (resources.Get `scss/main.scss` | resources.ExecuteAsTemplate `main.scss` . | resources.ToCSS | resources.Minify).Permalink }}"
-    />
+    {{ $opts := dict
+      "transpiler" "dartsass"
+      "includePaths" (slice "node_modules")
+    }}
+    {{ with resources.Get `scss/main.scss` | resources.ExecuteAsTemplate `main.scss` . | toCSS $opts | minify }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" />
+    {{ end }}
   </head>
   <body>
     {{ if .Site.Data.effects.fireworks }}

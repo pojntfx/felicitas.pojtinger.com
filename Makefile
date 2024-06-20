@@ -27,7 +27,7 @@ endif
 # Build frontend
 $(addprefix build-pwa/,$(sts)):
 	mkdir -p $(OUTPUT_DIR)
-	hugo --baseUrl=/
+	hugo --baseURL=/
 	tar czvf $(OUTPUT_DIR)/$(subst build-pwa/,,$@).tar.gz -C public .
 
 # Install
@@ -55,22 +55,22 @@ $(addprefix uninstall-pwa/,$(sts)):
 
 # Run
 run:
-	go run ./cmd/ps-proxy/ -scmd='hugo server --baseUrl=/ --appendPort=false'
+	go run ./cmd/ps-proxy/ -scmd='hugo server --baseURL=/ --appendPort=false'
 
 # Develop
 dev:
-	go run ./cmd/ps-proxy/ -scmd='hugo server -D --baseUrl=/ --appendPort=false' -verbose
+	go run ./cmd/ps-proxy/ -scmd='hugo server -D --baseURL=/ --appendPort=false' -verbose
 
 # Clean
 clean:
-	rm -rf out public resources
+	rm -rf out public resources static/assets
 
 # Dependencies
 depend:
 	npm i
 	find node_modules/@patternfly/patternfly/ -name "*.css" -type f -delete
-	rm -rf static/fonts
+	rm -rf static/assets
 	mkdir -p static
-	cp -r node_modules/@patternfly/patternfly/assets/fonts static
-	cp -r node_modules/@fontsource/lato/files static/fonts/lato
-	go run ./cmd/ps-gen-projects/ -src data/projects.yaml > data/projects_gen.yaml
+	cp -r node_modules/@patternfly/patternfly/assets static
+	cp -r node_modules/@fontsource/lato/files static/assets/fonts/lato
+	# go run ./cmd/ps-gen-projects/ -src data/projects.yaml > data/projects_gen.yaml
