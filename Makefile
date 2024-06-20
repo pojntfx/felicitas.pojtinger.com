@@ -30,6 +30,10 @@ $(addprefix build-pwa/,$(sts)):
 	hugo --baseURL=/
 	tar czvf $(OUTPUT_DIR)/$(subst build-pwa/,,$@).tar.gz -C public .
 
+# Build CV
+build-cv:
+	pandoc -f markdown-implicit_figures -o static/doc/cv.pdf static/doc/cv.md
+
 # Install
 install: $(addprefix install-cli/,$(obj)) $(addprefix install-pwa/,$(sts))
 

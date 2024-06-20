@@ -83,6 +83,8 @@ $ make depend
 $ export GITHUB_API=https://api.github.com/ GITHUB_TOKEN=your-github-api-token YOUTUBE_TOKEN=your-youtube-api-token TWITCH_CLIENT_ID=your-twitch-client-id TWITCH_CLIENT_SECRET=your-twitch-client-secret MASTODON_SERVER=https://mastodon.social MASTODON_CLIENT_ID=your-mastodon-client-id MASTODON_CLIENT_SECRET=your-mastodon-client-secret MASTODON_ACCESS_TOKEN=your-mastodon-access-token BLUESKY_SERVER=https://bsky.social/ BLUESKY_PASSWORD=your-bluesky-app-password SPOTIFY_CLIENT_ID=your-spotify-client-id SPOTIFY_CLIENT_SECRET=your-spotify-client-secret
 # This is only necessary if you want to use the Spotify integration - adjust your redirect URL accordingly
 $ export SPOTIFY_REFRESH_TOKEN=$(go run ./cmd/ps-spotify-get-refresh-token --client-id=${SPOTIFY_CLIENT_ID} --client-secret=${SPOTIFY_CLIENT_SECRET} --redirect-url='http://localhost:1318/callback')
+# If you want to rebuild the CV, else skip this step
+$ make build-cv
 $ make dev
 ```
 
