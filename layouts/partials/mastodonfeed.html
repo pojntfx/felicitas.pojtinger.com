@@ -1,16 +1,16 @@
 <div
-  class="pf-c-card pf-c-card--full-width pf-c-card--transparent"
+  class="pf-v6-c-card pf-v6-c-card--full-width pf-v6-c-card--transparent"
   id="{{ .ID }}"
 >
   <div
-    class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-py-xl"
+    class="pf-v6-c-card__title pf-v6-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-v6-u-py-xl"
   >
     <span>Latest Toots</span>
 
     {{ if not .Construction }}
       <a
         target="_blank"
-        class="twitterfeed__user__url pf-l-flex pf-m-align-items-center"
+        class="twitterfeed__user__url pf-v6-l-flex pf-m-align-items-center"
       >
         <img
           src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
@@ -19,20 +19,20 @@
       </a>
     {{ end }}
   </div>
-  <div class="pf-c-card__body twitterfeed">
+  <div class="pf-v6-c-card__body twitterfeed">
     {{ if .Construction }}
       <div
-        class="pf-c-alert pf-m-warning pf-m-inline pf-u-mb-md"
+        class="pf-v6-c-alert pf-m-warning pf-m-inline pf-v6-u-mb-md"
         aria-label="Warning alert"
       >
-        <div class="pf-c-alert__icon">
+        <div class="pf-v6-c-alert__icon">
           <i class="fas fa-fw fa-wrench" aria-hidden="true"></i>
         </div>
-        <p class="pf-c-alert__title">
-          <span class="pf-screen-reader">Warning alert:</span>
+        <p class="pf-v6-c-alert__title">
+          <span class="pf-v6-screen-reader">Warning alert:</span>
           Under construction
         </p>
-        <div class="pf-c-alert__description">
+        <div class="pf-v6-c-alert__description">
           <p>
             This feed is still in development, but should be available in the
             near future.
@@ -41,11 +41,11 @@
       </div>
     {{ else }}
       <ul
-        class="twitterfeed__tweets pf-l-flex pf-m-column pf-m-space-items-sm"
+        class="twitterfeed__tweets pf-v6-l-flex pf-m-column pf-m-space-items-sm"
       ></ul>
 
-      <a target="_blank" class="twitterfeed__user__url pf-c-button pf-m-link">
-        <span class="pf-c-button__icon pf-m-start">
+      <a target="_blank" class="twitterfeed__user__url pf-v6-c-button pf-m-link">
+        <span class="pf-v6-c-button__icon pf-m-start">
           <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
         >All toots</a
       >
@@ -73,24 +73,24 @@
   // Tweets
   mastodonFeed.toots.map((tweet) => {
     const root = document.createElement("li");
-    root.classList.add("pf-c-card", "pf-m-plain", "pf-m-hoverable-raised")
+    root.classList.add("pf-v6-c-card", "pf-m-plain", "pf-m-hoverable-raised")
 
     const link = document.createElement("a");
     link.target = "_blank";
     link.href = tweet.url;
-    link.classList.add("pf-u-color-100", "pf-l-flex", "pf-u-flex-direction-column", "pf-m-space-items-sm", "pf-m-align-items-flex-start", "pf-c-card__body", "pf-u-p-md", "pf-x-m-no-decoration")
+    link.classList.add("pf-v6-u-color-100", "pf-v6-l-flex", "pf-v6-u-flex-direction-column", "pf-m-space-items-sm", "pf-m-align-items-flex-start", "pf-v6-c-card__body", "pf-v6-u-p-md", "pf-v6-x-m-no-decoration")
 
     const header = document.createElement("div")
-    header.classList.add("pf-u-mb-sm", "pf-l-flex", "pf-m-align-items-center")
+    header.classList.add("pf-v6-u-mb-sm", "pf-v6-l-flex", "pf-m-align-items-center")
 
     const userPic = document.createElement("img");
     userPic.src = mastodonFeed.userProfilePictureURL;
     userPic.alt = `Profile picture of ${mastodonFeed.userDisplayName}`;
-    userPic.classList.add("pf-c-avatar", "pf-u-mr-sm")
+    userPic.classList.add("pf-v6-c-avatar", "pf-v6-u-mr-sm")
     header.appendChild(userPic);
 
     const usernames = document.createElement("div")
-    usernames.classList.add("pf-l-flex", "pf-m-justify-content-center", "pf-m-align-items-start", "pf-m-space-items-sm", "pf-u-flex-direction-column")
+    usernames.classList.add("pf-v6-l-flex", "pf-m-justify-content-center", "pf-m-align-items-start", "pf-m-space-items-sm", "pf-v6-u-flex-direction-column")
 
     const userDisplayName = document.createElement("span");
     userDisplayName.innerText = mastodonFeed.userDisplayName;
@@ -98,7 +98,7 @@
 
     const userName = document.createElement("span");
     userName.innerText = " @"+mastodonFeed.username;
-    userName.classList.add("pf-u-color-200")
+    userName.classList.add("pf-v6-u-color-200")
     usernames.appendChild(userName);
 
     header.appendChild(usernames);
@@ -106,26 +106,26 @@
     link.appendChild(header)
 
     const content = document.createElement("div")
-    content.classList.add("pf-u-w-100")
+    content.classList.add("pf-v6-u-w-100")
 
     const tweetTimestamp = document.createElement("span");
     tweetTimestamp.innerText = new Date(tweet.timestamp).toLocaleString();
-    tweetTimestamp.classList.add("pf-u-color-200")
+    tweetTimestamp.classList.add("pf-v6-u-color-200")
     content.appendChild(tweetTimestamp);
 
     const tweetBody = document.createElement("div");
     tweetBody.innerHTML = tweet.body;
-    tweetBody.classList.add("pf-u-py-sm", "pf-x-u-overflow-x-auto")
+    tweetBody.classList.add("pf-v6-u-py-sm", "pf-v6-x-u-overflow-x-auto")
 
     content.appendChild(tweetBody);
 
     if (tweet.media.length > 0) {
       const images = document.createElement("div");
-      images.classList.add("pf-l-gallery", "pf-m-gutter", "pf-u-my-sm")
+      images.classList.add("pf-v6-l-gallery", "pf-m-gutter", "pf-v6-u-my-sm")
 
       tweet.media.slice(0, 2).forEach((media) => {
         const el = document.createElement("div");
-        el.classList.add("pf-l-gallery__item")
+        el.classList.add("pf-v6-l-gallery__item")
 
         let attachment;
         if (media.isVideo) {
@@ -137,7 +137,7 @@
         }
 
         attachment.src = media.url;
-        attachment.classList.add("pf-u-w-100")
+        attachment.classList.add("pf-v6-u-w-100")
 
         el.appendChild(attachment);
 
@@ -149,10 +149,10 @@
 
 
     const statistics = document.createElement("div");
-    statistics.classList.add("pf-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-u-color-200", "pf-u-mt-sm")
+    statistics.classList.add("pf-v6-l-flex", "pf-m-justify-content-space-around", "pf-m-align-items-center", "pf-v6-u-color-200", "pf-v6-u-mt-sm")
 
     const repliess = document.createElement("span");
-    repliess.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+    repliess.classList.add("pf-v6-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
 
     const repliesIcon = document.createElement("i");
     repliesIcon.classList.add("fas", "fa-comments")
@@ -166,7 +166,7 @@
     statistics.appendChild(repliess);
 
     const reblogs = document.createElement("span");
-    reblogs.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+    reblogs.classList.add("pf-v6-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
 
     const reblogIcon = document.createElement("i");
     reblogIcon.classList.add("fas", "fa-retweet")
@@ -180,7 +180,7 @@
     statistics.appendChild(reblogs);
 
     const favorites = document.createElement("span");
-    favorites.classList.add("pf-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
+    favorites.classList.add("pf-v6-l-flex", "pf-m-align-items-center", "pf-m-space-items-sm")
 
     const favoritesIcon = document.createElement("i");
     favoritesIcon.classList.add("fas", "fa-heart")

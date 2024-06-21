@@ -1,32 +1,32 @@
-<div class="pf-c-dropdown pf-m-expanded">
+<div class="pf-v6-c-dropdown pf-m-expanded">
   <button
-    class="pf-c-dropdown__toggle pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+    class="pf-v6-c-dropdown__toggle pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding"
     id="{{ .ID }}-expanded-button"
     aria-expanded="false"
     type="button"
   >
-    <span class="pf-c-dropdown__toggle-text">
-      <i class="fas fa-users pf-u-mr-xs" aria-hidden="true"></i>
+    <span class="pf-v6-c-dropdown__toggle-text">
+      <i class="fas fa-users pf-v6-u-mr-xs" aria-hidden="true"></i>
       Socials
     </span>
-    <span class="pf-c-dropdown__toggle-icon">
+    <span class="pf-v6-c-dropdown__toggle-icon">
       <i class="fas fa-caret-down" aria-hidden="true"></i>
     </span>
   </button>
 
   <ul
-    class="pf-c-dropdown__menu"
+    class="pf-v6-c-dropdown__menu"
     id="{{ .ID }}-dropdown-menu"
     aria-labelledby="{{ .ID }}-expanded-button"
     hidden
   >
     {{ range .Socials }}
       {{ if .separator }}
-        <li class="pf-c-divider" role="separator"></li>
+        <li class="pf-v6-c-divider" role="separator"></li>
       {{ else }}
         <li>
           <a
-            class="pf-c-dropdown__menu-item"
+            class="pf-v6-c-dropdown__menu-item"
             href="{{ if .unsafe }}
               {{ safeURL .link }}
             {{ else }}

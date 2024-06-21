@@ -1,64 +1,64 @@
 {{ define "main" }}
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
-      pf-c-page__main--with-overlay--grid
-    {{ end }} pf-x-u-blur pf-x-u-transparent {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
-      pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
-        pf-c-page__main--with-effects--without-blur
+    class="pf-v6-c-page__main pf-v6-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
+      pf-v6-c-page__main--with-overlay--grid
+    {{ end }} pf-v6-x-u-blur pf-v6-x-u-transparent {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
+      pf-v6-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
+        pf-v6-c-page__main--with-effects--without-blur
       {{ end }}
     {{ end }}"
     tabindex="-1"
     id="main"
   >
     <section
-      class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-lg"
+      class="pf-v6-c-page__main-section pf-m-fill pf-v6-x-u-transparent pf-v6-c-page__main-section--max-width pf-v6-u-px-0 pf-v6-u-pb-0 pf-v6-u-pt-0 pf-v6-u-pt-md-on-lg"
     >
-      <div class="pf-l-grid pf-m-gutter">
-        <div class="pf-l-grid__item pf-m-12-col pf-m-8-col-on-lg">
-          <div class="pf-c-card pf-c-card--full-width">
-            <div class="pf-c-card__header pf-u-px-0 pf-u-pt-0 pf-u-pb-sm">
-              <div class="pf-c-card__header-main pf-u-w-100">
+      <div class="pf-v6-l-grid pf-m-gutter">
+        <div class="pf-v6-l-grid__item pf-m-12-col pf-m-8-col-on-lg">
+          <div class="pf-v6-c-card pf-v6-c-card--full-width">
+            <div class="pf-v6-c-card__header pf-v6-u-px-0 pf-v6-u-pt-0 pf-v6-u-pb-sm">
+              <div class="pf-v6-c-card__header-main pf-v6-u-w-100">
                 <img
                   src="{{ ((index .Resources 0).Resize `1024x`).Permalink }}"
                   alt="{{ .Params.HeaderAlt }}"
-                  class="pf-u-w-100 pf-u-h-100 pf-x-c-article__header"
+                  class="pf-v6-u-w-100 pf-v6-u-h-100 pf-v6-x-c-article__header"
                 />
               </div>
             </div>
-            <div class="pf-c-card__title">
-              <h1 class="pf-u-font-size-4xl pf-u-pb-sm">{{ .Title }}</h1>
+            <div class="pf-v6-c-card__title">
+              <h1 class="pf-v6-u-font-size-4xl pf-v6-u-pb-sm">{{ .Title }}</h1>
 
               {{ if .Params.Excerpt }}
                 <p>{{ .Params.Excerpt }}</p>
               {{ end }}
             </div>
-            <div class="pf-c-card__body">
+            <div class="pf-v6-c-card__body">
               <article>
                 <header
-                  class="pf-l-flex pf-m-justify-content-space-between pf-m-space-items-sm pf-u-pb-md"
+                  class="pf-v6-l-flex pf-m-justify-content-space-between pf-m-space-items-sm pf-v6-u-pb-md"
                 >
-                  <div class="pf-l-flex pf-m-space-items-sm pf-u-color-200">
+                  <div class="pf-v6-l-flex pf-m-space-items-sm pf-v6-u-color-200">
                     <span
                       >Originally published on
                       {{ .Date | time.Format ":date_long" }}</span
                     >
-                    <span aria-hidden="true" class="pf-u-color-200">·</span>
+                    <span aria-hidden="true" class="pf-v6-u-color-200">·</span>
                     <span
                       >Last updated on
                       {{ .Params.Updated | time.Format ":date_long" }}</span
                     >
                   </div>
-                  <div class="pf-c-chip-group pf-u-mt-md">
-                    <div class="pf-c-chip-group__main">
+                  <div class="pf-v6-c-chip-group pf-v6-u-mt-md">
+                    <div class="pf-v6-c-chip-group__main">
                       <ul
-                        class="pf-c-chip-group__list"
+                        class="pf-v6-c-chip-group__list"
                         role="list"
                         aria-label="Keywords"
                       >
                         {{ range first 3 .Keywords }}
-                          <li class="pf-c-chip-group__list-item">
-                            <div class="pf-c-chip">
-                              <span class="pf-c-chip__text">{{ . }}</span>
+                          <li class="pf-v6-c-chip-group__list-item">
+                            <div class="pf-v6-c-chip">
+                              <span class="pf-v6-c-chip__text">{{ . }}</span>
                             </div>
                           </li>
                         {{ end }}
@@ -67,12 +67,12 @@
                   </div>
                 </header>
 
-                <main class="pf-c-page__main pf-c-content">
+                <main class="pf-v6-c-page__main pf-v6-c-content">
                   {{ .Content }}
                 </main>
               </article>
             </div>
-            <div class="pf-c-card__footer">
+            <div class="pf-v6-c-card__footer">
               <script
                 src="https://giscus.app/client.js"
                 data-repo="{{ .Site.Data.integrations.giscus.repo }}"
@@ -95,7 +95,7 @@
           </div>
         </div>
         <div
-          class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-lg pf-c-grid--tweets"
+          class="pf-v6-l-grid__item pf-m-12-col pf-m-4-col-on-lg pf-v6-c-grid--tweets"
         >
           {{ if .Site.Data.integrations.bluesky.enabled }}
             {{ partial "blueskyfeed" (dict "ID" "blueskyfeed" "Username" .Site.Data.integrations.bluesky.username "Construction" .Site.Data.integrations.bluesky.construction "BaseURL" .Site.BaseURL ) }}
@@ -108,27 +108,27 @@
           {{ $related := .Site.RegularPages.Related . | first 5 }}
           {{ if gt (len $related) 0 }}
             <div
-              class="pf-c-card pf-c-card--full-width pf-u-mt-md pf-c-card--see-also pf-c-card--transparent"
+              class="pf-v6-c-card pf-v6-c-card--full-width pf-v6-u-mt-md pf-v6-c-card--see-also pf-v6-c-card--transparent"
             >
-              <div class="pf-c-card__title">See Also</div>
-              <div class="pf-c-card__body">
-                <div class="pf-l-gallery pf-m-gutter">
+              <div class="pf-v6-c-card__title">See Also</div>
+              <div class="pf-v6-c-card__body">
+                <div class="pf-v6-l-gallery pf-m-gutter">
                   {{ range $related }}
-                    <div class="pf-l-gallery__item">
+                    <div class="pf-v6-l-gallery__item">
                       <a
                         href="{{ .Permalink }}"
-                        class="pf-u-color-100 pf-x-m-no-decoration"
+                        class="pf-v6-u-color-100 pf-v6-x-m-no-decoration"
                       >
                         <div
-                          class="pf-c-card pf-m-compact pf-m-hoverable-raised pf-u-h-100"
+                          class="pf-v6-c-card pf-m-compact pf-m-hoverable-raised pf-v6-u-h-100"
                         >
-                          <div class="pf-c-card__title">{{ .Title }}</div>
+                          <div class="pf-v6-c-card__title">{{ .Title }}</div>
                           {{ if .Params.Excerpt }}
-                            <div class="pf-c-card__body pf-u-pb-sm">
+                            <div class="pf-v6-c-card__body pf-v6-u-pb-sm">
                               {{ .Params.Excerpt }}
                             </div>
                           {{ end }}
-                          <div class="pf-c-card__footer pf-u-color-200">
+                          <div class="pf-v6-c-card__footer pf-v6-u-color-200">
                             {{ .Date | time.Format ":date_long" }}
                           </div>
                         </div>
@@ -137,8 +137,8 @@
                   {{ end }}
                 </div>
 
-                <a href="/articles" class="pf-c-button pf-m-link pf-u-mt-lg">
-                  <span class="pf-c-button__icon pf-m-start">
+                <a href="/articles" class="pf-v6-c-button pf-m-link pf-v6-u-mt-lg">
+                  <span class="pf-v6-c-button__icon pf-m-start">
                     <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
                   >All articles</a
                 >

@@ -1,167 +1,167 @@
 - title: Systems Development
   projects:
     - slug: pojntfx/weron
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-t--color--black)
       icon: docs/icon-light.png
     - slug: pojntfx/go-nbd
-      background: var(--pf-global--palette--gold-600)
+      background: var(--pf-t--color--orange--40)
       icon: docs/icon-light.png
     - slug: pojntfx/stfs
-      background: var(--pf-global--palette--blue-400)
+      background: var(--pf-t--color--blue--40)
     - slug: pojntfx/tapisk
-      background: var(--pf-global--palette--light-green-700)
+      background: var(--pf-t--color--green--70)
       icon: docs/icon-light.png
     - slug: pojntfx/liwasc
-      background: var(--pf-global--palette--cyan-500)
+      background: var(--pf-t--color--blue--60)
     - slug: pojntfx/bofied
-      background: var(--pf-global--palette--light-blue-600)
+      background: var(--pf-t--color--blue--70)
       icon: assets/bofied Icon.svg
     - slug: pojntfx/r3map
       icon: docs/icon-light.png
-      background: var(--pf-global--palette--gold-600)
+      background: var(--pf-t--color--orange--40)
     - slug: pojntfx/ram-dl
       icon: docs/icon-light.png
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-t--color--black)
     - slug: pojntfx/htorrent
       icon: docs/icon.svg
-      background: var(--pf-global--palette--cyan-500)
+      background: var(--pf-t--color--blue--60)
 - title: Apps
   projects:
     - slug: pojntfx/connmapper
-      background: var(--pf-global--palette--light-green-600)
+      background: var(--pf-t--color--green--60)
       icon: docs/icon.svg
     - slug: pojntfx/multiplex
-      background: var(--pf-global--palette--gold-600)
+      background: var(--pf-t--color--orange--40)
       icon: docs/icon.svg
     - slug: pojntfx/keygaen
-      background: var(--pf-global--palette--blue-500)
+      background: var(--pf-t--color--blue--50)
       icon: docs/icon-light.png
     - slug: pojntfx/keystoregaen
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-t--color--black)
     - slug: pojntfx/html2goapp
-      background: var(--pf-global--palette--cyan-400)
+      background: var(--pf-t--color--blue--40)
 - title: Development Tooling
   projects:
     - slug: pojntfx/bagccgop
-      background: var(--pf-global--palette--green-600)
+      background: var(--pf-t--color--green--60)
     - slug: pojntfx/bagop
-      background: var(--pf-global--palette--light-green-600)
+      background: var(--pf-t--color--green--60)
     - slug: pojntfx/hydrapp
-      background: var(--pf-global--palette--green-700)
+      background: var(--pf-t--color--green--70)
       icon: docs/icon.svg
     - slug: pojntfx/hydrun
-      background: var(--pf-global--palette--purple-600)
+      background: var(--pf-t--color--purple--60)
     - slug: pojntfx/alpimager
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-t--color--black)
     - slug: pojntfx/octarchive
-      background: var(--pf-global--palette--gold-600)
+      background: var(--pf-t--color--orange--40)
       icon: docs/icon-light.png
     - slug: pojntfx/pojde
-      background: var(--pf-global--palette--light-green-700)
+      background: var(--pf-t--color--green--70)
     - slug: pojntfx/grpc-examples
-      background: var(--pf-global--palette--green-600)
+      background: var(--pf-t--color--green--60)
 - title: Distributed Computing
   projects:
     - slug: pojntfx/saltpanelo
-      background: var(--pf-global--palette--blue-400)
+      background: var(--pf-t--color--blue--40)
       icon: docs/icon-light.png
     - slug: pojntfx/panrpc
-      background: var(--pf-global--palette--light-blue-600)
+      background: var(--pf-t--color--blue--70)
       icon: docs/icon.svg
     - slug: pojntfx/unisockets
-      background: var(--pf-global--palette--gold-600)
+      background: var(--pf-t--color--orange--40)
     - slug: pojntfx/tinynet
-      background: var(--pf-global--palette--cyan-600)
+      background: var(--pf-t--color--blue--60)
     - slug: pojntfx/nebulark
-      background: var(--pf-global--palette--orange-600)
+      background: var(--pf-t--color--orange--60)
     - slug: pojntfx/webnetes
-      background: var(--pf-global--palette--red-400)
+      background: var(--pf-t--color--red--50)
 - title: Management Daemons
   projects:
     - slug: pojntfx/go-isc-dhcp
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-t--color--black)
     - slug: pojntfx/gon2n
-      background: var(--pf-global--palette--blue-400)
+      background: var(--pf-t--color--blue--40)
     - slug: pojntfx/ipxebuilderd
-      background: var(--pf-global--palette--cyan-500)
+      background: var(--pf-t--color--blue--60)
     - slug: pojntfx/dibs
-      background: var(--pf-global--palette--light-blue-600)
+      background: var(--pf-t--color--blue--70)
 - title: Uni Notes
   projects:
     - slug: pojntfx/uni-webdev-backend-notes
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-t--color--black)
     - slug: pojntfx/uni-distributedsystems-notes
-      background: var(--pf-global--palette--orange-600)
+      background: var(--pf-t--color--orange--60)
     - slug: pojntfx/uni-programminglanguages-notes
-      background: var(--pf-global--palette--blue-400)
+      background: var(--pf-t--color--blue--40)
     - slug: pojntfx/uni-supply-chain-paper
-      background: var(--pf-global--palette--red-400)
+      background: var(--pf-t--color--red--50)
     - slug: pojntfx/uni-netpractice-notes
-      background: var(--pf-global--palette--orange-600)
+      background: var(--pf-t--color--orange--60)
     - slug: pojntfx/uni-webtopics-notes
-      background: var(--pf-global--palette--cyan-600)
+      background: var(--pf-t--color--blue--60)
     - slug: pojntfx/uni-sciwriting-notes
-      background: var(--pf-global--palette--gold-600)
+      background: var(--pf-t--color--orange--40)
     - slug: pojntfx/uni-appsecurity-notes
-      background: var(--pf-global--palette--green-600)
+      background: var(--pf-t--color--green--60)
     - slug: pojntfx/uni-hci-notes
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-t--color--black)
     - slug: pojntfx/uni-itsec-notes
-      background: var(--pf-global--palette--green-700)
+      background: var(--pf-t--color--green--70)
     - slug: pojntfx/uni-db1-notes
-      background: var(--pf-global--palette--light-green-600)
+      background: var(--pf-t--color--green--60)
     - slug: pojntfx/uni-sdi-notes
-      background: var(--pf-global--palette--light-green-700)
+      background: var(--pf-t--color--green--70)
     - slug: pojntfx/uni-algodat-notes
-      background: var(--pf-global--palette--purple-600)
+      background: var(--pf-t--color--purple--60)
     - slug: pojntfx/uni-bwl-notes
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-t--color--black)
 - title: Digital Publishing
   projects:
     - slug: pojntfx/deliverance
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-t--color--black)
       icon: docs/icon-light.png
     - slug: pojntfx/minitel
-      background: var(--pf-global--palette--blue-400)
+      background: var(--pf-t--color--blue--40)
     - slug: pojntfx/box
-      background: var(--pf-global--palette--cyan-500)
+      background: var(--pf-t--color--blue--60)
     - slug: pojntfx/abizeitung
-      background: var(--pf-global--palette--light-blue-600)
+      background: var(--pf-t--color--blue--70)
     - slug: pojntfx/networked-linux-memsync
-      background: var(--pf-global--palette--red-400)
+      background: var(--pf-t--color--red--50)
 - title: Websites
   projects:
     - slug: pojntfx/felicitas.pojtinger.com
-      background: var(--pf-global--palette--gold-600)
+      background: var(--pf-t--color--orange--40)
     - slug: pojntfx/pojtinger.com
-      background: var(--pf-global--palette--cyan-600)
+      background: var(--pf-t--color--blue--60)
     - slug: morniteaque/yaraamendiares.eu
-      background: var(--pf-global--palette--purple-600)
+      background: var(--pf-t--color--purple--60)
     - slug: morniteaque/morniteaque.org
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-t--color--black)
     - slug: pojntfx/illustrierte-website
-      background: var(--pf-global--palette--orange-600)
+      background: var(--pf-t--color--orange--60)
     - slug: pojntfx/physio-dani.de
-      background: var(--pf-global--palette--red-400)
+      background: var(--pf-t--color--red--50)
 - title: Integrations
   projects:
     - slug: pojntfx/simple-direct-democracy-frontend
-      background: var(--pf-global--palette--green-600)
+      background: var(--pf-t--color--green--60)
     - slug: pojntfx/task-timer
-      background: var(--pf-global--palette--green-700)
+      background: var(--pf-t--color--green--70)
     - slug: pojntfx/learn-chinese-platform
-      background: var(--pf-global--palette--light-green-600)
+      background: var(--pf-t--color--green--60)
     - slug: pojntfx/chinese-notes
-      background: var(--pf-global--palette--light-green-700)
+      background: var(--pf-t--color--green--70)
     - slug: pojntfx/nextcloud-talk-bot-framework
-      background: var(--pf-global--palette--purple-600)
+      background: var(--pf-t--color--purple--60)
     - slug: pojntfx/consumat.io-backend
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-t--color--black)
 - title: Aeronautical Engineering
   projects:
     - slug: pojntfx/libresat
-      background: var(--pf-global--palette--black-850)
+      background: var(--pf-t--color--black)
     - slug: pojntfx/clusterplatform
-      background: var(--pf-global--palette--blue-400)
+      background: var(--pf-t--color--blue--40)
     - slug: pojntfx/opensdcp-website
-      background: var(--pf-global--palette--cyan-500)
+      background: var(--pf-t--color--blue--60)

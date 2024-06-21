@@ -1,9 +1,9 @@
 <div
-  class="pf-u-font-size-sm pf-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-u-py-xs"
+  class="pf-v6-u-font-size-sm pf-v6-l-flex pf-m-column pf-m-space-items-xs pf-m-align-items-center pf-m-justify-content-center pf-v6-u-py-xs"
   id="{{ .ID }}"
 >
-  <div class="pf-l-flex pf-m-space-items-sm pf-m-align-items-center">
-    <a target="_blank" class="pf-l-flex streamstatus__channel__url">
+  <div class="pf-v6-l-flex pf-m-space-items-sm pf-m-align-items-center">
+    <a target="_blank" class="pf-v6-l-flex streamstatus__channel__url">
       <img
         alt="{{ if eq .Platform `youtube` }}
           YouTube
@@ -15,11 +15,11 @@
     </a>
   </div>
 
-  <a target="_blank" class="pf-u-mt-xs pf-u-mb-sm streamstatus__stream_url"
-    ><i class="fas fa-play pf-u-ml-xs pf-u-mr-xs"></i
+  <a target="_blank" class="pf-v6-u-mt-xs pf-v6-u-mb-sm streamstatus__stream_url"
+    ><i class="fas fa-play pf-v6-u-ml-xs pf-v6-u-mr-xs"></i
     ><strong class="streamstatus__stream__name"></strong
   ></a>
-  <span class="pf-c-badge streamstatus__stream__islive"></span>
+  <span class="pf-v6-c-badge streamstatus__stream__islive"></span>
 </div>
 
 <noscript
@@ -55,7 +55,7 @@
     streamStatus.streamIsLive ? "Live (" + streamStatus.streamViewerCount + " viewers)" : "Offline";
 
   indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-m-read")
-  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-x-u-offline")
+  indicator.classList.add(streamStatus.streamIsLive ? "pf-m-unread" : "pf-v6-x-u-offline")
 
   document.querySelector("#{{ .ID }} .streamstatus__stream__name").innerText =
     truncate(streamStatus.streamName, 14) || "Stream";

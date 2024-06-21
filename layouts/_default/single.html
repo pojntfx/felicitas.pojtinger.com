@@ -1,21 +1,21 @@
 {{ define "main" }}
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
-      pf-c-page__main--with-overlay--grid
-    {{ end }} pf-x-u-blur {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
-      pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
-        pf-c-page__main--with-effects--without-blur
+    class="pf-v6-c-page__main pf-v6-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
+      pf-v6-c-page__main--with-overlay--grid
+    {{ end }} pf-v6-x-u-blur {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
+      pf-v6-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
+        pf-v6-c-page__main--with-effects--without-blur
       {{ end }}
     {{ end }}"
     tabindex="-1"
     id="main"
   >
     <section
-      class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-0 pf-u-pb-0 pf-u-pt-0 pf-u-pt-md-on-xl"
+      class="pf-v6-c-page__main-section pf-m-fill pf-v6-x-u-transparent pf-v6-c-page__main-section--max-width pf-v6-u-px-0 pf-v6-u-pb-0 pf-v6-u-pt-0 pf-v6-u-pt-md-on-xl"
     >
-      <div class="pf-c-page__main pf-c-content">
-        <div class="pf-c-card pf-c-card--full-width-lg">
-          <div class="pf-c-card__body">
+      <div class="pf-v6-c-page__main pf-v6-c-content">
+        <div class="pf-v6-c-card pf-v6-c-card--full-width-lg">
+          <div class="pf-v6-c-card__body">
             {{ .Content }}
           </div>
         </div>

@@ -74,31 +74,31 @@
     {{ end }}
 
 
-    <div class="pf-c-page pf-c-page--background">
-      <a class="pf-c-skip-to-content pf-c-button pf-m-primary" href="#main"
+    <div class="pf-v6-c-page pf-v6-c-page--background">
+      <a class="pf-v6-c-skip-to-content pf-v6-c-button pf-m-primary" href="#main"
         >Skip to content</a
       >
 
       {{ block "header" . }}
         <header
-          class="pf-c-page__header pf-c-page__header--max-width pf-x-u-blur pf-c-page__header--overlay pf-u-box-shadow-sm pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+          class="pf-v6-c-page__header pf-v6-c-page__header--max-width pf-v6-x-u-blur pf-v6-c-page__header--overlay pf-v6-u-box-shadow-sm pf-v6-x-u-white-space-nowrap pf-v6-x-u-overflow-x-auto"
         >
-          <div class="pf-c-page__header__content--max-width">
+          <div class="pf-v6-c-page__header__content--max-width">
             <a
-              class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-c-page__header-brand-link--no-decoration pf-u-pl-2xl pf-u-pl-sm-on-xl pf-x-u-hoverable-parent pf-x-u-hoverable-parent--rotate"
+              class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-c-page__header-brand-link--no-decoration pf-v6-u-pl-2xl pf-v6-u-pl-sm-on-xl pf-v6-x-u-hoverable-parent pf-v6-x-u-hoverable-parent--rotate"
               href="{{ .Site.BaseURL }}"
             >
               <img
                 src="{{ .Site.Data.person.img }}"
                 alt="Profile picture of {{ .Site.Data.person.name }}"
-                class="pf-c-avatar pf-u-mr-md pf-c-avatar--navbar"
+                class="pf-v6-c-avatar pf-v6-u-mr-md pf-v6-c-avatar--navbar"
               />
               <div>
-                <h2 class="pf-u-font-size-sm pf-x-u-text-shadow-sm">
+                <h2 class="pf-v6-u-font-size-sm pf-v6-x-u-text-shadow-sm">
                   {{ .Site.Data.person.name }}
                 </h2>
                 <h1
-                  class="pf-u-font-size-md pf-u-font-weight-bold pf-x-u-navbar__title pf-x-u-text-shadow-sm"
+                  class="pf-v6-u-font-size-md pf-v6-u-font-weight-bold pf-v6-x-u-navbar__title pf-v6-x-u-text-shadow-sm"
                 >
                   {{ .Title }}
                 </h1>
@@ -106,29 +106,29 @@
             </a>
 
             <div
-              class="pf-u-display-flex pf-u-align-items-center pf-u-pr-2xl pf-u-pr-0-on-xl"
+              class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-pr-2xl pf-v6-u-pr-0-on-xl"
             >
               {{ range .Site.Data.links.navbar }}
                 <a
                   href="{{ .link }}"
                   {{ if .newTab }}target="_blank"{{ end }}
                   rel="noopener"
-                  class="pf-c-button pf-c-button--header pf-x-u-text-shadow-sm pf-m-plain pf-u-ml-2xl--first-child"
+                  class="pf-v6-c-button pf-v6-c-button--header pf-v6-x-u-text-shadow-sm pf-m-plain pf-v6-u-ml-2xl--first-child"
                 >
-                  <span class="pf-c-button__icon pf-m-start">
+                  <span class="pf-v6-c-button__icon pf-m-start">
                     <i class="{{ .icon }}" aria-hidden="true"></i> </span
                   >{{ .title }}</a
                 >
               {{ end }}
 
               {{ if .Site.Data.integrations.youtube.enabled }}
-                <div class="pf-u-ml-md">
+                <div class="pf-v6-u-ml-md">
                   {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.integrations.youtube.username "BaseURL" .Site.BaseURL ) }}
                 </div>
               {{ end }}
 
               {{ if .Site.Data.integrations.twitch.enabled }}
-                <div class="pf-u-ml-md">
+                <div class="pf-v6-u-ml-md">
                   {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.integrations.twitch.username "BaseURL" .Site.BaseURL ) }}
                 </div>
               {{ end }}
@@ -139,11 +139,11 @@
 
       {{ block "main" . }}
         <main
-          class="pf-c-page__main pf-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
-            pf-c-page__main--with-overlay--grid
-          {{ end }} pf-x-u-blur {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
-            pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
-              pf-c-page__main--with-effects--without-blur
+          class="pf-v6-c-page__main pf-v6-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
+            pf-v6-c-page__main--with-overlay--grid
+          {{ end }} pf-v6-x-u-blur {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
+            pf-v6-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
+              pf-v6-c-page__main--with-effects--without-blur
             {{ end }}
           {{ end }}"
           tabindex="-1"

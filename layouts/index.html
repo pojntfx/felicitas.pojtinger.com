@@ -1,16 +1,16 @@
 {{ define "header" }}
   <header
-    class="pf-c-page__header pf-c-page__header--max-width pf-c-page__header--overlay pf-c-page__header--overlay--index pf-x-u-white-space-nowrap pf-x-u-overflow-x-auto"
+    class="pf-v6-c-page__header pf-v6-c-page__header--max-width pf-v6-c-page__header--overlay pf-v6-c-page__header--overlay--index pf-v6-x-u-white-space-nowrap pf-v6-x-u-overflow-x-auto"
   >
-    <div class="pf-c-page__header__content--max-width">
+    <div class="pf-v6-c-page__header__content--max-width">
       {{ if .Site.Data.integrations.spotify.enabled }}
         {{ partial "spotifystatus" (dict "ID" "spotifystatus" "Username" .Site.Data.integrations.spotify.username "BaseURL" .Site.BaseURL ) }}
       {{ end }}
 
 
       <div
-        class="pf-u-display-flex pf-u-align-items-center pf-u-pr-sm pf-u-pr-0-on-xl {{ if not .Site.Data.integrations.spotify.enabled }}
-          pf-u-ml-auto
+        class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-pr-sm pf-v6-u-pr-0-on-xl {{ if not .Site.Data.integrations.spotify.enabled }}
+          pf-v6-u-ml-auto
         {{ end }}"
       >
         {{ range .Site.Data.links.navbar }}
@@ -18,22 +18,22 @@
             href="{{ .link }}"
             {{ if .newTab }}target="_blank"{{ end }}
             rel="noopener"
-            class="pf-c-button pf-c-button--header pf-x-u-text-shadow-sm pf-x-u-text--freestanding pf-m-plain pf-u-ml-sm"
+            class="pf-v6-c-button pf-v6-c-button--header pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding pf-m-plain pf-v6-u-ml-sm"
           >
-            <span class="pf-c-button__icon pf-m-start">
+            <span class="pf-v6-c-button__icon pf-m-start">
               <i class="{{ .icon }}" aria-hidden="true"></i> </span
             >{{ .title }}</a
           >
         {{ end }}
 
         {{ if .Site.Data.integrations.youtube.enabled }}
-          <div class="pf-u-ml-md">
+          <div class="pf-v6-u-ml-md">
             {{ partial "streamstatus" (dict "ID" "youtubestatus" "Platform" "youtube" "Username" .Site.Data.integrations.youtube.username "BaseURL" .Site.BaseURL ) }}
           </div>
         {{ end }}
 
         {{ if .Site.Data.integrations.twitch.enabled }}
-          <div class="pf-u-ml-md">
+          <div class="pf-v6-u-ml-md">
             {{ partial "streamstatus" (dict "ID" "twitchstatus" "Platform" "twitch" "Username" .Site.Data.integrations.twitch.username "BaseURL" .Site.BaseURL ) }}
           </div>
         {{ end }}
@@ -44,42 +44,42 @@
 
 {{ define "main" }}
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
-      pf-c-page__main--with-overlay--grid
-    {{ end }} pf-c-page__main--index pf-x-u-blur  {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
-      pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
-        pf-c-page__main--with-effects--without-blur
+    class="pf-v6-c-page__main pf-v6-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
+      pf-v6-c-page__main--with-overlay--grid
+    {{ end }} pf-v6-c-page__main--index pf-v6-x-u-blur  {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
+      pf-v6-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
+        pf-v6-c-page__main--with-effects--without-blur
       {{ end }}
     {{ end }}"
     tabindex="-1"
     id="main"
   >
     <div
-      class="pf-l-grid pf-m-gutter pf-u-p-xl pf-u-pt-0 pf-u-pt-xl-on-xl pf-x-person__header {{ if not .Site.Data.integrations.github.enabled }}
-        pf-x-person__header--standalone
+      class="pf-v6-l-grid pf-m-gutter pf-v6-u-p-xl pf-v6-u-pt-0 pf-v6-u-pt-xl-on-xl pf-v6-x-person__header {{ if not .Site.Data.integrations.github.enabled }}
+        pf-v6-x-person__header--standalone
       {{ end }}"
     >
       <div
-        class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center"
+        class="pf-v6-l-grid__item pf-m-12-col pf-m-5-col-on-lg pf-v6-u-display-flex pf-v6-u-flex-direction-column pf-v6-u-align-items-center pf-v6-u-justify-content-center"
       >
         <h1
-          class="pf-u-font-size-xl pf-u-font-weight-bold pf-u-mb-xs pf-x-u-text-shadow-sm pf-x-u-text--freestanding pf-x-c-name"
+          class="pf-v6-u-font-size-xl pf-v6-u-font-weight-bold pf-v6-u-mb-xs pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding pf-v6-x-c-name"
         >
           {{ .Site.Data.person.name }}
         </h1>
         <p
-          class="pf-x-u-text-shadow-sm pf-x-u-text--freestanding pf-x-u-text--center"
+          class="pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding pf-v6-x-u-text--center"
         >
           {{ .Site.Data.person.description | safeHTML }}
         </p>
       </div>
 
       <figure
-        class="pf-l-grid__item pf-m-12-col pf-m-2-col-on-lg pf-u-display-flex pf-u-flex-direction-column pf-u-align-items-center pf-u-justify-content-center pf-u-p-lg pf-u-p-0-on-lg"
+        class="pf-v6-l-grid__item pf-m-12-col pf-m-2-col-on-lg pf-v6-u-display-flex pf-v6-u-flex-direction-column pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-p-lg pf-v6-u-p-0-on-lg"
       >
-        <figcaption class="pf-x-c-avatar__figcaption">
-          <div class="pf-c-chip">
-            <span class="pf-c-chip__text"
+        <figcaption class="pf-v6-x-c-avatar__figcaption">
+          <div class="pf-v6-c-chip">
+            <span class="pf-v6-c-chip__text"
               >{{ .Site.Data.person.pronouns }}</span
             >
           </div>
@@ -88,19 +88,19 @@
         <img
           src="{{ .Site.Data.person.img }}"
           alt="Profile picture of {{ .Site.Data.person.name }}"
-          class="pf-c-avatar pf-m-xl pf-c-avatar--main"
+          class="pf-v6-c-avatar pf-m-xl pf-v6-c-avatar--main"
         />
       </figure>
 
       <div
-        class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg pf-u-mt-lg pf-u-mt-0-on-lg pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center-on-md pf-u-flex-direction-column pf-u-flex-direction-row-on-sm"
+        class="pf-v6-l-grid__item pf-m-12-col pf-m-5-col-on-lg pf-v6-u-mt-lg pf-v6-u-mt-0-on-lg pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center-on-md pf-v6-u-flex-direction-column pf-v6-u-flex-direction-row-on-sm"
       >
         <a
           href="{{ .Site.Data.links.cta.link }}"
           target="_blank"
-          class="pf-c-button pf-m-primary pf-u-mb-md pf-u-mb-0-on-sm pf-u-mr-md-on-sm"
+          class="pf-v6-c-button pf-m-primary pf-v6-u-mb-md pf-v6-u-mb-0-on-sm pf-v6-u-mr-md-on-sm"
         >
-          <span class="pf-c-button__icon pf-m-start">
+          <span class="pf-v6-c-button__icon pf-m-start">
             <i class="{{ .Site.Data.links.cta.icon }}" aria-hidden="true"></i>
           </span>
 
@@ -112,54 +112,54 @@
     </div>
 
     {{ if .Site.Data.integrations.github.enabled }}
-      <section class="pf-x-commitwrapper pf-u-mb-md" id="commit">
+      <section class="pf-v6-x-commitwrapper pf-v6-u-mb-md" id="commit">
         {{ partial "lastcommit" (dict "ID" "lastcommit" "Username" .Site.Data.integrations.github.username "BaseURL" .Site.BaseURL ) }}
       </section>
     {{ end }}
 
 
-    <div class="pf-l-grid pf-m-gutter pf-l-grid--max-width">
-      <div class="pf-l-grid__item pf-m-12-col pf-m-7-col-on-lg">
+    <div class="pf-v6-l-grid pf-m-gutter pf-v6-l-grid--max-width">
+      <div class="pf-v6-l-grid__item pf-m-12-col pf-m-7-col-on-lg">
         <section id="articles">
           <div
-            class="pf-c-card pf-c-card--full-width pf-c-card--articles pf-c-card--transparent"
+            class="pf-v6-c-card pf-v6-c-card--full-width pf-v6-c-card--articles pf-v6-c-card--transparent"
           >
             <div
-              class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-py-xl"
+              class="pf-v6-c-card__title pf-v6-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-v6-u-py-xl"
             >
               <span>Recent Articles</span>
             </div>
-            <div class="pf-c-card__body">
-              <ul class="pf-l-flex pf-m-column pf-m-space-items-sm">
+            <div class="pf-v6-c-card__body">
+              <ul class="pf-v6-l-flex pf-m-column pf-m-space-items-sm">
                 {{ range .Pages }}
                   {{ if eq .Title "Articles" }}
                     {{ range first 3 .Pages }}
                       <li>
                         <a
                           href="{{ .Permalink }}"
-                          class="pf-u-color-100 pf-x-m-no-decoration"
+                          class="pf-v6-u-color-100 pf-v6-x-m-no-decoration"
                         >
-                          <div class="pf-c-card pf-m-hoverable-raised">
-                            <div class="pf-c-card__header pf-u-p-0">
+                          <div class="pf-v6-c-card pf-m-hoverable-raised">
+                            <div class="pf-v6-c-card__header pf-v6-u-p-0">
                               <div
-                                class="pf-c-card__header-main pf-c-card__header-main--fluid"
+                                class="pf-v6-c-card__header-main pf-v6-c-card__header-main--fluid"
                               >
                                 <img
                                   src="{{ ((index .Resources 0).Resize `500x`).Permalink }}"
                                   alt="{{ .Params.HeaderAlt }}"
-                                  class="pf-c-card__header-main__img"
+                                  class="pf-v6-c-card__header-main__img"
                                 />
                               </div>
                             </div>
-                            <div class="pf-c-card__title pf-u-pt-md pf-u-pb-sm">
+                            <div class="pf-v6-c-card__title pf-v6-u-pt-md pf-v6-u-pb-sm">
                               {{ .Title }}
                             </div>
                             {{ if .Params.Excerpt }}
-                              <div class="pf-c-card__body pf-u-pb-sm">
+                              <div class="pf-v6-c-card__body pf-v6-u-pb-sm">
                                 {{ .Params.Excerpt }}
                               </div>
                             {{ end }}
-                            <div class="pf-c-card__footer pf-u-color-200">
+                            <div class="pf-v6-c-card__footer pf-v6-u-color-200">
                               {{ .Date | time.Format ":date_long" }}
                             </div>
                           </div>
@@ -170,8 +170,8 @@
                 {{ end }}
               </ul>
 
-              <a href="/articles" class="pf-c-button pf-m-link pf-u-mt-lg">
-                <span class="pf-c-button__icon pf-m-start">
+              <a href="/articles" class="pf-v6-c-button pf-m-link pf-v6-u-mt-lg">
+                <span class="pf-v6-c-button__icon pf-m-start">
                   <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
                 >All articles</a
               >
@@ -179,8 +179,8 @@
           </div>
         </section>
       </div>
-      <div class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-lg">
-        <section id="tweets" class="pf-c-section--articles">
+      <div class="pf-v6-l-grid__item pf-m-12-col pf-m-5-col-on-lg">
+        <section id="tweets" class="pf-v6-c-section--articles">
           {{ if .Site.Data.integrations.bluesky.enabled }}
             {{ partial "blueskyfeed" (dict "ID" "blueskyfeed" "Username" .Site.Data.integrations.bluesky.username "Construction" .Site.Data.integrations.bluesky.construction "BaseURL" .Site.BaseURL ) }}
           {{ else if .Site.Data.integrations.twitter.enabled }}
@@ -195,86 +195,86 @@
     {{ if .Site.Data.integrations.github.projects }}
       <section id="projects">
         <div
-          class="pf-c-card pf-u-px-lg pf-u-px-0-on-xl pf-u-mt-xl pf-x-u-transparent pf-x-u-no-shadow"
+          class="pf-v6-c-card pf-v6-u-px-lg pf-v6-u-px-0-on-xl pf-v6-u-mt-xl pf-v6-x-u-transparent pf-v6-x-u-no-shadow"
         >
-          <div class="pf-x-c-projects--max-width">
+          <div class="pf-v6-x-c-projects--max-width">
             <div
-              class="pf-c-card__title pf-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-u-pt-0 pf-u-pb-0 pf-u-px-0"
+              class="pf-v6-c-card__title pf-v6-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-v6-u-pt-0 pf-v6-u-pb-0 pf-v6-u-px-0"
             >
-              <h2 class="pf-x-u-text-shadow-sm pf-x-u-text--freestanding">
+              <h2 class="pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding">
                 Projects
               </h2>
             </div>
-            <div class="pf-c-card__body pf-u-px-0 pf-u-pb-0">
+            <div class="pf-v6-c-card__body pf-v6-u-px-0 pf-v6-u-pb-0">
               <ul>
                 {{ range .Site.Data.projects_gen }}
                   <li>
                     <h3
-                      class="pf-u-font-size-xl pf-u-my-md pf-x-u-text-shadow-sm pf-x-u-text--freestanding"
+                      class="pf-v6-u-font-size-xl pf-v6-u-my-md pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding"
                     >
                       {{ .title }}
                     </h3>
-                    <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-500">
+                    <div class="pf-v6-l-gallery pf-m-gutter pf-v6-l-gallery--max-500">
                       {{ range sort .projects "stars" "desc" }}
-                        <div class="pf-l-gallery__item">
+                        <div class="pf-v6-l-gallery__item">
                           <a
                             href="{{ .url }}"
                             target="_blank"
                             rel="noopener"
-                            class="pf-x-m-no-decoration pf-x-u-color-light-100"
+                            class="pf-v6-x-m-no-decoration pf-v6-x-u-color-light-100"
                           >
                             <div
-                              class="pf-c-card pf-m-hoverable-raised pf-u-h-100"
+                              class="pf-v6-c-card pf-m-hoverable-raised pf-v6-u-h-100"
                               style="background: {{ safeCSS .background }}"
                             >
-                              <div class="pf-c-card__header">
+                              <div class="pf-v6-c-card__header">
                                 <div
-                                  class="pf-c-card__header-main pf-u-w-100 pf-u-display-flex pf-u-align-items-center pf-u-justify-content-space-between pf-u-flex-direction-column pf-u-flex-direction-row-on-sm pf-x-u-overflow-x-auto pf-x-u-white-space-nowrap"
+                                  class="pf-v6-c-card__header-main pf-v6-u-w-100 pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-space-between pf-v6-u-flex-direction-column pf-v6-u-flex-direction-row-on-sm pf-v6-x-u-overflow-x-auto pf-v6-x-u-white-space-nowrap"
                                 >
                                   <div
-                                    class="pf-c-card__title pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
+                                    class="pf-v6-c-card__title pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center"
                                   >
                                     {{ with .icon }}
                                       <img
                                         alt="Logo"
                                         src="{{ . }}"
-                                        class="pf-x-c-project__icon"
+                                        class="pf-v6-x-c-project__icon"
                                       />
                                     {{ end }}
-                                    <span class="pf-u-mr-sm"
+                                    <span class="pf-v6-u-mr-sm"
                                       >{{ .title | truncate 18 }}</span
                                     >
                                   </div>
                                   <div
-                                    class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-font-size-sm pf-u-ml-sm"
+                                    class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-font-size-sm pf-v6-u-ml-sm"
                                   >
                                     <i
                                       class="fas fa-calendar-alt"
                                       aria-hidden="true"
                                     ></i>
-                                    <span class="pf-u-ml-sm"
+                                    <span class="pf-v6-u-ml-sm"
                                       >{{ .date | time.Format ":date_long" }}</span
                                     >
                                   </div>
                                 </div>
                               </div>
 
-                              <div class="pf-c-card__body">
-                                <p class="pf-u-mb-md">{{ .description }}</p>
+                              <div class="pf-v6-c-card__body">
+                                <p class="pf-v6-u-mb-md">{{ .description }}</p>
 
-                                <div class="pf-c-chip-group">
-                                  <div class="pf-c-chip-group__main">
+                                <div class="pf-v6-c-chip-group">
+                                  <div class="pf-v6-c-chip-group__main">
                                     <ul
-                                      class="pf-c-chip-group__list"
+                                      class="pf-v6-c-chip-group__list"
                                       role="list"
                                       aria-label="Topic list"
                                     >
                                       {{ range first 3 .topics }}
-                                        <li class="pf-c-chip-group__list-item">
+                                        <li class="pf-v6-c-chip-group__list-item">
                                           <div
-                                            class="pf-c-chip pf-c-chip--transparent"
+                                            class="pf-v6-c-chip pf-v6-c-chip--transparent"
                                           >
-                                            <span class="pf-c-chip__text"
+                                            <span class="pf-v6-c-chip__text"
                                               >{{ . }}</span
                                             >
                                           </div>
@@ -285,63 +285,63 @@
                                 </div>
                               </div>
                               <div
-                                class="pf-c-card__footer pf-u-display-flex pf-u-align-items-center pf-u-justify-content-space-between pf-u-flex-direction-column pf-u-flex-direction-row-on-sm pf-x-u-color-light-200 pf-u-font-size-sm"
+                                class="pf-v6-c-card__footer pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-space-between pf-v6-u-flex-direction-column pf-v6-u-flex-direction-row-on-sm pf-v6-x-u-color-light-200 pf-v6-u-font-size-sm"
                               >
                                 <div
-                                  class="pf-u-display-flex pf-u-align-items-center pf-u-mb-md pf-u-mb-0-on-sm"
+                                  class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-mb-md pf-v6-u-mb-0-on-sm"
                                 >
                                   <div
-                                    class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
+                                    class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-mr-sm"
                                   >
                                     <i
                                       class="fas fa-language"
                                       aria-hidden="true"
                                     ></i>
-                                    <span class="pf-u-ml-sm"
+                                    <span class="pf-v6-u-ml-sm"
                                       >{{ .language }}</span
                                     >
                                   </div>
                                   <div
-                                    class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
+                                    class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center"
                                   >
                                     <i
                                       class="fas fa-balance-scale"
                                       aria-hidden="true"
                                     ></i>
-                                    <span class="pf-u-ml-sm"
+                                    <span class="pf-v6-u-ml-sm"
                                       >{{ .license }}</span
                                     >
                                   </div>
                                 </div>
                                 <div
-                                  class="pf-u-display-flex pf-u-align-items-center"
+                                  class="pf-v6-u-display-flex pf-v6-u-align-items-center"
                                 >
                                   <div
-                                    class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
+                                    class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-mr-sm"
                                   >
                                     <i
                                       class="fas fa-star"
                                       aria-hidden="true"
                                     ></i>
-                                    <span class="pf-u-ml-sm">{{ .stars }}</span>
+                                    <span class="pf-v6-u-ml-sm">{{ .stars }}</span>
                                   </div>
                                   <div
-                                    class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center pf-u-mr-sm"
+                                    class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-mr-sm"
                                   >
                                     <i
                                       class="fas fa-code-branch"
                                       aria-hidden="true"
                                     ></i>
-                                    <span class="pf-u-ml-sm">{{ .forks }}</span>
+                                    <span class="pf-v6-u-ml-sm">{{ .forks }}</span>
                                   </div>
                                   <div
-                                    class="pf-u-display-flex pf-u-align-items-center pf-u-justify-content-center"
+                                    class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center"
                                   >
                                     <i
                                       class="fas fa-dot-circle"
                                       aria-hidden="true"
                                     ></i>
-                                    <span class="pf-u-ml-sm"
+                                    <span class="pf-v6-u-ml-sm"
                                       >{{ .issues }}</span
                                     >
                                   </div>

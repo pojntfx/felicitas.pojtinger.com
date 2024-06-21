@@ -1,10 +1,10 @@
 {{ define "main" }}
   <main
-    class="pf-c-page__main pf-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
-      pf-c-page__main--with-overlay--grid
-    {{ end }} pf-x-u-blur  {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
-      pf-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
-        pf-c-page__main--with-effects--without-blur
+    class="pf-v6-c-page__main pf-v6-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
+      pf-v6-c-page__main--with-overlay--grid
+    {{ end }} pf-v6-x-u-blur  {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
+      pf-v6-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
+        pf-v6-c-page__main--with-effects--without-blur
       {{ end }}
     {{ end }}"
     tabindex="-1"
@@ -14,39 +14,39 @@
 
 
     <section
-      class="pf-c-page__main-section pf-m-fill pf-x-u-transparent pf-c-page__main-section--max-width pf-u-px-md pf-u-px-0-on-xl pf-u-py-md"
+      class="pf-v6-c-page__main-section pf-m-fill pf-v6-x-u-transparent pf-v6-c-page__main-section--max-width pf-v6-u-px-md pf-v6-u-px-0-on-xl pf-v6-u-py-md"
     >
-      <div class="pf-c-page__main">
-        <div class="pf-l-gallery pf-m-gutter pf-l-gallery--max-350">
+      <div class="pf-v6-c-page__main">
+        <div class="pf-v6-l-gallery pf-m-gutter pf-v6-l-gallery--max-350">
           {{ range .Pages }}
-            <div class="pf-l-gallery__item">
+            <div class="pf-v6-l-gallery__item">
               <a
                 href="{{ .Permalink }}"
-                class="pf-u-color-100 pf-x-m-no-decoration"
+                class="pf-v6-u-color-100 pf-v6-x-m-no-decoration"
               >
                 <div
-                  class="pf-c-card pf-m-compact pf-m-hoverable-raised pf-u-h-100"
+                  class="pf-v6-c-card pf-m-compact pf-m-hoverable-raised pf-v6-u-h-100"
                 >
-                  <div class="pf-c-card__header pf-u-p-0">
+                  <div class="pf-v6-c-card__header pf-v6-u-p-0">
                     <div
-                      class="pf-c-card__header-main pf-c-card__header-main--fluid"
+                      class="pf-v6-c-card__header-main pf-v6-c-card__header-main--fluid"
                     >
                       <img
                         src="{{ ((index .Resources 0).Resize `500x`).Permalink }}"
                         alt="{{ .Params.HeaderAlt }}"
-                        class="pf-c-card__header-main__img"
+                        class="pf-v6-c-card__header-main__img"
                       />
                     </div>
                   </div>
-                  <div class="pf-c-card__title pf-u-pt-md pf-u-pb-sm">
+                  <div class="pf-v6-c-card__title pf-v6-u-pt-md pf-v6-u-pb-sm">
                     {{ .Title }}
                   </div>
                   {{ if .Params.Excerpt }}
-                    <div class="pf-c-card__body pf-u-pb-sm">
+                    <div class="pf-v6-c-card__body pf-v6-u-pb-sm">
                       {{ .Params.Excerpt }}
                     </div>
                   {{ end }}
-                  <div class="pf-c-card__footer pf-u-color-200">
+                  <div class="pf-v6-c-card__footer pf-v6-u-color-200">
                     {{ .Date | time.Format ":date_long" }}
                   </div>
                 </div>
