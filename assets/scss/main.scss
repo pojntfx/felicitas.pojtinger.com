@@ -178,20 +178,15 @@ $bg: "/img/bg.webp";
 }
 
 .pf-v6-c-card.pf-m-clickable {
-  &:not(.pf-m-plain) {
-    border: var(--pf-t--global--border--width--box--default)
-      var(--pf-v6-c-card--BorderStyle)
-      var(--pf-t--global--border--color--default);
+  border: var(--pf-t--global--border--width--box--default)
+    var(--pf-v6-c-card--BorderStyle) var(--pf-t--global--border--color--default);
+
+  &.pf-m-plain {
+    border-color: transparent;
   }
 
   &:hover,
   &:focus {
-    &.pf-m-plain {
-      border: var(--pf-t--global--border--width--box--default)
-        var(--pf-v6-c-card--BorderStyle)
-        var(--pf-v6-c-card--m-selectable--hover--BorderColor);
-    }
-
     border-color: var(--pf-v6-c-card--m-selectable--hover--BorderColor);
   }
 }
