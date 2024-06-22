@@ -84,8 +84,8 @@ $bg: "/img/bg.webp";
 }
 
 .pf-v6-x-c-avatar__figcaption {
-  margin-left: auto;
-  transform: translateY(50%);
+  margin-left: 0 auto;
+  transform: translateY(-50%);
 }
 
 .pf-v6-c-card--overlay {
@@ -310,7 +310,7 @@ $bg: "/img/bg.webp";
   color: var(--pf-t--color--black);
 }
 
-.pf-v6-c-chip--transparent {
+.pf-v6-c-label--transparent {
   background: #fffffff5;
 }
 

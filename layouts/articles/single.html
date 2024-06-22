@@ -16,7 +16,9 @@
       <div class="pf-v6-l-grid pf-m-gutter">
         <div class="pf-v6-l-grid__item pf-m-12-col pf-m-8-col-on-lg">
           <div class="pf-v6-c-card pf-v6-c-card--full-width">
-            <div class="pf-v6-c-card__header pf-v6-u-px-0 pf-v6-u-pt-0 pf-v6-u-pb-sm">
+            <div
+              class="pf-v6-c-card__header pf-v6-u-px-0 pf-v6-u-pt-0 pf-v6-u-pb-sm"
+            >
               <div class="pf-v6-c-card__header-main pf-v6-u-w-100">
                 <img
                   src="{{ ((index .Resources 0).Resize `1024x`).Permalink }}"
@@ -37,7 +39,9 @@
                 <header
                   class="pf-v6-l-flex pf-m-justify-content-space-between pf-m-space-items-sm pf-v6-u-pb-md"
                 >
-                  <div class="pf-v6-l-flex pf-m-space-items-sm pf-v6-u-color-200">
+                  <div
+                    class="pf-v6-l-flex pf-m-space-items-sm pf-v6-u-color-200"
+                  >
                     <span
                       >Originally published on
                       {{ .Date | time.Format ":date_long" }}</span
@@ -48,18 +52,22 @@
                       {{ .Params.Updated | time.Format ":date_long" }}</span
                     >
                   </div>
-                  <div class="pf-v6-c-chip-group pf-v6-u-mt-md">
-                    <div class="pf-v6-c-chip-group__main">
+                  <div class="pf-v6-c-label-group pf-v6-u-mt-md">
+                    <div class="pf-v6-c-label-group__main">
                       <ul
-                        class="pf-v6-c-chip-group__list"
+                        class="pf-v6-c-label-group__list"
                         role="list"
                         aria-label="Keywords"
                       >
                         {{ range first 3 .Keywords }}
-                          <li class="pf-v6-c-chip-group__list-item">
-                            <div class="pf-v6-c-chip">
-                              <span class="pf-v6-c-chip__text">{{ . }}</span>
-                            </div>
+                          <li class="pf-v6-c-label-group__list-item">
+                            <span class="pf-v6-c-label">
+                              <span class="pf-v6-c-label__content">
+                                <span class="pf-v6-c-label__text">
+                                  {{ . }}
+                                </span>
+                              </span>
+                            </span>
                           </li>
                         {{ end }}
                       </ul>
@@ -137,7 +145,10 @@
                   {{ end }}
                 </div>
 
-                <a href="/articles" class="pf-v6-c-button pf-m-link pf-v6-u-mt-lg">
+                <a
+                  href="/articles"
+                  class="pf-v6-c-button pf-m-link pf-v6-u-mt-lg"
+                >
                   <span class="pf-v6-c-button__icon pf-m-start">
                     <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
                   >All articles</a
