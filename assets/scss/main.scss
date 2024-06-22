@@ -303,11 +303,11 @@ $bg: "/img/bg.webp";
 }
 
 .pf-v6-x-u-color-light-100 {
-  color: var(--pf-t--color--black);
+  color: var(--pf-t--color--white);
 }
 
 .pf-v6-x-u-color-light-200 {
-  color: var(--pf-t--color--black);
+  color: #f0f0f0; // We don't have grey tones in PatternFly v6 yet
 }
 
 .pf-v6-c-label--transparent {
@@ -421,6 +421,8 @@ $bg: "/img/bg.webp";
   @media screen and (max-width: 760px) {
     border-radius: 0;
   }
+
+  overflow-y: hidden;
 }
 
 .pf-v6-c-card--transparent {

@@ -4,10 +4,10 @@
       background: var(--pf-t--color--black)
       icon: docs/icon-light.png
     - slug: pojntfx/go-nbd
-      background: var(--pf-t--color--orange--40)
+      background: var(--pf-t--color--orange--60)
       icon: docs/icon-light.png
     - slug: pojntfx/stfs
-      background: var(--pf-t--color--blue--40)
+      background: var(--pf-t--color--purple--70)
     - slug: pojntfx/tapisk
       background: var(--pf-t--color--green--70)
       icon: docs/icon-light.png
@@ -18,7 +18,7 @@
       icon: assets/bofied Icon.svg
     - slug: pojntfx/r3map
       icon: docs/icon-light.png
-      background: var(--pf-t--color--orange--40)
+      background: var(--pf-t--color--orange--60)
     - slug: pojntfx/ram-dl
       icon: docs/icon-light.png
       background: var(--pf-t--color--black)
@@ -31,7 +31,7 @@
       background: var(--pf-t--color--green--60)
       icon: docs/icon.svg
     - slug: pojntfx/multiplex
-      background: var(--pf-t--color--orange--40)
+      background: var(--pf-t--color--orange--60)
       icon: docs/icon.svg
     - slug: pojntfx/keygaen
       background: var(--pf-t--color--blue--50)
@@ -39,7 +39,7 @@
     - slug: pojntfx/keystoregaen
       background: var(--pf-t--color--black)
     - slug: pojntfx/html2goapp
-      background: var(--pf-t--color--blue--40)
+      background: var(--pf-t--color--purple--70)
 - title: Development Tooling
   projects:
     - slug: pojntfx/bagccgop
@@ -54,7 +54,7 @@
     - slug: pojntfx/alpimager
       background: var(--pf-t--color--black)
     - slug: pojntfx/octarchive
-      background: var(--pf-t--color--orange--40)
+      background: var(--pf-t--color--orange--60)
       icon: docs/icon-light.png
     - slug: pojntfx/pojde
       background: var(--pf-t--color--green--70)
@@ -63,25 +63,25 @@
 - title: Distributed Computing
   projects:
     - slug: pojntfx/saltpanelo
-      background: var(--pf-t--color--blue--40)
+      background: var(--pf-t--color--purple--70)
       icon: docs/icon-light.png
     - slug: pojntfx/panrpc
       background: var(--pf-t--color--blue--70)
       icon: docs/icon.svg
     - slug: pojntfx/unisockets
-      background: var(--pf-t--color--orange--40)
+      background: var(--pf-t--color--orange--60)
     - slug: pojntfx/tinynet
       background: var(--pf-t--color--blue--60)
     - slug: pojntfx/nebulark
       background: var(--pf-t--color--orange--60)
     - slug: pojntfx/webnetes
-      background: var(--pf-t--color--red--50)
+      background: var(--pf-t--color--red--60)
 - title: Management Daemons
   projects:
     - slug: pojntfx/go-isc-dhcp
       background: var(--pf-t--color--black)
     - slug: pojntfx/gon2n
-      background: var(--pf-t--color--blue--40)
+      background: var(--pf-t--color--purple--70)
     - slug: pojntfx/ipxebuilderd
       background: var(--pf-t--color--blue--60)
     - slug: pojntfx/dibs
@@ -93,15 +93,15 @@
     - slug: pojntfx/uni-distributedsystems-notes
       background: var(--pf-t--color--orange--60)
     - slug: pojntfx/uni-programminglanguages-notes
-      background: var(--pf-t--color--blue--40)
+      background: var(--pf-t--color--purple--70)
     - slug: pojntfx/uni-supply-chain-paper
-      background: var(--pf-t--color--red--50)
+      background: var(--pf-t--color--red--60)
     - slug: pojntfx/uni-netpractice-notes
       background: var(--pf-t--color--orange--60)
     - slug: pojntfx/uni-webtopics-notes
       background: var(--pf-t--color--blue--60)
     - slug: pojntfx/uni-sciwriting-notes
-      background: var(--pf-t--color--orange--40)
+      background: var(--pf-t--color--orange--60)
     - slug: pojntfx/uni-appsecurity-notes
       background: var(--pf-t--color--green--60)
     - slug: pojntfx/uni-hci-notes
@@ -122,17 +122,17 @@
       background: var(--pf-t--color--black)
       icon: docs/icon-light.png
     - slug: pojntfx/minitel
-      background: var(--pf-t--color--blue--40)
+      background: var(--pf-t--color--purple--70)
     - slug: pojntfx/box
       background: var(--pf-t--color--blue--60)
     - slug: pojntfx/abizeitung
       background: var(--pf-t--color--blue--70)
     - slug: pojntfx/networked-linux-memsync
-      background: var(--pf-t--color--red--50)
+      background: var(--pf-t--color--red--60)
 - title: Websites
   projects:
     - slug: pojntfx/felicitas.pojtinger.com
-      background: var(--pf-t--color--orange--40)
+      background: var(--pf-t--color--orange--60)
     - slug: pojntfx/pojtinger.com
       background: var(--pf-t--color--blue--60)
     - slug: morniteaque/yaraamendiares.eu
@@ -142,7 +142,7 @@
     - slug: pojntfx/illustrierte-website
       background: var(--pf-t--color--orange--60)
     - slug: pojntfx/physio-dani.de
-      background: var(--pf-t--color--red--50)
+      background: var(--pf-t--color--red--60)
 - title: Integrations
   projects:
     - slug: pojntfx/simple-direct-democracy-frontend
@@ -162,6 +162,6 @@
     - slug: pojntfx/libresat
       background: var(--pf-t--color--black)
     - slug: pojntfx/clusterplatform
-      background: var(--pf-t--color--blue--40)
+      background: var(--pf-t--color--purple--70)
     - slug: pojntfx/opensdcp-website
       background: var(--pf-t--color--blue--60)
