@@ -116,7 +116,9 @@ $bg: "/img/bg.webp";
 
 .pf-v6-x-u-transparent {
   background: transparent;
+}
 
+.pf-v6-x-u-borderless {
   &::before {
     border-width: 0;
   }
@@ -402,12 +404,22 @@ $bg: "/img/bg.webp";
 .pf-v6-c-card--full-width {
   @media screen and (max-width: 991px) {
     border-radius: 0;
+
+    &::before {
+      border-left-width: 0;
+      border-right-width: 0;
+    }
   }
 }
 
 .pf-v6-c-card--full-width-lg {
   @media screen and (max-width: 1199px) {
     border-radius: 0;
+
+    &::before {
+      border-left-width: 0;
+      border-right-width: 0;
+    }
   }
 }
 
@@ -415,6 +427,10 @@ $bg: "/img/bg.webp";
   @media screen and (max-width: 1128px) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+
+    &::before {
+      border-left-width: 0;
+    }
   }
 }
 
@@ -424,12 +440,21 @@ $bg: "/img/bg.webp";
   @media screen and (max-width: 1128px) {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0;
+
+    &::before {
+      border-right-width: 0;
+    }
   }
 }
 
 .pf-v6-c-card--lastcommit {
   @media screen and (max-width: 760px) {
     border-radius: 0;
+
+    &::before {
+      border-left-width: 0;
+      border-right-width: 0;
+    }
   }
 
   overflow-y: hidden;

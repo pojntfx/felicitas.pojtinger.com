@@ -2,7 +2,7 @@
   <main
     class="pf-v6-c-page__main pf-v6-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
       pf-v6-c-page__main--with-overlay--grid
-    {{ end }} pf-v6-x-u-blur pf-v6-x-u-transparent {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
+    {{ end }} pf-v6-x-u-blur pf-v6-x-u-transparent pf-v6-x-u-borderless {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
       pf-v6-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
         pf-v6-c-page__main--with-effects--without-blur
       {{ end }}
@@ -11,7 +11,7 @@
     id="main"
   >
     <section
-      class="pf-v6-c-page__main-section pf-m-fill pf-v6-x-u-transparent pf-v6-c-page__main-section--max-width pf-v6-u-px-0 pf-v6-u-pb-0 pf-v6-u-pt-0 pf-v6-u-pt-md-on-lg"
+      class="pf-v6-c-page__main-section pf-m-fill pf-v6-x-u-transparent pf-v6-x-u-borderless pf-v6-c-page__main-section--max-width pf-v6-u-px-0 pf-v6-u-pb-0 pf-v6-u-pt-0 pf-v6-u-pt-md-on-lg"
     >
       <div class="pf-v6-l-grid pf-m-gutter">
         <div class="pf-v6-l-grid__item pf-m-12-col pf-m-8-col-on-lg">
