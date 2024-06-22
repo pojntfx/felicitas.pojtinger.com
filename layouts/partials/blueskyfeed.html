@@ -5,21 +5,19 @@
   <div
     class="pf-v6-c-card__title pf-v6-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-v6-u-py-xl"
   >
-    <div class="pf-v6-c-card__title-text">
-      <span>My Skyline</span>
+    <span class="pf-v6-c-card__title-text">My Skyline</span>
 
-      {{ if not .Construction }}
-        <a
-          target="_blank"
-          class="twitterfeed__user__url pf-v6-l-flex pf-m-align-items-center"
-        >
-          <img
-            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-            alt="Bluesky follower count"
-          />
-        </a>
-      {{ end }}
-    </div>
+    {{ if not .Construction }}
+      <a
+        target="_blank"
+        class="twitterfeed__user__url pf-v6-l-flex pf-m-align-items-center"
+      >
+        <img
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+          alt="Bluesky follower count"
+        />
+      </a>
+    {{ end }}
   </div>
   <div class="pf-v6-c-card__body twitterfeed">
     {{ if .Construction }}

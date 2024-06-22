@@ -5,21 +5,19 @@
   <div
     class="pf-v6-c-card__title pf-v6-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-v6-u-py-xl"
   >
-    <div class="pf-v6-c-card__title-text">
-      <span>Latest tweets</span>
+    <span class="pf-v6-c-card__title-text">Latest Tweets</span>
 
-      {{ if not .Construction }}
-        <a
-          target="_blank"
-          class="twitterfeed__user__url pf-v6-l-flex pf-m-align-items-center"
-        >
-          <img
-            src="https://img.shields.io/twitter/follow/{{ .Username }}?label={{ printf `%s%s` `@` .Username }}&style=social"
-            alt="Twitter badge"
-          />
-        </a>
-      {{ end }}
-    </div>
+    {{ if not .Construction }}
+      <a
+        target="_blank"
+        class="twitterfeed__user__url pf-v6-l-flex pf-m-align-items-center"
+      >
+        <img
+          src="https://img.shields.io/twitter/follow/{{ .Username }}?label={{ printf `%s%s` `@` .Username }}&style=social"
+          alt="Twitter badge"
+        />
+      </a>
+    {{ end }}
   </div>
   <div class="pf-v6-c-card__body twitterfeed">
     {{ if .Construction }}
