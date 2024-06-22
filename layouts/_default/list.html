@@ -25,7 +25,7 @@
                 class="pf-v6-u-color-100 pf-v6-x-m-no-decoration"
               >
                 <div
-                  class="pf-v6-c-card pf-m-compact pf-m-hoverable-raised pf-v6-u-h-100"
+                  class="pf-v6-c-card pf-m-compact pf-m-clickable pf-v6-u-h-100"
                 >
                   <div class="pf-v6-c-card__header pf-v6-u-p-0">
                     <div
@@ -39,7 +39,10 @@
                     </div>
                   </div>
                   <div class="pf-v6-c-card__title pf-v6-u-pt-md pf-v6-u-pb-sm">
-                    {{ .Title }}
+                    <div class="pf-v6-c-card__title-text">
+                        {{ .Title }}
+                      </div>
+                    </div>
                   </div>
                   {{ if .Params.Excerpt }}
                     <div class="pf-v6-c-card__body pf-v6-u-pb-sm">

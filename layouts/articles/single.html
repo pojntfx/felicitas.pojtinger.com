@@ -28,7 +28,11 @@
               </div>
             </div>
             <div class="pf-v6-c-card__title">
-              <h1 class="pf-v6-u-font-size-4xl pf-v6-u-pb-sm">{{ .Title }}</h1>
+              <h1
+                class="pf-v6-u-font-size-4xl pf-v6-u-pb-sm pf-v6-c-card__title-text"
+              >
+                {{ .Title }}
+              </h1>
 
               {{ if .Params.Excerpt }}
                 <p>{{ .Params.Excerpt }}</p>
@@ -118,7 +122,9 @@
             <div
               class="pf-v6-c-card pf-v6-c-card--full-width pf-v6-u-mt-md pf-v6-c-card--see-also pf-v6-c-card--transparent"
             >
-              <div class="pf-v6-c-card__title">See Also</div>
+              <div class="pf-v6-c-card__title">
+                <div class="pf-v6-c-card__title-text">See Also</div>
+              </div>
               <div class="pf-v6-c-card__body">
                 <div class="pf-v6-l-gallery pf-m-gutter">
                   {{ range $related }}
@@ -128,9 +134,13 @@
                         class="pf-v6-u-color-100 pf-v6-x-m-no-decoration"
                       >
                         <div
-                          class="pf-v6-c-card pf-m-compact pf-m-hoverable-raised pf-v6-u-h-100"
+                          class="pf-v6-c-card pf-m-compact pf-m-clickable pf-v6-u-h-100"
                         >
-                          <div class="pf-v6-c-card__title">{{ .Title }}</div>
+                          <div class="pf-v6-c-card__title">
+                            <div class="pf-v6-c-card__title-text">
+                              {{ .Title }}
+                            </div>
+                          </div>
                           {{ if .Params.Excerpt }}
                             <div class="pf-v6-c-card__body pf-v6-u-pb-sm">
                               {{ .Params.Excerpt }}

@@ -129,7 +129,9 @@
             <div
               class="pf-v6-c-card__title pf-v6-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-v6-u-py-xl"
             >
-              <span>Recent Articles</span>
+              <div class="pf-v6-c-card__title-text">
+                <span>Recent Articles</span>
+              </div>
             </div>
             <div class="pf-v6-c-card__body">
               <ul class="pf-v6-l-flex pf-m-column pf-m-space-items-sm">
@@ -141,7 +143,7 @@
                           href="{{ .Permalink }}"
                           class="pf-v6-u-color-100 pf-v6-x-m-no-decoration"
                         >
-                          <div class="pf-v6-c-card pf-m-hoverable-raised">
+                          <div class="pf-v6-c-card pf-m-clickable">
                             <div class="pf-v6-c-card__header pf-v6-u-p-0">
                               <div
                                 class="pf-v6-c-card__header-main pf-v6-c-card__header-main--fluid"
@@ -156,7 +158,9 @@
                             <div
                               class="pf-v6-c-card__title pf-v6-u-pt-md pf-v6-u-pb-sm"
                             >
-                              {{ .Title }}
+                              <div class="pf-v6-c-card__title-text">
+                                {{ .Title }}
+                              </div>
                             </div>
                             {{ if .Params.Excerpt }}
                               <div class="pf-v6-c-card__body pf-v6-u-pb-sm">
@@ -208,7 +212,9 @@
             <div
               class="pf-v6-c-card__title pf-v6-l-flex pf-m-justify-content-space-between pf-m-align-items-center pf-v6-u-pt-0 pf-v6-u-pb-0 pf-v6-u-px-0"
             >
-              <h2 class="pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding">
+              <h2
+                class="pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding pf-v6-c-card__title-text"
+              >
                 Projects
               </h2>
             </div>
@@ -233,7 +239,7 @@
                             class="pf-v6-x-m-no-decoration pf-v6-x-u-color-light-100"
                           >
                             <div
-                              class="pf-v6-c-card pf-m-hoverable-raised pf-v6-u-h-100"
+                              class="pf-v6-c-card pf-m-clickable pf-v6-u-h-100"
                               style="background: {{ safeCSS .background }}"
                             >
                               <div class="pf-v6-c-card__header">
@@ -250,7 +256,8 @@
                                         class="pf-v6-x-c-project__icon"
                                       />
                                     {{ end }}
-                                    <span class="pf-v6-u-mr-sm"
+                                    <span
+                                      class="pf-v6-u-mr-sm pf-v6-c-card__title-text pf-v6-x-u-color-light-100"
                                       >{{ .title | truncate 18 }}</span
                                     >
                                   </div>
