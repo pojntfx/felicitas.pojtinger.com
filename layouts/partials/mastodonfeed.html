@@ -46,7 +46,7 @@
 
       <a
         target="_blank"
-        class="twitterfeed__user__url pf-v6-c-button pf-m-link"
+        class="twitterfeed__user__url pf-v6-c-button pf-m-link pf-v6-u-mt-lg"
       >
         <span class="pf-v6-c-button__icon pf-m-start">
           <i class="fas fa-arrow-right" aria-hidden="true"></i> </span
@@ -93,7 +93,7 @@
     header.appendChild(userPic);
 
     const usernames = document.createElement("div")
-    usernames.classList.add("pf-v6-l-flex", "pf-m-justify-content-center", "pf-m-align-items-start", "pf-m-space-items-sm", "pf-v6-u-flex-direction-column")
+    usernames.classList.add("pf-v6-u-display-flex", "pf-v6-u-flex-direction-column")
 
     const userDisplayName = document.createElement("span");
     userDisplayName.innerText = mastodonFeed.userDisplayName;
