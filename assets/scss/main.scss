@@ -685,6 +685,7 @@ a.pf-v6-c-button.pf-m-primary,
 .twitterfeed .pf-v6-l-gallery__item img {
   aspect-ratio: 2;
   object-fit: cover;
+  border-radius: var(--pf-t--global--border--radius--medium);
 }
 
 .pf-v6-c-page__header {
@@ -701,4 +702,17 @@ a.pf-v6-c-button.pf-m-primary,
 
 .pf-v6-l-gallery.pf-m-gutter {
   --pf-v6-l-gallery--m-gutter--GridGap: var(--pf-t--global--spacer--sm);
+}
+
+.pf-v6-x-c-avatar--social {
+  height: 50px;
+  width: 50px;
+
+  &__suffix--center {
+    margin-left: 2px;
+  }
+
+  &__suffix--end {
+    margin-left: -2px;
+  }
 }
