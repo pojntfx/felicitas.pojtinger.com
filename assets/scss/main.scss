@@ -699,3 +699,7 @@ a.pf-v6-c-button.pf-m-primary,
 .pf-v6-c-page__main {
   min-height: 100%;
 }
+
+.pf-v6-l-gallery.pf-m-gutter {
+  --pf-v6-l-gallery--m-gutter--GridGap: var(--pf-t--global--spacer--sm);
+}
