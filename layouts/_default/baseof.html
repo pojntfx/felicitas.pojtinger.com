@@ -73,6 +73,17 @@
       </div>
     {{ end }}
 
+    <noscript>Please enable JavaScript to enable automatic dark theme switching.</noscript
+    ><script type="module">
+      const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+      const updateTheme = () => 
+        document.documentElement.classList.toggle("pf-v6-theme-dark", darkModeMediaQuery.matches);
+
+      darkModeMediaQuery.addEventListener("change", updateTheme);
+
+      updateTheme();
+    </script>
 
     <div class="pf-v6-c-page pf-v6-c-page--background">
       <a class="pf-v6-c-skip-to-content pf-v6-c-button pf-m-primary" href="#main"

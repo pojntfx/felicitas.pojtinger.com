@@ -6,7 +6,7 @@ giscus:
   mapping: pathname
   reactionsEnabled: 1
   emitMetadata: 1
-  theme: light
+  theme: preferred_color_scheme
 youtube:
   enabled: false
   username: UC0-pwQXvswpwjMVV_jdFLzg

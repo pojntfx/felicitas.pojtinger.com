@@ -56,7 +56,7 @@ $bg: "/img/bg.webp";
   box-shadow: 0 0 14px var(--pf-t--color--white);
 
   @media (prefers-color-scheme: dark) {
-    box-shadow: 0 0 14px var(--pf-t--color--black);
+    box-shadow: 0 0 4px var(--pf-t--color--black);
   }
 }
 
@@ -76,6 +76,10 @@ $bg: "/img/bg.webp";
   &,
   .pf-v6-c-menu-toggle {
     color: var(--pf-t--color--black);
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--pf-t--color--white);
+    }
   }
 
   &--standalone {
@@ -126,6 +130,10 @@ $bg: "/img/bg.webp";
 
 .pf-v6-x-octocat {
   width: 90px;
+
+  @media (prefers-color-scheme: dark) {
+    filter: invert(1);
+  }
 }
 
 .pf-v6-x-u-blur {
@@ -134,7 +142,7 @@ $bg: "/img/bg.webp";
   background: rgba(255, 255, 255, 0.7) !important;
 
   @media (prefers-color-scheme: dark) {
-    background: rgba(255, 255, 255, 0.88) !important;
+    background: rgba(41, 41, 41, 0.7) !important;
   }
 }
 
@@ -152,7 +160,7 @@ $bg: "/img/bg.webp";
   }
 
   @media (prefers-color-scheme: dark) {
-    background-color: rgba(0, 0, 0, 0.8) !important;
+    background-color: rgba(41, 41, 41, 0.5) !important;
 
     &--grid {
       background-image: radial-gradient(
@@ -289,6 +297,11 @@ $bg: "/img/bg.webp";
 
 .pf-v6-c-page__header-brand-link--no-decoration {
   color: var(--pf-t--color--black);
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--pf-t--color--white);
+  }
+
   text-decoration: none;
 }
 
@@ -300,6 +313,10 @@ $bg: "/img/bg.webp";
 
 .pf-v6-x-m-no-highlight--dark {
   color: var(--pf-t--color--black);
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--pf-t--color--white);
+  }
 }
 
 .pf-v6-l-gallery--max-350 {
@@ -359,6 +376,10 @@ $bg: "/img/bg.webp";
 
 .pf-v6-c-button--header {
   color: var(--pf-t--color--black) !important;
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--pf-t--color--white) !important;
+  }
 }
 
 .pf-v6-c-menu {
@@ -381,6 +402,10 @@ $bg: "/img/bg.webp";
 
 .pf-v6-x-u-text-shadow-sm {
   text-shadow: 0 0 4px var(--pf-t--color--white);
+
+  @media (prefers-color-scheme: dark) {
+    text-shadow: 0 0 4px var(--pf-t--color--black);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +502,7 @@ $bg: "/img/bg.webp";
   background: rgba(255, 255, 255, 0.5) !important;
 
   @media (prefers-color-scheme: dark) {
-    background: rgba(255, 255, 255, 0.88) !important;
+    background: rgba(41, 41, 41, 0.5) !important;
   }
 
   > .pf-v6-c-card__title {
@@ -496,10 +521,18 @@ $bg: "/img/bg.webp";
 
 .pf-v6-u-color-100 {
   color: #232323; // We don't have grey tones in PatternFly v6 yet
+
+  @media (prefers-color-scheme: dark) {
+    color: #dcdcdc; // We don't have grey tones in PatternFly v6 yet
+  }
 }
 
 .pf-v6-u-color-200 {
   color: #414141; // We don't have grey tones in PatternFly v6 yet
+
+  @media (prefers-color-scheme: dark) {
+    color: #bebebe; // We don't have grey tones in PatternFly v6 yet
+  }
 }
 
 .fireworks,
@@ -690,6 +723,13 @@ a.pf-v6-c-button.pf-m-primary,
 
 .pf-v6-c-page__header {
   z-index: 10;
+
+  border-bottom: var(--pf-t--global--border--width--box--default)
+    var(--pf-v6-c-card--BorderStyle) var(--pf-t--global--border--color--default);
+
+  &--index {
+    border-bottom: 0;
+  }
 }
 
 .pf-v6-c-page {
@@ -715,4 +755,8 @@ a.pf-v6-c-button.pf-m-primary,
   &__suffix--end {
     margin-left: -2px;
   }
+}
+
+.giscus-frame {
+  border-radius: var(--pf-t--global--border--radius--medium);
 }
