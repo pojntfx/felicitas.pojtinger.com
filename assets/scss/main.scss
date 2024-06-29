@@ -544,7 +544,7 @@ $bg: "/img/bg.webp";
   height: 100% !important;
   position: fixed !important;
   padding-top: 0 !important;
-  z-index: 100 !important;
+  z-index: 5 !important;
 }
 
 .fireworks ~ .snowflakes,
@@ -554,7 +554,10 @@ $bg: "/img/bg.webp";
 }
 
 .pf-v6-c-page__main--with-effects {
+  z-index: 7;
+  position: relative;
   background: transparent !important;
+
   &--without-blur {
     backdrop-filter: none !important;
   }
@@ -589,7 +592,7 @@ $bg: "/img/bg.webp";
   background-size: 100vw * 0.05 100vh * 0.05;
   background-position: 50%;
   transform: rotate(180deg) rotateY(0);
-  z-index: 100 !important;
+  z-index: 5 !important;
 }
 
 .rainfall__border {
@@ -599,7 +602,7 @@ $bg: "/img/bg.webp";
   border-radius: 100%;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
   transform: rotateY(0);
-  z-index: 100 !important;
+  z-index: 5 !important;
 }
 
 @for $i from 1 through 100 {
@@ -759,4 +762,8 @@ a.pf-v6-c-button.pf-m-primary,
 
 .giscus-frame {
   border-radius: var(--pf-t--global--border--radius--medium);
+}
+
+.pf-v6-c-page {
+  background: transparent;
 }
