@@ -73,12 +73,60 @@
       </div>
     {{ end }}
 
-    <noscript>Please enable JavaScript to enable automatic dark theme switching.</noscript
-    ><script type="module">
-      const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    {{ if .Site.Data.effects.sunrays }}
+      <div class="sunrays">
+        <div class="sunrays__sun">
+          <div class="sunrays__sun__ray__box">
+            <div
+              class="sunrays__sun__ray__box__ray sunrays__sun__ray__box__ray--1"
+            ></div>
+            <div
+              class="sunrays__sun__ray__box__ray sunrays__sun__ray__box__ray--2"
+            ></div>
+            <div
+              class="sunrays__sun__ray__box__ray sunrays__sun__ray__box__ray--3"
+            ></div>
+            <div
+              class="sunrays__sun__ray__box__ray sunrays__sun__ray__box__ray--4"
+            ></div>
+            <div
+              class="sunrays__sun__ray__box__ray sunrays__sun__ray__box__ray--5"
+            ></div>
+            <div
+              class="sunrays__sun__ray__box__ray sunrays__sun__ray__box__ray--6"
+            ></div>
+            <div
+              class="sunrays__sun__ray__box__ray sunrays__sun__ray__box__ray--7"
+            ></div>
+            <div
+              class="sunrays__sun__ray__box__ray sunrays__sun__ray__box__ray--8"
+            ></div>
+            <div
+              class="sunrays__sun__ray__box__ray sunrays__sun__ray__box__ray--9"
+            ></div>
+            <div
+              class="sunrays__sun__ray__box__ray sunrays__sun__ray__box__ray--10"
+            ></div>
+          </div>
+        </div>
+      </div>
+    {{ end }}
 
-      const updateTheme = () => 
-        document.documentElement.classList.toggle("pf-v6-theme-dark", darkModeMediaQuery.matches);
+
+    <noscript
+      >Please enable JavaScript to enable automatic dark theme
+      switching.</noscript
+    >
+    <script type="module">
+      const darkModeMediaQuery = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
+
+      const updateTheme = () =>
+        document.documentElement.classList.toggle(
+          "pf-v6-theme-dark",
+          darkModeMediaQuery.matches
+        );
 
       darkModeMediaQuery.addEventListener("change", updateTheme);
 
@@ -86,7 +134,9 @@
     </script>
 
     <div class="pf-v6-c-page pf-v6-c-page--background">
-      <a class="pf-v6-c-skip-to-content pf-v6-c-button pf-m-primary" href="#main"
+      <a
+        class="pf-v6-c-skip-to-content pf-v6-c-button pf-m-primary"
+        href="#main"
         >Skip to content</a
       >
 
@@ -152,7 +202,7 @@
         <main
           class="pf-v6-c-page__main pf-v6-c-page__main--with-overlay {{ if .Site.Data.effects.grid }}
             pf-v6-c-page__main--with-overlay--grid
-          {{ end }} pf-v6-x-u-blur {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall }}
+          {{ end }} pf-v6-x-u-blur {{ if or .Site.Data.effects.fireworks .Site.Data.effects.snowfall .Site.Data.effects.rainfall .Site.Data.effects.sunrays }}
             pf-v6-c-page__main--with-effects{{ if not .Site.Data.effects.blur }}
               pf-v6-c-page__main--with-effects--without-blur
             {{ end }}

@@ -537,7 +537,8 @@ $bg: "/img/bg.webp";
 
 .fireworks,
 .snowflakes,
-.rainfall {
+.rainfall,
+.sunrays {
   @extend .pf-v6-c-page__main--with-overlay;
 
   width: 100% !important;
@@ -766,4 +767,142 @@ a.pf-v6-c-button.pf-m-primary,
 
 .pf-v6-c-page {
   background: transparent;
+}
+
+.sunrays__sun {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 70px;
+  height: 70px;
+
+  transform: scale(8);
+  transition: all 0.2s ease-in-out;
+
+  margin-right: auto;
+  margin-left: -35px;
+  margin-top: -35px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0px 0px 40px 15px rgba(255, 255, 255, 0.8);
+
+  @media (prefers-color-scheme: dark) {
+    transform: scale(5);
+    filter: invert(0.8);
+  }
+
+  &__ray__box {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 70px;
+    animation: sunrays__sun__ray__box__animation 120s linear infinite;
+
+    &__ray {
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      margin-left: 10px;
+      position: absolute;
+      opacity: 0.3;
+
+      &--1 {
+        height: 170px;
+        width: 10px;
+        transform: rotate(180deg);
+        top: -175px;
+        left: 15px;
+      }
+
+      &--2 {
+        height: 100px;
+        width: 8px;
+        transform: rotate(220deg);
+        top: -90px;
+        left: 75px;
+      }
+
+      &--3 {
+        height: 170px;
+        width: 30px;
+        transform: rotate(250deg);
+        top: -80px;
+        left: 100px;
+      }
+
+      &--4 {
+        height: 120px;
+        width: 14px;
+        transform: rotate(305deg);
+        top: 30px;
+        left: 100px;
+      }
+
+      &--5 {
+        height: 140px;
+        width: 20px;
+        transform: rotate(-15deg);
+        top: 60px;
+        left: 40px;
+      }
+
+      &--6 {
+        height: 90px;
+        width: 30px;
+        transform: rotate(30deg);
+        top: 60px;
+        left: -40px;
+      }
+
+      &--7 {
+        height: 180px;
+        width: 10px;
+        transform: rotate(70deg);
+        top: -35px;
+        left: -40px;
+      }
+
+      &--8 {
+        height: 120px;
+        width: 30px;
+        transform: rotate(100deg);
+        top: -45px;
+        left: -90px;
+      }
+
+      &--9 {
+        height: 80px;
+        width: 10px;
+        transform: rotate(120deg);
+        top: -65px;
+        left: -60px;
+      }
+
+      &--10 {
+        height: 190px;
+        width: 23px;
+        transform: rotate(150deg);
+        top: -185px;
+        left: -60px;
+      }
+    }
+  }
+}
+
+@keyframes sunrays__sun__ray__box__animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

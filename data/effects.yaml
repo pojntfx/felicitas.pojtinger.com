@@ -2,4 +2,5 @@ snowfall: false
 fireworks: false
 blur: true
 rainfall: false
-grid: true
+sunrays: true
+grid: false
