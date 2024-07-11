@@ -2,7 +2,7 @@
   projects:
     - slug: pojntfx/weron
       background: var(--pf-t--color--black)
-      icon: docs/icon-light.png
+      icon: docs/icon.svg
     - slug: pojntfx/go-nbd
       background: var(--pf-t--color--orange--60)
       icon: docs/icon-light.png
@@ -25,6 +25,9 @@
     - slug: pojntfx/htorrent
       icon: docs/icon.svg
       background: var(--pf-t--color--blue--60)
+    - slug: loopholelabs/drafter
+      icon: docs/icon.svg
+      background: var(--pf-t--color--black)
 - title: Apps
   projects:
     - slug: pojntfx/connmapper
@@ -40,6 +43,9 @@
       background: var(--pf-t--color--black)
     - slug: pojntfx/html2goapp
       background: var(--pf-t--color--purple--70)
+    - slug: loopholelabs/latensee
+      background: var(--pf-t--color--black)
+      icon: docs/icon.svg
 - title: Development Tooling
   projects:
     - slug: pojntfx/bagccgop
@@ -157,6 +163,12 @@
       background: var(--pf-t--color--purple--60)
     - slug: pojntfx/consumat.io-backend
       background: var(--pf-t--color--black)
+    - slug: pojntfx/skysweeper
+      icon: docs/icon-light.png
+      background: var(--pf-t--color--blue--60)
+    - slug: pojntfx/atmosfeed
+      icon: docs/icon-light.png
+      background: var(--pf-t--color--blue--70)
 - title: Aeronautical Engineering
   projects:
     - slug: pojntfx/libresat
