@@ -61,6 +61,14 @@ $(addprefix uninstall-pwa/,$(sts)):
 run:
 	go run ./cmd/ps-proxy/ -scmd='hugo server --baseURL=/ --appendPort=false'
 
+# Test
+test:
+	go test -timeout 3600s -parallel $(shell nproc) ./...
+
+# Benchmark
+benchmark:
+	go test -timeout 3600s -bench=./... ./...
+
 # Develop
 dev:
 	go run ./cmd/ps-proxy/ -scmd='hugo server -D --baseURL=/ --appendPort=false' -verbose
