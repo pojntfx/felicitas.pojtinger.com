@@ -72,7 +72,7 @@ jobs:
           sudo install /tmp/hydrun /usr/local/bin
       - name: Build with hydrun
         working-directory: ${{ matrix.target.src }}
-        run: hydrun -o ${{ matrix.target.os }} ${{ matrix.target.flags }} "${{ matrix.target.cmd }}"
+        run: hydrun -o ${{ matrix.target.os }} ${{ matrix.target.flags }} "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} ${{ matrix.target.cmd }}"
       - name: Fix permissions for output
         run: sudo chown -R $USER .
       - name: Save ccache
