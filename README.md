@@ -5,7 +5,6 @@ My personal site.
 [![hydrun CI](https://github.com/pojntfx/felicitas.pojtinger.com/actions/workflows/hydrun.yaml/badge.svg)](https://github.com/pojntfx/felicitas.pojtinger.com/actions/workflows/hydrun.yaml)
 ![Go Version](https://img.shields.io/badge/go%20version-%3E=1.16-61CFDD.svg)
 [![Go Reference](https://pkg.go.dev/badge/github.com/pojntfx/felicitas.pojtinger.com.svg)](https://pkg.go.dev/github.com/pojntfx/felicitas.pojtinger.com)
-[![Binary Downloads](https://img.shields.io/github/downloads/pojntfx/felicitas.pojtinger.com/total?label=binary%20downloads)](https://github.com/pojntfx/felicitas.pojtinger.com/releases)
 
 ## Overview
 
