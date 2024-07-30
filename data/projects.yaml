@@ -5,7 +5,7 @@
       icon: docs/icon.svg
     - slug: pojntfx/go-nbd
       background: var(--pf-t--color--orange--60)
-      icon: docs/icon-light.png
+      icon: docs/icon.svg
     - slug: pojntfx/stfs
       background: var(--pf-t--color--purple--70)
     - slug: pojntfx/tapisk
@@ -17,10 +17,10 @@
       background: var(--pf-t--color--blue--70)
       icon: assets/bofied Icon.svg
     - slug: pojntfx/r3map
-      icon: docs/icon-light.png
+      icon: docs/icon.svg
       background: var(--pf-t--color--orange--60)
     - slug: pojntfx/ram-dl
-      icon: docs/icon-light.png
+      icon: docs/icon.svg
       background: var(--pf-t--color--black)
     - slug: pojntfx/htorrent
       icon: docs/icon.svg
@@ -61,7 +61,7 @@
       background: var(--pf-t--color--black)
     - slug: pojntfx/octarchive
       background: var(--pf-t--color--orange--60)
-      icon: docs/icon-light.png
+      icon: docs/icon.svg
     - slug: pojntfx/pojde
       background: var(--pf-t--color--green--70)
     - slug: pojntfx/grpc-examples
@@ -126,7 +126,7 @@
   projects:
     - slug: pojntfx/deliverance
       background: var(--pf-t--color--black)
-      icon: docs/icon-light.png
+      icon: docs/icon.svg
     - slug: pojntfx/minitel
       background: var(--pf-t--color--purple--70)
     - slug: pojntfx/box
