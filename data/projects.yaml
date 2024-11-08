@@ -15,7 +15,7 @@
       background: var(--pf-t--color--blue--60)
     - slug: pojntfx/bofied
       background: var(--pf-t--color--blue--70)
-      icon: assets/bofied Icon.svg
+      icon: docs/icon.svg
     - slug: pojntfx/r3map
       icon: docs/icon.svg
       background: var(--pf-t--color--orange--60)
