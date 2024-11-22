@@ -10,6 +10,8 @@ cta:
   icon: fas fa-plus-circle
   link: https://mastodon.social/@pojntfx
 socials:
+  - title: Bluesky
+    link: https://bsky.app/profile/felicitas.pojtinger.com
   - title: Twitter
     link: https://twitter.com/pojntfx
   - title: Instagram
@@ -17,7 +19,7 @@ socials:
   - title: LinkedIn
     link: https://www.linkedin.com/in/pojntfx/
   - title: Threads
-    link: https://www.threads.net/@pojntfx 
+    link: https://www.threads.net/@pojntfx
   - title: Bluesky
     link: https://bsky.app/profile/felicitas.pojtinger.com
   - separator: true
