@@ -6,18 +6,48 @@
   >
     <div class="pf-v6-l-flex__item">
       <a
-        href="{{ .Site.Data.site.source }}"
+        href="{{ .Site.Data.site.source }}#license"
         target="_blank"
         rel="noopener"
         class="pf-v6-x-m-no-highlight--dark pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding pf-v6-x-m-no-decoration"
-        >© {{ now.Year }} {{ .Site.Data.site.author }}</a
+        >© {{ now.Year }} {{ .Site.Data.site.author }} and contributors
+        (AGPL-3.0)</a
       >
     </div>
     <div class="pf-v6-l-flex__item">
       <a
+        href="{{ .Site.Data.site.source }}"
+        target="_blank"
+        rel="noopener"
+        class="pf-v6-x-m-no-highlight--dark pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding pf-v6-x-m-no-decoration pf-v6-u-mr-sm"
+        ><span class="pf-v6-c-icon pf-v6-u-mr-xs">
+          <span class="pf-v6-c-icon__content">
+            <i class="fas fa-code" aria-hidden="true"></i>
+          </span>
+        </span>
+        Code</a
+      >
+
+      <a
+        href="/privacy/static"
+        class="pf-v6-x-m-no-highlight--dark pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding pf-v6-x-m-no-decoration pf-v6-u-mr-sm"
+        ><span class="pf-v6-c-icon pf-v6-u-mr-xs">
+          <span class="pf-v6-c-icon__content">
+            <i class="fas fa-shield-halved" aria-hidden="true"></i>
+          </span>
+        </span>
+        Privacy</a
+      >
+
+      <a
         href="/imprint"
-        class="pf-v6-x-m-no-highlight--dark pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding pf-v6-x-m-no-decoration"
-        >Imprint</a
+        class="pf-v6-x-m-no-highlight--dark pf-v6-x-u-text-shadow-sm pf-v6-x-u-text--freestanding pf-v6-x-m-no-decoration pf-v6-u-mr-sm"
+        ><span class="pf-v6-c-icon pf-v6-u-mr-xs">
+          <span class="pf-v6-c-icon__content">
+            <i class="fas fa-gavel" aria-hidden="true"></i>
+          </span>
+        </span>
+        Imprint</a
       >
     </div>
   </div>
