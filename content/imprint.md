@@ -1,5 +1,5 @@
 ---
-title: "Imprint/Impressum"
+title: "Imprint/Impressum/Mentions légales"
 date: 2024-12-12T00:30:00+01:00
 draft: false
 ---
