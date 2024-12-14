@@ -189,16 +189,28 @@ $bg: "/img/bg.webp";
 .pf-v6-x-u-blur {
   backdrop-filter: blur(7.5px);
   -webkit-backdrop-filter: blur(7.5px);
-  background: rgba(255, 255, 255, 0.7) !important;
+  background: color-mix(
+    in srgb,
+    var(--pf-x-base-color) 10%,
+    rgba(255, 255, 255, 0.7)
+  ) !important;
 
   @media (prefers-color-scheme: dark) {
-    background: rgba(41, 41, 41, 0.7) !important;
+    background: color-mix(
+      in srgb,
+      var(--pf-x-base-color) 10%,
+      rgba(41, 41, 41, 0.7)
+    ) !important;
   }
 }
 
 .pf-v6-c-page__main--with-overlay {
   padding-top: 100px;
-  background: rgba(255, 255, 255, 0.5) !important;
+  background: color-mix(
+    in srgb,
+    var(--pf-x-base-color) 10%,
+    rgba(255, 255, 255, 0.5)
+  ) !important;
 
   &--grid {
     background-size: 25px 25px !important;
@@ -210,7 +222,11 @@ $bg: "/img/bg.webp";
   }
 
   @media (prefers-color-scheme: dark) {
-    background-color: rgba(41, 41, 41, 0.5) !important;
+    background-color: color-mix(
+      in srgb,
+      var(--pf-x-base-color) 10%,
+      rgba(41, 41, 41, 0.5)
+    ) !important;
 
     &--grid {
       background-image: radial-gradient(
@@ -549,10 +565,18 @@ $bg: "/img/bg.webp";
 .pf-v6-c-card--transparent {
   @extend .pf-v6-x-u-blur;
 
-  background: rgba(255, 255, 255, 0.5) !important;
+  background: color-mix(
+    in srgb,
+    var(--pf-x-base-color) 10%,
+    rgba(255, 255, 255, 0.5)
+  ) !important;
 
   @media (prefers-color-scheme: dark) {
-    background: rgba(41, 41, 41, 0.5) !important;
+    background: color-mix(
+      in srgb,
+      var(--pf-x-base-color) 10%,
+      rgba(41, 41, 41, 0.5)
+    ) !important;
   }
 
   > .pf-v6-c-card__title {
