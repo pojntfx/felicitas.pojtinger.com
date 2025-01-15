@@ -6,485 +6,168 @@ draft: false
 
 ## English
 
-### 1. Privacy at a Glance
+**TLDR:** You have full control and responsibility over your data. We have a minimum-collection policy. Aside from essential data required to keep the service running, we are not collecting additional user or tracking data. Our service is only available to users from the EU/EEA, with a minimum age requirement of 16.
 
-#### General Information
-
-The following notes provide a simple overview of what happens with your personal data when you visit this website. Personal data is any data that can be used to personally identify you. For detailed information about privacy, please refer to our privacy policy listed below this text.
-
-#### Data Collection on this Website
-
-##### Who is responsible for data collection on this website?
-
-Data processing on this website is carried out by the website operator. You can find their contact details in the "Information about the Responsible Party" section of this privacy policy.
-
-##### How do we collect your data?
-
-Your data is collected in one way through your sharing of information with us. This might be data you enter into a contact form, for example.
-
-Other data is automatically collected or collected after your consent when visiting the website by our IT systems. This is primarily technical data (e.g., internet browser, operating system, or time of page view). This data is collected automatically as soon as you enter this website.
-
-##### What do we use your data for?
-
-Part of the data is collected to ensure error-free provision of the website. Other data may be used to analyze your user behavior. If contracts can be concluded or initiated through the website, the transmitted data will also be processed for contract offers, orders, or other order inquiries.
-
-##### What rights do you have regarding your data?
-
-You have the right to receive information about the origin, recipient, and purpose of your stored personal data free of charge at any time. You also have the right to request the correction or deletion of this data. If you have given consent to data processing, you can revoke this consent at any time for the future. You also have the right, under certain circumstances, to request the restriction of the processing of your personal data. Furthermore, you have the right to lodge a complaint with the competent supervisory authority.
-
-You can contact us at any time regarding this and other questions about data protection.
-
-### 2. Hosting
-
-We host the contents of our website with the following provider:
-
-#### External Hosting
-
-This website is hosted externally. The personal data collected on this website is stored on the servers of the host(s). This may include IP addresses, contact requests, meta and communication data, contract data, contact details, names, website access, and other data generated through a website.
-
-External hosting is done for the purpose of contract fulfillment with our potential and existing customers (Art. 6(1)(b) GDPR) and in the interest of secure, fast, and efficient provision of our online offering by a professional provider (Art. 6(1)(f) GDPR). If appropriate consent has been obtained, the processing is carried out exclusively on the basis of Art. 6(1)(a) GDPR and § 25(1) TDDDG, insofar as the consent includes the storage of cookies or access to information in the user's end device (e.g., device fingerprinting) within the meaning of the TDDDG. The consent can be revoked at any time.
-
-Our host(s) will only process your data to the extent necessary to fulfill their service obligations and follow our instructions regarding this data.
-
-We use the following host(s):
-
-Vercel Inc.<br/>
-440 N Barranca Ave PMB 4133<br/>
-Covina, CA 91723<br/>
-United States
-
-Railway Corp.<br/>
-548 Market St PMB 68956<br/>
-San Francisco, CA 94104<br/>
-United States
-
-Okta, Inc<br/>
-<br/>
-1st St Ste 600<br/>
-San Francisco, CA 94105-4687<br/>
-United States
-
-### 3. General Information and Mandatory Information
-
-#### Data Protection
-
-The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with statutory data protection regulations and this privacy policy.
-
-When you use this website, various personal data is collected. Personal data is data that can be used to personally identify you. This privacy policy explains what data we collect and what we use it for. It also explains how and for what purpose this happens.
-
-We point out that data transmission over the Internet (e.g., when communicating via email) may have security vulnerabilities. Complete protection of data against access by third parties is not possible.
-
-#### Information about the Responsible Party
-
-The responsible party for data processing on this website is:
+### Controller/Privacy Officer
 
 Felicitas Pojtinger<br/>
 Hirschkopfweg 8<br/>
 72270 Baiersbronn<br/>
-Germany
-
+Germany<br/>
 Phone: <a href="tel:+49 152 33842326">+49 152 33842326</a><br/>
 Email: <a href="mailto:felicitas@pojtinger.com">felicitas@pojtinger.com</a>
 
-The responsible party is the natural or legal person who alone or jointly with others determines the purposes and means of the processing of personal data (e.g., names, email addresses, etc.).
+### Data We Process
 
-#### Storage Duration
+We process only the data you explicitly provide through our website, the data necessary for authentication and standard server logs (including IP addresses and timestamps).
 
-Unless a more specific storage period has been specified within this privacy policy, your personal data remains with us until the purpose for data processing no longer applies. If you submit a legitimate deletion request or revoke your consent for data processing, your data will be deleted unless we have other legally permissible reasons for storing your personal data (e.g., tax or commercial law retention periods); in the latter case, the deletion occurs after these reasons no longer apply.
+### Legal Basis and Purpose
 
-#### General Information about the Legal Basis for Data Processing on this Website
+- We process your data based on Article 6(1)(b) GDPR to provide our services to you
+- Authentication data is processed to secure your account
 
-If you have consented to data processing, we process your personal data on the basis of Art. 6(1)(a) GDPR or Art. 9(2)(a) GDPR if special categories of data according to Art. 9(1) GDPR are processed. In the case of explicit consent to the transfer of personal data to third countries, the data processing is also based on Art. 49(1)(a) GDPR. If you have consented to the storage of cookies or to the access to information in your end device (e.g., via device fingerprinting), the data processing is additionally based on § 25(1) TDDDG. The consent can be revoked at any time. If your data is required for contract fulfillment or to carry out pre-contractual measures, we process your data on the basis of Art. 6(1)(b) GDPR. Furthermore, we process your data if this is necessary to fulfill a legal obligation based on Art. 6(1)(c) GDPR. Data processing may also be carried out on the basis of our legitimate interest according to Art. 6(1)(f) GDPR. Information about the relevant legal bases in each individual case is provided in the following paragraphs of this privacy policy.
+### Data Recipients
 
-#### Recipients of Personal Data
+The website and your provided data are hosted by:
 
-As part of our business activities, we work with various external parties. In some cases, the transfer of personal data to these external parties is necessary. We only transfer personal data to external parties if this is necessary for contract fulfillment, if we are legally obligated to do so (e.g., transfer of data to tax authorities), if we have a legitimate interest according to Art. 6(1)(f) GDPR in the transfer, or if another legal basis permits the data transfer. When using processors, we only transfer personal data of our customers on the basis of a valid contract for order processing. In the case of joint processing, a contract for joint processing is concluded.
+Vercel Inc.<br/>
+440 N Barranca Ave PMB 4133<br/>
+Covina, CA 91723<br/>
+United States<br/>
+Privacy policy: <a href="https://vercel.com/legal/privacy-policy">https://vercel.com/legal/privacy-policy</a>
 
-#### Revocation of Your Consent to Data Processing
+Railway Corp.<br/>
+548 Market St PMB 68956<br/>
+San Francisco, CA 94104<br/>
+United States<br/>
+Privacy policy: <a href="https://railway.com/legal/privacy">https://railway.com/legal/privacy</a>
 
-Many data processing operations are only possible with your express consent. You can revoke consent that you have already given at any time. The legality of the data processing carried out until the revocation remains unaffected by the revocation.
+Login is handled by:
 
-#### Right to Object to Data Collection in Special Cases and to Direct Marketing (Art. 21 GDPR)
+Okta, Inc<br/>
+1st St Ste 600<br/>
+San Francisco, CA 94105-4687<br/>
+United States<br/>
+Privacy policy: <a href="https://www.okta.com/privacy-policy/">https://www.okta.com/privacy-policy/</a>
 
-IF DATA PROCESSING IS CARRIED OUT ON THE BASIS OF ART. 6(1)(E) OR (F) GDPR, YOU HAVE THE RIGHT TO OBJECT TO THE PROCESSING OF YOUR PERSONAL DATA AT ANY TIME FOR REASONS ARISING FROM YOUR PARTICULAR SITUATION; THIS ALSO APPLIES TO PROFILING BASED ON THESE PROVISIONS. THE RESPECTIVE LEGAL BASIS ON WHICH PROCESSING IS BASED CAN BE FOUND IN THIS PRIVACY POLICY. IF YOU OBJECT, WE WILL NO LONGER PROCESS YOUR AFFECTED PERSONAL DATA UNLESS WE CAN DEMONSTRATE COMPELLING LEGITIMATE GROUNDS FOR THE PROCESSING WHICH OVERRIDE YOUR INTERESTS, RIGHTS AND FREEDOMS, OR THE PROCESSING SERVES THE PURPOSE OF ASSERTING, EXERCISING OR DEFENDING LEGAL CLAIMS (OBJECTION ACCORDING TO ART. 21(1) GDPR).
+These companies are based in the United States. Data transfers to the US are based on appropriate safeguards according to Article 46 GDPR.
 
-IF YOUR PERSONAL DATA IS PROCESSED FOR DIRECT MARKETING PURPOSES, YOU HAVE THE RIGHT TO OBJECT AT ANY TIME TO THE PROCESSING OF PERSONAL DATA CONCERNING YOU FOR THE PURPOSE OF SUCH MARKETING; THIS ALSO APPLIES TO PROFILING TO THE EXTENT THAT IT IS RELATED TO SUCH DIRECT MARKETING. IF YOU OBJECT, YOUR PERSONAL DATA WILL SUBSEQUENTLY NO LONGER BE USED FOR DIRECT MARKETING PURPOSES (OBJECTION ACCORDING TO ART. 21(2) GDPR).
+### Storage Duration
 
-#### Right to File a Complaint with the Competent Supervisory Authority
+Server logs are retained for 30 days. All other data is stored until you request deletion or terminate your account.
 
-In the case of violations of the GDPR, data subjects have the right to file a complaint with a supervisory authority, particularly in the Member State of their habitual residence, their place of work, or the place of the alleged violation. The right to file a complaint is without prejudice to any other administrative or judicial remedy.
+### Your Rights
 
-#### Right to Data Portability
-
-You have the right to have data that we process automatically on the basis of your consent or in fulfillment of a contract handed over to you or to a third party in a common, machine-readable format. If you request the direct transfer of the data to another controller, this will only be done insofar as it is technically feasible.
-
-#### Information, Correction, and Deletion
-
-Within the framework of the applicable legal provisions, you have the right at any time to free information about your stored personal data, its origin and recipients, and the purpose of data processing, and, if applicable, a right to correction or deletion of this data. You can contact us at any time regarding this and other questions about personal data.
-
-#### Right to Restriction of Processing
-
-You have the right to request the restriction of the processing of your personal data. You can contact us at any time for this purpose. The right to restriction of processing exists in the following cases:
-
-- If you dispute the accuracy of your personal data stored by us, we usually need time to verify this. For the duration of the verification, you have the right to request the restriction of the processing of your personal data.
-- If the processing of your personal data happened/is happening unlawfully, you can request the restriction of data processing instead of deletion.
-- If we no longer need your personal data, but you need it to exercise, defend or assert legal claims, you have the right to request restriction of the processing of your personal data instead of deletion.
-- If you have filed an objection according to Art. 21(1) GDPR, a balance must be struck between your and our interests. As long as it has not been determined whose interests prevail, you have the right to request the restriction of the processing of your personal data.
-
-If you have restricted the processing of your personal data, this data may – apart from being stored – only be processed with your consent or for the assertion, exercise, or defense of legal claims or for the protection of the rights of another natural or legal person or for reasons of important public interest of the European Union or a Member State.
-
-#### SSL or TLS Encryption
-
-This site uses SSL or TLS encryption for security reasons and to protect the transmission of confidential content, such as orders or inquiries that you send to us as the site operator. You can recognize an encrypted connection by the fact that the address line of the browser changes from "http://" to "https://" and by the lock symbol in your browser line.
-
-When SSL or TLS encryption is activated, the data you transfer to us cannot be read by third parties.
-
-#### Objection to Promotional Emails
-
-The use of contact data published within the framework of the imprint obligation for the transmission of advertising and information materials not expressly requested is hereby rejected. The operators of the pages expressly reserve the right to take legal action in the event of the unsolicited sending of advertising information, such as spam emails.
-
-### 4. Data Collection on this Website
-
-#### Cookies
-
-Our websites use so-called "cookies". Cookies are small data packages and cause no harm to your end device. They are stored either temporarily for the duration of a session (session cookies) or permanently (permanent cookies) on your end device. Session cookies are automatically deleted after your visit. Permanent cookies remain stored on your end device until you delete them yourself or until they are automatically deleted by your web browser.
-
-Cookies can come from us (first-party cookies) or from third-party companies (so-called third-party cookies). Third-party cookies enable the integration of certain services from third-party companies within websites (e.g., cookies for processing payment services).
-
-Cookies have various functions. Many cookies are technically necessary, as certain website functions would not work without them (e.g., the shopping cart function or the display of videos). Other cookies can be used to analyze user behavior or for advertising purposes.
-
-Cookies that are necessary for carrying out the electronic communication process, for providing certain functions you want (e.g., for the shopping cart function), or for optimizing the website (e.g., cookies for measuring the web audience) are stored on the basis of Art. 6(1)(f) GDPR, unless another legal basis is specified. The website operator has a legitimate interest in storing necessary cookies for the technically error-free and optimized provision of its services. If consent to store cookies and similar recognition technologies has been requested, processing is carried out exclusively on the basis of this consent (Art. 6(1)(a) GDPR and § 25(1) TDDDG); the consent can be revoked at any time.
-
-You can set your browser so that you are informed about the setting of cookies and only allow cookies in individual cases, exclude the acceptance of cookies for certain cases or in general, and activate the automatic deletion of cookies when closing the browser. When deactivating cookies, the functionality of this website may be limited.
-
-Which cookies and services are used on this website can be found in this privacy policy.
-
-#### Inquiries by Email, Phone, or Fax
-
-If you contact us by email, phone, or fax, your inquiry including all resulting personal data (name, inquiry) will be stored and processed by us for the purpose of handling your request. We do not share this data without your consent.
-
-The processing of this data is based on Art. 6(1)(b) GDPR if your inquiry is related to the fulfillment of a contract or is necessary for carrying out pre-contractual measures. In all other cases, the processing is based on our legitimate interest in the effective handling of inquiries addressed to us (Art. 6(1)(f) GDPR) or on your consent (Art. 6(1)(a) GDPR) if this has been requested; the consent can be revoked at any time.
-
-The data you send to us via contact requests remains with us until you request us to delete it, revoke your consent to storage, or the purpose for data storage no longer applies (e.g., after your request has been processed). Mandatory statutory provisions – especially statutory retention periods – remain unaffected.
+To exercise your right to data portability and erasure, you can manage it directly in our interface (export, import, delete). Your data is available in a structured, commonly used format. You also have the right to information, access, rectification, restrict processing, object to processing, and avoid automated decision-making. Contact us for any questions. We will respond to requests within 30 days.
 
 ## Deutsch
 
-### 1. Datenschutz auf einen Blick
+**Kurz und bündig:** Sie haben die volle Kontrolle und Verantwortung über Ihre Daten. Wir verfolgen eine Minimal-Erfassungspolitik. Abgesehen von wesentlichen Daten, die für den Betrieb des Dienstes erforderlich sind, erfassen wir keine zusätzlichen Benutzer- oder Tracking-Daten. Unser Dienst steht nur Nutzern aus der EU/EWR zur Verfügung, mit einem Mindestalter von 16 Jahren.
 
-#### Allgemeine Hinweise
-
-Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.
-
-#### Datenerfassung auf dieser Website
-
-##### Wer ist verantwortlich für die Datenerfassung auf dieser Website?
-
-Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle" in dieser Datenschutzerklärung entnehmen.
-
-##### Wie erfassen wir Ihre Daten?
-
-Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.B. um Daten handeln, die Sie in ein Kontaktformular eingeben.
-
-Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.
-
-##### Wofür nutzen wir Ihre Daten?
-
-Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden. Sofern über die Website Verträge geschlossen oder angebahnt werden können, werden die übermittelten Daten auch für Vertragsangebote, Bestellungen oder sonstige Auftragsanfragen verarbeitet.
-
-##### Welche Rechte haben Sie bezüglich Ihrer Daten?
-
-Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
-
-Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.
-
-### 2. Hosting
-
-Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
-
-#### Externes Hosting
-
-Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters / der Hoster gespeichert. Hierbei kann es sich v.a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.
-
-Das externe Hosting erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z.B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.
-
-Unser(e) Hoster wird bzw. werden Ihre Daten nur insoweit verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen.
-
-Wir setzen folgende(n) Hoster ein:
-
-Vercel Inc.<br/>
-440 N Barranca Ave PMB 4133<br/>
-Covina, CA 91723<br/>
-Vereinigte Staaten
-
-Railway Corp.<br/>
-548 Market St PMB 68956<br/>
-San Francisco, CA 94104<br/>
-Vereinigte Staaten
-
-Okta, Inc<br/>
-<br/>
-1st St Ste 600<br/>
-San Francisco, CA 94105-4687<br/>
-Vereinigte Staaten
-
-### 3. Allgemeine Hinweise und Pflicht­informationen
-
-#### Datenschutz
-
-Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
-
-Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.
-
-Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
-
-#### Hinweis zur verantwortlichen Stelle
-
-Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
+### Verantwortlicher/Datenschutzbeauftragter
 
 Felicitas Pojtinger<br/>
 Hirschkopfweg 8<br/>
 72270 Baiersbronn<br/>
-Germany
-
+Deutschland<br/>
 Telefon: <a href="tel:+49 152 33842326">+49 152 33842326</a><br/>
 E-Mail: <a href="mailto:felicitas@pojtinger.com">felicitas@pojtinger.com</a>
 
-Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail- Adressen o. Ä.) entscheidet.
+### Verarbeitete Daten
 
-#### Speicherdauer
+Wir verarbeiten nur die Daten, die Sie ausdrücklich über unsere Website bereitstellen, die für die Authentifizierung notwendigen Daten und Standard-Serverprotokolle (einschließlich IP-Adressen und Zeitstempel).
 
-Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z.B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.
+### Rechtsgrundlage und Zweck
 
-#### Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website
+- Wir verarbeiten Ihre Daten auf Grundlage von Artikel 6 Absatz 1 Buchstabe b DSGVO zur Erbringung unserer Dienstleistungen
+- Authentifizierungsdaten werden zur Sicherung Ihres Kontos verarbeitet
 
-Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im Falle einer ausdrücklichen Einwilligung in die Übertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung außerdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in Ihr Endgerät (z.B. via Device-Fingerprinting) eingewilligt haben, erfolgt die Datenverarbeitung zusätzlich auf Grundlage von § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur Vertragserfüllung oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erfüllung einer rechtlichen Verpflichtung erforderlich sind auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. Über die jeweils im Einzelfall einschlägigen Rechtsgrundlagen wird in den folgenden Absätzen dieser Datenschutzerklärung informiert.
+### Datenempfänger
 
-#### Empfänger von personenbezogenen Daten
-
-Im Rahmen unserer Geschäftstätigkeit arbeiten wir mit verschiedenen externen Stellen zusammen. Dabei ist teilweise auch eine Übermittlung von personenbezogenen Daten an diese externen Stellen erforderlich. Wir geben personenbezogene Daten nur dann an externe Stellen weiter, wenn dies im Rahmen einer Vertragserfüllung erforderlich ist, wenn wir gesetzlich hierzu verpflichtet sind (z.B. Weitergabe von Daten an Steuerbehörden), wenn wir ein berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine sonstige Rechtsgrundlage die Datenweitergabe erlaubt. Beim Einsatz von Auftragsverarbeitern geben wir personenbezogene Daten unserer Kunden nur auf Grundlage eines gültigen Vertrags über Auftragsverarbeitung weiter. Im Falle einer gemeinsamen Verarbeitung wird ein Vertrag über gemeinsame Verarbeitung geschlossen.
-
-#### Widerruf Ihrer Einwilligung zur Datenverarbeitung
-
-Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
-
-#### Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)
-
-WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH FÜR EIN AUF DIESE BESTIMMUNGEN GESTÜTZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKLÄRUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR KÖNNEN ZWINGENDE SCHUTZWÜRDIGE GRÜNDE FÜR DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN ÜBERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUSÜBUNG ODER VERTEIDIGUNG VON RECHTSANSPRÜCHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).
-
-WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH FÜR DAS PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).
-
-#### Beschwerde­recht bei der zuständigen Aufsichts­behörde
-
-Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.
-
-#### Recht auf Daten­übertrag­barkeit
-
-Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.
-
-#### Auskunft, Berichtigung und Löschung
-
-Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit an uns wenden.
-
-#### Recht auf Einschränkung der Verarbeitung
-
-Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu können Sie sich jederzeit an uns wenden. Das Recht auf Einschränkung der Verarbeitung besteht in folgenden Fällen:
-
-- Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, benötigen wir in der Regel Zeit, um dies zu überprüfen. Für die Dauer der Prüfung haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
-- Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtmäßig geschah/geschieht, können Sie statt der Löschung die Einschränkung der Datenverarbeitung verlangen.
-- Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen, Sie sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen benötigen, haben Sie das Recht, statt der Löschung die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
-- Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abwägung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen überwiegen, haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
-
-Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschränkt haben, dürfen diese Daten -- von ihrer Speicherung abgesehen -- nur mit Ihrer Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden.
-
-#### SSL- bzw. TLS-Verschlüsselung
-
-Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile. Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.
-
-#### Widerspruch gegen Werbe-E-Mails
-
-Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-E-Mails, vor.
-
-### 4. Datenerfassung auf dieser Website
-
-#### Cookies
-
-Unsere Internetseiten verwenden so genannte „Cookies". Cookies sind kleine Datenpakete und richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch gelöscht. Permanente Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese selbst löschen oder eine automatische Löschung durch Ihren Webbrowser erfolgt.
-
-Cookies können von uns (First-Party-Cookies) oder von Drittunternehmen stammen (sog. Third-Party-Cookies). Third-Party-Cookies ermöglichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von Webseiten (z.B. Cookies zur Abwicklung von Zahlungsdienstleistungen).
-
-Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, da bestimmte Webseitenfunktionen ohne diese nicht funktionieren würden (z.B. die Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies können zur Auswertung des Nutzerverhaltens oder zu Werbezwecken verwendet werden.
-
-Cookies, die zur Durchführung des elektronischen Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen erwünschter Funktionen (z.B. für die Warenkorbfunktion) oder zur Optimierung der Website (z.B. Cookies zur Messung des Webpublikums) erforderlich sind (notwendige Cookies), werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben wird. Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von notwendigen Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Sofern eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG); die Einwilligung ist jederzeit widerrufbar.
-
-Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.
-
-Welche Cookies und Dienste auf dieser Website eingesetzt werden, können Sie dieser Datenschutzerklärung entnehmen.
-
-#### Anfrage per E-Mail, Telefon oder Telefax
-
-Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
-
-Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.
-
-Die von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen -- insbesondere gesetzliche Aufbewahrungsfristen -- bleiben unberührt.
-
-## Français
-
-### 1. Protection des données en un coup d'œil
-
-#### Informations générales
-
-Les informations suivantes donnent un aperçu simple de ce qui arrive à vos données personnelles lorsque vous visitez ce site web. Les données personnelles sont toutes les données qui permettent de vous identifier personnellement. Pour des informations détaillées sur la protection des données, veuillez consulter notre déclaration de protection des données figurant sous ce texte.
-
-#### Collecte de données sur ce site web
-
-##### Qui est responsable de la collecte des données sur ce site web ?
-
-Le traitement des données sur ce site web est effectué par l'exploitant du site. Vous pouvez trouver ses coordonnées dans la section "Informations sur le responsable" de cette déclaration de protection des données.
-
-##### Comment collectons-nous vos données ?
-
-Vos données sont collectées d'une part lorsque vous nous les communiquez. Il peut s'agir par exemple de données que vous saisissez dans un formulaire de contact.
-
-D'autres données sont automatiquement collectées ou après votre consentement par nos systèmes informatiques lors de la visite du site web. Il s'agit principalement de données techniques (par exemple, navigateur internet, système d'exploitation ou heure de la consultation de la page). La collecte de ces données se fait automatiquement dès que vous accédez à ce site web.
-
-##### À quoi utilisons-nous vos données ?
-
-Une partie des données est collectée pour assurer le bon fonctionnement du site web. D'autres données peuvent être utilisées pour analyser votre comportement d'utilisateur. Si des contrats peuvent être conclus ou initiés via le site web, les données transmises seront également traitées pour les offres de contrat, les commandes ou autres demandes.
-
-##### Quels sont vos droits concernant vos données ?
-
-Vous avez le droit d'obtenir gratuitement des informations sur l'origine, les destinataires et la finalité de vos données personnelles stockées à tout moment. Vous avez également le droit d'exiger la rectification ou la suppression de ces données. Si vous avez donné votre consentement au traitement des données, vous pouvez révoquer ce consentement à tout moment pour l'avenir. Vous avez également le droit d'exiger, dans certaines circonstances, la limitation du traitement de vos données personnelles. En outre, vous disposez d'un droit de recours auprès de l'autorité de contrôle compétente.
-
-Vous pouvez nous contacter à tout moment pour toute question à ce sujet ou pour toute autre question relative à la protection des données.
-
-### 2. Hébergement
-
-Nous hébergeons le contenu de notre site web chez le fournisseur suivant :
-
-#### Hébergement externe
-
-Ce site web est hébergé en externe. Les données personnelles collectées sur ce site web sont stockées sur les serveurs de l'hébergeur / des hébergeurs. Il peut s'agir notamment d'adresses IP, de demandes de contact, de métadonnées et de données de communication, de données contractuelles, de coordonnées, de noms, d'accès au site web et d'autres données générées par un site web.
-
-L'hébergement externe est effectué dans le but d'exécuter le contrat avec nos clients potentiels et existants (Art. 6 Al. 1 lit. b RGPD) et dans l'intérêt d'une fourniture sûre, rapide et efficace de notre offre en ligne par un prestataire professionnel (Art. 6 Al. 1 lit. f RGPD). Si un consentement correspondant a été demandé, le traitement est effectué exclusivement sur la base de l'Art. 6 Al. 1 lit. a RGPD et § 25 Al. 1 TDDDG, dans la mesure où le consentement inclut le stockage de cookies ou l'accès à des informations dans l'appareil de l'utilisateur (par exemple, device fingerprinting) au sens du TDDDG. Le consentement peut être révoqué à tout moment.
-
-Notre/nos hébergeur(s) ne traiteront vos données que dans la mesure nécessaire à l'exécution de leurs obligations de service et suivront nos instructions concernant ces données.
-
-Nous utilisons le(s) hébergeur(s) suivant(s) :
+Die Website und Ihre bereitgestellten Daten werden gehostet von:
 
 Vercel Inc.<br/>
 440 N Barranca Ave PMB 4133<br/>
 Covina, CA 91723<br/>
-États-Unis
+Vereinigte Staaten<br/>
+Datenschutzerklärung: <a href="https://vercel.com/legal/privacy-policy">https://vercel.com/legal/privacy-policy</a>
 
 Railway Corp.<br/>
 548 Market St PMB 68956<br/>
 San Francisco, CA 94104<br/>
-États-Unis
+Vereinigte Staaten<br/>
+Datenschutzerklärung: <a href="https://railway.com/legal/privacy">https://railway.com/legal/privacy</a>
+
+Die Anmeldung wird durchgeführt von:
 
 Okta, Inc<br/>
-<br/>
 1st St Ste 600<br/>
 San Francisco, CA 94105-4687<br/>
-États-Unis
+Vereinigte Staaten<br/>
+Datenschutzerklärung: <a href="https://www.okta.com/privacy-policy/">https://www.okta.com/privacy-policy/</a>
 
-### 3. Informations générales et informations obligatoires
+Diese Unternehmen haben ihren Sitz in den Vereinigten Staaten. Datenübermittlungen in die USA erfolgen auf Grundlage geeigneter Garantien gemäß Artikel 46 DSGVO.
 
-#### Protection des données
+### Speicherdauer
 
-Les exploitants de ces pages prennent très au sérieux la protection de vos données personnelles. Nous traitons vos données personnelles de manière confidentielle et conformément aux dispositions légales en matière de protection des données ainsi qu'à la présente déclaration de protection des données.
+Serverprotokolle werden 30 Tage lang aufbewahrt. Alle anderen Daten werden gespeichert, bis Sie die Löschung beantragen oder Ihr Konto kündigen.
 
-Lorsque vous utilisez ce site web, différentes données personnelles sont collectées. Les données personnelles sont des données qui permettent de vous identifier personnellement. La présente déclaration de protection des données explique quelles données nous collectons et dans quel but nous les utilisons. Elle explique également comment et dans quel but cela se produit.
+### Ihre Rechte
 
-Nous attirons votre attention sur le fait que la transmission de données sur Internet (par exemple lors de la communication par e-mail) peut présenter des failles de sécurité. Une protection complète des données contre l'accès par des tiers n'est pas possible.
+Um Ihr Recht auf Datenübertragbarkeit und Löschung auszuüben, können Sie dies direkt in unserer Benutzeroberfläche verwalten (Export, Import, Löschen). Ihre Daten stehen in einem strukturierten, gängigen Format zur Verfügung. Sie haben außerdem das Recht auf Information, Auskunft, Berichtigung, Einschränkung der Verarbeitung, Widerspruch gegen die Verarbeitung und Vermeidung automatisierter Entscheidungsfindung. Kontaktieren Sie uns bei Fragen. Wir werden Anfragen innerhalb von 30 Tagen beantworten.
 
-#### Informations sur le responsable
+## Français
 
-Le responsable du traitement des données sur ce site web est :
+**TLPL:** Vous avez le contrôle total et la responsabilité de vos données. Nous appliquons une politique de collecte minimale. En dehors des données essentielles nécessaires au fonctionnement du service, nous ne collectons pas de données utilisateur ou de suivi supplémentaires. Notre service n'est disponible que pour les utilisateurs de l'UE/EEE, avec un âge minimum requis de 16 ans.
+
+### Responsable/Délégué à la protection des données
 
 Felicitas Pojtinger<br/>
 Hirschkopfweg 8<br/>
 72270 Baiersbronn<br/>
-Allemagne
-
+Allemagne<br/>
 Téléphone : <a href="tel:+49 152 33842326">+49 152 33842326</a><br/>
-E-mail : <a href="mailto:felicitas@pojtinger.com">felicitas@pojtinger.com</a>
+Email : <a href="mailto:felicitas@pojtinger.com">felicitas@pojtinger.com</a>
 
-Le responsable est la personne physique ou morale qui, seule ou conjointement avec d'autres, décide des finalités et des moyens du traitement des données personnelles (noms, adresses e-mail, etc.).
+### Données que nous traitons
 
-#### Durée de conservation
+Nous ne traitons que les données que vous fournissez explicitement via notre site web, les données nécessaires à l'authentification et les journaux standard du serveur (y compris les adresses IP et les horodatages).
 
-Sauf indication contraire dans la présente déclaration de protection des données concernant une durée de conservation spécifique, vos données personnelles restent chez nous jusqu'à ce que la finalité du traitement des données cesse d'exister. Si vous faites valoir une demande légitime de suppression ou si vous révoquez votre consentement au traitement des données, vos données seront supprimées, à moins que nous n'ayons d'autres motifs légalement autorisés pour conserver vos données personnelles (par exemple, délais de conservation fiscale ou commerciale) ; dans ce dernier cas, la suppression aura lieu après la disparition de ces motifs.
+### Base juridique et finalité
 
-#### Informations générales sur les bases juridiques du traitement des données sur ce site web
+- Nous traitons vos données sur la base de l'article 6(1)(b) du RGPD pour vous fournir nos services
+- Les données d'authentification sont traitées pour sécuriser votre compte
 
-Si vous avez donné votre consentement au traitement des données, nous traitons vos données personnelles sur la base de l'Art. 6 Al. 1 lit. a RGPD ou de l'Art. 9 Al. 2 lit. a RGPD, si des catégories particulières de données sont traitées selon l'Art. 9 Al. 1 RGPD. En cas de consentement explicite au transfert de données personnelles vers des pays tiers, le traitement des données est également effectué sur la base de l'Art. 49 Al. 1 lit. a RGPD. Si vous avez consenti au stockage de cookies ou à l'accès à des informations dans votre terminal (par exemple via le device fingerprinting), le traitement des données est également effectué sur la base du § 25 Al. 1 TDDDG. Le consentement peut être révoqué à tout moment. Si vos données sont nécessaires à l'exécution d'un contrat ou à l'exécution de mesures précontractuelles, nous traitons vos données sur la base de l'Art. 6 Al. 1 lit. b RGPD. En outre, nous traitons vos données si celles-ci sont nécessaires à l'exécution d'une obligation légale sur la base de l'Art. 6 Al. 1 lit. c RGPD. Le traitement des données peut également être effectué sur la base de notre intérêt légitime conformément à l'Art. 6 Al. 1 lit. f RGPD. Les bases juridiques applicables dans chaque cas particulier sont indiquées dans les paragraphes suivants de cette déclaration de protection des données.
+### Destinataires des données
 
-#### Destinataires des données personnelles
+Le site web et vos données fournies sont hébergés par :
 
-Dans le cadre de notre activité commerciale, nous collaborons avec différents organismes externes. Dans ce contexte, il est parfois nécessaire de transmettre des données personnelles à ces organismes externes. Nous ne transmettons des données personnelles à des organismes externes que si cela est nécessaire dans le cadre de l'exécution d'un contrat, si nous y sommes légalement obligés (par exemple, transmission de données aux autorités fiscales), si nous avons un intérêt légitime à la transmission selon l'Art. 6 Al. 1 lit. f RGPD ou si une autre base juridique autorise la transmission des données. Lors de l'utilisation de sous-traitants, nous ne transmettons les données personnelles de nos clients que sur la base d'un contrat valide de sous-traitance. En cas de traitement conjoint, un contrat de traitement conjoint est conclu.
+Vercel Inc.<br/>
+440 N Barranca Ave PMB 4133<br/>
+Covina, CA 91723<br/>
+États-Unis<br/>
+Politique de confidentialité : <a href="https://vercel.com/legal/privacy-policy">https://vercel.com/legal/privacy-policy</a>
 
-#### Révocation de votre consentement au traitement des données
+Railway Corp.<br/>
+548 Market St PMB 68956<br/>
+San Francisco, CA 94104<br/>
+États-Unis<br/>
+Politique de confidentialité : <a href="https://railway.com/legal/privacy">https://railway.com/legal/privacy</a>
 
-De nombreux traitements de données ne sont possibles qu'avec votre consentement explicite. Vous pouvez révoquer à tout moment un consentement déjà donné. La légalité du traitement des données effectué jusqu'à la révocation n'est pas affectée par celle-ci.
+La connexion est gérée par :
 
-#### Droit d'opposition au traitement des données dans des cas particuliers et à la publicité directe (Art. 21 RGPD)
+Okta, Inc<br/>
+1st St Ste 600<br/>
+San Francisco, CA 94105-4687<br/>
+États-Unis<br/>
+Politique de confidentialité : <a href="https://www.okta.com/privacy-policy/">https://www.okta.com/privacy-policy/</a>
 
-SI LE TRAITEMENT DES DONNÉES EST EFFECTUÉ SUR LA BASE DE L'ART. 6 AL. 1 LIT. E OU F RGPD, VOUS AVEZ LE DROIT DE VOUS OPPOSER À TOUT MOMENT AU TRAITEMENT DE VOS DONNÉES PERSONNELLES POUR DES RAISONS TENANT À VOTRE SITUATION PARTICULIÈRE ; CELA S'APPLIQUE ÉGALEMENT AU PROFILAGE FONDÉ SUR CES DISPOSITIONS. LA BASE JURIDIQUE RESPECTIVE SUR LAQUELLE UN TRAITEMENT EST FONDÉ PEUT ÊTRE CONSULTÉE DANS CETTE DÉCLARATION DE PROTECTION DES DONNÉES. SI VOUS FAITES OPPOSITION, NOUS NE TRAITERONS PLUS VOS DONNÉES PERSONNELLES CONCERNÉES, À MOINS QUE NOUS NE PUISSIONS DÉMONTRER QU'IL EXISTE DES MOTIFS LÉGITIMES ET IMPÉRIEUX POUR LE TRAITEMENT QUI PRÉVALENT SUR VOS INTÉRÊTS, DROITS ET LIBERTÉS, OU QUE LE TRAITEMENT SERVE À LA CONSTATATION, À L'EXERCICE OU À LA DÉFENSE DE DROITS EN JUSTICE (OPPOSITION SELON L'ART. 21 AL. 1 RGPD).
+Ces entreprises sont basées aux États-Unis. Les transferts de données vers les États-Unis sont basés sur des garanties appropriées conformément à l'article 46 du RGPD.
 
-SI VOS DONNÉES PERSONNELLES SONT TRAITÉES À DES FINS DE PROSPECTION, VOUS AVEZ LE DROIT DE VOUS OPPOSER À TOUT MOMENT AU TRAITEMENT DES DONNÉES PERSONNELLES VOUS CONCERNANT À DE TELLES FINS DE PROSPECTION ; IL EN VA DE MÊME POUR LE PROFILAGE DANS LA MESURE OÙ IL EST LIÉ À UNE TELLE PROSPECTION. SI VOUS VOUS Y OPPOSEZ, VOS DONNÉES PERSONNELLES NE SERONT PLUS UTILISÉES À DES FINS DE PROSPECTION (OPPOSITION SELON L'ART. 21 AL. 2 RGPD).
+### Durée de conservation
 
-#### Droit de recours auprès de l'autorité de contrôle compétente
+Les journaux du serveur sont conservés pendant 30 jours. Toutes les autres données sont conservées jusqu'à ce que vous demandiez leur suppression ou que vous mettiez fin à votre compte.
 
-En cas de violation du RGPD, les personnes concernées disposent d'un droit de recours auprès d'une autorité de contrôle, notamment dans l'État membre de leur résidence habituelle, de leur lieu de travail ou du lieu de la violation présumée. Le droit de recours existe sans préjudice de tout autre recours administratif ou juridictionnel.
+### Vos droits
 
-#### Droit à la portabilité des données
-
-Vous avez le droit d'obtenir les données que nous traitons sur la base de votre consentement ou en exécution d'un contrat, dans un format courant et lisible par machine, ou de les faire transmettre à un autre responsable du traitement. Si vous demandez le transfert direct des données à un autre responsable du traitement, cela ne sera effectué que dans la mesure où cela est techniquement possible.
-
-#### Information, rectification et suppression
-
-Dans le cadre des dispositions légales applicables, vous avez à tout moment le droit d'obtenir gratuitement des informations sur vos données personnelles stockées, leur origine et leurs destinataires et la finalité du traitement des données et, le cas échéant, un droit de rectification ou de suppression de ces données. Vous pouvez nous contacter à tout moment à ce sujet ainsi que pour toute autre question relative aux données personnelles.
-
-#### Droit à la limitation du traitement
-
-Vous avez le droit de demander la limitation du traitement de vos données personnelles. Vous pouvez nous contacter à tout moment à cet effet. Le droit à la limitation du traitement existe dans les cas suivants :
-
-- Si vous contestez l'exactitude de vos données personnelles stockées chez nous, nous avons généralement besoin de temps pour le vérifier. Pendant la durée de la vérification, vous avez le droit de demander la limitation du traitement de vos données personnelles.
-- Si le traitement de vos données personnelles a été/est effectué de manière illicite, vous pouvez demander la limitation du traitement des données au lieu de leur effacement.
-- Si nous n'avons plus besoin de vos données personnelles, mais que vous en avez besoin pour l'exercice, la défense ou la revendication de droits en justice, vous avez le droit de demander la limitation du traitement de vos données personnelles au lieu de leur effacement.
-- Si vous avez fait opposition en vertu de l'Art. 21 Al. 1 RGPD, une mise en balance de vos intérêts et des nôtres doit être effectuée. Tant qu'il n'a pas été déterminé quels intérêts prévalent, vous avez le droit de demander la limitation du traitement de vos données personnelles.
-
-Si vous avez limité le traitement de vos données personnelles, ces données ne peuvent être traitées - en dehors de leur conservation - qu'avec votre consentement ou pour la constatation, l'exercice ou la défense de droits en justice ou pour la protection des droits d'une autre personne physique ou morale ou pour des motifs importants d'intérêt public de l'Union européenne ou d'un État membre.
-
-#### Chiffrement SSL ou TLS
-
-Pour des raisons de sécurité et pour protéger la transmission de contenus confidentiels, comme par exemple les commandes ou les demandes que vous nous envoyez en tant qu'exploitant du site, ce site utilise un chiffrement SSL ou TLS. Vous pouvez reconnaître une connexion chiffrée par le fait que la ligne d'adresse du navigateur passe de "http://" à "https://" et par le symbole de cadenas dans la barre de votre navigateur. Lorsque le chiffrement SSL ou TLS est activé, les données que vous nous transmettez ne peuvent pas être lues par des tiers.
-
-#### Opposition aux e-mails publicitaires
-
-L'utilisation des coordonnées publiées dans le cadre de l'obligation légale de mention des responsables pour l'envoi de publicités et de matériels d'information non expressément demandés est par la présente refusée. Les exploitants des pages se réservent expressément le droit d'intenter une action en justice en cas d'envoi non sollicité d'informations publicitaires, par exemple par le biais de spams.
-
-### 4. Collecte de données sur ce site web
-
-#### Cookies
-
-Nos pages Internet utilisent ce qu'on appelle des "cookies". Les cookies sont de petits paquets de données et ne causent aucun dommage à votre appareil. Ils sont stockés soit temporairement pour la durée d'une session (cookies de session) soit de façon permanente (cookies permanents) sur votre appareil. Les cookies de session sont automatiquement supprimés après votre visite. Les cookies permanents restent stockés sur votre appareil jusqu'à ce que vous les supprimiez vous-même ou qu'une suppression automatique soit effectuée par votre navigateur web.
-
-Les cookies peuvent provenir de nous (cookies first-party) ou d'entreprises tierces (cookies third-party). Les cookies third-party permettent l'intégration de certains services d'entreprises tierces au sein des pages web (par exemple, des cookies pour le traitement des services de paiement).
-
-Les cookies ont différentes fonctions. De nombreux cookies sont techniquement nécessaires car certaines fonctions du site web ne fonctionneraient pas sans eux (par exemple, la fonction panier ou l'affichage de vidéos). D'autres cookies peuvent être utilisés pour analyser le comportement des utilisateurs ou à des fins publicitaires.
-
-Les cookies qui sont nécessaires à l'exécution du processus de communication électronique, à la fourniture de certaines fonctions que vous souhaitez (par exemple, pour la fonction panier) ou à l'optimisation du site web (par exemple, cookies pour mesurer l'audience web) (cookies nécessaires) sont stockés sur la base de l'Art. 6 Al. 1 lit. f RGPD, sauf si une autre base juridique n'est indiquée. L'exploitant du site web a un intérêt légitime au stockage de cookies nécessaires pour la fourniture technique sans erreur et optimisée de ses services. Si un consentement au stockage de cookies et de technologies de reconnaissance comparables a été demandé, le traitement est effectué exclusivement sur la base de ce consentement (Art. 6 Al. 1 lit. a RGPD et § 25 Al. 1 TDDDG) ; le consentement peut être révoqué à tout moment.
-
-Vous pouvez configurer votre navigateur pour être informé de l'installation de cookies et n'autoriser les cookies que dans des cas individuels, accepter les cookies pour des cas spécifiques ou les exclure de manière générale, ainsi qu'activer la suppression automatique des cookies lors de la fermeture du navigateur. La désactivation des cookies peut limiter la fonctionnalité de ce site web.
-
-Vous pouvez consulter dans cette déclaration de protection des données quels cookies et services sont utilisés sur ce site web.
-
-#### Demande par e-mail, téléphone ou fax
-
-Si vous nous contactez par e-mail, téléphone ou fax, votre demande, y compris toutes les données personnelles qui en découlent (nom, demande) sera stockée et traitée chez nous aux fins du traitement de votre demande. Nous ne transmettons pas ces données sans votre consentement.
-
-Le traitement de ces données est effectué sur la base de l'Art. 6 Al. 1 lit. b RGPD si votre demande est liée à l'exécution d'un contrat ou est nécessaire à l'exécution de mesures précontractuelles. Dans tous les autres cas, le traitement est fondé sur notre intérêt légitime à traiter efficacement les demandes qui nous sont adressées (Art. 6 Al. 1 lit. f RGPD) ou sur votre consentement (Art. 6 Al. 1 lit. a RGPD) si celui-ci a été demandé ; le consentement peut être révoqué à tout moment.
-
-Les données que vous nous envoyez via des demandes de contact restent chez nous jusqu'à ce que vous nous demandiez de les supprimer, que vous révoquiez votre consentement à leur stockage ou que la finalité du stockage des données devienne caduque (par exemple, après le traitement de votre demande). Les dispositions légales contraignantes - en particulier les délais de conservation légaux - restent inchangées.
+Pour exercer votre droit à la portabilité et à l'effacement des données, vous pouvez le gérer directement dans notre interface (export, import, suppression). Vos données sont disponibles dans un format structuré et couramment utilisé. Vous disposez également du droit à l'information, d'accès, de rectification, de limitation du traitement, d'opposition au traitement et d'évitement des décisions automatisées. Contactez-nous pour toute question. Nous répondrons aux demandes dans un délai de 30 jours.
