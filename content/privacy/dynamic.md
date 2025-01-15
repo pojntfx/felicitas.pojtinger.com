@@ -53,9 +53,15 @@ Vercel Inc.<br/>
 Covina, CA 91723<br/>
 United States
 
-Railway<br/>
+Railway Corp.<br/>
 548 Market St PMB 68956<br/>
 San Francisco, CA 94104<br/>
+United States
+
+Okta, Inc<br/>
+<br/>
+1st St Ste 600<br/>
+San Francisco, CA 94105-4687<br/>
 United States
 
 ### 3. General Information and Mandatory Information
@@ -208,12 +214,18 @@ Wir setzen folgende(n) Hoster ein:
 Vercel Inc.<br/>
 440 N Barranca Ave PMB 4133<br/>
 Covina, CA 91723<br/>
-United States
+Vereinigte Staaten
 
-Railway<br/>
+Railway Corp.<br/>
 548 Market St PMB 68956<br/>
 San Francisco, CA 94104<br/>
-United States
+Vereinigte Staaten
+
+Okta, Inc<br/>
+<br/>
+1st St Ste 600<br/>
+San Francisco, CA 94105-4687<br/>
+Vereinigte Staaten
 
 ### 3. Allgemeine Hinweise und Pflicht­informationen
 
@@ -365,9 +377,15 @@ Vercel Inc.<br/>
 Covina, CA 91723<br/>
 États-Unis
 
-Railway<br/>
+Railway Corp.<br/>
 548 Market St PMB 68956<br/>
 San Francisco, CA 94104<br/>
+États-Unis
+
+Okta, Inc<br/>
+<br/>
+1st St Ste 600<br/>
+San Francisco, CA 94105-4687<br/>
 États-Unis
 
 ### 3. Informations générales et informations obligatoires
