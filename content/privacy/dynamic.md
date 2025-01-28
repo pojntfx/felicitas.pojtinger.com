@@ -104,6 +104,12 @@ San Francisco, CA 94104<br/>
 Vereinigte Staaten<br/>
 Datenschutzerklärung: <a href="https://railway.com/legal/privacy">https://railway.com/legal/privacy</a>
 
+Neon Inc.<br/>
+209 Orange Street<br/>
+Wilmington, DE 19801<br/>
+United States<br/>
+Datenschutzerklärung: <a href="https://neon.tech/privacy-policy">https://neon.tech/privacy-policy</a>
+
 Die Anmeldung wird durchgeführt von:
 
 Okta, Inc<br/>
@@ -159,6 +165,12 @@ Railway Corp.<br/>
 San Francisco, CA 94104<br/>
 États-Unis<br/>
 Politique de confidentialité : <a href="https://railway.com/legal/privacy">https://railway.com/legal/privacy</a>
+
+Neon Inc.<br/>
+209 Orange Street<br/>
+Wilmington, DE 19801<br/>
+United States<br/>
+Politique de confidentialité : <a href="https://neon.tech/privacy-policy">https://neon.tech/privacy-policy</a>
 
 La connexion est gérée par :
 
