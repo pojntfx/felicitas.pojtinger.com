@@ -35,13 +35,7 @@ Covina, CA 91723<br/>
 United States<br/>
 Privacy policy: <a href="https://vercel.com/legal/privacy-policy">https://vercel.com/legal/privacy-policy</a>
 
-Railway Corp.<br/>
-548 Market St PMB 68956<br/>
-San Francisco, CA 94104<br/>
-United States<br/>
-Privacy policy: <a href="https://railway.com/legal/privacy">https://railway.com/legal/privacy</a>
-
-These companies are based in the United States. Data transfers to the US are based on appropriate safeguards according to Article 46 GDPR.
+This company is based in the United States. Data transfers to the US are based on appropriate safeguards according to Article 46 GDPR.
 
 ### Storage Duration
 
@@ -82,13 +76,7 @@ Covina, CA 91723<br/>
 Vereinigte Staaten<br/>
 Datenschutzerklärung: <a href="https://vercel.com/legal/privacy-policy">https://vercel.com/legal/privacy-policy</a>
 
-Railway Corp.<br/>
-548 Market St PMB 68956<br/>
-San Francisco, CA 94104<br/>
-Vereinigte Staaten<br/>
-Datenschutzerklärung: <a href="https://railway.com/legal/privacy">https://railway.com/legal/privacy</a>
-
-Diese Unternehmen haben ihren Sitz in den Vereinigten Staaten. Datenübermittlungen in die USA erfolgen auf Grundlage geeigneter Garantien gemäß Artikel 46 DSGVO.
+Dieses Unternehmen hat seinen Sitz in den Vereinigten Staaten. Datenübermittlungen in die USA erfolgen auf Grundlage geeigneter Garantien gemäß Artikel 46 DSGVO.
 
 ### Speicherdauer
 
@@ -129,13 +117,7 @@ Covina, CA 91723<br/>
 États-Unis<br/>
 Politique de confidentialité : <a href="https://vercel.com/legal/privacy-policy">https://vercel.com/legal/privacy-policy</a>
 
-Railway Corp.<br/>
-548 Market St PMB 68956<br/>
-San Francisco, CA 94104<br/>
-États-Unis<br/>
-Politique de confidentialité : <a href="https://railway.com/legal/privacy">https://railway.com/legal/privacy</a>
-
-Ces entreprises sont basées aux États-Unis. Les transferts de données vers les États-Unis sont basés sur des garanties appropriées conformément à l'article 46 du RGPD.
+Cette entreprise est basée aux États-Unis. Les transferts de données vers les États-Unis sont basés sur des garanties appropriées conformément à l'article 46 du RGPD.
 
 ### Durée de conservation
 

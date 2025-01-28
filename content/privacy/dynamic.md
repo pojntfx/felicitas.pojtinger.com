@@ -42,6 +42,12 @@ San Francisco, CA 94104<br/>
 United States<br/>
 Privacy policy: <a href="https://railway.com/legal/privacy">https://railway.com/legal/privacy</a>
 
+Neon Inc.<br/>
+209 Orange Street<br/>
+Wilmington, DE 19801<br/>
+United States<br/>
+Privacy policy: <a href="https://neon.tech/privacy-policy">https://neon.tech/privacy-policy</a>
+
 Login is handled by:
 
 Okta, Inc<br/>
