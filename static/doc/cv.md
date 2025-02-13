@@ -69,7 +69,7 @@ header-includes:
 ## Work Experience
 
 \begin{tabular}{@{}p{4cm}l@{}}
-\textbf{2022/07 - present:} & Software Developer at Loophole Labs, Inc \\
+\textbf{2022/07 - present:} & Founding Engineer at Loophole Labs, Inc \\
 \textbf{2021/06 - 2022/07:} & Software Developer at Incloud Engineering GmbH (acquired by q.beyond AG) \\
 \textbf{2019/10 - 2021/06:} & Software Developer at DE software \& control GmbH \\
 \end{tabular}
