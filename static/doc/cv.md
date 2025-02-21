@@ -1,6 +1,6 @@
 ---
 author: [Curriculum Vitae]
-date: "2024-06-19"
+date: "2025-02-20"
 subject: "CV of Felicitas Pojtinger"
 keywords: [cv, curriculum-vitae, resume]
 lang: "en"
@@ -64,7 +64,7 @@ header-includes:
 \textbf{2007 - 2011/08:} & Student at Wilhelm Münster elementary school in Baiersbronn, Germany
 \end{tabular}
 
-\vspace*{1cm}
+\vspace*{0.75cm}
 
 ## Work Experience
 
@@ -74,7 +74,7 @@ header-includes:
 \textbf{2019/10 - 2021/06:} & Software Developer at DE software \& control GmbH \\
 \end{tabular}
 
-\vspace*{1cm}
+\vspace*{0.75cm}
 
 ## Languages
 
@@ -84,7 +84,7 @@ header-includes:
 \textbf{French:} & CEFR B1
 \end{tabular}
 
-\vspace*{1cm}
+\vspace*{0.75cm}
 
 ## Tech Stack
 
@@ -124,52 +124,37 @@ For more up-to-date info, please see [github.com/pojntfx](https://github.com/poj
 - Built **"weron"**, an overlay network based on WebRTC
 - Created **"STFS"**, a file system for LTO tape drives\vspace{-2.5mm}
 
-**2021**\vspace{-3mm}
+**2020-2021**\vspace{-3mm}
 
 - Built **"liwasc"** and **"invaentory"**, network and port scanners
 - Created **"bofied"**, a network boot server
 - Developed **"keygaen"**, a WebAssembly PGP tool
 - Built **"pojde"**, a multi-tenant development environment
 - Created **"Webnetes"**, a peer-to-peer computing platform based on Wasm
-- Developed **"unisockets"** and **"tinynet"**, POSIX sockets implementations for Wasm\vspace{-2.5mm}
-
-**2020**\vspace{-3mm}
-
+- Developed **"unisockets"** and **"tinynet"**, POSIX sockets implementations for Wasm
 - Created **"alpimager"**, a tool for Alpine Linux images
 - Built **"gloeth"**, an overlay network manager
 - Developed **"gon2n"**, a P2P VPN\vspace{-2.5mm}
 
-**2019**\vspace{-3mm}
+**2018-2019**\vspace{-3mm}
 
-- Created **"dibs"**, a CI/CD system
 - Built **"infractl"**, a cluster management tool
 - Developed a **design system for digital publishing**
-- Created multiple **websites for local businesses**\vspace{-2.5mm}
-
-**2018**\vspace{-3mm}
-
+- Created multiple **websites for local businesses**
 - Built **"Learn Chinese Platform"**, a platform for learning Mandarin and Cantonese
 - Continued **"LibreSat"**, a CubeSat development environment
 - Created **"Simple Direct Democracy"**, an e-voting platform
 - Hosted **"CoffeeCodeContribute"** boot camp
-- Participated in **"Zukunftsakademie Baden-Württemberg"**
 - Developed **"IraSync"**, a social media platform
 - Created **"Die Illustrierte"**, a digital publishing platform\vspace{-2.5mm}
 
-**2017**\vspace{-3mm}
+**2016-2017**\vspace{-3mm}
 
-- Built **"OpenSNET"**, a satellite communication network
-- Developed **"OpenSDCP"**, a satellite development platform
-- Created a **website for "Richard-von-Weizsäcker-Gymnasium**
+- Developed **"OpenSDCP"** and **OpenSNET**, a satellite development platform and network
 - Interned at **"Institut für Raumfahrtsysteme"** in Stuttgart
 - Presented **"MOVA4GIT"** ion thruster at Airbus Defense and Space
 - Contributed to **nanosatellite communication systems** at Aerospace Lab Herrenberg
-- Built **"Brahma"**, a 3D printed surveillance system\vspace{-2.5mm}
-
-**2016**\vspace{-3mm}
-
 - Won the **"VonBWinsAll"** competition with "ModSat" nanosatellite/CubeSat project
-- Developed a **custom CNC machine & 3D printer**
 - Participated in **"Jugend Forscht"** competition with the "SIEO" nanosatellite/CubeSat project\vspace{-2.5mm}
 
 **2011-2014**\vspace{-2.5mm}
@@ -180,4 +165,4 @@ For more up-to-date info, please see [github.com/pojntfx](https://github.com/poj
 - Developed the **"SIE" nanosatellite/CubeSat ion engine**
 - Created **"iHD2/NiroOS"**, an Android distribution for the HTC HD2
 
-Last updated 2024-06-19, Vancouver, BC, Canada (Felicitas Pojtinger)
+Last updated 2025-02-20, Vancouver, BC, Canada (Felicitas Pojtinger)
