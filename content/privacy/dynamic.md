@@ -1,12 +1,12 @@
 ---
 title: "Privacy/Datenschutzerklärung/Politique de confidentialité"
-date: 2025-01-15T00:30:00+01:00
+date: 2025-05-23T00:00:00+01:00
 draft: false
 ---
 
 ## English
 
-**TLDR:** You have full control and responsibility over your data. We have a minimum-collection policy. Aside from essential data required to keep the service running, we are not collecting additional user or tracking data. Our service is only available to users from the EU/EEA, with a minimum age requirement of 16.
+**TLDR:** You have full control and responsibility over your data. We have a minimum-collection policy. Aside from essential data required to keep the service running, we are not collecting additional user or tracking data.
 
 ### Controller/Privacy Officer
 
@@ -68,7 +68,7 @@ To exercise your right to data portability and erasure, you can manage it direct
 
 ## Deutsch
 
-**Kurz und bündig:** Sie haben die volle Kontrolle und Verantwortung über Ihre Daten. Wir verfolgen eine Minimal-Erfassungspolitik. Abgesehen von wesentlichen Daten, die für den Betrieb des Dienstes erforderlich sind, erfassen wir keine zusätzlichen Benutzer- oder Tracking-Daten. Unser Dienst steht nur Nutzern aus der EU/EWR zur Verfügung, mit einem Mindestalter von 16 Jahren.
+**Kurz und bündig:** Sie haben die volle Kontrolle und Verantwortung über Ihre Daten. Wir verfolgen eine Minimal-Erfassungspolitik. Abgesehen von wesentlichen Daten, die für den Betrieb des Dienstes erforderlich sind, erfassen wir keine zusätzlichen Benutzer- oder Tracking-Daten.
 
 ### Verantwortlicher/Datenschutzbeauftragter
 
@@ -130,7 +130,7 @@ Um Ihr Recht auf Datenübertragbarkeit und Löschung auszuüben, können Sie die
 
 ## Français
 
-**TLPL:** Vous avez le contrôle total et la responsabilité de vos données. Nous appliquons une politique de collecte minimale. En dehors des données essentielles nécessaires au fonctionnement du service, nous ne collectons pas de données utilisateur ou de suivi supplémentaires. Notre service n'est disponible que pour les utilisateurs de l'UE/EEE, avec un âge minimum requis de 16 ans.
+**TLPL:** Vous avez le contrôle total et la responsabilité de vos données. Nous appliquons une politique de collecte minimale. En dehors des données essentielles nécessaires au fonctionnement du service, nous ne collectons pas de données utilisateur ou de suivi supplémentaires.
 
 ### Responsable/Délégué à la protection des données
 

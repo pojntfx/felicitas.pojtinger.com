@@ -1,12 +1,12 @@
 ---
 title: "Privacy/Datenschutzerklärung/Politique de confidentialité"
-date: 2025-01-15T00:30:00+01:00
+date: 2025-05-23T00:00:00+01:00
 draft: false
 ---
 
 ## English
 
-**TLDR:** You have full control over your data. We have a minimum-collection policy. We only collect essential data required to keep the service running through standard server logs and are not collecting additional user or tracking data. Our service is only available to users from the EU/EEA, with no minimum age requirement.
+**TLDR:** You have full control over your data. We have a minimum-collection policy. We only collect essential data required to keep the service running through standard server logs and are not collecting additional user or tracking data.
 
 ### Controller/Privacy Officer
 
@@ -47,7 +47,7 @@ You have the right to information, access, rectification, erasure, restrict proc
 
 ## Deutsch
 
-**Kurz und bündig:** Sie haben die volle Kontrolle über Ihre Daten. Wir verfolgen eine Minimal-Erfassungspolitik. Wir erfassen nur die wesentlichen Daten, die für den Betrieb des Dienstes über Standard-Serverprotokolle erforderlich sind, und erfassen keine zusätzlichen Benutzer- oder Tracking-Daten. Unser Dienst steht nur Nutzern aus der EU/EWR zur Verfügung, ohne Mindestaltersanforderung.
+**Kurz und bündig:** Sie haben die volle Kontrolle über Ihre Daten. Wir verfolgen eine Minimal-Erfassungspolitik. Wir erfassen nur die wesentlichen Daten, die für den Betrieb des Dienstes über Standard-Serverprotokolle erforderlich sind, und erfassen keine zusätzlichen Benutzer- oder Tracking-Daten.
 
 ### Verantwortlicher/Datenschutzbeauftragter
 
@@ -88,7 +88,7 @@ Sie haben das Recht auf Information, Auskunft, Berichtigung, Löschung, Einschr�
 
 ## Français
 
-**TLPL:** Vous avez le contrôle total de vos données. Nous appliquons une politique de collecte minimale. Nous ne collectons que les données essentielles nécessaires au fonctionnement du service via les journaux standard du serveur et ne collectons pas de données utilisateur ou de suivi supplémentaires. Notre service n'est disponible que pour les utilisateurs de l'UE/EEE, sans condition d'âge minimum.
+**TLPL:** Vous avez le contrôle total de vos données. Nous appliquons une politique de collecte minimale. Nous ne collectons que les données essentielles nécessaires au fonctionnement du service via les journaux standard du serveur et ne collectons pas de données utilisateur ou de suivi supplémentaires.
 
 ### Responsable/Délégué à la protection des données
 
