@@ -14,23 +14,39 @@ Our service is only available to users from the EU/EEA, with a minimum age requi
 
 You must not use our service for activities that are illegal in the EU/EEA or to harm others or our infrastructure.
 
+### Rights and Responsibilities
+
+Please see our [privacy policy](../privacy/dynamic.md) to learn about your rights. Be aware that your account can get suspended at any time, even if the cause is not explicitly listed in [Prohibited Use](#prohibited-use).
+
 ### Liability
 
-Our service is provided "as is" without warranties of any kind. We are not liable for any damages, including data loss, business interruption, or inability to use our service.
+Our service is provided "as is" without warranties of any kind. To the extent permitted by applicable law, we are not liable for any direct, indirect, incidental, special, or consequential damages, including but not limited to data loss, business interruption, or inability to use our service.
+
+### License
+
+These terms of service are inspired by the [Codeberg Terms of Use](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md). You can freely use and modify this text under the [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
 ## Deutsch
 
-### Berechtigung
+### Zugriffsberechtigung
 
 Unser Dienst steht ausschließlich Nutzern aus der EU/dem EWR ab 16 Jahren zur Verfügung.
 
 ### Unzulässige Nutzung
 
-Die Nutzung unseres Dienstes für Aktivitäten, die in der EU/dem EWR rechtswidrig sind, oder zur Schädigung Dritter oder unserer Infrastruktur ist untersagt.
+Sie dürfen unseren Dienst nicht für Aktivitäten nutzen, die in der EU/dem EWR rechtswidrig sind oder anderen Personen oder unserer Infrastruktur schaden.
+
+### Rechte und Pflichten
+
+Bitte lesen Sie unsere [Datenschutzerklärung](../privacy/dynamic.md), um mehr über Ihre Rechte zu erfahren. Beachten Sie, dass Ihr Konto jederzeit gesperrt werden kann, auch wenn der Grund nicht ausdrücklich unter [Unzulässige Nutzung](#unzulässige-nutzung) aufgeführt ist.
 
 ### Haftung
 
-Unser Dienst wird ohne jegliche Gewährleistung bereitgestellt. Wir übernehmen keine Haftung für Schäden, einschließlich Datenverlust, Betriebsunterbrechungen oder Nichtverfügbarkeit unseres Dienstes.
+Unser Dienst wird ohne jegliche Gewährleistung „wie besehen" bereitgestellt. Soweit nach geltendem Recht zulässig, übernehmen wir keine Haftung für direkte, indirekte, zufällige, besondere oder Folgeschäden, einschließlich aber nicht beschränkt auf Datenverlust, Betriebsunterbrechungen oder die Unmöglichkeit, unseren Dienst zu nutzen.
+
+### Lizenz
+
+Diese Nutzungsbedingungen sind inspiriert von den [Codeberg-Nutzungsbedingungen](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md). Sie können diesen Text frei unter der [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/) Lizenz verwenden und bearbeiten.
 
 ## Français
 
@@ -40,8 +56,16 @@ Notre service est exclusivement réservé aux utilisateurs de l'UE/EEE âgés d'
 
 ### Usage interdit
 
-L'utilisation de notre service pour des activités illégales dans l'UE/EEE ou pour nuire à autrui ou à notre infrastructure est interdite.
+Vous ne devez pas utiliser notre service pour des activités illégales dans l'UE/EEE ou pour nuire à autrui ou à notre infrastructure.
+
+### Droits et responsabilités
+
+Veuillez consulter notre [politique de confidentialité](../privacy/dynamic.md) pour connaître vos droits. Sachez que votre compte peut être suspendu à tout moment, même si la cause n'est pas explicitement listée dans [Usage interdit](#usage-interdit).
 
 ### Responsabilité
 
-Notre service est fourni sans aucune garantie. Nous déclinons toute responsabilité pour les dommages, y compris la perte de données, l'interruption d'activité ou l'indisponibilité de notre service.
+Notre service est fourni « en l'état » sans aucune garantie. Dans la mesure permise par la loi applicable, nous ne sommes pas responsables des dommages directs, indirects, accessoires, spéciaux ou consécutifs, y compris mais sans s'y limiter la perte de données, l'interruption d'activité ou l'impossibilité d'utiliser notre service.
+
+### Licence
+
+Ces conditions d'utilisation s'inspirent des [Conditions d'utilisation de Codeberg](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md). Vous pouvez librement utiliser et modifier ce texte sous la licence [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/).

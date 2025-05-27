@@ -45,6 +45,10 @@ Server logs are retained for 30 days.
 
 You have the right to information, access, rectification, erasure, restrict processing, data portability, object to processing, and avoid automated decision-making. Contact us for any questions. We will respond to requests within 30 days.
 
+### License
+
+This privacy policy is inspired by the [Codeberg Privacy Policy](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). You can freely use and modify this text under the [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/) license.
+
 ## Deutsch
 
 **Kurz und bündig:** Sie haben die volle Kontrolle über Ihre Daten. Wir verfolgen eine Minimal-Erfassungspolitik. Wir erfassen nur die wesentlichen Daten, die für den Betrieb des Dienstes über Standard-Serverprotokolle erforderlich sind, und erfassen keine zusätzlichen Benutzer- oder Tracking-Daten.
@@ -86,6 +90,10 @@ Serverprotokolle werden 30 Tage lang aufbewahrt.
 
 Sie haben das Recht auf Information, Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch gegen die Verarbeitung und Vermeidung automatisierter Entscheidungsfindung. Kontaktieren Sie uns bei Fragen. Wir werden Anfragen innerhalb von 30 Tagen beantworten.
 
+### Lizenz
+
+Diese Datenschutzerklärung ist inspiriert von der [Codeberg-Datenschutzerklärung](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). Sie können diesen Text frei unter der [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/) Lizenz verwenden und bearbeiten.
+
 ## Français
 
 **TLPL:** Vous avez le contrôle total de vos données. Nous appliquons une politique de collecte minimale. Nous ne collectons que les données essentielles nécessaires au fonctionnement du service via les journaux standard du serveur et ne collectons pas de données utilisateur ou de suivi supplémentaires.
@@ -126,3 +134,7 @@ Les journaux du serveur sont conservés pendant 30 jours.
 ### Vos droits
 
 Vous disposez du droit à l'information, d'accès, de rectification, d'effacement, de limitation du traitement, à la portabilité des données, d'opposition au traitement et d'évitement des décisions automatisées. Contactez-nous pour toute question. Nous répondrons aux demandes dans un délai de 30 jours.
+
+### Licence
+
+Cette politique de confidentialité s'inspire de la [Politique de confidentialité de Codeberg](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). Vous pouvez librement utiliser et modifier ce texte sous la licence [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/).

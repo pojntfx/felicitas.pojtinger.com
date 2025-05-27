@@ -66,6 +66,10 @@ Server logs are retained for 30 days. All other data is stored until you request
 
 To exercise your right to data portability and erasure, you can manage it directly in our interface (export, import, delete). Your data is available in a structured, commonly used format. You also have the right to information, access, rectification, restrict processing, object to processing, and avoid automated decision-making. Contact us for any questions. We will respond to requests within 30 days.
 
+### License
+
+This privacy policy is inspired by the [Codeberg Privacy Policy](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). You can freely use and modify this text under the [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/) license.
+
 ## Deutsch
 
 **Kurz und bündig:** Sie haben die volle Kontrolle und Verantwortung über Ihre Daten. Wir verfolgen eine Minimal-Erfassungspolitik. Abgesehen von wesentlichen Daten, die für den Betrieb des Dienstes erforderlich sind, erfassen wir keine zusätzlichen Benutzer- oder Tracking-Daten.
@@ -128,6 +132,10 @@ Serverprotokolle werden 30 Tage lang aufbewahrt. Alle anderen Daten werden gespe
 
 Um Ihr Recht auf Datenübertragbarkeit und Löschung auszuüben, können Sie dies direkt in unserer Benutzeroberfläche verwalten (Export, Import, Löschen). Ihre Daten stehen in einem strukturierten, gängigen Format zur Verfügung. Sie haben außerdem das Recht auf Information, Auskunft, Berichtigung, Einschränkung der Verarbeitung, Widerspruch gegen die Verarbeitung und Vermeidung automatisierter Entscheidungsfindung. Kontaktieren Sie uns bei Fragen. Wir werden Anfragen innerhalb von 30 Tagen beantworten.
 
+### Lizenz
+
+Diese Datenschutzerklärung ist inspiriert von der [Codeberg-Datenschutzerklärung](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). Sie können diesen Text frei unter der [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/) Lizenz verwenden und bearbeiten.
+
 ## Français
 
 **TLPL:** Vous avez le contrôle total et la responsabilité de vos données. Nous appliquons une politique de collecte minimale. En dehors des données essentielles nécessaires au fonctionnement du service, nous ne collectons pas de données utilisateur ou de suivi supplémentaires.
@@ -189,3 +197,7 @@ Les journaux du serveur sont conservés pendant 30 jours. Toutes les autres donn
 ### Vos droits
 
 Pour exercer votre droit à la portabilité et à l'effacement des données, vous pouvez le gérer directement dans notre interface (export, import, suppression). Vos données sont disponibles dans un format structuré et couramment utilisé. Vous disposez également du droit à l'information, d'accès, de rectification, de limitation du traitement, d'opposition au traitement et d'évitement des décisions automatisées. Contactez-nous pour toute question. Nous répondrons aux demandes dans un délai de 30 jours.
+
+### Licence
+
+Cette politique de confidentialité s'inspire de la [Politique de confidentialité de Codeberg](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). Vous pouvez librement utiliser et modifier ce texte sous la licence [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/).
