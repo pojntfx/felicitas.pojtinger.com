@@ -21,10 +21,10 @@
     "@fireworks-js/web": "^2.10.8",
     "@fontsource/lato": "^4.5.10",
     "@patternfly/patternfly": "^6.2.3",
-    "magic-snowflakes": "^6.3.0"
+    "magic-snowflakes": "^7.0.1"
   },
   "devDependencies": {
-    "prettier": "^2.8.8",
-    "prettier-plugin-go-template": "^0.0.13"
+    "prettier": "^3.6.2",
+    "prettier-plugin-go-template": "^0.0.15"
   }
 }
