@@ -43,6 +43,9 @@
       background: var(--pf-t--color--black)
     - slug: pojntfx/html2goapp
       background: var(--pf-t--color--purple--70)
+    - slug: pojntfx/sessions
+      background: var(--pf-t--color--blue--50)
+      icon: assets/meta/icon.svg
     - slug: loopholelabs/latensee
       background: var(--pf-t--color--black)
       icon: docs/icon.svg
