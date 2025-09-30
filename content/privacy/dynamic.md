@@ -6,29 +6,49 @@ draft: false
 
 ## English
 
-**TLDR:** You have full control and responsibility over your data. We have a minimum-collection policy. Aside from essential data required to keep the service running, we are not collecting additional user or tracking data.
+### 1. General Information
 
-### Controller/Privacy Officer
+**We do not want to need your data.** We therefore want to be fully transparent about how we use it, and are always open to viable suggestions on how to reduce your data footprint on our infrastructure. We try to use privacy-friendly open source software and privacy-friendly third parties as much as possible.
+
+This document outlines our responsibilities and duties regarding the processing of your personal data, as defined by Article 13 of the European Union's General Data Protection Regulation (GDPR), and provides information on the rights that you have as a data subject.
+
+### 2. Contact
+
+**Controller:**
 
 Felicitas Pojtinger<br/>
 Hirschkopfweg 8<br/>
 72270 Baiersbronn<br/>
-Germany<br/>
-Phone: <a href="tel:+49 152 33842326">+49 152 33842326</a><br/>
-Email: <a href="mailto:felicitas@pojtinger.com">felicitas@pojtinger.com</a>
+Germany
 
-### Data We Process
+**Data Protection Officer:** [felicitas@pojtinger.com](mailto:felicitas@pojtinger.com)
 
-We process only the data you explicitly provide through our website, the data necessary for authentication and standard server logs (including IP addresses and timestamps).
+If you want to report a privacy violation through third party content hosted on Felicitas Pojtinger's website and services, please contact our moderation team: [felicitas@pojtinger.com](mailto:felicitas@pojtinger.com)
 
-### Legal Basis and Purpose
+Should you wish to report a complaint or if you feel that Felicitas Pojtinger has not addressed your concern in a satisfactory manner, you may contact the responsible Information Commissioner's Office: <https://www.datenschutz-berlin.de>
 
-- We process your data based on Article 6(1)(b) GDPR to provide our services to you
-- Authentication data is processed to secure your account
+### 3. Data Processing Reasons & Legal Basis
 
-### Data Recipients
+#### 3.1 Data of Platform Users
 
-The website and your provided data are hosted by:
+When accessing Felicitas Pojtinger's website and services, the following information is processed by Felicitas Pojtinger's website and services for the reasons outlined below:
+
+1. Account details (username, e-mail addresses, name) through a linked account with the third party Okta, Inc (see Art. 2 of this privacy policy), for the purpose of providing you with an account on our platform.
+   - Data is recorded during account sign-in and when creating, updating or deleting other voluntarily provided data (see Art. 3.1.2 of this privacy policy) with your account on Felicitas Pojtinger's website and services.
+   - Pseudonyms can be used in the public profile, there is no requirement to use real personal information besides a reachable e-mail address.
+   - Legal basis for processing this data is the user's consent to either share the data on our platform or to receive notifications (Art. 6.1.a GDPR).
+2. Voluntarily provided domain-specific data for the purpose of being able to later view, process and edit this stored data.
+   - Data is provided voluntarily by the user through the forms on Felicitas Pojtinger's website and services, and is then automatically included in relevant views (e.g. listings and per-model views).
+   - Legal basis for processing this data is the core functionality of the Felicitas Pojtinger's website and services (Art. 6.1.b GDPR).
+3. Technical metadata for the purpose of providing the platform services and avoiding misuse of our resources.
+   - Data is processed during regular use of Felicitas Pojtinger's website and services, and includes the IP address of the requesting computer, the browser and operating system you are using, the date and time of access, the Uniform Resource Locators (URL) requested on Felicitas Pojtinger's website and services, as well as the previously visited website where applicable (referrer URL).
+   - Further metadata includes technically necessary cookies to identify the session of a logged-in user or to protect users from so-called CSRF attacks. Felicitas Pojtinger's website and services do NOT use cookies or other techniques for user-targeted analytics or advertisements.
+   - Legal basis for processing this data is a legitimate interest of the platform operator (Art. 6.1.f GDPR).
+4. When you execute your own software on our infrastructure by using our resources, you are primarily responsible for the data processing and must make sure to adhere to the GDPR as well as their local legislature independently from these terms.
+
+### 4. Data Handling by Third Parties
+
+Felicitas Pojtinger's website and services and your provided data are hosted by:
 
 Vercel Inc.<br/>
 440 N Barranca Ave PMB 4133<br/>
@@ -56,148 +76,27 @@ San Francisco, CA 94105-4687<br/>
 United States<br/>
 Privacy policy: <a href="https://www.okta.com/privacy-policy/">https://www.okta.com/privacy-policy/</a>
 
-These companies are based in the United States. Data transfers to the US are based on appropriate safeguards according to Article 46 GDPR.
+These companies are based in the United States. Data transfers to the US are based on appropriate safeguards according to Art. 46 GDPR.
 
-### Storage Duration
+### 5. Data Retention
 
-Server logs are retained for 30 days. All other data is stored until you request deletion or terminate your account.
+1. Account details are stored until the deletion of the account.
+2. Technical metadata like IP addresses are processed, but not stored or retained by us directly, rather by the third parties specified in Art. 4. Please see each provider's privacy policy for details.
 
-### Your Rights
+### 6. Data Subject Rights
 
-To exercise your right to data portability and erasure, you can manage it directly in our interface (export, import, delete). Your data is available in a structured, commonly used format. You also have the right to information, access, rectification, restrict processing, object to processing, and avoid automated decision-making. Contact us for any questions. We will respond to requests within 30 days.
+As a subject of personal data processing, you have the following rights:
 
-### License
+1. **Right to access:** You can request copies of your personal data, as defined in Art. 15 GDPR.
+2. **Right to rectification:** you can request that Felicitas Pojtinger's website and services corrects any information you believe is inaccurate, or completes any information you believe is incomplete, as defined in Art. 16 GDPR.
+3. **Right to erasure:** you can request that Felicitas Pojtinger's website and services erases your personal data, under the condition that the retention and processing of the information is not required by law and is not neccessary due to the reasons outlined in Art. 17 (3) GDPR.
+4. **Right to restrict processing:** you can request that Felicitas Pojtinger's website and services restricts the processing of your personal data, as defined in Art. 18 GDPR.
+5. **Right to object to processing:** you can object to and withdraw consent to Felicitas Pojtinger's website and services processing your personal data, as defined in Art. 21 GDPR.
+6. **Right to data portability:** you can request that Felicitas Pojtinger's website and services transfers the data that we have collected to another organization, or directly to you, as defined in Art. 20 GDPR.
+7. **If you make a request, we have one month to respond to you.** If you would like to exercise any of these rights, please use the contact information listed in Art. 2 of this privacy policy.
+
+To exercise your right to data portability and erasure, in addition to the option of reaching out to us, you can also manage it directly in our interface (export, import, delete). Your data is available in a structured, commonly used format.
+
+### 7. License
 
 This privacy policy is inspired by the [Codeberg Privacy Policy](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). You can freely use and modify this text under the [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/) license.
-
-## Deutsch
-
-**Kurz und bündig:** Sie haben die volle Kontrolle und Verantwortung über Ihre Daten. Wir verfolgen eine Minimal-Erfassungspolitik. Abgesehen von wesentlichen Daten, die für den Betrieb des Dienstes erforderlich sind, erfassen wir keine zusätzlichen Benutzer- oder Tracking-Daten.
-
-### Verantwortlicher/Datenschutzbeauftragter
-
-Felicitas Pojtinger<br/>
-Hirschkopfweg 8<br/>
-72270 Baiersbronn<br/>
-Deutschland<br/>
-Telefon: <a href="tel:+49 152 33842326">+49 152 33842326</a><br/>
-E-Mail: <a href="mailto:felicitas@pojtinger.com">felicitas@pojtinger.com</a>
-
-### Verarbeitete Daten
-
-Wir verarbeiten nur die Daten, die Sie ausdrücklich über unsere Website bereitstellen, die für die Authentifizierung notwendigen Daten und Standard-Serverprotokolle (einschließlich IP-Adressen und Zeitstempel).
-
-### Rechtsgrundlage und Zweck
-
-- Wir verarbeiten Ihre Daten auf Grundlage von Artikel 6 Absatz 1 Buchstabe b DSGVO zur Erbringung unserer Dienstleistungen
-- Authentifizierungsdaten werden zur Sicherung Ihres Kontos verarbeitet
-
-### Datenempfänger
-
-Die Website und Ihre bereitgestellten Daten werden gehostet von:
-
-Vercel Inc.<br/>
-440 N Barranca Ave PMB 4133<br/>
-Covina, CA 91723<br/>
-Vereinigte Staaten<br/>
-Datenschutzerklärung: <a href="https://vercel.com/legal/privacy-policy">https://vercel.com/legal/privacy-policy</a>
-
-Railway Corp.<br/>
-548 Market St PMB 68956<br/>
-San Francisco, CA 94104<br/>
-Vereinigte Staaten<br/>
-Datenschutzerklärung: <a href="https://railway.com/legal/privacy">https://railway.com/legal/privacy</a>
-
-Neon Inc.<br/>
-209 Orange Street<br/>
-Wilmington, DE 19801<br/>
-United States<br/>
-Datenschutzerklärung: <a href="https://neon.tech/privacy-policy">https://neon.tech/privacy-policy</a>
-
-Die Anmeldung wird durchgeführt von:
-
-Okta, Inc<br/>
-1st St Ste 600<br/>
-San Francisco, CA 94105-4687<br/>
-Vereinigte Staaten<br/>
-Datenschutzerklärung: <a href="https://www.okta.com/privacy-policy/">https://www.okta.com/privacy-policy/</a>
-
-Diese Unternehmen haben ihren Sitz in den Vereinigten Staaten. Datenübermittlungen in die USA erfolgen auf Grundlage geeigneter Garantien gemäß Artikel 46 DSGVO.
-
-### Speicherdauer
-
-Serverprotokolle werden 30 Tage lang aufbewahrt. Alle anderen Daten werden gespeichert, bis Sie die Löschung beantragen oder Ihr Konto kündigen.
-
-### Ihre Rechte
-
-Um Ihr Recht auf Datenübertragbarkeit und Löschung auszuüben, können Sie dies direkt in unserer Benutzeroberfläche verwalten (Export, Import, Löschen). Ihre Daten stehen in einem strukturierten, gängigen Format zur Verfügung. Sie haben außerdem das Recht auf Information, Auskunft, Berichtigung, Einschränkung der Verarbeitung, Widerspruch gegen die Verarbeitung und Vermeidung automatisierter Entscheidungsfindung. Kontaktieren Sie uns bei Fragen. Wir werden Anfragen innerhalb von 30 Tagen beantworten.
-
-### Lizenz
-
-Diese Datenschutzerklärung ist inspiriert von der [Codeberg-Datenschutzerklärung](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). Sie können diesen Text frei unter der [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/) Lizenz verwenden und bearbeiten.
-
-## Français
-
-**TLPL:** Vous avez le contrôle total et la responsabilité de vos données. Nous appliquons une politique de collecte minimale. En dehors des données essentielles nécessaires au fonctionnement du service, nous ne collectons pas de données utilisateur ou de suivi supplémentaires.
-
-### Responsable/Délégué à la protection des données
-
-Felicitas Pojtinger<br/>
-Hirschkopfweg 8<br/>
-72270 Baiersbronn<br/>
-Allemagne<br/>
-Téléphone : <a href="tel:+49 152 33842326">+49 152 33842326</a><br/>
-Email : <a href="mailto:felicitas@pojtinger.com">felicitas@pojtinger.com</a>
-
-### Données que nous traitons
-
-Nous ne traitons que les données que vous fournissez explicitement via notre site web, les données nécessaires à l'authentification et les journaux standard du serveur (y compris les adresses IP et les horodatages).
-
-### Base juridique et finalité
-
-- Nous traitons vos données sur la base de l'article 6(1)(b) du RGPD pour vous fournir nos services
-- Les données d'authentification sont traitées pour sécuriser votre compte
-
-### Destinataires des données
-
-Le site web et vos données fournies sont hébergés par :
-
-Vercel Inc.<br/>
-440 N Barranca Ave PMB 4133<br/>
-Covina, CA 91723<br/>
-États-Unis<br/>
-Politique de confidentialité : <a href="https://vercel.com/legal/privacy-policy">https://vercel.com/legal/privacy-policy</a>
-
-Railway Corp.<br/>
-548 Market St PMB 68956<br/>
-San Francisco, CA 94104<br/>
-États-Unis<br/>
-Politique de confidentialité : <a href="https://railway.com/legal/privacy">https://railway.com/legal/privacy</a>
-
-Neon Inc.<br/>
-209 Orange Street<br/>
-Wilmington, DE 19801<br/>
-United States<br/>
-Politique de confidentialité : <a href="https://neon.tech/privacy-policy">https://neon.tech/privacy-policy</a>
-
-La connexion est gérée par :
-
-Okta, Inc<br/>
-1st St Ste 600<br/>
-San Francisco, CA 94105-4687<br/>
-États-Unis<br/>
-Politique de confidentialité : <a href="https://www.okta.com/privacy-policy/">https://www.okta.com/privacy-policy/</a>
-
-Ces entreprises sont basées aux États-Unis. Les transferts de données vers les États-Unis sont basés sur des garanties appropriées conformément à l'article 46 du RGPD.
-
-### Durée de conservation
-
-Les journaux du serveur sont conservés pendant 30 jours. Toutes les autres données sont conservées jusqu'à ce que vous demandiez leur suppression ou que vous mettiez fin à votre compte.
-
-### Vos droits
-
-Pour exercer votre droit à la portabilité et à l'effacement des données, vous pouvez le gérer directement dans notre interface (export, import, suppression). Vos données sont disponibles dans un format structuré et couramment utilisé. Vous disposez également du droit à l'information, d'accès, de rectification, de limitation du traitement, d'opposition au traitement et d'évitement des décisions automatisées. Contactez-nous pour toute question. Nous répondrons aux demandes dans un délai de 30 jours.
-
-### Licence
-
-Cette politique de confidentialité s'inspire de la [Politique de confidentialité de Codeberg](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). Vous pouvez librement utiliser et modifier ce texte sous la licence [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/).
