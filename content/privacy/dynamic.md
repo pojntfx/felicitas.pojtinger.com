@@ -10,7 +10,7 @@ draft: false
 
 **We do not want to need your data.** We therefore want to be fully transparent about how we use it, and are always open to viable suggestions on how to reduce your data footprint on our infrastructure. We try to use privacy-friendly open source software and privacy-friendly third parties as much as possible.
 
-This document outlines our responsibilities and duties regarding the processing of your personal data, as defined by Article 13 of the European Union's General Data Protection Regulation (GDPR), and provides information on the rights that you have as a data subject.
+This document outlines our responsibilities and duties regarding the processing of your personal data, as defined by Art. 13 of the European Union's General Data Protection Regulation (GDPR), and provides information on the rights that you have as a data subject.
 
 ### 2. Contact
 
