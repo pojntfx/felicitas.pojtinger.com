@@ -20,6 +20,7 @@ Felicitas Pojtinger<br/>
 Hirschkopfweg 8<br/>
 72270 Baiersbronn<br/>
 Germany<br/>
+Phone: +49 152 33842326<br/>
 Email: [felicitas@pojtinger.com](mailto:felicitas@pojtinger.com)
 
 If you want to report a privacy violation through third party content hosted on Felicitas Pojtinger's website and services, please contact our moderation team: [felicitas@pojtinger.com](mailto:felicitas@pojtinger.com)

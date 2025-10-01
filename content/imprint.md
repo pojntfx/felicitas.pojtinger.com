@@ -15,8 +15,8 @@ Germany
 
 ### Contact
 
-Phone: <a href="tel:+49 152 33842326">+49 152 33842326</a><br/>
-Email: <a href="mailto:felicitas@pojtinger.com">felicitas@pojtinger.com</a>
+Phone: +49 152 33842326<br/>
+Email: [felicitas@pojtinger.com](mailto:felicitas@pojtinger.com)
 
 ## Deutsch
 
@@ -29,8 +29,8 @@ Deutschland
 
 ### Kontakt
 
-Telefon: <a href="tel:+49 152 33842326">+49 152 33842326</a><br/>
-E-Mail: <a href="mailto:felicitas@pojtinger.com">felicitas@pojtinger.com</a>
+Telefon: +49 152 33842326<br/>
+E-Mail: [felicitas@pojtinger.com](mailto:felicitas@pojtinger.com)
 
 ## Français
 
@@ -43,5 +43,5 @@ Allemagne
 
 ### Contact
 
-Téléphone: <a href="tel:+49 152 33842326">+49 152 33842326</a><br/>
-E-mail: <a href="mailto:felicitas@pojtinger.com">felicitas@pojtinger.com</a>
+Téléphone: +49 152 33842326<br/>
+E-mail: [felicitas@pojtinger.com](mailto:felicitas@pojtinger.com)
