@@ -196,7 +196,7 @@ Um Ihr Recht auf Datenübertragbarkeit und Löschung auszuüben, können Sie zus
 
 ### 7. Lizenz
 
-Diese Datenschutzerklärung ist inspiriert von der [Codeberg Datenschutzerklärung](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). Sie können diesen Text frei verwenden und modifizieren unter der [CC BY-SA 4.0 (Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/) Lizenz.
+Diese Datenschutzerklärung ist inspiriert von der [Codeberg Datenschutzerklärung](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). Sie können diesen Text frei verwenden und modifizieren unter der [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 Internationa)](https://creativecommons.org/licenses/by-sa/4.0/) Lizenz.
 
 ## Français
 
@@ -293,4 +293,4 @@ Pour exercer votre droit à la portabilité et à l'effacement des données, en 
 
 ### 7. Licence
 
-Cette politique de confidentialité est inspirée de la [Politique de confidentialité de Codeberg](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). Vous pouvez librement utiliser et modifier ce texte sous la licence [CC BY-SA 4.0 (Attribution - Partage dans les Mêmes Conditions 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/).
+Cette politique de confidentialité est inspirée de la [Politique de confidentialité de Codeberg](https://codeberg.org/Codeberg/org/src/branch/main/PrivacyPolicy.md). Vous pouvez librement utiliser et modifier ce texte sous la licence [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/).
