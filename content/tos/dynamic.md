@@ -146,7 +146,7 @@ Die Website und Dienste von Felicitas Pojtinger bieten verschiedene Dokumente un
 
 ### 7. Lizenz
 
-Diese Nutzungsbedingungen sind inspiriert von den [Codeberg Nutzungsbedingungen](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md). Sie können diesen Text frei verwenden und modifizieren unter der [CC BY-SA 4.0 (Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/) Lizenz.
+Diese Nutzungsbedingungen sind inspiriert von den [Codeberg Nutzungsbedingungen](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md). Sie können diesen Text frei verwenden und modifizieren unter der [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/) Lizenz.
 
 ## Français
 
@@ -218,4 +218,4 @@ Le site web et les services de Felicitas Pojtinger fournissent divers documents 
 
 ### 7. Licence
 
-Ces conditions d'utilisation sont inspirées des [Conditions d'utilisation de Codeberg](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md). Vous pouvez librement utiliser et modifier ce texte sous la licence [CC BY-SA 4.0 (Attribution - Partage dans les Mêmes Conditions 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/).
+Ces conditions d'utilisation sont inspirées des [Conditions d'utilisation de Codeberg](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md). Vous pouvez librement utiliser et modifier ce texte sous la licence [CC BY-SA 4.0 (Attribution-ShareAlike 4.0 International)](https://creativecommons.org/licenses/by-sa/4.0/).
