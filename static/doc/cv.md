@@ -69,7 +69,8 @@ header-includes:
 ## Work Experience
 
 \begin{tabular}{@{}p{4cm}l@{}}
-\textbf{2022/07 - present:} & Founding Engineer at Loophole Labs, Inc \\
+\textbf{2025/10 - present:} & Head of Research and Development at Loophole Labs, Inc \\
+\textbf{2022/07 - 2025/10:} & Founding Engineer at Loophole Labs, Inc \\
 \textbf{2021/06 - 2022/07:} & Software Developer at Incloud Engineering GmbH (acquired by q.beyond AG) \\
 \textbf{2019/10 - 2021/06:} & Software Developer at DE software \& control GmbH \\
 \end{tabular}
@@ -104,27 +105,27 @@ header-includes:
 
 For more up-to-date info, please see [github.com/pojntfx](https://github.com/pojntfx) and [linkedin.com/in/pojntfx](https://www.linkedin.com/in/pojntfx/).
 
-**2024-2025**
+**2024-2025**\vspace{-3mm}
 
 - Working on the **"Drafter"** virtualization and live migration primitive
 - Building the **"panrpc"** RPC framework
-- Creating the **"hydrapp"** browser-based desktop application toolkit
+- Creating the **"hydrapp"** browser-based desktop application toolkit\vspace{-2.5mm}
 
-**2023**
+**2023**\vspace{-3mm}
 
 - Published bachelor's thesis **"Efficient Synchronization of Linux Memory Regions over a Network"**
 - Created **"Multiplex"**, an app to watch torrents with friends
 - Built **"r3map"**, a high-performance remote memory library
 - Built **"go-nbd"**, a pure Go NBD server and client library
-- Created **"Connmapper"**, an internet connection visualizer
+- Created **"Connmapper"**, an internet connection visualizer\vspace{-2.5mm}
 
-**2022**
+**2022**\vspace{-3mm}
 
 - Developed **"octarchive"**, a tool for GitHub and Gitea backups
 - Built **"weron"**, an overlay network based on WebRTC
-- Created **"STFS"**, a file system for LTO tape drives
+- Created **"STFS"**, a file system for LTO tape drives\vspace{-2.5mm}
 
-**2020-2021**
+**2020-2021**\vspace{-3mm}
 
 - Built **"liwasc"** and **"invaentory"**, network and port scanners
 - Created **"bofied"**, a network boot server
@@ -134,9 +135,9 @@ For more up-to-date info, please see [github.com/pojntfx](https://github.com/poj
 - Developed **"unisockets"** and **"tinynet"**, POSIX sockets implementations for Wasm
 - Created **"alpimager"**, a tool for Alpine Linux images
 - Built **"gloeth"**, an overlay network manager
-- Developed **"gon2n"**, a P2P VPN
+- Developed **"gon2n"**, a P2P VPN\vspace{-2.5mm}
 
-**2018-2019**
+**2018-2019**\vspace{-3mm}
 
 - Built **"infractl"**, a cluster management tool
 - Developed a **design system for digital publishing**
@@ -146,18 +147,18 @@ For more up-to-date info, please see [github.com/pojntfx](https://github.com/poj
 - Created **"Simple Direct Democracy"**, an e-voting platform
 - Hosted **"CoffeeCodeContribute"** boot camp
 - Developed **"IraSync"**, a social media platform
-- Created **"Die Illustrierte"**, a digital publishing platform
+- Created **"Die Illustrierte"**, a digital publishing platform\vspace{-2.5mm}
 
-**2016-2017**
+**2016-2017**\vspace{-3mm}
 
 - Developed **"OpenSDCP"** and **OpenSNET**, a satellite development platform and network
 - Interned at **"Institut für Raumfahrtsysteme"** in Stuttgart
 - Presented **"MOVA4GIT"** ion thruster at Airbus Defense and Space
 - Contributed to **nanosatellite communication systems** at Aerospace Lab Herrenberg
 - Won the **"VonBWinsAll"** competition with "ModSat" nanosatellite/CubeSat project
-- Participated in **"Jugend Forscht"** competition with the "SIEO" nanosatellite/CubeSat project
+- Participated in **"Jugend Forscht"** competition with the "SIEO" nanosatellite/CubeSat project\vspace{-2.5mm}
 
-**2011-2014**
+**2011-2014**\vspace{-3mm}
 
 - Created **"thelink"** high-FOV VR headset
 - Competed in **"Jugend Forscht" with "theview"** AR headset
@@ -165,4 +166,4 @@ For more up-to-date info, please see [github.com/pojntfx](https://github.com/poj
 - Developed the **"SIE" nanosatellite/CubeSat ion engine**
 - Created **"iHD2/NiroOS"**, an Android distribution for the HTC HD2
 
-Last updated 2025-07-16, Montréal, Québec, Canada (Felicitas Pojtinger)
+Last updated 2025-10-17, Vancouver, British Columbia, Canada (Felicitas Pojtinger)
