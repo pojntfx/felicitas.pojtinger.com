@@ -35,7 +35,7 @@
       icon: docs/icon.svg
     - slug: pojntfx/multiplex
       background: var(--pf-t--color--orange--60)
-      icon: docs/icon.svg
+      icon: assets/meta/icon.svg
     - slug: pojntfx/keygaen
       background: var(--pf-t--color--blue--50)
       icon: docs/icon-light.png
