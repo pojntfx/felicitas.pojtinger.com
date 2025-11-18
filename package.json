@@ -19,9 +19,9 @@
   "homepage": "https://github.com/pojntfx/felicitas.pojtinger.com#readme",
   "dependencies": {
     "@fireworks-js/web": "^2.10.8",
-    "@fontsource/lato": "^4.5.10",
-    "@patternfly/patternfly": "^6.2.3",
-    "magic-snowflakes": "^7.0.1"
+    "@fontsource/lato": "^5.2.7",
+    "@patternfly/patternfly": "^6.4.0",
+    "magic-snowflakes": "^7.0.2"
   },
   "devDependencies": {
     "prettier": "^3.6.2",

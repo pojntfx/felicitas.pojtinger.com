@@ -9,10 +9,10 @@ $pf-v6-global--image-path: "data-url:./{{ .Site.BaseURL }}/assets/images";
 @import "@patternfly/patternfly/patternfly-addons.scss";
 
 @import "@fontsource/lato/scss/mixins.scss";
-@include fontFace(
-  $weight: 400,
+@include faces(
+  $weights: 400,
   $display: fallback,
-  $fontDir: "./{{ .Site.BaseURL }}/assets/fonts/lato"
+  $directory: "./{{ .Site.BaseURL }}/assets/fonts/lato"
 );
 
 $bg: "/img/bg.webp";
@@ -108,12 +108,13 @@ $bg: "/img/bg.webp";
     --pf-t--global--dark--color--brand--300
   );
 
-  --pf-t--global--font--family--300: redhatmonovf, redhatmono, liberationmono,
-    consolas, sfmono-regular, menlo, monaco, "courier new", monospace;
-  --pf-t--global--font--family--200: "Lato", redhatdisplayvf, redhatdisplay,
-    helvetica, arial, sans-serif;
-  --pf-t--global--font--family--100: "Lato", redhattextvf, redhattext, helvetica,
-    arial, sans-serif;
+  --pf-t--global--font--family--300:
+    redhatmonovf, redhatmono, liberationmono, consolas, sfmono-regular, menlo,
+    monaco, "courier new", monospace;
+  --pf-t--global--font--family--200:
+    "Lato", redhatdisplayvf, redhatdisplay, helvetica, arial, sans-serif;
+  --pf-t--global--font--family--100:
+    "Lato", redhattextvf, redhattext, helvetica, arial, sans-serif;
 }
 
 .pf-v6-x-m-no-decoration {
