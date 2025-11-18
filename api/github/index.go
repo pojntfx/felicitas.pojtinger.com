@@ -2,6 +2,7 @@ package github
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 	"net/url"
@@ -29,6 +30,10 @@ type Output struct {
 	LastCommitMessage  string `json:"lastCommitMessage"`
 	LastCommitURL      string `json:"lastCommitURL"`
 }
+
+var (
+	errInvalidPushEvent = errors.New("invalid push event")
+)
 
 func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token string) {
 	username := r.URL.Query().Get("username")
@@ -99,13 +104,18 @@ func GitHubHandler(w http.ResponseWriter, r *http.Request, api string, token str
 			output.LastCommitRepoURL = repo.GetHTMLURL()
 		}
 
-		var pushEvent github.PushEvent
-		if err := json.Unmarshal(event.GetRawPayload(), &pushEvent); err != nil {
+		rawPayload, err := event.ParsePayload()
+		if err != nil {
 			panic(err)
 		}
 
-		if len(pushEvent.Commits) > 0 {
-			commit, _, err := client.Repositories.GetCommit(r.Context(), owner, repoName, pushEvent.Commits[0].GetSHA(), nil)
+		pushEvent, ok := rawPayload.(*github.PushEvent)
+		if !ok {
+			panic(errInvalidPushEvent)
+		}
+
+		if pushEvent.Head != nil {
+			commit, _, err := client.Repositories.GetCommit(r.Context(), owner, repoName, pushEvent.GetHead(), nil)
 			if err != nil {
 				panic(err)
 			}
