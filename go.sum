@@ -58,8 +58,8 @@ github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd h1:TRLaZ9cD/w
 github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd/go.mod h1:6dJC0mAP4ikYIbvyc7fijjWJddQyLn8Ig3JB5CqoB9Q=
 github.com/modern-go/reflect2 v1.0.2 h1:xBagoLtFs94CBntxluKeaWgTMpvLxC4ur3nMaC9Gz0M=
 github.com/modern-go/reflect2 v1.0.2/go.mod h1:yWuevngMOJpCy52FWWMvUC8ws7m/LJsjYzDa0/r8luk=
-github.com/nicklaw5/helix/v2 v2.32.0 h1:ZRPt+wRUMQqpny6yZKVY9rUGNwv+ZmIh75fSiopMXuY=
-github.com/nicklaw5/helix/v2 v2.32.0/go.mod h1:KaXa2mb2kBzsDana9RbXevTgnfU95DMoSORWo2hqlWA=
+github.com/nicklaw5/helix/v2 v2.31.1 h1:HFO6Bc+3/CalHDW2nFGqIPdJ1ix+oO9xzoo4cnuz9Oo=
+github.com/nicklaw5/helix/v2 v2.31.1/go.mod h1:e1GsZq4NDk9sQlPJ0Nr3+14R9cizqg09VAk7/IonpOU=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/pojntfx/skytheon v0.0.0-20230427185454-3bd7fbf1799f h1:/1/yB6ZmLNmCcOGbBl1kluZoGZSWoimNqMSDrLbIvSk=
