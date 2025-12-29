@@ -1,0 +1,10 @@
+- domain: github.com
+  type: github
+  api: https://api.github.com/
+  cdn: https://raw.githubusercontent.com/
+  emoji: 🐙
+- domain: codeberg.org
+  type: forgejo
+  api: https://codeberg.org/
+  cdn: https://codeberg.org/
+  emoji: 🏔️

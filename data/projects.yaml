@@ -1,182 +1,182 @@
 - title: Systems Development
   projects:
-    - slug: pojntfx/weron
+    - repo: github.com/pojntfx/weron
       background: var(--pf-t--color--black)
       icon: docs/icon.svg
-    - slug: pojntfx/go-nbd
+    - repo: github.com/pojntfx/go-nbd
       background: var(--pf-t--color--orange--60)
       icon: docs/icon.svg
-    - slug: pojntfx/stfs
+    - repo: github.com/pojntfx/stfs
       background: var(--pf-t--color--purple--70)
-    - slug: pojntfx/tapisk
+    - repo: github.com/pojntfx/tapisk
       background: var(--pf-t--color--green--70)
       icon: docs/icon-light.png
-    - slug: pojntfx/liwasc
+    - repo: github.com/pojntfx/liwasc
       background: var(--pf-t--color--blue--60)
-    - slug: pojntfx/bofied
+    - repo: github.com/pojntfx/bofied
       background: var(--pf-t--color--blue--70)
       icon: docs/icon.svg
-    - slug: pojntfx/r3map
+    - repo: github.com/pojntfx/r3map
       icon: docs/icon.svg
       background: var(--pf-t--color--orange--60)
-    - slug: pojntfx/ram-dl
+    - repo: github.com/pojntfx/ram-dl
       icon: docs/icon.svg
       background: var(--pf-t--color--black)
-    - slug: pojntfx/htorrent
+    - repo: github.com/pojntfx/htorrent
       icon: docs/icon.svg
       background: var(--pf-t--color--blue--60)
-    - slug: loopholelabs/drafter
+    - repo: github.com/loopholelabs/drafter
       icon: docs/icon.svg
       background: var(--pf-t--color--black)
 - title: Apps
   projects:
-    - slug: pojntfx/connmapper
+    - repo: github.com/pojntfx/connmapper
       background: var(--pf-t--color--green--60)
       icon: docs/icon.svg
-    - slug: pojntfx/multiplex
+    - repo: github.com/pojntfx/multiplex
       background: var(--pf-t--color--orange--60)
       icon: assets/meta/icon.svg
-    - slug: pojntfx/keygaen
+    - repo: github.com/pojntfx/keygaen
       background: var(--pf-t--color--blue--50)
       icon: docs/icon-light.png
-    - slug: pojntfx/keystoregaen
+    - repo: github.com/pojntfx/keystoregaen
       background: var(--pf-t--color--black)
-    - slug: pojntfx/html2goapp
+    - repo: github.com/pojntfx/html2goapp
       background: var(--pf-t--color--purple--70)
-    - slug: pojntfx/sessions
+    - repo: github.com/pojntfx/sessions
       background: var(--pf-t--color--blue--50)
       icon: assets/meta/icon.svg
-    - slug: loopholelabs/latensee
+    - repo: github.com/loopholelabs/latensee
       background: var(--pf-t--color--black)
       icon: docs/icon.svg
 - title: Development Tooling
   projects:
-    - slug: pojntfx/bagccgop
+    - repo: github.com/pojntfx/bagccgop
       background: var(--pf-t--color--green--60)
-    - slug: pojntfx/bagop
+    - repo: github.com/pojntfx/bagop
       background: var(--pf-t--color--green--60)
-    - slug: pojntfx/hydrapp
+    - repo: github.com/pojntfx/hydrapp
       background: var(--pf-t--color--green--70)
       icon: docs/icon.svg
-    - slug: pojntfx/hydrun
+    - repo: github.com/pojntfx/hydrun
       background: var(--pf-t--color--purple--60)
-    - slug: pojntfx/alpimager
+    - repo: github.com/pojntfx/alpimager
       background: var(--pf-t--color--black)
-    - slug: pojntfx/octarchive
+    - repo: github.com/pojntfx/octarchive
       background: var(--pf-t--color--orange--60)
       icon: docs/icon.svg
-    - slug: pojntfx/pojde
+    - repo: github.com/pojntfx/pojde
       background: var(--pf-t--color--green--70)
-    - slug: pojntfx/grpc-examples
+    - repo: github.com/pojntfx/grpc-examples
       background: var(--pf-t--color--green--60)
 - title: Distributed Computing
   projects:
-    - slug: pojntfx/saltpanelo
+    - repo: github.com/pojntfx/saltpanelo
       background: var(--pf-t--color--purple--70)
       icon: docs/icon-light.png
-    - slug: pojntfx/panrpc
+    - repo: github.com/pojntfx/panrpc
       background: var(--pf-t--color--blue--70)
       icon: docs/icon.svg
-    - slug: pojntfx/unisockets
+    - repo: github.com/pojntfx/unisockets
       background: var(--pf-t--color--orange--60)
-    - slug: pojntfx/tinynet
+    - repo: github.com/pojntfx/tinynet
       background: var(--pf-t--color--blue--60)
-    - slug: pojntfx/nebulark
+    - repo: github.com/pojntfx/nebulark
       background: var(--pf-t--color--orange--60)
-    - slug: pojntfx/webnetes
+    - repo: github.com/pojntfx/webnetes
       background: var(--pf-t--color--red--60)
 - title: Management Daemons
   projects:
-    - slug: pojntfx/go-isc-dhcp
+    - repo: github.com/pojntfx/go-isc-dhcp
       background: var(--pf-t--color--black)
-    - slug: pojntfx/gon2n
+    - repo: github.com/pojntfx/gon2n
       background: var(--pf-t--color--purple--70)
-    - slug: pojntfx/ipxebuilderd
+    - repo: github.com/pojntfx/ipxebuilderd
       background: var(--pf-t--color--blue--60)
-    - slug: pojntfx/dibs
+    - repo: github.com/pojntfx/dibs
       background: var(--pf-t--color--blue--70)
 - title: Uni Notes
   projects:
-    - slug: pojntfx/uni-webdev-backend-notes
+    - repo: github.com/pojntfx/uni-webdev-backend-notes
       background: var(--pf-t--color--black)
-    - slug: pojntfx/uni-distributedsystems-notes
+    - repo: github.com/pojntfx/uni-distributedsystems-notes
       background: var(--pf-t--color--orange--60)
-    - slug: pojntfx/uni-programminglanguages-notes
+    - repo: github.com/pojntfx/uni-programminglanguages-notes
       background: var(--pf-t--color--purple--70)
-    - slug: pojntfx/uni-supply-chain-paper
+    - repo: github.com/pojntfx/uni-supply-chain-paper
       background: var(--pf-t--color--red--60)
-    - slug: pojntfx/uni-netpractice-notes
+    - repo: github.com/pojntfx/uni-netpractice-notes
       background: var(--pf-t--color--orange--60)
-    - slug: pojntfx/uni-webtopics-notes
+    - repo: github.com/pojntfx/uni-webtopics-notes
       background: var(--pf-t--color--blue--60)
-    - slug: pojntfx/uni-sciwriting-notes
+    - repo: github.com/pojntfx/uni-sciwriting-notes
       background: var(--pf-t--color--orange--60)
-    - slug: pojntfx/uni-appsecurity-notes
+    - repo: github.com/pojntfx/uni-appsecurity-notes
       background: var(--pf-t--color--green--60)
-    - slug: pojntfx/uni-hci-notes
+    - repo: github.com/pojntfx/uni-hci-notes
       background: var(--pf-t--color--black)
-    - slug: pojntfx/uni-itsec-notes
+    - repo: github.com/pojntfx/uni-itsec-notes
       background: var(--pf-t--color--green--70)
-    - slug: pojntfx/uni-db1-notes
+    - repo: github.com/pojntfx/uni-db1-notes
       background: var(--pf-t--color--green--60)
-    - slug: pojntfx/uni-sdi-notes
+    - repo: github.com/pojntfx/uni-sdi-notes
       background: var(--pf-t--color--green--70)
-    - slug: pojntfx/uni-algodat-notes
+    - repo: github.com/pojntfx/uni-algodat-notes
       background: var(--pf-t--color--purple--60)
-    - slug: pojntfx/uni-bwl-notes
+    - repo: github.com/pojntfx/uni-bwl-notes
       background: var(--pf-t--color--black)
 - title: Digital Publishing
   projects:
-    - slug: pojntfx/deliverance
+    - repo: github.com/pojntfx/deliverance
       background: var(--pf-t--color--black)
       icon: docs/icon.svg
-    - slug: pojntfx/minitel
+    - repo: github.com/pojntfx/minitel
       background: var(--pf-t--color--purple--70)
-    - slug: pojntfx/box
+    - repo: github.com/pojntfx/box
       background: var(--pf-t--color--blue--60)
-    - slug: pojntfx/abizeitung
+    - repo: github.com/pojntfx/abizeitung
       background: var(--pf-t--color--blue--70)
-    - slug: pojntfx/networked-linux-memsync
+    - repo: github.com/pojntfx/networked-linux-memsync
       background: var(--pf-t--color--red--60)
 - title: Websites
   projects:
-    - slug: pojntfx/felicitas.pojtinger.com
+    - repo: github.com/pojntfx/felicitas.pojtinger.com
       background: var(--pf-t--color--orange--60)
-    - slug: pojntfx/pojtinger.com
+    - repo: github.com/pojntfx/pojtinger.com
       background: var(--pf-t--color--blue--60)
-    - slug: morniteaque/yaraamendiares.eu
+    - repo: github.com/morniteaque/yaraamendiares.eu
       background: var(--pf-t--color--purple--60)
-    - slug: morniteaque/morniteaque.org
+    - repo: github.com/morniteaque/morniteaque.org
       background: var(--pf-t--color--black)
-    - slug: pojntfx/illustrierte-website
+    - repo: github.com/pojntfx/illustrierte-website
       background: var(--pf-t--color--orange--60)
-    - slug: pojntfx/physio-dani.de
+    - repo: github.com/pojntfx/physio-dani.de
       background: var(--pf-t--color--red--60)
 - title: Integrations
   projects:
-    - slug: pojntfx/simple-direct-democracy-frontend
+    - repo: github.com/pojntfx/simple-direct-democracy-frontend
       background: var(--pf-t--color--green--60)
-    - slug: pojntfx/task-timer
+    - repo: github.com/pojntfx/task-timer
       background: var(--pf-t--color--green--70)
-    - slug: pojntfx/learn-chinese-platform
+    - repo: github.com/pojntfx/learn-chinese-platform
       background: var(--pf-t--color--green--60)
-    - slug: pojntfx/chinese-notes
+    - repo: github.com/pojntfx/chinese-notes
       background: var(--pf-t--color--green--70)
-    - slug: pojntfx/nextcloud-talk-bot-framework
+    - repo: github.com/pojntfx/nextcloud-talk-bot-framework
       background: var(--pf-t--color--purple--60)
-    - slug: pojntfx/consumat.io-backend
+    - repo: github.com/pojntfx/consumat.io-backend
       background: var(--pf-t--color--black)
-    - slug: pojntfx/skysweeper
+    - repo: github.com/pojntfx/skysweeper
       icon: docs/icon-light.png
       background: var(--pf-t--color--blue--60)
-    - slug: pojntfx/atmosfeed
+    - repo: github.com/pojntfx/atmosfeed
       icon: docs/icon-light.png
       background: var(--pf-t--color--blue--70)
 - title: Aeronautical Engineering
   projects:
-    - slug: pojntfx/libresat
+    - repo: github.com/pojntfx/libresat
       background: var(--pf-t--color--black)
-    - slug: pojntfx/clusterplatform
+    - repo: github.com/pojntfx/clusterplatform
       background: var(--pf-t--color--purple--70)
-    - slug: pojntfx/opensdcp-website
+    - repo: github.com/pojntfx/opensdcp-website
       background: var(--pf-t--color--blue--60)

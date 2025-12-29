@@ -3,7 +3,7 @@
 My personal site.
 
 [![hydrun CI](https://github.com/pojntfx/felicitas.pojtinger.com/actions/workflows/hydrun.yaml/badge.svg)](https://github.com/pojntfx/felicitas.pojtinger.com/actions/workflows/hydrun.yaml)
-![Go Version](https://img.shields.io/badge/go%20version-%3E=1.24-61CFDD.svg)
+![Go Version](https://img.shields.io/badge/go%20version-%3E=1.25-61CFDD.svg)
 [![Go Reference](https://pkg.go.dev/badge/github.com/pojntfx/felicitas.pojtinger.com.svg)](https://pkg.go.dev/github.com/pojntfx/felicitas.pojtinger.com)
 
 ## Overview
@@ -18,7 +18,7 @@ It provides the following information:
 - Livestream (Twitch & YouTube) status
 - Articles with comments
 - Latest toots & tweets
-- Project list (fetched from GitHub)
+- Project list (fetched from GitHub and Forgejo/Codeberg)
 
 ## Installation
 

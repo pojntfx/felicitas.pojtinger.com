@@ -85,4 +85,4 @@ depend:
 	mkdir -p static
 	cp -r node_modules/@patternfly/patternfly/assets static
 	cp -r node_modules/@fontsource/lato/files static/assets/fonts/lato
-	go run ./cmd/ps-gen-projects/ -src data/projects.yaml > data/projects_gen.yaml
+	go run ./cmd/ps-gen-projects/ -projects data/projects.yaml > data/projects_gen.yaml
