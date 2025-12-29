@@ -20,6 +20,7 @@
   "dependencies": {
     "@fireworks-js/web": "^2.10.8",
     "@fontsource/lato": "^5.2.7",
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@patternfly/patternfly": "^6.4.0",
     "magic-snowflakes": "^7.0.2"
   },

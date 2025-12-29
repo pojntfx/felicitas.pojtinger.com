@@ -85,4 +85,5 @@ depend:
 	mkdir -p static
 	cp -r node_modules/@patternfly/patternfly/assets static
 	cp -r node_modules/@fontsource/lato/files static/assets/fonts/lato
+	cp node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 static/assets/fonts/webfonts/
 	go run ./cmd/ps-gen-projects/ -projects data/projects.yaml > data/projects_gen.yaml
