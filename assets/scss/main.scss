@@ -8,6 +8,19 @@ $pf-v6-global--image-path: "data-url:./{{ .Site.BaseURL }}/assets/images";
 @import "@patternfly/patternfly/patternfly.scss";
 @import "@patternfly/patternfly/patternfly-addons.scss";
 
+// We need to manually include this since PatternFly does not
+// See https://github.com/FortAwesome/Font-Awesome/blob/16ac6af0d816e1b132bb2e3f06aa59a1bc5c6d23/css/v5-font-face.css#L6-L11
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$fa-font-path}/fa-brands-400.woff2") format("woff2");
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands";
+}
+
 @import "@fontsource/lato/scss/mixins.scss";
 @include faces(
   $weights: 400,

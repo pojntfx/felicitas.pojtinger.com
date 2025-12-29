@@ -340,40 +340,48 @@
                                   </div>
                                 </div>
                                 <div
-                                  class="pf-v6-u-display-flex pf-v6-u-align-items-center"
+                                  class="pf-v6-u-display-flex pf-v6-u-flex-direction-column pf-v6-u-align-items-center"
                                 >
-                                  <div
-                                    class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-mr-sm"
-                                  >
-                                    <i
-                                      class="fas fa-star"
-                                      aria-hidden="true"
-                                    ></i>
-                                    <span class="pf-v6-u-ml-sm"
-                                      >{{ .stars }}</span
-                                    >
+                                  <div class="pf-v6-u-mb-sm">
+                                    <i class="{{ .forgeIcon }}" aria-hidden="true"></i>
+                                    <span class="pf-v6-u-ml-sm">{{ .forgeDomain }}</span>
                                   </div>
                                   <div
-                                    class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-mr-sm"
+                                    class="pf-v6-u-display-flex pf-v6-u-align-items-center"
                                   >
-                                    <i
-                                      class="fas fa-code-branch"
-                                      aria-hidden="true"
-                                    ></i>
-                                    <span class="pf-v6-u-ml-sm"
-                                      >{{ .forks }}</span
+                                    <div
+                                      class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-mr-sm"
                                     >
-                                  </div>
-                                  <div
-                                    class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center"
-                                  >
-                                    <i
-                                      class="fas fa-dot-circle"
-                                      aria-hidden="true"
-                                    ></i>
-                                    <span class="pf-v6-u-ml-sm"
-                                      >{{ .issues }}</span
+                                      <i
+                                        class="fas fa-star"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <span class="pf-v6-u-ml-sm"
+                                        >{{ .stars }}</span
+                                      >
+                                    </div>
+                                    <div
+                                      class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-mr-sm"
                                     >
+                                      <i
+                                        class="fas fa-code-branch"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <span class="pf-v6-u-ml-sm"
+                                        >{{ .forks }}</span
+                                      >
+                                    </div>
+                                    <div
+                                      class="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center"
+                                    >
+                                      <i
+                                        class="fas fa-dot-circle"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <span class="pf-v6-u-ml-sm"
+                                        >{{ .issues }}</span
+                                      >
+                                    </div>
                                   </div>
                                 </div>
                               </div>
