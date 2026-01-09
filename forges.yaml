@@ -2,9 +2,15 @@
   type: github
   api: https://api.github.com/
   cdn: https://raw.githubusercontent.com/
-  icon: fab fa-github
+  icon: /img/octocat.svg
+  name: GitHub
+  shield: github
+  username: pojntfx
 - domain: codeberg.org
   type: forgejo
   api: https://codeberg.org/
   cdn: https://codeberg.org/
-  icon: fab fa-git-square
+  icon: /img/codeberg.svg
+  name: Codeberg
+  shield: codeberg
+  username: pojntfx

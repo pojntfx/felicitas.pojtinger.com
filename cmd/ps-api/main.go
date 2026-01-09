@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"flag"
 	"fmt"
 	"log"
@@ -9,8 +10,7 @@ import (
 	"strconv"
 
 	"github.com/pojntfx/felicitas.pojtinger.com/api/bluesky"
-	"github.com/pojntfx/felicitas.pojtinger.com/api/forgejo"
-	"github.com/pojntfx/felicitas.pojtinger.com/api/github"
+	"github.com/pojntfx/felicitas.pojtinger.com/api/forges"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/mastodon"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/spotify"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/twitch"
@@ -30,11 +30,8 @@ func main() {
 	blueskyServer := flag.String("bluesky-server", "", "Bluesky API server (can also be set using the BLUESKY_SERVER env variable)")
 	blueskyPassword := flag.String("bluesky-password", "", "Bluesky password (can also be set using the BLUESKY_PASSWORD env variable)")
 
-	githubAPI := flag.String("github-api", "", "GitHub/Gitea API endpoint to use (can also be set using the GITHUB_API env variable)")
-	githubToken := flag.String("github-token", "", "GitHub/Gitea API access token (can also be set using the GITHUB_TOKEN env variable)")
-
-	forgejoAPI := flag.String("forgejo-api", "", "Forgejo API endpoint to use (can also be set using the FORGEJO_API env variable)")
-	forgejoToken := flag.String("forgejo-token", "", "Forgejo API access token (can also be set using the FORGEJO_TOKEN env variable)")
+	forgesFile := flag.String("forges", "forges.yaml", "Forges configuration file (can also be set using the FORGES_FILE env variable)")
+	forgeTokens := flag.String("forge-tokens", "", "Forge tokens as JSON object, e.g. {\"github.com\": \"token\"} (can also be set using the FORGE_TOKENS env variable)")
 
 	youtubeToken := flag.String("youtube-token", "", "YouTube API access token (can also be set using the YOUTUBE_TOKEN env variable)")
 
@@ -80,20 +77,24 @@ func main() {
 		*blueskyPassword = os.Getenv("BLUESKY_PASSWORD")
 	}
 
-	if *githubAPI == "" {
-		*githubAPI = os.Getenv("GITHUB_API")
+	if *forgesFile == "" {
+		*forgesFile = os.Getenv("FORGES_FILE")
 	}
 
-	if *githubToken == "" {
-		*githubToken = os.Getenv("GITHUB_TOKEN")
+	if *forgeTokens == "" {
+		*forgeTokens = os.Getenv("FORGE_TOKENS")
 	}
 
-	if *forgejoAPI == "" {
-		*forgejoAPI = os.Getenv("FORGEJO_API")
+	forgesYAML, err := os.ReadFile(*forgesFile)
+	if err != nil {
+		panic(err)
 	}
 
-	if *forgejoToken == "" {
-		*forgejoToken = os.Getenv("FORGEJO_TOKEN")
+	tokens := map[string]string{}
+	if *forgeTokens != "" {
+		if err := json.Unmarshal([]byte(*forgeTokens), &tokens); err != nil {
+			panic(fmt.Errorf("failed to parse forge tokens: %w", err))
+		}
 	}
 
 	if *youtubeToken == "" {
@@ -187,12 +188,12 @@ func main() {
 		bluesky.BlueskyFeedHandler(rw, r, *blueskyServer, *blueskyPassword)
 	})
 
-	mux.HandleFunc("/api/github", func(rw http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/api/forges", func(rw http.ResponseWriter, r *http.Request) {
 		defer func() {
 			if err := recover(); err != nil {
-				log.Println("Error occured in GitHub API:", err)
+				log.Println("Error occured in forges API:", err)
 
-				http.Error(rw, "Error occured in GitHub API", http.StatusInternalServerError)
+				http.Error(rw, "Error occured in forges API", http.StatusInternalServerError)
 
 				return
 			}
@@ -200,23 +201,7 @@ func main() {
 
 		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
 
-		github.GitHubHandler(rw, r, *githubAPI, *githubToken)
-	})
-
-	mux.HandleFunc("/api/forgejo", func(rw http.ResponseWriter, r *http.Request) {
-		defer func() {
-			if err := recover(); err != nil {
-				log.Println("Error occured in Forgejo API:", err)
-
-				http.Error(rw, "Error occured in Forgejo API", http.StatusInternalServerError)
-
-				return
-			}
-		}()
-
-		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
-
-		forgejo.ForgejoHandler(rw, r, *forgejoAPI, *forgejoToken)
+		forges.ForgesHandler(rw, r, forgesYAML, tokens)
 	})
 
 	mux.HandleFunc("/api/youtube", func(rw http.ResponseWriter, r *http.Request) {
