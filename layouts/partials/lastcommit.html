@@ -8,8 +8,7 @@
       target="_blank"
     >
       <img
-        src="/img/octocat.svg"
-        class="pf-v6-u-p-md pf-v6-x-octocat pf-v6-u-display-none pf-v6-u-display-flex-on-md pf-v6-u-px-md"
+        class="lastcommit__forge__icon pf-v6-u-p-md pf-v6-x-octocat pf-v6-u-display-none pf-v6-u-display-flex-on-md pf-v6-u-px-md"
       />
     </a>
 
@@ -24,7 +23,7 @@
             <div
               class="pf-v6-c-code-block__actions-item pf-v6-u-py-sm pf-v6-u-px-md"
             >
-              <span>Last GitHub commit by</span>
+              <span>Last <span class="lastcommit__forge__name"></span> commit by</span>
               <a class="lastcommit__user__url pf-v6-u-ml-xs" target="_blank">
                 <img id="lastcommit__user__url__img" />
               </a>
@@ -53,14 +52,20 @@
   </div>
 </div>
 
-<noscript>Please enable JavaScript to view the latest GitHub commit.</noscript
+<noscript>Please enable JavaScript to view the latest commit.</noscript
 ><script type="module">
 const base = "{{ .BaseURL }}";
-const username = "{{ .Username }}";
 
 const lastCommit = await (
-  await fetch(`${base}api/github?username=${username}`)
+  await fetch(`${base}api/forges`)
 ).json();
+
+// Forge icon and name
+const forgeIcon = document.querySelector("#{{ .ID }} .lastcommit__forge__icon");
+forgeIcon.src = lastCommit.forgeIcon;
+forgeIcon.alt = lastCommit.forgeDomain;
+
+document.querySelector("#{{ .ID }} .lastcommit__forge__name").innerText = lastCommit.forgeName;
 
 // User
 document.querySelectorAll("#{{ .ID }} .lastcommit__user__url").forEach(el => {
@@ -76,7 +81,7 @@ img.src =
   lastCommit.username +
   "-" +
   lastCommit.userFollowerCount +
-  "%20followers-brightgreen?logo=github&style=social";
+  "%20followers-brightgreen?logo=" + lastCommit.forgeShield + "&style=social";
 
 // Commit
 document
