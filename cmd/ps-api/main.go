@@ -9,6 +9,7 @@ import (
 	"strconv"
 
 	"github.com/pojntfx/felicitas.pojtinger.com/api/bluesky"
+	"github.com/pojntfx/felicitas.pojtinger.com/api/forgejo"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/github"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/mastodon"
 	"github.com/pojntfx/felicitas.pojtinger.com/api/spotify"
@@ -31,6 +32,9 @@ func main() {
 
 	githubAPI := flag.String("github-api", "", "GitHub/Gitea API endpoint to use (can also be set using the GITHUB_API env variable)")
 	githubToken := flag.String("github-token", "", "GitHub/Gitea API access token (can also be set using the GITHUB_TOKEN env variable)")
+
+	forgejoAPI := flag.String("forgejo-api", "", "Forgejo API endpoint to use (can also be set using the FORGEJO_API env variable)")
+	forgejoToken := flag.String("forgejo-token", "", "Forgejo API access token (can also be set using the FORGEJO_TOKEN env variable)")
 
 	youtubeToken := flag.String("youtube-token", "", "YouTube API access token (can also be set using the YOUTUBE_TOKEN env variable)")
 
@@ -82,6 +86,14 @@ func main() {
 
 	if *githubToken == "" {
 		*githubToken = os.Getenv("GITHUB_TOKEN")
+	}
+
+	if *forgejoAPI == "" {
+		*forgejoAPI = os.Getenv("FORGEJO_API")
+	}
+
+	if *forgejoToken == "" {
+		*forgejoToken = os.Getenv("FORGEJO_TOKEN")
 	}
 
 	if *youtubeToken == "" {
@@ -189,6 +201,22 @@ func main() {
 		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
 
 		github.GitHubHandler(rw, r, *githubAPI, *githubToken)
+	})
+
+	mux.HandleFunc("/api/forgejo", func(rw http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error occured in Forgejo API:", err)
+
+				http.Error(rw, "Error occured in Forgejo API", http.StatusInternalServerError)
+
+				return
+			}
+		}()
+
+		rw.Header().Add("Cache-Control", fmt.Sprintf("s-maxage=%v", *ttl))
+
+		forgejo.ForgejoHandler(rw, r, *forgejoAPI, *forgejoToken)
 	})
 
 	mux.HandleFunc("/api/youtube", func(rw http.ResponseWriter, r *http.Request) {
