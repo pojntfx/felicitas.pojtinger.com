@@ -57,7 +57,7 @@
 const base = "{{ .BaseURL }}";
 
 const lastCommit = await (
-  await fetch(`${base}api/forges`)
+  await fetch(`${base}api/forges?username={{ .Username }}`)
 ).json();
 
 // Forge icon and name

@@ -23,6 +23,7 @@ const (
 
 var (
 	errNoActivityFoundFromAnyForge = errors.New("no activity found from any forge")
+	errInvalidPushEvent            = errors.New("invalid push event")
 )
 
 type ForgeType string
@@ -33,14 +34,13 @@ const (
 )
 
 type ForgeConfig struct {
-	Domain   string    `yaml:"domain"`
-	Type     ForgeType `yaml:"type"`
-	API      string    `yaml:"api"`
-	CDN      string    `yaml:"cdn"`
-	Icon     string    `yaml:"icon"`
-	Name     string    `yaml:"name"`
-	Shield   string    `yaml:"shield"`
-	Username string    `yaml:"username"`
+	Domain string    `yaml:"domain"`
+	Type   ForgeType `yaml:"type"`
+	API    string    `yaml:"api"`
+	CDN    string    `yaml:"cdn"`
+	Icon   string    `yaml:"icon"`
+	Name   string    `yaml:"name"`
+	Shield string    `yaml:"shield"`
 }
 
 type Output struct {
@@ -61,6 +61,13 @@ type Output struct {
 }
 
 func ForgesHandler(w http.ResponseWriter, r *http.Request, forgesYAML []byte, tokens map[string]string) {
+	username := r.URL.Query().Get("username")
+	if username == "" {
+		w.Write([]byte("missing username query parameter"))
+
+		panic("missing username query parameter")
+	}
+
 	var forgesList []ForgeConfig
 	if err := yaml.Unmarshal(forgesYAML, &forgesList); err != nil {
 		panic(err)
@@ -69,10 +76,6 @@ func ForgesHandler(w http.ResponseWriter, r *http.Request, forgesYAML []byte, to
 	var results []Output
 
 	for _, forge := range forgesList {
-		if forge.Username == "" {
-			continue
-		}
-
 		token := tokens[forge.Domain]
 
 		var output Output
@@ -80,9 +83,9 @@ func ForgesHandler(w http.ResponseWriter, r *http.Request, forgesYAML []byte, to
 
 		switch forge.Type {
 		case ForgeTypeGitHub:
-			output, err = fetchGitHubActivity(r, forge, token)
+			output, err = fetchGitHubActivity(r, forge, username, token)
 		case ForgeTypeForgejo:
-			output, err = fetchForgejoActivity(r, forge, token)
+			output, err = fetchForgejoActivity(r, forge, username, token)
 		}
 
 		if err != nil {
@@ -122,7 +125,7 @@ func ForgesHandler(w http.ResponseWriter, r *http.Request, forgesYAML []byte, to
 	fmt.Fprintf(w, "%v", string(j))
 }
 
-func fetchGitHubActivity(r *http.Request, forge ForgeConfig, token string) (Output, error) {
+func fetchGitHubActivity(r *http.Request, forge ForgeConfig, username string, token string) (Output, error) {
 	var httpClient *http.Client
 	if token != "" {
 		httpClient = oauth2.NewClient(
@@ -143,12 +146,12 @@ func fetchGitHubActivity(r *http.Request, forge ForgeConfig, token string) (Outp
 		return Output{}, err
 	}
 
-	user, _, err := client.Users.Get(r.Context(), forge.Username)
+	user, _, err := client.Users.Get(r.Context(), username)
 	if err != nil {
 		return Output{}, err
 	}
 
-	events, _, err := client.Activity.ListEventsPerformedByUser(r.Context(), forge.Username, true, nil)
+	events, _, err := client.Activity.ListEventsPerformedByUser(r.Context(), username, true, nil)
 	if err != nil {
 		return Output{}, err
 	}
@@ -191,7 +194,7 @@ func fetchGitHubActivity(r *http.Request, forge ForgeConfig, token string) (Outp
 
 		pushEvent, ok := rawPayload.(*github.PushEvent)
 		if !ok {
-			return Output{}, fmt.Errorf("invalid push event")
+			return Output{}, errInvalidPushEvent
 		}
 
 		if pushEvent.Head != nil {
@@ -211,7 +214,7 @@ func fetchGitHubActivity(r *http.Request, forge ForgeConfig, token string) (Outp
 	return output, nil
 }
 
-func fetchForgejoActivity(r *http.Request, forge ForgeConfig, token string) (Output, error) {
+func fetchForgejoActivity(r *http.Request, forge ForgeConfig, username string, token string) (Output, error) {
 	options := []forgejo.ClientOption{
 		forgejo.SetContext(r.Context()),
 	}
@@ -224,7 +227,7 @@ func fetchForgejoActivity(r *http.Request, forge ForgeConfig, token string) (Out
 		return Output{}, err
 	}
 
-	user, _, err := client.GetUserInfo(forge.Username)
+	user, _, err := client.GetUserInfo(username)
 	if err != nil {
 		return Output{}, err
 	}
@@ -235,7 +238,7 @@ func fetchForgejoActivity(r *http.Request, forge ForgeConfig, token string) (Out
 		UserURL:           fmt.Sprintf("%s%s", forge.API, user.UserName),
 	}
 
-	repos, _, err := client.ListUserRepos(forge.Username, forgejo.ListReposOptions{})
+	repos, _, err := client.ListUserRepos(username, forgejo.ListReposOptions{})
 	if err != nil {
 		return Output{}, err
 	}

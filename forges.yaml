@@ -5,7 +5,6 @@
   icon: /img/octocat.svg
   name: GitHub
   shield: github
-  username: pojntfx
 - domain: codeberg.org
   type: forgejo
   api: https://codeberg.org/
@@ -13,4 +12,3 @@
   icon: /img/codeberg.svg
   name: Codeberg
   shield: codeberg
-  username: pojntfx
