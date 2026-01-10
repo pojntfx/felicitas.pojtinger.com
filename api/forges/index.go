@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"os"
 	"path"
 	"sort"
 	"strings"
@@ -212,6 +213,22 @@ func fetchGitHubActivity(r *http.Request, forge ForgeConfig, username string, to
 	}
 
 	return output, nil
+}
+
+func Handler(w http.ResponseWriter, r *http.Request) {
+	forgesYAML, err := os.ReadFile(os.Getenv("FORGES_FILE"))
+	if err != nil {
+		panic(err)
+	}
+
+	tokens := map[string]string{}
+	if forgeTokens := os.Getenv("FORGE_TOKENS"); forgeTokens != "" {
+		if err := json.Unmarshal([]byte(forgeTokens), &tokens); err != nil {
+			panic(fmt.Errorf("failed to parse forge tokens: %w", err))
+		}
+	}
+
+	ForgesHandler(w, r, forgesYAML, tokens)
 }
 
 func fetchForgejoActivity(r *http.Request, forge ForgeConfig, username string, token string) (Output, error) {
