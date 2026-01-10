@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strconv"
 
 	"github.com/pojntfx/felicitas.pojtinger.com/api/bluesky"
@@ -30,7 +31,7 @@ func main() {
 	blueskyServer := flag.String("bluesky-server", "", "Bluesky API server (can also be set using the BLUESKY_SERVER env variable)")
 	blueskyPassword := flag.String("bluesky-password", "", "Bluesky password (can also be set using the BLUESKY_PASSWORD env variable)")
 
-	forgesFile := flag.String("forges", "forges.yaml", "Forges configuration file (can also be set using the FORGES_FILE env variable)")
+	forgesFile := flag.String("forges", filepath.Join("data", "forges.yaml"), "Forges configuration file (can also be set using the FORGES_FILE env variable)")
 	forgeTokens := flag.String("forge-tokens", "", "Forge tokens as JSON object, e.g. {\"github.com\": \"token\"} (can also be set using the FORGE_TOKENS env variable)")
 
 	youtubeToken := flag.String("youtube-token", "", "YouTube API access token (can also be set using the YOUTUBE_TOKEN env variable)")

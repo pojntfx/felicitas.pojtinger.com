@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -72,7 +73,7 @@ type ForgeConfig struct {
 func main() {
 	verbosity := flag.String("verbosity", "info", "Log level (debug, info, warn, error)")
 	projectsFile := flag.String("projects", "projects.yaml", "Projects configuration file")
-	forgesFile := flag.String("forges", "forges.yaml", "Forges configuration file")
+	forgesFile := flag.String("forges", filepath.Join("data", "forges.yaml"), "Forges configuration file")
 	tokens := flag.String("tokens", "", "Forge tokens as JSON object, e.g. {\"github.com\": \"token\"} (can also be set using the FORGE_TOKENS env variable)")
 
 	flag.Parse()

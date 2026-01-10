@@ -14,6 +14,7 @@ import (
 
 	"codeberg.org/mvdkleijn/forgejo-sdk/forgejo"
 	"github.com/google/go-github/v42/github"
+	felicitas_pojtinger_com "github.com/pojntfx/felicitas.pojtinger.com"
 	"golang.org/x/oauth2"
 	"gopkg.in/yaml.v3"
 )
@@ -216,11 +217,6 @@ func fetchGitHubActivity(r *http.Request, forge ForgeConfig, username string, to
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	forgesYAML, err := os.ReadFile(os.Getenv("FORGES_FILE"))
-	if err != nil {
-		panic(err)
-	}
-
 	tokens := map[string]string{}
 	if forgeTokens := os.Getenv("FORGE_TOKENS"); forgeTokens != "" {
 		if err := json.Unmarshal([]byte(forgeTokens), &tokens); err != nil {
@@ -228,7 +224,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	ForgesHandler(w, r, forgesYAML, tokens)
+	ForgesHandler(w, r, felicitas_pojtinger_com.ForgesYAML, tokens)
 }
 
 func fetchForgejoActivity(r *http.Request, forge ForgeConfig, username string, token string) (Output, error) {
