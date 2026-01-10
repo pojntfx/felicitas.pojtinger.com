@@ -17,7 +17,7 @@ jobs:
           # Tests
           - id: test
             src: .
-            os: golang:bookworm
+            os: golang:trixie
             flags: -e '-v /tmp/ccache:/root/.cache/go-build'
             cmd: GOFLAGS="-short" ./Hydrunfile test
             dst: out/nonexistent
@@ -26,21 +26,21 @@ jobs:
           # Binaries
           - id: go.ps-api
             src: .
-            os: golang:bookworm
+            os: golang:trixie
             flags: -e '-v /tmp/ccache:/root/.cache/go-build'
             cmd: ./Hydrunfile go ps-api
             dst: out/*
             runner: ubuntu-latest
           - id: go.ps-gen-projects
             src: .
-            os: golang:bookworm
+            os: golang:trixie
             flags: -e '-v /tmp/ccache:/root/.cache/go-build'
             cmd: ./Hydrunfile go ps-gen-projects
             dst: out/*
             runner: ubuntu-latest
           - id: go.ps-proxy
             src: .
-            os: golang:bookworm
+            os: golang:trixie
             flags: -e '-v /tmp/ccache:/root/.cache/go-build'
             cmd: ./Hydrunfile go ps-proxy
             dst: out/*
@@ -72,7 +72,7 @@ jobs:
           sudo install /tmp/hydrun /usr/local/bin
       - name: Build with hydrun
         working-directory: ${{ matrix.target.src }}
-        run: hydrun -o ${{ matrix.target.os }} ${{ matrix.target.flags }} "FORGE_TOKENS=${{ secrets.FORGE_TOKENS }} ${{ matrix.target.cmd }}"
+        run: hydrun -o ${{ matrix.target.os }} ${{ matrix.target.flags }} "FORGE_TOKENS='${{ secrets.FORGE_TOKENS }}' ${{ matrix.target.cmd }}"
       - name: Fix permissions for output
         run: sudo chown -R $USER .
       - name: Save ccache
