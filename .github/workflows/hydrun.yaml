@@ -72,7 +72,9 @@ jobs:
           sudo install /tmp/hydrun /usr/local/bin
       - name: Build with hydrun
         working-directory: ${{ matrix.target.src }}
-        run: hydrun -o ${{ matrix.target.os }} ${{ matrix.target.flags }} "FORGE_TOKENS='${{ secrets.FORGE_TOKENS }}' ${{ matrix.target.cmd }}"
+        env:
+          FORGE_TOKENS: ${{ secrets.FORGE_TOKENS }}
+        run: hydrun -o ${{ matrix.target.os }} ${{ matrix.target.flags }} -e '-e FORGE_TOKENS' "${{ matrix.target.cmd }}"
       - name: Fix permissions for output
         run: sudo chown -R $USER .
       - name: Save ccache
