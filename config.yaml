@@ -2,6 +2,8 @@ baseURL: /
 languageCode: en-us
 title: Felicitas Pojtinger
 relativeURLs: true
+ignoreFiles:
+  - "data/index\\.go$"
 markup:
   goldmark:
     renderer:
