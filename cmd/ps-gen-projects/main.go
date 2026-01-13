@@ -35,6 +35,7 @@ type OutputProject struct {
 	Icon        string   `yaml:"icon"`
 	ForgeDomain string   `yaml:"forgeDomain"`
 	ForgeIcon   string   `yaml:"forgeIcon"`
+	ForgeName   string   `yaml:"forgeName"`
 }
 
 type OutputCategory struct {
@@ -68,6 +69,7 @@ type ForgeConfig struct {
 	API    string    `yaml:"api"`
 	CDN    string    `yaml:"cdn"`
 	Icon   string    `yaml:"icon"`
+	Name   string    `yaml:"name"`
 }
 
 func main() {
@@ -253,6 +255,7 @@ func main() {
 					Icon:        icon,
 					ForgeDomain: domain,
 					ForgeIcon:   forge.Icon,
+					ForgeName:   forge.Name,
 				}
 			case ForgeTypeForgejo:
 				client, ok := forgejoClients[domain]
@@ -315,6 +318,7 @@ func main() {
 					Icon:        icon,
 					ForgeDomain: domain,
 					ForgeIcon:   forge.Icon,
+					ForgeName:   forge.Name,
 				}
 			}
 
