@@ -156,11 +156,28 @@ $bg: "/img/bg.webp";
 .pf-v6-c-avatar--main {
   width: 250px;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
   box-shadow: 0 0 14px var(--pf-t--color--white);
 
   @media (prefers-color-scheme: dark) {
     box-shadow: 0 0 4px var(--pf-t--color--black);
+  }
+
+  &__wrapper {
+    display: grid;
+  }
+
+  &__wrapper > * {
+    grid-area: 1 / 1;
+  }
+
+  &__skeleton {
+    z-index: 0;
+  }
+
+  &__wrapper > img {
+    z-index: 1;
   }
 }
 
@@ -194,6 +211,7 @@ $bg: "/img/bg.webp";
 .pf-v6-x-c-avatar__figcaption {
   margin-left: 0 auto;
   transform: translateY(-50%);
+  z-index: 2;
 }
 
 .pf-v6-c-card--overlay {

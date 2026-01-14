@@ -79,11 +79,16 @@
       <figure
         class="pf-v6-l-grid__item pf-m-12-col pf-m-2-col-on-lg pf-v6-u-display-flex pf-v6-u-flex-direction-column pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-p-lg pf-v6-u-p-0-on-lg"
       >
-        <img
-          src="{{ .Site.Data.person.img }}"
-          alt="Profile picture of {{ .Site.Data.person.name }}"
-          class="pf-v6-c-avatar pf-m-xl pf-v6-c-avatar--main"
-        />
+        <div class="pf-v6-c-avatar--main__wrapper">
+          <div class="pf-v6-c-skeleton pf-m-circle pf-v6-c-avatar--main__skeleton">
+            <span class="pf-v6-screen-reader">Loading profile picture</span>
+          </div>
+          <img
+            src="{{ .Site.Data.person.img }}"
+            alt="Profile picture of {{ .Site.Data.person.name }}"
+            class="pf-v6-c-avatar pf-m-xl pf-v6-c-avatar--main"
+          />
+        </div>
 
         <figcaption class="pf-v6-x-c-avatar__figcaption">
           <div class="pf-v6-c-label">
