@@ -4,48 +4,57 @@
 >
   <div class="pf-v6-c-card__body pf-v6-u-p-0 pf-v6-u-display-flex">
     <a
-      class="lastcommit__user__url pf-v6-u-display-flex pf-v6-x-u-hoverable pf-v6-x-u-hoverable--rotate"
+      class="lastcommit__user__url lastcommit__content pf-v6-u-display-none pf-v6-x-u-hoverable pf-v6-x-u-hoverable--rotate"
       target="_blank"
     >
       <img
         class="lastcommit__forge__icon pf-v6-u-p-md pf-v6-x-octocat pf-v6-u-display-none pf-v6-u-display-flex-on-md pf-v6-u-px-md"
       />
     </a>
+    <div class="lastcommit__skeleton lastcommit__forge__icon__skeleton pf-v6-c-skeleton pf-v6-u-m-md pf-v6-u-display-none pf-v6-u-display-flex-on-md pf-v6-u-align-self-center">
+      <span class="pf-v6-screen-reader">Loading forge icon</span>
+    </div>
 
     <div class="lastcommit">
       <div
         class="pf-v6-c-code-block pf-v6-x-u-transparent pf-v6-x-u-borderless pf-v6-u-p-sm pf-v6-u-pl-xs"
       >
-        <div class="pf-v6-c-code-block__header">
+        <div class="pf-v6-c-code-block__header pf-v6-u-pl-0 pf-v6-u-py-sm">
           <div
             class="pf-v6-c-code-block__actions pf-v6-c-code-block__actions--info pf-v6-u-flex-direction-column pf-v6-u-flex-direction-row-on-lg"
           >
             <div
-              class="pf-v6-c-code-block__actions-item pf-v6-u-py-sm pf-v6-u-px-md"
+              class="pf-v6-c-code-block__actions-item pf-v6-u-px-md"
             >
-              <span>Last <span class="lastcommit__forge__name"></span> commit by</span>
-              <a class="lastcommit__user__url pf-v6-u-ml-xs" target="_blank">
+              <span class="lastcommit__content pf-v6-u-display-none">Last <span class="lastcommit__forge__name"></span> commit by</span>
+              <div class="lastcommit__skeleton pf-v6-c-skeleton pf-m-text-sm pf-m-width-sm pf-v6-u-display-inline-block">
+                <span class="pf-v6-screen-reader">Loading commit info</span>
+              </div>
+              <a class="lastcommit__user__url lastcommit__content pf-v6-u-display-none pf-v6-u-ml-xs" target="_blank">
                 <img id="lastcommit__user__url__img" />
               </a>
             </div>
 
             <div
-              class="pf-v6-c-code-block__actions-item pf-v6-u-pb-sm pf-v6-u-pt-sm-on-lg"
+              class="pf-v6-c-code-block__actions-item"
             >
-              <a class="lastcommit__repo__url" target="_blank">
+              <a class="lastcommit__repo__url lastcommit__content pf-v6-u-display-none" target="_blank">
                 <i class="fas fa-code-branch" aria-hidden="true"></i>
                 <span class="lastcommit__repo__name"></span> (<span
                   class="lastcommit__commit__time"
                 ></span
                 >)
               </a>
+              <div class="lastcommit__skeleton pf-v6-c-skeleton pf-m-text-sm pf-m-width-sm pf-v6-u-display-inline-block">
+                <span class="pf-v6-screen-reader">Loading repository info</span>
+              </div>
             </div>
           </div>
         </div>
-        <div class="pf-v6-c-code-block__content">
+        <div class="pf-v6-u-pl-0 pf-v6-c-code-block__content">
           <pre
             class="pf-v6-c-code-block__pre pf-v6-x-u-nowrap pf-v6-x-u-overflow-x-auto"
-          ><code class="pf-v6-c-code-block__code lastcommit__commit__message"></code></pre>
+          ><code class="pf-v6-c-code-block__code lastcommit__commit__message lastcommit__content pf-v6-u-display-none"></code><div class="lastcommit__skeleton lastcommit__commit__message__skeleton pf-v6-c-skeleton"><span class="pf-v6-screen-reader">Loading commit message</span></div></pre>
         </div>
       </div>
     </div>
@@ -55,24 +64,25 @@
 <noscript>Please enable JavaScript to view the latest commit.</noscript
 ><script type="module">
 const base = "{{ .BaseURL }}";
+const container = document.querySelector("#{{ .ID }}");
 
 const lastCommit = await (
   await fetch(`${base}api/forges?username={{ .Username }}`)
 ).json();
 
 // Forge icon and name
-const forgeIcon = document.querySelector("#{{ .ID }} .lastcommit__forge__icon");
+const forgeIcon = container.querySelector(".lastcommit__forge__icon");
 forgeIcon.src = lastCommit.forgeIcon;
 forgeIcon.alt = lastCommit.forgeDomain;
 
-document.querySelector("#{{ .ID }} .lastcommit__forge__name").innerText = lastCommit.forgeName;
+container.querySelector(".lastcommit__forge__name").innerText = lastCommit.forgeName;
 
 // User
-document.querySelectorAll("#{{ .ID }} .lastcommit__user__url").forEach(el => {
+container.querySelectorAll(".lastcommit__user__url").forEach(el => {
   el.href = lastCommit.userURL;
 });
 
-const img = document.querySelector("#{{ .ID }} #lastcommit__user__url__img");
+const img = container.querySelector("#lastcommit__user__url__img");
 
 img.alt =
   lastCommit.username + " with " + lastCommit.userFollowerCount + " followers";
@@ -84,8 +94,8 @@ img.src =
   "%20followers-brightgreen?logo=" + lastCommit.forgeShield + "&style=social";
 
 // Commit
-document
-  .querySelectorAll("#{{ .ID }} .lastcommit__commit__url")
+container
+  .querySelectorAll(".lastcommit__commit__url")
   .forEach((c) => {
     c.href = lastCommit.lastCommitURL;
   });
@@ -94,17 +104,36 @@ const diff = Math.ceil(
   (new Date() - new Date(lastCommit.lastCommitTime)) / 36e5
 );
 
-document.querySelector("#{{ .ID }} .lastcommit__commit__time").innerText =
+container.querySelector(".lastcommit__commit__time").innerText =
   diff >= 0 ? diff + " hour" + (diff == 1 ? "" : "s") + " ago" : "just now";
 
-document.querySelector("#{{ .ID }} .lastcommit__commit__message").innerText =
-  lastCommit.lastCommitMessage;
+const firstLine = lastCommit.lastCommitMessage.split('\n')[0];
+container.querySelector(".lastcommit__commit__message").innerText =
+  firstLine.length > 80 ? `${firstLine.substring(0, 77)}…` : firstLine;
 
 // Repo
-document.querySelector("#{{ .ID }} .lastcommit__repo__url").href =
+container.querySelector(".lastcommit__repo__url").href =
   lastCommit.lastCommitURL;
 
-document.querySelector("#{{ .ID }} .lastcommit__repo__name").innerText =
+container.querySelector(".lastcommit__repo__name").innerText =
   lastCommit.lastCommitRepoName.length > 24 ? `${lastCommit.lastCommitRepoName.substring(0, 19)} …` : lastCommit.lastCommitRepoName;
+
+// Styling patches
+container.querySelectorAll(".lastcommit__skeleton").forEach(el => {
+  el.classList.remove("pf-v6-u-display-inline-block", "pf-v6-u-display-flex-on-md");
+  el.classList.add("pf-v6-u-display-none");
+});
+container.querySelectorAll(".lastcommit__content").forEach(el => {
+  el.classList.remove("pf-v6-u-display-none");
+  el.classList.add("pf-v6-u-display-inline");
+});
+container.querySelector(".lastcommit__user__url.lastcommit__content").classList.remove("pf-v6-u-display-inline");
+container.querySelector(".lastcommit__user__url.lastcommit__content").classList.add("pf-v6-u-display-flex");
+
+const actionsItems = container.querySelectorAll(".pf-v6-c-code-block__actions-item");
+actionsItems[0].classList.add("pf-v6-u-py-sm");
+actionsItems[1].classList.add("pf-v6-u-pb-sm", "pf-v6-u-pt-sm-on-lg");
+
+container.querySelector(".pf-v6-c-code-block__header").classList.remove("pf-v6-u-py-sm");
 
 </script>

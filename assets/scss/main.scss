@@ -240,6 +240,17 @@ $bg: "/img/bg.webp";
   }
 }
 
+.lastcommit__forge__icon__skeleton {
+  width: 58px; // Rendered forge icon
+  height: 58px;
+}
+
+.lastcommit__commit__message__skeleton {
+  display: block;
+  width: 100%;
+  height: 2em;
+}
+
 .pf-v6-x-u-blur {
   backdrop-filter: blur(7.5px);
   -webkit-backdrop-filter: blur(7.5px);
