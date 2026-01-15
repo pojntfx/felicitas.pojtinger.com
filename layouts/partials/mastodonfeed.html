@@ -42,7 +42,34 @@
     {{ else }}
       <ul
         class="twitterfeed__tweets pf-v6-l-flex pf-m-column pf-m-space-items-sm"
-      ></ul>
+      >
+        {{ range seq 3 }}
+        <li class="twitterfeed__skeleton">
+          <div class="pf-v6-c-card pf-m-plain pf-v6-u-color-100 pf-v6-display-flex pf-v6-u-flex-direction-column pf-m-align-items-flex-start pf-v6-c-card__body pf-v6-u-p-md">
+            <div class="pf-v6-u-mb-sm pf-v6-l-flex pf-m-align-items-center">
+              <div class="pf-v6-c-skeleton pf-m-circle pf-v6-x-c-avatar--social pf-v6-u-mr-sm"></div>
+              <div class="pf-v6-u-display-flex pf-v6-u-flex-direction-column">
+                <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-md pf-v6-u-mb-xs"></div>
+                <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-sm pf-v6-u-mb-xs pf-v6-u-ml-xs"></div>
+                <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-md"></div>
+              </div>
+            </div>
+            <div class="pf-v6-u-w-100">
+              <div class="pf-v6-u-py-sm">
+                <div class="pf-v6-c-skeleton pf-m-text-md pf-v6-u-mb-xs pf-v6-u-w-100"></div>
+                <div class="pf-v6-c-skeleton pf-m-text-md pf-v6-u-mb-xs pf-v6-u-w-100"></div>
+                <div class="pf-v6-c-skeleton pf-m-text-md pf-m-width-lg"></div>
+              </div>
+              <div class="pf-v6-l-flex pf-m-justify-content-space-around pf-m-align-items-center pf-v6-u-mt-sm">
+                <div class="pf-v6-c-skeleton pf-m-text-md twitterfeed__skeleton__stat"></div>
+                <div class="pf-v6-c-skeleton pf-m-text-md twitterfeed__skeleton__stat"></div>
+                <div class="pf-v6-c-skeleton pf-m-text-md twitterfeed__skeleton__stat"></div>
+              </div>
+            </div>
+          </div>
+        </li>
+        {{ end }}
+      </ul>
 
       <a
         target="_blank"
@@ -72,6 +99,11 @@
   document.querySelectorAll("#{{ .ID }} .twitterfeed__user__url").forEach(el => {
     el.href = mastodonFeed.userURL;
   })
+
+  // Hide skeletons
+  document.querySelectorAll("#{{ .ID }} .twitterfeed__skeleton").forEach(el => {
+    el.remove();
+  });
 
   // Tweets
   mastodonFeed.toots.map((tweet) => {
