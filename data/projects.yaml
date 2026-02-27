@@ -69,6 +69,8 @@
       background: var(--pf-t--color--green--70)
     - repo: github.com/pojntfx/grpc-examples
       background: var(--pf-t--color--green--60)
+    - repo: codeberg.org/puregotk/puregotk
+      background: var(--pf-t--color--blue--60)
 - title: Distributed Computing
   projects:
     - repo: github.com/pojntfx/saltpanelo
