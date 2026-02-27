@@ -22,6 +22,7 @@
     <link rel="alternate" type="application/rss+xml" title="Articles on {{ .Site.Title }}" href="{{ "articles/index.xml" | relURL }}" />
 
     <meta name="author" content="{{ .Site.Data.site.author }}" />
+    <meta name="fediverse:creator" content="{{ .Site.Data.integrations.mastodon.username }}" />
     <meta name="description" content="{{ .Site.Data.site.description }}" />
     <meta
       name="keywords"
