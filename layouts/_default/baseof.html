@@ -19,6 +19,7 @@
 
 
     <link rel="icon" href="{{ .Site.Data.person.img }}" />
+    <link rel="alternate" type="application/rss+xml" title="Articles on {{ .Site.Title }}" href="{{ "articles/index.xml" | relURL }}" />
 
     <meta name="author" content="{{ .Site.Data.site.author }}" />
     <meta name="description" content="{{ .Site.Data.site.description }}" />
