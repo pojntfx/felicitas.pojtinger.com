@@ -95,13 +95,6 @@ func MastodonFeedHandler(w http.ResponseWriter, r *http.Request, server string, 
 
 	toots := []Toot{}
 
-	sourceToots, err := client.GetAccountStatuses(r.Context(), account.ID, &mastodon.Pagination{
-		Limit: 4,
-	})
-	if err != nil {
-		panic(err)
-	}
-
 	feedAuthor := Author{
 		UserDisplayName:       account.DisplayName,
 		UserName:              account.Username,
@@ -109,7 +102,19 @@ func MastodonFeedHandler(w http.ResponseWriter, r *http.Request, server string, 
 		UserProfilePictureURL: account.AvatarStatic,
 	}
 
-	for _, sourceToot := range sourceToots {
+	const wantToots = 4
+
+	for sourceToot, err := range client.AccountStatuses(
+		r.Context(),
+		account.ID,
+		&mastodon.Pagination{
+			Limit: wantToots,
+		},
+	) {
+		if err != nil {
+			panic(err)
+		}
+
 		// Hide any non-public toots
 		// See https://docs.joinmastodon.org/entities/Status/#visibility
 		if sourceToot.Visibility != "public" {
@@ -162,6 +167,10 @@ func MastodonFeedHandler(w http.ResponseWriter, r *http.Request, server string, 
 		toot.URL = contentSource.URL
 
 		toots = append(toots, toot)
+
+		if len(toots) >= wantToots {
+			break
+		}
 	}
 
 	output.Toots = toots

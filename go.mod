@@ -6,7 +6,7 @@ require (
 	codeberg.org/mvdkleijn/forgejo-sdk/forgejo v1.2.0
 	github.com/google/go-github/v42 v42.0.0
 	github.com/google/go-github/v68 v68.0.0
-	github.com/mattn/go-mastodon v0.0.10
+	github.com/mattn/go-mastodon v0.0.11
 	github.com/mmcdole/gofeed v1.3.0
 	github.com/nicklaw5/helix/v2 v2.31.1
 	github.com/pojntfx/skytheon v0.0.0-20230427185454-3bd7fbf1799f
