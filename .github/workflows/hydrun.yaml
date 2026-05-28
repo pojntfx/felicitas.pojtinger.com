@@ -47,7 +47,7 @@ jobs:
             runner: ubuntu-latest
           - id: pwa
             src: .
-            os: golang:alpine
+            os: alpine:edge
             flags: -e '-v /tmp/ccache:/root/.cache/go-build'
             cmd: ./Hydrunfile pwa
             dst: out/*
