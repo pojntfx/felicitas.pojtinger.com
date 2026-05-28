@@ -33,6 +33,16 @@ type Toot struct {
 	FavoritesCount int `json:"favoritesCount"`
 
 	URL string `json:"url"`
+
+	Author    Author  `json:"author"`
+	BoostedBy *Author `json:"boostedBy,omitempty"`
+}
+
+type Author struct {
+	UserDisplayName       string `json:"userDisplayName"`
+	UserName              string `json:"username"`
+	UserURL               string `json:"userUrl"`
+	UserProfilePictureURL string `json:"userProfilePictureURL"`
 }
 
 type Media struct {
@@ -48,6 +58,8 @@ func MastodonFeedHandler(w http.ResponseWriter, r *http.Request, server string, 
 
 		panic("missing username query parameter")
 	}
+
+	includeReblogs := r.URL.Query().Has("includeReblogs")
 
 	client := mastodon.NewClient(&mastodon.Config{
 		Server:       server,
@@ -90,20 +102,50 @@ func MastodonFeedHandler(w http.ResponseWriter, r *http.Request, server string, 
 		panic(err)
 	}
 
+	feedAuthor := Author{
+		UserDisplayName:       account.DisplayName,
+		UserName:              account.Username,
+		UserURL:               account.URL,
+		UserProfilePictureURL: account.AvatarStatic,
+	}
+
 	for _, sourceToot := range sourceToots {
-		// Skip toots are empty, i.e. reblogs
-		if strings.TrimSpace(sourceToot.Content) == "" && len(sourceToot.MediaAttachments) <= 0 {
+		// Hide any non-public toots
+		// See https://docs.joinmastodon.org/entities/Status/#visibility
+		if sourceToot.Visibility != "public" {
 			continue
 		}
 
 		toot := Toot{}
 
+		contentSource := sourceToot
+		toot.Author = feedAuthor
+
+		if sourceToot.Reblog != nil {
+			if !includeReblogs {
+				continue
+			}
+
+			contentSource = sourceToot.Reblog
+			toot.Author = Author{
+				UserDisplayName:       sourceToot.Reblog.Account.DisplayName,
+				UserName:              sourceToot.Reblog.Account.Username,
+				UserURL:               sourceToot.Reblog.Account.URL,
+				UserProfilePictureURL: sourceToot.Reblog.Account.AvatarStatic,
+			}
+			boostedBy := feedAuthor
+			toot.BoostedBy = &boostedBy
+		} else if strings.TrimSpace(sourceToot.Content) == "" && len(sourceToot.MediaAttachments) <= 0 {
+			// Skip empty toots
+			continue
+		}
+
 		toot.Timestamp = sourceToot.CreatedAt.Format(time.RFC3339)
-		toot.Body = sourceToot.Content
+		toot.Body = contentSource.Content
 
 		images := []Media{}
 
-		for _, attachment := range sourceToot.MediaAttachments {
+		for _, attachment := range contentSource.MediaAttachments {
 			images = append(images, Media{
 				URL:     attachment.URL,
 				AltText: attachment.Description,
@@ -113,11 +155,11 @@ func MastodonFeedHandler(w http.ResponseWriter, r *http.Request, server string, 
 
 		toot.Media = images
 
-		toot.RepliesCount = int(sourceToot.RepliesCount)
-		toot.ReblogsCount = int(sourceToot.ReblogsCount)
-		toot.FavoritesCount = int(sourceToot.FavouritesCount)
+		toot.RepliesCount = int(contentSource.RepliesCount)
+		toot.ReblogsCount = int(contentSource.ReblogsCount)
+		toot.FavoritesCount = int(contentSource.FavouritesCount)
 
-		toot.URL = sourceToot.URL
+		toot.URL = contentSource.URL
 
 		toots = append(toots, toot)
 	}
