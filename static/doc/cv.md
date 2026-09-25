@@ -12,8 +12,8 @@ header-includes:
   - \pagenumbering{gobble}
   - \newcommand{\hideFromPandoc}[1]{#1}
   - \hideFromPandoc{
-      \let\Begin\begin
-      \let\End\end
+    \let\Begin\begin
+    \let\End\end
     }
 ---
 

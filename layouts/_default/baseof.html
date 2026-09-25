@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ .Site.Language.Lang }}">
   <head>
     <meta charset="UTF-8" />
@@ -19,10 +19,18 @@
 
 
     <link rel="icon" href="{{ .Site.Data.person.img }}" />
-    <link rel="alternate" type="application/rss+xml" title="Articles on {{ .Site.Title }}" href="{{ "articles/index.xml" | relURL }}" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Articles on {{ .Site.Title }}"
+      href="{{ "articles/index.xml" | relURL }}"
+    />
 
     <meta name="author" content="{{ .Site.Data.site.author }}" />
-    <meta name="fediverse:creator" content="{{ .Site.Data.integrations.mastodon.username }}" />
+    <meta
+      name="fediverse:creator"
+      content="{{ .Site.Data.integrations.mastodon.username }}"
+    />
     <meta name="description" content="{{ .Site.Data.site.description }}" />
     <meta
       name="keywords"
@@ -121,13 +129,13 @@
     >
     <script type="module">
       const darkModeMediaQuery = window.matchMedia(
-        "(prefers-color-scheme: dark)"
+        "(prefers-color-scheme: dark)",
       );
 
       const updateTheme = () =>
         document.documentElement.classList.toggle(
           "pf-v6-theme-dark",
-          darkModeMediaQuery.matches
+          darkModeMediaQuery.matches,
         );
 
       darkModeMediaQuery.addEventListener("change", updateTheme);
