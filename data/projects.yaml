@@ -28,6 +28,8 @@
     - repo: github.com/loopholelabs/drafter
       icon: docs/icon.svg
       background: var(--pf-t--color--black)
+    - repo: codeberg.org/pojntfx/pushrod
+      background: var(--pf-t--color--blue--70)
 - title: Apps
   projects:
     - repo: github.com/pojntfx/connmapper
@@ -49,6 +51,8 @@
     - repo: github.com/loopholelabs/latensee
       background: var(--pf-t--color--black)
       icon: docs/icon.svg
+    - repo: codeberg.org/pojntfx/gatekeeper
+      background: var(--pf-t--color--blue--50)
 - title: Development Tooling
   projects:
     - repo: github.com/pojntfx/bagccgop
@@ -71,6 +75,13 @@
       background: var(--pf-t--color--green--60)
     - repo: codeberg.org/puregotk/puregotk
       background: var(--pf-t--color--blue--60)
+    - repo: github.com/pojntfx/senbara
+      background: var(--pf-t--color--green--70)
+      icon: senbara-forms/docs/icon.svg
+    - repo: github.com/pojntfx/go-gettext
+      background: var(--pf-t--color--green--60)
+    - repo: github.com/pojntfx/the-commitment
+      background: var(--pf-t--color--orange--70)
 - title: Distributed Computing
   projects:
     - repo: github.com/pojntfx/saltpanelo
@@ -97,6 +108,9 @@
       background: var(--pf-t--color--blue--60)
     - repo: github.com/pojntfx/dibs
       background: var(--pf-t--color--blue--70)
+    - repo: codeberg.org/pojntfx/vanlug-infrastructure
+      background: var(--pf-t--color--green--70)
+      icon: config/custom/public/assets/img/favicon.svg
 - title: Uni Notes
   projects:
     - repo: github.com/pojntfx/uni-webdev-backend-notes
@@ -154,6 +168,9 @@
       background: var(--pf-t--color--orange--60)
     - repo: github.com/pojntfx/physio-dani.de
       background: var(--pf-t--color--red--60)
+    - repo: codeberg.org/pojntfx/netteart-com
+      background: var(--pf-t--color--orange--60)
+      icon: assets/img/icon.png
 - title: Integrations
   projects:
     - repo: github.com/pojntfx/simple-direct-democracy-frontend
