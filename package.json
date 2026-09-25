@@ -19,13 +19,13 @@
   "homepage": "https://github.com/pojntfx/felicitas.pojtinger.com#readme",
   "dependencies": {
     "@fireworks-js/web": "^2.10.8",
-    "@fontsource/lato": "^5.2.7",
-    "@fortawesome/fontawesome-free": "^5.15.4",
-    "@patternfly/patternfly": "^6.4.0",
-    "magic-snowflakes": "^7.0.2"
+    "@fontsource/lato": "^5.3.0",
+    "@fortawesome/fontawesome-free": "^7.3.1",
+    "@patternfly/patternfly": "^6.6.1",
+    "magic-snowflakes": "^7.1.0"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
+    "prettier": "^3.9.9",
     "prettier-plugin-go-template": "^0.0.15"
   }
 }
