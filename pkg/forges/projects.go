@@ -3,13 +3,12 @@ package forges
 import (
 	"context"
 	"fmt"
-	"net/http"
 	"net/url"
 	"strings"
 	"time"
 
 	"codeberg.org/mvdkleijn/forgejo-sdk/forgejo"
-	"github.com/google/go-github/v68/github"
+	"github.com/google/go-github/v92/github"
 	"golang.org/x/oauth2"
 )
 
@@ -89,24 +88,24 @@ func OpenForges(ctx context.Context, forgesList []ForgeConfig, tokens map[string
 	for domain, forge := range forgesMap {
 		switch forge.Type {
 		case ForgeTypeGitHub:
-			var httpClient *http.Client
+			opts := []github.ClientOptionsFunc{
+				github.WithEnterpriseURLs(forge.API, forge.API),
+			}
 			if token, ok := tokens[domain]; ok && token != "" {
-				httpClient = oauth2.NewClient(
+				opts = append(opts, github.WithHTTPClient(oauth2.NewClient(
 					ctx,
 					oauth2.StaticTokenSource(
 						&oauth2.Token{
 							AccessToken: token,
 						},
 					),
-				)
+				)))
 			}
 
-			client := github.NewClient(httpClient)
-			baseURL, err := url.Parse(forge.API)
+			client, err := github.NewClient(opts...)
 			if err != nil {
-				return nil, fmt.Errorf("failed to parse GitHub API URL for %s: %w", domain, err)
+				return nil, fmt.Errorf("failed to create GitHub client for %s: %w", domain, err)
 			}
-			client.BaseURL = baseURL
 
 			f.githubClients[domain] = client
 

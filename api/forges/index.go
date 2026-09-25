@@ -5,7 +5,6 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
-	"net/url"
 	"os"
 	"path"
 	"sort"
@@ -13,7 +12,7 @@ import (
 	"time"
 
 	"codeberg.org/mvdkleijn/forgejo-sdk/forgejo"
-	"github.com/google/go-github/v42/github"
+	"github.com/google/go-github/v92/github"
 	"github.com/pojntfx/felicitas.pojtinger.com/data"
 	"golang.org/x/oauth2"
 	"gopkg.in/yaml.v3"
@@ -128,22 +127,21 @@ func ForgesHandler(w http.ResponseWriter, r *http.Request, forgesYAML []byte, to
 }
 
 func fetchGitHubActivity(r *http.Request, forge ForgeConfig, username string, token string) (Output, error) {
-	var httpClient *http.Client
+	opts := []github.ClientOptionsFunc{
+		github.WithEnterpriseURLs(forge.API, forge.API),
+	}
 	if token != "" {
-		httpClient = oauth2.NewClient(
+		opts = append(opts, github.WithHTTPClient(oauth2.NewClient(
 			r.Context(),
 			oauth2.StaticTokenSource(
 				&oauth2.Token{
 					AccessToken: token,
 				},
 			),
-		)
+		)))
 	}
 
-	client := github.NewClient(httpClient)
-
-	var err error
-	client.BaseURL, err = url.Parse(forge.API)
+	client, err := github.NewClient(opts...)
 	if err != nil {
 		return Output{}, err
 	}
