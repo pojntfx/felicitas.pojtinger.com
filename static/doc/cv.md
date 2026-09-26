@@ -56,11 +56,11 @@ header-includes:
 
 ## Education
 
-\begin{tabular}{@{}p{4cm}l@{}}
-\textbf{2020 - 2023/08:} & Student at HdM Stuttgart, Germany. \\
-& Graduated with a B.Sc in Media Informatics (DE: 1.0, US: 4.0) \\
+\begin{tabular}{@{}p{4cm}p{11.4cm}@{}}
+\textbf{2020 - 2023/08:} & Student at \href{https://www.hdm-stuttgart.de/}{HdM Stuttgart}, Germany \\
+& {\footnotesize Graduated with a B.Sc in Media Informatics (DE: 1.0, US: 4.0)} \\
 \textbf{2011 - 2019/08:} & Student at Richard-von-Weizsäcker high school in Baiersbronn, Germany \\
-& Graduated with a Baden-Württemberg Abitur (DE: 1.4, US: 3.8) \\
+& {\footnotesize Graduated with a Baden-Württemberg Abitur (DE: 1.4, US: 3.8)} \\
 \textbf{2007 - 2011/08:} & Student at Wilhelm Münster elementary school in Baiersbronn, Germany
 \end{tabular}
 
