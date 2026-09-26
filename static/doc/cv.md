@@ -108,6 +108,16 @@ header-includes:
 
 \newpage
 
+## Talks
+
+\begin{tabular}{@{}p{4cm}p{11.4cm}@{}}
+\textbf{KubeCon NA 2026:} & Legacy-Free, Zero-Maintenance Bare Metal Kubernetes Clusters With RISC-V and Immutable Linux \\
+\textbf{KubeCon NA 2024:} & \href{https://kccncna2024.sched.com/event/1i7l2/building-reliable-cross-cloud-kubernetes-clusters-on-spot-instances-with-drafter-and-pvm-felicitas-pojtinger-loophole-labs}{Building Reliable Cross-Cloud Kubernetes Clusters on Spot Instances with Drafter and PVM} \\
+\textbf{KubeCon NA 2023:} & \href{https://kccncna2023.sched.com/event/1R2ok/zero-downtime-live-migration-of-stateful-vms-on-kubernetes-felicitas-pojtinger-loophole-labs}{Zero-Downtime Live Migration of Stateful VMs on Kubernetes}
+\end{tabular}
+
+\vspace*{0.3cm}
+
 ## Projects
 
 For more up-to-date info, please see [github.com/pojntfx](https://github.com/pojntfx) and [linkedin.com/in/pojntfx](https://www.linkedin.com/in/pojntfx/).
