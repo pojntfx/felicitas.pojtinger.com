@@ -68,11 +68,14 @@ header-includes:
 
 ## Work Experience
 
-\begin{tabular}{@{}p{4cm}l@{}}
-\textbf{2025/10 - present:} & Head of Research and Development at Loophole Labs, Inc \\
-\textbf{2022/07 - 2025/10:} & Founding Engineer at Loophole Labs, Inc \\
-\textbf{2021/06 - 2022/07:} & Software Developer at Incloud Engineering GmbH (acquired by q.beyond AG) \\
-\textbf{2019/10 - 2021/06:} & Software Developer at DE software \& control GmbH \\
+\begin{tabular}{@{}p{4cm}p{11.4cm}@{}}
+\textbf{2026/09 - present:} & Software Engineer at \href{https://livekit.io/}{LiveKit, Inc} \\
+& {\footnotesize \href{https://loopholelabs.io/}{Loophole Labs} was acquired by \href{https://livekit.io/}{LiveKit}} \\
+\textbf{2025/10 - 2026/09:} & Head of Research and Development at \href{https://loopholelabs.io/}{Loophole Labs, Inc} \\
+\textbf{2022/07 - 2025/10:} & Founding Engineer at \href{https://loopholelabs.io/}{Loophole Labs, Inc} \\
+\textbf{2021/06 - 2022/07:} & Software Developer at \href{http://web.archive.org/web/20211208140050/http://incloud.engineering/}{Incloud Engineering GmbH} \\
+& {\footnotesize Acquired by \href{https://www.qbeyond.de/}{q.beyond AG}} \\
+\textbf{2019/10 - 2021/06:} & Software Developer at DE software \& control GmbH
 \end{tabular}
 
 \vspace*{0.3cm}
