@@ -23,11 +23,11 @@ header-includes:
 \hypertarget{curriculum-vitae}{%
 \subsection*{\centering Felicitas Pojtinger (she/her)}\label{curriculum-vitae}}
 
-\vspace*{0.5cm}
+\vspace*{0.25cm}
 
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
 
-\vspace*{0.5cm}
+\vspace*{0.25cm}
 
 \begin{minipage}{.5\textwidth}
 \begin{tabular}{@{}p{4cm}l@{}}
@@ -43,16 +43,16 @@ header-includes:
 \Begin{minipage}{.5\textwidth}
 \Begin{flushright}
 
-![Avatar](https://github.com/pojntfx.png){ width=4cm }
+![Avatar](https://github.com/pojntfx.png){ width=3cm }
 
 \End{flushright}
 \End{minipage}
 
-\vspace*{0.5cm}
+\vspace*{0.25cm}
 
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
 
-\vspace*{0.5cm}
+\vspace*{0.25cm}
 
 ## Education
 
@@ -64,7 +64,7 @@ header-includes:
 \textbf{2007 - 2011/08:} & Student at Wilhelm Münster elementary school in Baiersbronn, Germany
 \end{tabular}
 
-\vspace*{0.75cm}
+\vspace*{0.3cm}
 
 ## Work Experience
 
@@ -75,27 +75,23 @@ header-includes:
 \textbf{2019/10 - 2021/06:} & Software Developer at DE software \& control GmbH \\
 \end{tabular}
 
-\vspace*{0.75cm}
+\vspace*{0.3cm}
 
 ## Languages
 
-\begin{tabular}{@{}p{4cm}l@{}}
-\textbf{English:} & CEFR C2 (IELTS General Band 8) \\
+\begin{tabular}{@{}p{4cm}p{11.4cm}@{}}
+\textbf{English:} & CEFR C2 (IELTS General Band 9) \\
 \textbf{German:} & CEFR C2 \\
 \textbf{French:} & CEFR B1
 \end{tabular}
 
-\vspace*{0.75cm}
+\vspace*{0.3cm}
 
 ## Tech Stack
 
-\begin{tabular}{@{}p{4cm}l@{}}
+\begin{tabular}{@{}p{4cm}p{11.4cm}@{}}
 \textbf{Languages:} & Go, TypeScript/JavaScript, Rust \\
-\textbf{UI:} & React, Wasm, JAMStack, SASS/SCSS, GNOME/GTK4 \\
-\textbf{Databases:} & SQLite, PostgreSQL, MariaDB/MySQL, Valkey/Redis \\
-\textbf{APIs:} & REST, gRPC, GraphQL \\
-\textbf{DevOps:} & Linux, Docker, Kubernetes, Firecracker, OpenTofu/Terraform \\
-\textbf{Clouds:} & AWS, Google Cloud, Azure, Hetzner, DigitalOcean, Equinix Metal \\
+\textbf{Systems:} & KVM, Firecracker, CRIU, QEMU, NBD, userfaultfd, live migration \\
 \textbf{Integration:} & GitHub, GitLab, Forgejo/Gitea \\
 \end{tabular}
 
