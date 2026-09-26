@@ -95,7 +95,15 @@ header-includes:
 \begin{tabular}{@{}p{4cm}p{11.4cm}@{}}
 \textbf{Languages:} & Go, TypeScript/JavaScript, Rust \\
 \textbf{Systems:} & KVM, Firecracker, CRIU, QEMU, NBD, userfaultfd, live migration \\
+\textbf{Linux:} & systemd, Flatpak, GNOME/GTK, Buildroot \\
+\textbf{Networking:} & WebRTC, overlay networks, gRPC, REST, GraphQL \\
+\textbf{Hardware:} & RISC-V, FreeCAD, KiCad \\
+\textbf{LLM:} & DeepSeek Harness, Claude Code, llama.cpp \\
+\textbf{Data:} & SQLite, PostgreSQL, MariaDB/MySQL, ClickHouse, Valkey/Redis, S3 \\
+\textbf{Cloud:} & AWS, Google Cloud, Azure, Oracle Cloud, Hetzner, DigitalOcean \\
+\textbf{DevOps:} & Docker, Kubernetes, OpenTofu/Terraform, Ansible, GitHub Actions \\
 \textbf{Integration:} & GitHub, GitLab, Forgejo/Gitea \\
+\textbf{UI:} & React, Wasm, JAMStack, SASS/SCSS, PatternFly
 \end{tabular}
 
 \newpage
