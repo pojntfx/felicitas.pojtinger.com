@@ -1,6 +1,6 @@
 ---
 author: [Curriculum Vitae]
-date: "2025-02-20"
+date: "2026-09-25"
 subject: "CV of Felicitas Pojtinger"
 keywords: [cv, curriculum-vitae, resume]
 lang: "en"
@@ -37,7 +37,7 @@ header-includes:
 & EU: \href{tel:+4915233842326}{+49 1523 3842326} \\
 \textbf{Website:} & \href{https://felicitas.pojtinger.com/}{felicitas.pojtinger.com} \\
 \textbf{Email:} & \href{mailto:felicitas@pojtinger.com}{felicitas@pojtinger.com} \\
-\textbf{Date of birth:} & 2001-02-02
+\textbf{Year of birth:} & 2001
 \end{tabular}
 \end{minipage}
 \Begin{minipage}{.5\textwidth}
@@ -162,4 +162,4 @@ For more up-to-date info, please see [github.com/pojntfx](https://github.com/poj
 - Developed the **"SIE" nanosatellite/CubeSat ion engine**
 - Created **"iHD2/NiroOS"**, an Android distribution for the HTC HD2
 
-Last updated 2025-10-17, Vancouver, British Columbia, Canada (Felicitas Pojtinger)
+Last updated 2026-09-25, Vancouver, British Columbia, Canada (Felicitas Pojtinger)
