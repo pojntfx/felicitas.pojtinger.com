@@ -9,6 +9,9 @@ papersize: a4
 colorlinks: true
 header-includes:
   - \usepackage{graphicx}
+  - \setlength{\emergencystretch}{3em}
+  - \usepackage{array}
+  - \usepackage{multicol}
   - \pagenumbering{gobble}
   - \newcommand{\hideFromPandoc}[1]{#1}
   - \hideFromPandoc{
@@ -106,6 +109,8 @@ header-includes:
 \textbf{UI:} & React, Wasm, JAMStack, SASS/SCSS, PatternFly
 \end{tabular}
 
+\vspace*{0.3cm}
+
 \newpage
 
 ## Talks
@@ -122,65 +127,99 @@ header-includes:
 
 For more up-to-date info, please see [github.com/pojntfx](https://github.com/pojntfx) and [linkedin.com/in/pojntfx](https://www.linkedin.com/in/pojntfx/).
 
-**2024-2025**\vspace{-3mm}
-
-- Working on the **"Drafter"** virtualization and live migration primitive
-- Building the **"panrpc"** RPC framework
-- Creating the **"hydrapp"** browser-based desktop application toolkit\vspace{-2.5mm}
-
-**2023**\vspace{-3mm}
-
-- Published bachelor's thesis **"Efficient Synchronization of Linux Memory Regions over a Network"**
-- Created **"Multiplex"**, an app to watch torrents with friends
-- Built **"r3map"**, a high-performance remote memory library
-- Built **"go-nbd"**, a pure Go NBD server and client library
-- Created **"Connmapper"**, an internet connection visualizer\vspace{-2.5mm}
-
-**2022**\vspace{-3mm}
-
-- Developed **"octarchive"**, a tool for GitHub and Gitea backups
-- Built **"weron"**, an overlay network based on WebRTC
-- Created **"STFS"**, a file system for LTO tape drives\vspace{-2.5mm}
-
-**2020-2021**\vspace{-3mm}
-
-- Built **"liwasc"** and **"invaentory"**, network and port scanners
-- Created **"bofied"**, a network boot server
-- Developed **"keygaen"**, a WebAssembly PGP tool
-- Built **"pojde"**, a multi-tenant development environment
-- Created **"Webnetes"**, a peer-to-peer computing platform based on Wasm
-- Developed **"unisockets"** and **"tinynet"**, POSIX sockets implementations for Wasm
-- Created **"alpimager"**, a tool for Alpine Linux images
-- Built **"gloeth"**, an overlay network manager
-- Developed **"gon2n"**, a P2P VPN\vspace{-2.5mm}
-
-**2018-2019**\vspace{-3mm}
-
-- Built **"infractl"**, a cluster management tool
-- Developed a **design system for digital publishing**
-- Created multiple **websites for local businesses**
-- Built **"Learn Chinese Platform"**, a platform for learning Mandarin and Cantonese
-- Continued **"LibreSat"**, a CubeSat development environment
-- Created **"Simple Direct Democracy"**, an e-voting platform
-- Hosted **"CoffeeCodeContribute"** boot camp
-- Developed **"IraSync"**, a social media platform
-- Created **"Die Illustrierte"**, a digital publishing platform\vspace{-2.5mm}
-
-**2016-2017**\vspace{-3mm}
-
-- Developed **"OpenSDCP"** and **OpenSNET**, a satellite development platform and network
-- Interned at **"Institut für Raumfahrtsysteme"** in Stuttgart
-- Presented **"MOVA4GIT"** ion thruster at Airbus Defense and Space
-- Contributed to **nanosatellite communication systems** at Aerospace Lab Herrenberg
-- Won the **"VonBWinsAll"** competition with "ModSat" nanosatellite/CubeSat project
-- Participated in **"Jugend Forscht"** competition with the "SIEO" nanosatellite/CubeSat project\vspace{-2.5mm}
-
-**2011-2014**\vspace{-3mm}
-
-- Created **"thelink"** high-FOV VR headset
-- Competed in **"Jugend Forscht" with "theview"** AR headset
-- Participated in **"Umweltmentor"** climate protection program
-- Developed the **"SIE" nanosatellite/CubeSat ion engine**
-- Created **"iHD2/NiroOS"**, an Android distribution for the HTC HD2
+\begin{multicols}{2}
+\setlength{\parindent}{0pt}
+\begin{minipage}{\linewidth}
+\textbf{2026}\par
+\href{https://loopholelabs.io/architect}{\textbf{Architect}} (process checkpoint/restore and live migration with CRIU; VM live migration on a custom KVM-based hypervisor)\\
+\href{https://codeberg.org/puregotk/puregotk}{\textbf{puregotk}} (GTK4 and Adwaita bindings for Go)\\
+\href{https://github.com/pojntfx/sessions}{\textbf{sessions}} (GNOME timer)\\
+\href{https://codeberg.org/pojntfx/pushrod}{\textbf{pushrod}} (SpacemiT K3 hardware enablement)\\
+\href{https://codeberg.org/pojntfx/gatekeeper}{\textbf{gatekeeper}} (Flatpak manifest review)\\
+\href{https://github.com/pojntfx/senbara}{\textbf{senbara}} (Go conventions)\\
+\href{https://github.com/pojntfx/go-gettext}{\textbf{go-gettext}} (Go gettext bindings)\\
+\href{https://codeberg.org/pojntfx/p2panda-gobject-go}{\textbf{p2panda-gobject-go}} (Go bindings)\\
+\href{https://netteart.com/}{\textbf{netteart-com}} (website)\\
+\end{minipage}
+\par\medskip
+\begin{minipage}{\linewidth}
+\textbf{2025}\par
+\href{https://github.com/loopholelabs/silo}{\textbf{Silo}} (storage primitive for live migration)\\
+\href{https://github.com/pojntfx/hydrapp}{\textbf{hydrapp}} (browser-based desktop application toolkit)\\
+\href{https://github.com/pojntfx/panrpc}{\textbf{panrpc}} (RPC framework)\\
+\href{https://github.com/pojntfx/the-commitment}{\textbf{the-commitment}} (a daily public contribution)\\
+\href{https://github.com/pojntfx/ledger}{\textbf{ledger}} (contribution log)\\
+\end{minipage}
+\par\medskip
+\begin{minipage}{\linewidth}
+\textbf{2024}\par
+\href{https://github.com/loopholelabs/drafter}{\textbf{Drafter}} (compute primitive for live migration)\\
+\href{https://github.com/pojntfx/uninstance}{\textbf{uninstance}} (nested VMs on clouds without nested virtualization)\\
+\href{https://github.com/pojntfx/ipxe-binaries}{\textbf{ipxe-binaries}} (weekly iPXE builds)\\
+\end{minipage}
+\par\medskip
+\begin{minipage}{\linewidth}
+\textbf{2023}\par
+\href{https://github.com/pojntfx/networked-linux-memsync}{\textbf{Bachelor's thesis}} \emph{Efficient Synchronization of Linux Memory Regions over a Network}\\
+\href{https://github.com/pojntfx/multiplex}{\textbf{Multiplex}} (watch torrents with friends)\\
+\href{https://github.com/pojntfx/r3map}{\textbf{r3map}} (remote memory library)\\
+\href{https://github.com/pojntfx/go-nbd}{\textbf{go-nbd}} (pure Go NBD server and client)\\
+\href{https://github.com/pojntfx/connmapper}{\textbf{Connmapper}} (internet connection visualizer)\\
+\href{https://github.com/loopholelabs/scale}{\textbf{Scale}} (WebAssembly plugin systems)\\
+\end{minipage}
+\par\medskip
+\begin{minipage}{\linewidth}
+\textbf{2022}\par
+\href{https://github.com/pojntfx/octarchive}{\textbf{octarchive}} (GitHub and Gitea backups)\\
+\href{https://github.com/pojntfx/weron}{\textbf{weron}} (overlay network based on WebRTC)\\
+\href{https://github.com/pojntfx/stfs}{\textbf{STFS}} (file system for LTO tape drives)\\
+\end{minipage}
+\par\medskip
+\begin{minipage}{\linewidth}
+\textbf{2020-2021}\par
+\href{https://github.com/pojntfx/liwasc}{\textbf{liwasc}} and \href{https://github.com/pojntfx/invaentory}{\textbf{invaentory}} (network and port scanners)\\
+\href{https://github.com/pojntfx/bofied}{\textbf{bofied}} (network boot server)\\
+\href{https://github.com/pojntfx/keygaen}{\textbf{keygaen}} (WebAssembly PGP tool)\\
+\href{https://github.com/pojntfx/pojde}{\textbf{pojde}} (multi-tenant development environment)\\
+\href{https://github.com/pojntfx/webnetes}{\textbf{Webnetes}} (peer-to-peer computing platform)\\
+\href{https://github.com/pojntfx/unisockets}{\textbf{unisockets}} and \href{https://github.com/pojntfx/tinynet}{\textbf{tinynet}} (POSIX sockets for Wasm)\\
+\href{https://github.com/pojntfx/alpimager}{\textbf{alpimager}} (custom Alpine Linux images)\\
+\href{https://github.com/pojntfx/gloeth}{\textbf{gloeth}} (overlay network manager)\\
+\href{https://github.com/pojntfx/gon2n}{\textbf{gon2n}} (P2P VPN)\\
+\end{minipage}
+\par\medskip
+\begin{minipage}{\linewidth}
+\textbf{2018-2019}\par
+\href{https://github.com/pojntfx/infractl}{\textbf{infractl}} (cluster management tool)\\
+\textbf{Design system for digital publishing}\\
+\textbf{Websites for local businesses}\\
+\href{https://github.com/pojntfx/learn-chinese-platform}{\textbf{Learn Chinese Platform}} (Mandarin and Cantonese)\\
+\href{https://github.com/pojntfx/libresat}{\textbf{LibreSat}} (CubeSat development environment)\\
+\href{https://github.com/pojntfx/simple-direct-democracy-frontend}{\textbf{Simple Direct Democracy}} (e-voting platform)\\
+\textbf{CoffeeCodeContribute} (boot camp)\\
+\textbf{IraSync} (social media platform)\\
+\href{https://github.com/pojntfx/illustrierte-website}{\textbf{Die Illustrierte}} (digital publishing platform)\\
+\end{minipage}
+\par\medskip
+\begin{minipage}{\linewidth}
+\textbf{2016-2017}\par
+\href{https://github.com/pojntfx/opensdcp-website}{\textbf{OpenSDCP}} and \textbf{OpenSNET} (satellite platform and network)\\
+\textbf{Interned} at \href{https://www.irs.uni-stuttgart.de/}{\textbf{Institut für Raumfahrtsysteme}} Stuttgart\\
+\textbf{Presented} the \textbf{MOVA4GIT} ion thruster at Airbus Defense and Space\\
+\textbf{Aerospace Lab Herrenberg}: nanosatellite communication systems\\
+\href{https://www.vonbwinsall.de/}{\textbf{VonBWinsAll}}: won with the \textbf{ModSat} CubeSat\\
+\href{https://www.jugend-forscht.de/}{\textbf{Jugend Forscht}} with the \textbf{SIEO} CubeSat\\
+\end{minipage}
+\par\medskip
+\begin{minipage}{\linewidth}
+\textbf{2011-2014}\par
+\textbf{thelink} (high-FOV VR headset)\\
+\href{https://www.jugend-forscht.de/}{\textbf{Jugend Forscht}} with the \textbf{theview} AR headset\\
+\textbf{Umweltmentor} climate protection program\\
+\textbf{SIE} nanosatellite ion engine\\
+\textbf{iHD2/NiroOS} (Android for the HTC HD2)\\
+\end{minipage}
+\par\medskip
+\end{multicols}
 
 Last updated 2026-09-25, Vancouver, British Columbia, Canada (Felicitas Pojtinger)
