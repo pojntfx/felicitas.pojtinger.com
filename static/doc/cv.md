@@ -62,7 +62,7 @@ header-includes:
 \begin{tabular}{@{}p{4cm}p{11.4cm}@{}}
 \textbf{2020 - 2023/08:} & Student at \href{https://www.hdm-stuttgart.de/}{HdM Stuttgart}, Germany \\
 & {\footnotesize Graduated with a B.Sc in Media Informatics (DE: 1.0, US: 4.0)} \\
-\textbf{2011 - 2019/08:} & Student at Richard-von-Weizsäcker high school in Baiersbronn, Germany \\
+\textbf{2011 - 2019/08:} & Student at \href{https://www.rvwg.de/}{Richard-von-Weizsäcker high school} in Baiersbronn, Germany \\
 & {\footnotesize Graduated with a Baden-Württemberg Abitur (DE: 1.4, US: 3.8)} \\
 \textbf{2007 - 2011/08:} & Student at Wilhelm Münster elementary school in Baiersbronn, Germany
 \end{tabular}
@@ -73,9 +73,9 @@ header-includes:
 
 \begin{tabular}{@{}p{4cm}p{11.4cm}@{}}
 \textbf{2026/09 - present:} & Software Engineer at \href{https://livekit.io/}{LiveKit, Inc} \\
-& {\footnotesize \href{https://loopholelabs.io/}{Loophole Labs} was acquired by \href{https://livekit.io/}{LiveKit}} \\
 \textbf{2025/10 - 2026/09:} & Head of Research and Development at \href{https://loopholelabs.io/}{Loophole Labs, Inc} \\
-\textbf{2022/07 - 2025/10:} & Founding Engineer at \href{https://loopholelabs.io/}{Loophole Labs, Inc} \\
+& {\footnotesize Acquired by LiveKit, Inc.} \\
+\textbf{2022/07 - 2025/10:} & Founding Engineer at Loophole Labs, Inc \\
 \textbf{2021/06 - 2022/07:} & Software Developer at \href{http://web.archive.org/web/20211208140050/http://incloud.engineering/}{Incloud Engineering GmbH} \\
 & {\footnotesize Acquired by \href{https://www.qbeyond.de/}{q.beyond AG}} \\
 \textbf{2019/10 - 2021/06:} & Software Developer at DE software \& control GmbH
@@ -116,7 +116,6 @@ header-includes:
 ## Talks
 
 \begin{tabular}{@{}p{4cm}p{11.4cm}@{}}
-\textbf{KubeCon NA 2026:} & Legacy-Free, Zero-Maintenance Bare Metal Kubernetes Clusters With RISC-V and Immutable Linux \\
 \textbf{KubeCon NA 2024:} & \href{https://kccncna2024.sched.com/event/1i7l2/building-reliable-cross-cloud-kubernetes-clusters-on-spot-instances-with-drafter-and-pvm-felicitas-pojtinger-loophole-labs}{Building Reliable Cross-Cloud Kubernetes Clusters on Spot Instances with Drafter and PVM} \\
 \textbf{KubeCon NA 2023:} & \href{https://kccncna2023.sched.com/event/1R2ok/zero-downtime-live-migration-of-stateful-vms-on-kubernetes-felicitas-pojtinger-loophole-labs}{Zero-Downtime Live Migration of Stateful VMs on Kubernetes}
 \end{tabular}
@@ -148,14 +147,12 @@ For more up-to-date info, please see [github.com/pojntfx](https://github.com/poj
 \href{https://github.com/pojntfx/hydrapp}{\textbf{hydrapp}} (browser-based desktop application toolkit)\\
 \href{https://github.com/pojntfx/panrpc}{\textbf{panrpc}} (RPC framework)\\
 \href{https://github.com/pojntfx/the-commitment}{\textbf{the-commitment}} (a daily public contribution)\\
-\href{https://github.com/pojntfx/ledger}{\textbf{ledger}} (contribution log)\\
 \end{minipage}
 \par\medskip
 \begin{minipage}{\linewidth}
 \textbf{2024}\par
 \href{https://github.com/loopholelabs/drafter}{\textbf{Drafter}} (compute primitive for live migration)\\
 \href{https://github.com/pojntfx/uninstance}{\textbf{uninstance}} (nested VMs on clouds without nested virtualization)\\
-\href{https://github.com/pojntfx/ipxe-binaries}{\textbf{ipxe-binaries}} (weekly iPXE builds)\\
 \end{minipage}
 \par\medskip
 \begin{minipage}{\linewidth}
@@ -170,7 +167,7 @@ For more up-to-date info, please see [github.com/pojntfx](https://github.com/poj
 \par\medskip
 \begin{minipage}{\linewidth}
 \textbf{2022}\par
-\href{https://github.com/pojntfx/octarchive}{\textbf{octarchive}} (GitHub and Gitea backups)\\
+\href{https://github.com/pojntfx/octarchive}{\textbf{octarchive}} (GitHub and Forgejo backups)\\
 \href{https://github.com/pojntfx/weron}{\textbf{weron}} (overlay network based on WebRTC)\\
 \href{https://github.com/pojntfx/stfs}{\textbf{STFS}} (file system for LTO tape drives)\\
 \end{minipage}
@@ -192,7 +189,7 @@ For more up-to-date info, please see [github.com/pojntfx](https://github.com/poj
 \textbf{2018-2019}\par
 \href{https://github.com/pojntfx/infractl}{\textbf{infractl}} (cluster management tool)\\
 \textbf{Design system for digital publishing}\\
-\textbf{Websites for local businesses}\\
+\textbf{Multiple websites for local businesses}\\
 \href{https://github.com/pojntfx/learn-chinese-platform}{\textbf{Learn Chinese Platform}} (Mandarin and Cantonese)\\
 \href{https://github.com/pojntfx/libresat}{\textbf{LibreSat}} (CubeSat development environment)\\
 \href{https://github.com/pojntfx/simple-direct-democracy-frontend}{\textbf{Simple Direct Democracy}} (e-voting platform)\\
@@ -205,8 +202,8 @@ For more up-to-date info, please see [github.com/pojntfx](https://github.com/poj
 \textbf{2016-2017}\par
 \href{https://github.com/pojntfx/opensdcp-website}{\textbf{OpenSDCP}} and \textbf{OpenSNET} (satellite platform and network)\\
 \textbf{Interned} at \href{https://www.irs.uni-stuttgart.de/}{\textbf{Institut für Raumfahrtsysteme}} Stuttgart\\
-\textbf{Presented} the \textbf{MOVA4GIT} ion thruster at Airbus Defense and Space\\
-\textbf{Aerospace Lab Herrenberg}: nanosatellite communication systems\\
+\textbf{Presented} the \textbf{MOVA4GIT} ion thruster at \href{https://www.airbus.com/}{Airbus Defense and Space}\\
+\href{https://www.aerospacelab.de/}{\textbf{Aerospace Lab Herrenberg}}: nanosatellite communication systems\\
 \href{https://www.vonbwinsall.de/}{\textbf{VonBWinsAll}}: won with the \textbf{ModSat} CubeSat\\
 \href{https://www.jugend-forscht.de/}{\textbf{Jugend Forscht}} with the \textbf{SIEO} CubeSat\\
 \end{minipage}
@@ -214,7 +211,7 @@ For more up-to-date info, please see [github.com/pojntfx](https://github.com/poj
 \begin{minipage}{\linewidth}
 \textbf{2011-2014}\par
 \textbf{thelink} (high-FOV VR headset)\\
-\href{https://www.jugend-forscht.de/}{\textbf{Jugend Forscht}} with the \textbf{theview} AR headset\\
+\textbf{Jugend Forscht} with the \textbf{theview} AR headset\\
 \textbf{Umweltmentor} climate protection program\\
 \textbf{SIE} nanosatellite ion engine\\
 \textbf{iHD2/NiroOS} (Android for the HTC HD2)\\
